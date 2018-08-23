@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Millenials</title>
+  <!-- Bootstrap core CSS-->
+  <link href="design/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <!-- Controller Script -->
+  <script type="text/javascript" src="js/controller.ajax.js"></script>
+</head>
+
+<body class="bg-dark" onload="loadsession()">
+  <div class="container">
+
+    <form onsubmit="return confirmsession()" id="loginform">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+          
+        <div class="form-group"  id="notifylogin">
+            
+          </div>
+          <!--username-->
+          <div class="form-group">
+            <label>Username</label>
+            <input class="form-control" type="text"  placeholder="Username" pattern="[a-zA-Z0-9]+" id="username" title="Must not contain spaces and special characters" required>
+          </div>
+          <!--password-->
+          <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces" required>
+          </div>
+
+          <!-- new password-->
+          <div class="form-group" id="npd" hidden>
+              <label>New Password</label>
+              <input class="form-control" type="password" placeholder="New Password" id="newpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+          </div>
+
+            <!-- Confirm new password-->
+            <div class="form-group" id="npcd" hidden>
+                  <label>Confirm New Password</label>
+                  <input class="form-control" type="password" placeholder="Confirm New Password" id="conpassword" data-match='#newpassword' data-match-error='Password does not Match'>
+            </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember Password</label>
+            </div>
+          </div>
+          <input class="btn btn-primary btn-block" type="submit" id="loginbtn" value="Login">
+          <div class="form-group" id="confirmbtns" hidden><div class="form-row">
+              <div class='col-md-6'><input class="btn btn-secondary btn-block form-control" type="button" value="Cancel" onclick="cancelnewpass()"></div>
+              <div class='col-md-6'><input class="btn btn-primary btn-block form-control" type="submit" value="Continue"></div>
+          </div></div>
+        
+        <div class="text-center">
+            <br>
+            <!--
+          <a class="d-block small" href="#">Forgot Password?</a> -->
+        </div>
+          
+      </div>
+    </div>
+  </form>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+    <script src="design/jquery/jquery.min.js"></script>
+    <script src="design/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="design/jquery-easing/jquery.easing.min.js"></script>
+  <div  class="form-group alert alert-warning" id="sampledt" hidden>Sample Here</div>
+</body>
+
+</html>
