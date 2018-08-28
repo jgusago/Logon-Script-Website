@@ -69,6 +69,14 @@
 	{
 		background-color:#eae91796;
 	}
+	.info
+	{
+		width:100%;
+	}
+	.info p
+	{
+		color: white;
+	}
 	
 	</style>
 </head>
@@ -122,6 +130,7 @@
 		</div>
 		</div>
 
+        <!-- Sidebar (not updated) -->
 		<div class="side-navbar">
 			<a href="admin_dashboard.html"><img src="icons/dashboard.png"> Dashboard</a>
 			<button class="dropdown-btn"><img src="icons/computer.png"> Computer List <i class="glyphicon glyphicon-down"></i></button>
@@ -135,11 +144,10 @@
 			<a class ="active" href="#"><img src="icons/settings.png"> User Accounts</a>
 			<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</b></a>
 		</div>
+		<!-- End -->
 
-		<div class="footer">
-			<div>
-				
-			</div>
+		<div class="info">
+			<p><strong>User Accounts</strong></p>
 		</div>
 
 
@@ -148,24 +156,3 @@
 
 </body>
 </html>
-
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for(i=0; i< dropdown.length; i++)
-{
-	dropdown[i].addEventListener("click", function()
-	{
-		this.classList.toggle("active");
-		var dropdownContent = this.nextElementSibling;
-		if(dropdownContent.style.display == "block")
-		{
-			dropdownContent.style.display = "none";
-		}
-		else
-		{
-			dropdownContent.style.display = "block";
-		}
-
-	});
-}
