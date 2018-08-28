@@ -40,21 +40,37 @@
 		background-color:#eae91796;
     	color: black;
 	}
+	.dropdown 
+	{
+		position: relative;
+		display: inline-block;
+	}
 	.dropdown-content
 	{
-		display: none;
+		/* display: none;
 		position: absolute;
 		min-width:270px;
 
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 		z-index: 1;
 		background-color: #eae917c2;
-		padding-left:10px;
+		padding-left:10px; */
+
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
 	}
 	.dropdown-content a
 	{
-		color:black;
+		/* color:black;
 		padding:12px 16px;
+		text-decoration: none;
+		display: block; */
+		color: black;
+		padding: 12px 16px;
 		text-decoration: none;
 		display: block;
 	}
@@ -76,9 +92,9 @@
 		width:45px;
 		height:55px;
 	}
-	.drop-btn
+	.dropbtn
 	{
-		width:100%;
+		/* width:100%;
 		padding:10px 20px 10px 20px;
 		text-align:left;
 		font-size:18px;
@@ -87,7 +103,22 @@
 		outline:none;
 		border: none;
 		margin-top:5px;
-		background-color: #4ca51f8f;
+		background-color: #4ca51f8f; */
+
+		background-color: #3498DB;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	}
+	.show 
+	{
+		display:block;
+	}
+	.dropbtn:hover, .dropbtn:focus 
+	{
+    	background-color: #2980B9;
 	}
 	.side-navbar .active
 	{
@@ -145,12 +176,13 @@
 			</div>
 		</div>
 		</div>
+		<!-- <img src="icons/computer.png"> -->
 
 		<div class="side-navbar">
 			<a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png"> Dashboard</a>
 			<div class="dropdown">
-				<button class="drop-btn"><img src="icons/computer.png"> Computer List</button>
-				<div class="dropdown-content">
+				<button onclick="myFunction()" class="dropbtn"> Computer List</button>
+				<div id="myDropdown" class="dropdown-content">
 					<a href="#">Marvin 5th</a>
 					<a href="#">Marvin10th</a>
 				</div>
@@ -174,29 +206,10 @@
 		</div>
 
 
-	<script src="bootstrap/js/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="Bootstrap/js/jquery.min.js"></script>
+	<script src="Bootstrap/js/bootstrap.min.js"></script>
+	<script src="Bootstrap/js/dropdown.js"></script>
 
 </body>
 </html>
 
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for(i=0; i< dropdown.length; i++)
-{
-	dropdown[i].addEventListener("click", function()
-	{
-		this.classList.toggle("active");
-		var dropdownContent = this.nextElementSibling;
-		if(dropdownContent.style.display == "block")
-		{
-			dropdownContent.style.display = "none";
-		}
-		else
-		{
-			dropdownContent.style.display = "block";
-		}
-
-	});
-}
