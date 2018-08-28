@@ -26,4 +26,6 @@ if ($count>0){
 else{
     echo $count;
 }
+
+mysqli_close($con);
 ?>

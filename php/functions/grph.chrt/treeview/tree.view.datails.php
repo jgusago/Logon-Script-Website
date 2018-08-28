@@ -9,7 +9,7 @@ $count = 0;
 echo "User|BIOS|Motherboard|Ram|OS|osArch|Processor|Core|Mac Address| hostname = $hostname";
 
 
-$query = mysqli_query($con, "SELECT * from sky.tbl_computer_details where hostname like '$hostname' group by hostname");
+$query = mysqli_query($con, "SELECT * from sky.tbl_computer_details where hostname like '$hostname' and user not like 'admin%' group by hostname");
 
 while($row = mysqli_fetch_array($query)){
     $compno = $row['computer_no'];
@@ -30,4 +30,6 @@ while($row = mysqli_fetch_array($query)){
 
     $count++;
 }
+
+mysqli_close($con);
 ?>

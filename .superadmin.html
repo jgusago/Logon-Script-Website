@@ -18,7 +18,7 @@
   <link href="css/main.css" rel="stylesheet">
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="load_branchview()">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="load()">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Monitoring</a>
@@ -66,10 +66,10 @@
           <!-- Charts Collapse -->
           <ul class="sidenav-second-level collapse" id="collapseTables">
               <li>
-                <a href="#" id="monactivelst" onclick="showbv('activelist')">Monitoring: Active list</a>
+                <a href="#" id="monactivelst" onclick="dashboard_click_event('activelist')">Monitoring: Active list</a>
               </li>
               <li>
-                <a href="#" id="moninactivelst" onclick="showbv('inactivelist')">Monitoring: Inactive list</a>
+                <a href="#" id="moninactivelst" onclick="dashboard_click_event('inactivelist')">Monitoring: Inactive list</a>
               </li>
           </ul>
         
@@ -113,12 +113,12 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">Settings</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#">Second Level Item</a>
+              <a href="#" onclick="dashboard_click_event('branchviewsettings')">Branch View Settings</a>
             </li>
             <li>
               <a href="#">Second Level Item</a>
@@ -130,7 +130,7 @@
               <a class="nav-link-collapse collapdatased" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
               <ul class="sidenav-third-level collapse" id="collapseMulti2">
                 <li>
-                  <a href="#">Test Edit</a>
+                  <a href="#">Third Level Item</a>
                 </li>
                 <li>
                   <a href="#">Third Level Item</a>
@@ -258,10 +258,6 @@
     <!-- Content View -->
     <div class="container-fluid" id="contentview">
     </div>
-
-    <div class="container-fluid" id="branchview">
-
-    </div>
     <!-- Overlay -->
     <div id="overlay" onclick="overlay();">
     </div>
@@ -334,7 +330,7 @@
     <!-- Custom scripts for this page-->
     <script src="js/controller/main-admin-datatables.min.js"></script>
     <script src="js/controller/main-admin-charts.min.js"></script>
-    <script type="text/javascript" src="js/controller/ctrl.js" async></script>
+    <script type="text/javascript" src="js/controller/main.js" async></script>
   </div>
 </body>
 

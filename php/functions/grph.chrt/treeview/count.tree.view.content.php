@@ -3,15 +3,16 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
 
 $branch = $_POST["branch"];
+$parent = $_POST["grandparent"];
 
-$query = mysqli_query($con,"select * from sky.tbl_treeview where treename='$branch'");
+$query = mysqli_query($con,"select * from sky.tbl_treeview where treename='$branch' and treeparent='$parent'");
 
 if(mysqli_num_rows($query)>0){
 
     while ($row = mysqli_fetch_array($query)){
 
         $filter = $row["treefilter"];
-        $query2 = mysqli_query($con,"select * from sky.tbl_log where $filter group by hostname order by hostname");
+        $query2 = mysqli_query($con,"select * from sky.tbl_log where $filter and building like '$parent' group by hostname order by hostname");
 
         if(!$query2){
             //do nothing
@@ -32,12 +33,13 @@ if(mysqli_num_rows($query)>0){
             
                 $count++;
             }
+            
         }
     
     }
 }
 
-
+mysqli_close($con);
 
 
 
