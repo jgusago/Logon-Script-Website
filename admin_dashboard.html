@@ -34,11 +34,22 @@
 		display: block;
 		background-color: #4ca51f8f;
 		margin-top:5px;
+		height:60px;
 	}
 	.side-navbar a:hover, .dropdown-btn:hover
 	{
 		background-color:#eae91796;
     	color: black;
+	}
+	.side-navbar img 
+	{
+		margin-right:10px;
+		width: 35px;
+    	height: 40px;
+	}
+	.side-navbar .active
+	{
+		background-color:#eae91796;
 	}
 	.dropdown 
 	{
@@ -80,7 +91,7 @@
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 		z-index: 1; */
 
-		 display: none;
+		display: none;
 		position: absolute;
 		background-color: #f9f9f9;
 		min-width: 160px;
@@ -101,16 +112,6 @@
 
 	.dropdown:hover .dropdown-content {
 		display: block;
-	}
-	.side-navbar img 
-	{
-		margin-right:10px;
-		width:45px;
-		height:55px;
-	}
-	.side-navbar .active
-	{
-		background-color:#eae91796;
 	}
 	
 	</style>
@@ -165,6 +166,7 @@
 		</div>
 		</div>
 
+		<!-- Sidebar -->
 		<div class="side-navbar">
 			<a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png"> Dashboard</a>
 			<div class="dropdown">
@@ -179,6 +181,7 @@
 			<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
 			<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</b></a>
 		</div>
+		<!-- End of Sidebar -->
 
 		<script>
 			/* When the user clicks on the button, 
