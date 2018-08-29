@@ -72,7 +72,7 @@
 	}
 	.dropdown:hover .dropbtn
 	{
-		background-color: red;
+		background-color: #eae91796;
 	}
 	.dropdown-content
 	{
@@ -100,7 +100,7 @@
 		z-index: 1;
 	}	
 	.dropdown-content a {
-		float: none;
+		float: left;
 		color: black;
 		padding: 12px 16px;
 		text-decoration: none;
@@ -172,11 +172,19 @@
 			<a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png"> Dashboard</a>
 			<div class="dropdown">
 				<!-- <button onclick="myFunction()" class="dropbtn"><img src="icons/computer.png"> Computer List</button> -->
-				<button class="dropbtn"><img src="icons/computer.png"> Computer List <i class="glyphicon glyphicon-down"></i></button>
+
+				<!-- <button class="dropbtn"><img src="icons/computer.png"> Computer List <i class="glyphicon glyphicon-down"></i></button>
 				<div class="dropdown-content">
 					<a href="#">Marvin 5th</a>
 					<a href="#">Marvin10th</a>
-				</div>
+				</div> -->
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img src="icons/computer.png"> Computer List
+					<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+					  <li><a href="#">HTML</a></li>
+					  <li><a href="#">CSS</a></li>
+					  <li><a href="#">JavaScript</a></li>
+					</ul>
 			</div>
 
 			<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
