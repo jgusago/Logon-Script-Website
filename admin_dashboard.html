@@ -42,8 +42,24 @@
 	}
 	.dropdown 
 	{
+		overflow: hidden;
 		position: relative;
 		display: inline-block;
+	}
+	.dropdown .dropbtn
+	{
+		font-size: 15px;
+		border:none;
+		outline:none;
+		color: white;
+		padding: 14px 16px;
+		background-color: inherit;
+		font-family: inherit;
+		margin: 0;
+	}
+	.dropdown:hover .dropbtn
+	{
+		background-color: red;
 	}
 	.dropdown-content
 	{
@@ -56,81 +72,40 @@
 		background-color: #eae917c2;
 		padding-left:10px; */
 
-		display: none;
+		/* display: none;
 		position: absolute;
 		background-color: #f1f1f1;
 		min-width: 160px;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1; */
+
+		 display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 		z-index: 1;
-	}
-	.dropdown-content a
-	{
-		/* color:black;
-		padding:12px 16px;
-		text-decoration: none;
-		display: block; */
+	}	
+	.dropdown-content a {
+		float: none;
 		color: black;
-		padding: 12px;
+		padding: 12px 16px;
 		text-decoration: none;
 		display: block;
-		width: 170%;
-    	text-align: center;
-		font-size:12px;
-		font-family: Century Verdana, Geneva, Tahoma, sans-serif;
-		margin-top:-8px;
+		text-align: left;
 	}
-	.dropdown-content a:hover
-	{
+	.dropdown-content a:hover {
 		background-color: #ddd;
 	}
-	.dropdown:hover .dropdown-content
-	{
+
+	.dropdown:hover .dropdown-content {
 		display: block;
-	}
-	.dropdown:hover .dropbtn 
-	{
-		background-color: #4ca51f8f;
 	}
 	.side-navbar img 
 	{
 		margin-right:10px;
 		width:45px;
 		height:55px;
-	}
-	.dropbtn
-	{
-		/* width:100%;
-		padding:10px 20px 10px 20px;
-		text-align:left;
-		font-size:18px;
-		font-family: Century Gothic;
-		cursor: pointer;
-		outline:none;
-		border: none;
-		margin-top:5px;
-		background-color: #4ca51f8f; */
-
-		background-color: #4ca51f8f;;
-		color: black;
-		padding: 16px;
-		font-size: 16px;
-		border: none;
-		cursor: pointer;
-		margin-top: 5px;
-		padding:10px 86px 10px 20px;
-		width: 100%;
-		font-size:18px;
-		font-family: Century Gothic;
-		outline:none;
-		border:none;
-	}
-	.show 
-	{
-		display:block;
-	}
-	.dropbtn:hover, .dropbtn:focus 
-	{
-    	background-color: #4ca51f8f;
 	}
 	.side-navbar .active
 	{
@@ -192,23 +167,11 @@
 		<div class="side-navbar">
 			<a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png"> Dashboard</a>
 			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn"><img src="icons/computer.png"> Computer List</button>
-				<div id="myDropdown" class="dropdown-content">
+				<!-- <button onclick="myFunction()" class="dropbtn"><img src="icons/computer.png"> Computer List</button> -->
+				<button class="dropbtn"><img src="icons/computer.png"> Computer List <i class="glyphicon-down"></i></button>
+				<div class="dropdown-content">
 					<a href="#">Marvin 5th</a>
 					<a href="#">Marvin10th</a>
-					<a href="#">B2B</a>
-					<a href="#">COP</a>
-					<a href="#">AT</a>
-					<a href="#">L8</a>
-					<a href="#">LH</a>
-					<a href="#">QY</a>
-					<a href="#">MK</a>
-					<a href="#">FN</a>
-					<a href="#">Malaysia</a>
-					<a href="#">Taiwan</a>
-					<a href="#">Hong Kong</a>
-					<a href="#">Singapore</a>
-					<a href="#">Huawei Cloud</a>
 				</div>
 			</div>
 
