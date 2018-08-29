@@ -2,7 +2,7 @@
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
 
-echo "1|2|3|4"
+echo "1|2|3|4";
 
 $query = mysqli_query($con,"SELECT * FROM logonscript.tbl_tree");
 
