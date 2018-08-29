@@ -2,30 +2,33 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
 //Connection
 
-echo "User|Host|IP|Date Modefied|Recent IP|Last Date Used|Status|Connection Status|Branch|Recent Scan|Action";
+echo "Hostname|User|Domain|Branch|Scan Time|IP|Date Modefied|Recent IP|Date Changed|iMonitor Status|Running Services|sysFile Setting|Log no";
 
 $query = mysqli_query($con,"SELECT * FROM sky.tbl_log where user not like 'admi%' group by hostname");
 
 while($row = mysqli_fetch_array($query)){
     $log_num = $row['log_no'];
     $user = $row['user'];
+    $domain_name = $row['domain_name'];
     $hostname = $row['hostname'];
-    $new_ip = $row['new_ip'];
-    $new_ip_date = $row['new_ip_date'];
-    $old_ip = $row['old_ip'];
-    $old_ip_date = $row['old_ip_date'];
-    $monitoring_status = $row['monitoring_status'];
-    $building = $row['building'];
-    $date = $row['date'];
+    $ip_address = $row['ip_address'];
+    $ip_date_modefied = $row['ip_date_modefied'];
+    $old_ip_address = $row['old_ip_address'];
+    $old_ip_modefied = $row['old_ip_modefied'];
+    $iMonitor_Status = $row['iMonitor_Status'];
+    $services = $row['services'];
+    $sysSetting_File = $row['sysSetting_File'];
+    $branch = $row['branch'];
+    $scan_time = $row['scabe_time'];
 
     
-    $port = mysqli_query($con,"SELECT * FROM imonitor where hostname like '$hostname' and user like '$user'");
+    $port = mysqli_query($con,"SELECT * FROM imonitor where hostname like '$hostname'");
         
     $portcount = mysqli_num_rows($port);
     if ($portcount > 0){
     while ($row = mysqli_fetch_array($port)){
         
-        $portstatus = $row["connected"];
+        $portstatus = $row['connection_status'];
     }
     }
     else
@@ -33,7 +36,7 @@ while($row = mysqli_fetch_array($query)){
         $portstatus = "unscanned";
     }
 
-    echo "#$user|$hostname|$new_ip|$new_ip_date|$old_ip|$old_ip_date|$monitoring_status|$portstatus|$building|$date|$log_num";
+    echo "#$hostname|$user|$domain_name|$branch|$scan_time|$ip_address|$ip_date_modefied|$old_ip_address|$old_ip_modefied|$iMonitor_Status|$services|$sysSetting_File|$log_num";
 }
 
 mysqli_close($con);
