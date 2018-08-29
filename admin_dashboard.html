@@ -104,7 +104,7 @@
 	{
 		display:block;
 	}	
-	#showButton
+	/* #showButton .side-nab-bar a
 	{
 		padding:10px 20px 10px 20px;
 		font-size:20px;
@@ -113,9 +113,16 @@
 		color:black;
 		display: block;
 		background-color: #4ca51f8f;
-		margin-top:100px;
+		margin-top:900px;
 		height:60px;
 	}
+	#showButton img
+	{
+		margin-right:10px;
+		width: 35px;
+		height: 40px;
+		margin-top:900px;
+	} */
 	</style>
 </head>
 <body>
@@ -174,9 +181,9 @@
 			<div class="dropdown">
 				<button onclick="myFunction()" class="dropbtn"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
 				<div id="myDropdown" class="dropdown-content">
-				  <a href="#">Link 1</a>
-				  <a href="#">Link 2</a>
-				  <a href="#">Link 3</a>
+				  <a href="admin_viewing.html">Marvin 5th</a>
+				  <a href="admin_viewing.html">Marvin 10th</a>
+				  <a href="admin_viewing.html">B2B</a>
 				</div>
 			  </div>
 
@@ -185,25 +192,18 @@
 		</div>
 		<!-- End of Sidebar -->
 
-		<div id=showButton>
-			<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
-			<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
-		</div>
+		<!-- <div id="showButton">
+			<div class="side-nav-bar">
+				<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
+				<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
+			</div>
+		</div> -->
 
 		<script>
 			function myFunction() 
 			{
 				document.getElementById("myDropdown").classList.toggle("show");
-				var x = document.getElementById("showButton");
-
-				if (x.style.display =="none")
-				{
-					x.style.display= "block";
-				}
-				else
-				{
-					x.style.display = "none";
-				}
+				// document.getElementById("showButton").classList.toggle("show");
 			}
 
 				// Close the dropdown menu if the user clicks outside of it
@@ -225,11 +225,11 @@
 			}
 		</script>
 
-		<div class="footer">
+		<!-- <div class="footer">
 			<div>
 				
 			</div>
-		</div>
+		</div> -->
 
 
 	<script src="Bootstrap/js/jquery.min.js"></script>
