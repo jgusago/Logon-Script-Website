@@ -12,14 +12,14 @@ while($row = mysqli_fetch_array($query)){
     $domain_name = $row['domain_name'];
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
-    $ip_date_modefied = $row['ip_date_modefied'];
+    $ip_date_modefied = $row['ip_date_modified'];
     $old_ip_address = $row['old_ip_address'];
-    $old_ip_modefied = $row['old_ip_modefied'];
+    $old_ip_modefied = $row['old_ip_modified'];
     $iMonitor_Status = $row['iMonitor_Status'];
     $services = $row['services'];
     $sysSetting_File = $row['sysSetting_File'];
     $branch = $row['branch'];
-    $scan_time = $row['scabe_time'];
+    $scan_time = $row['scan_time'];
 
     
     $port = mysqli_query($con,"SELECT * FROM logonscript.tbl_port where hostname like '$hostname'");
