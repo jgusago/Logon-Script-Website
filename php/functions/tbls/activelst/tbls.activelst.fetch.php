@@ -4,7 +4,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
 
 echo "Hostname|User|Domain|Branch|Scan Time|IP|Date Modefied|Recent IP|Date Changed|iMonitor Status|Running Services|sysFile Setting|Log no";
 
-$query = mysqli_query($con,"SELECT * FROM sky.tbl_log where user not like 'admi%' group by hostname");
+$query = mysqli_query($con,"SELECT * FROM logonscript.tbl_log where user not like 'admi%' group by hostname");
 
 while($row = mysqli_fetch_array($query)){
     $log_num = $row['log_no'];
@@ -22,7 +22,7 @@ while($row = mysqli_fetch_array($query)){
     $scan_time = $row['scabe_time'];
 
     
-    $port = mysqli_query($con,"SELECT * FROM imonitor where hostname like '$hostname'");
+    $port = mysqli_query($con,"SELECT * FROM logonscript.tbl_port where hostname like '$hostname'");
         
     $portcount = mysqli_num_rows($port);
     if ($portcount > 0){
