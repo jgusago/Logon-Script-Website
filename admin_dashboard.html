@@ -51,70 +51,54 @@
 	{
 		background-color:#eae91796;
 	}
+	.dropbtn 
+	{
+		background-color: #3498DB;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	}	
+	/* Dropdown button on hover & focus */
+	.dropbtn:hover, .dropbtn:focus 
+	{
+		background-color: #2980B9;
+	}
+	/* The container <div> - needed to position the dropdown content */
 	.dropdown 
 	{
-		overflow: hidden;
 		position: relative;
 		display: inline-block;
 	}
-	.dropdown .dropbtn
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content 
 	{
-		padding:10px 20px 10px 20px;
-		font-size:20px;
-		font-family: Century Gothic;
-		text-decoration: none;
-		border:none;
-		outline:none;
-		color: black;
-		background-color: #4ca51f8f;
-		margin-top:5px;
-		height:60px;
-	}
-	.dropdown:hover .dropbtn
-	{
-		background-color: #eae91796;
-	}
-	.dropdown-content
-	{
-		/* display: none;
-		position: absolute;
-		min-width:270px;
-
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		z-index: 1;
-		background-color: #eae917c2;
-		padding-left:10px; */
-
-		/* display: none;
+		display: none;
 		position: absolute;
 		background-color: #f1f1f1;
 		min-width: 160px;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		z-index: 1; */
-
-		display: none;
-		position: absolute;
-		background-color: #f9f9f9;
-		min-width: 160px;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 		z-index: 1;
-	}	
-	.dropdown-content a {
-		float: left;
+	}
+	/* Links inside the dropdown */
+	.dropdown-content a 
+	{
 		color: black;
 		padding: 12px 16px;
 		text-decoration: none;
 		display: block;
-		text-align: left;
 	}
-	.dropdown-content a:hover {
-		background-color: #ddd;
+	/* Change color of dropdown links on hover */
+	.dropdown-content a:hover 
+	{
+		background-color: #ddd
 	}
-
-	.dropdown:hover .dropdown-content {
-		display: block;
-	}
-	
+	/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+	.show 
+	{
+		display:block;
+	}	
 	</style>
 </head>
 <body>
@@ -169,23 +153,15 @@
 
 		<!-- Sidebar -->
 		<div class="side-navbar">
-			<a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png"> Dashboard</a>
+			<a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
 			<div class="dropdown">
-				<!-- <button onclick="myFunction()" class="dropbtn"><img src="icons/computer.png"> Computer List</button> -->
-
-				<!-- <button class="dropbtn"><img src="icons/computer.png"> Computer List <i class="glyphicon glyphicon-down"></i></button>
-				<div class="dropdown-content">
-					<a href="#">Marvin 5th</a>
-					<a href="#">Marvin10th</a>
-				</div> -->
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img src="icons/computer.png"> Computer List
-					<span class="caret"></span></button>
-					<ul class="dropdown-menu">
-					  <li><a href="#">HTML</a></li>
-					  <li><a href="#">CSS</a></li>
-					  <li><a href="#">JavaScript</a></li>
-					</ul>
-			</div>
+				<button onclick="myFunction()" class="dropbtn"><img src="icons/computer.png" alt="computer list"> Dropdown</button>
+				<div id="myDropdown" class="dropdown-content">
+				  <a href="#">Link 1</a>
+				  <a href="#">Link 2</a>
+				  <a href="#">Link 3</a>
+				</div>
+			  </div>
 
 			<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
 			<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</b></a>
@@ -193,27 +169,29 @@
 		<!-- End of Sidebar -->
 
 		<script>
-			/* When the user clicks on the button, 
-			toggle between hiding and showing the dropdown content */
-			function myFunction() {
+			function myFunction() 
+			{
 				document.getElementById("myDropdown").classList.toggle("show");
 			}
-			
-			// Close the dropdown if the user clicks outside of it
-			window.onclick = function(event) {
-			  if (!event.target.matches('.dropbtn')) {
-			
-				var dropdowns = document.getElementsByClassName("dropdown-content");
-				var i;
-				for (i = 0; i < dropdowns.length; i++) {
-				  var openDropdown = dropdowns[i];
-				  if (openDropdown.classList.contains('show')) {
-					openDropdown.classList.remove('show');
-				  }
+
+				// Close the dropdown menu if the user clicks outside of it
+			window.onclick = function(event) 
+			{
+				if (!event.target.matches('.dropbtn')) 
+				{
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					var i;
+					for (i = 0; i < dropdowns.length; i++) 
+					{
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) 
+						{
+							openDropdown.classList.remove('show');
+						}
+					}
 				}
-			  }
 			}
-			</script>
+		</script>
 
 		<div class="footer">
 			<div>
