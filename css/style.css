@@ -27,6 +27,9 @@ h1{
     font-size:1.3em;
 }
 
+.notif{
+    text-align: center
+}
 .flex-container{
     display:flex;
     height: 100%;
@@ -36,7 +39,7 @@ h1{
     justify-content: center;
     text-align: center;
     padding:180px 0px;;
-    border:1px solid red;
+    
 }
 
 .row{
