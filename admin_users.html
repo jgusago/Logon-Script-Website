@@ -8,102 +8,134 @@
 	<link rel="stylesheet" type="text/css" href="">
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<style type="text/css">
-	body
-	{
-		background-color:#e3e3e3;
-		font-family:Verdana, Tahoma, sans-serif;
-	}
-	.side-navbar
-	{
-		width:270px;
-		position:fixed;
-		height:100%;
-		border-radius:0px;
-		z-index: -1;
-		overflow: hidden;
-		background-color:#fffbfb;
-		padding-top:65px;
-	}
-	.side-navbar a 
-	{
-		padding:10px 20px 10px 20px;
-		font-size:20px;
-		font-family: Century Gothic;
-		text-decoration: none;
-		color:black;
-		display: block;
-		background-color: #4ca51f8f;
-		margin-top:5px;
-		height:60px;
-	}
-	.side-navbar a:hover, .dropdown-btn:hover
-	{
-		background-color:#eae91796;
-    	color: black;
-	}
-	.side-navbar img 
-	{
-		margin-right:10px;
-		width: 35px;
-    	height: 40px;
-	}
-	.side-navbar .active
-	{
-		background-color:#eae91796;
-	}
-	.dropbtn 
-	{
-		background-color: #4ca51f8f;
-		color: black;
-		/* padding:10px 20px 10px 20px; */
-		font-size: 20px;
-		border: none;
-		cursor: pointer;
-		font-family: Century Gothic;
-		height:60px;
-		margin-top:5px;
-		width:270px;
-	}	
-		/* Dropdown button on hover & focus */
-	.dropbtn:hover, .dropbtn:focus 
-	{
-		background-color: #eae91796;
-	}
-	/* The container <div> - needed to position the dropdown content */
-	.dropdown 
-	{
-		position: relative;
-		display: inline-block;
-	}
-	/* Dropdown Content (Hidden by Default) */
-	.dropdown-content 
-	{
-		display: none;
-		position: absolute;
-		background-color: #f1f1f1;
-		min-width: 270px;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		z-index: 1;
-		text-align: center;
-	}
-	/* Links inside the dropdown */
-	.dropdown-content a 
-	{
-		color: black;
-		padding: 12px 16px;
-		text-decoration: none;
-		display: block;
-	}
-	/* Change color of dropdown links on hover */
-	.dropdown-content a:hover 
-	{
-		background-color: #ddd
-	}
-	/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-	.show 
-	{
-		display:block;
-	}	
+		body
+		{
+			background-color:#e3e3e3;
+			font-family:Verdana, Tahoma, sans-serif;
+		}
+		.side-navbar
+		{
+			width:270px;
+			position:fixed;
+			height:100%;
+			border-radius:0px;
+			z-index: -1;
+			overflow: hidden;
+			background-color:#fffbfb;
+			padding-top:65px;
+		}
+		.side-navbar a 
+		{
+			padding:10px 20px 10px 20px;
+			font-size:20px;
+			font-family: Century Gothic;
+			text-decoration: none;
+			color:black;
+			display: block;
+			background-color: #4ca51f8f;
+			margin-top:5px;
+			height:60px;
+		}
+		.side-navbar a:hover, .dropdown-btn:hover
+		{
+			background-color:#eae91796;
+			color: black;
+		}
+		.side-navbar img 
+		{
+			margin-right:10px;
+			width: 35px;
+			height: 40px;
+		}
+		.side-navbar .active
+		{
+			background-color:#eae91796;
+		}
+		.dropbtn 
+		{
+			background-color: #4ca51f8f;
+			color: black;
+			/* padding:10px 20px 10px 20px; */
+			font-size: 20px;
+			border: none;
+			cursor: pointer;
+			font-family: Century Gothic;
+			height:60px;
+			margin-top:5px;
+			width:270px;
+		}	
+			/* Dropdown button on hover & focus */
+		.dropbtn:hover, .dropbtn:focus 
+		{
+			background-color: #eae91796;
+		}
+		/* The container <div> - needed to position the dropdown content */
+		.dropdown 
+		{
+			position: relative;
+			display: inline-block;
+		}
+		/* Dropdown Content (Hidden by Default) */
+		.dropdown-content 
+		{
+			display: none;
+			position: absolute;
+			background-color: #f1f1f1;
+			min-width: 270px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+			text-align: center;
+		}
+		/* Links inside the dropdown */
+		.dropdown-content a 
+		{
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+		}
+		/* Change color of dropdown links on hover */
+		.dropdown-content a:hover 
+		{
+			background-color: #ddd
+		}
+		/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+		.show 
+		{
+			display:block;
+		}	
+		.info
+		{
+			width:100%;
+			background-color:#103d8a;
+			position: absolute;
+			top: 7.6%;
+			padding: 10px;
+			margin-left: 273px;
+		}
+		.info p
+		{
+			color: white;
+			font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+			padding-top:5px;
+			padding-left:5px;
+			font-size:20px;
+		}
+		.container table
+		{
+			width:1590px;
+			margin-top:250px;
+			margin-left:-90px;
+			background-color:white;
+		}
+		.table-bordered th, td
+		{
+			text-align: center;
+		}
+		.table-bordered tr
+		{
+			padding-bottom:25px;
+		}
 	</style>
 </head>
 <body>
@@ -199,7 +231,6 @@
 		</script>
 		<!-- End -->
 
-		<!-- Table -->
 		<div class="info">
 			<p><strong>User Accounts</strong></p>
 		</div>
@@ -328,7 +359,6 @@
 				</tbody>
 			</table>
 		</div>
-		<!-- End of Table -->
 
 
 	<script src="bootstrap/js/jquery.min.js"></script>
