@@ -2,7 +2,7 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
 //Connection
 
-echo "Hostname|User|Domain|Branch|Scan Time|IP|Date Modefied|Recent IP|Date Changed|iMonitor Status|Running Services|sysFile Setting|Log no";
+echo "Hostname|User|Domain|Branch|Scan Time|IP|Date Modefied|Recent IP|Date Changed|iMonitor Status|Connection Status|Running Services|sysFile Setting|Log no";
 
 $query = mysqli_query($con,"SELECT * FROM logonscript.tbl_log where user not like 'admi%' group by hostname");
 
@@ -28,15 +28,15 @@ while($row = mysqli_fetch_array($query)){
     if ($portcount > 0){
     while ($row = mysqli_fetch_array($port)){
         
-        $portstatus = $row['connection_status'];
+        $connections_status = $row['connection_status'];
     }
     }
     else
     {
-        $portstatus = "unscanned";
+        $connections_status = "unscanned";
     }
 
-    echo "#$hostname|$user|$domain_name|$branch|$scan_time|$ip_address|$ip_date_modefied|$old_ip_address|$old_ip_modefied|$iMonitor_Status|$services|$sysSetting_File|$log_num";
+    echo "#$hostname|$user|$domain_name|$branch|$scan_time|$ip_address|$ip_date_modefied|$old_ip_address|$old_ip_modefied|$iMonitor_Status|$connections_status|$services|$sysSetting_File|$log_num";
 }
 
 mysqli_close($con);
