@@ -104,6 +104,18 @@
 	{
 		display:block;
 	}	
+	#showButton
+	{
+		padding:10px 20px 10px 20px;
+		font-size:20px;
+		font-family: Century Gothic;
+		text-decoration: none;
+		color:black;
+		display: block;
+		background-color: #4ca51f8f;
+		margin-top:100px;
+		height:60px;
+	}
 	</style>
 </head>
 <body>
@@ -169,14 +181,29 @@
 			  </div>
 
 			<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
-			<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</b></a>
+			<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
 		</div>
 		<!-- End of Sidebar -->
+
+		<div id=showButton>
+			<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
+			<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
+		</div>
 
 		<script>
 			function myFunction() 
 			{
 				document.getElementById("myDropdown").classList.toggle("show");
+				var x = document.getElementById("showButton");
+
+				if (x.style.display =="none")
+				{
+					x.style.display= "block";
+				}
+				else
+				{
+					x.style.display = "none";
+				}
 			}
 
 				// Close the dropdown menu if the user clicks outside of it
@@ -191,8 +218,7 @@
 						var openDropdown = dropdowns[i];
 						if (openDropdown.classList.contains('show')) 
 						{
-							openDropdown.classList.remove('show');
-							overflow:hidden
+							openDropdown.classList.remove('show');							
 						}
 					}
 				}
