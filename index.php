@@ -89,7 +89,7 @@ if(isset($_SESSION["username"])) {
       padding-top: 10px;
       padding-bottom: 10px;
       background-color: #ffffff;
-      border-radius: 4px;
+      /*border-radius: 4px;*/
       margin-top: 10px;
       margin-bottom: 20px;
       width: 400px;
@@ -100,7 +100,7 @@ if(isset($_SESSION["username"])) {
     <div class="container">
         <img alt="logo" src="icons/sky_luster.png">
         <div class="header">
-            <div class="error">
+            <div>
                 <?php
                 if(isset($_GET['msg']))
                 {                    
