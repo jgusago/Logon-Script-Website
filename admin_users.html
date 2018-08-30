@@ -8,206 +8,240 @@
 	<link rel="stylesheet" type="text/css" href="">
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<style type="text/css">
-		body
-		{
-			background-color:#e3e3e3;
-			font-family:Verdana, Tahoma, sans-serif;
-		}
-		.side-navbar
-		{
-			width:270px;
-			position:fixed;
-			height:100%;
-			border-radius:0px;
-			z-index: -1;
-			overflow: hidden;
-			background-color:#fffbfb;
-			padding-top:65px;
-		}
-		.side-navbar a 
-		{
-			padding:10px 20px 10px 20px;
-			font-size:20px;
-			font-family: Century Gothic;
-			text-decoration: none;
-			color:black;
-			display: block;
-			background-color: #4ca51f8f;
-			margin-top:5px;
-			height:60px;
-		}
-		.side-navbar a:hover, .dropdown-btn:hover
-		{
-			background-color:#eae91796;
-			color: black;
-		}
-		.side-navbar img 
-		{
-			margin-right:10px;
-			width: 35px;
-			height: 40px;
-		}
-		.side-navbar .active
-		{
-			background-color:#eae91796;
-		}
-		.dropbtn 
-		{
-			background-color: #4ca51f8f;
-			color: black;
-			/* padding:10px 20px 10px 20px; */
-			font-size: 20px;
-			border: none;
-			cursor: pointer;
-			font-family: Century Gothic;
-			height:60px;
-			margin-top:5px;
-			width:270px;
-		}	
-			/* Dropdown button on hover & focus */
-		.dropbtn:hover, .dropbtn:focus 
-		{
-			background-color: #eae91796;
-		}
-		/* The container <div> - needed to position the dropdown content */
-		.dropdown 
-		{
-			position: relative;
-			display: inline-block;
-		}
-		/* Dropdown Content (Hidden by Default) */
-		.dropdown-content 
-		{
-			display: none;
-			position: absolute;
-			background-color: #f1f1f1;
-			min-width: 270px;
-			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			z-index: 1;
-			text-align: center;
-		}
-		/* Links inside the dropdown */
-		.dropdown-content a 
-		{
-			color: black;
-			padding: 12px 16px;
-			text-decoration: none;
-			display: block;
-		}
-		/* Change color of dropdown links on hover */
-		.dropdown-content a:hover 
-		{
-			background-color: #ddd
-		}
-		/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-		.show 
-		{
-			display:block;
-		}	
-		.info
-		{
-			width:100%;
-			background-color:#103d8a;
-			position: absolute;
-			top: 7.6%;
-			padding: 10px;
-			margin-left: 273px;
-		}
-		.info p
-		{
-			color: white;
-			font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-			padding-top:5px;
-			padding-left:5px;
-			font-size:20px;
-		}
-		.container table
-		{
-			width:1590px;
-			margin-top:250px;
-			margin-left:-90px;
-			background-color:white;
-		}
-		.table-bordered th, td
-		{
-			text-align: center;
-		}
-		th
-		{
-			height:50px;
-		}
-		thead th
-		{
-			padding-bottom:15px;
-		}
+	body
+	{
+		background-color:#e3e3e3;
+		font-family:Verdana, Tahoma, sans-serif;
+	}
+	.side-navbar
+	{
+		width:270px;
+		position:fixed;
+		height:100%;
+		border-radius:0px;
+		z-index: -1;
+		overflow: hidden;
+		background-color:#fffbfb;
+		padding-top:65px;
+	}
+	.side-navbar a 
+	{
+		padding:10px 20px 10px 20px;
+		font-size:20px;
+		font-family: Century Gothic;
+		text-decoration: none;
+		color:black;
+		display: block;
+		background-color: #4ca51f8f;
+		margin-top:5px;
+		height:60px;
+	}
+	.side-navbar a:hover, .dropdown-btn:hover
+	{
+		background-color:#eae91796;
+    	color: black;
+	}
+	.side-navbar img 
+	{
+		margin-right:10px;
+		width: 35px;
+    	height: 40px;
+	}
+	.side-navbar .active
+	{
+		background-color:#eae91796;
+	}
+	.dropbtn 
+	{
+		background-color: #4ca51f8f;
+		color: black;
+		/* padding:10px 20px 10px 20px; */
+		font-size: 20px;
+		border: none;
+		cursor: pointer;
+		font-family: Century Gothic;
+		height:60px;
+		margin-top:5px;
+		width:270px;
+	}	
+		/* Dropdown button on hover & focus */
+	.dropbtn:hover, .dropbtn:focus 
+	{
+		background-color: #eae91796;
+	}
+	/* The container <div> - needed to position the dropdown content */
+	.dropdown 
+	{
+		position: relative;
+		display: inline-block;
+	}
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content 
+	{
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 270px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		text-align: center;
+	}
+	/* Links inside the dropdown */
+	.dropdown-content a 
+	{
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+	/* Change color of dropdown links on hover */
+	.dropdown-content a:hover 
+	{
+		background-color: #ddd
+	}
+	/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+	.show 
+	{
+		display:block;
+	}
+	.info
+	{
+		width:100%;
+		background-color:#103d8a;
+		position: absolute;
+		top: 7.6%;
+		padding: 10px;
+		margin-left: 273px;
+		position:fixed;
+	}
+	.info p
+	{
+		color: white;
+		font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		padding-top:5px;
+		padding-left:5px;
+		font-size:20px;
+	}
+	.container table
+	{
+		width:1590px;
+		margin-top:250px;
+		margin-left:-90px;
+		background-color:white;
+	}
+	.table-bordered th, td
+	{
+		text-align: center;
+	}
+	th
+	{
+		height:50px;
+	}
+	thead th
+	{
+		padding-bottom:15px;
+	}
 	</style>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color:#fffbfb; height:70px; padding:10px;">
-		<div class="navbar-header">
-			<img src="icons/sky_luster.png" style="width:50px; height: 55px; ">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <label style="font-family: Times New Roman; font-size: 28px; padding-left:8px; padding-top:8px;">iMonitoring</label>
-
-        <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:20px; padding-top:5px;">
-	            <li><a href="login.html"><img src="icons/Mail02-512.png" style="margin-left:-40px; margin-top:-16px; width:40px; height:40px;"></a></li> 
-	            <li><a href="login.html"><img src="icons/notification-512.png" style="width:40px; margin-top:-15px; height:35px; margin-right:15px; padding-top:5px;"></a></li>
-	            <li class="dropdown">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="contacts.html" style = "font-family: Century Gothic; padding-top: 7px; padding-left: 20px; color: black;"><i class="glyphicon glyphicon-user" style="font-size:25px;"></i> Jerry Chen<span class="glyphicon glyphicon-down"></span>
-	            	<span class="caret"></span></a>
-	            		<ul class="dropdown-menu" role="menu">
-	            			<li style="font-size:18px; font-family: Century Gothic;" class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
-	            			<li style="font-size:18px; padding:10px;"><a href="#">Account Settings</a></li>
-	            			<li class="divider"></li>
-	            			<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
-	            		</ul>
-	            </li>
-	        </ul>
-	</nav>
-	<!-- End Navigation-->
-
- 	<!-- Modal -->
-		<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
-		<div class="modal-dialog modal-md" role="document">
-			<div class="modal-content">
-				<div class="modal-header" style="background-color:#16811430;">
-					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color:#fffbfb; height:70px; padding:10px;">
+				<div class="navbar-header">
+					<img src="icons/sky_luster.png" style="width:50px; height: 55px; ">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 				</div>
-				<div class="body">
-					<form>
-						<p style="padding: 20px 20px 10px 15px; font-size: 18px;">Are you sure you want to logout?</p>
-					</form>
+				<label style="font-family: Times New Roman; font-size: 28px; padding-left:8px; padding-top:8px;">iMonitoring</label>
+		
+				<div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+					<ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:20px; padding-top:5px;">
+						<li><a href="login.html"><img src="icons/Mail02-512.png" style="margin-left:-40px; margin-top:-16px; width:40px; height:40px;"></a></li> 
+						<li><a href="login.html"><img src="icons/notification-512.png" style="width:40px; margin-top:-15px; height:35px; margin-right:15px; padding-top:5px;"></a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="contacts.html" style = "font-family: Century Gothic; padding-top: 7px; padding-left: 20px; color: black;"><i class="glyphicon glyphicon-user" style="font-size:25px;"></i> Jerry Chen<span class="glyphicon glyphicon-down"></span>
+							<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li style="font-size:18px; font-family: Century Gothic;" class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
+									<li style="font-size:18px; padding:10px;"><a href="#">Account Settings</a></li>
+									<li class="divider"></li>
+									<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+								</ul>
+						</li>
+					</ul>
+				</nav>
+		
+			<!-- End Navigation-->
+			 <!-- Modal -->
+				<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+				<div class="modal-dialog modal-md" role="document">
+					<div class="modal-content">
+						<div class="modal-header" style="background-color:#16811430;">
+							<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="body">
+							<form>
+								<p style="padding: 20px 20px 10px 15px; font-size: 18px;">Are you sure you want to logout?</p>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
+							<a class="btn btn-success" href="index.html" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+						</div>
+					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-success" href="login.html" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
 				</div>
-			</div>
-		</div>
-		</div>
-
-		<!-- Sidebar -->
-	<div class="side-navbar">
-		<a href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
-		<div class="dropdown">
-			<button onclick="myFunction()" class="dropbtn"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
-			<div id="myDropdown" class="dropdown-content">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-			</div>
-		</div>
-
-		<a class ="active" href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
-		<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</b></a>
-	</div>
-	<!-- End of Sidebar -->
+		
+				<!-- Sidebar -->
+				<div class="side-navbar">
+					<a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
+						<div id="myDropdown" class="dropdown-content">
+						  <a href="admin_viewing.html">Marvin 5th</a>
+						  <a href="admin_viewing.html">Marvin 10th</a>
+						  <a href="admin_viewing.html">B2B</a>
+						</div>
+					  </div>
+		
+					<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
+					<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
+				</div>
+				<!-- End of Sidebar -->
+		
+				<!-- <div id="showButton">
+					<div class="side-nav-bar">
+						<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
+						<a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
+					</div>
+				</div> -->
+		
+				<script>
+					function myFunction() 
+					{
+						document.getElementById("myDropdown").classList.toggle("show");
+						// document.getElementById("showButton").classList.toggle("show");
+					}
+		
+						// Close the dropdown menu if the user clicks outside of it
+					window.onclick = function(event) 
+					{
+						if (!event.target.matches('.dropbtn')) 
+						{
+							var dropdowns = document.getElementsByClassName("dropdown-content");
+							var i;
+							for (i = 0; i < dropdowns.length; i++) 
+							{
+								var openDropdown = dropdowns[i];
+								if (openDropdown.classList.contains('show')) 
+								{
+									openDropdown.classList.remove('show');							
+								}
+							}
+						}
+					}
+				</script>
 
 	<div class="info">
 		<p><strong>User Accounts</strong></p>
@@ -338,33 +372,8 @@
 		</table>
 	</div>
 
-	<script>
-		function myFunction() 
-		{
-			document.getElementById("myDropdown").classList.toggle("show");
-		}
-
-			// Close the dropdown menu if the user clicks outside of it
-		window.onclick = function(event) 
-		{
-			if (!event.target.matches('.dropbtn')) 
-			{
-				var dropdowns = document.getElementsByClassName("dropdown-content");
-				var i;
-				for (i = 0; i < dropdowns.length; i++) 
-				{
-					var openDropdown = dropdowns[i];
-					if (openDropdown.classList.contains('show')) 
-					{
-						openDropdown.classList.remove('show');
-					}
-				}
-			}
-		}
-		</script>
-
-	<script src="bootstrap/js/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="Bootstrap/js/jquery.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>

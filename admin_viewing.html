@@ -103,7 +103,7 @@
 	.show 
 	{
 		display:block;
-    }	
+	}	
     .info
 	{
 		width:100%;
@@ -113,6 +113,7 @@
 		padding: 10px;
         margin-left: 273px;
         height:45px;
+        position: fixed;
 	}
 	.info p
 	{
@@ -153,78 +154,107 @@
     {
         margin-left:80px;
     }
+    .modal-body
+    {
+        padding:20px;
+    }
     
    
 
 	</style>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color:#fffbfb; height:70px; padding:10px;">
-		<div class="navbar-header">
-			<img src="icons/sky_luster.png" style="width:50px; height: 55px; ">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <label style="font-family: Times New Roman; font-size: 28px; padding-left:8px; padding-top:8px;">iMonitoring</label>
-
-        <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:20px; padding-top:5px;">
-	            <li><a href="login.html"><img src="icons/Mail02-512.png" style="margin-left:-40px; margin-top:-16px; width:40px; height:40px;"></a></li> 
-	            <li><a href="login.html"><img src="icons/notification-512.png" style="width:40px; margin-top:-15px; height:35px; margin-right:15px; padding-top:5px;"></a></li>
-	            <li class="dropdown">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="contacts.html" style = "font-family: Century Gothic; padding-top: 7px; padding-left: 20px; color: black;"><i class="glyphicon glyphicon-user" style="font-size:25px;"></i> Jerry Chen<span class="glyphicon glyphicon-down"></span>
-	            	<span class="caret"></span></a>
-	            		<ul class="dropdown-menu" role="menu">
-	            			<li style="font-size:18px; font-family: Century Gothic;" class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
-	            			<li style="font-size:18px; padding:10px;"><a href="#">Account Settings</a></li>
-	            			<li class="divider"></li>
-	            			<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
-	            		</ul>
-	            </li>
-	        </ul>
-	    </nav>
-    <!-- End Navigation-->
-    
- 	<!-- Modal -->
-		<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
-		<div class="modal-dialog modal-md" role="document">
-			<div class="modal-content">
-				<div class="modal-header" style="background-color:#16811430;">
-					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				</div>
-				<div class="body">
-					<form>
-						<p style="padding: 20px 20px 10px 15px; font-size: 18px;">Are you sure you want to logout?</p>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-success" href="index.html" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
-				</div>
-			</div>
-		</div>
-        </div>
-    <!-- End of Modal -->
-
-		<!-- Sidebar -->
-		<div class="side-navbar">
-			<a href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
-			<div class="dropdown">
-				<button onclick="myFunction()" class="dropbtn active"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
-				<div id="myDropdown" class="dropdown-content">
-				  <a href="#">Marvin 5th</a>
-				  <a href="admin_viewing.html">Marvin 10th</a>
-				  <a href="admin_viewing.html">B2B</a>
-				</div>
-			  </div>
-
-			<a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
-			<a href="#"><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
-		</div>
+        <nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color:#fffbfb; height:70px; padding:10px;">
+                <div class="navbar-header">
+                    <img src="icons/sky_luster.png" style="width:50px; height: 55px; ">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <label style="font-family: Times New Roman; font-size: 28px; padding-left:8px; padding-top:8px;">iMonitoring</label>
+        
+                <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+                    <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:20px; padding-top:5px;">
+                        <li><a href="login.html"><img src="icons/Mail02-512.png" style="margin-left:-40px; margin-top:-16px; width:40px; height:40px;"></a></li> 
+                        <li><a href="login.html"><img src="icons/notification-512.png" style="width:40px; margin-top:-15px; height:35px; margin-right:15px; padding-top:5px;"></a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="contacts.html" style = "font-family: Century Gothic; padding-top: 7px; padding-left: 20px; color: black;"><i class="glyphicon glyphicon-user" style="font-size:25px;"></i> Jerry Chen<span class="glyphicon glyphicon-down"></span>
+                            <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li style="font-size:18px; font-family: Century Gothic;" class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
+                                    <li style="font-size:18px; padding:10px;"><a href="#">Account Settings</a></li>
+                                    <li class="divider"></li>
+                                    <li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+                                </ul>
+                        </li>
+                    </ul>
+                </nav>
+        
+            <!-- End Navigation-->
+             <!-- Modal -->
+                <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:#16811430;">
+                            <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="body">
+                            <form>
+                                <p style="padding: 20px 20px 10px 15px; font-size: 18px;">Are you sure you want to logout?</p>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
+                            <a class="btn btn-success" href="index.html" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        
+                <!-- Sidebar -->
+                <div class="side-navbar">
+                    <a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="admin_viewing.html">Marvin 5th</a>
+                          <a href="admin_viewing.html">Marvin 10th</a>
+                          <a href="admin_viewing.html">B2B</a>
+                        </div>
+                      </div>
+        
+                    <a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
+                    <a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
+                </div>
         <!-- End of Sidebar -->
+
+        <script>
+            function myFunction() 
+            {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                    // document.getElementById("showButton").classList.toggle("show");
+            }
+    
+                    // Close the dropdown menu if the user clicks outside of it
+             window.onclick = function(event) 
+            {
+                    if (!event.target.matches('.dropbtn')) 
+                    {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) 
+                        {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) 
+                            {
+                                openDropdown.classList.remove('show');							
+                            }
+                        }
+                    }
+            }
+        </script>
 
         <div class="info">
             <p><strong>MARVIN 5TH | COMPUTER LIST</strong></p>
@@ -393,55 +423,60 @@
 
         <div id="myModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
-                <div class="modal-dialog modal-lg" style="position:fixed; width:100%; height:100%;">
+                <div class="modal-dialog modal-md" style="position:fixed; width:100%; height:100%;">
                     <div class="modal-content" style="border:2px solid #3c7dcf; box-shadow:none;">
                         <div class="modal-header" style="background-color:#f5f5f5;">
                             <button type ="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 style="font-size:2em;">Log Records / Computer Details</h4>
                         </div>
-                        <div class="modal-body" style="margin-left:-180px; width:100%; ">
-                            <div class="modal-container" style="margin: 10px; padding-left: 100px; padding-right: 50px;">
-                                <table class="table table-bordered" style="margin-left:90px;">
-                                    <thead>
-                                        <tr style="padding:50px;">
-                                            <th style="padding-bottom:15px;">User</th>
-                                            <th style="padding-bottom:15px;">Domain</th>
-                                            <th style="padding-bottom:15px;">Hostname</th>
-                                            <th style="padding-bottom:15px;">IP Address</th>
-                                            <th style="padding-bottom:15px;">IP Address Modified</th>
-                                            <th style="padding-bottom:15px;">Old IP Address</th>
-                                            <th style="padding-bottom:15px;">Old IP Address Modified</th>
-                                            <th style="padding-bottom:15px;">iMonitor Status</th>
-                                            <th style="padding-bottom:15px;">Services</th>
-                                            <th style="padding-bottom:15px;">SysSetting File</th>
-                                            <th style="padding-bottom:15px;">Branch</th>
-                                            <th style="padding-bottom:15px;">Scan Time</th>
-                                            <th style="padding-bottom:15px;">Connection Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="padding-top:15px;">Camille</td>
-                                            <td style="padding-top:15px;">NN</td>
-                                            <td style="padding-top:15px;">ITOMAU033022</td>
-                                            <td style="padding-top:15px;">172.16.33.22</td>
-                                            <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                                            <td style="padding-top:15px;"></td>
-                                            <td style="padding-top:15px;"></td>
-                                            <td style="padding-top:15px;">Running</td>
-                                            <td style="padding-top:15px;">Msysys.exe<br>Mskes.exe</td>
-                                            <td style="padding-top:15px;">Found</td>
-                                            <td style="padding-top:15px;">Marvin(IT)</td>
-                                            <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                                            <td style="padding-top:15px;"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="modal-body" style="margin-left:-180px; width:97%; ">
+                            <div class="panel panel-default" style="margin-left:200px; padding-right:-30px; width:100%">
+                                <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Logs</div>
+                                <div class="panel-body" style="padding:10px; margin-left:-200px; width:100%">
+                                    <div class="modal-container" style="margin: 10px; padding-left: 120px; margin-right: -80px;">
+                                        <table class="table table-bordered" style="margin-left:90px;">
+                                            <thead>
+                                                <tr style="padding:50px;">
+                                                    <th style="padding-bottom:15px;">User</th>
+                                                    <th style="padding-bottom:15px;">Domain</th>
+                                                    <th style="padding-bottom:15px;">Hostname</th>
+                                                    <th style="padding-bottom:15px;">IP Address</th>
+                                                    <th style="padding-bottom:15px;">IP Address Modified</th>
+                                                    <th style="padding-bottom:15px;">Old IP Address</th>
+                                                    <th style="padding-bottom:15px;">Old IP Address Modified</th>
+                                                    <th style="padding-bottom:15px;">iMonitor Status</th>
+                                                    <th style="padding-bottom:15px;">Services</th>
+                                                    <th style="padding-bottom:15px;">SysSetting File</th>
+                                                    <th style="padding-bottom:15px;">Branch</th>
+                                                    <th style="padding-bottom:15px;">Scan Time</th>
+                                                    <th style="padding-bottom:15px;">Connection Status</th>
+                                                </tr>
+                                             </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding-top:15px;">Camille</td>
+                                                    <td style="padding-top:15px;">NN</td>
+                                                    <td style="padding-top:15px;">ITOMAU033022</td>
+                                                    <td style="padding-top:15px;">172.16.33.22</td>
+                                                    <td style="padding-top:15px;">Aug-08-2018 02:00</td>
+                                                    <td style="padding-top:15px;"></td>
+                                                    <td style="padding-top:15px;"></td>
+                                                    <td style="padding-top:15px;">Running</td>
+                                                    <td style="padding-top:15px;">Msysys.exe<br>Mskes.exe</td>
+                                                    <td style="padding-top:15px;">Found</td>
+                                                    <td style="padding-top:15px;">Marvin(IT)</td>
+                                                    <td style="padding-top:15px;">Aug-08-2018 02:00</td>
+                                                    <td style="padding-top:15px;"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                             <div class="panel panel-default" style="margin-left:200px; width:90%">
                                 <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Details</div>
-                                <div class="panel-body" style="padding:20px; margin-left:-200px; width:90%">
-                                    <div class="modal-container" style="margin: 10px; padding-left: 100px; padding-right: 50px;">
+                                <div class="panel-body" style="padding:20px; margin-left:-200px; width:100%">
+                                    <div class="modal-container" style="margin: 10px; padding-left: 110px; padding-right: 50px;">
                                         <table class="table table-bordered" style="margin-left:90px;">
                                             <thead>
                                                 <tr style="padding:50px;">
@@ -456,13 +491,13 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td style="padding-top:15px;">ITOMAU033022</td>
-                                                    <td style="padding-top:15px;">Intel(R) Core(TM) i5-6400</td>
-                                                    <td style="padding-top:15px;"></td>
-                                                    <td style="padding-top:15px;">2C-FD-A1-74-0E-9C</td>
-                                                    <td style="padding-top:15px;"></td>
-                                                    <td style="padding-top:15px;"></td>
-                                                    <td style="padding-top:15px;">Aug-08-2018 02:00</td>
+                                                    <td style="padding:15px;">ITOMAU033022</td>
+                                                    <td style="padding:15px;">Intel(R) Core(TM) i5-6400</td>
+                                                    <td style="padding:15px;"></td>
+                                                    <td style="padding:15px;">2C-FD-A1-74-0E-9C</td>
+                                                    <td style="padding:15px;"></td>
+                                                    <td style="padding:15px;"></td>
+                                                    <td style="padding:15px;">Aug-08-2018 02:00</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -478,34 +513,6 @@
                     </div>   
                 </div>
         </div>
-        
-		<script>
-			function myFunction() 
-			{
-				document.getElementById("myDropdown").classList.toggle("show");
-				//document.getElementById("showButton").classList.toggle("show");
-			}
-
-				// Close the dropdown menu if the user clicks outside of it
-			window.onclick = function(event) 
-			{
-				if (!event.target.matches('.dropbtn')) 
-				{
-					var dropdowns = document.getElementsByClassName("dropdown-content");
-					var i;
-					for (i = 0; i < dropdowns.length; i++) 
-					{
-						var openDropdown = dropdowns[i];
-						if (openDropdown.classList.contains('show')) 
-						{
-							openDropdown.classList.remove('show');							
-						}
-					}
-				}
-			}
-		</script>
-
-
 	<script src="Bootstrap/js/jquery.min.js"></script>
 	<script src="Bootstrap/js/bootstrap.min.js"></script>
 	
