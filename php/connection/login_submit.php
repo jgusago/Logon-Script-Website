@@ -19,7 +19,7 @@ include("php/connection/connection.php");
 				}
 			else
 				{
-					header("Location: ../index.php?msg=wrong");
+					header("Location: ../../index.php?msg=wrong");
 				}
     }  
     ?>                                              
