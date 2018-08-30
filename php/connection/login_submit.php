@@ -2,8 +2,8 @@
 session_start();
 include("connection.php");
   
-	   if (isset($_con))
-	   //if (isset($_POST['username']))
+	   if (isset($_con)){
+	   if (isset($_POST['username']))
 		{
 			$username = mysqli_real_escape_string($con, $_POST['username']);
 			$password = mysqli_real_escape_string($con, $_POST['password']);
@@ -22,6 +22,7 @@ include("connection.php");
 				{
 					header("Location: ../../index.php?msg=wrong");
 				}
-    }  
+		} 
+	} 
     ?>                                              
                                      
