@@ -100,11 +100,11 @@ if(isset($_SESSION["username"])) {
     <div class="container">
         <img alt="logo" src="icons/sky_luster.png">
         <div class="header">
-            <div>
+            <div class="error">
                 <?php
                 if(isset($_GET['msg']))
                 {                    
-                 echo "<p align='left' class='error'>Wrong username or password.</p>";
+                 echo "<p align='center' class='error'>Wrong username or password.</p>";
                 }
                 ?>
             </div>
