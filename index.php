@@ -92,7 +92,8 @@ if(isset($_SESSION["username"])) {
       border-radius: 4px;
       margin-top: 10px;
       margin-bottom: 20px;
-      width: 500px;
+      width: 400px;
+      float: center;
     }
     </style>
 </head>
