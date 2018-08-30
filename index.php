@@ -83,7 +83,7 @@ if(isset($_SESSION["username"])) {
 		margin-top: -20px;
     }
 
-    error
+    .error
     {
       color: #ffffff;
       padding-top: 10px;
