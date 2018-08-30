@@ -93,7 +93,6 @@ if(isset($_SESSION["username"])) {
       margin-top: 10px;
       margin-bottom: 20px;
       width: 400px;
-      align: center;
     }
     </style>
 </head>
@@ -105,7 +104,7 @@ if(isset($_SESSION["username"])) {
                 <?php
                 if(isset($_GET['msg']))
                 {                    
-                 echo "<p align='center' class='error'>Wrong username or password.</p>";
+                 echo "<p align='left' class='error'>Wrong username or password.</p>";
                 }
                 ?>
             </div>
