@@ -11,15 +11,15 @@ include("connection.php");
 			$row		= mysqli_fetch_array($query);
 			$num_row 	= mysqli_num_rows($query);
 			
-			if ($num_row = 1) 
+			if ($num_row = 0) 
 				{			
 					$_SESSION['username']=$row['username'];
-					header('location: ../../superadmin.php');
+					header("Location: index.php?msg=wrong");
 					
 				}
 			else
 				{
-					header("Location: index.php?msg=wrong");
+					header('Location: ../../superadmin.php');
 				}
     }  
     ?>                                              
