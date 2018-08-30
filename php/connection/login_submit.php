@@ -7,7 +7,7 @@ include("php/connection/connection.php");
 			$username = mysqli_real_escape_string($con, $_POST['username']);
 			$password = mysqli_real_escape_string($con, $_POST['password']);
 			
-			$query 		= mysqli_query($con, "SELECT * FROM sys_users WHERE  username='$username' and password='$password'");
+			$query 		= mysqli_query($con, "SELECT * FROM tbl_user WHERE  username='$username' and password='$password'");
 			$row		= mysqli_fetch_array($query);
 			$num_row 	= mysqli_num_rows($query);
 			
