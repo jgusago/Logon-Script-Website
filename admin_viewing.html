@@ -189,6 +189,10 @@
         height:25px;
         width:200px;
     }
+    .export
+    {
+        padding-right:120px;
+    }
 	</style>
 </head>
 <body>
@@ -263,86 +267,88 @@
         </div>
         <div class="container-table" style="overflow:hidden;">
             <div class="row">
-                    <table style="margin-left:287px; margin-top:110px; background-color: white; width:90%; padding:10px; margin-right:100px;">
-                        <tr class="tr-dept">
-                            <td><b>Sub Department:</b></td>
-                            <td><select name="branches">
-                                    <option value="ad"></option>
-                                    <option value="ad">Admin</option>
-                                    <option value="hr">HR</option>
-                                    <option value="fn">Finance</option>
-                                    <option value="om">IT-OM</option>
-                                    <option value="aud">Audit</option>
-                                    <option value="devja">Java Developers</option>\
-                                    <option value="devios">iOS Developers</option>
-                                    <option value="devand">Android Developers</option>
-                                    <option value="omnet">Networks</option>
-                                    <option value="omweb">OM-Web</option>
-                            </td>
-                        </tr>
-                        <tr class="tr-search">
-                            <td><b>Search:</b></td>
-                            <td><input type="text" name="search" style="width:400px;"></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a href="#" style="padding-left:600px;"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
-                            </td>
-                        </tr>
-                    </table>
+                <table style="margin-left:287px; margin-top:110px; background-color: white; width:90%; padding:10px; margin-right:100px;">
+                    <tr class="tr-dept">
+                        <td><b>Sub Department:</b></td>
+                        <td><select name="branches">
+                            <option value="ad"></option>
+                            <option value="ad">Admin</option>
+                            <option value="hr">HR</option>
+                            <option value="fn">Finance</option>
+                            <option value="om">IT-OM</option>
+                            <option value="aud">Audit</option>
+                            <option value="devja">Java Developers</option>\
+                            <option value="devios">iOS Developers</option>
+                            <option value="devand">Android Developers</option>
+                            <option value="omnet">Networks</option>
+                            <option value="omweb">OM-Web</option>
+                        </td>
+                    </tr>
+                    <tr class="tr-search">
+                        <td><b>Search:</b></td>
+                        <td><input type="text" name="search" style="width:400px;"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="#logout" style="padding-left:550px;"><u><i class="glyphicon glyphicon-print"> Print as PDF</i></u></a>
+                        </td>
+                        <td class="export">
+                            <a href="#"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="container" >
-                    <table class="table table-bordered" style="position: sticky; margin-left:257px; margin-top:0px; margin-bottom:10px;">
-                        <thead>
-                            <tr>
-                                <th style="padding-bottom:15px;">No.</th>
-                                <th style="padding-bottom:15px;">Computer Name</th>
-                                <th style="padding-bottom:15px;">IP Address</th>
-                                <th style="padding-bottom:15px;">Platform</th>
-                                <th style="padding-bottom:15px;">Status</th>
-                                <th style="padding-bottom:15px;">Remarks</th>
-                                <th style="padding-bottom:15px;">Options</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Administator</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Administator</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Administator</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
+                <table class="table table-bordered" style="position: sticky; margin-left:257px; margin-top:3px; margin-bottom:10px;">
+                    <thead>
+                        <tr>
+                            <th style="padding-bottom:15px;">No.</th>
+                            <th style="padding-bottom:15px;">Computer Name</th>
+                            <th style="padding-bottom:15px;">IP Address</th>
+                            <th style="padding-bottom:15px;">Platform</th>
+                            <th style="padding-bottom:15px;">Status</th>
+                            <th style="padding-bottom:15px;">Remarks</th>
+                            <th style="padding-bottom:15px;">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>ITOMAU03022</td>
+                            <td>172.16.33.22</td>
+                            <td>Windows PC</td>
+                            <td>On-line</td>
+                            <td>Administator</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>ITOMAU03022</td>
+                            <td>172.16.33.22</td>
+                            <td>Windows PC</td>
+                            <td>On-line</td>
+                            <td>Administator</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ITOMAU03022</td>
+                            <td>172.16.33.22</td>
+                            <td>Windows PC</td>
+                            <td>On-line</td>
+                            <td>Administator</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                            </td>
+                        </tr>
                             <tr>
                                 <td>4</td>
                                 <td>ITOMAU03022</td>
