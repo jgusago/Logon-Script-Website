@@ -85,13 +85,14 @@ if(isset($_SESSION["username"])) {
 
     .error
     {
-      color: #ffffff;
+      color: red;
       padding-top: 10px;
       padding-bottom: 10px;
-      background-color: #6ecd0b;
+      background-color: #ffffff;
       border-radius: 4px;
       margin-top: 10px;
       margin-bottom: 20px;
+      width: 500px;
     }
     </style>
 </head>
