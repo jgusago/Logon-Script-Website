@@ -11,7 +11,7 @@ include("connection.php");
 			$row		= mysqli_fetch_array($query);
 			$num_row 	= mysqli_num_rows($query);
 			
-			if ($num_row > 0) 
+			if ($num_row = 1) 
 				{			
 					$_SESSION['username']=$row['username'];
 					header('location: superadmin.php');
