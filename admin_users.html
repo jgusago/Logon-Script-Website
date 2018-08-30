@@ -175,6 +175,10 @@
 	{
 		width:320px;
 	}
+	.modal-form .btn-primary
+	{
+		width:320px;
+	}
 	.dropdown-dept select
 	{
 		width:320px;
@@ -301,7 +305,7 @@
 						<td>Marvin 5th</td>
 						<td>IT-OM Audit</td>
 						<td>Administator</td>
-						<td><a href="#addUser"><button class="btn btn-primary">Edit</a></button></td>
+						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 					</tr>
 					<tr>
 							<td>2</td>
@@ -310,7 +314,7 @@
 							<td>Marvin 5th</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>3</td>
@@ -319,7 +323,7 @@
 							<td>Marvin 10TH</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>4</td>
@@ -328,7 +332,7 @@
 							<td>COP</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>5</td>
@@ -337,7 +341,7 @@
 							<td>Marvin 5th</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>6</td>
@@ -346,7 +350,7 @@
 							<td>Marvin 10TH</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><a href="#addUser"><button class="btn btn-primary">Edit</button></a></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>7</td>
@@ -355,7 +359,7 @@
 							<td>COP</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>8</td>
@@ -364,7 +368,7 @@
 							<td>Marvin 5th</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>9</td>
@@ -373,7 +377,7 @@
 							<td>Marvin 10TH</td>
 							 <td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>10</td>
@@ -382,7 +386,7 @@
 							<td>COP</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>11</td>
@@ -391,7 +395,7 @@
 							<td>Marvin 5th</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						 <tr>
 							<td>12</td>
@@ -400,7 +404,7 @@
 							<td>Marvin 10TH</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>
 						<tr>
 							<td>13</td>
@@ -409,14 +413,14 @@
 							<td>COP</td>
 							<td>IT-OM Audit</td>
 							<td>Administator</td>
-							<td><button class="btn btn-primary">Edit</button></td>
+							<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 						</tr>			
 				</tbody>
 			</table>
 		</div>
 	</div>
 
-	<!-- Modal -->
+	<!-- Modal Add User-->
 	<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -474,6 +478,68 @@
 								<tr>
 									<td></td>
 									<td><button class="btn btn-success">Register</button></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
+					</div>
+				</div>
+			</div>
+			</div>
+		<!-- End of Modal -->
+
+		<!-- Modal Add User-->
+	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+			<div class="modal-dialog modal-md" role="document">
+				<div class="modal-content">
+					<div class="modal-header" style="background-color:#16811430;"><b>User Registration</b>
+						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="body">
+						<form style="padding:20px;">
+							<table class="modal-form">
+								<tr>
+									<td><b>ID Number:</b></td>
+									<td><input type="text" name="idnumber" required></td>
+								</tr>
+								<tr>
+									<td><b>Name:</b></td>
+									<td><input type="text" name="name" required></td>
+								</tr>
+								<tr>
+									<td><b>Department:</b></td>
+									<td class="dropdown-dept">
+										<select name="department">
+											<option value="m5"></option>
+											<option value="m5">Marvin 5th</option>
+											<option value="m10">Marvin 10th</option>
+											<option value="cop">COP</option>
+											<option value="b2b">B2B</option>
+											<option value="at">AT</option>
+											<option value="l8">L8</option>
+
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td><b>Position:</b></td>
+									<td><input type="text" required></td>
+								</tr>
+								<tr>
+									<td><b>Role:</b></td>
+									<td class="dropdown-role"> 
+										<select name="role">
+											<option value="admin"></option>
+											<option value="admin">Administrator</option>
+											<option value="staff">Staff</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><button class="btn btn-primary">Update</button></td>
 								</tr>
 							</table>
 						</form>
