@@ -259,32 +259,6 @@
                 </div>
         <!-- End of Sidebar -->
 
-        <script>
-            function myFunction() 
-            {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                    // document.getElementById("showButton").classList.toggle("show");
-            }
-    
-                    // Close the dropdown menu if the user clicks outside of it
-             window.onclick = function(event) 
-            {
-                    if (!event.target.matches('.dropbtn-active')) 
-                    {
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) 
-                        {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('show')) 
-                            {
-                                openDropdown.classList.remove('show');							
-                            }
-                        }
-                    }
-            }
-        </script>
-
         <div class="info">
             <p><strong>MARVIN 5TH | COMPUTER LIST</strong></p>
         </div>
@@ -587,6 +561,33 @@
                     </div>   
                 </div>
         </div>
+
+        <script>
+                function myFunction() 
+                {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                        // document.getElementById("showButton").classList.toggle("show");
+                }
+        
+                        // Close the dropdown menu if the user clicks outside of it
+                 window.onclick = function(event) 
+                {
+                        if (!event.target.matches('.dropbtn-active')) 
+                        {
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) 
+                            {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) 
+                                {
+                                    openDropdown.classList.remove('show');							
+                                }
+                            }
+                        }
+                }
+            </script>
+            
 	<script src="Bootstrap/js/jquery.min.js"></script>
 	<script src="Bootstrap/js/bootstrap.min.js"></script>
 	
