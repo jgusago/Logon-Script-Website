@@ -1,5 +1,5 @@
 <?php
-include_once("php/connection.php");
+//include_once("php/connection.php");
 session_start();
 if(isset($_SESSION["username"])) {
   //header("Location: .superadmin.html");
