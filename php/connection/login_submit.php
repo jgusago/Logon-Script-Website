@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("php/connection/connection.php");
+include("connection.php");
   
        if (isset($_POST['username']))
 		{
@@ -19,7 +19,7 @@ include("php/connection/connection.php");
 				}
 			else
 				{
-					header("Location: index.php?msg=wrong");
+					header("Location: ../../index.php?msg=wrong");
 				}
     }  
     ?>                                              
