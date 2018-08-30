@@ -81,7 +81,18 @@ if(isset($_SESSION["username"])) {
 		text-align: center;
 		font-size: 40px;
 		margin-top: -20px;
-	}
+    }
+
+    error
+    {
+      color: #ffffff;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: #6ecd0b;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
     </style>
 </head>
 <body>
