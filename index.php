@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])) {
-  header("Location: .superadmin.html");
+  header("Location: .superadmin.php");
   exit();
 }
 ?>
