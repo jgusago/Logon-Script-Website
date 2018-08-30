@@ -13,14 +13,13 @@ include("php/connection/connection.php");
 			
 			if ($num_row > 0) 
 				{			
-					//$_SESSION['username']=$row['username'];
-					$_SESSION['username'] = $username;
-					header('location: ../../superadmin.php');
+					$_SESSION['username']=$row['username'];
+					header('location: superadmin.php');
 					
 				}
 			else
 				{
-					header("Location: ../../index.php?msg=wrong");
+					header("Location: index.php?msg=wrong");
 				}
     }  
     ?>                                              
