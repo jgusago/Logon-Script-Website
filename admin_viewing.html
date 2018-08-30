@@ -51,7 +51,7 @@
 	{
 		background-color:#eae91796;
 	}
-	.dropbtn 
+	.dropbtn-active
 	{
 		background-color: #4ca51f8f;
 		color: black;
@@ -65,10 +65,14 @@
 		width:270px;
 	}	
 		/* Dropdown button on hover & focus */
-	.dropbtn:hover, .dropbtn:focus 
+	.dropbtn-active:hover, .dropbtn-active:focus 
 	{
 		background-color: #eae91796;
-	}
+    }
+    .dropbtn-active
+    {
+        background-color: #eae91796;
+    }
 	/* The container <div> - needed to position the dropdown content */
 	.dropdown 
 	{
@@ -176,6 +180,10 @@
     {
         padding-top:15px;
     }
+    tr:hover
+    {
+        background-color: #f5f5f5;
+    }
 	</style>
 </head>
 <body>
@@ -230,9 +238,9 @@
         
                 <!-- Sidebar -->
                 <div class="side-navbar">
-                    <a class ="active" href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
+                    <a href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
                     <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
+                        <button onclick="myFunction()" class="dropbtn-active"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
                         <div id="myDropdown" class="dropdown-content">
                           <a href="admin_viewing.html">Marvin 5th</a>
                           <a href="admin_viewing.html">Marvin 10th</a>
@@ -255,7 +263,7 @@
                     // Close the dropdown menu if the user clicks outside of it
              window.onclick = function(event) 
             {
-                    if (!event.target.matches('.dropbtn')) 
+                    if (!event.target.matches('.dropbtn-active')) 
                     {
                         var dropdowns = document.getElementsByClassName("dropdown-content");
                         var i;
