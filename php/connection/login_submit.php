@@ -14,7 +14,7 @@ include("php/connection/connection.php");
 			if ($num_row > 0) 
 				{			
 					$_SESSION['username']=$row['username'];
-					header('location: main.php');
+					header('location: ../../.superadmin.html');
 					
 				}
 			else
