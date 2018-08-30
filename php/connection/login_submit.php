@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 if($row_count >0)
 {
 $_SESSION['username'] = $un;
-//header("Location: ../.superadmin.html");
+header("Location: ../.superadmin.html");
 }
 else
 {
