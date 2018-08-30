@@ -92,7 +92,7 @@ if(isset($_SESSION["username"])) {
                 <?php
                 if(isset($_GET['msg']))
                 {                    
-                 echo "<p align='center' font-color='red' class='error'>Wrong username or password.</p>";
+                 echo "<p align='center' color='red' class='error'>Wrong username or password.</p>";
                 }
                 ?>
             </div>
