@@ -89,6 +89,12 @@ if(isset($_SESSION["username"])) {
     <div class="container">
         <img alt="logo" src="icons/sky_luster.png">
         <div class="header">
+        <?php
+          if(isset($_GET['msg']))
+          {                    
+            echo "<p align='center' class='error'>Wrong username or password.</p>";
+          }
+          ?>
             <div class="row>
 				<div class="col-sm-12 col-md-10  col-md-offset-1">
 					<div class="form-group">
@@ -96,7 +102,7 @@ if(isset($_SESSION["username"])) {
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-user"></i>
 							</span> 
-							<input class="form-control" placeholder="Username" name="loginname" type="text" style="text-align: center;">
+							<input class="form-control" placeholder="Username" name="username" type="text" style="text-align: center;">
 						</div>
 					</div>
 					<div class="form-group">
