@@ -14,12 +14,12 @@ include("connection.php");
 			if ($num_row = 1) 
 				{			
 					$_SESSION['username']=$row['username'];
-					header('location: superadmin.php');
+					header('location: ../../superadmin.php');
 					
 				}
 			else
 				{
-					header("Location: ../../index.php?msg=wrong");
+					header("Location: index.php?msg=wrong");
 				}
     }  
     ?>                                              
