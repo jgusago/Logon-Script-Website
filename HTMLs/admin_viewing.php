@@ -223,7 +223,7 @@ exit();
                                     <li style="font-size:18px; font-family: Century Gothic;" class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
                                     <li style="font-size:18px; padding:10px;"><a href="#">Account Settings</a></li>
                                     <li class="divider"></li>
-                                    <li style="font-size:18px; font-weight:200px;"><a href="logout.php" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+                                    <li style="font-size:18px; font-weight:200px;"><a href="../php/connection/logout.php" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
                                 </ul>
                         </li>
                     </ul>
@@ -244,7 +244,7 @@ exit();
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-                            <a class="btn btn-success" href="logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+                            <a class="btn btn-success" href="../php/connection/logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
                         </div>
                     </div>
                 </div>
