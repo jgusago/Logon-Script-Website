@@ -1,8 +1,7 @@
 <?php
-//include_once("config/db_connection.php");
 session_start();
 if(isset($_SESSION["username"])) {
-  header("Location: superadmin.html");
+  header("Location: superadmin.php");
   exit();
 }
 ?>
@@ -82,13 +81,27 @@ if(isset($_SESSION["username"])) {
 		text-align: center;
 		font-size: 40px;
 		margin-top: -20px;
-	}
+    }
+
+    .error
+    {
+      color: red;
+    }
     </style>
 </head>
 <body>
     <div class="container">
         <img alt="logo" src="icons/sky_luster.png">
         <div class="header">
+            <div>
+                <?php
+                if(isset($_GET['msg']))
+                {                    
+                 echo "<p align='center' class='error'>Wrong username or password.</p>";
+                }
+                ?>
+            </div>
+          <form action="php/connection/login_submit.php" method="POST">
             <div class="row>
 				<div class="col-sm-12 col-md-10  col-md-offset-1">
 					<div class="form-group">
@@ -96,7 +109,11 @@ if(isset($_SESSION["username"])) {
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-user"></i>
 							</span> 
+<<<<<<< HEAD
 							<input class="form-control" placeholder="Username" name="loginname" required type="text" style="text-align: center;">
+=======
+							<input class="form-control" placeholder="Username" name="username" type="text" style="text-align: center;">
+>>>>>>> aabb5ce9dd9b8de14baa4cc662e51eba0af5b8ea
 						</div>
 					</div>
 					<div class="form-group">
@@ -113,6 +130,7 @@ if(isset($_SESSION["username"])) {
 				</div>
 			</div>
         </div>
+        </form>
         <h1><strong>SKYLUSTER TECHNOLOGY INC</strong></h1>
     </div>
 
