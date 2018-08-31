@@ -90,7 +90,7 @@
                         }
                 ?>
                 </div>
-        <form action="../.superadmin.html" method="POST">
+        <form action="admin_viewing.php" method="POST">
             <div class="row">
 				<div class="col-sm-12 col-md-10  col-md-offset-1">
 					<div class="form-group">
