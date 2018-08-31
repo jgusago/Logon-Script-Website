@@ -204,13 +204,22 @@
     .pagination
     {
         display: inline-block;
+        margin-left:272px; 
+        margin-bottom:0px;
+        position:sticky;
+        margin-top:2px;
+        background-color: #f1f1f1;
     }
     .pagination a
     {
         color: black;
-        float: right;
-        padding: 10px 20px;
+        padding: 20px 30px;
         text-decoration: none;
+        float:right;
+    }
+    .pagination li a
+    {
+        padding:10px;
     }
     .pagination a.active
     {
@@ -327,8 +336,19 @@
                 </tr>
             </table>
         </div>
+        <div>
+            <ul class="pagination pagination-sm">
+                <li><a href="">&laquo;</a></li>
+                <li><a class="active" href="" >1</a></li>
+                <li><a href="" >2</a></li>
+                <li><a href="" >3</a></li>
+                <li><a href="" >4</a></li>
+                <li><a href="" >5</a></li>
+                <li><a href="">&raquo;</a></li>
+            </ul>
+        </div>    
         <div class="container" >
-            <table class="table table-bordered" style="position: sticky; margin-left:257px; margin-top:3px; margin-bottom:10px;">
+            <table class="table table-bordered" style="position: sticky; margin-left:257px; margin-top:-5px; margin-bottom:-15px;">
                 <thead>
                     <tr>
                         <th style="padding-bottom:15px;">No.</th>
@@ -499,13 +519,6 @@
                     </tr>
                 </tbody>
             </table>
-            <ul class="pagination pagination-sm">
-                <li><a href="" >1</a></li>
-                <li><a href="" >2</a></li>
-                <li><a href="" >3</a></li>
-                <li><a href="" >4</a></li>
-                <li><a href="" >5</a></li>
-            </ul>
         </div>
     </div>
 
