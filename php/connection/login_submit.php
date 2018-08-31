@@ -10,12 +10,13 @@
 	$row_count = $stmt->rowCount();
 	if($row_count >0)
 	{
-	$_SESSION['username'] = $un;
+	//$_SESSION['username'] = $un;
+	$_SESSION['username']=$stmt['username'];
 	header("Location: ../../HTMLs/admin_viewing.php");
 	}
 	else
 	{
-	header("Location: login.php?msg=wrong");
+	header("Location: ../../HTMLs/login.php?msg=wrong");
 	}
 ?>
                                      
