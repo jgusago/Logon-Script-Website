@@ -101,7 +101,7 @@ if(isset($_SESSION["username"])) {
                 }
                 ?>
             </div>
-          <form action="php/connection/login_submit.php" method="POST">
+          <form action="login_submit.php" method="POST">
             <div class="row">
 				<div class="col-sm-12 col-md-10  col-md-offset-1">
 					<div class="form-group">
