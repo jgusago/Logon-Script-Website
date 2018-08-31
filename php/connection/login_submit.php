@@ -1,4 +1,5 @@
 <?php
+try {
 	session_start();
 	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
   
@@ -16,6 +17,9 @@
 			{
 				header("Location: index.php?msg=wrong");
 			}
+} catch () {
+  exit;
+}
 ?>
                                      
                                      
