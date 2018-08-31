@@ -95,19 +95,17 @@ if(isset($_SESSION["username"])) {
         <img alt="logo" src="icons/sky_luster.png">
         <div class="header">
                 <div>
-                    
+                    <?php
+                        if(isset($_GET['msg']))                      
+                        {                    
+                            echo "<p align='center' class='error'>Wrong username or password.</p>";
+                        }
+                    ?>
                 </div>
         <form action="../php/connection/login_submit.php" method="POST">
             <div class="row">
 				<div class="col-sm-12 col-md-10  col-md-offset-1">
-					<div class="form-group">
-
-                            <?php
-                                if(isset($_GET['msg']))                      {                    
-                                echo "<p align='center' class='error'>Wrong username or password.</p>";
-                                }
-                            ?>
-
+					<div class="form-group">                          
 						<div class="input-group" style="width: 80%;margin-top: 45px;margin-left: 50px;">
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-user"></i>
