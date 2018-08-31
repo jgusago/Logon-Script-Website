@@ -616,41 +616,29 @@
         <!-- End of Edit Modal -->
 
         <script>
-        // function myFunction() 
-        // {
-        //     document.getElementById("myDropdown").classList.toggle("show");
-        //     // document.getElementById("showButton").classList.toggle("show");
-        // }
-        
-        // // Close the dropdown menu if the user clicks outside of it
-        //  window.onclick = function(event) 
-        // {
-        //      if (!event.target.matches('.dropbtn-active')) 
-        //     {
-        //         var dropdowns = document.getElementsByClassName("dropdown-content");
-        //         var i;
-        //         for (i = 0; i < dropdowns.length; i++) 
-        //         {
-        //             var openDropdown = dropdowns[i];
-        //             if (openDropdown.classList.contains('show')) 
-        //             {
-        //                 openDropdown.classList.remove('show');							
-        //             }
-        //         }
-        //     }   
-        // }
-
-        $(document).ready(function()
+        function myFunction() 
         {
-            $("#inputSearch").on("keyup", function() 
+            document.getElementById("myDropdown").classList.toggle("show");
+            // document.getElementById("showButton").classList.toggle("show");
+        }
+        
+        // Close the dropdown menu if the user clicks outside of it
+         window.onclick = function(event) 
+        {
+             if (!event.target.matches('.dropbtn-active')) 
             {
-                var value = $(this).val().toLowerCase();
-                $("#viewingTable tr").filter(function() 
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) 
                 {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) 
+                    {
+                        openDropdown.classList.remove('show');							
+                    }
+                }
+            }   
+        }
         </script>
 
 	<script src="Bootstrap/js/jquery.min.js"></script>
