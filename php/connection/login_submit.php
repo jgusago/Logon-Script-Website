@@ -1,6 +1,7 @@
 <?php
 session_start();
-include("connection.php");
+//include("connection.php");
+include("{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php");
   
 	   if (isset($_POST['username']))
 		{
