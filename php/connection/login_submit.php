@@ -19,7 +19,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/connection.php";
 				}
 			else
 				{
-					header("Location: index.php?msg=wrong");
+					header("Location: ../../index.php?msg=wrong");
 				}
 		} 
     ?>                                              
