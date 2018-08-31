@@ -91,7 +91,7 @@ if(isset($_SESSION["username"])) {
 </head>
 <body>
     <div class="container">
-        <img alt="logo" src="icons/sky_luster.png">
+        <img alt="logo" src="img/sky_luster.png">
         <div class="header">
             <div>
                 <?php
