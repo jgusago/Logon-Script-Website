@@ -223,7 +223,7 @@ exit();
                                     <li style="font-size:18px; font-family: Century Gothic;" class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
                                     <li style="font-size:18px; padding:10px;"><a href="#">Account Settings</a></li>
                                     <li class="divider"></li>
-                                    <li style="font-size:18px; font-weight:200px;"><a href="#" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+                                    <li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
                                 </ul>
                         </li>
                     </ul>
