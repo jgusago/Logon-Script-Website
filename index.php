@@ -1,5 +1,7 @@
 <?php
 session_start();
+require "{$_SERVER['DOCUMENT_ROOT']}/connection.php";
+
 if(isset($_SESSION["username"])) {
   header("Location: superadmin.php");
   exit();
