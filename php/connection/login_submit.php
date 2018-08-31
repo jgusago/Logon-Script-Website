@@ -11,7 +11,7 @@
 	if($row_count >0)
 	{
 	//$_SESSION['username'] = $un;
-	$_SESSION['username']=$stmt['username'];
+	$_SESSION['username']=$un['username'];
 	header("Location: ../../HTMLs/admin_viewing.php");
 	}
 	else
