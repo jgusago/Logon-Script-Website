@@ -1,7 +1,6 @@
 <?php
 session_start();
-//include("connection.php");
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
+require "{$_SERVER['DOCUMENT_ROOT']}connection.php";
   
 	   if (isset($_POST['username']))
 		{
