@@ -1,26 +1,21 @@
 <?php
-session_start();
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
+	session_start();
+	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
   
-	   if (isset($_POST['username']))
-		{
-			$username = mysqli_real_escape_string($con, $_POST['username']);
-			$password = mysqli_real_escape_string($con, $_POST['password']);
-			
-			$query 		= mysqli_query($con, "SELECT * FROM tbl_user WHERE  username='$username' and password='$password'");
-			$row		= mysqli_fetch_array($query);
-			$num_row 	= mysqli_num_rows($query);
-			
-			if ($num_row > 0) 
-				{			
-					$_SESSION['username']=$row['username'];
-					header('location: superadmin.php');
-					
-				}
+		$un = $_POST['username'];
+		$pw = $_POST['password'];
+		$stmt = $db->prepare("SELECT * from tbl_user WHERE username=? AND password=?");
+		$stmt->execute(array($un, $pw));
+		$row_count = $stmt->rowCount();
+			if($row_count >0)
+			{
+				$_SESSION['username'] = $un;
+				header("Location: superadmin.php");
+			}
 			else
-				{
-					header("Location: index.php?msg=wrong");
-				}
-		} 
-    ?>                                              
+			{
+				header("Location: index.php?msg=wrong");
+			}
+?>
+                                     
                                      
