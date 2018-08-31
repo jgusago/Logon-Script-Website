@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	//include("../config/db_connection.php");
-	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/test_connection.php";
+	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   
 		$un = $_POST['username'];
 		$pw = $_POST['password'];
@@ -11,11 +11,11 @@
 			if($row_count >0)
 			{
 				$_SESSION['username'] = $un;
-				header("Location: superadmin.php");
+				header("Location: admin_viewing.php");
 			}
 			else
 			{
-				header("Location: index.php?msg=wrong");
+				header("Location: login.php?msg=wrong");
 			}
 ?>
                                      

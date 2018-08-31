@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(isset($_SESSION["username"])) {
+  header("Location: admin_viewing.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +89,14 @@
     <div class="container">
         <img alt="logo" src="icons/sky_luster.png">
         <div class="header">
+                <div>
+                    <?php
+                        if(isset($_GET['msg']))
+                        {                    
+                        echo "<p align='center' class='error'>Wrong username or password.</p>";
+                        }
+                ?>
+                </div>
             <div class="row">
 				<div class="col-sm-12 col-md-10  col-md-offset-1">
 					<div class="form-group">
