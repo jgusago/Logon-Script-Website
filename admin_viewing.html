@@ -267,272 +267,271 @@
         </div>       
         <a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
         <a href="admin_reports.html"><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
-     </div>
-        <!-- End of Sidebar -->
+    </div>
+    <!-- End of Sidebar -->
 
-        <div class="info">
-            <p><strong>MARVIN 5TH | COMPUTER LIST</strong></p>
+    <div class="info">
+        <p><strong>MARVIN 5TH | COMPUTER LIST</strong></p>
+    </div>
+    <div class="container-table" style="overflow:hidden;">
+        <div class="row">
+            <table style="margin-left:287px; margin-top:110px; background-color: white; width:90%; padding:10px; margin-right:100px;">
+                <tr class="tr-dept">
+                    <td><b>Sub Department:</b></td>
+                    <td><select name="branches">
+                        <option value="ad"></option>
+                        <option value="ad">Admin</option>
+                        <option value="hr">HR</option>
+                        <option value="fn">Finance</option>
+                        <option value="om">IT-OM</option>
+                        <option value="aud">Audit</option>
+                        <option value="devja">Java Developers</option>\
+                        <option value="devios">iOS Developers</option>
+                        <option value="devand">Android Developers</option>
+                        <option value="omnet">Networks</option>
+                        <option value="omweb">OM-Web</option>
+                    </td>
+                </tr>
+                <tr class="tr-search">
+                    <td><b>Search:</b></td>
+                    <td><input type="text" name="search" style="width:400px;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="#logout" style="padding-left:550px;"><u><i class="glyphicon glyphicon-print"> Print as PDF</i></u></a>
+                    </td>
+                    <td class="export">
+                        <a href="#"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div class="container-table" style="overflow:hidden;">
-            <div class="row">
-                <table style="margin-left:287px; margin-top:110px; background-color: white; width:90%; padding:10px; margin-right:100px;">
-                    <tr class="tr-dept">
-                        <td><b>Sub Department:</b></td>
-                        <td><select name="branches">
-                            <option value="ad"></option>
-                            <option value="ad">Admin</option>
-                            <option value="hr">HR</option>
-                            <option value="fn">Finance</option>
-                            <option value="om">IT-OM</option>
-                            <option value="aud">Audit</option>
-                            <option value="devja">Java Developers</option>\
-                            <option value="devios">iOS Developers</option>
-                            <option value="devand">Android Developers</option>
-                            <option value="omnet">Networks</option>
-                            <option value="omweb">OM-Web</option>
-                        </td>
+        <div class="container" >
+            <table class="table table-bordered" style="position: sticky; margin-left:257px; margin-top:3px; margin-bottom:10px;">
+                <thead>
+                    <tr>
+                        <th style="padding-bottom:15px;">No.</th>
+                        <th style="padding-bottom:15px;">Computer Name</th>
+                        <th style="padding-bottom:15px;">IP Address</th>
+                        <th style="padding-bottom:15px;">Platform</th>
+                        <th style="padding-bottom:15px;">Status</th>
+                        <th style="padding-bottom:15px;">Remarks</th>
+                        <th style="padding-bottom:15px;">Options</th>
                     </tr>
-                    <tr class="tr-search">
-                        <td><b>Search:</b></td>
-                        <td><input type="text" name="search" style="width:400px;"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
                         <td>
-                            <a href="#logout" style="padding-left:550px;"><u><i class="glyphicon glyphicon-print"> Print as PDF</i></u></a>
-                        </td>
-                        <td class="export">
-                            <a href="#"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
                         </td>
                     </tr>
-                </table>
-            </div>
-            <div class="container" >
-                <table class="table table-bordered" style="position: sticky; margin-left:257px; margin-top:3px; margin-bottom:10px;">
-                    <thead>
-                        <tr>
-                            <th style="padding-bottom:15px;">No.</th>
-                            <th style="padding-bottom:15px;">Computer Name</th>
-                            <th style="padding-bottom:15px;">IP Address</th>
-                            <th style="padding-bottom:15px;">Platform</th>
-                            <th style="padding-bottom:15px;">Status</th>
-                            <th style="padding-bottom:15px;">Remarks</th>
-                            <th style="padding-bottom:15px;">Options</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>ITOMAU03022</td>
-                            <td>172.16.33.22</td>
-                            <td>Windows PC</td>
-                            <td>On-line</td>
-                            <td>Active</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>ITOMAU03022</td>
-                            <td>172.16.33.22</td>
-                            <td>Windows PC</td>
-                            <td>On-line</td>
-                            <td>Active</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>ITOMAU03022</td>
-                            <td>172.16.33.22</td>
-                            <td>Windows PC</td>
-                            <td>Off-line</td>
-                            <td>On leave</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Active</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                    <td>5</td>
-                                    <td>ITOMAU03022</td>
-                                    <td>172.16.33.22</td>
-                                    <td>Windows PC</td>
-                                    <td>Off-line</td>
-                                    <td>Resigned</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                    </td>
-                                </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>Off-line</td>
-                                <td>Old PC name</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Active</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Activer</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Active</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Active</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Active</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                             <tr>
-                                <td>12</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>On-line</td>
-                                <td>Active</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>ITOMAU03022</td>
-                                <td>172.16.33.22</td>
-                                <td>Windows PC</td>
-                                <td>Off-line</td>
-                                <td>Transferred</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                     </table>
-                </div>
+                    <tr>
+                        <td>2</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>Off-line</td>
+                        <td>On leave</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>Off-line</td>
+                        <td>Resigned</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>Off-line</td>
+                        <td>Old PC name</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Activer</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>On-line</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>ITOMAU03022</td>
+                        <td>172.16.33.22</td>
+                        <td>Windows PC</td>
+                        <td>Off-line</td>
+                        <td>Transferred</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </div>
 
-        <!-- View Modal -->
-        <div id="myModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
-                <div class="modal-dialog modal-md" style="position:fixed; width:100%; height:100%;">
-                    <div class="modal-content" style="border:2px solid #3c7dcf; box-shadow:none;">
-                        <div class="modal-header" style="background-color:#f5f5f5;">
-                            <button type ="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 style="font-size:2em;">ITOMAU033022 | Camille</h4>
-                        </div>
-                        <div class="modal-body" style="margin-left:-180px; width:97%; ">
-                            <div class="panel panel-default" style="margin-left:200px; padding-right:-30px; width:100%">
-                                <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Logs</div>
-                                <div class="panel-body" style="padding:10px; margin-left:-200px; width:100%">
-                                    <div class="modal-container" style="margin: 10px; padding-left: 120px; margin-right: -80px;">
-                                        <table class="table table-bordered" style="margin-left:90px;">
-                                            <thead>
-                                                <tr style="padding:50px;">
-                                                    <th style="padding-bottom:15px;">Domain</th>
-                                                    <th style="padding-bottom:15px;">IP Address</th>
-                                                    <th style="padding-bottom:15px;">IP Address Modified</th>
-                                                    <th style="padding-bottom:15px;">Old IP Address</th>
-                                                    <th style="padding-bottom:15px;">Old IP Address Modified</th>
-                                                    <th style="padding-bottom:15px;">iMonitor Status</th>
-                                                    <th style="padding-bottom:15px;">Services Not Found</th>
-                                                    <th style="padding-bottom:15px;">SysSetting File</th>
-                                                    <th style="padding-bottom:15px;">Connection Status</th>
-                                                    <th style="padding-bottom:15px;">Branch</th>
-                                                    <th style="padding-bottom:15px;">Scan Time</th>
-                                                </tr>
-                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="padding-top:15px;">NN</td>
-                                                    <td style="padding-top:15px;">172.16.33.22</td>
-                                                    <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                                                    <td style="padding-top:15px;"></td>
-                                                    <td style="padding-top:15px;"></td>
-                                                    <td style="padding-top:15px;">Running</td>
-                                                    <td style="padding-top:15px;">Msysys.exe<br>Mskes.exe</td>
-                                                    <td style="padding-top:15px;">Found</td>
-                                                    <td style="padding-top:15px;">Established</td>
-                                                    <td style="padding-top:15px;">Marvin(IT)</td>
-                                                    <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+    <!-- View Modal -->
+    <div id="myModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
+        <div class="modal-dialog modal-md" style="position:fixed; width:100%; height:100%;">
+            <div class="modal-content" style="border:2px solid #3c7dcf; box-shadow:none;">
+                <div class="modal-header" style="background-color:#f5f5f5;">
+                    <button type ="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 style="font-size:2em;">ITOMAU033022 | Camille</h4>
+                </div>
+                <div class="modal-body" style="margin-left:-180px; width:97%; ">
+                    <div class="panel panel-default" style="margin-left:200px; padding-right:-30px; width:100%">
+                        <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Logs</div>
+                            <div class="panel-body" style="padding:10px; margin-left:-200px; width:100%">
+                                <div class="modal-container" style="margin: 10px; padding-left: 120px; margin-right: -80px;">
+                                    <table class="table table-bordered" style="margin-left:90px;">
+                                        <thead>
+                                            <tr style="padding:50px;">
+                                                <th style="padding-bottom:15px;">Domain</th>
+                                                <th style="padding-bottom:15px;">IP Address</th>
+                                                <th style="padding-bottom:15px;">IP Address Modified</th>
+                                                <th style="padding-bottom:15px;">Old IP Address</th>
+                                                <th style="padding-bottom:15px;">Old IP Address Modified</th>
+                                                <th style="padding-bottom:15px;">iMonitor Status</th>
+                                                <th style="padding-bottom:15px;">Services Not Found</th>
+                                                <th style="padding-bottom:15px;">SysSetting File</th>
+                                                <th style="padding-bottom:15px;">Connection Status</th>
+                                                <th style="padding-bottom:15px;">Branch</th>
+                                                <th style="padding-bottom:15px;">Scan Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding-top:15px;">NN</td>
+                                                <td style="padding-top:15px;">172.16.33.22</td>
+                                                <td style="padding-top:15px;">Aug-08-2018 02:00</td>
+                                                <td style="padding-top:15px;"></td>
+                                                <td style="padding-top:15px;"></td>
+                                                <td style="padding-top:15px;">Running</td>
+                                                <td style="padding-top:15px;">Msysys.exe<br>Mskes.exe</td>
+                                                <td style="padding-top:15px;">Found</td>
+                                                <td style="padding-top:15px;">Established</td>
+                                                <td style="padding-top:15px;">Marvin(IT)</td>
+                                                <td style="padding-top:15px;">Aug-08-2018 02:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div class="panel panel-default" style="margin-left:200px; width:90%">
-                                <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Details</div>
+                        </div>
+                        <div class="panel panel-default" style="margin-left:200px; width:90%">
+                            <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Details</div>
                                 <div class="panel-body" style="padding:20px; margin-left:-200px; width:100%">
                                     <div class="modal-container" style="margin: 10px; padding-left: 110px; padding-right: 50px;">
                                         <table class="table table-bordered" style="margin-left:90px;">
@@ -558,15 +557,13 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
-
                     </div>   
                 </div>
-        </div>
+            </div>
         <!-- End of View Modal -->
 
         <!-- Edit Modal -->
