@@ -83,6 +83,11 @@ if(isset($_SESSION["username"])) {
 		font-size: 60px;
 		margin-top: -20px;
 	}
+
+    .error
+    {
+        color: red;
+    }
     </style>
 </head>
 <body>
