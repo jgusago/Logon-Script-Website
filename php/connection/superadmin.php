@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
 if(!isset($_SESSION["username"])) {
   header("Location: index.php");
 exit();
