@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	//include("../config/db_connection.php");
+	
 	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   
 		$un = $_POST['username'];
@@ -11,11 +11,11 @@
 			if($row_count >0)
 			{
 				$_SESSION['username'] = $un;
-				header("Location: admin_viewing.php");
+				header("Location: ../../HTMLs/admin_viewing.php");
 			}
 			else
 			{
-				header("Location: login.php?msg=wrong");
+				header("Location: ../../HTMLs/login.php?msg=wrong");
 			}
 ?>
                                      
