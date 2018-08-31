@@ -244,267 +244,265 @@
      <!-- End of Modal -->
         
     <!-- Sidebar -->
-        <div class="side-navbar">
-            <a href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="admin_viewing.html">Marvin 5th</a>
-                    <a href="admin_viewing.html">Marvin 10th</a>
-                    <a href="admin_viewing.html">B2B</a>
-                </div>
+    <div class="side-navbar">
+        <a href="admin_dashboard.html"><img src="icons/dashboard.png" alt="dashboard"> Dashboard</a>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn"><img class="complist" src="icons/computer.png" alt="computer list"> Computer List</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="admin_viewing.html">Marvin 5th</a>
+                <a href="admin_viewing.html">Marvin 10th</a>
+                <a href="admin_viewing.html">B2B</a>
             </div>
-        
-            <a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
-            <a class="active" href="#"><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
-        </div>
+        </div>   
+        <a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
+        <a class="active" href="#"><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
+    </div>
     <!-- End of Sidebar -->
 
-        <div class="info">
-            <p><strong>REPORTS GENERATION</strong></p>
+    <div class="info">
+        <p><strong>REPORTS GENERATION</strong></p>
+    </div>
+    <div class="container-table" style="overflow:hidden;">
+        <div class="row">
+            <table style="margin-left:287px; margin-top:110px; background-color: white; width:90%; padding:10px; margin-right:100px;">
+                <tr class="tr-dept">
+                    <td><b>Select a Report to Generate:</b></td>
+                    <td><select name="report">
+                        <option value="none"></option>
+                        <option value="al">Active List</option>
+                        <option value="il">Inactive List</option>
+                        <option value="clo">Computer Logs</option>
+                        <option value="cli">Computer List</option>
+                    </td>
+                </tr>
+                <tr class="tr-search">
+                    <td><b>Search:</b></td>
+                    <td><input type="text" name="search" style="height:30px; width: 420px; margin-left: -200px;"></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="#logout" style="padding-left:500px;"><u><i class="glyphicon glyphicon-print"> Print as PDF</i></u></a>
+                    </td>
+                    <td>
+                        <a href="#" style="margin-left:-300px; display: inline-block;"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div class="container-table" style="overflow:hidden;">
-                <div class="row">
-                        <table style="margin-left:287px; margin-top:110px; background-color: white; width:90%; padding:10px; margin-right:100px;">
-                            <tr class="tr-dept">
-                                <td><b>Select a Report to Generate:</b></td>
-                                <td><select name="report">
-                                        <option value="none"></option>
-                                        <option value="al">Active List</option>
-                                        <option value="il">Inactive List</option>
-                                        <option value="clo">Computer Logs</option>
-                                        <option value="cli">Computer List</option>
-                                </td>
-                            </tr>
-                            <tr class="tr-search">
-                                <td><b>Search:</b></td>
-                                <td><input type="text" name="search" style="height:30px; width: 420px; margin-left: -200px;"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <a href="#" style="padding-left:600px;"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
-                                </td>
-                            </tr>
-                        </table>
-                </div>
-                <div class="container" style="width:100%">
-                    <table class="table table-bordered" style="width:87%; position: sticky; margin-left:257px; margin-top:3px; margin-bottom:10px;">
-                        <thead>
-                            <tr>
-                                <th style="padding-bottom:15px;">User</th>
-                                <th style="padding-bottom:15px;">Domain</th>
-                                <th style="padding-bottom:15px;">Hostname</th>
-                                <th style="padding-bottom:15px;">IP Address</th>
-                                <th style="padding-bottom:15px;">IP Address Modified</th>
-                                <th style="padding-bottom:15px;">Old IP Address</th>
-                                <th style="padding-bottom:15px;">Old IP Address Modified</th>
-                                <th style="padding-bottom:15px;">iMonitor Status</th>
-                                <th style="padding-bottom:15px;">Services</th>
-                                <th style="padding-bottom:15px;">SysSetting File</th>
-                                <th style="padding-bottom:15px;">Branch</th>
-                                <th style="padding-bottom:15px;">Scan Time </th>
-                                <th style="padding-bottom:15px;">Connection Status</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>JM</td>
-                                <td>NN</td>
-                                <td>ITOMPH044</td>
-                                <td>172.16.22.50C</td>
-                                <td>Jul-30-2018 08:24</td>
-                                <td></td>
-                                <td></td>
-                                <td>Running</td>
-                                <td>Mssys.exe <br>Mskes.exe</td>
-                                <td></td>
-                                <td>PBCOM(B2B)</td>
-                                <td>Jul-31-2018 09:08</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="container" style="width:100%">
+            <table class="table table-bordered" style="width:87%; position: sticky; margin-left:257px; margin-top:3px; margin-bottom:10px;">
+                <thead>
+                    <tr>
+                        <th style="padding-bottom:15px;">User</th>
+                        <th style="padding-bottom:15px;">Domain</th>
+                        <th style="padding-bottom:15px;">Hostname</th>
+                        <th style="padding-bottom:15px;">IP Address</th>
+                        <th style="padding-bottom:15px;">IP Address Modified</th>
+                        <th style="padding-bottom:15px;">Old IP Address</th>
+                        <th style="padding-bottom:15px;">Old IP Address Modified</th>
+                        <th style="padding-bottom:15px;">iMonitor Status</th>
+                        <th style="padding-bottom:15px;">Services</th>
+                        <th style="padding-bottom:15px;">SysSetting File</th>
+                        <th style="padding-bottom:15px;">Connection Status</th>
+                        <th style="padding-bottom:15px;">Branch</th>
+                        <th style="padding-bottom:15px;">Scan Time </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JM</td>
+                        <td>NN</td>
+                        <td>ITOMPH044</td>
+                        <td>172.16.22.50C</td>
+                        <td>Jul-30-2018 08:24</td>
+                        <td></td>
+                        <td></td>
+                        <td>Running</td>
+                        <td>Mssys.exe <br>Mskes.exe</td>
+                        <td></td>
+                        <td>PBCOM(B2B)</td>
+                        <td>Jul-31-2018 09:08</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </div>
 
-        <script>
-            function myFunction() 
+    <script>
+    function myFunction() 
+    {
+        document.getElementById("myDropdown").classList.toggle("show");
+        // document.getElementById("showButton").classList.toggle("show");
+    }       
+        // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) 
+    {
+         if (!event.target.matches('.dropbtn')) 
+        {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) 
             {
-                 document.getElementById("myDropdown").classList.toggle("show");
-                        // document.getElementById("showButton").classList.toggle("show");
-            }
-        
-                        // Close the dropdown menu if the user clicks outside of it
-            window.onclick = function(event) 
-            {
-                 if (!event.target.matches('.dropbtn')) 
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) 
                 {
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) 
-                    {
-                        var openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains('show')) 
-                        {
-                            openDropdown.classList.remove('show');							
-                        }
-                    }
+                    openDropdown.classList.remove('show');							
                 }
             }
-        </script>
+        }
+    }
+    </script>
     
     <script src="Bootstrap/js/jquery.min.js"></script>
 	<script src="Bootstrap/js/bootstrap.min.js"></script>
