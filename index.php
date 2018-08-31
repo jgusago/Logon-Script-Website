@@ -109,11 +109,7 @@ if(isset($_SESSION["username"])) {
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-user"></i>
 							</span> 
-<<<<<<< HEAD
-							<input class="form-control" placeholder="Username" name="loginname" required type="text" style="text-align: center;">
-=======
 							<input class="form-control" placeholder="Username" name="username" type="text" style="text-align: center;">
->>>>>>> aabb5ce9dd9b8de14baa4cc662e51eba0af5b8ea
 						</div>
 					</div>
 					<div class="form-group">
