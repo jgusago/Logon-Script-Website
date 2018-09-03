@@ -1,5 +1,5 @@
 <?php
-include_once("../config/db_connection.php");
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     //$username = $_POST['username'];
 	//$password = md5($_POST['password']);
@@ -12,43 +12,43 @@ include_once("../config/db_connection.php");
 
 if (empty($_POST['username']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
     elseif (empty($_POST['password']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
     elseif (empty($_POST['firstname']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
     elseif (empty($_POST['middlename']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
     elseif (empty($_POST['lastname']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
     elseif (empty($_POST['company']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
     elseif (empty($_POST['department']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
     elseif (empty($_POST['accounttype']))
     {
-        header("Location: user_account.php?msg=wrong");
+        header("Location: ../../HTMLs/user_account.php?msg=wrong");
     }
 else
     {
-        $sql = "INSERT INTO sys_users (username, password, firstname, middlename, lastname, company, department, account_type)
+        $sql = "INSERT INTO tbl_user (username, password, firstname, middlename, lastname, company, department, account_type)
          
         VALUES ('".$_POST["username"]."','".$_POST["password"]=hash('sha512', $password.SALT_STRING)."','".$_POST["firstname"]."', '".$_POST["middlename"]."', '".$_POST["lastname"]."', '".$_POST["company"]."', '".$_POST["department"]."', '".$_POST["accounttype"]."')";
         ($db->query($sql));
-        header("Location: user_account.php?msg=correct");
+        header("Location: ../../HTMLs/user_account.php?msg=correct");
     }
 //$sql = "INSERT INTO sys_users (username, password, firstname, middlename, lastname, company, department, account_type)
 //VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
