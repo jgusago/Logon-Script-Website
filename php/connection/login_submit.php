@@ -23,10 +23,7 @@
         echo "wrong password"
     }
     }
-    else
-    {
-        echo "not found";
-    }
+   
 
     //if($row_count >0)
         //{
