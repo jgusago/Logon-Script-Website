@@ -11,6 +11,8 @@
 	$stmt->execute(array($un, $pw));
 	$row_count = $stmt->rowCount();
 
+    if($un)
+{
     // If the password they give maches
     if($un->pass === sha1($un->salt. $_REQUEST['password']))
     {
@@ -20,6 +22,8 @@
     {
         echo "wrong password";
     }
+}
+
   
     //if($row_count >0)
         //{
