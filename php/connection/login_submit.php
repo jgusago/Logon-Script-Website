@@ -7,9 +7,9 @@
 	$pw = $_POST['password'];
 	
     //$stmt = $db->prepare("SELECT * from tbl_user WHERE username=? AND password=?");
-    $stmt = $db->prepare('SELECT * FROM `tbl_user` WHERE username = ?', array($_REQUEST['username']));
-	$stmt->execute(array($un, $pw));
-	$row_count = $stmt->rowCount();
+    $user = query('SELECT * FROM `tbl_user` WHERE username = ?', array($_REQUEST['username']));
+	//$stmt->execute(array($un, $pw));
+	//$row_count = $stmt->rowCount();
 
     if($un)
 {
