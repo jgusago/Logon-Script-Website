@@ -20,7 +20,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
       
     <div class="content">
       <center>
-        <h3><p>Create User Account</p></h3>
+        <h3><p>Create Account</p></h3>
       </center>  
       <div>
           <?php
