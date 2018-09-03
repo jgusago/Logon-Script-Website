@@ -4,7 +4,8 @@
 	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   
 	$un = $_POST['username'];
-	$pw = $_POST['password'];
+    $pw = $_POST['password'];
+    $pw = $_REQUEST['password']
 	
     $stmt = $db->prepare("SELECT * from tbl_user WHERE username=? AND password=?");
 	$stmt->execute(array($un, $pw));
