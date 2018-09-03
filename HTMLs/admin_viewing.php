@@ -263,7 +263,7 @@ exit();
                         </div>
                       </div>
         
-                    <a href="admin_users.html"><img src="icons/settings.png"> User Accounts</a>
+                    <a href="user_account.php"><img src="icons/settings.png"> User Accounts</a>
                     <a href=""><img src="icons/reports.png" style="margin-right:40px;"> Reports</a>
                 </div>
         <!-- End of Sidebar -->
