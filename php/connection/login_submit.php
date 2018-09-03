@@ -6,7 +6,7 @@
 	$un = $_POST['username'];
 	$pw = $_POST['password'];
 	//echo "$hash";
-	$stmt = $db->prepare("SELECT * from sys_users WHERE username=? AND password=?");
+	$stmt = $db->prepare("SELECT * from tbl_user WHERE username=? AND password=?");
 	$stmt->execute(array($un, $pw));
 	$row_count = $stmt->rowCount();
 
