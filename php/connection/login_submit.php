@@ -5,25 +5,38 @@
   
 	$un = $_POST['username'];
 	$pw = $_POST['password'];
-	//echo "$hash";
-	$stmt = $db->prepare("SELECT * from tbl_user WHERE username=? AND password=?");
+	
+    //$stmt = $db->prepare("SELECT * from tbl_user WHERE username=? AND password=?");
+    $stmt = $db->prepare("SELECT * FROM `tbl_user` WHERE username = ?', array($_REQUEST['username'])");
 	$stmt->execute(array($un, $pw));
 	$row_count = $stmt->rowCount();
 
-	//if (password_verify($pw, $hash)) {
-    //$_SESSION['username'] = $un;
-    //header("Location: main.php");
-	//}
-
-    if($row_count >0)
-        {
-            $_SESSION['username'] = $un;
-            header("Location: ../../HTMLs/admin_viewing.php");
-        }
+	if($un)
+{
+    // If the password they give maches
+    if($un->pass === sha1($un->salt. $_REQUEST['password']))
+    {
+        echo "login success"
+    }
     else
-        { 
-            header("Location: ../../HTMLs/login.php?msg=wrong");
-        }
+    {
+        echo "wrong password"
+    }
+    }
+    else
+    {
+        echo "not found";
+    }
+
+    //if($row_count >0)
+        //{
+            //$_SESSION['username'] = $un;
+            //header("Location: ../../HTMLs/admin_viewing.php");
+        //}
+    //else
+        //{ 
+            //header("Location: ../../HTMLs/login.php?msg=wrong");
+        //}
 ?>
                                      
                                      
