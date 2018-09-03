@@ -1,5 +1,5 @@
 <?php 
-include("../config/db_connection.php");
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ include("../config/db_connection.php");
             }
           ?>
     </div>  
-      <form action="user_account_submit.php" method="POST">
+      <form action="../php/connection/user_account_submit.php" method="POST">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" value="<?php if (!empty($_POST["username"])) { echo $_POST["username"]; } else { echo ''; };  ?>" required placeholder="Username"><br>
         <label for="password">Password:</label><br>
@@ -73,7 +73,7 @@ include("../config/db_connection.php");
         <select id="company" name="company" value="<?php if (!empty($_POST["company_name"])) { echo $_POST["company_name"]; } else { echo ''; };  ?>" required>
             <option></option>
             <?php     
-              $sql = "select company_name from sys_company";
+              $sql = "select company_name from tbl_company";
               $stmt = $db->prepare($sql);
               $stmt->execute();
 
@@ -87,7 +87,7 @@ include("../config/db_connection.php");
         <select id="department" name="department" value="<?php if (!empty($_POST["department_name"])) { echo $_POST["department_name"]; } else { echo ''; };  ?>" required>
             <option></option>
             <?php     
-              $sql = "select department_name from sys_department";
+              $sql = "select department_name from tbl_department";
               $stmt = $db->prepare($sql);
               $stmt->execute();
 
@@ -101,7 +101,7 @@ include("../config/db_connection.php");
         <select id="accounttype" name="accounttype" value="<?php if (!empty($_POST["account_type"])) { echo $_POST["account_type"]; } else { echo ''; };  ?>" required>
           <option></option>
           <?php     
-              $sql = "select account_type from sys_account_type";
+              $sql = "select account_type from tbl_account_type";
               $stmt = $db->prepare($sql);
               $stmt->execute();
 
