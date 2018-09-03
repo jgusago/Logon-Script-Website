@@ -21,10 +21,7 @@
         } else {
             echo "wrong password";
         }
-        } else {
-        // invalid username
-        }
-  
+        } 
     //if($row_count >0)
         //{
             //$_SESSION['username'] = $un;
