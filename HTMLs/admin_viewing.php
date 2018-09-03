@@ -324,7 +324,7 @@ exit();
                             <td></td>
                             <td></td>
                             <td>
-                                <a href="#" style="padding-left:600px;"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
+                                <a href="user_account.php" style="padding-left:600px;"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
                             </td>
                         </tr>
                     </table>
