@@ -14,11 +14,11 @@
     // If the password they give maches
     if($un->pass === sha1($un->salt. $_REQUEST['password']))
     {
-        echo "login success"
+        echo "login success";
     }
     else
     {
-        echo "wrong password"
+        echo "wrong password";
     }
   
     //if($row_count >0)
