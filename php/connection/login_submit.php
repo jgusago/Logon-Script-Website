@@ -9,8 +9,8 @@
     //$stmt = $db->prepare("SELECT * from tbl_user WHERE username=? AND password=?");
 	//$stmt->execute(array($un, $pw));
     //$row_count = $stmt->rowCount();
-    $sql = ('SELECT * FROM tbl_user WHERE username = ?', array($_REQUEST['username']);
-    ($db->query($sql));
+    $un = query('SELECT * FROM `tbl_user` WHERE username = ?', array($_REQUEST['username']));
+    ($db->query($un));
 
     if($un)
 {
