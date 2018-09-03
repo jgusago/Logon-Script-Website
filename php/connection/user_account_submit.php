@@ -46,7 +46,7 @@ else
     {
         $sql = "INSERT INTO tbl_user (username, password, firstname, middlename, lastname, company, department, account_type)
          
-        VALUES ('".$_POST["username"]."','".$_POST["password"]=sha1($salt.$_REQUEST['password'])."','".$_POST["firstname"]."', '".$_POST["middlename"]."', '".$_POST["lastname"]."', '".$_POST["company"]."', '".$_POST["department"]."', '".$_POST["accounttype"]."')";
+        VALUES ('".$_POST["username"]."','".$_POST["password"]=password_hash($password, PASSWORD_DEFAULT)."','".$_POST["firstname"]."', '".$_POST["middlename"]."', '".$_POST["lastname"]."', '".$_POST["company"]."', '".$_POST["department"]."', '".$_POST["accounttype"]."')";
         ($db->query($sql));
         header("Location: ../../HTMLs/user_account.php?msg=correct");
     }
@@ -59,4 +59,5 @@ else
 //VALUES ('".$_POST["username"]."','".$_POST["password"]=md5($_POST['password'])."','".$_POST["firstname"]."', '".$_POST["middlename"]."', '".$_POST["lastname"]."', '".$_POST["company"]."', '".$_POST["department"]."', '".$_POST["accounttype"]."')";
 //password_hash($password, PASSWORD_DEFAULT)
 //hash('sha512', $password.SALT_STRING)
+//sha1($salt.$_REQUEST['password'])
 ?>
