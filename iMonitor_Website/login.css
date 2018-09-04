@@ -1,11 +1,14 @@
+*{
+        margin:0;
+        padding:0;
+}
 body
 {
+        height:24.9vh;
         background-image: url(icons/background.jpg);
-        /* background-size: cover; */
+        background-size: cover;
         background-repeat: no-repeat;
-        /* position: fixed;  */
-        height: 97vh;
-        width:100%;
+        background-position: center;
 }
 .header
 {
