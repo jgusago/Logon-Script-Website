@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(isset($_SESSION["username"])) {
+  header("Location: admin_viewing.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +21,15 @@
 <body>
     <div>
         <div class="header">
+                <div>
+                    <?php
+                        if(isset($_GET['msg']))                      
+                        {                    
+                            echo "<p align='center' class='error'>Wrong username or password.</p>";
+                        }
+                    ?>
+                </div>
+            <form action="../php/connection/login_submit.php" method="POST">
             <div class="row">
                 <div class="col-sm-12 col-md-10  col-md-offset-1">
                     <div class="form-group">
@@ -36,6 +54,7 @@
                 </div>
             </div>
         </div>
+            </form>
         <h1 style="padding-top:50px; font-family: Verdana, tahoma;color: white; text-align:center; font-size: 60px; margin-top: 790px;">SKYLUSTER TECHNOLOGY INC.</h1>
     </div>
 
