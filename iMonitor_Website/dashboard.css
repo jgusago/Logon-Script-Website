@@ -1,0 +1,178 @@
+body
+{
+    background-color:#e3e3e3;
+    font-family:Verdana, Tahoma, sans-serif;
+}
+.navbar-default
+{
+    background-color:#fffbfb; 
+    height:70px; 
+    padding:10px;
+    /* padding-right:30px; */
+}
+.nav-logo
+{
+    width:50px; 
+    height: 55px; 
+}
+.nav-label
+{
+    font-family: Times New Roman; 
+    font-size: 28px; 
+    padding-left:8px; 
+    padding-top:8px;
+}
+.dropdown-toggle
+{
+    font-family: Century Gothic; 
+    padding-top: 7px; 
+    padding-left: 20px; 
+    color: black;
+}
+.dropdown-header
+{
+    font-size:18px; 
+    font-family: Century Gothic;
+}
+.sub-header
+{
+    font-size:18px; 
+    padding:10px;
+}
+.modal-header
+{
+    background-color:#16811430;
+}
+.logout-modal
+{
+    padding: 20px 20px 10px 15px; 
+    font-size: 18px;
+}
+.side-navbar
+{
+    width:270px;
+    position:fixed;
+    height:100%;
+    border-radius:0px;
+    z-index: -1;
+    overflow: hidden;
+    background-color:#fffbfb;
+    padding-top:65px;
+    box-shadow: 2px 2px #d2cbcb;
+}
+.side-navbar a 
+{
+    padding:10px 20px 10px 20px;
+    font-size:20px;
+    font-family: Century Gothic;
+    text-decoration: none;
+    color:black;
+    display: block;
+    background-color: #75bd508f;
+    margin-top:10px;
+    height:60px;
+    border-radius: 3px;
+    margin-left:5px;
+    margin-right:5px;
+}
+.side-navbar p
+{
+    margin-top:-35px;
+    margin-left:45px;
+}
+.side-navbar a:hover, .dropdown-btn:hover
+{
+    background-color:#eae91796;
+    color: black;
+}
+.side-navbar img 
+{
+    margin-right:10px;
+    width: 35px;
+    height: 40px;
+}
+.side-navbar .active
+{
+    background-color:#eae91796;
+}
+.dropbtn 
+{
+    background-color: #4ca51f8f;
+    color: black;
+    /* padding:10px 20px 10px 20px; */
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: Century Gothic;
+    height:60px;
+    margin-top:5px;
+    width:260px;
+    border-radius: 3px;
+    margin-left:5px;
+}	
+.dropbtn:hover, .dropbtn:focus 
+{
+    background-color: #eae91796;
+}
+.dropdown 
+{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 270px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: center;
+}
+.dropdown-content a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover 
+{
+    background-color: #ddd
+}
+.show 
+{
+    display:block;
+}	
+.glyphicon-th-large
+{
+    font-size:35px;
+}
+.glyphicon-list-alt
+{
+    margin-left:-65px;
+    font-size:35px;
+}
+.glyphicon-edit
+{
+    font-size:35px;
+}
+.glyphicon-duplicate
+{
+    font-size:35px;
+}
+.glyphicon-envelope
+{
+    margin-top:-10px;
+    font-size: 30px;
+}
+.glyphicon-bell
+{
+    margin-top:-10px;
+    font-size: 30px;
+}
+.glyphicon-user
+{
+    margin-top:-10px;
+    font-size: 30px;
+}
