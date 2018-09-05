@@ -11,7 +11,7 @@ exit();
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -86,16 +86,16 @@ exit();
 		        <li >
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li><a href="#">Marvin 5th</a></li>
-		                <li><a href="#">Marvin 10th</a></li>
-		                <li><a href="#">COP</a></li>
+		                <li><a href="admin_viewing.html">Marvin 5th</a></li>
+		                <li><a href="admin_viewing.html">Marvin 10th</a></li>
+		                <li><a href="admin_viewing.html">COP</a></li>
 		            </ul>
 		        </li>
 		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
+		            <a href="admin_users.html"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		            <a href="admin_reports.html"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
 		</nav>
@@ -204,9 +204,6 @@ function lettersOnly(input) {
 
 </script>
 
-
-	<!-- // <script src="Bootstrap/js/jquery.min.js"></script>
-	// <script src="Bootstrap/js/bootstrap.min.js"></script> -->
 	
 </body>
 </html>
