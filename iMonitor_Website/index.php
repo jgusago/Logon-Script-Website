@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(isset($_SESSION["username"])) {
+  header("Location: admin_viewing.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +21,15 @@
 <body>
     <div>
         <div class="header">
+                <div>
+                    <?php
+                        if(isset($_GET['msg']))                      
+                        {                    
+                            echo "<p align='center' class='error'>Wrong username or password.</p>";
+                        }
+                    ?>
+                </div>
+            <form action="../php/connection/login_submit.php" method="POST">
             <div class="row">
                 <div class="col-sm-12 col-md-10  col-md-offset-1">
                     <div class="form-group">
@@ -27,15 +45,17 @@
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-lock"></i>
                             </span>
-                            <input class="form-control" id="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                            <!--<input class="form-control" id="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
+                            <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         </div>
                     </div>
                     <div>
-                        <a href="admin_dashboard.html"><button type="submit" name="submit" class="btn btn-primary">Login</button></a>
+                        <button type="submit" name="submit" class="btn btn-primary">Login</button></a>
                     </div>
                 </div>
             </div>
         </div>
+            </form>
         <h1 style="padding-top:50px; font-family: Verdana, tahoma;color: white; text-align:center; font-size: 60px; margin-top: 790px;">SKYLUSTER TECHNOLOGY INC.</h1>
     </div>
 
