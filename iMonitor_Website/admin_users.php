@@ -218,9 +218,16 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-											<option value="admin"></option>
-											<option value="admin">Administrator</option>
-											<option value="staff">Staff</option>
+											<option></option>
+											<?php     
+              									$sql = "select role from tbl_role";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['role'].'</option>'; 
+              									}
+            									?>
 										</select>
 									</td>
 								</tr>
