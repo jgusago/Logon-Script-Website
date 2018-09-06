@@ -1,77 +1,11 @@
-*{
-        margin:0;
-        padding:0;
-}
-body
-{
-        height:24.9vh;
-        background-image: url(icons/background.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-}
-.div   
-{
-        position: fixed;
-}
-.header
-{
-        border-radius:15px; 
-	background:#ffffff5c;
-	padding: 30px 60px; 
-	width: 700px; 
-	height: 330px; 
-	top:50%;
-	left:50%;	
-	position: fixed;
-	margin-top:-240px;
-	margin-left:-360px;
-        overflow: hidden;
-}
-.container
-{
-        margin-top:auto;
-        display:block;
-        margin-bottom: auto;
-        position: relative;
- }
-.row
-{
-        margin-right: -75px;
-        margin-left: -70px;
-       
-}
-.header input 
-{
-        width: 30%;
-        height: 40px;
-        margin-bottom: 20px;
-        margin-right:100px;
-        font-family: Century Gothic;
-        
-}
-.input-group
-{
-        width: 90%;
-        margin-top: 30px;
-        margin-left: 40px;
-} 
-.form-control
-{
-        text-align: center;
-}
-.btn-primary
-{
-        width:88%; 
-        height:40px; 
-        border-radius: 3px;
-        margin-top:20px;
-        margin-left:48px; 
-}
 .login-background{
-        height: 100%;
-        background-color: #1E6598; /* For browsers that do not support gradients */
-        background-image: linear-gradient(#1E6598, #B6CE49); /* Standard syntax (must be last) */
+        background: linear-gradient(#1E6598, #B6CE49) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        z-index: -10;
+        
 }
 .login-background-image{
         height: 100%;
@@ -81,17 +15,97 @@ body
         left: 50%;
         right: 0%;
         bottom: 0%;
-        z-index: -100;
+        z-index: -5;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
 }
 .login-background-image img{
         width: 40%;
         position: fixed;
         margin: 0px;
-        top: 40%;
+        top: 45%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%) ;
-        -webkit-blur: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter:blur(5px);
+        filter: blur(1px);
+        min-width: 500px;
 }
+.login-background-text{
+        height: 20%;;
+        width: 100%;
+        position: fixed;
+        font-family: Verdana, tahoma;
+        text-align: center;
+        top: 80%;
+}
+.login-background-text-content{
+        font-size: 5vw;
+        color: rgb(255, 255, 255);
+        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(160, 160, 160);
+}
+.login-card{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+}
+.login-card-body{
+        background-color: rgba(255, 255, 255, 0.3);
+        height: 30%;
+        width: 35%;
+        top: 45%;
+        left: 50%;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        min-width: 400px;
+        min-height: 250px;
+        padding: 50px;
+}
+.login-form{
+        position: fixed;
+        width: 60%;
+        margin: auto;
+        min-width: 350px;
+        left: 50%;
+        transform: translate(-50%);
+        padding-top: 20px;
+}
+.login-container{
+        width: 100%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 25px;
 
+        
+}
+.login-icon{
+        position: fixed;
+        vertical-align: middle;
+        margin: 2px auto;
+        padding: 4px;
+        padding-left: 10px;
+        display: table-cell;
+        background-color: rgb(255, 255, 255);
+        vertical-align: middle;
+}
+.login-input-field{
+        width: 80%;
+        text-align: center;
+        min-width: 150px;
+}
+.login-button{
+        width: 80%;
+}
+#login-message{
+        display: none;
+        position: fixed;
+        top: 22%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
