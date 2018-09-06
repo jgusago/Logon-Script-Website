@@ -133,12 +133,12 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                     <tbody class="table-users">
 
  							<?php
-		            		$stmt = $db->query('SELECT id, userid, name, department, postion, role FROM tbl_user');
+		            		$stmt = $db->query('SELECT id FROM tbl_user');
 		            		$stmt->execute();
 		            		for($i=0; $row = $stmt->fetch(); $i++){
 	            			?>
                         <tr>
-							<td><?php echo $row['id']; ?></td>
+							<td><label><?php echo $row['id']; ?></label></td>
                             <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 							<?php } ?>
 						</tr>
