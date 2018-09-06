@@ -358,14 +358,20 @@
 										</select>
 									</td>
                                 </tr>
-                                <tr>
+                                <tr class="reset-password">
                                     <td><b>Password:</b></td>
-                                    <td><input type="password" disabled></td>
-                                    <td class="reset-pass"> 
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" value="">Reset password</label>
+                                    <td><input id="default-pass" value="Aa123456" type="password" disabled></td> 
+                                    <td>
+                                        <div>
+                                            <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
                                         </div>
                                     </td>
+                                    <!-- <td>
+                                        <input class="checkbox" type="checkbox" value="reset-pass">
+                                    </td> 
+                                    <td>
+                                        <p>Reset password</p>
+                                    </td>                 -->
                                 </tr>
 								<tr>
 									<td></td>
@@ -474,14 +480,25 @@
           input.value = input.value.replace(regex,"");
                
         }
-        
-        
+               
         function lettersOnly(input) {
           var regex = /[^a-z]/gi;
           input.value = input.value.replace(regex,"");
                
-             }      
-        
+             }   
+             
+         function resetPass() 
+         {
+            var x = document.getElementById("default-pass");
+            if (x.type === "password")
+            {
+                x.type = "text";
+            } 
+            else 
+            {
+                x.type = "password";
+            }
+        }       
         </script>
 	
 </body>

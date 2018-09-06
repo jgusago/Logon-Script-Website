@@ -317,6 +317,10 @@ table select
 {
     text-align: center;
 }
+h4
+{
+    color:black;
+}
 .pagination.pagination-sm
 {
     display: inline-block;

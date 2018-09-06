@@ -216,6 +216,10 @@ thead th
 {
     margin-left:80px;
 }
+.modal-dialog
+{
+    width: 600px;
+}
 .modal-header 
 {
     padding-bottom: 5px;
@@ -239,6 +243,10 @@ u
 	float:left;
 	padding-top: 9px;
 }
+/* .checkbox
+{
+    margin-left: -170px;
+} */
 .modal-form td
 {
 	padding:5px;
@@ -251,7 +259,9 @@ u
 }
 .modal-form .btn-primary
 {
-	width:320px;
+    width:200px;
+    margin-left:60px;
+    margin-top:0px;
 }
 .dropdown-dept select
 {
@@ -282,9 +292,10 @@ u
 {
     padding:20px;
 }
-.modal-footer .btn-default, .btn-success
+.modal-footer .btn-default
 {
-    width:120px;
+    width:80px;
+    padding:5px;
 }
 .row
 {
