@@ -22,7 +22,7 @@
 
 
 
-    
+    function(){
         require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         $username = mysqli_real_escape_string($con,$_POST['username']);
         $encrypted_password = mysqli_real_escape_string($con,$_POST['password']);
@@ -35,7 +35,7 @@
         }else{
             header("Location: ../../iMonitor_Website/index.php?msg=wrong");
         }
-    
+    }
 ?>
                                      
                                      
