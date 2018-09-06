@@ -116,6 +116,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                     </div>
                 </div>
             </div>
+
+                <?php
+		            $stmt = $db->query('SELECT userid, name, department, postion, role FROM tbl_user');
+		            $stmt->execute();
+		            for($i=0; $row = $stmt->fetch(); $i++){
+	            ?>
+
             <div class="container">
                 <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:87%">
                     <thead>
@@ -131,122 +138,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                     </thead>
                     <tbody class="table-users">
                         <tr>
-                            <td>1</td>
-                            <td>1040659</td>
-                            <td>Cams</td>
-                            <td>Marvin 5th</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
                             <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>1040659</td>
-                            <td>Cams</td>
-                            <td>Marvin 5th</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>1040660</td>
-                            <td>Irish</td>
-                            <td>Marvin 10TH</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>1040661</td>
-                            <td>Jemina</td>
-                            <td>COP</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>1040659</td>
-                            <td>Cams</td>
-                            <td>Marvin 5th</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>1040660</td>
-                            <td>Irish</td>
-                            <td>Marvin 10TH</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>1040661</td>
-                            <td>Jemina</td>
-                            <td>COP</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>1040659</td>
-                            <td>Cams</td>
-                            <td>Marvin 5th</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>1040660</td>
-                            <td>Irish</td>
-                            <td>Marvin 10TH</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>1040661</td>
-                            <td>Jemina</td>
-                            <td>COP</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>1040659</td>
-                            <td>Cams</td>
-                            <td>Marvin 5th</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>1040660</td>
-                            <td>Irish</td>
-                            <td>Marvin 10TH</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>1040661</td>
-                            <td>Jemina</td>
-                            <td>COP</td>
-                            <td>IT-OM Audit</td>
-                            <td>Administator</td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>			
                     </tbody>
                 </table>
             </div>
