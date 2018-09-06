@@ -6,7 +6,7 @@ if(isset($_SESSION["username"])) {
   exit();
 }
 
-include '../php/connection/login_submit.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -31,10 +31,8 @@ include '../php/connection/login_submit.php';
                         }
                     ?>
                 </div>
-            <?php
-                login();
-            ?>
-            <form method="POST">
+            
+            <form action = "../php/connection/login_submit.php" method="POST">
             <div class="row">
                 <div class="col-sm-12 col-md-10  col-md-offset-1">
                     <div class="form-group">
