@@ -5,8 +5,6 @@ if(isset($_SESSION["userid"])) {
   header("Location: admin_dashboard.php");
   exit();
 }
-
-
 ?>
 
 <!DOCTYPE html>
