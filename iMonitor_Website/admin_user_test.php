@@ -117,12 +117,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 </div>
             </div>
 
-                <?php
-		            $stmt = $db->query('SELECT userid, name, department, postion, role FROM tbl_user');
-		            $stmt->execute();
-		            for($i=0; $row = $stmt->fetch(); $i++){
-	            ?>
-
             <div class="container">
                 <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:87%">
                     <thead>
@@ -137,9 +131,16 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </tr>
                     </thead>
                     <tbody class="table-users">
+
+ 							<?php
+		            		//$stmt = $db->query('SELECT userid, name, department, postion, role FROM tbl_user');
+		            		//$stmt->execute();
+		            		//for($i=0; $row = $stmt->fetch(); $i++){
+	            			?>
                         <tr>
                             <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-                        </tr>
+							<?php //} ?>
+						</tr>
                     </tbody>
                 </table>
             </div>
