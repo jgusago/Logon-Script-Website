@@ -22,7 +22,7 @@
 
 
 
-    function(){
+    function login(){
         if(isset($_POST['submit'])){
             require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
             $username = mysqli_real_escape_string($con,$_POST['username']);
