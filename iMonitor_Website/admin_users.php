@@ -272,7 +272,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" name="name" required></td>
+									<td><input type="text" id="name" name="name" required></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
