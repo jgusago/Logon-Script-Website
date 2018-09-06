@@ -240,8 +240,18 @@
                     </tbody>
                 </table>
             </div>
-        </div>           
+        </div>  
+        
+        <div>
+            <?php
+                if(isset($_GET['msg']))
+                {       
+                    echo "<p align='center' class='correct'>Data save successfully.</p>";
+                }
+            ?>
+        </div>  
 
+<form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -253,7 +263,7 @@
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="idnumber" required></td>
+									<td><input type="text" name="userid" required></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
@@ -302,7 +312,8 @@
 								</tr>
 							</table>
 						</form>
-					</div>
+                    </div>
+</form>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
