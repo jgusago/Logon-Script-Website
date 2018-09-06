@@ -268,7 +268,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="idnumber" required></td>
+									<td><input type="text" name="userid" required></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
