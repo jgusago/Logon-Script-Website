@@ -1,3 +1,8 @@
+<?php 
+session_start();
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -263,7 +268,7 @@
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="userid" required></td>
+									<td><input type="text" name="idnumber" required></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
