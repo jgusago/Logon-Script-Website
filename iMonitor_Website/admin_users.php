@@ -233,11 +233,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="password" id="password" name="password" required></td>
-								</tr>
-								<tr>
-									<td><b>Confirm Password</b></td>
-									<td><input type="password" required></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" required disabled></td>
 								</tr>
 								<tr>
 									<td></td>
