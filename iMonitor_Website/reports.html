@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
+		<div class="navbar-header">
+			<img class="nav-logo" src="icons/sky_luster.png">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <label class="nav-label">iMonitoring</label>
+
+        <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:5px;">
+				<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
+	            <li class="dropdown">
+	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> Jerry Chen<span class="glyphicon glyphicon-down"></span>
+	            	<span class="caret"></span></a>
+	            		<ul class="dropdown-menu" role="menu">
+	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
+	            			<li class="sub-header"><a href="#">Account Settings</a></li>
+	            			<li class="divider"></li>
+	            			<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+	            		</ul>
+	            </li>
+	        </ul>
+	</nav>
+	<!-- End Navigation-->
+
+ 	<!-- Modal -->
+	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header" style="background-color: #66bb307a;">
+					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<p class="logout-modal">Are you sure you want to logout?</p>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
+					<a class="btn btn-success" href="index.html" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Modal -->
+
+	<!-- Sidebar -->
+	<div class="wrapper">
+		<nav id="sidebar">
+			<ul class="list-unstyled components">
+		        <p></p>
+		        <li>
+		            <a href="admin_dashboard.html"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		        </li>
+		        <li>
+		            <a href="#"><i class="glyphicon glyphicon-home"></i> Branch Settings</a>
+		        </li>
+		        <li>
+		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i> Computer List</a>
+		            <ul class="collapse list-unstyled" id="homeSubmenu">
+		                <li><a href="admin_viewing.html">Marvin 5th</a></li>
+		                <li><a href="admin_viewing.html">Marvin 10th</a></li>
+		                <li><a href="admin_viewing.html">COP</a></li>
+		            </ul>
+		        </li>
+		        <li>
+		            <a href="admin_users.html"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
+		        </li>
+		        <li class="active">
+		            <a href="admin_reports.html"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
+		        </li>	  
+	   		</ul>
+		</nav>
+	</div>               
+	<!-- End of Sidebar -->
+
+    <!-- Table -->
+    <div class="container-body">
+        <div class="info">
+            <p><strong>Reports</strong></p>
+        </div>
+        <div class="container-table" style="position:sticky;  overflow: hidden;">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <table style="margin-left:-45px; margin-top:-10px; width:90%; margin-right:100px;">
+                            <tr class="tr-dept">
+                                <td><b>Select Report to Generate:</b></td>
+                                <td><select name="report">
+                                    <option value="none"></option>
+                                    <option value="al">Active List</option>
+                                    <option value="il">Inactive List</option>
+                                    <option value="clo">Computer Logs</option>
+                                    <option value="cli">Computer List</option>
+                                </td>
+                                <td>
+                                    <div class="fromDate">
+                                        <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="toDate">
+                                        <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="tr-search">
+                                <td><input type="text" placeholder="Search..." class="input-search"></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="#logout" style="padding-left:600px;"><i class="glyphicon glyphicon-print"></i> Print as PDF</a>
+                                </td>
+                                <td>
+                                    <a href="#" style="float:right; padding-right:50px;"><i class="glyphicon glyphicon-export"></i> Export as Excel File</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                            <div class="container">
+                                    <table class="table table-bordered" style="width:88%; position: static; margin-left:13px; margin-top:100px; margin-bottom:10px;">
+                                        <thead>
+                                             <tr>
+                                                <th style="padding-bottom:15px;">User</th>
+                                                <th style="padding-bottom:15px;">Domain</th>
+                                                <th style="padding-bottom:15px;">Hostname</th>
+                                                <th style="padding-bottom:15px;">IP Address</th>
+                                                <th style="padding-bottom:15px;">IP Address Modified</th>
+                                                <th style="padding-bottom:15px;">Old IP Address</th>
+                                                <th style="padding-bottom:15px;">Old IP Address Modified</th>
+                                                <th style="padding-bottom:15px;">iMonitor Status</th>
+                                                <th style="padding-bottom:15px;">Services Not Found</th>
+                                                <th style="padding-bottom:15px;">SysSetting File</th>
+                                                <th style="padding-bottom:15px;">Connection Status</th>
+                                                <th style="padding-bottom:15px;">Branch</th>
+                                                <th style="padding-bottom:15px;">Scan Time </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Running</td>
+                                                <td> <br></td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JM</td>
+                                                <td>NN</td>
+                                                <td>ITOMPH044</td>
+                                                <td>172.16.22.50C</td>
+                                                <td>Jul-30-2018 08:24</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>End Task</td>
+                                                <td>Mssys.exe <br>Mskes.exe</td>
+                                                <td></td>
+                                                <td>Established</td>
+                                                <td>Jul-31-2018 09:08</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+    <script>  
+            $(document).ready(function(){  
+                 $.datepicker.setDefaults({  
+                      dateFormat: 'yy-mm-dd'   
+                 });  
+                 $(function(){  
+                      $("#from_date").datepicker();  
+                      $("#to_date").datepicker();  
+                 });  
+                 $('#filter').click(function(){  
+                      var from_date = $('#from_date').val();  
+                      var to_date = $('#to_date').val();  
+                      var sta_tus = $('#sta_tus').val(); 
+                         var fre_ight= $('#fre_ight').val();
+                      if(from_date != '' && to_date != '' && fre_ight == '' && sta_tus != '')  
+                      {  
+                           $.ajax({  
+                                url:"faetchdate.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                       
+                      else if(from_date == '' && to_date == '' && fre_ight == '' && sta_tus != '')  
+                      {  
+                           $.ajax({  
+                                url:"fetchstatus.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      } 
+                       else if(from_date != '' && to_date != '' && fre_ight != '' && sta_tus == '')  
+                      {  
+                           $.ajax({  
+                                url:"fetchfreightdate.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                       
+                       else if(from_date == '' && to_date == '' && fre_ight != '' && sta_tus == '')  
+                      {  
+                           $.ajax({  
+                                url:"fetchfreight.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      } 
+       else if(from_date != '' && to_date != '' && sta_tus != '' && fre_ight != '') 
+                      {  
+                           $.ajax({  
+                                url:"Fdata.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                      else if(from_date == '' && to_date == '' && sta_tus != '' && fre_ight != '') 
+                      {  
+                           $.ajax({  
+                                url:"Fstaloca.php",  
+                                method:"POST",  
+                                data:{fre_ight:fre_ight, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                       
+                      else if(from_date != '' && to_date != '' && sta_tus == ''  && fre_ight == '')  
+                      {  
+                           $.ajax({  
+                                url:"fetchdata.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }  
+                    
+                      else  
+                      {  
+                           alert("Please Select Date");  
+                      }  
+                 });  
+               $('#exportPDF').click(function(){  
+                      var from_date = $('#from_date').val();  
+                      var to_date = $('#to_date').val();  
+                      var sta_tus = $('#sta_tus').val(); 
+                         var fre_ight= $('#fre_ight').val();
+                      if(from_date != '' && to_date != '' && fre_ight == '' && sta_tus != '')  
+                      {  
+                           $.ajax({  
+                                url:"faetchdatePDF.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                       
+                      else if(from_date == '' && to_date == '' && fre_ight == '' && sta_tus != '')  
+                      {  
+                           $.ajax({  
+                                url:"fetchstatusPDF.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      } 
+                       else if(from_date != '' && to_date != '' && fre_ight != '' && sta_tus == '')  
+                      {  
+                           $.ajax({  
+                                url:"fetchfreightdatePDF.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                       
+                       else if(from_date == '' && to_date == '' && fre_ight != '' && sta_tus == '')  
+                      {  
+                           $.ajax({  
+                                url:"fetchfreightPDF.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      } 
+       else if(from_date != '' && to_date != '' && sta_tus != '' && fre_ight != '') 
+                      {  
+                           $.ajax({  
+                                url:"fdataPDF.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                      else if(from_date == '' && to_date == '' && sta_tus != '' && fre_ight != '') 
+                      {  
+                           $.ajax({  
+                                url:"FstalocaPDF.php",  
+                                method:"POST",  
+                                data:{fre_ight:fre_ight, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }
+                       
+                      else if(from_date != '' && to_date != '' && sta_tus == ''  && fre_ight == '')  
+                      {  
+                           $.ajax({  
+                                url:"fdPDF.php",  
+                                method:"POST",  
+                                data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
+                                success:function(data)  
+                                {  
+                                     $('#order_table').html(data);  
+                                }  
+                           });  
+                      }  
+                    
+                      else  
+                      {  
+                          
+                               document.location.href='exportPDF.php';
+                            
+                      }  
+                 });  
+            });  
+      </script>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $('#exampleModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = button.data('whatever') // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this)
+      modal.find('.modal-title').text('New message to ' + recipient)
+      modal.find('.modal-body input').val(recipient)
+    })
+    
+    $(document).ready(function(){
+     
+     function load_unseen_notification(view = '')
+     {
+      $.ajax({
+       url:"fetch.php",
+       method:"POST",
+       data:{view:view},
+       dataType:"json",
+       success:function(data)
+       {
+        $('.dropdown-menu').html(data.notification);
+        if(data.unseen_notification > 0)
+        {
+         $('.count').html(data.unseen_notification);
+        }
+       }
+      });
+     }
+     
+     load_unseen_notification();
+     
+     $('#comment_form').on('submit', function(event){
+      event.preventDefault();
+      if($('#subject').val() != '' && $('#comment').val() != '')
+      {
+       var form_data = $(this).serialize();
+       $.ajax({
+        url:"insert.php",
+        method:"POST",
+        data:form_data,
+        success:function(data)
+        {
+         $('#comment_form')[0].reset();
+         load_unseen_notification();
+        }
+       });
+      }
+      else
+      {
+       alert("Both Fields are Required");
+      }
+     });
+     
+     $(document).on('click', '.dropdown-toggle', function(){
+      $('.count').html('');
+      load_unseen_notification('yes');
+     });
+     
+     setInterval(function(){ 
+      load_unseen_notification();; 
+     }, 5000);
+     
+    });
+    
+      $(document).ready(function(){
+        $(".dropdown").hover(            
+            function() {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                $(this).toggleClass('open');        
+            },
+            function() {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                $(this).toggleClass('open');       
+            }
+        );
+    });
+    
+            $(document).ready(function () {
+                     $('#sidebarCollapse').on('click', function () {
+                         $('#sidebar').toggleClass('active');
+                     });
+                 });
+     
+    
+          
+    
+    </script>
+    
+
+

@@ -90,7 +90,15 @@ p
 }
 .panel-heading
 {
-    height:55px;
+    height:95px;
+}
+.panel-body
+{
+    padding:0px;
+}
+.panel-default
+{
+    margin-top: -130px;
 }
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -189,7 +197,7 @@ ul ul a {
 {
     overflow: hidden;
     margin-left:225px;
-    margin-top:-1030px;
+    margin-top:-900px;
 }
 .container-table
 {
@@ -198,7 +206,8 @@ ul ul a {
 .container
 {
     width:100%;
-    margin-left:0px;
+    margin-left:-25px;
+    margin-top:-95px;
 }
 .table-bordered th, td
 {
@@ -212,19 +221,31 @@ thead th
 {
 	padding-bottom:15px;
 }
+.row table td
+{
+    padding-bottom:10px;
+    padding-left:40px;
+    text-align: left;
+}
 .tr-dept td
 {
     padding-top:15px;
 }
-tr:hover
+.tr-search
 {
-    background-color: #f5f5f5;
+    padding-left:25px;
+}
+.input-search
+{
+    height:30px; 
+    width: 500px; 
+    margin-left: 0px;
 }
 .tr-dept select
 {
-    width: 250px;
+    width: 285px;
     height:30px;
-    margin-left: -30px;
+    margin-left: -340px;
 }
 .modal-body .table-bordered
 {
