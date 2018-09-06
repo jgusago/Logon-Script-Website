@@ -65,7 +65,7 @@ if(!isset($_SESSION["userid"])) {
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-success" href="index.html" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+					<a class="btn btn-success" href="../php/connection/logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
 				</div>
 			</div>
 		</div>
