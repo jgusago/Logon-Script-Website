@@ -138,7 +138,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		            		for($i=0; $row = $stmt->fetch(); $i++){
 	            			?>
                         <tr>
-							<td><label><?php echo $row['id']; ?></label></td>
+							<td><?php echo $row['id']; ?></td>
 							<td><label><?php echo $row['userid']; ?></label></td>
 							<td><label><?php echo $row['name']; ?></label></td>
 							<td><label><?php echo $row['department']; ?></label></td>
