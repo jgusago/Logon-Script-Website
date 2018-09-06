@@ -12,11 +12,11 @@
 
     if ($row_count > 0) {
     $_SESSION["username"]=$un;
-        header("Location: main.php");
+        header("Location: ../../iMonitoring_Website/admin_dashboard.php");
     }
 
     else {
-        header("Location: ../index_test.php?msg=wrong");
+        header("Location: ../../iMonitoring_Website/index.php?msg=wrong");
     }
 ?>
                                      
