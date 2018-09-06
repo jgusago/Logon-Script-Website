@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	
 	/*require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   
@@ -23,17 +23,19 @@
 
 
     function(){
-        require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-        $username = mysqli_real_escape_string($con,$_POST['username']);
-        $encrypted_password = mysqli_real_escape_string($con,$_POST['password']);
-        $res = mysqli_query($con,"SELECT * FROM tbl_user WHERE username = '$username' AND password = '$password' ");
-        $row = mysqli_fetch_assoc($res);
-        if($row['password'] == md5(sha1($encrypted_password)))
-        {
-            $_SESSION["username"] = $username;
-            header("Location: ../../iMonitor_Website/admin_dashboard.php");
-        }else{
-            header("Location: ../../iMonitor_Website/index.php?msg=wrong");
+        if(isset($_POST['submit'])){
+            require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+            $username = mysqli_real_escape_string($con,$_POST['username']);
+            $encrypted_password = mysqli_real_escape_string($con,$_POST['password']);
+            $res = mysqli_query($con,"SELECT * FROM tbl_user WHERE username = '$username' AND password = '$password' ");
+            $row = mysqli_fetch_assoc($res);
+            if($row['password'] == md5(sha1($encrypted_password)))
+            {
+                $_SESSION["username"] = $username;
+                header("Location: ../../iMonitor_Website/admin_dashboard.php");
+            }else{
+                header("Location: ../../iMonitor_Website/index.php?msg=wrong");
+            }
         }
     }
 ?>
