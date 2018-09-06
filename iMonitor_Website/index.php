@@ -55,7 +55,7 @@ if(isset($_SESSION["username"])) {
                         </div>
                     </div>
                     <div>
-                        <button type="submit" name="submit" class="btn btn-primary">Login</button></a>
+                        <input type="submit" name="submit" class="btn btn-primary" value="Login">
                     </div>
                 </div>
             </div>
