@@ -139,11 +139,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	            			?>
                         <tr>
 							<td><?php echo $row['id']; ?></td>
-							<td><label><?php echo $row['userid']; ?></label></td>
-							<td><label><?php echo $row['name']; ?></label></td>
-							<td><label><?php echo $row['department']; ?></label></td>
-							<td><label><?php echo $row['position']; ?></label></td>
-							<td><label><?php echo $row['role']; ?></label></td>
+							<td><?php echo $row['userid']; ?></td>
+							<td><?php echo $row['name']; ?></td>
+							<td><?php echo $row['department']; ?></td>
+							<td><?php echo $row['position']; ?></td>
+							<td><?php echo $row['role']; ?></td>
                             <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 							<?php } ?>
 						</tr>
