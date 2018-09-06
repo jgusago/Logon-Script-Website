@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../php/connection/login_submit.php';
+require '../php/connection/login_submit.php';
 if(isset($_SESSION["username"])) {
   header("Location: admin_viewing.php");
   exit();
