@@ -268,7 +268,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="userid" required></td>
+									<td><input type="text" id="userid" name="userid" required></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
@@ -305,7 +305,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="password" required></td>
+									<td><input type="password" id="password" name="password" required></td>
 								</tr>
 								<tr>
 									<td><b>Confirm Password</b></td>
