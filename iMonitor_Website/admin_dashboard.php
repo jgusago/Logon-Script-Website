@@ -1,5 +1,5 @@
 <script type="text/javascript">
-var IDLE_TIMEOUT = 10; //seconds
+var IDLE_TIMEOUT = 600; //seconds
 var _idleSecondsCounter = 0;
 document.onclick = function() {
 _idleSecondsCounter = 0;
