@@ -246,15 +246,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 </table>
             </div>
         </div>  
-        
-        <div>
-            <?php
-                if(isset($_GET['msg']))
-                {       
-                    echo "<p align='center' class='correct'>Data save successfully.</p>";
-                }
-            ?>
-        </div>  
 
 <form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
@@ -264,6 +255,16 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
 					<div class="body">
+
+                        <div>
+                            <?php
+                                if(isset($_GET['msg']))
+                            {       
+                                echo "<p align='center' class='correct'>Data save successfully.</p>";
+                            }
+                            ?>
+                        </div>  
+
 						<form style="padding:20px;">
 							<table class="modal-form">
 								<tr>
