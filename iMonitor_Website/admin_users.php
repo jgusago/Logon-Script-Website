@@ -82,7 +82,7 @@
 		            </ul>
 		        </li>
 		        <li class="active">
-		            <a href="admin_users.html"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
+		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
 		        </li>
 		        <li>
 		            <a href="reports.html"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>

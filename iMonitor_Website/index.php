@@ -1,8 +1,8 @@
 <?php
 session_start();
-require '../php/connection/login_submit.php';
-if(isset($_SESSION["username"])) {
-  header("Location: admin_viewing.php");
+//require '../php/connection/login_submit.php';
+if(isset($_SESSION["userid"])) {
+  header("Location: admin_dashboard.php");
   exit();
 }
 
@@ -32,9 +32,9 @@ if(isset($_SESSION["username"])) {
                     ?>
                 </div>
             <?php
-                login();
+                //login();
             ?>
-            <form method="POST">
+            <form action="../php/connection/login_submit.php" method="POST">
             <div class="row">
                 <div class="col-sm-12 col-md-10  col-md-offset-1">
                     <div class="form-group">
