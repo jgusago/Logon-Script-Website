@@ -199,7 +199,20 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 								</tr>
 								<tr>
 									<td><b>Position:</b></td>
-									<td><input type="text" id="position" name="position" required></td>
+									<td class="dropdown-dept">
+										<select name="postion">
+											<option></option>
+											<?php     
+              									$sql = "select position from tbl_position";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            									?>
+										</select>
+									</td>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
