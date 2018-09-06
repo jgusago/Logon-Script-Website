@@ -291,7 +291,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 								</tr>
 								<tr>
 									<td><b>Position:</b></td>
-									<td><input type="text" required></td>
+									<td><input type="text" id="position" name="position" required></td>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
