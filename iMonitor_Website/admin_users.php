@@ -273,13 +273,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-											<option value="m5"></option>
-											<option value="m5">Marvin 5th</option>
-											<option value="m10">Marvin 10th</option>
-											<option value="cop">COP</option>
-											<option value="b2b">B2B</option>
-											<option value="at">AT</option>
-											<option value="l8">L8</option>
+											<option value="m5">----select department----</option>
+											<option value="Marvin 5th">Marvin 5th</option>
+											<option value="Marvin 10th">Marvin 10th</option>
+											<option value="COP">COP</option>
+											<option value="B2B">B2B</option>
+											<option value="AT">AT</option>
+											<option value="L8">L8</option>
 
 										</select>
 									</td>
