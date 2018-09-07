@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-
+$id=$_GET['id'];
 //if(!isset($_SESSION["userid"])) {
     //header("Location: index.php");
   //exit();
@@ -253,6 +253,14 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		<!-- End of Modal -->
 
 		<!-- Modal Add User-->
+
+    <?php
+		$stmt = $db->query('SELECT * FROM tbl_user WHERE id='$id'');
+		$stmt->execute();
+		for($i=0; $row = $stmt->fetch(); $i++){
+		$id=$row['id'];
+	?>
+
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -264,7 +272,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="idnumber" required></td>
+									<td><input type="text" name="userid" required value=<?php echo $row['userid']; ?>>></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
