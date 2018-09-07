@@ -136,6 +136,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		            		$stmt = $db->query('SELECT id, userid, name, department, position, role FROM tbl_user');
 		            		$stmt->execute();
 		            		for($i=0; $row = $stmt->fetch(); $i++){
+							$id=$row['id'];
 	            			?>
                         <tr>
 							<td><?php echo $row['id']; ?></td>
@@ -144,7 +145,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 							<td><?php echo $row['department']; ?></td>
 							<td><?php echo $row['position']; ?></td>
 							<td><?php echo $row['role']; ?></td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
+                            <td><a href="edit_submit.php" <?php echo '?id='.$id; ?> data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 							<?php } ?>
 						</tr>
                     </tbody>
