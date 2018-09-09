@@ -320,6 +320,7 @@ $ID=$_GET['id'];
 										</select>
 									</td>
                                 </tr>
+								<?php } ?>
                                 <tr class="reset-password">
                                     <td><b>Password:</b></td>
                                     <td><input id="default-pass" value="Aa123456" type="password" disabled></td> 
@@ -349,7 +350,7 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 			</div>
-<?php } ?>
+
 		<!-- End of Modal -->
 
     <script type="text/javascript">
