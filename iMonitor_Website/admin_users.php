@@ -344,8 +344,8 @@ $ID=$_GET['id'];
 							</table>
 						</form>
 					</div>
+					<?php } ?>
 </form>
-	<?php } ?>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>			
