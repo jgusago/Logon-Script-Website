@@ -264,11 +264,11 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name"></td>
+									<td><input type="text" id="name" name="name" required placeholder="Name"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
