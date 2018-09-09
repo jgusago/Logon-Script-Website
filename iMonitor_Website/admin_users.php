@@ -245,12 +245,6 @@ $ID=$_GET['id'];
 
 		<!-- Modal Add User-->
 
-	<?php
-		 $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
-		 $stmt->execute();
-		 for($i=0; $row = $stmt->fetch(); $i++){
-		 $id=$row['id'];
-	?>
 
 <form action="user_edit_account_submit.php">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
@@ -261,6 +255,14 @@ $ID=$_GET['id'];
 					</div>
 					<div class="body">
 						<form style="padding:10px;">
+
+												  <?php
+		 $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
+		 $stmt->execute();
+		 for($i=0; $row = $stmt->fetch(); $i++){
+		 $id=$row['id'];
+	?>
+
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
