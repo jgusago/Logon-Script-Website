@@ -282,14 +282,16 @@ $id=$_GET['id'];
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-											<option value="m5">----select department----</option>
-											<option value="Marvin 5th">Marvin 5th</option>
-											<option value="Marvin 10th">Marvin 10th</option>
-											<option value="COP">COP</option>
-											<option value="B2B">B2B</option>
-											<option value="AT">AT</option>
-											<option value="L8">L8</option>
+										<option></option>
+											<?php     
+              									$sql = "select position from tbl_position";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
 
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            								?>
 										</select>
 									</td>
 								</tr>
