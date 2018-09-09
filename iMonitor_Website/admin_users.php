@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$id=$_GET['id'];
+$ID=$_GET['id'];
 //if(!isset($_SESSION["userid"])) {
     //header("Location: index.php");
   //exit();
@@ -162,15 +162,6 @@ $id=$_GET['id'];
 					</div>
 					<div class="body">
 
-                        <div>
-                            <?php
-                                if(isset($_GET['msg']))
-                            {       
-                                echo "<p align='center' class='correct'>Data save successfully.</p>";
-                            }
-                            ?>
-                        </div>  
-
 						<form style="padding:20px;">
 							<table class="modal-form">
 								<tr>
@@ -255,12 +246,13 @@ $id=$_GET['id'];
 		<!-- Modal Add User-->
 
     <?php
-		$stmt = $db->query("SELECT * FROM tbl_user WHERE id='$id'");
-		$stmt->execute();
-		for($i=0; $row = $stmt->fetch(); $i++){
-		$id=$row['id'];
+		 $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
+		 $stmt->execute();
+		 for($i=0; $row = $stmt->fetch(); $i++){
+		 $id=$row['id'];
 	?>
 
+	<form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -272,11 +264,11 @@ $id=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="userid" required value=<?php echo $row['userid']; ?>></td>
+									<td><input type="text" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" name="name" required></td>
+									<td><input type="text" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
@@ -354,6 +346,8 @@ $id=$_GET['id'];
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
+					</form>
+					<?php } ?>
 				</div>
 			</div>
 			</div>
