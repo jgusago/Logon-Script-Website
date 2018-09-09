@@ -284,12 +284,12 @@ $id=$_GET['id'];
 										<select name="department">
 										<option></option>
 											<?php     
-              									$sql = "select position from tbl_position";
+              									$sql = "select department from tbl_department";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
 
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['position'].'</option>'; 
+                								echo '<option>'.$row['department'].'</option>'; 
               									}
             								?>
 										</select>
