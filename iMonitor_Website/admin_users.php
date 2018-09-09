@@ -166,17 +166,17 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" name="userid" required></td>
+									<td><input type="text" id="userid" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" required></td>
+									<td><input type="text" id="name" name="name" required placeholder="Name"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-											<option></option>
+											<option>----Select Department----</option>
 											<?php     
               									$sql = "select department from tbl_department";
               									$stmt = $db->prepare($sql);
@@ -193,7 +193,7 @@ $ID=$_GET['id'];
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="postion">
-											<option></option>
+											<option>----Select Position----</option>
 											<?php     
               									$sql = "select position from tbl_position";
               									$stmt = $db->prepare($sql);
@@ -210,7 +210,7 @@ $ID=$_GET['id'];
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-											<option></option>
+											<option>----Select Role----</option>
 											<?php     
               									$sql = "select role from tbl_role";
               									$stmt = $db->prepare($sql);
@@ -266,7 +266,7 @@ $ID=$_GET['id'];
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-										<option>---Select Department---</option>
+										<option>----Select Department----</option>
 											<?php     
               									$sql = "select department from tbl_department";
               									$stmt = $db->prepare($sql);
@@ -283,7 +283,7 @@ $ID=$_GET['id'];
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="postion">
-											<option></option>
+											<option>----Select Position----</option>
 											<?php     
               									$sql = "select position from tbl_position";
               									$stmt = $db->prepare($sql);
@@ -299,7 +299,7 @@ $ID=$_GET['id'];
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-										<option></option>
+										<option>----Select Role----</option>
 											<?php     
               									$sql = "select role from tbl_role";
               									$stmt = $db->prepare($sql);
