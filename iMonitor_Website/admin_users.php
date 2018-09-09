@@ -346,7 +346,7 @@ $ID=$_GET['id'];
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 </form>
-	<?php } ?>
+	
 					
 				</div>
 			</div>
