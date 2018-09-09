@@ -253,8 +253,6 @@ $ID=$_GET['id'];
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
-					<div class="body">
-						<form style="padding:10px;">
 
 												  <?php
 		 $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
@@ -263,6 +261,8 @@ $ID=$_GET['id'];
 		 $id=$row['id'];
 	?>
 
+					<div class="body">
+						<form style="padding:10px;">
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
