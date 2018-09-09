@@ -252,7 +252,6 @@ $ID=$_GET['id'];
 		 $id=$row['id'];
 	?>
 
-	<form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -345,7 +344,7 @@ $ID=$_GET['id'];
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
-					</form>
+				
 					<?php } ?>
 				</div>
 			</div>
