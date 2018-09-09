@@ -185,7 +185,7 @@ $ID=$_GET['id'];
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['department'].'</option>'; 
               									}
-            									?>
+            								?>
 										</select>
 									</td>
 								</tr>
@@ -202,7 +202,7 @@ $ID=$_GET['id'];
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['position'].'</option>'; 
               									}
-            									?>
+            								?>
 										</select>
 									</td>
 								</tr>
@@ -219,7 +219,7 @@ $ID=$_GET['id'];
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['role'].'</option>'; 
               									}
-            									?>
+            								?>
 										</select>
 									</td>
 								</tr>
@@ -341,7 +341,6 @@ $ID=$_GET['id'];
 								</tr>
 							</table>
 						</form>
-						<?php } ?>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
