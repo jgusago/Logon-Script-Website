@@ -145,7 +145,7 @@ $ID=$_GET['id'];
 							<td><?php echo $row['department']; ?></td>
 							<td><?php echo $row['position']; ?></td>
 							<td><?php echo $row['role']; ?></td>
-                            <td><a href="#editUser" <?php echo '?id='.$id; ?> data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
+                            <td><a href="editUser" <?php echo '?id='.$id; ?> data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
 							<?php } ?>
 						</tr>
                     </tbody>
@@ -245,6 +245,12 @@ $ID=$_GET['id'];
 
 		<!-- Modal Add User-->
 
+		<?php
+		 	$stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
+		 	$stmt->execute();
+		 	for($i=0; $row = $stmt->fetch(); $i++){
+		 	$id=$row['id'];
+		?>
 
 <form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
@@ -337,6 +343,7 @@ $ID=$_GET['id'];
 						</form>
 					</div>					
 </form>
+	<?php } ?>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>			
@@ -459,14 +466,6 @@ $ID=$_GET['id'];
         }       
         </script>
 	
-	<?php
-		 $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
-		 $stmt->execute();
-		 for($i=0; $row = $stmt->fetch(); $i++){
-		 $id=$row['id'];
-	?>
-
-<?php } ?>
 </body>
 </html>
 
