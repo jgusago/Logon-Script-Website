@@ -297,15 +297,34 @@ $id=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Position:</b></td>
-									<td><input type="text" required></td>
+									<td class="dropdown-dept">
+										<select name="postion">
+											<option></option>
+											<?php     
+              									$sql = "select position from tbl_position";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            								?>
+										</select>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-											<option value="admin"></option>
-											<option value="admin">Administrator</option>
-											<option value="staff">Staff</option>
+										<option></option>
+											<?php     
+              									$sql = "select role from tbl_role";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['role'].'</option>'; 
+              									}
+            								?>
 										</select>
 									</td>
                                 </tr>
