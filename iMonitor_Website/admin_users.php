@@ -272,7 +272,7 @@ $id=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="userid" required value=<?php echo $row['userid']; ?>>></td>
+									<td><input type="text" name="userid" required value=<?php echo $row['userid']; ?>></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
