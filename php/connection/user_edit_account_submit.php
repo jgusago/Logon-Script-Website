@@ -11,7 +11,7 @@ $position= $_POST['position'];
 $role= $_POST['role'];
 $password= $_POST['password'];
 
-$stmt = $db->prepare("UPDATE tbl_user SET usernid='$userid', name='$name', department='$department', position='$position', role='$role', password='$password' WHERE id='$get_id'");
+$stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', password='$password' WHERE id='$get_id'");
 $stmt->execute(array());
 $affected_rows = $stmt->rowCount();
 
