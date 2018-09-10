@@ -257,7 +257,10 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="number" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="User ID"></td>
+									<td><input type="number" id="userid" name="userid" value="<?php $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
+		 							$stmt->execute();
+		 							for($i=0; $row = $stmt->fetch(); $i++){
+		 							$id=$row['id']; ?> <?php } ?>" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
