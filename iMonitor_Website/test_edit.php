@@ -50,7 +50,7 @@ $ID=$_GET['id'];
         <label for="username">Name:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name"><br>
         
-        <label for="role">Department:</label><br>
+        <label for="department">Department:</label><br>
             <select id="department" name="department">
 
                           <?php     
@@ -78,7 +78,7 @@ $ID=$_GET['id'];
               <select id="position" name="position">
 
                           <?php     
-              									$sql = "select department from tbl_user WHERE id='$id'";
+              									$sql = "select position from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
 
