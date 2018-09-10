@@ -49,9 +49,6 @@ $ID=$_GET['id'];
         <input type="text" id="username" name="username" value="<?php echo $row['username']; ?>" required placeholder="Username"><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
-        <!--<label for="retypepassword">Re-type Password:</label><br>
-        <input type="password" onblur="myFunction()" id="repassword" name="repassword" value="<?php //if (!empty($_POST["username"])) { echo $_POST["username"]; } else { echo ''; };  ?>" required placeholder="Password"><br>-->
-        
         <label for="role">Account Type:</label><br>
             <select id="role" name="role">
 
