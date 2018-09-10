@@ -1,13 +1,4 @@
 function confirmlogin(){
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-
-    return false;
-
-}
-
-/*
-
 
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
@@ -25,9 +16,8 @@ function confirmlogin(){
             default:
 
         }
-        //$("#sampledt").html(data+"status: "+status+"<br>active: "+active+"<br>passchange: "+passchange);
+        
         });
 
         return false;
-
-        */
+}
