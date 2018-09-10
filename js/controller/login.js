@@ -1,33 +1,58 @@
-document.getElementById("login-form").addEventListener("submit",login);
-
 function login(){
-    username = document.getElementById("username").value;
-    password = document.getElementById("password").value;
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
 
     $.post("php/login_confirm.php",{username:username,password:password},function(data){
-
-        data = data.split("#");
-
-        switch(data(0)){
+        var dts = data.split(";");
+        switch(dts[0]){
             case "success":
-                document.getElementById("login-message").style.display = "block";
-                return false;
-
+            /*
+            var status = dts[1];
+            var active = dts[2];
+            var passchange = dts[3];
+            
+                    if(passchange == 0){
+                        if(status == 'admin'){
+                                window.location.assign("http://172.16.39.241/om/.admin.html");
+                            }
+                        else if(status == 'itStaff'){
+                                window.location.assign("http://172.16.39.241/om/.user.html");
+                            }
+                        else if (status == 'superadmin'){
+                            window.location.assign("http://172.16.39.241/om/.superadmin.html");
+                        }
+                        else{
+                            //do nothing
+                        }
+                        }
+                    else{
+                        $('#npd').removeAttr('hidden');
+                        $('#npcd').removeAttr('hidden');
+                        $('#confirmbtns').removeAttr('hidden');
+                        $('#loginbtn').attr('hidden',true);
+                        $('#newpassword').attr('required',true);
+                        $('#conpassword').attr('required',true);
+                        $("#loginform").removeAttr('onsubmit');
+                        $("#loginform").attr('onsubmit','return loginnewpass()');
+                        document.getElementById("username").disabled = true;
+                        document.getElementById("password").disabled = true;
+                        $("#notifylogin").html("<div class='alert alert-success'>You're Required to change your password before you continue</div>");
+                        }
+                        */
+                   
             break;
-
             case "failed":
-                document.getElementById("login-message").style.display = "block";
-                return false;
-
+                $("#notifylogin").html("<div class='alert alert-danger'>"+dts[1]+"</div>");
+                
             break;
-
             default:
-                document.getElementById("login-message").style.display = "block";
-                return false;
+
         }
 
-        return false;
-    });
+        
+        //$("#sampledt").html(data+"status: "+status+"<br>active: "+active+"<br>passchange: "+passchange);
+        });
 
-    return false;
+        return false;
 }
