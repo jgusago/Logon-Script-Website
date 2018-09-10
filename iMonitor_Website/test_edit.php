@@ -49,7 +49,8 @@ $ID=$_GET['id'];
         <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID"><br>
         <label for="username">Name:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name"><br>
-        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
         <label for="department">Department:</label><br>
             <select id="department" name="department">
 
@@ -96,8 +97,7 @@ $ID=$_GET['id'];
                 								echo '<option>'.$row['position'].'</option>'; 
               									}
             							?>
-					  </select><br>        
-        
+					  </select><br>           
         <label for="role">Role:</label><br>
             <select id="role" name="role">
 
@@ -121,8 +121,6 @@ $ID=$_GET['id'];
               									}
             							?>
 					  </select><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
         <input class="submit" type="submit" value="Create Account">
       </form>
       <?php } ?>                                                   
