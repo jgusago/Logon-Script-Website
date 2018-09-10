@@ -9,14 +9,17 @@ function login(){
         switch(data(0)){
             case "success":
                 document.getElementById("login-message").style.display = "block";
+                onsubmit="return false"
             break;
 
             case "failed":
                 document.getElementById("login-message").style.display = "block";
+                onsubmit="return false"
             break;
 
             default:
                 document.getElementById("login-message").style.display = "block";
+                onsubmit="return false"
         }
 
         return false;
