@@ -18,6 +18,8 @@ function login(){
             default:
                 document.getElementById("login-message").style.display = "block";
         }
+
+        return false;
     });
 
     return false;
