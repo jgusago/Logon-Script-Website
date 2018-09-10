@@ -63,7 +63,7 @@ exit();
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
 	            <li class="dropdown">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> Jerry Chen<span class="glyphicon glyphicon-down"></span>
+	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>Jerry Chen<span class="glyphicon glyphicon-down"></span>
 	            	<span class="caret"></span></a>
 	            		<ul class="dropdown-menu" role="menu">
 	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
@@ -120,7 +120,7 @@ exit();
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
-		            <a href="admin_reports.html"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
 		</nav>

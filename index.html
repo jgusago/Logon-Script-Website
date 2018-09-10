@@ -8,7 +8,8 @@
         <link rel="stylesheet" type="text/css" href="css/login.css">
         <link href="design/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <script src="js/controller/login.js"></script>
+        <script language="JavaScript" type="text/javascript" src="js/controller/login.js"></script>
+        <script language="JavaScript" type="text/javascript" src="js/jssource/jquery/jquery-3.3.1.min.js"></script>
     </head>
 
     <body>
@@ -24,20 +25,20 @@
         </div>
         <!-- Card -->
         <div class="login-card">
-                <div class="alert alert-danger" role="alert" id="login-message">
-                        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                <div class="alert" role="alert" id="login-message">
+                        <strong><p id="login-alert-type"></p></strong> <p id="login-alert-message"></p>
                 </div>
             <div class="login-card-body">
                 <div class="login-form">
                     <!-- Form -->
-                    <form onsubmit="return login()">
+                    <form onsubmit="return confirmlogin()" id="login-form">
                         <div class="input-container login-container">
                             <i class="fa fa-user icon login-icon"></i>
                             <input class="input-field login-input-field" id="username" type="text" placeholder="Username" required>
                         </div>
                         <div class="input-container login-container">
                             <i class="fa fa-lock icon login-icon"></i>
-                            <input class="input-field login-input-field" id="password" type="password" placeholder="Password" required>
+                            <input class="input-field login-input-field" id="password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces" required>
                         </div>
                         <div class="input-container login-container">
                             <button class="btn btn-primary login-button" type="submit">Submit</button>

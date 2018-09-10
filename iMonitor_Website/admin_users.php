@@ -1,11 +1,13 @@
 <?php 
+error_reporting(0);
+
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-
-//if(!isset($_SESSION["userid"])) {
-    //header("Location: index.php");
-  //exit();
-  //}
+$ID=$_GET['id'];
+	if(!isset($_SESSION["userid"])) {
+    	header("Location: index.php");
+  	exit();
+  	}
 ?>
 
 <!DOCTYPE html>
@@ -136,6 +138,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		            		$stmt = $db->query('SELECT id, userid, name, department, position, role FROM tbl_user');
 		            		$stmt->execute();
 		            		for($i=0; $row = $stmt->fetch(); $i++){
+							$id=$row['id'];
 	            			?>
                         <tr>
 							<td><?php echo $row['id']; ?></td>
@@ -144,9 +147,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 							<td><?php echo $row['department']; ?></td>
 							<td><?php echo $row['position']; ?></td>
 							<td><?php echo $row['role']; ?></td>
-                            <td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-							<?php } ?>
+							<td><a href="test_edit.php <?php echo '?id='.$id; ?>" class="btn btn-danger">
+							<button class="btn_delete">Edit Record</button></a></td>
+                            <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>-->
 						</tr>
+						<?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -161,30 +166,21 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 					</div>
 					<div class="body">
 
-                        <div>
-                            <?php
-                                if(isset($_GET['msg']))
-                            {       
-                                echo "<p align='center' class='correct'>Data save successfully.</p>";
-                            }
-                            ?>
-                        </div>  
-
 						<form style="padding:20px;">
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" name="userid" required></td>
+									<td><input type="number" id="userid" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" required></td>
+									<td><input type="text" pattern="[A-Za-z]*" id="name" name="name" required placeholder="Name" class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-											<option></option>
+											<option>----Select Department----</option>
 											<?php     
               									$sql = "select department from tbl_department";
               									$stmt = $db->prepare($sql);
@@ -193,7 +189,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['department'].'</option>'; 
               									}
-            									?>
+            								?>
 										</select>
 									</td>
 								</tr>
@@ -201,7 +197,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="postion">
-											<option></option>
+											<option>----Select Position----</option>
 											<?php     
               									$sql = "select position from tbl_position";
               									$stmt = $db->prepare($sql);
@@ -210,7 +206,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['position'].'</option>'; 
               									}
-            									?>
+            								?>
 										</select>
 									</td>
 								</tr>
@@ -218,7 +214,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-											<option></option>
+											<option>----Select Role----</option>
 											<?php     
               									$sql = "select role from tbl_role";
               									$stmt = $db->prepare($sql);
@@ -227,13 +223,17 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['role'].'</option>'; 
               									}
-            									?>
+            								?>
 										</select>
 									</td>
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
+<<<<<<< HEAD
 									<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
+=======
+									<td><input type="text" id="password" name="password" value="Aa123456" required></td>
+>>>>>>> 28a5d35b981f32db4412aaf113c990e4a8afd529
 								</tr>
 								<tr>
 									<td></td>
@@ -252,6 +252,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		<!-- End of Modal -->
 
 		<!-- Modal Add User-->
+
+<form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -263,44 +265,93 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" name="idnumber" required></td>
+									<td><input type="number" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" name="name" required></td>
+									<td><input type="text" pattern="[A-Za-z]*" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name" class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-											<option value="m5">----select department----</option>
-											<option value="Marvin 5th">Marvin 5th</option>
-											<option value="Marvin 10th">Marvin 10th</option>
-											<option value="COP">COP</option>
-											<option value="B2B">B2B</option>
-											<option value="AT">AT</option>
-											<option value="L8">L8</option>
+										<?php     
+              									$sql = "select department from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
 
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['department'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
+              									$sql = "select department from tbl_department";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['department'].'</option>'; 
+              									}
+            							?>
 										</select>
 									</td>
 								</tr>
 								<tr>
 									<td><b>Position:</b></td>
-									<td><input type="text" required></td>
+									<td class="dropdown-dept">
+										<select name="postion">
+										<?php     
+              									$sql = "select position from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
+              									$sql = "select position from tbl_position";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            							?>
+										</select>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-											<option value="admin"></option>
-											<option value="admin">Administrator</option>
-											<option value="staff">Staff</option>
+										<option>----Select Role----</option>
+										<?php     
+              									$sql = "select role from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['role'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
+              									$sql = "select role from tbl_role";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['role'].'</option>'; 
+              									}
+            							?>
 										</select>
 									</td>
                                 </tr>
                                 <tr class="reset-password">
                                     <td><b>Password:</b></td>
-                                    <td><input id="default-pass" value="Aa123456" type="password" disabled></td> 
+                                    <td><input id="default-pass" value="Aa123456" type="password"></td> 
                                     <td>
                                         <div>
                                             <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
@@ -319,13 +370,15 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 								</tr>
 							</table>
 						</form>
-					</div>
+					</div>					
+</form>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
-					</div>
+					</div>			
 				</div>
 			</div>
 			</div>
+
 		<!-- End of Modal -->
 
     <script type="text/javascript">
