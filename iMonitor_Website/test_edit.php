@@ -53,25 +53,25 @@ $ID=$_GET['id'];
         <input type="password" onblur="myFunction()" id="repassword" name="repassword" value="<?php //if (!empty($_POST["username"])) { echo $_POST["username"]; } else { echo ''; };  ?>" required placeholder="Password"><br>-->
         
         <label for="role">Account Type:</label><br>
-            <select id="role" name="accounttype">
+            <select id="role" name="role">
 
                           <?php     
-              									$sql = "select account_type from sys_user WHERE id='$id'";
+              									$sql = "select role from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
 
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['account_type'].'</option>'; 
+                								echo '<option>'.$row['role'].'</option>'; 
               									}
             							?>
 
 											    <?php     
-              									$sql = "select account_type from sys_account_type";
+              									$sql = "select role from tbl_role";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
 
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['account_type'].'</option>'; 
+                								echo '<option>'.$row['role'].'</option>'; 
               									}
             							?>
 					  </select><br>
