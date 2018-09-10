@@ -1,3 +1,5 @@
+document.getElementById("login-form").addEventListener("submit",login);
+
 function login(){
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
@@ -10,7 +12,7 @@ function login(){
             case "success":
                 document.getElementById("login-message").style.display = "block";
                 return false;
-                
+
             break;
 
             case "failed":
