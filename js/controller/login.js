@@ -16,8 +16,6 @@ function login(){
             default:
 
         }
-
-        
         //$("#sampledt").html(data+"status: "+status+"<br>active: "+active+"<br>passchange: "+passchange);
         });
 
