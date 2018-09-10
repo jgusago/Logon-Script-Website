@@ -37,7 +37,7 @@
                         </div>
                         <div class="input-container login-container">
                             <i class="fa fa-lock icon login-icon"></i>
-                            <input class="input-field login-input-field" id="password" type="password" placeholder="Password" required>
+                            <input class="input-field login-input-field" id="password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces" required>
                         </div>
                         <div class="input-container login-container">
                             <button class="btn btn-primary login-button" type="submit">Submit</button>
