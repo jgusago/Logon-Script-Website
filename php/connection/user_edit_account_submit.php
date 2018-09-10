@@ -11,8 +11,8 @@ $name= $_POST['name'];
 $department= $_POST['department'];
 $position= $_POST['position'];
 $role= $_POST['role'];
-$password = $_POST["password"]=md5($_POST['password'])
-//$password= $_POST['password'];
+//$password = $_POST["password"]=md5($_POST['password'])
+$password= $_POST['password'];
 
 $stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', password='$password' WHERE id='$get_id'");
 $stmt->execute(array());
