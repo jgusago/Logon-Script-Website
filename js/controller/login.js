@@ -11,14 +11,14 @@ function confirmlogin(){
         switch(dts[0]){
             case "success":
                 notif.classList.add("alert-success");
-                type.innerText("Success");
-                message.innerText("Please wait a moment while you are loging in");
+                type.innerHTML = "Success";
+                message.innerHTML = "Please wait a moment while you are loging in";
                 notif.style.display = "block";
             break;
             case "failed":
                 notif.classList.add('alert-danger');
-                type.innerText("Failed");
-                message.innerText("Please enter the information correctly and try again");
+                type.innerHTML = "Failed";
+                message.innerHTML = "Please enter the information correctly and try again";
                 notif.style.display = "block";
             break;
             default:
