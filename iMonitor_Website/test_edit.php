@@ -9,7 +9,7 @@ $ID=$_GET['id'];
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>SKYLUSTER</title>
-    <link href="../css/user_account_style.css" rel="stylesheet" type="text/css" />
+    <link href="test.css" rel="stylesheet" type="text/css" />
   
   </head>
   <body>
@@ -46,7 +46,7 @@ $ID=$_GET['id'];
 
       <form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
         <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" value="<?php echo $row['username']; ?>" required placeholder="Username"><br>
+        <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID"><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
         <label for="role">Account Type:</label><br>
