@@ -1,10 +1,6 @@
 function confirmlogin(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    
-    $.post("php/login_confirm.php",{username:username,password:password},function(data){
-
-    });
 
     return false;
 
