@@ -269,8 +269,17 @@ $ID=$_GET['id'];
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-										<option>----Select Department----</option>
-											<?php     
+										<?php     
+              									$sql = "select department from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['department'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
               									$sql = "select department from tbl_department";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
@@ -278,7 +287,7 @@ $ID=$_GET['id'];
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['department'].'</option>'; 
               									}
-            								?>
+            							?>
 										</select>
 									</td>
 								</tr>
@@ -286,8 +295,17 @@ $ID=$_GET['id'];
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="postion">
-											<option>----Select Position----</option>
-											<?php     
+										<?php     
+              									$sql = "select position from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
               									$sql = "select position from tbl_position";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
@@ -295,7 +313,7 @@ $ID=$_GET['id'];
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['position'].'</option>'; 
               									}
-            								?>
+            							?>
 										</select>
 								</tr>
 								<tr>
@@ -303,7 +321,17 @@ $ID=$_GET['id'];
 									<td class="dropdown-role"> 
 										<select name="role">
 										<option>----Select Role----</option>
-											<?php     
+										<?php     
+              									$sql = "select role from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['role'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
               									$sql = "select role from tbl_role";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
@@ -311,7 +339,7 @@ $ID=$_GET['id'];
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['role'].'</option>'; 
               									}
-            								?>
+            							?>
 										</select>
 									</td>
                                 </tr>
