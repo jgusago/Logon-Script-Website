@@ -47,9 +47,58 @@ $ID=$_GET['id'];
       <form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
         <label for="username">Username:</label><br>
         <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
-        <label for="role">Account Type:</label><br>
+        <label for="username">Name:</label><br>
+        <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name"><br>
+        
+        <label for="role">Department:</label><br>
+            <select id="department" name="department">
+
+                          <?php     
+              									$sql = "select department from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['department'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
+              									$sql = "select department from tbl_department";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['department'].'</option>'; 
+              									}
+            							?>
+					  </select><br>
+
+          <label for="role">Position:</label><br>
+              <select id="position" name="position">
+
+                          <?php     
+              									$sql = "select department from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            							?>
+
+											    <?php     
+              									$sql = "select position from tbl_position";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['position'].'</option>'; 
+              									}
+            							?>
+					  </select><br>        
+        
+        <label for="role">Role:</label><br>
             <select id="role" name="role">
 
                           <?php     
@@ -72,6 +121,8 @@ $ID=$_GET['id'];
               									}
             							?>
 					  </select><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
         <input class="submit" type="submit" value="Create Account">
       </form>
       <?php } ?>                                                   
