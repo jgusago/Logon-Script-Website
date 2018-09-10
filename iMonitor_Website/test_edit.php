@@ -44,7 +44,7 @@ $ID=$_GET['id'];
 		      $id=$row['id'];
 	      ?>
 
-      <form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
+      <form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
         <label for="username">Username:</label><br>
         <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID"><br>
         <label for="username">Name:</label><br>
