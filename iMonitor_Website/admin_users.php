@@ -145,7 +145,7 @@ $ID=$_GET['id'];
 							<td><?php echo $row['department']; ?></td>
 							<td><?php echo $row['position']; ?></td>
 							<td><?php echo $row['role']; ?></td>
-							<td><a href="reports.html" <?php echo '?id='.$id; ?> data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
+							<td><a href="test.edit.php" <?php echo '?id='.$id; ?> data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
                             <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>-->
 							<?php } ?>
 						</tr>
