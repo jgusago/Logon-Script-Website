@@ -2,16 +2,24 @@ function confirmlogin(){
 
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var message = document.getElementById("login-message");
+    var notif = document.getElementById("login-message");
+    var type = document.getElementById("login-alert-type");
+    var message = document.getElementById("login-alert-message");
 
     $.post("php/functions/login/login_confirm.php",{username:username,password:password},function(data){
         var dts = data.split(";");
         switch(dts[0]){
             case "success":
-                message.style.display = "block";
+                notif.classList.add("alert-success");
+                type.innerText("Success");
+                message.innerText("Please wait a moment while you are loging in");
+                notif.style.display = "block";
             break;
             case "failed":
-                message.style.display = "block";
+                notif.classList.add('alert-danger');
+                type.innerText("Failed");
+                message.innerText("Please enter the information correctly and try again");
+                notif.style.display = "block";
             break;
             default:
 
