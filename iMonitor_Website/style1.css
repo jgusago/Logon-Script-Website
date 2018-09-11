@@ -86,19 +86,22 @@ p
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
-.wrapper {
+.wrapper 
+{
     display: block;
     /* align-items: stretch; */
-    max-width:250px;
+    /* max-width:250px; */
+    height:-webkit-fill-available;
 }
 #sidebar {
     margin-top:40px;
     min-width: 250px;
-    height: -webkit-fill-available;
+    height: 1000vh;
     max-width: 250px;
     background: #fffafa;
     color: black;
     transition: all 0.3s;
+    position:fixed;
     box-shadow: 1px 1px #d2cbcb;
 }
 a, a:hover, a:focus 
@@ -116,6 +119,7 @@ a, a:hover, a:focus
 }
 #sidebar ul.components {
     padding: 20px 0;
+    margin-top:0px;
 }
 #sidebar ul li a {
     padding: 20px;
