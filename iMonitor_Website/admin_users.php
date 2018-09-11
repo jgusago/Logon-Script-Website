@@ -158,7 +158,7 @@ $ID=$_GET['id'];
         </div>  
 
 <form action="../php/connection/user_account_submit.php" method="POST">
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;" onload="javascript:getchanged();">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color:#16811430;"><b>User Registration</b>
@@ -254,7 +254,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456" onkeyup="javascript:getchanged();"></td>
+									<td><input type="text" id="password" name="password" value="Aa123456"></td>
 								</tr>
 								<tr>
 									<td></td>
