@@ -44,11 +44,34 @@ $ID=$_GET['id'];
 		      $id=$row['id'];
 	      ?>
 
+										<script type="text/javascript">
+											function isNumberKey(evt){
+											var charCode = (evt.which) ? evt.which : evt.keyCode;
+    										if (charCode > 31 && (charCode < 48 || charCode > 57))
+        									return false;
+    										return true;
+											}
+										</script>
+
+										<script type="text/javascript">
+        									function numberOnly(txt, e) {
+            								var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+            								var code;
+            								if (window.event)
+                							code = e.keyCode;
+            								else
+                							code = e.which;
+            								var char = keychar = String.fromCharCode(code);
+            								if (arr.indexOf(char) == -1)
+                							return false;
+        									}
+    									</script>
+
       <form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
         <label for="username">Username:</label><br>
-        <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID"><br>
+        <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID" onkeypress="return isNumberKey(event)"/><br>
         <label for="username">Name:</label><br>
-        <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name"><br>
+        <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
         <label for="department">Department:</label><br>
