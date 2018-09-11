@@ -170,7 +170,7 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" name="userid" pattern="[0-9]" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
