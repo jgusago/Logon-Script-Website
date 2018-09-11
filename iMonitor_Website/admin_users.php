@@ -174,7 +174,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text"  id="name" name="name" pattern="[A-Za-z]*" required placeholder="Name" class="validate"></td>
+									<td><input type="text"  id="name" name="name" pattern="[A-Za-z]" required placeholder="Name"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
