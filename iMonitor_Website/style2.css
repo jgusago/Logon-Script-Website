@@ -98,10 +98,13 @@ p
 .wrapper {
     display: block;
     /* align-items: stretch; */
-    max-width:250px;
+    /* max-width:250px; */
+    height:100vh;
 }
-#sidebar {
+#sidebar 
+{
     margin-top:40px;
+    position: fixed;
     min-width: 250px;
     height: -webkit-fill-available;
     max-width: 250px;
