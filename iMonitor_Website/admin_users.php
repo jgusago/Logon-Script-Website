@@ -170,11 +170,11 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="number" id="userid" name="userid" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" name="userid" pattern="[0-9]" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text"  id="name" name="name" required placeholder="Name" class="validate"></td>
+									<td><input type="text"  id="name" name="name" pattern="[A-Za-z]" required placeholder="Name" class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
@@ -229,15 +229,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-<!--<<<<<<< HEAD -->
-									<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
-<!--======= 
-<<<<<<< HEAD-->
-								<!--	<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
-									 =======
-									<td><input type="text" id="password" name="password" value="Aa123456" required></td>
->>>>>>> 28a5d35b981f32db4412aaf113c990e4a8afd529
->>>>>>> b1d9e493d856ef0c5a6bc10e712780045d7f849c -->
+									<td><input type="text" id="password" name="password" value="Aa123456"></td>
 								</tr>
 								<tr>
 									<td></td>
