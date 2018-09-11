@@ -271,7 +271,7 @@ $ID=$_GET['id'];
 						}
 					</script>
 					<div class="modal-footer">
-						<input type="text" id="password2" name="password2" onkeyup="javascript:getchanged();"></td>
+						<input type="text" id="password2" name="password2" onkeyup="getchanged"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
