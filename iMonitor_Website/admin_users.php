@@ -229,7 +229,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456" required></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
 								</tr>
 								<tr>
 									<td></td>
