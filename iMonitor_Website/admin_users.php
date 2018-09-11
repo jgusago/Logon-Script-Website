@@ -232,8 +232,12 @@ $ID=$_GET['id'];
 <<<<<<< HEAD
 									<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
 =======
+<<<<<<< HEAD
+									<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
+=======
 									<td><input type="text" id="password" name="password" value="Aa123456" required></td>
 >>>>>>> 28a5d35b981f32db4412aaf113c990e4a8afd529
+>>>>>>> b1d9e493d856ef0c5a6bc10e712780045d7f849c
 								</tr>
 								<tr>
 									<td></td>

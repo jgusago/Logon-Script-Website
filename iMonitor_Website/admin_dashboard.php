@@ -63,7 +63,28 @@ exit();
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
 	            <li class="dropdown">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>Jerry Chen<span class="glyphicon glyphicon-down"></span>
+<<<<<<< HEAD
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+=======
+	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+>>>>>>> b1d9e493d856ef0c5a6bc10e712780045d7f849c
+                    
+                    <?php
+                        $query = $db->prepare("SELECT name FROM tbl_user WHERE username=:username");
+                        $query->bindValue(':username', $_SESSION['username'], PDO::PARAM_STR);
+                        $query->execute();
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+         
+                        while ($row = $query->fetch()) {
+                        echo 'Welcome: ' . $row['name'];
+                        }
+                    ?>
+<<<<<<< HEAD
+                    
+=======
+
+>>>>>>> b1d9e493d856ef0c5a6bc10e712780045d7f849c
+                    <span class="glyphicon glyphicon-down"></span>
 	            	<span class="caret"></span></a>
 	            		<ul class="dropdown-menu" role="menu">
 	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
