@@ -328,7 +328,7 @@ $ID=$_GET['id'];
 								<tr>
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
-										<select name="postion">
+										<select name="position">
 										<?php     
               									$sql = "select position from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
