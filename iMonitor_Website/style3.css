@@ -91,6 +91,7 @@ p
 .panel-heading
 {
     height:110px;
+    margin-left:0px;
 }
 .panel-body
 {
@@ -99,6 +100,7 @@ p
 .panel-default
 {
     margin-top: -130px;
+    margin-left:225px;
 }
 /* ---------------------------------------------------
     SIDEBAR STYLE
