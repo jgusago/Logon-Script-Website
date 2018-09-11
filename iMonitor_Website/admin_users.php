@@ -254,7 +254,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456" onChange="javascript:setHiddenValue();"></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" onload="javascript:setHiddenValue();"></td>
 								</tr>
 								<tr>
 									<td></td>
