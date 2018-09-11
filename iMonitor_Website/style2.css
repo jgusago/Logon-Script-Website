@@ -99,18 +99,11 @@ p
     display: block;
     /* align-items: stretch; */
     /* max-width:250px; */
-<<<<<<< HEAD
-    height:100vh;
-}
-#sidebar 
-{
-=======
     height: 100vh;
 }
 #sidebar 
 {
     position: fixed;
->>>>>>> 24b10b5fdc7b51767a427cc3b52db3a8a3b62de8
     margin-top:40px;
     position: fixed;
     min-width: 250px;
