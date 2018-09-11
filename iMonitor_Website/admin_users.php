@@ -158,7 +158,7 @@ $ID=$_GET['id'];
         </div>  
 
 <form action="../php/connection/user_account_submit.php" method="POST">
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;" onload="javascript:getchanged();">
+    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color:#16811430;"><b>User Registration</b>
@@ -267,11 +267,11 @@ $ID=$_GET['id'];
 					<script type="text/javascript">
 						function getchanged()
 						{
-   						document.getelementbyid(password2).value= document.getelementbyid(password).value
+   						document.getelementbyid(password2).value= document.getelementbyid(userid).value
 						}
 					</script>
 					<div class="modal-footer">
-						<input type="text" id="password2" name="password2"></td>
+						<input type="text" id="password2" name="password2" onkeyup="javascript:getchanged();"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
