@@ -269,7 +269,7 @@ $ID=$_GET['id'];
 						var textTwo = document.getElementById("textTwo");
 						var textOneValue = textOne.value;
 						var textTwoValue = textOneValue;
-						textTwo.value = textTwoValue;
+						textTwo.value = textOne.value;
 					</script>
 					<div class="modal-footer">
 						<input type="text" id="textOne"></td>
