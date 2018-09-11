@@ -254,7 +254,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456" onkeyup="getchanged"></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" onkeyup="javascript:getchanged();"></td>
 								</tr>
 								<tr>
 									<td></td>
@@ -265,13 +265,11 @@ $ID=$_GET['id'];
                     </div>
 </form>
 					<script type="text/javascript">
-					
-							function getchanged()
-							{
-   							document.getelementbyid(password).value= document.getelementbyid(password2).value
-							}
+						function getchanged()
+						{
+   						document.getelementbyid(password2).value= document.getelementbyid(password).value
+						}
 					</script>
-
 					<div class="modal-footer">
 						<input type="text" id="password2" name="password2"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
