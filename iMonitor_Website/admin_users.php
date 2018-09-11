@@ -269,6 +269,11 @@ $ID=$_GET['id'];
 						</form>
                     </div>
 </form>
+					<script type="text/javascript">
+						var password = document.getElementById('password');
+						var password2 = document.getElementById('password2');
+						password.value=password2.value;
+					</script>
 					<div class="modal-footer">
 						<input type="text" id="password2" name="password2" value="<?=$_POST['password'];?>"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
