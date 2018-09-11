@@ -271,8 +271,8 @@ $ID=$_GET['id'];
 					</script>
 
 					<div class="modal-footer">
-						<input type="text" id="textOne" onkeyup="populateSecondTextBox();" /></td>
-						<input type="text" id="textTwo"></td>
+						<input type="text" id="txtOne" onkeyup="populateSecondTextBox();" /></td>
+						<input type="text" id="txtTwo"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
