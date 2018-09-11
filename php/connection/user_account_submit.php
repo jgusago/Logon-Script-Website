@@ -18,7 +18,7 @@ if(!isset($error)){
         }
 else
     {
-        $sql = "INSERT INTO tbl_user (userid, name, department, positio, role, password)
+        $sql = "INSERT INTO tbl_user (userid, name, department, position, role, password)
          
         VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["position"]."', '".$_POST["role"]."', '".$_POST["password2"]=md5($_POST['password'])."')";
         ($db->query($sql));
