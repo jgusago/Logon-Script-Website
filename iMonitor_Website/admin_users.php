@@ -148,11 +148,7 @@ $ID=$_GET['id'];
 							<td><?php echo $row['position']; ?></td>
 							<td><?php echo $row['role']; ?></td>
 							<td><a href="test_edit.php <?php echo '?id='.$id; ?>" class="btn btn-primary">
-<<<<<<< HEAD
 							<button class="btn btn-primary">Edit Record</button></a></td>
-=======
-							<button class="btn_delete">Edit Record</button></a></td>
->>>>>>> 08a1611629f8e7706aadde02ae0403b9ba14902e
                             <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>-->
 						</tr>
 						<?php } ?>
