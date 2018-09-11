@@ -69,7 +69,7 @@ $ID=$_GET['id'];
         <label for="username">Name:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/><br>
         <label for="password">Password:</label><br>
-        <input type="password" id="password2" name="password2" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
+        <input type="text" id="password2" name="password2" value="Aa123456"><br>
         <label for="department">Department:</label><br>
             <select id="department" name="department">
 
