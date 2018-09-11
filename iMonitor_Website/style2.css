@@ -90,6 +90,7 @@ p
 }
 .panel-heading
 {
+    margin-top:-9px;
     height:55px;
 }
 /* ---------------------------------------------------
@@ -98,9 +99,11 @@ p
 .wrapper {
     display: block;
     /* align-items: stretch; */
-    max-width:250px;
+    /* max-width:250px; */
+    height: 105vh;
 }
-#sidebar {
+#sidebar 
+{
     margin-top:40px;
     min-width: 250px;
     height: -webkit-fill-available;
