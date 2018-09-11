@@ -90,7 +90,7 @@ p
     display: block;
     /* align-items: stretch; */
     /* max-width:250px; */
-    height:-webkit-fill-available;
+    height:100vh;
 }
 #sidebar {
     margin-top:40px;
@@ -208,7 +208,7 @@ ul ul a {
 .table-viewing
 {
    margin-left:287px; 
-   margin-top:126px; 
+   margin-top:166px; 
    background-color: white; 
    width:90%; 
    padding:10px; 
