@@ -265,14 +265,13 @@ $ID=$_GET['id'];
                     </div>
 </form>
 					<script type="text/javascript">
-						var textOne = document.getElementById("textOne");
-						var textTwo = document.getElementById("textTwo");
-						var textOneValue = textOne.value;
-						var textTwoValue = textOneValue;
-						textTwo.value = textOne.value;
+						function populateSecondTextBox() {
+   						document.getElementById('txtTwo').value = document.getElementById('txtOne').value;
+						}
 					</script>
+
 					<div class="modal-footer">
-						<input type="text" id="textOne"></td>
+						<input type="text" id="textOne" onkeyup="populateSecondTextBox();" /></td>
 						<input type="text" id="textTwo"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
