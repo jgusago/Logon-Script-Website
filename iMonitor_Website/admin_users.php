@@ -158,7 +158,7 @@ $ID=$_GET['id'];
         </div>  
 
 <form action="../php/connection/user_account_submit.php" method="POST">
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;" onload="populateSecondTextBox();">
+    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color:#16811430;"><b>User Registration</b>
@@ -258,7 +258,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td></td>
-									<td><button class="btn btn-success">Register</button></td>
+									<td><button class="btn btn-success" onclick="populateSecondTextBox();">Register</button></td>
 								</tr>
 							</table>
 						</form>
