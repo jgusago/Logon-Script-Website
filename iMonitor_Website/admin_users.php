@@ -259,7 +259,7 @@ $ID=$_GET['id'];
 
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456" disabled="disabled"></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" disabled="disabled" onChange="javascript:setHiddenValue();"></td>
 								</tr>
 								<tr>
 									<td></td>
@@ -270,9 +270,10 @@ $ID=$_GET['id'];
                     </div>
 </form>
 					<script type="text/javascript">
-						var password = document.getElementById('password');
-						var password2 = document.getElementById('password2');
-						password.value=password2.value;
+						function setHiddenValue()
+						{
+  						document.getElementById('password2').value = document.getElementById('password').value;
+						}
 					</script>
 					<div class="modal-footer">
 						<input type="text" id="password2" name="password2" value="<?=$_POST['password'];?>"></td>
