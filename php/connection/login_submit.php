@@ -7,8 +7,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $un=$_POST['userid'];
 $pw=md5($_POST['password2']);
 
-//$stmt = $db->prepare("SELECT * from tbl_user WHERE userid=? AND password=?");
-$stmt = $db->prepare("SELECT * from tbl_user WHERE userid='$un' AND password='$pw'");
+$stmt = $db->prepare("SELECT * from tbl_user WHERE userid=? AND password=?");
 $stmt->execute(array($un, $pw));
 $row_count = $stmt->rowCount();
 
