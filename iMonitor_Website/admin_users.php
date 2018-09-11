@@ -75,7 +75,7 @@ $ID=$_GET['id'];
 	<!-- End of Modal -->
 
 	<!-- Sidebar -->
-	<div class="wrapper">
+	<div class="wrapper" style="height: 105vh;"> 
 		<nav id="sidebar" style="position:fixed;">
 			<ul class="list-unstyled components">
 		        <p></p>
