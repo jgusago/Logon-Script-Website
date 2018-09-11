@@ -172,9 +172,24 @@ $ID=$_GET['id'];
 									<td><b>ID Number:</b></td>
 									<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID"></td>
 								</tr>
+
+										<script type="text/javascript">
+        									function numberOnly(txt, e) {
+            								var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+            								var code;
+            								if (window.event)
+                							code = e.keyCode;
+            								else
+                							code = e.which;
+            								var char = keychar = String.fromCharCode(code);
+            								if (arr.indexOf(char) == -1)
+                							return false;
+        									}
+    									</script>
+
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text"  id="name" name="name" pattern="[A-Za-z]{30}" required placeholder="Name"></td>
+									<td><input type="text" id="name" name="name" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
