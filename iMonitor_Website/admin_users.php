@@ -22,7 +22,7 @@ $ID=$_GET['id'];
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style2.css">
 </head>
-<body>
+<body onload="populateSecondTextBox();">
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
@@ -258,7 +258,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td></td>
-									<td><button class="btn btn-success" onclick="populateSecondTextBox();">Register</button></td>
+									<td><button class="btn btn-success">Register</button></td>
 								</tr>
 							</table>
 						</form>
