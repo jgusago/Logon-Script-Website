@@ -12,8 +12,9 @@ $department= $_POST['department'];
 $position= $_POST['position'];
 $role= $_POST['role'];
 $password= $_POST['password2'];
+$passwordmd5 = md5($password);
 
-$stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', password=md5('Aa123456') WHERE id='$get_id'");
+$stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', password='$passwordmd5' WHERE id='$get_id'");
 $stmt->execute(array());
 $affected_rows = $stmt->rowCount();
 
