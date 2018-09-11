@@ -168,9 +168,19 @@ $ID=$_GET['id'];
 
 						<form style="padding:20px;">
 							<table class="modal-form">
+
+										<script type="text/javascript">
+											function isNumberKey(evt){
+											var charCode = (evt.which) ? evt.which : evt.keyCode;
+    										if (charCode > 31 && (charCode < 48 || charCode > 57))
+        									return false;
+    										return true;
+											}
+										</script>
+
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID" onkeypress="return isNumberKey(event)"/></td>
 								</tr>
 
 										<script type="text/javascript">
@@ -242,9 +252,14 @@ $ID=$_GET['id'];
 										</select>
 									</td>
 								</tr>
+
+										<script type="text/javascript">
+											document.getElementById("password").disabled = true;
+										</script>
+
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456"></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" disabled="disabled"></td>
 								</tr>
 								<tr>
 									<td></td>
