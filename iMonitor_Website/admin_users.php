@@ -76,7 +76,7 @@ $ID=$_GET['id'];
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-		<nav id="sidebar">
+		<nav id="sidebar" style="position:fixed;">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
@@ -120,7 +120,7 @@ $ID=$_GET['id'];
             </div>
 
             <div class="container">
-                <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:87%">
+                <table class="table table-bordered" style="position: sticky; margin-left:12px; margin-top:190px; margin-bottom:10px; width:87%">
                     <thead>
                         <tr>
                             <th style="padding-bottom:15px;">No.</th>
