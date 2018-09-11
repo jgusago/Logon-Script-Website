@@ -68,8 +68,8 @@ exit();
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
                     
                     <?php
-                        $query = $db->prepare("SELECT name FROM tbl_user WHERE username=:username");
-                        $query->bindValue(':username', $_SESSION['username'], PDO::PARAM_STR);
+                        $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
+                        $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
                         $query->execute();
                         $query->setFetchMode(PDO::FETCH_ASSOC);
          
