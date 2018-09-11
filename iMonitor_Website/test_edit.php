@@ -29,10 +29,6 @@ $ID=$_GET['id'];
            if(isset($_GET['msg']))
             {       
               echo "<p align='center' class='correct'>Data save successfully.</p>";
-              //echo "<p align='center' class='error'>All fields are required.</p>";        
-              //echo '<script language="javascript">';
-              //echo 'alert("All fields are required.")';
-              //echo '</script>';       
             }
           ?>
     </div>  
@@ -73,7 +69,7 @@ $ID=$_GET['id'];
         <label for="username">Name:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/><br>
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
+        <input type="password" id="password2" name="password2" value="<?php echo $row['password']; ?>" required placeholder="Password"><br>
         <label for="department">Department:</label><br>
             <select id="department" name="department">
 
