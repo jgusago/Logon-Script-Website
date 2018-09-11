@@ -221,7 +221,7 @@ $ID=$_GET['id'];
 								<tr>
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
-										<select name="postion">
+										<select name="postions">
 											<option>----Select Position----</option>
 											<?php     
               									$sql = "select position from tbl_position";
