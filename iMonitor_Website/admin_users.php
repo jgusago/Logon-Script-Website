@@ -254,7 +254,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456"></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" onkeyup="populateSecondTextBox();" /></td>
 								</tr>
 								<tr>
 									<td></td>
@@ -266,13 +266,12 @@ $ID=$_GET['id'];
 </form>
 					<script type="text/javascript">
 						function populateSecondTextBox() {
-   						document.getElementById('txtTwo').value = document.getElementById('txtOne').value;
+   						document.getElementById('password2').value = document.getElementById('password').value;
 						}
 					</script>
 
 					<div class="modal-footer">
-						<input type="text" id="txtOne" onkeyup="populateSecondTextBox();" /></td>
-						<input type="text" id="txtTwo"></td>
+						<input type="text" id="password2" name="password2"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
