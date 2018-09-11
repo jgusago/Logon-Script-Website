@@ -26,6 +26,8 @@ document.location.href = "../php/connection/logout.php";
 <?php
 session_start();
 
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+
 if(!isset($_SESSION["userid"])) {
   header("Location: index.php");
 exit();
