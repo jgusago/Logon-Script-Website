@@ -1,43 +1,46 @@
 <?php
-$branch = $_POST["branch"];
-$parent = $_POST["grandparent"];
+//$branch = $_POST["branch"];
+//$parent = $_POST["grandparent"];
+
+$branch = "Marvin(IT)";
+$parent = "root";
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $query = "SELECT *
             FROM logonscript.tbl_tree
-            WHERE treename=:branch AND treeparent=:parent";
+            WHERE treename LIKE :tree AND treeparent LIKE :parent";
 
 $stmt = $db->prepare($query);
-$stmt->array(":branch"=>$branch,
-            ":parent"=>$parent);
+$stmt->bindParam(":tree",$branch);
+$stmt->bindParam(":parent",$parent);
 $stmt->execute();
-$rowcount = $stmt->rowCount();
+echo $rowcount = $stmt->rowCount();
 $result = $stmt->fetchAll();
-
+echo "<br>";
 if($rowcount>0){
-
-    while($result as $row){
+    foreach($result as $row){
         $filter = $row["treefilter"];
         $secondquery = "SELECT *
                         FROM logonscript.tbl_log
-                        WHERE :filtering AND building like :parent
+                        WHERE hostname LIKE ? AND branch like ?
                         GROUP BY hostname
                         ORDER BY hostname";
 
         $sec_pdo = $db->prepare($secondquery);
-        $sec_pdo->array(":filtering"=>$filter
-                        ":parent"=>$parent);
-        
+        $sec_pdo->bindParam(1,$filter,PDO::PARAM_STR, 10);
+        $sec_pdo->bindParam(2,$parent,PDO::PARAM_STR, 10);
+        $sec_pdo->execute();
+        echo $sec_rowcount = $sec_pdo->rowCount();
         $sec_result = $sec_pdo->fetchAll();
 
-        if(!($sec_result as $row)){
+        if($sec_rowcount==0){
             //do nothing
         }
         else{
             $count = 0;
 
-            while ($sec_result as $row){
+            foreach ($sec_result as $row){
                 $data = $row['hostname'];
 
                 if($count>0)
@@ -52,8 +55,9 @@ if($rowcount>0){
             }
         }
 
-        $query2 = mysqli_query($con,"select * from sky.tbl_log where $filter and building like '$parent' group by hostname order by hostname");
 /*
+        $query2 = mysqli_query($con,"select * from sky.tbl_log where $filter and building like '$parent' group by hostname order by hostname");
+
         if(!$query2){
             //do nothing
         }
