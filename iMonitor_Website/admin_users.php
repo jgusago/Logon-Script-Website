@@ -147,8 +147,8 @@ $ID=$_GET['id'];
 							<td><?php echo $row['department']; ?></td>
 							<td><?php echo $row['position']; ?></td>
 							<td><?php echo $row['role']; ?></td>
-							<td><a href="test_edit.php <?php echo '?id='.$id; ?>" class="btn btn-primary">
-							<button class="btn btn-primary">Edit Record</button></a></td>
+							<td><a href="test_edit.php <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
+							<!-- <button class="btn btn-primary">Edit Record</button></a></td> -->
                             <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>-->
 						</tr>
 						<?php } ?>
