@@ -252,14 +252,9 @@ $ID=$_GET['id'];
 										</select>
 									</td>
 								</tr>
-
-										<script type="text/javascript">
-											document.getElementById("password").disabled = true;
-										</script>
-
 								<tr>
 									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456" disabled="disabled" onload="javascript:setHiddenValue();"></td>
+									<td><input type="text" id="password" name="password" value="Aa123456" onload="javascript:setHiddenValue();"></td>
 								</tr>
 								<tr>
 									<td></td>
@@ -276,7 +271,7 @@ $ID=$_GET['id'];
 						}
 					</script>
 					<div class="modal-footer">
-						<input type="text" id="password2" name="password2" value="<?=$_POST['password'];?>"></td>
+						<input type="text" id="password2" name="password2"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
