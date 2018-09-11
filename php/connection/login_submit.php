@@ -5,7 +5,7 @@ session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $un=$_POST['userid'];
-$pw=md5($_POST['password']);
+$pw=md5($_POST['password2']);
 
 $stmt = $db->prepare("SELECT * from tbl_user WHERE userid=? AND password=?");
 $stmt->execute(array($un, $pw));
