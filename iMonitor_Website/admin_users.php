@@ -267,7 +267,10 @@ $ID=$_GET['id'];
 					<script type="text/javascript">
 						function setHiddenValue()
 						{
-  						document.getElementById('password2').value = document.getElementById('userid').value;
+							var password = document.getElementById('password');
+							var password2 = document.getElementById('password2');
+
+							password.value=password2.value;
 						}
 					</script>
 					<div class="modal-footer">
