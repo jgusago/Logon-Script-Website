@@ -270,6 +270,7 @@ $ID=$_GET['id'];
                     </div>
 </form>
 					<div class="modal-footer">
+						<input type="text" id="password" name="password"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
