@@ -75,8 +75,8 @@ $ID=$_GET['id'];
 	<!-- End of Modal -->
 
 	<!-- Sidebar -->
-	<div class="wrapper">
-		<nav id="sidebar">
+	<div class="wrapper" style="height: 105vh;"> 
+		<nav id="sidebar" style="position:fixed;">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
@@ -120,7 +120,7 @@ $ID=$_GET['id'];
             </div>
 
             <div class="container">
-                <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:87%">
+                <table class="table table-bordered" style="position: sticky; margin-left:12px; margin-top:190px; margin-bottom:10px; width:87%">
                     <thead>
                         <tr>
                             <th style="padding-bottom:15px;">No.</th>
@@ -147,8 +147,8 @@ $ID=$_GET['id'];
 							<td><?php echo $row['department']; ?></td>
 							<td><?php echo $row['position']; ?></td>
 							<td><?php echo $row['role']; ?></td>
-							<td><a href="test_edit.php <?php echo '?id='.$id; ?>" class="btn btn-danger">
-							<button class="btn_delete">Edit Record</button></a></td>
+							<td><a href="test_edit.php <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
+							<!-- <button class="btn btn-primary">Edit Record</button></a></td> -->
                             <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>-->
 						</tr>
 						<?php } ?>
