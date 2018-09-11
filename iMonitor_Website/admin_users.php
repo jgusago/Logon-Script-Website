@@ -265,13 +265,15 @@ $ID=$_GET['id'];
                     </div>
 </form>
 					<script type="text/javascript">
-						function getchanged()
-						{
-   						document.getelementbyid(password2).value= document.getelementbyid(userid).value
-						}
+						var textOne = document.getElementById("textOne");
+						var textTwo = document.getElementById("textTwo");
+						var textOneValue = textOne.value;
+						var textTwoValue = textOneValue;
+						textTwo.value = textTwoValue;
 					</script>
 					<div class="modal-footer">
-						<input type="text" id="password2" name="password2" onkeyup="getchanged"></td>
+						<input type="text" id="textOne"></td>
+						<input type="text" id="textTwo"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
