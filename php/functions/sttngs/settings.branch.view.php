@@ -1,21 +1,62 @@
 <?php
 
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/connection.php";
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-echo "1|2|3|4";
+$dbmgr = "SELECT *
+            FROM logonscript.tbl_col_manager
+            WHERE database = :dbname
+            AND column_name NOT LIKE :id";
 
-$query = mysqli_query($con,"SELECT * FROM logonscript.tbl_tree");
+$pdo = $db->prepare($dbmgr);
+$pdo->bindParam(":dbname","tbl_tree");
+$pdo->bindParam(":id","%id%");
+$pdo->execute();
+$result = $pdo->fetchAll();
+$arrcount = 0;
 
-while($row = mysqli_fetch_array($query)){
-
-    $tree = $row['treename'];
-    $tree_parent = $row['treeparent'];
-    $tree_filter = $row['treefilter'];
-
-    echo "#$tree|$tree_parent|$tree_filter";
+foreach($result as $row){
+    $tree[$arrcount] = $row[$arrcount];     
 
 }
 
-mysqli_close($con);
+$bvtree = "SELECT * FROM tbl_tree
+            WHERE treeparent = :parent";
+
+$pdo2 = $db->prepare($bvtree);
+$pdo2->bindParam(":parent","root");
+$pdo2->execute();
+$treeresult = $pdo2->fetchAll();
+foreach($treeresult as $row){
+    $name = $row['treename'];
+
+    echo "$name<br>";
+    $tab = "&nbsp";
+    getchild($name,$tab);
+
+}
+
+//function
+
+function getchild($parent,$tab){
+
+    $tab = $tab."&nbsp";
+
+    $bvtree = "SELECT * FROM tbl_tree
+    WHERE treeparent = :parent";
+
+    $pdo2 = $db->prepare($bvtree);
+    $pdo2->bindParam(":parent","root");
+    $pdo2->execute();
+    $treeresult = $pdo2->fetchAll();
+foreach($treeresult as $row){
+    $name = $row['treename'];
+
+    echo "$name<br>";
+    $tab = "&nbsp";
+    getchild($name,$tab);
+
+}   
+
+}
 
 ?>
