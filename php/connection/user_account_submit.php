@@ -37,7 +37,7 @@ else
     $password = password_hash($password, PASSWORD_DEFAULT);
  
     //insert new user to our database
-    $stmt = $db->prepare('INSERT INTO tbl_user (userid, name, department, position, role, password) VALUES (:userid, :name, :department, :position, :role, :password2)');
+    $stmt = $db->prepare('INSERT INTO tbl_user (userid, name, department, position, role, password) VALUES (:userid, :name, :department, :position, :role, :password)');
     $stmt->execute(['userid' => $userid, 'name' => $name, 'department' => $department, 'position' => $position, 'role' => $role, 'password2' => $password]);
     echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
 
