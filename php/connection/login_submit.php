@@ -29,7 +29,7 @@ else {
     $stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
     $stmt->execute([$userid]);
     $check_user=$stmt->fetch();
-    if(count($check_user)>0 && bool password_verify( string $password , string $hash_password )) {
+    if(count($check_user)>0 && password_verify($password, $hash_password )) {
       $_SESSION['userid']=$check_user['userid'];
                  header("Location: ../../iMonitor_Website/admin_dashboard.php");
     exit;          
