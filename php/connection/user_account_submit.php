@@ -25,10 +25,8 @@ else
     }
 }*/
     
-    if(isset($_POST['register'])){
-        $hash_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $hash_password = password_hash($_POST['password2'], PASSWORD_DEFAULT);
         $sql = "INSERT INTO sys_user (userid, password, role) VALUES ('".$_POST['userid']."', '$hash_password', '".$_POST['role']."')";
         ($db->query($sql));
         echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
-    }
 ?>
