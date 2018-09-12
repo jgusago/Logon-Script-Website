@@ -4,11 +4,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $dbmgr = "SELECT *
             FROM logonscript.tbl_col_manager
-            WHERE db_name LIKE :dbname
+            WHERE dbname LIKE :dbname
             AND column_name NOT LIKE :id";
 
 $pdo = $db->prepare($dbmgr);
-$pdo->bindParam(":db_name","tbl_tree");
+$pdo->bindParam(":dbname","tbl_tree");
 $pdo->bindParam(":id","%id%");
 $pdo->execute();
 $result = $pdo->fetchAll();
