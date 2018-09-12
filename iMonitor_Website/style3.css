@@ -87,15 +87,27 @@ p
     padding-right: 10px; 
     font-size: 25px;
 }
+.logs_table
+{
+    padding:15px;
+}
 .glyphicon-plus
 {
     font-size: 25px;
     float: left;
 }
+.col-md-3
+{
+    width: 25%;
+    margin-top: 20px;
+}
 .panel-heading
 {
-    height:110px;
-    margin-left:0px;
+    padding: 10px 5px;
+}
+.table-bordered
+{
+    margin-top:10px;
 }
 .panel-body
 {
