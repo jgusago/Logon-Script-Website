@@ -21,8 +21,6 @@ else {
 }*/
 
 
-if(isset($_POST['login'])){
-
     $userid = $_POST['userid'];
     $password = $_POST['password'];
 
@@ -46,6 +44,5 @@ if(isset($_POST['login'])){
                 header("Location: ../../iMonitor_Website/index.php?msg=wrong");
             }
         }
-    } 
 
 ?>
