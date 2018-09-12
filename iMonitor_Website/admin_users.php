@@ -233,7 +233,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Position:</b></td>
-									<td class="dropdown-dept">
+									<!-- <td class="dropdown-dept">
 										<select name="position">
 											<option>----Select Position----</option>
 											<?php     
@@ -246,7 +246,8 @@ $ID=$_GET['id'];
               									}
             								?>
 										</select>
-									</td>
+									</td> -->
+									<td><input type="text" name="position"></td>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
