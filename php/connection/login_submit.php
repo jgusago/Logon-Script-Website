@@ -55,6 +55,4 @@ else {
          echo "Wrong";
      }
   } 
-}
-
 ?>
