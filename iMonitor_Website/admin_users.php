@@ -124,51 +124,50 @@ $ID=$_GET['id'];
         </div>
         <div class="container-table" style="position:sticky;  overflow: hidden;">
             <div class="row">
-                <!-- style="margin-left:287px; margin-top:133px; background-color: white; width:90%; padding:10px; margin-right:100px;" -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
                     </div>
                 </div>
-            </div>
+			</div>
+		</div>
 
-            <div class="container">
-                <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:100%">
-                    <thead>
-                        <tr>
-                            <th style="padding-bottom:15px;">No.</th>
-                            <th style="padding-bottom:15px;">ID Number</th>
-                            <th style="padding-bottom:15px;">Name</th>
-                            <th style="padding-bottom:15px;">Department</th>
-                            <th style="padding-bottom:15px;">Position</th>
-                            <th style="padding-bottom:15px;">Role</th>
-                            <th style="padding-bottom:15px;">Option</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-users">
+        <div class="container">
+            <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:100%">
+                <thead>
+                    <tr>
+                        <th style="padding-bottom:15px;">No.</th>
+                        <th style="padding-bottom:15px;">ID Number</th>
+                        <th style="padding-bottom:15px;">Name</th>
+                        <th style="padding-bottom:15px;">Department</th>
+                        <th style="padding-bottom:15px;">Position</th>
+                        <th style="padding-bottom:15px;">Role</th>
+                        <th style="padding-bottom:15px;">Option</th>
+                    </tr>
+                </thead>
+                <tbody class="table-users">
 
- 							<?php
-		            		$stmt = $db->query('SELECT id, userid, name, department, position, role FROM tbl_user');
-		            		$stmt->execute();
-		            		for($i=0; $row = $stmt->fetch(); $i++){
-							$id=$row['id'];
-	            			?>
-                        <tr>
-							<td><?php echo $row['id']; ?></td>
-							<td><?php echo $row['userid']; ?></td>
-							<td><?php echo $row['name']; ?></td>
-							<td><?php echo $row['department']; ?></td>
-							<td><?php echo $row['position']; ?></td>
-							<td><?php echo $row['role']; ?></td>
-							<td><a href="test_edit.php <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
+ 					<?php
+		            	$stmt = $db->query('SELECT id, userid, name, department, position, role FROM tbl_user');
+		            	$stmt->execute();
+		            	for($i=0; $row = $stmt->fetch(); $i++){
+						$id=$row['id'];
+	            	?>
+                	<tr>
+						<td><?php echo $row['id']; ?></td>
+						<td><?php echo $row['userid']; ?></td>
+						<td><?php echo $row['name']; ?></td>
+						<td><?php echo $row['department']; ?></td>
+						<td><?php echo $row['position']; ?></td>
+						<td><?php echo $row['role']; ?></td>
+						<td><a href="test_edit.php <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
 							<!-- <button class="btn btn-primary">Edit Record</button></a></td> -->
                             <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>-->
-						</tr>
-						<?php } ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>  
+					</tr>
+					<?php } ?>
+            	</tbody>
+            </table>
+        </div> 
 
 <form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
