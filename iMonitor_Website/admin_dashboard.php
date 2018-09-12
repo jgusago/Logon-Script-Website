@@ -26,6 +26,8 @@ document.location.href = "../php/connection/logout.php";
 <?php
 session_start();
 
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+
 if(!isset($_SESSION["userid"])) {
   header("Location: index.php");
 exit();
@@ -63,15 +65,11 @@ exit();
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
 	            <li class="dropdown">
-<<<<<<< HEAD
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
-=======
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
->>>>>>> b1d9e493d856ef0c5a6bc10e712780045d7f849c
                     
                     <?php
-                        $query = $db->prepare("SELECT name FROM tbl_user WHERE username=:username");
-                        $query->bindValue(':username', $_SESSION['username'], PDO::PARAM_STR);
+                        $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
+                        $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
                         $query->execute();
                         $query->setFetchMode(PDO::FETCH_ASSOC);
          
@@ -79,11 +77,7 @@ exit();
                         echo 'Welcome: ' . $row['name'];
                         }
                     ?>
-<<<<<<< HEAD
                     
-=======
-
->>>>>>> b1d9e493d856ef0c5a6bc10e712780045d7f849c
                     <span class="glyphicon glyphicon-down"></span>
 	            	<span class="caret"></span></a>
 	            		<ul class="dropdown-menu" role="menu">

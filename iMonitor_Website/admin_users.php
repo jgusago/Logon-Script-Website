@@ -22,7 +22,7 @@ $ID=$_GET['id'];
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style2.css">
 </head>
-<body>
+<body onload="populateSecondTextBox();">
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
@@ -40,7 +40,20 @@ $ID=$_GET['id'];
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
 	            <li class="dropdown">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> Jerry Chen<span class="glyphicon glyphicon-down"></span>
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+					
+					<?php
+                        $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
+                        $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
+                        $query->execute();
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+         
+                        while ($row = $query->fetch()) {
+                        echo 'Welcome: ' . $row['name'];
+                        }
+                    ?>
+
+					<span class="glyphicon glyphicon-down"></span>
 	            	<span class="caret"></span></a>
 	            		<ul class="dropdown-menu" role="menu">
 	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
@@ -168,13 +181,38 @@ $ID=$_GET['id'];
 
 						<form style="padding:20px;">
 							<table class="modal-form">
+
+										<script type="text/javascript">
+											function isNumberKey(evt){
+											var charCode = (evt.which) ? evt.which : evt.keyCode;
+    										if (charCode > 31 && (charCode < 48 || charCode > 57))
+        									return false;
+    										return true;
+											}
+										</script>
+
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="number" id="userid" name="userid" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID" onkeypress="return isNumberKey(event)"/></td>
 								</tr>
+
+										<script type="text/javascript">
+        									function numberOnly(txt, e) {
+            								var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+            								var code;
+            								if (window.event)
+                							code = e.keyCode;
+            								else
+                							code = e.which;
+            								var char = keychar = String.fromCharCode(code);
+            								if (arr.indexOf(char) == -1)
+                							return false;
+        									}
+    									</script>
+
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text"  id="name" name="name" required placeholder="Name" class="validate"></td>
+									<td><input type="text" id="name" name="name" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
@@ -196,7 +234,7 @@ $ID=$_GET['id'];
 								<tr>
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
-										<select name="postion">
+										<select name="position">
 											<option>----Select Position----</option>
 											<?php     
               									$sql = "select position from tbl_position";
@@ -229,15 +267,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Password:</b></td>
-<!--<<<<<<< HEAD -->
 									<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
-<!--======= 
-<<<<<<< HEAD-->
-								<!--	<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
-									 =======
-									<td><input type="text" id="password" name="password" value="Aa123456" required></td>
->>>>>>> 28a5d35b981f32db4412aaf113c990e4a8afd529
->>>>>>> b1d9e493d856ef0c5a6bc10e712780045d7f849c -->
 								</tr>
 								<tr>
 									<td></td>
@@ -247,7 +277,14 @@ $ID=$_GET['id'];
 						</form>
                     </div>
 </form>
+					<script type="text/javascript">
+						function populateSecondTextBox() {
+   						document.getElementById('password2').value = document.getElementById('password').value;
+						}
+					</script>
+
 					<div class="modal-footer">
+						<input type="hidden" id="password2" name="password2"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>
 				</div>
@@ -304,7 +341,7 @@ $ID=$_GET['id'];
 								<tr>
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
-										<select name="postion">
+										<select name="position">
 										<?php     
               									$sql = "select position from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
