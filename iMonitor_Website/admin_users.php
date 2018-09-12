@@ -246,12 +246,12 @@ $ID=$_GET['id'];
             								?>
 										</select>
 									</td> -->
-									<td><input type="text" name="position"></td>
+									<td><input type="text" id="position" name="position"></td>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
-										<select name="role">
+										<select id="role" name="role">
 											<option>----Select Role----</option>
 											<?php     
               									$sql = "select role from tbl_role";
@@ -288,6 +288,8 @@ $ID=$_GET['id'];
         					document.getElementById("userid").value = "";
 							document.getElementById("name").value = "";
 							document.getElementById("department").selectedIndex = "0";
+							document.getElementById("position").value = "";
+							document.getElementById("role").selectedIndex = "0";
     						}
 					</script>
 
