@@ -23,6 +23,7 @@ else {
 
     $userid = $_POST['userid'];
     $password = $_POST['password2'];
+    $hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
    
     $stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
     $stmt->execute([$userid]);
