@@ -287,7 +287,7 @@ $ID=$_GET['id'];
     						function ClearFields() {
         					document.getElementById("userid").value = "";
 							document.getElementById("name").value = "";
-							document.getElementById("department").selectedIndex = 0;
+							document.getElementById("department").selectedIndex = -1;
     						}
 					</script>
 
