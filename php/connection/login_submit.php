@@ -1,7 +1,7 @@
 <?php
 //error_reporting(0);
 
-session_start();
+/*session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $un=$_POST['userid'];
@@ -18,22 +18,22 @@ if ($row_count > 0) {
 
 else {
     header("Location: ../../iMonitor_Website/index.php?msg=wrong");
-}
+}*/
 
 
-    /*$userid = $_POST['userid'];
-    $hash_password = $_POST['password2'];
+    $userid = $_POST['userid'];
+    //$hash_password = $_POST['password2'];
    
     $stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
     $stmt->execute([$userid]);
     $check_user=$stmt->fetch();
-    if(count($check_user)>0 && password_verify('rasmuslerdorf', $hash_password)) {
+    if(count($check_user)>0 && password_verify($_POST["password2"],$hashed_password)) {
       $_SESSION['userid']=$check_user['userid'];
                  header("Location: ../../iMonitor_Website/admin_dashboard.php");
     exit;          
     }
             else {
                 header("Location: ../../iMonitor_Website/index.php?msg=wrong");
-            }*/
+            }
 
 ?>
