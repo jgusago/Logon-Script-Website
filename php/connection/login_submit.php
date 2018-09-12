@@ -42,7 +42,7 @@ else {
         }
     }*/
 
- $query = $db->getConnection()->prepare("SELECT * FROM `tbl_user` WHERE userid = :userid");
+ $query = $db->prepare("SELECT * FROM `tbl_user` WHERE userid = :userid");
  $query->execute(array(':userid' => $userid));
 
 
