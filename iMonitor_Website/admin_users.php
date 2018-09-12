@@ -276,7 +276,7 @@ $ID=$_GET['id'];
 							</table>
 						</form>
                     </div>
-</form>
+
 					<script type="text/javascript">
 						function populateSecondTextBox() {
    						document.getElementById('password2').value = document.getElementById('password').value;
@@ -297,6 +297,7 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 			</div>
+</form>
 		<!-- End of Modal -->
 
 		<!-- Modal Add User-->
