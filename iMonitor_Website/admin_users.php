@@ -276,7 +276,7 @@ $ID=$_GET['id'];
 							</table>
 						</form>
                     </div>
-
+</form>
 					<script type="text/javascript">
 						function populateSecondTextBox() {
    						document.getElementById('password2').value = document.getElementById('password').value;
@@ -284,7 +284,7 @@ $ID=$_GET['id'];
 					</script>
 
 					<script type="text/javascript">
-    						function clearfields() {
+    						function ClearFields() {
         					document.getElementById("userid").value = "";
 							document.getElementById("name").value = "";
     						}
@@ -292,12 +292,11 @@ $ID=$_GET['id'];
 
 					<div class="modal-footer">
 						<input type="hidden" id="password2" name="password2"></td>
-						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" value="reset">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="ClearFields();">Close</button>
 					</div>
 				</div>
 			</div>
 			</div>
-</form>
 		<!-- End of Modal -->
 
 		<!-- Modal Add User-->
