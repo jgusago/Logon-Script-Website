@@ -4,7 +4,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $dbmgr = "SELECT *
             FROM logonscript.tbl_col_manager
-            WHERE dbname = :dbname
+            WHERE db_name LIKE :dbname
             AND column_name NOT LIKE :id";
 
 $pdo = $db->prepare($dbmgr);
