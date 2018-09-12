@@ -1,9 +1,6 @@
 <?php
-//$branch = $_POST["branch"];
-//$parent = $_POST["grandparent"];
-
-$branch = "Marvin(IT)";
-$parent = "root";
+$branch = $_POST["branch"];
+$parent = $_POST["grandparent"];
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
@@ -15,26 +12,25 @@ $stmt = $db->prepare($query);
 $stmt->bindParam(":tree",$branch);
 $stmt->bindParam(":parent",$parent);
 $stmt->execute();
-echo $rowcount = $stmt->rowCount();
+$rowcount = $stmt->rowCount();
 $result = $stmt->fetchAll();
-echo "<br>";
 if($rowcount>0){
     foreach($result as $row){
         echo $filter = $row["treefilter"];
         
         $secondquery = "SELECT *
                         FROM logonscript.tbl_log
-                        WHERE hostname LIKE ? AND branch like ?
+                        WHERE branch like ?
+                        AND hostname like ?
                         GROUP BY hostname
                         ORDER BY hostname";
 
-        $sec_pdo = $db->prepare($secondquery);
-        $sec_pdo->bindParam(1,$filter,PDO::PARAM_STR, 10);
-        $sec_pdo->bindParam(2,$parent,PDO::PARAM_STR, 10);
-        $sec_pdo->execute();
-        echo $sec_rowcount = $sec_pdo->rowCount();
-        $sec_result = $sec_pdo->fetchAll();
+        $stmt2 = $db->prepare($secondquery);
 
+        $stmt2->execute(array($branch,"%$filter%"));
+
+        echo $sec_rowcount = $stmt2->rowCount();
+        $sec_result = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         if($sec_rowcount==0){
             //do nothing
         }
