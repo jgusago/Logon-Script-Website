@@ -22,13 +22,13 @@ else {
 
 
     $userid = $_POST['userid'];
-    $hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
+    $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
    
     $stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
     $stmt->execute(array($userid, $hashed_password));
     $row_count = $stmt->rowCount();
     if ($row_count > 0) { 
-        if(password_verify($_POST["password"],$hashed_password)) {
+        if(password_verify($_POST["password2"],$hashed_password)) {
         $_SESSION["userid"]=$userid;
                  header("Location: ../../iMonitor_Website/admin_dashboard.php");
     exit;          
