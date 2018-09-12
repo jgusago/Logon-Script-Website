@@ -4,7 +4,7 @@
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-/*$un=$_POST['userid'];
+$un=$_POST['userid'];
 $pw=md5($_POST['password2']);
 
 $stmt = $db->prepare("SELECT * from tbl_user WHERE userid=? AND password=?");
@@ -18,10 +18,10 @@ if ($row_count > 0) {
 
 else {
     header("Location: ../../iMonitor_Website/index.php?msg=wrong");
-}*/
+}
 
 
-    $userid = $_POST['userid'];
+    /*$userid = $_POST['userid'];
     $hash_password = $_POST['password2'];
    
     $stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
@@ -34,6 +34,6 @@ else {
     }
             else {
                 header("Location: ../../iMonitor_Website/index.php?msg=wrong");
-            }
+            }*/
 
 ?>
