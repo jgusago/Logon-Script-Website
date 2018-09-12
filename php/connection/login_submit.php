@@ -27,7 +27,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
 
    
-    $stmt = $pdo->prepare('SELECT * FROM tbl_user WHERE userid = :userid');
+    $stmt = $db->prepare('SELECT * FROM tbl_user WHERE userid = :userid');
 
         $stmt->execute(['userid' => $userid]);
 
@@ -36,7 +36,7 @@ if(isset($_POST['login'])){
             $user = $stmt->fetch();
 
             if(password_verify($password, $user['password'])){
-                $_SESSION["userid"]=$userid;
+                //$_SESSION["userid"]=$userid;
                 header("Location: ../../iMonitor_Website/admin_dashboard.php");
             }
             else{
