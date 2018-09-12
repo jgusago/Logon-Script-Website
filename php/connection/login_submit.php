@@ -23,21 +23,18 @@ else {
 
     $userid = $_POST['userid'];
     $password = $_POST['password'];
-    //$password = password_hash($password, PASSWORD_DEFAULT);
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
    
     $stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
     $stmt->execute([$userid]);
     $check_user=$stmt->fetch();
-    if(count($check_user)>0 && password_verify($password, $check_user['password'])) {
+    if(count($check_user)>0 && password_verify($hash_password, $check_user['password'])) {
       $_SESSION['userid']=$check_user['userid'];
                  header("Location: ../../iMonitor_Website/admin_dashboard.php");
     exit;          
     }
             else {
-                $_SESSION['userid'] = $userid;
-                $_SESSION['password'] = $password;
-
                 header("Location: ../../iMonitor_Website/index.php?msg=wrong");
             }
 
