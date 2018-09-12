@@ -283,6 +283,13 @@ $ID=$_GET['id'];
 						}
 					</script>
 
+					<script type="text/javascript">
+    						function clearfields() {
+        					document.getElementById("userid").value = "";
+							document.getElementById("name").value = "";
+    						}
+						</script>
+
 					<div class="modal-footer">
 						<input type="hidden" id="password2" name="password2"></td>
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
