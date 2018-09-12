@@ -25,8 +25,6 @@ else
     }
 }*/
     
-if(isset($_POST['register'])){
-    //assign variables to post values
     $userid = $_POST['userid'];
     $password = $_POST['password2'];
     
@@ -34,8 +32,8 @@ if(isset($_POST['register'])){
     $password = password_hash($password, PASSWORD_DEFAULT);
  
     //insert new user to our database
-    $stmt = $pdo->prepare('INSERT INTO tbl_user (userid, password) VALUES (:userid, :password)');
+    $stmt = $db->prepare('INSERT INTO tbl_user (userid, password) VALUES (:userid, :password)');
     $stmt->execute(['userid' => $userid, 'password2' => $password]);
     echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
-  }
+
 ?>
