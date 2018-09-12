@@ -30,6 +30,10 @@ p
   width:50px; 
   height: 55px; 
 }
+.nav .nav-tabs
+{
+    margin-left: -15px;
+}
 .nav-label
 {
     font-family: Times New Roman; 
@@ -99,8 +103,8 @@ p
 }
 .panel-default
 {
-    margin-top: -130px;
-    margin-left:225px;
+    margin-top: -253px;
+    margin-left: 224px;
 }
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -208,7 +212,7 @@ ul ul a {
 .container
 {
     width:100%;
-    margin-left:-3px;
+    margin-left:-2px;
     margin-top:300px;
 }
 .table-bordered th, td
