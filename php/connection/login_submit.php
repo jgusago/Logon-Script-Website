@@ -28,13 +28,15 @@ else {
     $stmt->execute(array($userid, $hashed_password));
     $row_count = $stmt->rowCount();
     if ($row_count > 0) { 
-        if(password_verify($_POST["password"],$hashed_password)) {
         $_SESSION["userid"]=$userid;
-                 header("Location: ../../iMonitor_Website/admin_dashboard.php");
+        if(password_verify($_POST["password"],$hashed_password)) {
+                 //header("Location: ../../iMonitor_Website/admin_dashboard.php");
+                 echo "correct";
     exit;          
     }
             else {
-                header("Location: ../../iMonitor_Website/index.php?msg=wrong");
+                //header("Location: ../../iMonitor_Website/index.php?msg=wrong");
+                echo "Wrong";
             }
     }
 ?>
