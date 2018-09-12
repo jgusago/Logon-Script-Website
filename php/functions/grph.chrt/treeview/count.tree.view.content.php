@@ -20,7 +20,8 @@ $result = $stmt->fetchAll();
 echo "<br>";
 if($rowcount>0){
     foreach($result as $row){
-        $filter = $row["treefilter"];
+        echo $filter = $row["treefilter"];
+        
         $secondquery = "SELECT *
                         FROM logonscript.tbl_log
                         WHERE hostname LIKE ? AND branch like ?
