@@ -33,7 +33,7 @@ else
     //$password = $_POST['password2'];
 
 
-    $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+    $hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
  
     $sql = "INSERT INTO tbl_user (userid, name, department, position, role, password)
          
