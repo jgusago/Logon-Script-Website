@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
@@ -29,7 +29,7 @@ if(isset($_POST['login'])){
    
     $stmt = $pdo->prepare('SELECT * FROM tbl_user WHERE userid = :userid');
 
-        $stmt->execute(['email' => $email]);
+        $stmt->execute(['userid' => $userid]);
 
         if($stmt->rowCount() > 0){
     
@@ -40,7 +40,7 @@ if(isset($_POST['login'])){
                 header("Location: ../../iMonitor_Website/admin_dashboard.php");
             }
             else{
-                $_SESSION['userid'] = $email;
+                $_SESSION['userid'] = $userid;
                 $_SESSION['password'] = $password;
 
                 header("Location: ../../iMonitor_Website/index.php?msg=wrong");
