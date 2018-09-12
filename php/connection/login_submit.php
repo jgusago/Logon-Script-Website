@@ -22,7 +22,7 @@ else {
 
 
     $userid = $_POST['userid'];
-    $password = $_POST['password'];
+    //$password = $_POST['password'];
     $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
    
