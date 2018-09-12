@@ -27,6 +27,6 @@ else
     
         $hash_password = password_hash($_POST['password2'], PASSWORD_DEFAULT);
         $sql = "INSERT INTO tbl_user (userid, name, department, position, role, password) VALUES ('".$_POST['userid']."', '".$_POST['name']."', '".$_POST['department']."', '".$_POST['position']."', '".$_POST['role']."', '$hash_password')";
-        //($db->query($sql));
+        ($db->query($sql));
         echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
 ?>
