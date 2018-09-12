@@ -120,7 +120,7 @@ $ID=$_GET['id'];
             </div>
 
             <div class="container">
-                <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:8%">
+                <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:190px; margin-bottom:10px; width:100%">
                     <thead>
                         <tr>
                             <th style="padding-bottom:15px;">No.</th>
