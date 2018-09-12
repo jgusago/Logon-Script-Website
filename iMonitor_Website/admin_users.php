@@ -292,7 +292,7 @@ $ID=$_GET['id'];
 
 					<div class="modal-footer">
 						<input type="hidden" id="password2" name="password2"></td>
-						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="populateSecondTextBox();">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="clearfields();">Close</button>
 					</div>
 				</div>
 			</div>
