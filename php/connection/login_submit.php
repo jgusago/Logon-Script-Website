@@ -4,7 +4,7 @@ error_reporting(0);
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-$un=$_POST['userid'];
+/*$un=$_POST['userid'];
 $pw=md5($_POST['password2']);
 
 $stmt = $db->prepare("SELECT * from tbl_user WHERE userid=? AND password=?");
@@ -18,5 +18,34 @@ if ($row_count > 0) {
 
 else {
     header("Location: ../../iMonitor_Website/index.php?msg=wrong");
-}
+}*/
+
+
+if(isset($_POST['login'])){
+
+    $userid = $_POST['userid'];
+    $password = $_POST['password'];
+
+   
+    $stmt = $pdo->prepare('SELECT * FROM tbl_user WHERE userid = :userid');
+
+        $stmt->execute(['email' => $email]);
+
+        if($stmt->rowCount() > 0){
+    
+            $user = $stmt->fetch();
+
+            if(password_verify($password, $user['password'])){
+                $_SESSION["userid"]=$userid;
+                header("Location: ../../iMonitor_Website/admin_dashboard.php");
+            }
+            else{
+                $_SESSION['userid'] = $email;
+                $_SESSION['password'] = $password;
+
+                header("Location: ../../iMonitor_Website/index.php?msg=wrong");
+            }
+        }
+    } 
+
 ?>
