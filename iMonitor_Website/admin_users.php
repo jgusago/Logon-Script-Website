@@ -216,7 +216,7 @@ $ID=$_GET['id'];
 								<tr>
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
-										<select name="department">
+										<select id= "department" name="department">
 											<option>----Select Department----</option>
 											<?php     
               									$sql = "select department from tbl_department";
