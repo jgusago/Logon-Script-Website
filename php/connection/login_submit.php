@@ -40,6 +40,5 @@ else {
 
                 header("Location: ../../iMonitor_Website/index.php?msg=wrong");
             }
-        }
 
 ?>
