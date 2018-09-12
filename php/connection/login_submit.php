@@ -49,7 +49,7 @@ else {
 
  $queryResults = $query->fetch(PDO::FETCH_ASSOC);
 
- if(password_verify($_POST["password"], $queryResults['password'])) {
+ if(password_verify($password, $queryResults['password'])) {
      if(isset($_SESSION["userid"])) {
          echo "Correct";
      } else {
