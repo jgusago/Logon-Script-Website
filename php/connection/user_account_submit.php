@@ -30,10 +30,10 @@ else
     //$department = $_POST['department'];
     //$position = $_POST['position'];
     //$role = $_POST['role'];
-    $password = $_POST['password2'];
+    //$password = $_POST['password2'];
 
 
-    $hash_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
  
     $sql = "INSERT INTO tbl_user (userid, name, department, position, role, password)
          
