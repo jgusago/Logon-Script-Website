@@ -26,7 +26,7 @@ else
 }*/
     
     $userid = $_POST['userid'];
-    $name = $_POST['password2'];
+    $name = $_POST['name'];
     $department = $_POST['department'];
     $position = $_POST['position'];
     $role = $_POST['role'];
