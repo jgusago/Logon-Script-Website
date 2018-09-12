@@ -5,7 +5,7 @@ session_start();
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-$username = $_POST['userid'];
+$userid = $_POST['userid'];
 
 /*if(!isset($error)){ 
         $stmt = $db->prepare("SELECT userid FROM tbl_user WHERE userid = :userid");
@@ -25,16 +25,10 @@ else
     }
 }*/
     
-    //$userid = $_POST['userid'];
-    //$name = $_POST['name'];
-    //$department = $_POST['department'];
-    //$position = $_POST['position'];
-    //$role = $_POST['role'];
     $password = $_POST['password2'];
 
 
-    //$hash_password = password_hash($password, PASSWORD_DEFAULT);
-    $hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
  
     $sql = "INSERT INTO tbl_user (userid, name, department, position, role, password)
          
