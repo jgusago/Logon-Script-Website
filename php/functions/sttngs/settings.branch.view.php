@@ -8,7 +8,7 @@ $dbmgr = "SELECT *
             AND column_name NOT LIKE :id";
 
 $pdo = $db->prepare($dbmgr);
-$pdo->bindParam(":dbname","tbl_tree");
+$pdo->bindParam(":db_name","tbl_tree");
 $pdo->bindParam(":id","%id%");
 $pdo->execute();
 $result = $pdo->fetchAll();
