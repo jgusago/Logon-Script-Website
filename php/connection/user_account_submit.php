@@ -26,14 +26,19 @@ else
 }*/
     
     $userid = $_POST['userid'];
+    $name = $_POST['password2'];
+    $department = $_POST['department'];
+    $position = $_POST['position'];
+    $role = $_POST['role'];
     $password = $_POST['password2'];
+
     
     //encrypt password using password_hash()
     $password = password_hash($password, PASSWORD_DEFAULT);
  
     //insert new user to our database
-    $stmt = $db->prepare('INSERT INTO tbl_user (userid, password) VALUES (:userid, :password)');
-    $stmt->execute(['userid' => $userid, 'password2' => $password]);
+    $stmt = $db->prepare('INSERT INTO tbl_user (userid, name, department, position, role, password) VALUES (:userid, :name, :department, :position, :role, :password2)');
+    $stmt->execute(['userid' => $userid, 'name' => $name, 'department' => $department, 'position' => $position, 'role' => $role, 'password2' => $password]);
     echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
 
 ?>
