@@ -412,17 +412,20 @@ $ID=$_GET['id'];
 							</table>
 						</form>
 					</div>					
-</form>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
 					</div>			
 				</div>
 			</div>
-			</div>
+	</div>
+</form>
 
 		<!-- End of Modal -->
+	
+</body>
+</html>
 
-    <script type="text/javascript">
+<script type="text/javascript">
         $('#exampleModal').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -533,8 +536,5 @@ $ID=$_GET['id'];
                 x.type = "password";
             }
         }       
-        </script>
-	
-</body>
-</html>
+    </script>
 
