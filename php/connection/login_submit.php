@@ -44,7 +44,7 @@ else {
     }*/
 
  $query = $db->prepare("SELECT password FROM `tbl_user` WHERE userid = :userid");
- $query->execute(array(':userid' => $userid));
+ $query->execute(array(':userid' => $userid, ':password' => $password));
 
 
  $queryResults = $query->fetch(PDO::FETCH_ASSOC);
