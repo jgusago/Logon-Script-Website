@@ -22,6 +22,7 @@ else {
 
 
     $userid = $_POST['userid'];
+    $password = $_POST['password'];
    
     /*$stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
     $stmt->execute(array($userid, $hashed_password));
@@ -42,7 +43,7 @@ else {
         }
     }*/
 
- $query = $db->prepare("SELECT * FROM `tbl_user` WHERE userid = :userid");
+ $query = $db->prepare("SELECT password FROM `tbl_user` WHERE userid = :userid");
  $query->execute(array(':userid' => $userid));
 
 
