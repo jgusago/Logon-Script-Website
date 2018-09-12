@@ -135,7 +135,7 @@ exit();
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
-		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		            <a href="reports.html"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
 		</nav>
