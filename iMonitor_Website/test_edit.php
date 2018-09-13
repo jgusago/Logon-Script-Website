@@ -14,7 +14,6 @@ $ID=$_GET['id'];
   </head>
   <body onload="populateSecondTextBox();">
     <div class="container">
-	<input type="hidden" id="password2" name="password2"></td>
     <div class="banner">
     </div>
     
@@ -64,6 +63,7 @@ $ID=$_GET['id'];
     									</script>
 
       <form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
+	    <input type="hidden" id="password2" name="password2"></td>
         <label for="username">Username:</label><br>
         <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID" onkeypress="return isNumberKey(event)"/><br>
         <label for="username">Name:</label><br>
