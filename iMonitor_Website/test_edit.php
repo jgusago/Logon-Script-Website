@@ -69,11 +69,11 @@ $ID=$_GET['id'];
         <label for="username">Name:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/><br>
         <label for="password">Password:</label><br>
-        <input type="text" id="password2" name="password2" value="Aa123456" disabled><br>
+        <input type="text" id="password" name="password" value="Aa123456" disabled><br>
         <label for="department">Department:</label><br>
             <select id="department" name="department">
 
-                          <?php     
+                          				<?php     
               									$sql = "select department from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
@@ -94,10 +94,10 @@ $ID=$_GET['id'];
             							?>
 					  </select><br>
 
-          <label for="role">Position:</label><br>
-              <select id="position" name="position">
+          	<label for="role">Position:</label><br>
+             	<select id="position" name="position">
 
-                          <?php     
+                          				<?php     
               									$sql = "select position from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
@@ -117,10 +117,10 @@ $ID=$_GET['id'];
               									}
             							?>
 					  </select><br>           
-        <label for="role">Role:</label><br>
-            <select id="role" name="role">
+        	<label for="role">Role:</label><br>
+            	<select id="role" name="role">
 
-                          <?php     
+                          				<?php     
               									$sql = "select role from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
@@ -139,6 +139,22 @@ $ID=$_GET['id'];
                 								echo '<option>'.$row['role'].'</option>'; 
               									}
             							?>
+					  </select><br>
+			<label for="status">Status:</label><br>
+            	<select id="status" name="status">
+
+                          				<?php     
+              									$sql = "select status from tbl_user WHERE id='$id'";
+              									$stmt = $db->prepare($sql);
+              									$stmt->execute();
+
+              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                								echo '<option>'.$row['status'].'</option>'; 
+              									}
+            							?>
+
+										<option>Active</option>
+										<option>Inactive</option>
 					  </select><br>
         <input class="submit" type="submit" value="Update">
       </form>
