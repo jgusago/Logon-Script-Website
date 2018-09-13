@@ -104,278 +104,147 @@
             <p><strong>Reports</strong></p>
         </div>
     </div>
-    <div class="container">
-        <div class="panel1">
-            <div class="col-sm-12 col-md-12"></div>
-                <div class="col-lg-12">
-                    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: fixed;">
-                        <div class="panel-heading">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab1default" data-toggle="tab">Computer Logs</a></li>
-                                <li><a href="#tab2default" data-toggle="tab">Computer List</a></li>
-                                <li><a href="#tab3default" data-toggle="tab">Active List</a></li>
-                                <li><a href="#tab4default" data-toggle="tab">Inactive List</a></li>
-                            </ul>
+    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: fixed; margin-top:8px; margin-left: 252px;">
+        <div class="panel-heading">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1default" data-toggle="tab">Computer Logs</a></li>
+                <li><a href="" data-toggle="tab">Computer List</a></li>
+                <li><a href="" data-toggle="tab">Active List</a></li>
+                <li><a href="" data-toggle="tab">Inactive List</a></li>
+            </ul>
+        </div>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab0default">
+                    <div class="pane pane--table1" style="padding-right: 55px;">
+                        <div class="col-md-3">
+                            <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
                         </div>
-                        <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--table1" style="padding-right: 55px;">
-                                <div class="col-md-3">
-                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--select department--</option>
-                                        <option value="Marvin 5th">Marvin 5th</option>
-                                        <option value="Marvin 10th">Marvin 10th</option>
-                                        <option value="AT">AT</option>
-                                    </select> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--select sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-8"><br>
-                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
-                                </div>
-                                <div class="col-md-4">
-                                    <br>
-                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
-                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
-                                </div>
-                                <div style="clear:both"></div>
-                                    <div class="logs_table">
-                                        <table class="table table-bordered" id="comp_logs">
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>User</th>
-                                                <th>Domain</th>
-                                                <th>IP Address</th>
-                                                <th>Date Modified</th>
-                                                <th>Old IP Address</th>
-                                                <th>Date Modified</th>
-                                                <th>iMonitor Status</th>
-                                                <th>Services Not Found</th>
-                                                <th>SysSetting File</th>
-                                                <th>Connection Status</th>
-                                                <th>Branch</th>
-                                                <th>Scan Time</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>JM</td>
-                                                <td>NN.</td>
-                                                <td>172.16.33.48</td>
-                                                <td>JUL-30-2018 08:24</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Running</td>
-                                                <td></td>
-                                                <td>Found</td>
-                                                <td>Established</td>
-                                                <td>Marvin 5th</td>
-                                                <td>JUL-30-2018 08:24</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                            </div>
+                        <div class="col-md-3">
+                            <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
                         </div>
-                        <div class="tab-pane fade" id="tab2default">
-                            <div class="pane pane--table2" style="padding-right: 55px;">
-                                <div class="col-md-3">
-                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--select department--</option>
-                                        <option value="Marvin 5th">Marvin 5th</option>
-                                        <option value="Marvin 10th">Marvin 10th</option>
-                                        <option value="AT">AT</option>
-                                    </select> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--select sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-8"><br>
-                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
-                                </div>
-                                <div class="col-md-4">
-                                    <br>
-                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
-                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
-                                </div>
-                                <div style="clear:both"></div>
-                                    <div class="complist_table">
-                                        <table class="table table-bordered" id="comp_list">
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Computer Name</th>
-                                                <th>IP Address</th>
-                                                <th>Platform</th>
-                                                <th>Status</th>
-                                                <th>Remark</th>
-                                                <th>Agent Version</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>ITOMPH033048</td>
-                                                <td>172.16.33.48</td>
-                                                <td>Windows PC</td>
-                                                <td>Running</td>
-                                                <td>Active</td>
-                                                <td>9.617</td>
-                                            </tr>
-                                        </table>
-                                    </div>    
-                                 <div>
-                            </div>
+                        <div class="col-md-3">
+                            <select name="department" id="department" class="form-control">
+                                <option value="" selected>--select department--</option>
+                                <option value="Marvin 5th">Marvin 5th</option>
+                                <option value="Marvin 10th">Marvin 10th</option>
+                                <option value="AT">AT</option>
+                            </select> 
                         </div>
-                        <div  class="tab-pane fade" id="tab3default">
-                            <div class="pane pane--table3" style="padding-right: 55px;">
-                                 <div class="col-md-3">
-                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--select department--</option>
-                                        <option value="Marvin 5th">Marvin 5th</option>
-                                        <option value="Marvin 10th">Marvin 10th</option>
-                                        <option value="AT">AT</option>
-                                    </select> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--select sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-8"><br>
-                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
-                                </div>
-                                <div class="col-md-4">
-                                <br>
-                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
-                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
-                                </div>
-                                <div style="clear:both"></div>
-                                    <div class="active_table">
-                                        <table class="table table-bordered" id="active_list">
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Computer Name</th>
-                                                <th>IP Address</th>
-                                                <th>Platform</th>
-                                                <th>Status</th>
-                                                <th>Remark</th>
-                                                <th>Agent Version</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>ITOMPH033048</td>
-                                                <td>172.16.33.48</td>
-                                                <td>Windows PC</td>
-                                                <td>Running</td>
-                                                <td>Active</td>
-                                                <td>9.617</td>
-                                            </tr>
-                                        </table>
-                                    </div>    
-                                <div>
-                            </div>            
+                        <div class="col-md-3">
+                            <select name="dub_dept" id="sub_dept" class="form-control">
+                                <option value="" selected>--select sub department</option>
+                                <option value="OM">IT-OM</option>
+                                <option value="AUD">IT-AUD</option>
+                                <option value="WEB">IT-WEB</option>
+                            </select>
                         </div>
-                        <div  class="tab-pane fade" id="tab4default">
-                            <div class="pane pane--table4" style="padding-right: 55px;">
-                                <div class="col-md-3">
-                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--select department--</option>
-                                        <option value="Marvin 5th">Marvin 5th</option>
-                                        <option value="Marvin 10th">Marvin 10th</option>
-                                        <option value="AT">AT</option>
-                                    </select> 
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--select sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-8"><br>
-                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
-                                </div>
-                                <div class="col-md-4">
-                                <br>
-                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
-                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
-                                </div>
-                                <div style="clear:both"></div>
-                                    <div class="inactive_table">
-                                        <table class="table table-bordered" id="inactive_list">
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Computer Name</th>
-                                                <th>IP Address</th>
-                                                <th>Platform</th>
-                                                <th>Status</th>
-                                                <th>Remark</th>
-                                                <th>Agent Version</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>ITOMPH033048</td>
-                                                <td>172.16.33.48</td>
-                                                <td>Windows PC</td>
-                                                <td>Running</td>
-                                                <td>Active</td>
-                                                <td>9.617</td>
-                                            </tr>
-                                        </table>
-                                    </div>    
-                                <div>
-                            </div>            
+                        <div class="col-md-8"><br>
+                            <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
                         </div>
+                        <div class="col-md-4">
+                            <br>
+                            <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
+                            <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
+                            <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
                         </div>
+                        <div style="clear:both;">
+                            <table class="table table-bordered" id="comp_logs">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>User</th>
+                                    <th>Domain</th>
+                                    <th>IP Address</th>
+                                    <th>Date Modified</th>
+                                    <th>Old IP Address</th>
+                                    <th>Date Modified</th>
+                                    <th>iMonitor Status</th>
+                                    <th>Services Not Found</th>
+                                    <th>SysSetting File</th>
+                                    <th>Connection Status</th>
+                                    <th>Branch</th>
+                                    <th>Scan Time</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>JM</td>
+                                    <td>NN.</td>
+                                    <td>172.16.33.48</td>
+                                    <td>JUL-30-2018 08:24</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Running</td>
+                                    <td></td>
+                                    <td>Found</td>
+                                    <td>Established</td>
+                                    <td>Marvin 5th</td>
+                                    <td>JUL-30-2018 08:24</td>
+                                </tr>
+                            </table>
                         </div>
+                    </div>  
+                </div>
+                <div class="tab-pane fade" id="tab1default">
+                    <div class="pane pane--table1">
+                        <div class="col-md-3">
+                            <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                        </div>
+                        <div class="col-md-3">
+                            <select name="department" id="department" class="form-control">
+                                <option value="" selected>--select department--</option>
+                                <option value="Marvin 5th">Marvin 5th</option>
+                                <option value="Marvin 10th">Marvin 10th</option>
+                                <option value="AT">AT</option>
+                            </select> 
+                        </div>
+                        <div class="col-md-3">
+                            <select name="dub_dept" id="sub_dept" class="form-control">
+                                <option value="" selected>--select sub department</option>
+                                <option value="OM">IT-OM</option>
+                                <option value="AUD">IT-AUD</option>
+                                <option value="WEB">IT-WEB</option>
+                            </select>
+                        </div>
+                        <div class="col-md-8"><br>
+                            <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
+                        </div>
+                        <div class="col-md-4">
+                            <br>
+                            <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
+                            <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
+                            <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
+                        </div>
+                        <div style="clear:both;">
+                            <table class="table table-bordered" id="comp_logs">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Computer Name</th>
+                                    <th>IP Address</th>
+                                    <th>Platform</th>
+                                    <th>Status</th>
+                                    <th>Remarks</th>
+                                    <th>Agent Version</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ITOMPH033048</td>
+                                    <td>192.168.33.48</td>
+                                    <td>Windows PC</td>
+                                    <td>Running</td>
+                                    <td>Updated</td>
+                                    <td>9.617</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
+                        
 <!-- 
         <div class="container-table" style="position:sticky;  overflow: hidden;">
             <div class="row">
