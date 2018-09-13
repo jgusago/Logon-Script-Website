@@ -445,12 +445,12 @@ $ID=$_GET['id'];
 					</div>					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
-					</div>			
+					</div>
+					<?php } ?>			
 				</div>
 			</div>
 	</div>
 </form>
-<?php } ?>
 		<!-- End of Modal -->
 	
 </body>
