@@ -33,7 +33,7 @@ else {
         $hashed_password = $row[0]['password']; 
         $status = $row[0]['status']; 
             if($status == 'Inactive') {
-                echo "Your account is inactive";
+                header("Location: ../../iMonitor_Website/index.php?msg2=wrong");
             }
             elseif(($status == 'Active') && (password_verify($password, $hashed_password))) { 
                     $_SESSION["userid"] = $row[0]['userid']; 
