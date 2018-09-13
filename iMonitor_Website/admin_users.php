@@ -219,7 +219,7 @@ $ID=$_GET['id'];
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select id= "department" name="department">
-											<option>----Select Department----</option>
+											<option></option>
 											<?php     
               									$sql = "select department from tbl_department";
               									$stmt = $db->prepare($sql);
@@ -254,7 +254,7 @@ $ID=$_GET['id'];
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select id="role" name="role">
-											<option>----Select Role----</option>
+											<option></option>
 											<?php     
               									$sql = "select role from tbl_role";
               									$stmt = $db->prepare($sql);
@@ -270,7 +270,7 @@ $ID=$_GET['id'];
 								<tr>
 									<td><b>Status:</b> </td>
 									<td class="dropdown-status">
-										<select name="status" id="status">
+										<select id="status" name="status">
 											<option value="Active">Active</option>
 											<option value="Inactive">Inactive</option>
 										</select>
