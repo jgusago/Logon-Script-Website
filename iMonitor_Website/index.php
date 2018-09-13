@@ -31,7 +31,7 @@ if(isset($_SESSION["userid"])) {
                     <?php
                         if(isset($_GET['msg2']))                      
                         {                    
-                            echo "<p align='center' class='error'>Your account is deativated.</p>";
+                            echo "<p align='center' class='error'>Your account is Inactive.</p>";
                         }
                     ?>
                 </div>
