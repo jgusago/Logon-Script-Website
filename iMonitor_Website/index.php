@@ -28,6 +28,12 @@ if(isset($_SESSION["userid"])) {
                             echo "<p align='center' class='error'>Wrong username or password.</p>";
                         }
                     ?>
+                    <?php
+                        if(isset($_GET['msg2']))                      
+                        {                    
+                            echo "<p align='center' class='error'>Your account is deativated.</p>";
+                        }
+                    ?>
                 </div>
             <?php
                 //login();
