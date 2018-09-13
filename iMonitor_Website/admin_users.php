@@ -123,7 +123,7 @@ $ID=$_GET['id'];
             <p><strong>User Accounts</strong></p>
         </div>
         <div class="container-table" style="position:sticky;  overflow: hidden;">
-            <div class="row" style="margin-top:140px">
+            <div class="row" style="margin-top:130px">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
