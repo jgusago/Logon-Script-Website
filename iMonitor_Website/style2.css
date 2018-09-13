@@ -90,8 +90,8 @@ p
 }
 .panel-heading
 {
-    margin-top:-1px;
-    height:55px;
+    margin-top: -25px;
+    height: 55px;
 }
 /* ---------------------------------------------------
     SIDEBAR STYLE
