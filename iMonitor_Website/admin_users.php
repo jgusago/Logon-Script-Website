@@ -317,14 +317,14 @@ $ID=$_GET['id'];
 		<!-- Modal Add User-->
 
 <!--FOR EDIT-->
-		
+<div class="modal fade" id="editform" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">		
 <?php
 		      $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
 		      $stmt->execute();
 		      for($i=0; $row = $stmt->fetch(); $i++){
 		      $id=$row['id'];
 	    ?>
-			
+<form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -448,8 +448,9 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 	</div>
+</form>
 <?php } ?>
-
+</div>
 		<!-- End of Modal -->
 	
 </body>
