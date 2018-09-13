@@ -31,8 +31,9 @@ else {
 
     if (count($row) > 0) { 
         $status = $row['status']; 
-            if($status == 'Inactive'){
+            if($status == 'Inactive') {
                 echo "Your account is inactive";
+            }
                 else {
                     $hashed_password = $row[0]['password'];
                     password_verify($password, $hashed_password) 
