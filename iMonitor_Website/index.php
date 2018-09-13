@@ -50,6 +50,7 @@ if(isset($_SESSION["userid"])) {
                             </span>
                             <!--<input class="form-control" id="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
                             <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                            <input type="text" id="status" name="status">
                         </div>
                     </div>
                     <div>
