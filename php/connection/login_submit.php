@@ -24,22 +24,18 @@ else {
     $userid = $_POST['userid'];
     $password = $_POST['password'];
    
-    $stmt = $db->prepare("SELECT * FROM tbl_user WHERE userid=?");
-    $stmt->execute(array($userid, $password));
-    $row_count = $stmt->rowCount();
-    if ($row_count > 0) { 
-    
-        if(password_verify($_POST["password"],$hashed_password)) {
-            
-            if(isset($_SESSION["userid"])) {
-                 //header("Location: ../../iMonitor_Website/admin_dashboard.php");
-                 echo "correct";
-    exit;          
-    }
-            else {
-                //header("Location: ../../iMonitor_Website/index.php?msg=wrong");
-                echo "Wrong";
-            }
+    $stmt = $db->prepare("SELECT * FROM tbl_user WHERE userid=:userid LIMIT 1"); 
+    $stmt->bindValue(':userid', $userid, PDO::PARAM_STR); 
+    $stmt->execute(); 
+    $row = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+
+    if (count($row) > 0) { 
+        $hashed_password = $row[0]['password']; 
+        if(password_verify($password, $hashed_password)) { 
+        $_SESSION["userid"] = $row[0]['userid']; 
+        echo "Correct"; 
+        } else {  
+        echo "Incorrect"; 
         }
     }
 ?>
