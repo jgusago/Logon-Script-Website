@@ -11,10 +11,10 @@ $name= $_POST['name'];
 $department= $_POST['department'];
 $position= $_POST['position'];
 $role= $_POST['role'];
-$password= md5($_POST['password']);
-//$password= $_POST['password2'];
+//$password= md5($_POST['password']);
+$hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
 
-$stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', password='$password' WHERE id='$get_id'");
+$stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', password='$hashed_password' WHERE id='$get_id'");
 $stmt->execute(array());
 $affected_rows = $stmt->rowCount();
 
