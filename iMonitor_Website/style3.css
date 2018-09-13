@@ -91,6 +91,18 @@ p
 {
     padding:15px;
 }
+.complist_table
+{
+    padding:15px;
+}
+.active_table
+{
+    padding:15px;
+}
+.inactive-table
+{
+    padding:15px;
+}
 .glyphicon-plus
 {
     font-size: 25px;
