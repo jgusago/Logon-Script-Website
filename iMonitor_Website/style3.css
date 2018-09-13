@@ -115,12 +115,8 @@ p
 }
 .panel-default
 {
-    margin-top: -253px;
+    margin-top: -299px;
     margin-left: 224px;
-}
-.col-md-8, .form-control
-{
-    width:50%
 }
 /* ---------------------------------------------------
     SIDEBAR STYLE
