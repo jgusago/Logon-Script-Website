@@ -110,7 +110,7 @@ $ID=$_GET['id'];
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
 		        </li>
 		        <li>
-		            <a href="reports.html"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
+		            <a href="admin_reports.html"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
 		        </li>	  
 	   		</ul>
 		</nav>
