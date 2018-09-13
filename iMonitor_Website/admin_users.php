@@ -149,7 +149,7 @@ $ID=$_GET['id'];
                 <tbody class="table-users">
 
  					<?php
-		            	$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role='ADMINISTRATOR'");
+		            	$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role='ADMINISTRATOR' and role='STAFF'");
 		            	$stmt->execute();
 		            	for($i=0; $row = $stmt->fetch(); $i++){
 						$id=$row['id'];
