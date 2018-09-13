@@ -149,7 +149,7 @@ $ID=$_GET['id'];
                 <tbody class="table-users">
 
  					<?php
-		            	$stmt = $db->query('SELECT id, userid, name, department, position, role FROM tbl_user');
+		            	$stmt = $db->query('SELECT id, userid, name, department, position, status, role FROM tbl_user');
 		            	$stmt->execute();
 		            	for($i=0; $row = $stmt->fetch(); $i++){
 						$id=$row['id'];
@@ -161,6 +161,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['department']; ?></td>
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
+						<td><?php echo $row['status']; ?></td>
 						<td></td>
 						<td><a href="test_edit.php <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
 							<!-- <button class="btn btn-primary">Edit Record</button></a></td> -->
