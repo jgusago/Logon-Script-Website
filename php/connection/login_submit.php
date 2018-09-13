@@ -23,6 +23,7 @@ else {
 
     $userid = $_POST['userid'];
     $password = $_POST['password'];
+    $status = $_POST['status'];
    
     $stmt = $db->prepare("SELECT * FROM tbl_user WHERE userid=:userid LIMIT 1"); 
     $stmt->bindValue(':userid', $userid, PDO::PARAM_STR); 
@@ -32,10 +33,16 @@ else {
     if (count($row) > 0) { 
         $hashed_password = $row[0]['password']; 
         if(password_verify($password, $hashed_password)) { 
-        $_SESSION["userid"] = $row[0]['userid']; 
-        header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
-        } else {  
-        header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
+            $_SESSION["userid"] = $row[0]['userid'];
+            if($status == 'Inactive'){
+                echo "Your account is inactive";
+            }
+            else { 
+                header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
+            } 
+            else {  
+            header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
         }
     }
+}
 ?>
