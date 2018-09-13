@@ -39,9 +39,9 @@ else {
                     $_SESSION["userid"] = $row[0]['userid']; 
                     header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
             }
-            else {  
-            header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
-            }
+            //else {  
+            //header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
+            //}
         } 
            
 ?>
