@@ -123,7 +123,7 @@ $ID=$_GET['id'];
             <p><strong>User Accounts</strong></p>
         </div>
         <div class="container-table" style="position:sticky;  overflow: hidden;">
-            <div class="row" style="margin-top:130px">
+            <div class="row" style="margin-top:150px">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
@@ -264,6 +264,15 @@ $ID=$_GET['id'];
                 								echo '<option>'.$row['role'].'</option>'; 
               									}
             								?>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td><b>Status:</b> </td>
+									<td>
+										<select name="status" id="status">
+											<option value="Active">Active</option>
+											<option value="Inactive">Inactive</option>
 										</select>
 									</td>
 								</tr>
