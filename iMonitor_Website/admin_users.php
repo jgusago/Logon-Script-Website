@@ -10,15 +10,6 @@ $ID=$_GET['id'];
   	}
 ?>
 
-<!--FOR EDIT-->
-		
-<?php
-		      $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
-		      $stmt->execute();
-		      for($i=0; $row = $stmt->fetch(); $i++){
-		      $id=$row['id'];
-	    ?>
-		
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -450,6 +441,14 @@ $ID=$_GET['id'];
 			</div>
 	</div>
 </form>
+<!--FOR EDIT-->
+		
+<?php
+		      $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
+		      $stmt->execute();
+		      for($i=0; $row = $stmt->fetch(); $i++){
+		      $id=$row['id'];
+	    ?>
 <?php } ?>
 		<!-- End of Modal -->
 	
