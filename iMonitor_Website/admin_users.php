@@ -119,6 +119,16 @@ $ID=$_GET['id'];
 
     <!-- Table -->
     <div class="container-body">
+
+
+	<!--FOR EDIT-->
+		
+<?php
+		      $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
+		      $stmt->execute();
+		      for($i=0; $row = $stmt->fetch(); $i++){
+		      $id=$row['id'];
+	    ?>
         <div class="info">
             <p><strong>User Accounts</strong></p>
         </div>
@@ -441,14 +451,6 @@ $ID=$_GET['id'];
 			</div>
 	</div>
 </form>
-<!--FOR EDIT-->
-		
-<?php
-		      $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
-		      $stmt->execute();
-		      for($i=0; $row = $stmt->fetch(); $i++){
-		      $id=$row['id'];
-	    ?>
 <?php } ?>
 		<!-- End of Modal -->
 	
