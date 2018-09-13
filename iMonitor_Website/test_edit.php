@@ -140,7 +140,7 @@ $ID=$_GET['id'];
               									}
             							?>
 					  </select><br>
-        <input class="submit" type="submit" value="Save">
+        <input class="submit" type="submit" value="Update">
       </form>
       <?php } ?>                                                   
     </div>                                  
