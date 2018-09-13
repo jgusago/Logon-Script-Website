@@ -166,8 +166,8 @@
                             <td>On-line</td>
                             <td>Active</td>
                             <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                                <a href="viewing.html"><button class="btn btn-primary">View</button></a>
+                                <a href="viewing.html"><button class="btn btn-success">Edit</button></a>
                             </td>
                         </tr>
                         <tr>
@@ -214,10 +214,9 @@
                             <td>Off-line</td>
                             <td>Resigned</td>
                             <td>
-                                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button> -->
-                                <a href="viewing.html"><button class="btn btn-primary">View</button></a>
-                                <a href="viewing.html"><button class="btn btn-success">Edit</button></a>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalView">View</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalEdit">Edit</button>
+                                
                             </td>
                         </tr>
                         <tr>
