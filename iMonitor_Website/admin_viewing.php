@@ -66,32 +66,32 @@
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-		<nav id="sidebar" style="position:fixed;">
-			<ul class="list-unstyled components">
-		        <p></p>
-		        <li>
-		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
-		        </li>
-		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-home"></i> Branch Settings</a>
-		        </li>
-		        <li class="active">
-		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i> Computer List</a>
-		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li><a href="admin_viewing.html">Marvin 5th</a></li>
-		                <li><a href="admin_viewing.html">Marvin 10th</a></li>
-		                <li><a href="admin_viewing.html">COP</a></li>
-		            </ul>
-		        </li>
-		        <li>
-		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
-		        </li>
-		        <li>
-		            <a href="admin_reports.html"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
-		        </li>	  
-	   		</ul>
-		</nav>
-	</div>               
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <p></p>
+                 <li>
+                    <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="glyphicon glyphicon-home"></i> Branch Settings</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i> Computer List</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="admin_viewing.html">Marvin 5th</a></li>
+                        <li><a href="admin_viewing.html">Marvin 10th</a></li>
+                        <li><a href="admin_viewing.html">COP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
+                </li>
+                <li class="active">
+                    <a href="admin_reports.html"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
+                </li>	  
+            </ul>
+        </nav>
+    </div>                 
 	<!-- End of Sidebar -->
 
     <!-- Table -->
@@ -461,71 +461,6 @@
     <!-- End of Edit Modal -->
 
     <script type="text/javascript">
-        $('#exampleModal').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          var modal = $(this)
-          modal.find('.modal-title').text('New message to ' + recipient)
-          modal.find('.modal-body input').val(recipient)
-        })
-        
-        $(document).ready(function(){
-         
-         function load_unseen_notification(view = '')
-         {
-          $.ajax({
-           url:"fetch.php",
-           method:"POST",
-           data:{view:view},
-           dataType:"json",
-           success:function(data)
-           {
-            $('.dropdown-menu').html(data.notification);
-            if(data.unseen_notification > 0)
-            {
-             $('.count').html(data.unseen_notification);
-            }
-           }
-          });
-         }
-         
-         load_unseen_notification();
-         
-         $('#comment_form').on('submit', function(event){
-          event.preventDefault();
-          if($('#subject').val() != '' && $('#comment').val() != '')
-          {
-           var form_data = $(this).serialize();
-           $.ajax({
-            url:"insert.php",
-            method:"POST",
-            data:form_data,
-            success:function(data)
-            {
-             $('#comment_form')[0].reset();
-             load_unseen_notification();
-            }
-           });
-          }
-          else
-          {
-           alert("Both Fields are Required");
-          }
-         });
-         
-         $(document).on('click', '.dropdown-toggle', function(){
-          $('.count').html('');
-          load_unseen_notification('yes');
-         });
-         
-         setInterval(function(){ 
-          load_unseen_notification();; 
-         }, 5000);
-         
-        });
-        
           $(document).ready(function(){
             $(".dropdown").hover(            
                 function() {
@@ -543,10 +478,7 @@
                          $('#sidebarCollapse').on('click', function () {
                              $('#sidebar').toggleClass('active');
                          });
-                     });
-         
-        
-        
+                     });      
         function isNumber(input) {
           var regex =/[^0-9]/gi;
           input.value = input.value.replace(regex,"");
