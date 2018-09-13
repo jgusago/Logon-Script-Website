@@ -162,11 +162,11 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td></td>
+						<td></td><?php } ?>
 						<!--<td><a href="test_edit.php <?php //echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>-->
-                        <td><a href="#editform <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+                        <td><a href="#editUser <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
-					<?php } ?>
+					
             	</tbody>
             </table>
         </div> 
@@ -317,7 +317,7 @@ $ID=$_GET['id'];
 		<!-- Modal Add User-->
 
 <!--FOR EDIT-->
-<div class="modal fade" id="editform" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">		
+	
 <?php
 		      $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
 		      $stmt->execute();
@@ -450,7 +450,6 @@ $ID=$_GET['id'];
 	</div>
 </form>
 <?php } ?>
-</div>
 		<!-- End of Modal -->
 	
 </body>
