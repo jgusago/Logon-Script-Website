@@ -101,9 +101,9 @@ p
     width: 25%;
     margin-top: 20px;
 }
-.col-md-8, .form-control
+.col-md-8 
 {
- width:100%;
+ width:50%;
 }
 .panel-heading
 {
@@ -119,7 +119,7 @@ p
 }
 .panel-default
 {
-    margin-top: -295px;
+    margin-top: -293px;
     margin-left: 224px;
 }
 /* ---------------------------------------------------
