@@ -32,15 +32,15 @@ else {
 
     if (count($row) > 0) { 
         $hashed_password = $row[0]['password']; 
-        if(password_verify($password, $hashed_password) && ($status == 'Inactive')) { 
-                echo "Your account is inactive";
-            }
-            elseif(password_verify($password, $hashed_password) && ($status == 'Active')) { 
+        if(password_verify($password, $hashed_password) && ($status == 'Active')) { 
                 $_SESSION["userid"] = $row[0]['userid']; 
                 header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
+            }
+            elseif(password_verify($password, $hashed_password) && ($status == 'Inctive')) { 
+                echo "Your account is inactive";
             } 
-            else {  
-            header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
-        }
+            //else {  
+            //header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
+        //}
     }
 ?>
