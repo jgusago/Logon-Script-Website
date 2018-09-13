@@ -112,9 +112,9 @@
                         <div class="panel-heading">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#tab1default" data-toggle="tab">Computer Logs</a></li>
-                                <li><a href="#tab1default" data-toggle="tab">Computer List</a></li>
-                                <li><a href="#tab1default" data-toggle="tab">Active List</a></li>
-                                <li><a href="#tab1default" data-toggle="tab">Inactive List</a></li>
+                                <li><a href="#tab2default" data-toggle="tab">Computer List</a></li>
+                                <li><a href="#tab3default" data-toggle="tab">Active List</a></li>
+                                <li><a href="#tab4default" data-toggle="tab">Inactive List</a></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade in active" id="tab1default">
@@ -187,8 +187,245 @@
                                     </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="tab2default">
+                            <div class="pane pane--table2" style="padding-right: 10px;">
+                                <div class="col-md-3">
+                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="department" id="department" class="form-control">
+                                        <option value="" selected>--select department--</option>
+                                        <option value="Marvin 5th">Marvin 5th</option>
+                                        <option value="Marvin 10th">Marvin 10th</option>
+                                        <option value="AT">AT</option>
+                                    </select> 
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="dub_dept" id="sub_dept" class="form-control">
+                                        <option value="" selected>--select sub department</option>
+                                        <option value="OM">IT-OM</option>
+                                        <option value="AUD">IT-AUD</option>
+                                        <option value="WEB">IT-WEB</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6"><br>
+                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
+                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
+                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
+                                </div>
+                                <div style="clear:both"></div>
+                                    <div class="logs_table">
+                                        <table class="table table-bordered" id="comp_logs">
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Computer Name</th>
+                                                <th>IP Address</th>
+                                                <th>Platform</th>
+                                                <th>Status</th>
+                                                <th>Remark</th>
+                                                <th>Agent Version</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>ITOMPH033048</td>
+                                                <td>172.16.33.48</td>
+                                                <td>Windows PC</td>
+                                                <td>Running</td>
+                                                <td>Active</td>
+                                                <td>9.617</td>
+                                            </tr>
+                                        </table>
+                                    </div>    
+                                 <div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                            <div class="pane pane--table2" style="padding-right: 10px;">
+                                <div class="col-md-3">
+                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="department" id="department" class="form-control">
+                                        <option value="" selected>--select department--</option>
+                                        <option value="Marvin 5th">Marvin 5th</option>
+                                        <option value="Marvin 10th">Marvin 10th</option>
+                                        <option value="AT">AT</option>
+                                    </select> 
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="dub_dept" id="sub_dept" class="form-control">
+                                        <option value="" selected>--select sub department</option>
+                                        <option value="OM">IT-OM</option>
+                                        <option value="AUD">IT-AUD</option>
+                                        <option value="WEB">IT-WEB</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6"><br>
+                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
+                                </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
+                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
+                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
+                                </div>
+                                <div style="clear:both"></div>
+                                    <div class="logs_table">
+                                        <table class="table table-bordered" id="comp_logs">
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Computer Name</th>
+                                                <th>IP Address</th>
+                                                <th>Platform</th>
+                                                <th>Status</th>
+                                                <th>Remark</th>
+                                                <th>Agent Version</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>ITOMPH033048</td>
+                                                <td>172.16.33.48</td>
+                                                <td>Windows PC</td>
+                                                <td>Running</td>
+                                                <td>Active</td>
+                                                <td>9.617</td>
+                                            </tr>
+                                        </table>
+                                    </div>    
+                                 <div>
+                            </div>        
+                        </div>
+                        <div  class="tab-pane fade" id="tab3default">
+                            <div class="pane pane--table3" style="padding-right: 10px;">
+                                <div class="col-md-3">
+                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                                 </div>
+                                <div class="col-md-3">
+                                    <select name="department" id="department" class="form-control">
+                                        <option value="" selected>--select department--</option>
+                                        <option value="Marvin 5th">Marvin 5th</option>
+                                        <option value="Marvin 10th">Marvin 10th</option>
+                                        <option value="AT">AT</option>
+                                    </select> 
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="dub_dept" id="sub_dept" class="form-control">
+                                        <option value="" selected>--select sub department</option>
+                                        <option value="OM">IT-OM</option>
+                                        <option value="AUD">IT-AUD</option>
+                                        <option value="WEB">IT-WEB</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6"><br>
+                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
+                                </div>
+                                <div class="col-md-6">
+                                <br>
+                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
+                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
+                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
+                                </div>
+                                <div style="clear:both"></div>
+                                    <div class="logs_table">
+                                        <table class="table table-bordered" id="comp_logs">
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Computer Name</th>
+                                                <th>IP Address</th>
+                                                <th>Platform</th>
+                                                <th>Status</th>
+                                                <th>Remark</th>
+                                                <th>Agent Version</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>ITOMPH033048</td>
+                                                <td>172.16.33.48</td>
+                                                <td>Windows PC</td>
+                                                <td>Running</td>
+                                                <td>Active</td>
+                                                <td>9.617</td>
+                                            </tr>
+                                        </table>
+                                    </div>    
+                                <div>
+                            </div>            
+                        </div>
+                        <div  class="tab-pane fade" id="tab3default">
+                            <div class="pane pane--table3" style="padding-right: 10px;">
+                                 <div class="col-md-3">
+                                    <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="department" id="department" class="form-control">
+                                        <option value="" selected>--select department--</option>
+                                        <option value="Marvin 5th">Marvin 5th</option>
+                                        <option value="Marvin 10th">Marvin 10th</option>
+                                        <option value="AT">AT</option>
+                                    </select> 
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="dub_dept" id="sub_dept" class="form-control">
+                                        <option value="" selected>--select sub department</option>
+                                        <option value="OM">IT-OM</option>
+                                        <option value="AUD">IT-AUD</option>
+                                        <option value="WEB">IT-WEB</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6"><br>
+                                    <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
+                                </div>
+                                <div class="col-md-6">
+                                <br>
+                                    <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
+                                    <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
+                                    <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-warning" onclick="">
+                                </div>
+                                <div style="clear:both"></div>
+                                    <div class="logs_table">
+                                        <table class="table table-bordered" id="comp_logs">
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Computer Name</th>
+                                                <th>IP Address</th>
+                                                <th>Platform</th>
+                                                <th>Status</th>
+                                                <th>Remark</th>
+                                                <th>Agent Version</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>ITOMPH033048</td>
+                                                <td>172.16.33.48</td>
+                                                <td>Windows PC</td>
+                                                <td>Running</td>
+                                                <td>Active</td>
+                                                <td>9.617</td>
+                                            </tr>
+                                        </table>
+                                    </div>    
+                                <div>
+                            </div>            
+                        </div>
                     </div>
                 </div>
+            
         </div>
     </div>
 <!-- 
