@@ -33,9 +33,9 @@ else {
         $hashed_password = $row[0]['password']; 
         if(password_verify($password, $hashed_password)) { 
         $_SESSION["userid"] = $row[0]['userid']; 
-        echo "Correct"; 
+        header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
         } else {  
-        echo "Incorrect"; 
+        header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
         }
     }
 ?>
