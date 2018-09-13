@@ -14,14 +14,13 @@ $ID=$_GET['id'];
   </head>
   <body onload="populateSecondTextBox();">
     <div class="container">
-
+	<input type="text" id="password2" name="password2"></td>
     <div class="banner">
     </div>
     
     <div class="mainbody">
       
     <div class="content">
-	<input type="text" id="password2" name="password2"></td>
       <center>
         <h3><p>Edit User Account</p></h3>
       </center>  
