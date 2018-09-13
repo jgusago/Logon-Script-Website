@@ -269,7 +269,7 @@ $ID=$_GET['id'];
 								</tr>
 								<tr>
 									<td><b>Status:</b> </td>
-									<td>
+									<td class="dropdown-status">
 										<select name="status" id="status">
 											<option value="Active">Active</option>
 											<option value="Inactive">Inactive</option>

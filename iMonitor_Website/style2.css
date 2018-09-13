@@ -303,6 +303,11 @@ u
 	width:320px;
 	height:30px;
 }
+.dropdown-status select
+{
+    width:320px;
+	height:30px;
+}
 .modal-form input
 {
 	width:320px;
