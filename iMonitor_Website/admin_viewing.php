@@ -78,16 +78,16 @@
                 <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i> Computer List</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a href="admin_viewing.html">Marvin 5th</a></li>
-                        <li><a href="admin_viewing.html">Marvin 10th</a></li>
-                        <li><a href="admin_viewing.html">COP</a></li>
+                        <li><a href="admin_viewing.php">Marvin 5th</a></li>
+                        <li><a href="admin_viewing.php">Marvin 10th</a></li>
+                        <li><a href="admin_viewing.php">COP</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
                 </li>
                 <li class="active">
-                    <a href="admin_reports.html"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
+                    <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
                 </li>	  
             </ul>
         </nav>
@@ -185,90 +185,6 @@
             </div>
         </div>           
     </div>
-
-    <!-- View Modal -->
-    <div id="myModalView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
-        <div class="modal-dialog modal-md" style="position:fixed; width:100%; height:100%;">
-            <div class="modal-content" style="border:2px solid #3c7dcf; box-shadow:none;">
-                <div class="modal-header" style="background-color:#f5f5f5;">
-                    <button type ="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 style="font-size:2em;">ITOMAU033022 | Camille</h4>
-                </div>
-                <div class="modal-body" style="margin-left:-180px; width:97%; ">
-                    <div class="panel panel-default" style="margin-left:200px; padding-right:-30px; width:100%">
-                        <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Logs</div>
-                        <div class="panel-body" style="padding:10px; margin-left:-200px; width:100%">
-                            <div class="modal-container" style="margin: 10px; padding-left: 120px; margin-right: -80px;">
-                                <table class="table table-bordered" style="margin-left:90px;">
-                                    <thead>
-                                        <tr style="padding:50px;">
-                                            <th style="padding-bottom:15px;">Domain</th>
-                                            <th style="padding-bottom:15px;">IP Address</th>
-                                            <th style="padding-bottom:15px;">IP Address Modified</th>
-                                            <th style="padding-bottom:15px;">Old IP Address</th>
-                                            <th style="padding-bottom:15px;">Old IP Address Modified</th>
-                                            <th style="padding-bottom:15px;">iMonitor Status</th>
-                                            <th style="padding-bottom:15px;">Services Not Found</th>
-                                            <th style="padding-bottom:15px;">SysSetting File</th>
-                                            <th style="padding-bottom:15px;">Connection Status</th>
-                                            <th style="padding-bottom:15px;">Branch</th>
-                                            <th style="padding-bottom:15px;">Scan Time</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="viewingTable">
-                                        <tr>
-                                            <td style="padding-top:15px;">NN</td>
-                                            <td style="padding-top:15px;">172.16.33.22</td>
-                                            <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                                            <td style="padding-top:15px;"></td>
-                                            <td style="padding-top:15px;"></td>
-                                            <td style="padding-top:15px;">Running</td>
-                                            <td style="padding-top:15px;">Msysys.exe<br>Mskes.exe</td>
-                                            <td style="padding-top:15px;">Found</td>
-                                            <td style="padding-top:15px;">Established</td>
-                                            <td style="padding-top:15px;">Marvin(IT)</td>
-                                            <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default" style="margin-left:200px; width:90%">
-                        <div class="panel-heading" style="padding:20px; font-size:18px;">Computer Details</div>
-                            <div class="panel-body" style="padding:20px; margin-left:-200px; width:100%">
-                                <div class="modal-container" style="margin: 10px; padding-left: 110px; padding-right: 50px;">
-                                    <table class="table table-bordered" style="margin-left:90px;">
-                                        <thead>
-                                            <tr style="padding:50px;">
-                                                <th style="padding-bottom:15px;">Processor</th>
-                                                <th style="padding-bottom:15px;">HDD Serial</th>
-                                                <th style="padding-bottom:15px;">MAC Address</th>
-                                                <th style="padding-bottom:15px;">Motherboard Manufacturer</th>
-                                                <th style="padding-bottom:15px;">Motherboard Product</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style="padding:15px;">Intel(R) Core(TM) i5-6400</td>
-                                                <td style="padding:15px;"></td>
-                                                <td style="padding:15px;">2C-FD-A1-74-0E-9C</td>
-                                                <td style="padding:15px;"></td>
-                                                <td style="padding:15px;"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-            </div>   
-        </div>
-    </div>
-    <!-- End of View Modal -->
 
     <!-- Edit Modal -->
     <div id="myModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
