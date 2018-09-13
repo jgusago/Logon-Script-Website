@@ -248,7 +248,7 @@ $ID=$_GET['id'];
             								?>
 										</select>
 									</td> -->
-									<td><input type="text" id="position" name="position"></td>
+									<td><input type="text" id="position" name="position" required></td>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
