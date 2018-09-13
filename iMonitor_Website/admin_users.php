@@ -337,16 +337,17 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="number" id="userid" name="userid" value="" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" pattern="[A-Za-z]*" id="name" name="name" required placeholder="Name" class="validate"></td>
+									<td><input type="text" id="name" name="name" required placeholder="Name" class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
+										<option></option>
 										<?php     
               									$sql = "select department from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
@@ -373,6 +374,7 @@ $ID=$_GET['id'];
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="position">
+										<option></option>
 										<?php     
               									$sql = "select position from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
@@ -398,7 +400,7 @@ $ID=$_GET['id'];
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-										<option>----Select Role----</option>
+										<option></option>
 										<?php     
               									$sql = "select role from tbl_user WHERE id='$id'";
               									$stmt = $db->prepare($sql);
