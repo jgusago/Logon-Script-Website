@@ -23,8 +23,6 @@ else {
 
     $userid = $_POST['userid'];
     $password = $_POST['password'];
-    $status = $_POST['status'];
-
    
     $stmt = $db->prepare("SELECT * FROM tbl_user WHERE userid=:userid LIMIT 1"); 
     $stmt->bindValue(':userid', $userid, PDO::PARAM_STR); 
