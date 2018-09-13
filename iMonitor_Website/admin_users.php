@@ -164,7 +164,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['status']; ?></td>
 						<td></td>
 						<!--<td><a href="test_edit.php <?php //echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>-->
-                        <td><a href="editUser <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+                        <td><a href="editform <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
 					<?php } ?>
             	</tbody>
@@ -315,7 +315,7 @@ $ID=$_GET['id'];
 		<!-- End of Modal -->
 
 		<!-- Modal Add User-->
-<div class="editform">	
+<div id="editform">	
 
 <!--FOR EDIT-->
 		
