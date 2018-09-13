@@ -118,10 +118,10 @@
                 <div class="tab-pane fade in active" id="tab0default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                            <input type="text" name="from_date" class="form-control" id="from_date" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                            <input type="text" name="to_date" class="form-control" id="to_date" placeholder="To Date"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -187,10 +187,10 @@
                 <div class="tab-pane fade" id="tab1default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                            <input type="text" name="from_date" class="form-control" id="from_date1" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                            <input type="text" name="to_date" class="form-control" id="to_date1" placeholder="To Date"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -244,10 +244,10 @@
                 <div class="tab-pane fade" id="tab2default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                            <input type="text" name="from_date" class="form-control" id="from_date2" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                            <input type="text" name="to_date" class="form-control" id="to_date2" placeholder="To Date"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -301,10 +301,10 @@
                 <div class="tab-pane fade" id="tab3default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" placeholder="From Date"> 
+                            <input type="text" name="from_date" class="form-control" id="from_date3" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" placeholder="To Date"> 
+                            <input type="text" name="to_date" class="form-control" id="to_date3" placeholder="To Date"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -358,301 +358,21 @@
             </div>
         </div>
     </div>
-                        
-<!-- 
-        <div class="container-table" style="position:sticky;  overflow: hidden;">
-            <div class="row">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <table style="margin-left:-45px; margin-top:-10px; width:90%; margin-right:100px;">
-                            <tr class="tr-dept">
-                                <td><b>Select Report to Generate:</b></td>
-                                <td><select name="report">
-                                    <option value="none"></option>
-                                    <option value="al">Active List</option>
-                                    <option value="il">Inactive List</option>
-                                    <option value="clo">Computer Logs</option>
-                                    <option value="cli">Computer List</option>
-                                </td>
-                                <td>
-                                    <div class="fromDate">
-                                        <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="toDate">
-                                        <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="tr-search">
-                                <td><input type="text" placeholder="Search..." class="input-search"></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <a href="#logout" style="padding-left:600px;"><i class="glyphicon glyphicon-print"></i> Print as PDF</a>
-                                </td>
-                                <td>
-                                    <a href="#" style="float:right; padding-right:50px;"><i class="glyphicon glyphicon-export"></i> Export as Excel File</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="panel-body">
-                            <div class="container">
-                                    <table class="table table-bordered" style="width:88%; position: static; margin-left:13px; margin-top:100px; margin-bottom:10px;">
-                                        <thead>
-                                             <tr>
-                                                <th style="padding-bottom:15px;">User</th>
-                                                <th style="padding-bottom:15px;">Domain</th>
-                                                <th style="padding-bottom:15px;">Hostname</th>
-                                                <th style="padding-bottom:15px;">IP Address</th>
-                                                <th style="padding-bottom:15px;">IP Address Modified</th>
-                                                <th style="padding-bottom:15px;">Old IP Address</th>
-                                                <th style="padding-bottom:15px;">Old IP Address Modified</th>
-                                                <th style="padding-bottom:15px;">iMonitor Status</th>
-                                                <th style="padding-bottom:15px;">Services Not Found</th>
-                                                <th style="padding-bottom:15px;">SysSetting File</th>
-                                                <th style="padding-bottom:15px;">Connection Status</th>
-                                                <th style="padding-bottom:15px;">Branch</th>
-                                                <th style="padding-bottom:15px;">Scan Time </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>JM</td>
-                                                <td>NN</td>
-                                                <td>ITOMPH044</td>
-                                                <td>172.16.22.50C</td>
-                                                <td>Jul-30-2018 08:24</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>Running</td>
-                                                <td> <br></td>
-                                                <td></td>
-                                                <td>Established</td>
-                                                <td>Jul-31-2018 09:08</td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>   
-        </div> -->
+    
+    <script>
+        $( function()
+        {
+            $( "#from_date" ).datepicker();
+            $( "#to_date" ).datepicker();
+            $( "#from_date1" ).datepicker();
+            $( "#to_date1" ).datepicker();
+            $( "#from_date2" ).datepicker();
+            $( "#to_date2" ).datepicker();
+            $( "#from_date3" ).datepicker();
+            $( "#to_date3" ).datepicker();
+        } );
+    </script>
 
-    <script>  
-                $(document).ready(function(){  
-                     $.datepicker.setDefaults({  
-                          dateFormat: 'yy-mm-dd'   
-                     });  
-                     $(function(){  
-                          $("#from_date").datepicker();  
-                          $("#to_date").datepicker();  
-                     });  
-                     $('#filter').click(function(){  
-                          var from_date = $('#from_date').val();  
-                          var to_date = $('#to_date').val();  
-                          var sta_tus = $('#sta_tus').val(); 
-                             var fre_ight= $('#fre_ight').val();
-                          if(from_date != '' && to_date != '' && fre_ight == '' && sta_tus != '')  
-                          {  
-                               $.ajax({  
-                                    url:"faetchdate.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                           
-                          else if(from_date == '' && to_date == '' && fre_ight == '' && sta_tus != '')  
-                          {  
-                               $.ajax({  
-                                    url:"fetchstatus.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          } 
-                           else if(from_date != '' && to_date != '' && fre_ight != '' && sta_tus == '')  
-                          {  
-                               $.ajax({  
-                                    url:"fetchfreightdate.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                           
-                           else if(from_date == '' && to_date == '' && fre_ight != '' && sta_tus == '')  
-                          {  
-                               $.ajax({  
-                                    url:"fetchfreight.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          } 
-           else if(from_date != '' && to_date != '' && sta_tus != '' && fre_ight != '') 
-                          {  
-                               $.ajax({  
-                                    url:"Fdata.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                          else if(from_date == '' && to_date == '' && sta_tus != '' && fre_ight != '') 
-                          {  
-                               $.ajax({  
-                                    url:"Fstaloca.php",  
-                                    method:"POST",  
-                                    data:{fre_ight:fre_ight, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                           
-                          else if(from_date != '' && to_date != '' && sta_tus == ''  && fre_ight == '')  
-                          {  
-                               $.ajax({  
-                                    url:"fetchdata.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }  
-                        
-                          else  
-                          {  
-                               alert("Please Select Date");  
-                          }  
-                     });  
-                   $('#exportPDF').click(function(){  
-                          var from_date = $('#from_date').val();  
-                          var to_date = $('#to_date').val();  
-                          var sta_tus = $('#sta_tus').val(); 
-                             var fre_ight= $('#fre_ight').val();
-                          if(from_date != '' && to_date != '' && fre_ight == '' && sta_tus != '')  
-                          {  
-                               $.ajax({  
-                                    url:"faetchdatePDF.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                           
-                          else if(from_date == '' && to_date == '' && fre_ight == '' && sta_tus != '')  
-                          {  
-                               $.ajax({  
-                                    url:"fetchstatusPDF.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          } 
-                           else if(from_date != '' && to_date != '' && fre_ight != '' && sta_tus == '')  
-                          {  
-                               $.ajax({  
-                                    url:"fetchfreightdatePDF.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                           
-                           else if(from_date == '' && to_date == '' && fre_ight != '' && sta_tus == '')  
-                          {  
-                               $.ajax({  
-                                    url:"fetchfreightPDF.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          } 
-           else if(from_date != '' && to_date != '' && sta_tus != '' && fre_ight != '') 
-                          {  
-                               $.ajax({  
-                                    url:"fdataPDF.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, fre_ight:fre_ight, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                          else if(from_date == '' && to_date == '' && sta_tus != '' && fre_ight != '') 
-                          {  
-                               $.ajax({  
-                                    url:"FstalocaPDF.php",  
-                                    method:"POST",  
-                                    data:{fre_ight:fre_ight, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }
-                           
-                          else if(from_date != '' && to_date != '' && sta_tus == ''  && fre_ight == '')  
-                          {  
-                               $.ajax({  
-                                    url:"fdPDF.php",  
-                                    method:"POST",  
-                                    data:{from_date:from_date, to_date:to_date, sta_tus:sta_tus},  
-                                    success:function(data)  
-                                    {  
-                                         $('#order_table').html(data);  
-                                    }  
-                               });  
-                          }  
-                        
-                          else  
-                          {  
-                              
-                                   document.location.href='exportPDF.php';
-                                
-                          }  
-                     });  
-                });  
-          </script>
-     
      <!-- $(document).on('click', '.dropdown-toggle', function(){
       $('.count').html('');
       load_unseen_notification('yes');
