@@ -33,7 +33,7 @@ else {
 
     if (count($row) > 0) {
         $hashed_password = $row[0]['password']; 
-        $status = $row['status']; 
+        $status = $row[0]['status']; 
             if($status == 'Inactive') {
                 echo "Your account is inactive";
             }
