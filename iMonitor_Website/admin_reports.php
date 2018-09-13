@@ -232,7 +232,7 @@
                                     <td>ITOMPH033048</td>
                                     <td>192.168.33.48</td>
                                     <td>Running</td>
-                                    <td>Updated</td>
+                                    <td>Active</td>
                                 </tr>
                             </table>
                         </div>

@@ -141,7 +141,8 @@ $ID=$_GET['id'];
                         <th style="padding-bottom:15px;">Name</th>
                         <th style="padding-bottom:15px;">Department</th>
                         <th style="padding-bottom:15px;">Position</th>
-                        <th style="padding-bottom:15px;">Role</th>
+						<th style="padding-bottom:15px;">Role</th>
+						<th style="padding-bottom:15px;">Status</th>
                         <th style="padding-bottom:15px;">Option</th>
                     </tr>
                 </thead>
