@@ -12,7 +12,7 @@ $ID=$_GET['id'];
     <link href="test.css" rel="stylesheet" type="text/css" />
   
   </head>
-  <body>
+  <body onload="populateSecondTextBox();">
     <div class="container">
 
     <div class="banner">
@@ -21,6 +21,7 @@ $ID=$_GET['id'];
     <div class="mainbody">
       
     <div class="content">
+	<input type="text" id="password2" name="password2"></td>
       <center>
         <h3><p>Edit User Account</p></h3>
       </center>  
@@ -158,7 +159,13 @@ $ID=$_GET['id'];
 					  </select><br>
         <input class="submit" type="submit" value="Update">
       </form>
-      <?php } ?>                                                   
+      <?php } ?>      
+
+	  <script type="text/javascript">
+						function populateSecondTextBox() {
+   						document.getElementById('password2').value = document.getElementById('password').value;
+						}
+					</script>                                             
     </div>                                  
     </div>           
     <div class="footer">
