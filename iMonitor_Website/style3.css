@@ -101,6 +101,10 @@ p
     width: 25%;
     margin-top: 20px;
 }
+.col-md-8, .form-control
+{
+ width:100%;
+}
 .panel-heading
 {
     padding: 10px 5px;
