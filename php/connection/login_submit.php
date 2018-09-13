@@ -29,20 +29,19 @@ else {
     $stmt->execute(); 
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-    if (count($row) > 0) { 
+    if (count($row) > 0) {
+        $hashed_password = $row[0]['password']; 
         $status = $row['status']; 
             if($status == 'Inactive') {
                 echo "Your account is inactive";
             }
-                else {
-                    $hashed_password = $row[0]['password'];
-                    password_verify($password, $hashed_password) 
+            elseif($status == 'Active') && (password_verify($password, $hashed_password)) { 
                     $_SESSION["userid"] = $row[0]['userid']; 
                     header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
             }
-        }
-    } 
-            //else {  
-            //header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
-        //}
+            else {  
+            header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
+            }
+        } 
+           
 ?>
