@@ -24,8 +24,8 @@ else {
     $userid = $_POST['userid'];
     $password = $_POST['password'];
    
-    /*$stmt = $db->prepare("SELECT userid, password FROM tbl_user WHERE userid=?");
-    $stmt->execute(array($userid, $hashed_password));
+    $stmt = $db->prepare("SELECT * FROM tbl_user WHERE userid=?");
+    $stmt->execute(array($userid, $password));
     $row_count = $stmt->rowCount();
     if ($row_count > 0) { 
     
@@ -41,19 +41,5 @@ else {
                 echo "Wrong";
             }
         }
-    }*/
-
- $query = $db->prepare("SELECT password FROM `tbl_user` WHERE userid = :userid");
- $query->execute(array(':userid' => $userid, ':password' => $password));
-
-
- $queryResults = $query->fetch(PDO::FETCH_ASSOC);
-
- if(password_verify($password, $queryResults['password'])) {
-     if(isset($_SESSION["userid"])) {
-         echo "Correct";
-     } else {
-         echo "Wrong";
-     }
-  } 
+    }
 ?>
