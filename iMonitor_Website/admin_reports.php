@@ -226,7 +226,6 @@
                                     <th>Platform</th>
                                     <th>Status</th>
                                     <th>Remarks</th>
-                                    <th>Agent Version</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -235,7 +234,6 @@
                                     <td>Windows PC</td>
                                     <td>Running</td>
                                     <td>Updated</td>
-                                    <td>9.617</td>
                                 </tr>
                             </table>
                         </div>
@@ -283,7 +281,6 @@
                                     <th>Platform</th>
                                     <th>Status</th>
                                     <th>Remarks</th>
-                                    <th>Agent Version</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -292,7 +289,6 @@
                                     <td>Windows PC</td>
                                     <td>Running</td>
                                     <td>Updated</td>
-                                    <td>9.617</td>
                                 </tr>
                             </table>
                         </div>
@@ -340,7 +336,6 @@
                                     <th>Platform</th>
                                     <th>Status</th>
                                     <th>Remarks</th>
-                                    <th>Agent Version</th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -349,7 +344,6 @@
                                     <td>Windows PC</td>
                                     <td>End Task</td>
                                     <td>Trasferred</td>
-                                    <td>9.617</td>
                                 </tr>
                             </table>
                         </div>
