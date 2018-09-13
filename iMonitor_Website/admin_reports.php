@@ -152,6 +152,7 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>User</th>
+                                    <th>Computer Name</th>
                                     <th>Domain</th>
                                     <th>IP Address</th>
                                     <th>Date Modified</th>
@@ -167,6 +168,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>JM</td>
+                                    <td>ITOMPH033048</td>
                                     <td>NN.</td>
                                     <td>172.16.33.48</td>
                                     <td>JUL-30-2018 08:24</td>
@@ -222,7 +224,6 @@
                                     <th>No.</th>
                                     <th>Computer Name</th>
                                     <th>IP Address</th>
-                                    <th>Platform</th>
                                     <th>Status</th>
                                     <th>Remarks</th>
                                 </tr>
@@ -230,7 +231,6 @@
                                     <td>1</td>
                                     <td>ITOMPH033048</td>
                                     <td>192.168.33.48</td>
-                                    <td>Windows PC</td>
                                     <td>Running</td>
                                     <td>Updated</td>
                                 </tr>
