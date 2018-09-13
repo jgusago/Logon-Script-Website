@@ -157,7 +157,6 @@ ul ul a {
     padding-left: 30px !important;
     background:#fff8c4b5;
 }
-
 .info
 {
     width:100%;
@@ -202,6 +201,10 @@ ul ul a {
     padding-bottom:15px;
     padding-left:15px;
     text-align: left;
+}
+.table-viewing
+{
+    width:100%;
 }
 .table-viewing
 {
