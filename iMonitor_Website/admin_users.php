@@ -316,15 +316,7 @@ $ID=$_GET['id'];
 
 		<!-- Modal Add User-->
 
-<!--FOR EDIT-->
-	
-<?php
-		      $stmt = $db->query("SELECT * FROM tbl_user WHERE id='$ID'");
-		      $stmt->execute();
-		      for($i=0; $row = $stmt->fetch(); $i++){
-		      $id=$row['id'];
-	    ?>
-<form action="user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">	
+<form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -336,11 +328,11 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="number" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="User ID"></td>
+									<td><input type="number" id="userid" name="userid" value="" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" pattern="[A-Za-z]*" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name" class="validate"></td>
+									<td><input type="text" pattern="[A-Za-z]*" id="name" name="name" required placeholder="Name" class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
@@ -449,7 +441,6 @@ $ID=$_GET['id'];
 			</div>
 	</div>
 </form>
-<?php } ?>
 		<!-- End of Modal -->
 	
 </body>
