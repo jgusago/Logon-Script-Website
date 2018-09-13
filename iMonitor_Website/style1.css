@@ -202,14 +202,14 @@ ul ul a {
     padding-left:15px;
     text-align: left;
 }
-.table-viewing
+/* .table-viewing
 {
     width:100%;
-}
+} */
 .table-viewing
 {
    margin-left:287px; 
-   margin-top:166px; 
+   margin-top: 217px; 
    background-color: white; 
    width:90%; 
    padding:10px; 
