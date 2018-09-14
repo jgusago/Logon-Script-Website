@@ -101,7 +101,7 @@
         </div>
          <div class="container-table">
             <div class="row">
-                <table class="table-viewing" style="margin-top: 166px; position:relative;">
+                <table class="table-viewing" style="margin-top: 120px; position:relative;">
                     <tr class="tr-dept">
                         <td><b>Sub Department:</b></td>
                         <td><select name="branches">
