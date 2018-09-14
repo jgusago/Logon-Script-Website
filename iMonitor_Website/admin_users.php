@@ -162,7 +162,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a href="test_edit.php <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
+						<td><a href="#ediUser <?php echo '?id='.$id; ?>"><button class="btn btn-primary" data-toggle="modal">Edit Record</button></td>
                         <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
 					</tr>
 					<?php } ?>
@@ -421,12 +421,6 @@ $ID=$_GET['id'];
                                             <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
                                         </div>
                                     </td>
-                                    <!-- <td>
-                                        <input class="checkbox" type="checkbox" value="reset-pass">
-                                    </td> 
-                                    <td>
-                                        <p>Reset password</p>
-                                    </td>                 -->
                                 </tr>
 								<tr>
 									<td></td>
