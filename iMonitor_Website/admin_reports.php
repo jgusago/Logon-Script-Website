@@ -104,7 +104,7 @@
             <p><strong>Reports</strong></p>
         </div>
     </div>
-    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: fixed; margin-top:-815px; margin-left: 252px;">
+    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: fixed; margin-top:-865px; margin-left: 252px;">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab0default" data-toggle="tab">Computer Logs</a></li>
