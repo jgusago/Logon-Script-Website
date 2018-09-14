@@ -162,7 +162,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a data-toggle="modal" href="#ediUser <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
+						<td><a data-toggle="modal" href="#editUser <?php echo '?id='.$id; ?>"><button class="btn btn-primary">Edit Record</button></td>
                         <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
 					</tr>
 					<?php } ?>
