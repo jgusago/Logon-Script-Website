@@ -543,6 +543,7 @@ ul ul a {
 }
 .container-table
 {
+    /* display:none; */
     margin-left:auto;
 }
 .row
