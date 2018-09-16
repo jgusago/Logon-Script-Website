@@ -3,7 +3,6 @@ error_reporting(0);
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-//require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/test_function.php";
 $ID=$_GET['id'];
 	if(!isset($_SESSION["userid"])) {
     	header("Location: index.php");
@@ -316,7 +315,7 @@ $ID=$_GET['id'];
 		<!-- End of Modal -->
 
 		<!-- Modal Add User-->
-
+<?php require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/test_function.php"; ?>
 <form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
