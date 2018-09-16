@@ -1,3 +1,15 @@
+<?php 
+//error_reporting(0);
+
+session_start();
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+
+	if(!isset($_SESSION["userid"])) {
+    	header("Location: index.php");
+  	exit();
+  	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
