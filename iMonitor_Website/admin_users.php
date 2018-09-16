@@ -163,8 +163,8 @@ $ID=$_GET['id'];
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
 						
-						<td><a href="#editUser <?php require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/test_function.php"; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></td>
-                        <!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
+						<!--<td><a href="#editUser echo '?id='.$id;" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></td>-->
+                        <td><a href="test_edit.php" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
 					<?php } ?>
             	</tbody>
@@ -315,7 +315,7 @@ $ID=$_GET['id'];
 		<!-- End of Modal -->
 
 		<!-- Modal Add User-->
-		
+
 <form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
