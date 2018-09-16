@@ -207,9 +207,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <td><?php echo $row['ip_date_modified']; ?></td>
                                     <td><?php echo $row['old_ip_address']; ?></td>
                                     <td><?php echo $row['old_ip_modified']; ?></td>
-                                    <td><?php echo $row['iMonitor_Stauts']; ?></td>
+                                    <td><?php echo $row['iMonitor_Status']; ?></td>
                                     <td><?php echo $row['services']; ?></td>
                                     <td><?php echo $row['sysSetting_File']; ?></td>
+                                    <td><?php echo $row['']; ?></td>
                                     <td><?php echo $row['serverIP']; ?></td>
                                     <td><?php echo $row['branch']; ?></td>
                                     <td><?php echo $row['scan_time']; ?></td>
