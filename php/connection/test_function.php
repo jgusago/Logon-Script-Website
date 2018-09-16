@@ -4,4 +4,5 @@
 		$stmt->execute();
 		for($i=0; $row = $stmt->fetch(); $i++){
 		$id=$row['id'];
+		echo '?id='.$id;
 	?>
