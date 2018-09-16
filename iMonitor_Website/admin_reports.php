@@ -161,6 +161,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
+
+                                <?php
+		            	            $stmt = $db->query("SELECT * FROM tbl_log");
+		            	            $stmt->execute();
+		            	            for($i=0; $row = $stmt->fetch(); $i++){
+	            	            ?>
+
                                 <tr>
                                     <th>No.</th>
                                     <th>User</th>
@@ -174,25 +181,27 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Services Not Found</th>
                                     <th>SysSetting File</th>
                                     <th>Connection Status</th>
+                                    <th>Server IP</th>
                                     <th>Branch</th>
                                     <th>Scan Time</th>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>JM</td>
-                                    <td>ITOMPH033048</td>
-                                    <td>NN.</td>
-                                    <td>172.16.33.48</td>
-                                    <td>JUL-30-2018 08:24</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Running</td>
-                                    <td></td>
-                                    <td>Found</td>
-                                    <td>Established</td>
-                                    <td>Marvin 5th</td>
-                                    <td>JUL-30-2018 08:24</td>
+                                    <td><?php echo $row['log_no']; ?></td>
+                                    <td><?php echo $row['user']; ?></td>
+                                    <td><?php echo $row['domain_name']; ?></td>
+                                    <td><?php echo $row['hostname']; ?></td>
+                                    <td><?php echo $row['ip_address']; ?></td>
+                                    <td><?php echo $row['ip_date_modified']; ?></td>
+                                    <td><?php echo $row['old_ip_address']; ?></td>
+                                    <td><?php echo $row['old_ip_modified']; ?></td>
+                                    <td><?php echo $row['iMonitor_Stauts']; ?></td>
+                                    <td><?php echo $row['services']; ?></td>
+                                    <td><?php echo $row['sysSetting_File']; ?></td>
+                                    <td><?php echo $row['serverIP']; ?></td>
+                                    <td><?php echo $row['branch']; ?></td>
+                                    <td><?php echo $row['scan_time']; ?></td>
                                 </tr>
+                                <?php } ?>
                             </table>
                         </div>
                     </div>  
