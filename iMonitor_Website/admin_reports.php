@@ -195,7 +195,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <?php
 		            	                $stmt = $db->query("SELECT * FROM tbl_log");
 		            	                $stmt->execute();
-		            	                while($stmt = $stmt->fetch() {
+		            	                while($stmt = $stmt->fetch()) {
 	            	                 ?>
                                 <tr> 
                                     <td><?php echo $row['log_no']; ?></td>
