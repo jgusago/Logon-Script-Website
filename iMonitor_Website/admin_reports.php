@@ -215,7 +215,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <td></td>
                                     <td><?php echo $row['serverIP']; ?></td>
                                     <td><?php echo $row['branch']; ?></td>
-                                    <td><?php echo $row['scan_time']; ?></td>
+                                    <td><?php echo date("m/d/Y", strtotime($f_book['scan_time'])) ?></td>
                                 </tr>
                                 <?php } ?>
                                 </tbody>
