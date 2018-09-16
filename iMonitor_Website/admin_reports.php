@@ -142,10 +142,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 <div class="tab-pane fade in active" id="tab0default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" id="from_date" placeholder="From Date"> 
+                            <input type="text" name="from_date" class="form-control" id="from_date" placeholder="FromDate1"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" id="to_date" placeholder="To Date"> 
+                            <input type="text" name="to_date" class="form-control" id="to_date" placeholder="ToDate2"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
