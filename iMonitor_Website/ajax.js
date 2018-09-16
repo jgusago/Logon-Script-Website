@@ -5,8 +5,8 @@ $(document).ready(function(){
 		if($('#from_date').val() == "" || $('#to_date').val() == ""){
 			alert("Please enter something on the text field");
 		}else{
-			$date1 = $('#from_date').val();
-			$date2 = $('#to_date').val();
+			$from_date = $('#from_date').val();
+			$to_date = $('#to_date').val();
 			$('#load_data').empty();
 			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
 			$loader.appendTo('#load_data');
@@ -16,8 +16,8 @@ $(document).ready(function(){
 					url: 'get_data.php',
 					type: 'POST',
 					data: {
-						date1: $date1,
-						date2: $date2
+						from_date: $from_date,
+						to_date: $to_date
 					},
 					success: function(res){
 						$('#load_data').html(res);

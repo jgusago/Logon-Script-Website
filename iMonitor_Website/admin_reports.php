@@ -168,7 +168,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </div>
                         <div class="col-md-4">
                             <br>
-                            <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
+                            <input type="button" name="clear" id="reset" value="Clear" class="btn btn-default">
                             <input type="button" name="Excel" id="btn_search" value="Filter" class="btn btn-success" onclick="">
                             <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-danger" onclick="">
                         </div>
@@ -195,7 +195,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </thead>
                                 <tbody id = "load_data">
                                     <?php
-		            	               $sql = "select * from tbl_log ORDER BY `log_no` ASC";
+		            	               $sql = "select * from tbl_log ORDER BY log_no ASC";
                                        $stmt = $db->prepare($sql);
                                        $stmt->execute();
                                        while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
