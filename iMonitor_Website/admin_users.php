@@ -3,7 +3,7 @@ error_reporting(0);
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/test_function.php";
+//require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/test_function.php";
 $ID=$_GET['id'];
 	if(!isset($_SESSION["userid"])) {
     	header("Location: index.php");
