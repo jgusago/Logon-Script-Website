@@ -191,14 +191,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Branch</th>
                                     <th>Scan Time</th>
                                 </tr>
-                                <tr>
 
-                                     <?php
+                                    <?php
 		            	                $stmt = $db->query("SELECT * FROM tbl_log");
 		            	                $stmt->execute();
 		            	                while($stmt = $stmt->fetch() {
-	            	                ?>
-
+	            	                 ?>
+                                <tr> 
                                     <td><?php echo $row['log_no']; ?></td>
                                     <td><?php echo $row['user']; ?></td>
                                     <td><?php echo $row['domain_name']; ?></td>
