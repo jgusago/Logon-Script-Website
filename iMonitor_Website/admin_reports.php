@@ -174,13 +174,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
-
-                                <?php
-		            	            $stmt = $db->query("SELECT * FROM tbl_log");
-		            	            $stmt->execute();
-		            	            for($i=0; $row = $stmt->fetch(); $i++){
-	            	            ?>
-
                                 <tr>
                                     <th>No.</th>
                                     <th>User</th>
@@ -199,6 +192,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Scan Time</th>
                                 </tr>
                                 <tr>
+
+                                     <?php
+		            	                $stmt = $db->query("SELECT * FROM tbl_log");
+		            	                $stmt->execute();
+		            	                for($i=0; $row = $stmt->fetch(); $i++){
+	            	                ?>
+
                                     <td><?php echo $row['log_no']; ?></td>
                                     <td><?php echo $row['user']; ?></td>
                                     <td><?php echo $row['domain_name']; ?></td>
