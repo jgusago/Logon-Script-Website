@@ -9,7 +9,7 @@ $userid = $_POST['userid'];
 
 if(!isset($error)){ 
         $stmt = $db->prepare("SELECT userid FROM tbl_user WHERE userid = :userid");
-        $stmt->execute(array($username));
+        $stmt->execute(array($userid));
         $row_count = $stmt->rowCount();
         
         if ($row_count > 0){
