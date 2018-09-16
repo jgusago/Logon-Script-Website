@@ -86,7 +86,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-success" href="index.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+					<a class="btn btn-success" href="../php/connection/logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
 				</div>
 			</div>
 		</div>
@@ -210,7 +210,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <td><?php echo $row['iMonitor_Status']; ?></td>
                                     <td><?php echo $row['services']; ?></td>
                                     <td><?php echo $row['sysSetting_File']; ?></td>
-                                    <td><?php echo $row['']; ?></td>
+                                    <td></td>
                                     <td><?php echo $row['serverIP']; ?></td>
                                     <td><?php echo $row['branch']; ?></td>
                                     <td><?php echo $row['scan_time']; ?></td>
