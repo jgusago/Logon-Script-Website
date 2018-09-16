@@ -193,9 +193,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </tr>
 
                                     <?php
-		            	                $stmt = $db->query("SELECT * FROM tbl_log");
-		            	                $stmt->execute();
-		            	                while($stmt = $stmt->fetch()) {
+		            	               $sql = "select * from tbl_log";
+                                       $stmt = $db->prepare($sql);
+                                       $stmt->execute();
+                                       while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 	            	                 ?>
                                 <tr> 
                                     <td><?php echo $row['log_no']; ?></td>
