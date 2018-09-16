@@ -142,10 +142,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 <div class="tab-pane fade in active" id="tab0default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" id="from_date" placeholder="FromDate1"> 
+                            <input type="text" name="from_date" class="form-control" id="from_date" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" id="to_date" placeholder="ToDate2"> 
+                            <input type="text" name="to_date" class="form-control" id="to_date" placeholder="To Date"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -169,11 +169,12 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         <div class="col-md-4">
                             <br>
                             <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
-                            <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
+                            <input type="button" name="Excel" id="btn_search" value="Filter" class="btn btn-success" onclick="">
                             <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-danger" onclick="">
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
+                            <thead>
                                 <tr>
                                     <th>No.</th>
                                     <th>User</th>
@@ -191,7 +192,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Branch</th>
                                     <th>Scan Time</th>
                                 </tr>
-
+                                </thead>
+                                <tbody id = "load_data">
                                     <?php
 		            	               $sql = "select * from tbl_log";
                                        $stmt = $db->prepare($sql);
@@ -216,6 +218,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <td><?php echo $row['scan_time']; ?></td>
                                 </tr>
                                 <?php } ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>  

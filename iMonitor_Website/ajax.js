@@ -1,12 +1,12 @@
 $(document).ready(function(){
-	$('#date1').datepicker();
-	$('#date2').datepicker();
+	$('#from_date').datepicker();
+	$('#to_date').datepicker();
 	$('#btn_search').on('click', function(){	
-		if($('#date1').val() == "" || $('#date2').val() == ""){
+		if($('#from_date').val() == "" || $('#to_date').val() == ""){
 			alert("Please enter something on the text field");
 		}else{
-			$date1 = $('#date1').val();
-			$date2 = $('#date2').val();
+			$date1 = $('#from_date').val();
+			$date2 = $('#to_date').val();
 			$('#load_data').empty();
 			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
 			$loader.appendTo('#load_data');

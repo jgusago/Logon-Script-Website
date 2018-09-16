@@ -1,6 +1,6 @@
 <?php
-$fromdate1 = $_POST['FromDate1'];
-$todate2 = $_POST['ToDate2'];
+$fromdate1 = $_POST['from_date'];
+$todate2 = $_POST['to_date'];
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
