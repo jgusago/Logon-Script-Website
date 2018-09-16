@@ -195,7 +195,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </thead>
                                 <tbody id = "load_data">
                                     <?php
-		            	               $sql = "select * from tbl_log ORDER BY `scan_time` ASC";
+		            	               $sql = "select * from tbl_log ORDER BY `log_no` ASC";
                                        $stmt = $db->prepare($sql);
                                        $stmt->execute();
                                        while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
