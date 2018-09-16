@@ -46,7 +46,7 @@ if(isset($_SESSION["userid"])) {
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-user"></i>
                             </span> 
-                            <input class="form-control" id="userid" placeholder="User ID" name="userid" type="text" required>
+                            <input class="form-control" id="userid" placeholder="User ID" name="userid" type="text" autofocus="autofocus" required>
                         </div>
                     </div>
                     <div class="form-group">
