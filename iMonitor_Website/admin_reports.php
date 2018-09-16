@@ -252,6 +252,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
                             <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
                             <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-danger" onclick="">
+                            <input type="button" name="user" id="user" class="btn btn-success" onclick="">
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
