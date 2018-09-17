@@ -15,7 +15,7 @@ if(!empty($row_count)) {
 <?php
 foreach($stmt as $row) {
 ?>
-<li onClick="selectCountry('<?php echo $row[["user"]; ?>');"><?php echo $row["user"]; ?></li>
+<li onClick="selectUser('<?php echo $row[["user"]; ?>');"><?php echo $row["user"]; ?></li>
 
 <?php } ?>
 

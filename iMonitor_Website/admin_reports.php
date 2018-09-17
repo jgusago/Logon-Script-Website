@@ -26,8 +26,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
 
-        
-		<link rel="stylesheet" type="text/css" href="mycss/style.css"/>
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style3.css">
 </head>
@@ -377,7 +375,7 @@ $(document).ready(function(){
 	});
 });
 
-function selectCountry(val) {
+function selectUser(val) {
 $("#user").val(val);
 $("#suggestion_list").hide();
 }
