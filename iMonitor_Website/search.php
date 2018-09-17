@@ -9,6 +9,6 @@
     $row_count = $stmt->rowCount();
     while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
         $user = $row['user'];
-        echo "$name\n";
+        echo "$user\n";
     }
 ?>
