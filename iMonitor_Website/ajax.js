@@ -1,6 +1,37 @@
 $(document).ready(function(){
 	$('#user').textbox();
 	$('#btn_search').on('click', function(){	
+		if($('#user').val() != ""){
+	
+			$user = $('#user').val();
+			$('#load_data').empty();
+			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
+			$loader.appendTo('#load_data');
+			setTimeout(function(){
+				$loader.remove();
+				$.ajax({
+					url: 'get_data_byname.php',
+					type: 'POST',
+					data: {
+						user: $user
+					},
+					success: function(res){
+						$('#load_data').html(res);
+					}
+				});
+			}, 3000);
+		}	
+	});
+	
+	$('#reset').on('click', function(){
+		location.reload();
+	});
+});
+
+
+/*$(document).ready(function(){
+	$('#user').textbox();
+	$('#btn_search').on('click', function(){	
 		if($('#user').val() == ""){
 			alert("Please enter something on the text field");
 		}else
@@ -28,4 +59,4 @@ $(document).ready(function(){
 	$('#reset').on('click', function(){
 		location.reload();
 	});
-});
+});*/
