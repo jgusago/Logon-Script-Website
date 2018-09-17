@@ -14,7 +14,7 @@ if(!empty($row)) {
 <?php
 foreach($stmt as $row) {
 ?>
-<li onClick="selectUser('<?php echo $user["user"]; ?>');"><?php echo $user["user"]; ?></li>
+<li onClick="selectUser('<?php echo $row["user"]; ?>');"><?php echo $row["user"]; ?></li>
 <?php } ?>
 </ul>
 <?php } } ?>
