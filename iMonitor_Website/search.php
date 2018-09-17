@@ -8,7 +8,8 @@ if(!empty($_POST["keyword"])) {
 $sql = "SELECT * FROM tbl_log WHERE user like '" . $_POST["keyword"] . "%' ORDER BY user LIMIT 0,6";
 $stmt = $db->prepare($sql);
 $stmt->execute();
-if(!empty($row)) {
+$row_count = $stmt->rowCount();
+if(!empty($row_count)) {
 ?>
 <ul id="">
 <?php
