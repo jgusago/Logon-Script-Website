@@ -349,7 +349,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         } );
     </script>
 
-<script src = "ajax.js"></script>
+<script src = "ajax_name.js"></script>
 </body>
 </html>
     
