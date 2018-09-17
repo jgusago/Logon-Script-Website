@@ -355,8 +355,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     </script>
 
 <script src = "ajax.js"></script>
-<script src="myjs/jquery-3.2.1.min.js"></script>
-<script src="myjs/jquery-ui.js"></script>
 
 <script src="code_js.js" type="text/javascript"></script>
 
