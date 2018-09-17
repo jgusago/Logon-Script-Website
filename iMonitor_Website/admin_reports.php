@@ -195,7 +195,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </thead>
                                 <tbody id = "load_data">
                                     <?php
-		            	               $sql = "select * from tbl_log ORDER BY log_no ASC";
+		            	               $sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log ORDER BY log_no ASC";
                                        $stmt = $db->prepare($sql);
                                        $stmt->execute();
                                        while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -212,8 +212,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <td><?php echo $row['iMonitor_Status']; ?></td>
                                     <td><?php echo $row['services']; ?></td>
                                     <td><?php echo $row['sysSetting_File']; ?></td>
-                                    <td></td>
                                     <td><?php echo $row['serverIP']; ?></td>
+                                    <td><?php echo $row['connection_status']?></td>
                                     <td><?php echo $row['branch']; ?></td>
                                     <td><?php echo date("m/d/Y", strtotime($row['scan_time'])) ?></td>
                                 </tr>
