@@ -187,8 +187,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>iMonitor Status</th>
                                     <th>Services Not Found</th>
                                     <th>SysSetting File</th>
-                                    <th>Connection Status</th>
                                     <th>Server IP</th>
+                                    <th>Connection Status</th>
                                     <th>Branch</th>
                                     <th>Scan Time</th>
                                 </tr>
