@@ -169,8 +169,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         <div class="col-md-4">
                             <br>
                             <input type="button" name="clear" id="reset" value="Clear" class="btn btn-default">
-                            <input type="button" name="Excel" id="btn_search" value="Filter" class="btn btn-success" onclick="">
-                            <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-danger" onclick="">
+                            <input type="button" name="btn_filter" id="btn_filter" value="Filter" class="btn btn-success">
+                            <input type="button" name="btn_search" id="btn_search" value="Search" class="btn btn-danger">
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
