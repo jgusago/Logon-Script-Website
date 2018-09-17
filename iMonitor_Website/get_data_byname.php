@@ -1,5 +1,5 @@
 <?php
-$username = $_POST['user'];
+$user = $_POST['user'];
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
