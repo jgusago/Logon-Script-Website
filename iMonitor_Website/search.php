@@ -15,7 +15,7 @@ if(!empty($row_count)) {
 <?php
 foreach($stmt as $row) {
 ?>
-<li onClick="selectUser('<?php echo $row["user"]; ?>');"><?php echo $row["user"]; ?></li>
+<li onKeyup="selectUser('<?php echo $row["user"]; ?>');"><?php echo $row["user"]; ?></li>
 
 <?php } ?>
 
