@@ -11,11 +11,11 @@ $stmt->execute();
 $row_count = $stmt->rowCount();
 if(!empty($row_count)) {
 ?>
-<ul id="">
+
 <?php
 foreach($stmt as $row) {
 ?>
 <li onClick="selectUser('<?php echo $row["user"]; ?>');"><?php echo $row["user"]; ?></li>
 <?php } ?>
-</ul>
+
 <?php } } ?>
