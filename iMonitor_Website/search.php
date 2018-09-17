@@ -30,6 +30,7 @@ $row_count = $stmt->rowCount();
 if(!empty($row_count)) {
 foreach($stmt as $row) {
 echo $row["user"];
+        }
     }
 }
 ?>
