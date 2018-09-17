@@ -28,13 +28,8 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $row_count = $stmt->rowCount();
 if(!empty($row_count)) {
-?>
-<?php
 foreach($stmt as $row) {
-?>
-<?php echo $row["user"]; ?><?php echo $row["user"]; ?>
-<?php } ?>
-
-<?php } 
+echo $row["user"];
+    }
 }
 ?>
