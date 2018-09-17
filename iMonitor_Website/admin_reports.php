@@ -170,7 +170,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <br>
                             <input type="button" name="clear" id="reset" value="Clear" class="btn btn-default">
                             <input type="button" name="btn_filter" id="btn_filter" value="Filter" class="btn btn-success">
-                            <input type="button" name="btn_search" id="btn_search" value="Search" class="btn btn-danger">
+                            <input type="button" name="btn_search" id="btn_search" value="Search" class="btn btn-success">
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
