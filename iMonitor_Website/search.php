@@ -11,11 +11,11 @@ $stmt->execute();
 $row_count = $stmt->rowCount();
 if(!empty($row_count)) {
 ?>
-<ul id="province_list">
+<ul id="suggestion_list">
 <?php
 foreach($stmt as $row) {
 ?>
-<li onClick="selectUser('<?php echo $row[["user"]; ?>');"><?php echo $row["user"]; ?></li>
+<li onClick="selectUser('<?php echo $row["user"]; ?>');"><?php echo $row["user"]; ?></li>
 
 <?php } ?>
 
