@@ -164,7 +164,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             </select>
                         </div>
                         <div class="col-md-8"><br>
-                            <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                            <input type="text" id="search" name="user" class="form-control" placeholder="Search for user... ">
                             <div id="userList"></div>  
                         </div>
                         <div class="col-md-4">
@@ -353,31 +353,14 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 <script src = "ajax.js"></script>
 
-<script>  
- $(document).ready(function(){  
-      $('#user').keyup(function(){  
-           var query = $(this).val();  
-           if(query != '')  
-           {  
-                $.ajax({  
-                     url:"search.php",  
-                     method:"POST",  
-                     data:{query:query},  
-                     success:function(data)  
-                     {  
-                          $('#userList').fadeIn();  
-                          $('#userList').html(data);  
-                     }  
-                });  
-           }  
-      });  
-      $(document).on('click', 'li', function(){  
-           $('#user').val($(this).text());  
-           $('#userList').fadeOut();  
-      });  
- });  
- </script>  
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#search").autocomplete({
+			source: 'search.php',
+			minLength: 0,
+		});
+	});
+</script>
 </body>
 </html>
     
