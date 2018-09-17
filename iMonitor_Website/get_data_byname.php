@@ -1,11 +1,10 @@
 <?php
-$from_date = date("Y-m-d", strtotime($_POST['from_date']));
-$to_date = date("Y-m-d", strtotime($_POST['to_date']));
+$username = $_POST['user'];
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	
-$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log WHERE scan_time between $from_date and $to_date";
+$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log WHERE user='$user'";
 $stmt = $db->prepare($sql);
 $row_count = $stmt->rowCount();
 if($row_count > 0){

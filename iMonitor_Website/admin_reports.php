@@ -164,7 +164,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             </select>
                         </div>
                         <div class="col-md-8"><br>
-                            <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
+                            <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                         </div>
                         <div class="col-md-4">
                             <br>
