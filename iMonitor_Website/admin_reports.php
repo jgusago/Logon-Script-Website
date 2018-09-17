@@ -26,8 +26,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
 
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type='text/javascript' src='jquery.autocomplete.js'></script>
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style3.css">
 </head>
@@ -167,9 +165,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             </select>
                         </div>
                         <div class="col-md-8"><br>
-                        <form autocomplete="off">
                             <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
-                        </form>  
+                            <div id="suggestion_list"></div>
                         </div>
                         <div class="col-md-4">
                             <br>
@@ -357,14 +354,31 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 <script src = "ajax.js"></script>
 
-<script type="text/javascript">
-$().ready(function() {
-	$("#user").autocomplete("search.php", {
-		width: 218,
-		matchContains: true,
-		selectFirst: false
+<script src="code_js.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function(){
+	$("#user").keyup(function(){
+		$.ajax({
+		type: "POST",
+		url: "search.php",
+		data:'keyword='+$(this).val(),
+		beforeSend: function(){
+			$("#search_textBox").css("background","#FFF");
+		},
+		success: function(data){
+			$("#suggestion_list").show();
+			$("#suggestion_list").html(data);
+			$("#user").css("background","#FFF");
+		}
+		});
 	});
 });
+
+function selectCountry(val) {
+$("#user").val(val);
+$("#suggestion_list").hide();
+}
 </script>
 </body>
 </html>

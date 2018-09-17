@@ -1,14 +1,20 @@
+
 <?php
- session_start();
- require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+
+session_start();
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
  
-    $search = strtolower($_GET["q"]);
-    if (!$search) return;
-	$stmt = $db->prepare("SELECT DISTINCT user FROM `tbl_log` WHERE `user` LIKE '%$search%' ORDER BY `user` ASC");
-    $stmt->execute(array());
-    $row_count = $stmt->rowCount();
-    while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        $user = $row['user'];
-        echo "$user\n";
-    }
+$db_handle = new DB();
+if(!empty($_POST["keyword"])) {
+$query ="SELECT * FROM user WHERE user like '" . $_POST["keyword"] . "%' ORDER BY user LIMIT 0,6";
+$result = $db_handle->runQuery($query);
+if(!empty($result)) {
 ?>
+<ul id="">
+<?php
+foreach($result as $country) {
+?>
+<li onClick="selectUser('<?php echo $user["user"]; ?>');"><?php echo $user["user"]; ?></li>
+<?php } ?>
+</ul>
+<?php } } ?>
