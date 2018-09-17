@@ -4,7 +4,7 @@ $user = $_POST['user'];
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	
-$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log where user='$user'";
+$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log";
 $stmt = $db->prepare($sql);
 $row_count = $stmt->rowCount();
 if($row_count > 0){

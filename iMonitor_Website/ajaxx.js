@@ -1,20 +1,23 @@
 $(document).ready(function(){
-	$('#user').textbox();
+	$('#from_date').datepicker();
+	$('#to_date').datepicker();
 	$('#btn_search').on('click', function(){	
-		if($('#user').val() == ""){
+		if($('#from_date').val() == "" || $('#to_date').val() == ""){
 			alert("Please enter something on the text field");
 		}else{
-			$user = $('#user').val();
+			$from_date = $('#from_date').val();
+			$to_date = $('#to_date').val();
 			$('#load_data').empty();
 			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
 			$loader.appendTo('#load_data');
 			setTimeout(function(){
 				$loader.remove();
 				$.ajax({
-					url: 'get_data_byname.php',
+					url: 'get_data.php',
 					type: 'POST',
 					data: {
-						user: $user,
+						from_date: $from_date,
+						to_date: $to_date
 					},
 					success: function(res){
 						$('#load_data').html(res);
