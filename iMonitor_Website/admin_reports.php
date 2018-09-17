@@ -25,6 +25,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type='text/javascript' src='jquery.autocomplete.js'></script>
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style3.css">
 </head>
@@ -164,8 +167,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             </select>
                         </div>
                         <div class="col-md-8"><br>
-                            <input type="text" id="search" name="user" class="form-control" placeholder="Search for user... ">
-                            <div id="userList"></div>  
+                        <form autocomplete="off">
+                            <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                        </form>  
                         </div>
                         <div class="col-md-4">
                             <br>
@@ -354,12 +358,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 <script src = "ajax.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		$("#search").autocomplete({
-			source: 'search.php',
-			minLength: 0,
-		});
+$().ready(function() {
+	$("#user").autocomplete("search.php", {
+		width: 218,
+		matchContains: true,
+		selectFirst: false
 	});
+});
 </script>
 </body>
 </html>
