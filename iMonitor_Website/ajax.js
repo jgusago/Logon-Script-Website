@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#user').textbox();
+	//$('#user').textbox();
 	$('#btn_search').on('click', function(){	
 		if($('#user').val() == ""){
 			alert("Please enter something on the text field");
