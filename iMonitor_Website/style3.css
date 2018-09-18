@@ -117,6 +117,14 @@ p
 {
  width:50%;
 } */
+.nav-tabs>li.active>a, 
+{
+    padding-right:45px;
+}
+.nav-tabs>li>a, 
+{
+    padding-right:45px;
+}
 .panel-heading
 {
     padding: 10px 5px;
