@@ -4,7 +4,7 @@ $(document).ready(function(){
 		if($('#user').val() == ""){
 			alert("Please enter name");
 		}else{
-			$ISBN = $('#user').val();
+			$user = $('#user').val();
 			$('#load_data').empty();
 			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
 			$loader.appendTo('#load_data');
@@ -14,7 +14,7 @@ $(document).ready(function(){
 					url: 'get_data_byname.php',
 					type: 'POST',
 					data: {
-						ISBN: $ISBN
+						user: $user
 					},
 					success: function(res){
 						$('#load_data').html(res);
