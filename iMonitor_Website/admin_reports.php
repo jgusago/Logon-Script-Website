@@ -45,27 +45,51 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
-                        <span class="glyphicon glyphicon-envelope"></span></a></li> 
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </a>
+                </li> 
+                <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
-                        <span class="label label-pill label-warning count" style="border-radius: 10px;">22</span>
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;">
+                        <?php
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $countdown = 0;
+                            while ($row = $query->fetch()) {
+                                $countdown++;
+                            }
+                            echo  $countdown;
+                        ?>
+                        </span>
                     </a>
                     <ul class="dropdown-menu">
+                        <?php 
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            while ($row = $query->fetch()) {
+                                echo '
+                                <li>
+                                    <a href="#"><strong>'.$row['hostname'].'</strong><br>
+                                    <small><em>'.$row['iMonitor_Status'].'</em></small></a>
+                                </li>
+                                <li class="divider"></li>
+                                ';
+                            }
+                        ?>
                         <li>
-                            <a href="#"><strong>New computer added</strong><br>
-                            <small><em>New Computer added into databse</em></small></a>
+                            <a href=""><small>Show all notifications</small></a>
                         </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><strong>New computer added</strong><br>
-                            <small><em>New Computer added into databse</em></small></a>
-                        </li>
-                        <li class="divider"></li>
                     </ul>
                 </li>
+                <!-- End of Notification Dropdown -->
+
+                <!-- User Dropdown -->
 	            <li class="dropdown" style="padding-left: 5px;">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
                     <?php
                         $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
@@ -84,7 +108,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	            		<li class="divider"></li>
 	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
 	            	</ul>
-	            </li>
+                </li>
+                <!-- End of User Dropdown -->
             </ul>
 	</nav>
 	<!-- End Navigation-->
