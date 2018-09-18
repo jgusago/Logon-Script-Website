@@ -152,8 +152,8 @@ $ID=$_GET['id'];
 		            	$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
 		            	$stmt->execute();
 		            	for($i=0; $row = $stmt->fetch(); $i++){
-						$id=$row['id'];
-						$_SESSION['userid'] = $row['userid'];;
+						$userid=$row['userid'];
+						$_SESSION['userid'] = $userid;
 	            	?>
                 	<tr>
 						<td><?php echo $row['id']; ?></td>
@@ -164,7 +164,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
 						
-						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value= "echo '?id='.$id;" >Edit Record</button></td>
+						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value= "echo '?userid='.$userid;" >Edit Record</button></td>
                         <!--<td><a href="test_edit.php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
 					</tr>
 					<?php } ?>
