@@ -154,7 +154,7 @@ function load_branchview(parent, div, grandparent){
     rowdiv.classList.add("row-eq-height");
     rowdiv.classList.add("col-xs-4");
     rowdiv.classList.add("col-lg-12");
-    rowdiv.setAttribute("id","branchview")
+    rowdiv.setAttribute("id","branchview");
     div.appendChild(rowdiv);
     $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
 
@@ -190,12 +190,28 @@ function load_branchview(parent, div, grandparent){
     });
 
 }
+//Bamch Computer List
 function load_branchcomputerlist($parent, div, grandparent, $parentid){
 
-    var newcard =  document.createElement("div");
-    newcard.classList.add("card");
-    newcard.classList.add("mb-3");
-    newacard.setAttribute("id",$parentid)
+    var newdiv  = document.createElement("div");
+    newdiv.classList.add("row");
+    newdiv.classList.add("row-eq-height");
+    newdiv.classList.add("col-xs-4");
+    newdiv.classList.add("col-lg-12");
+    newdiv.setAttribute("id","branchcomputerlist");
+    div.appendChild(newdiv);
+
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var newtextnode = document.createTextNode(data);
+            newdiv.appendChild(newtextnode);
+        }
+        //Else do nothing
+
+    });
 
 }
 //Load Branch View Content
