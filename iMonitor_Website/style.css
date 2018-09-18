@@ -117,7 +117,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar {
-    margin-top:10px;
+    margin-top:30px;
     min-width: 250px;
     height: -webkit-fill-available;
     max-width: 250px;
