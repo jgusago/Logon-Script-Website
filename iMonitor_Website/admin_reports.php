@@ -291,6 +291,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Computer Name</th>
                                     <th>IP Address</th>
                                     <th>Status</th>
+                                    <th>Port Connection</th>
                                     <th>Remarks</th>
                                 </tr>
                                 <?php
@@ -306,6 +307,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <td><?php echo $row['hostname']; ?></td>
                                     <td><?php echo $row['ip_address']; ?></td>
                                     <td><?php echo $row['iMonitor_Status']; ?></td>
+                                    <td><?php echo $row['connection_status']; ?></td>
                                     <td><?php
                                         if($row['iMonitor_Status'] == 'Running' AND $row['connection_status'] == 'ESTABLISHED')
                                             echo 'Active';
