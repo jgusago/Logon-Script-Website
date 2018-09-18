@@ -302,7 +302,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                        //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 	            	                 ?>
                                 <tr>
-                                    <td><?php $count++ ?></td>
+                                    <td><?php $count+=1 ?></td>
                                     <td><?php echo $row['hostname']; ?></td>
                                     <td><?php echo $row['ip_address']; ?></td>
                                     <td><?php echo $row['iMonitor_Status']; ?></td>
