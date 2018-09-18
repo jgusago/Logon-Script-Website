@@ -293,13 +293,27 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Status</th>
                                     <th>Remarks</th>
                                 </tr>
+                                <?php
+		            	               $sql = "select user,hostname, ip_address,iMonitor_Status,connection_status, from tbl_log WHERE user != 'Administrator' ";
+                                       $stmt = $db->prepare($sql);
+                                       $stmt->execute();
+                                       $count = 1;
+                                       foreach($stmt as $row) {
+                                       //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+	            	                 ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>ITOMPH033048</td>
-                                    <td>192.168.33.48</td>
-                                    <td>Running</td>
-                                    <td>Active</td>
+                                    <td><?php $count++ ?></td>
+                                    <td><?php echo $row['hostname']; ?></td>
+                                    <td><?php echo $row['ip_address']; ?></td>
+                                    <td><?php echo $row['iMonitor_Status']; ?></td>
+                                    <td><?php
+                                        if($row['iMonitor_Status'] == 'Running' AND $row['connection_status'] == 'ESTABLISHED')
+                                            echo 'Active';
+                                        else
+                                            echo "Inactive";
+                                    ?></td>
                                 </tr>
+                                <?php } ?>
                             </table>
                         </div>
                     </div>
