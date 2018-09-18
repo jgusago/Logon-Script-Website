@@ -61,7 +61,7 @@ exit();
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
 	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
-				<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
+				<li class="dropdown"><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 10px;">
                         <span class="glyphicon glyphicon-bell"></span>
