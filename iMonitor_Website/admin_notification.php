@@ -193,8 +193,8 @@ exit();
                             </ul>
                         </div>
                         <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1">
-                                <table>
+                            <div class="pane pane--1" style="margin: 15px;">
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Subject</th>
