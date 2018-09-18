@@ -1,10 +1,9 @@
 $(document).ready(function(){
-	$('#user').textbox();
+	$('#user').user();
 	$('#btn_search').on('click', function(){	
 		if($('#user').val() == ""){
-			alert("Please enter something on the text field");
-		}else
-		{
+			alert("Please Select Enter Name");
+		}else{
 			$user = $('#user').val();
 			$('#load_data').empty();
 			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
