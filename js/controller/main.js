@@ -191,7 +191,7 @@ function load_branchview(parent, div, grandparent){
 
 }
 //Bamch Computer List
-function load_branchcomputerlist($parent, div, grandparent, $parentid){
+function load_branchcomputerlist(parent, div, grandparent, $parentid){
 
     var newdiv  = document.createElement("div");
     newdiv.classList.add("row");
