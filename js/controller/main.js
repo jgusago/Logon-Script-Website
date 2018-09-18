@@ -206,8 +206,13 @@ function load_branchcomputerlist($parent, div, grandparent, $parentid){
 
         if (data != 0){
 
-            var newtextnode = document.createTextNode(data);
-            newdiv.appendChild(newtextnode);
+            var newdata = data.split("|");
+            var loop = 0;
+
+            while(newdata[loop]){
+                load_branchcomputerlist_content(newdata[loop],rowdiv,parent);
+                loop++;
+            }
         }
         //Else do nothing
 
@@ -252,6 +257,41 @@ function load_branchview_content(parent, div, grandparent){
         mbdiv.appendChild(footerdiv);
 
 }
+//Load Branch View Data List
+function load_branchcomputerlist_content(parent, div, grandparent){
+
+    var card = document.createElement("div");
+    card.classList.add("card");
+    card.classList.add("mb-3");
+    card.setAttribute("id",parent+"-CL");
+
+    if (grandparent == "root"){
+        card.setAttribute("hidden","true");
+        card.classList.add("contentdataview");
+    }
+    div.appendChild(card);
+
+        //Create Card Header
+        var cardhead = document.createElement("div");
+        cardhead.classList.add("card-header");
+        card.appendChild(cardhead);
+
+            //Header text Node
+            var textnode = document.createTextNode(parent);
+            cardhead.appendChild(textnode);
+
+        // Create Card Body
+        var cardbody = document.createElement("div");
+        cardbody.classList.add("card-body");
+        card.appendChild(cardbody);
+
+            load_branchcomputerlist_table(parent);
+
+        var cardfooter = document.createElement('div');
+        cardfooter.classList.add("card-footer");
+        card.appendChild(cardfooter);
+}
+
 //Load Branch View Data
 function load_branchbiew_data(list, parent){
 
