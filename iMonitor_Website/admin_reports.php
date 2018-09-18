@@ -30,7 +30,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
+	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa; height:60px;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
