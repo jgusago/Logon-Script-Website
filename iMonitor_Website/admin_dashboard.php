@@ -159,103 +159,38 @@ exit();
 	<!-- End of Sidebar -->
 
 	<script type="text/javascript">
-$('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
-})
 
-$(document).ready(function(){
- 
- function load_unseen_notification(view = '')
- {
-  $.ajax({
-   url:"fetch.php",
-   method:"POST",
-   data:{view:view},
-   dataType:"json",
-   success:function(data)
-   {
-    $('.dropdown-menu').html(data.notification);
-    if(data.unseen_notification > 0)
-    {
-     $('.count').html(data.unseen_notification);
-    }
-   }
-  });
- }
- 
- load_unseen_notification();
- 
- $('#comment_form').on('submit', function(event){
-  event.preventDefault();
-  if($('#subject').val() != '' && $('#comment').val() != '')
-  {
-   var form_data = $(this).serialize();
-   $.ajax({
-    url:"insert.php",
-    method:"POST",
-    data:form_data,
-    success:function(data)
-    {
-     $('#comment_form')[0].reset();
-     load_unseen_notification();
-    }
-   });
-  }
-  else
-  {
-   alert("Both Fields are Required");
-  }
- });
- 
- $(document).on('click', '.dropdown-toggle', function(){
-  $('.count').html('');
-  load_unseen_notification('yes');
- });
- 
- setInterval(function(){ 
-  load_unseen_notification();; 
- }, 5000);
- 
-});
+        $(document).ready(function(){
+            $(".dropdown").hover(            
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                    $(this).toggleClass('open');        
+                },
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                    $(this).toggleClass('open');       
+                }
+            );
+        });
 
-  $(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-
-        $(document).ready(function () {
-                 $('#sidebarCollapse').on('click', function () {
-                     $('#sidebar').toggleClass('active');
-                 });
-             });
- 
+                $(document).ready(function () {
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar').toggleClass('active');
+                        });
+                    });
+        
 
 
-function isNumber(input) {
-  var regex =/[^0-9]/gi;
-  input.value = input.value.replace(regex,"");
-       
-}
+            function isNumber(input) {
+            var regex =/[^0-9]/gi;
+            input.value = input.value.replace(regex,"");
+                
+            }
 
 
-function lettersOnly(input) {
-  var regex = /[^a-z]/gi;
-  input.value = input.value.replace(regex,"");
-       
+            function lettersOnly(input) {
+            var regex = /[^a-z]/gi;
+            input.value = input.value.replace(regex,"");   
      }      
 
 </script>
