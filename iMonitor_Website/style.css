@@ -204,17 +204,23 @@ ul ul a {
 .panel
 {
     margin-top: 0px;
-    margin-left: -15px;
     width: 105%;
     margin-bottom: 20px;
-    background-color: #b2dc9c80;
+    background-color: #c7c9c6;
     border: 1px solid transparent;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 .table 
 {
-  background:#fffcfcab;
+    background: #fefefe;
+}
+.table-hover>tbody>tr>td, .table-hover>tbody>tr>th, .table-hover>tfoot>tr>td, .table-hover>tfoot>tr>th, .table-hover>thead>tr>td, .table-hover>thead>tr>th 
+{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px solid #bdb8b8;
 }
 
 /* ---------------------------------------------------
