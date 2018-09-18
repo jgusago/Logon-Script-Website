@@ -146,16 +146,16 @@ p
     /* align-items: stretch; */
     height: 100vh;
 }
-#sidebar {
-    margin-top:40px;
+#sidebar 
+{
+    margin-top:10px;
     min-width: 250px;
-    height: 1000vh;
+    height: -webkit-fill-available;
     max-width: 250px;
     background: #fffafa;
     color: black;
     transition: all 0.3s;
     box-shadow: 1px 1px #d2cbcb;
-    position:fixed;
 }
 a, a:hover, a:focus 
 {
@@ -187,7 +187,7 @@ a, a:hover, a:focus
 .sidebar ul li.active > a, a[aria-expanded="true"] 
 {
     color: white;
-    background:#b7ab22f2;
+    background:#dfdcdc
 }
 
 a[data-toggle="collapse"] 
@@ -280,6 +280,11 @@ thead th
     width: 500px; 
     margin-left: 0px;
 }
+.autocomplete
+{
+    position: relative;
+    display: inline-block;
+}
 .tr-dept select
 {
     width: 285px;
@@ -342,6 +347,10 @@ u
 	width:320px;
 	height:30px;
 }
+.dropdown-toggle
+{
+  padding-right:30px;
+}  
 .dropdown-role select
 {
 	width:320px;
@@ -377,4 +386,27 @@ u
     margin-left:25px;
     position:fixed;
     width:100%;
+}
+.dropdown-menu 
+{
+  position: absolute;
+  top: 100%;
+  /* left: 0; */
+  z-index: 1000;
+  /* display: none; */
+  float: left;
+  min-width: 220px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  /* -webkit-background-clip: padding-box; */
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  /* -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175); */
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
