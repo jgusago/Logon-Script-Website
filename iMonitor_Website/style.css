@@ -12,10 +12,12 @@ body {
 p 
 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
+    /* font-size: 1.1em; */
     font-weight: 300;
+    font-size: 15px;
     line-height: 1.7em;
     color: black;
+    margin-top: inherit;
 }
 a, a:hover, a:focus {
     color: inherit;

@@ -65,7 +65,7 @@ exit();
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 10px;">
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">22</span>
-                        <span class="glyphicon glyphicon-bell"><p>Notification</p></span>
+                        <span class="glyphicon glyphicon-bell"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>

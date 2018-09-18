@@ -2,12 +2,8 @@
 body {
   font-family: 'Open Sans', 'sans-serif';
 }
-body
+img 
 {
-  background-image: url(images/back.jpg);
-
-}
-img {
     float: left;
     margin: 0 0 10px 10px;
 }
@@ -33,7 +29,6 @@ img {
   border: none;
   border-right: 1px solid #ddd;
 }
-  
 .modal-footer .btn-group:last-child > button {
   border-right: 0;
 }
