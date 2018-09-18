@@ -69,19 +69,32 @@ exit();
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
-                        <span class="label label-pill label-warning count" style="border-radius: 10px;">22</span>
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;">
+                        <?php
+                            $notifs = mysqli_query($con,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $countdown = 0;
+                            while($row = mysqli_fetch_array($notifs))
+                            {
+                                $countdown++;
+                            }
+                            echo  $countdown;
+                        ?>
+                        </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><strong>New computer added</strong><br>
-                            <small><em>New Computer added into databse</em></small></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><strong>New computer added</strong><br>
-                            <small><em>New Computer added into databse</em></small></a>
-                        </li>
-                        <li class="divider"></li>
+                        <?php 
+                            $notifs = mysqli_query($con,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            while($row = mysqli_fetch_array($notifs))
+                            {
+                                echo '
+                                <li>
+                                    <a href="#"><strong>'.$row['hostname'].'</strong><br>
+                                    <small><em>'.$row['iMonitor_Status'].'</em></small></a>
+                                </li>
+                                <li class="divider"></li>
+                                ';
+                            }
+                        ?>
                         <li>
                             <a href=""><small>Show all notifications</small></a>
                         </li>
