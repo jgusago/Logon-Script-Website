@@ -38,7 +38,7 @@ $ID=$_GET['id'];
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
 	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li class="dropdown">
-                    <a href="#" style="padding-right: 30px;">
+                    <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li> 
