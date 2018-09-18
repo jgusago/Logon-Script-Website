@@ -488,6 +488,7 @@ var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla"
 autocomplete(document.getElementById("user"), countries);
 </script> -->
 </body>
+<input type="button" name="btn_filter" id="btn_filter" value="Filter" class="btn btn-success">
 <script src = "ajax.js"></script>
 </html>
     

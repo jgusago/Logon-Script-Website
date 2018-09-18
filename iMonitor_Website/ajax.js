@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('#from_date').datepicker();
 	$('#to_date').datepicker();
-	$('#btn_search').on('click', function(){	
+	$('#btn_filter').on('click', function(){	
 		if($('#from_date').val() == "" || $('#to_date').val() == ""){
 			alert("Please Select Date");
 		}else{
