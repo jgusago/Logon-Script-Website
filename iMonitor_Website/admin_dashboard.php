@@ -71,10 +71,11 @@ exit();
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
                         <?php
-                            $notifs = mysqli_query($db,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
                             $countdown = 0;
-                            while($row = mysqli_fetch_array($notifs))
-                            {
+                            while ($row = $query->fetch()) {
                                 $countdown++;
                             }
                             echo  $countdown;
@@ -83,9 +84,10 @@ exit();
                     </a>
                     <ul class="dropdown-menu">
                         <?php 
-                            $notifs = mysqli_query($db,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
-                            while($row = mysqli_fetch_array($notifs))
-                            {
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            while ($row = $query->fetch()) {
                                 echo '
                                 <li>
                                     <a href="#"><strong>'.$row['hostname'].'</strong><br>
