@@ -153,6 +153,7 @@ $ID=$_GET['id'];
 		            	$stmt->execute();
 		            	for($i=0; $row = $stmt->fetch(); $i++){
 						$id=$row['id'];
+						$_SESSION['userid'] = $row['userid'];;
 	            	?>
                 	<tr>
 						<td><?php echo $row['id']; ?></td>
@@ -323,16 +324,24 @@ $ID=$_GET['id'];
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
+					<?php     
+              			$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '$_SESSION['userid]' ";
+              			$stmt = $db->prepare($sql);
+              			$stmt->execute();
+						$count = 1;
+              			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+              			
+            		?>
 					<div class="body">
 						<form style="padding:10px;">
 							<table class="modal-form">
 								<tr>
-									<td><b>ID Number:</b></td>
+									<td><b><?php echo $count++ ?></b></td>
 									<td><input type="text" id="userid" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" required placeholder="Name" class="validate"></td>
+									<td><input type="text" id="name" name="name" value=<?php echo $row['userid']?>  required  class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
@@ -423,6 +432,7 @@ $ID=$_GET['id'];
                                         </div>
                                     </td>
                                 </tr>
+								<?php } ?>
 								<tr>
 									<td></td>
 									<td><button class="btn btn-primary">Update</button></td>
