@@ -16,8 +16,8 @@ $(document).ready(function(){
 					url: 'load_data.php',
 					type: 'POST',
 					data: {
-						date1: $date1,
-						date2: $date2
+						from_date: $from_date,
+						to_date: $to_date
 					},
 					success: function(res){
 						$('#load_data').html(res);
