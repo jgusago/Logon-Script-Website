@@ -67,7 +67,7 @@ exit();
                         <span class="label label-pill label-warning count" style="border-radius: 10px;"></span>
                         <span class="glyphicon glyphicon-bell"></span>
                     </a>
-                    <ul class="dropdown-menu" style="background-color:red; float: left; display: none;">
+                    <ul class="dropdown-menu">
                         <li>
                             <a href="#"><strong>New computer added</strong><br>
                             <small><em>New Computer added into databse</em></small></a>
