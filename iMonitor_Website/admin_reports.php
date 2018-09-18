@@ -215,14 +215,17 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </thead>
                                 <tbody id = "load_data">
                                     <?php
-		            	               $sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log ORDER BY log_no ASC";
+                                       $sql = "select user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, 
+                                       iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log 
+                                       WHERE user != 'Administrator' ";
                                        $stmt = $db->prepare($sql);
                                        $stmt->execute();
+                                       $count = 1;
                                        foreach($stmt as $row) {
                                        //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 	            	                 ?>
                                 <tr> 
-                                    <td><?php echo $row['log_no']; ?></td>
+                                    <td><?php echo $count++ ?></td>
                                     <td><?php echo $row['user']; ?></td>
                                     <td><?php echo $row['domain_name']; ?></td>
                                     <td><?php echo $row['hostname']; ?></td>
@@ -291,15 +294,31 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Computer Name</th>
                                     <th>IP Address</th>
                                     <th>Status</th>
+                                    <th>Port Connection</th>
                                     <th>Remarks</th>
                                 </tr>
+                                <?php
+		            	               $sql = "select user,hostname, ip_address,iMonitor_Status,connection_status from tbl_log WHERE user != 'Administrator' ";
+                                       $stmt = $db->prepare($sql);
+                                       $stmt->execute();
+                                       $count = 1;
+                                       foreach($stmt as $row) {
+                                       //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+	            	                 ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>ITOMPH033048</td>
-                                    <td>192.168.33.48</td>
-                                    <td>Running</td>
-                                    <td>Active</td>
+                                    <td><?php echo $count++ ?></td>
+                                    <td><?php echo $row['hostname']; ?></td>
+                                    <td><?php echo $row['ip_address']; ?></td>
+                                    <td><?php echo $row['iMonitor_Status']; ?></td>
+                                    <td><?php echo $row['connection_status']; ?></td>
+                                    <td><?php
+                                        if($row['iMonitor_Status'] == 'Running' AND $row['connection_status'] == 'ESTABLISHED')
+                                            echo 'Active';
+                                        else
+                                            echo "Inactive";
+                                    ?></td>
                                 </tr>
+                                <?php } ?>
                             </table>
                         </div>
                     </div>
