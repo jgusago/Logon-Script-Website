@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	//$('#user').val(data);
+	$('#user').text();
 	$('#btn_search').on('click', function(){	
 		if($('#user').val() == ""){
 			alert("Please Select Enter Name");
