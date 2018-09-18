@@ -164,7 +164,16 @@ exit();
     <!-- End of Sidebar -->
     
     <div class="container" style="margin-top:-900px;">
-        <p id="demo"></p>
+        <div id="countdown">
+            <div id="tiles"></div>
+            <div class="labels">
+                <li>Days</li>
+                <li>Hours</li>
+                <li>Mins</li>
+                <li>Seconds</li>
+            </div>
+        </div>
+        <!-- <p id="demo"></p> -->
     </div>
 
 	<script>
@@ -202,35 +211,39 @@ exit();
             input.value = input.value.replace(regex,"");   
      }  
 
-        var countDownDate = new Date("Sept 18 , 2018 15:37:25").getTime();
+var target_date = new Date().getTime() + (1000*3600*48); // set the countdown date
+var days, hours, minutes, seconds; // variables for time units
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+var countdown = document.getElementById("tiles"); // get tag element
 
-  // Get todays date and time
-  var now = new Date().getTime();
+getCountdown();
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+setInterval(function () { getCountdown(); }, 1000);
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+function getCountdown(){
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+	// find the amount of "seconds" between now and target
+	var current_date = new Date().getTime();
+	var seconds_left = (target_date - current_date) / 1000;
 
-  // If the count down is finished, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000); 
+	days = pad( parseInt(seconds_left / 86400) );
+	seconds_left = seconds_left % 86400;
+		 
+	hours = pad( parseInt(seconds_left / 3600) );
+	seconds_left = seconds_left % 3600;
+		  
+	minutes = pad( parseInt(seconds_left / 60) );
+	seconds = pad( parseInt( seconds_left % 60 ) );
 
-</script>
+	// format countdown string + set tag value
+	countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
+}
+
+function pad(n) {
+	return (n < 10 ? '0' : '') + n;
+}
+
+
 
 	
 </body>
