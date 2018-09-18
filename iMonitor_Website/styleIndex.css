@@ -2,8 +2,12 @@
 body {
   font-family: 'Open Sans', 'sans-serif';
 }
+<<<<<<< HEAD
 img 
 {
+=======
+img {
+>>>>>>> 7f6cefb3c167c151de6a50d1aabf5f9d23441f5b
     float: left;
     margin: 0 0 10px 10px;
 }
