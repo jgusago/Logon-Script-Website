@@ -389,35 +389,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 <script src = "ajax.js"></script>
 
-<script src="code_js.js" type="text/javascript"></script>
-
-<script>
-$(document).ready(function(){
-	$("#user").keyup(function(){
-		$.ajax({
-		type: "POST",
-		url: "search.php",
-		data:'keyword='+$(this).val(),
-		beforeSend: function(){
-			$("#search_textBox").css("background","#FFF");
-		},
-		success: function(data){
-			$("#suggestion_list").show();
-			$("#suggestion_list").html(data);
-			$("#user").css("background","#FFF");
-		}
-		});
-	});
-});
-
-function selectUser(val) {
-$("#user").val(val);
-$("#suggestion_list").hide();
-//var x = document.getElementById("user");
-    //x.value = x.value();
-}
-</script>
-
 <!-- <script>
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
