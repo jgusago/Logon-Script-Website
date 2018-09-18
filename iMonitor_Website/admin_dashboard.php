@@ -63,9 +63,9 @@ exit();
 	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 40px;">
-                        <span class="label label-pill label-warning count" style="border-radius: 10px;">2</span>
-                        <span class="glyphicon glyphicon-bell">Notification</span>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 10px;">
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;">22</span>
+                        <span class="glyphicon glyphicon-bell"><p>Notification</p></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
@@ -80,7 +80,7 @@ exit();
                         <li class="divider"></li>
                     </ul>
                 </li>
-	            <li class="dropdown">
+	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
                     
                     <?php
@@ -94,14 +94,14 @@ exit();
                         }
                     ?>
 	                </a>
-	            		<ul class="dropdown-menu" role="menu">
-	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
-	            			<li class="sub-header"><a href="#">Account Settings</a></li>
-	            			<li class="divider"></li>
-	            			<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
-	            		</ul>
+	            	<ul class="dropdown-menu" role="menu">
+	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
+	            		<li class="sub-header"><a href="#">Account Settings</a></li>
+	            		<li class="divider"></li>
+	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+	            	</ul>
 	            </li>
-	        </ul>
+            </ul>
 	</nav>
 	<!-- End Navigation-->
 
