@@ -233,7 +233,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Scan Time</th>
                                 </tr>
                                 </thead>
-                                <tbody id = "get_data">
+                                <tbody id = "load_data">
                                     <?php
                                        $sql = "select user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, 
                                        iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log 
