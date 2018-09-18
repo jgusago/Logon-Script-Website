@@ -125,10 +125,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	<!-- End of Sidebar -->
 
     <!-- Table -->
-    <div class="container-body">
-        <div class="info">
-            <p><strong>Reports</strong></p>
-        </div>
+    <div class="info">
+        <p><strong>Reports</strong></p>
+    </div>
     </div>
     <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top:-864px; margin-left: 252px;">
         <div class="panel-heading">

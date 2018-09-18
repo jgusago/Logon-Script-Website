@@ -213,7 +213,7 @@ ul ul a {
     padding: 10px;
     margin-left: 25px;
     height:45px;
-    position: fixed;
+    position: absolute;
     display: block;
     margin-top:-3px;
 }
