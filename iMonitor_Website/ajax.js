@@ -7,20 +7,20 @@ $(document).ready(function(){
 		}else{
 			$from_date = $('#from_date').val();
 			$to_date = $('#to_date').val();
-			$('#get_data').empty();
+			$('#load_data').empty();
 			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
-			$loader.appendTo('#get_data');
+			$loader.appendTo('#load_data');
 			setTimeout(function(){
 				$loader.remove();
 				$.ajax({
-					url: 'get_data.php',
+					url: 'load_data.php',
 					type: 'POST',
 					data: {
-						from_date: $from_date,
-						to_date: $to_date
+						date1: $date1,
+						date2: $date2
 					},
 					success: function(res){
-						$('#get_data').html(res);
+						$('#load_data').html(res);
 					}
 				});
 			}, 3000);
