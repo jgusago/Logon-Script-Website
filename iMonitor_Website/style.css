@@ -134,21 +134,21 @@ a, a:hover, a:focus {
     margin-left: -250px;
 }
 
-#sidebar .sidebar-header {
+/* #sidebar .sidebar-header {
     padding: 10px;
     background: #b80303;
     height: 110px;
-}
+} */
 
 #sidebar ul.components {
     padding: 20px 0;
 }
 
-#sidebar ul p {
+/* #sidebar ul p {
     color: #b80303;
     padding: 10px;
         font-size: 20px;
-}
+} */
 
 #sidebar ul li a {
     padding: 20px;
@@ -186,7 +186,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #fff8c4b5;
+    background: #dfdcdc;
 }
 .container-fluid {
     /* padding-right: 15px; */
