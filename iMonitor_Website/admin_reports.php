@@ -210,7 +210,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <br>
                             <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                             <input type="button" name="btn_filter" id=btn_filter value="Filter" class="btn btn-success" onclick="">
-                            <input type="button" id="btn_search" name="btn_search"  value="Search" class="btn btn-danger">
+                            <input type="button" name="btn_search" id=btn_search value="Filter" class="btn btn-danger" onclick="">
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
@@ -383,6 +383,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     </script>
 
     <script src = "../js/controller/report_ajax.js"></script>
+    <script src = "ajax_byname.js"></script>
 <!-- <script>
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
