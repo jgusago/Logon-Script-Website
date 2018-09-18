@@ -48,6 +48,7 @@ exit();
     <link rel="stylesheet" href="styleIndex.css">
 </head>
 <body>
+    <!-- Top Navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
@@ -66,6 +67,7 @@ exit();
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li> 
+                <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
@@ -102,6 +104,9 @@ exit();
                         </li>
                     </ul>
                 </li>
+                <!-- End of Notification Dropdown -->
+
+                <!-- User Dropdown -->
 	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
@@ -122,12 +127,13 @@ exit();
 	            		<li class="divider"></li>
 	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
 	            	</ul>
-	            </li>
+                </li>
+                <!-- End of User Dropdown -->
             </ul>
 	</nav>
-	<!-- End Navigation-->
+	<!-- End of Top Navigation-->
 
- 	<!-- Modal -->
+ 	<!-- Logout Modal -->
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -146,7 +152,7 @@ exit();
 			</div>
 		</div>
 	</div>
-	<!-- End of Modal -->
+	<!-- End of Logout Modal -->
 
 	<!-- Sidebar -->
 	<div class="wrapper">
@@ -177,12 +183,8 @@ exit();
 		</nav>
 	</div>               
     <!-- End of Sidebar -->
-    
-    <div class="container" style="margin-top:-900px;">
-        <p id="demo"></p>
-                    
-    </div>
 
+    
 	<script>
 
         $(document).ready(function(){
