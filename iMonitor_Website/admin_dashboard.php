@@ -100,7 +100,7 @@ exit();
                             }
                         ?>
                         <li>
-                            <a href=""><small>Show all notifications</small></a>
+                            <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>
@@ -184,7 +184,7 @@ exit();
 	</div>               
     <!-- End of Sidebar -->
 
-    
+
 	<script>
 
         $(document).ready(function(){
