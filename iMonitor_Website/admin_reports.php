@@ -249,8 +249,15 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <option value="WEB">IT-WEB</option>
                             </select>
                         </div>
-                        <div class="col-md-8"><br>
+                        <div class="col-md-4"><br>
                             <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
+                        </div>
+                        <div class="col-md-4"><br>
+                            <select name="sub_status" id="sub_status" class="form-control">
+                                <option value="" selected>--Status</option>
+                                <option value="OM">Active</option>
+                                <option value="AUD">Inactive</option>
+                            </select>
                         </div>
                         <div class="col-md-4">
                             <br>
@@ -278,7 +285,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="tab3default">
+                <!-- <div class="tab-pane fade" id="tab3default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
                             <input type="text" name="from_date" class="form-control" id="from_date3" placeholder="From Date"> 
@@ -332,7 +339,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
