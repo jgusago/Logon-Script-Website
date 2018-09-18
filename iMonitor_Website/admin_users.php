@@ -24,7 +24,7 @@ $ID=$_GET['id'];
 </head>
 <body onload="populateSecondTextBox();">
 	<!-- Top navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
+	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa; height:60px;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -106,9 +106,9 @@ $ID=$_GET['id'];
                 <!-- End of User Dropdown -->
             </ul>
 	</nav>
-	<!-- End Navigation-->
+	<!-- End of Top Navigation-->
 
- 	<!-- Modal -->
+ 	<!-- Logout Modal -->
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -127,11 +127,11 @@ $ID=$_GET['id'];
 			</div>
 		</div>
 	</div>
-	<!-- End of Modal -->
+	<!-- End of Logout Modal -->
 
 	<!-- Sidebar -->
 	<div class="wrapper" style="height: 105vh;"> 
-		<nav id="sidebar" style="position:fixed;">
+		<nav id="sidebar" style="position:fixed;margin-top:30px;">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
@@ -159,9 +159,8 @@ $ID=$_GET['id'];
 	</div>               
 	<!-- End of Sidebar -->
 
-    <!-- Table -->
     <div class="container-body">
-        <div class="info">
+        <div class="info" style="margin-top:-11px;">
             <p><strong>User Accounts</strong></p>
         </div>
         <div class="container-table" style="position:sticky;  overflow: hidden;">
@@ -173,7 +172,8 @@ $ID=$_GET['id'];
                 </div>
 			</div>
 		</div>
-
+		
+		<!-- User table -->
         <div class="container">
             <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:210px; margin-bottom:10px; width:87%">
                 <thead>
@@ -212,8 +212,10 @@ $ID=$_GET['id'];
 					<?php } ?>
             	</tbody>
             </table>
-        </div> 
+		</div> 
+		<!-- End of User Table -->
 
+<!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
@@ -332,6 +334,8 @@ $ID=$_GET['id'];
 						</form>
                     </div>
 </form>
+
+<!-- End of Add User Modal  -->
 					<script type="text/javascript">
 						function populateSecondTextBox() {
    						document.getElementById('password2').value = document.getElementById('password').value;
@@ -355,10 +359,8 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 			</div>
-		<!-- End of Modal -->
 
-		<!-- Modal Add User-->
-
+<!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
@@ -432,13 +434,13 @@ $ID=$_GET['id'];
 			</div>
 	</div>
 </form>
-		<!-- End of Modal -->
+<!-- End of Edit User Modal -->
 	
 </body>
 </html>
 
 <script>
-        $(document).ready(function(){
+       $(document).ready(function(){
             $(".dropdown").hover(            
                 function() {
                     $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
@@ -455,7 +457,7 @@ $ID=$_GET['id'];
                         $('#sidebarCollapse').on('click', function () {
                             $('#sidebar').toggleClass('active');
                         });
-					});
+                    });
 					  
         function isNumber(input) {
           var regex =/[^0-9]/gi;
