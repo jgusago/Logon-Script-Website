@@ -185,7 +185,6 @@ a, a:hover, a:focus
     color: black;
     background: #64c13dad;
 }
-
 .sidebar ul li.active > a, a[aria-expanded="true"] 
 {
     color: white;
