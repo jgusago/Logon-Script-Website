@@ -150,7 +150,7 @@ p
 #sidebar 
 {
     min-width: 250px;
-    height: -webkit-fill-available;
+    height: 322vh;
     max-width: 250px;
     background: #fffafa;
     color: black;
