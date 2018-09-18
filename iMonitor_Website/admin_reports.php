@@ -166,11 +166,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	<!-- End of Sidebar -->
 
     <!-- Table -->
-    <div class="info" style="margin-left:250px; margin-top:-11px;">
+    <div class="info" style="margin-left:250px; margin-top:-10px;">
         <p><strong>Reports</strong></p>
     </div>
     </div>
-    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top: -920px; margin-left: 252px;">
+    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top: -890px; margin-left: 252px;">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab0default" data-toggle="tab">Computer Logs</a></li>
