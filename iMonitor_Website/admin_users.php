@@ -336,12 +336,12 @@ $ID=$_GET['id'];
 						<form style="padding:10px;">
 							<table class="modal-form">
 								<tr>
-									<td><b><?php echo $count++ ?></b></td>
-									<td><input type="text" id="userid" name="userid" required placeholder="User ID"></td>
+									<td><b>ID Number:</b></td>
+									<td><input type="text" id="userid" value=<?php echo $row['userid']?> name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" value=<?php echo $row['userid']?>  required  class="validate"></td>
+									<td><input type="text" id="name" name="name" value=<?php echo $row['name']?>  required  class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
