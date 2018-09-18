@@ -9,8 +9,8 @@ $sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified
 $stmt = $db->prepare($sql);
 $row_count = $stmt->rowCount();
 if($row_count > 0){
-    //foreach($stmt as $row) {
-    while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+    foreach($stmt as $row) {
+    //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 	?>
 	<tr>
 		<td><?php echo $row['log_no']; ?></td>

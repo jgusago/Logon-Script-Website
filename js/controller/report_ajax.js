@@ -13,7 +13,7 @@ $(document).ready(function(){
 			setTimeout(function(){
 				$loader.remove();
 				$.ajax({
-					url: 'load_data.php',
+					url: 'get_data.php',
 					type: 'POST',
 					data: {
 						from_date: $from_date,

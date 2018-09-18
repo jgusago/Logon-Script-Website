@@ -208,9 +208,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </div>
                         <div class="col-md-4">
                             <br>
-                            <input type="button" name="clear" id="reset" value="Clear" class="btn btn-default">
-                            <input type="button" name="btn_filter" id="btn_filter" value="Filter" class="btn btn-success">
-                            <input type="button" name="btn_search" id="btn_search" value="Search" class="btn btn-danger">
+                            <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                            <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
+                            <input type="button" id="btn_search" name="btn_search"  value="Search" class="btn btn-danger">
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
@@ -270,10 +270,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 <div class="tab-pane fade" id="tab2default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" id="from_date2" placeholder="From Date"> 
+                            <input type="text" id="from_date2" name="from_date" class="form-control" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" id="to_date2" placeholder="To Date"> 
+                            <input type="text" id="to_date2" name="to_date" class="form-control" placeholder="To Date"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -382,7 +382,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     </script>
 
-    <script src = "ajax.js"></script>
+    <script src = "../js/controller/report_ajax.js"></script>
 <!-- <script>
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
