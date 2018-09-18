@@ -60,12 +60,12 @@ exit();
         <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:5px;">
+	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="label label-pill label-warning count" style="border-radius: 10px;"></span>
-                        <span class="glyphicon glyphicon-bell"></span>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 40px;">
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;">2</span>
+                        <span class="glyphicon glyphicon-bell">Notification</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
