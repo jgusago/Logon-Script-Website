@@ -71,7 +71,7 @@ exit();
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
                         <?php
-                            $notifs = mysqli_query($con,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $notifs = mysqli_query($db,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                             $countdown = 0;
                             while($row = mysqli_fetch_array($notifs))
                             {
@@ -83,7 +83,7 @@ exit();
                     </a>
                     <ul class="dropdown-menu">
                         <?php 
-                            $notifs = mysqli_query($con,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            $notifs = mysqli_query($db,"SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
                             while($row = mysqli_fetch_array($notifs))
                             {
                                 echo '
