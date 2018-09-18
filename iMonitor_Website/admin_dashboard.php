@@ -63,7 +63,9 @@ exit();
 	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
-                        <span class="glyphicon glyphicon-envelope"></span></a></li> 
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </a>
+                </li> 
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
@@ -80,6 +82,9 @@ exit();
                             <small><em>New Computer added into databse</em></small></a>
                         </li>
                         <li class="divider"></li>
+                        <li>
+                            <a href=""><small><em>Show all notifications</em></small></a>
+                        </li>
                     </ul>
                 </li>
 	            <li class="dropdown" style="padding-left: 5px;">
