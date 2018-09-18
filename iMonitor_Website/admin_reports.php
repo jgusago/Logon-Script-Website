@@ -44,7 +44,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
 	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li class="dropdown">
-                    <a href="#" style="padding-right: 30px; margin-top: 5px;">
+                    <a href="#" style="padding-right: 30px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li> 
@@ -173,8 +173,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top: -890px; margin-left: 252px;">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab0default" data-toggle="tab">Computer Logs</a></li>
-                <li><a href="#tab2default" data-toggle="tab">Computer List</a></li>
+                <li class="active"><a href="#tab0default" data-toggle="tab" style="padding-right:35px;">Computer Logs</a></li>
+                <li><a href="#tab2default" data-toggle="tab" style="padding-right:35px;">Computer List</a></li>
             </ul>
         </div>
         <div class="panel-body">
