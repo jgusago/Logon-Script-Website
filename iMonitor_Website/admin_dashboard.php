@@ -65,7 +65,7 @@ exit();
                     <a href="#" style="padding-right: 25px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span></a></li> 
 				<li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 10px;">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">22</span>
                     </a>
