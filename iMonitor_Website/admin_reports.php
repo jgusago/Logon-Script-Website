@@ -125,7 +125,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	<!-- End of Sidebar -->
 
     <!-- Table -->
-    <div class="info">
+    <div class="info" style="margin-left:250px;">
         <p><strong>Reports</strong></p>
     </div>
     </div>
