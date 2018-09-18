@@ -63,7 +63,23 @@ exit();
 	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:5px;">
 				<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;"></span>
+                        <span class="glyphicon glyphicon-bell"></span>
+                    </a>
+                    <ul class="dropdown-menu" style="background-color: white; float: left; display: none;">
+                        <li>
+                            <a href="#"><strong>New computer added</strong><br>
+                            <small><em>New Computer added into databse</em></small></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><strong>New computer added</strong><br>
+                            <small><em>New Computer added into databse</em></small></a>
+                        </li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
 	            <li class="dropdown">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
                     
