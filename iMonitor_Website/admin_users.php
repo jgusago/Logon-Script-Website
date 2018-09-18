@@ -347,26 +347,7 @@ $ID=$_GET['id'];
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-										<option></option>
-										<?php     
-              									$sql = "select department from tbl_user WHERE id='$id'";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['department'].'</option>'; 
-              									}
-            							?>
-
-											    <?php     
-              									$sql = "select department from tbl_department";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['department'].'</option>'; 
-              									}
-            							?>
+										<option value=<?php echo $row['userid']?>> <?php echo $row['department']?> </option>
 										</select>
 									</td>
 								</tr>
@@ -374,58 +355,20 @@ $ID=$_GET['id'];
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="position">
-										<option></option>
-										<?php     
-              									$sql = "select position from tbl_user WHERE id='$id'";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['position'].'</option>'; 
-              									}
-            							?>
-
-											    <?php     
-              									$sql = "select position from tbl_position";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['position'].'</option>'; 
-              									}
-            							?>
+										<option value=<?php echo $row['userid']?> > <?php echo $row['position']?> </option>
 										</select>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-										<option></option>
-										<?php     
-              									$sql = "select role from tbl_user WHERE id='$id'";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['role'].'</option>'; 
-              									}
-            							?>
-
-											    <?php     
-              									$sql = "select role from tbl_role";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['role'].'</option>'; 
-              									}
-            							?>
+										<option value=<?php echo $row['userid']?>> <?php echo $row['role']?> </option>
 										</select>
 									</td>
                                 </tr>
                                 <tr class="reset-password">
                                     <td><b>Password:</b></td>
-                                    <td><input id="default-pass" value="Aa123456" type="password"></td> 
+                                    <td><input id="default-pass" value=<?php echo $row['password']?> type="password"></td> 
                                     <td>
                                         <div>
                                             <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
