@@ -93,8 +93,6 @@ exit();
                         echo 'Welcome: ' . $row['name'];
                         }
                     ?>
-                    
-                    <span class="glyphicon glyphicon-down"></span>
 	            	<span class="caret"></span></a>
 	            		<ul class="dropdown-menu" role="menu">
 	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
