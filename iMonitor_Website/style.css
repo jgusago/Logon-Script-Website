@@ -188,7 +188,8 @@ ul ul a {
     padding-left: 30px !important;
     /* background: #dfdcdc; */
 }
-.container-fluid {
+.container-fluid
+ {
     /* padding-right: 15px; */
     /* padding-left: 15px; */
     /* margin-right: auto; */
@@ -196,11 +197,39 @@ ul ul a {
     background: white;
 
 }
+.container
+{
+  width:2000px;
+}
+.panel
+{
+  margin-top: 60px;
+  margin-left: -30px;
+  width: 115%;
+  margin-bottom: 20px;
+  background-color: #b2dc9c80;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.panel-heading 
+{
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.table
+{
+  background:#fffcfcab;
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-#content {
+#content 
+{
     padding: 0px;
     min-height: 100vh;
     transition: all 0.3s;
