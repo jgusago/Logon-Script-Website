@@ -130,7 +130,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
             <p><strong>Reports</strong></p>
         </div>
     </div>
-    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top:-860px; margin-left: 252px;">
+    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top:-864px; margin-left: 252px;">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab0default" data-toggle="tab">Computer Logs</a></li>
