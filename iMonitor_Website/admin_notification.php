@@ -159,7 +159,7 @@ exit();
 		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
-		        <li class="active">
+		        <li>
 		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
@@ -180,9 +180,61 @@ exit();
 		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
-		</nav>
+        </nav>
+        <div class="container">
+            <div class="panel">
+                <div class="col-lg-12">
+                    <div class="panel with-nav-tabs pane-default">
+                        <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab1default" data-toggle="tab">Notifications</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade in active" id="tab1default">
+                            <div class="pane pane--1">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Details</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>End Task</td>
+                                            <td>Hostname: ITOMPH084 <br> User: Kemerut</td>
+                                            <td>Sept 19, 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <td>End Task</td>
+                                            <td>Hostname: ITWEB039089 <br> User: Veh</td>
+                                            <td>Sept 19, 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <td>End Task</td>
+                                            <td>Hostname: ITWEB039075 <br> User: Mamsh</td>
+                                            <td>Sept 19, 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <td>End Task</td>
+                                            <td>Hostname: ITOMNET039081 <br> User: Jemina</td>
+                                            <td>Sept 19, 2018</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>               
     <!-- End of Sidebar -->
+
+
 
     
 	<script>
