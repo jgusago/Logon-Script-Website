@@ -33,7 +33,7 @@ $ID=$_GET['id'];
     </div>  
 
         <?php
-		      $stmt = $db->query("SELECT id FROM tbl_user WHERE id='$ID'");
+		      $stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
 		      $stmt->execute();
 		      for($i=0; $row = $stmt->fetch(); $i++){
 		      $id=$row['id'];
