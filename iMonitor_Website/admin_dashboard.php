@@ -88,7 +88,7 @@ exit();
                     </ul>
                 </li>
 	            <li class="dropdown" style="padding-left: 5px;">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
                     <?php
                         $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
@@ -165,6 +165,7 @@ exit();
     
     <div class="container" style="margin-top:-900px;">
         <p id="demo"></p>
+                    
     </div>
 
 	<script>
