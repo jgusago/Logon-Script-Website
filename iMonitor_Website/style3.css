@@ -149,7 +149,6 @@ p
 }
 #sidebar 
 {
-    margin-top:30px;
     min-width: 250px;
     height: -webkit-fill-available;
     max-width: 250px;
@@ -157,6 +156,7 @@ p
     color: black;
     transition: all 0.3s;
     box-shadow: 1px 1px #d2cbcb;
+    margin-top:30px;
 }
 a, a:hover, a:focus 
 {
@@ -216,6 +216,7 @@ ul ul a {
 
 .info
 {
+    margin-top:-11px;
     width:100%;
     background-color:#103d8a;
     top: 7.6%;
@@ -224,7 +225,6 @@ ul ul a {
     height:45px;
     position: absolute;
     display: block;
-    margin-top:-11px;
 }
 .info p
 {
