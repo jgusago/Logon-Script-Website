@@ -184,7 +184,7 @@ exit();
         <div class="container" style="width:2000px;">
             <div class="panel" style="margin-top: 0px; background-color: #bdda96; margin-left: -15px;">
                 <div class="col-lg-12">
-                    <div class="panel with-nav-tabs pane-default">
+                    <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;">
                         <div class="panel-heading">
                             <ul class="nav nav-tabs">
                                 <li class="active">
@@ -193,7 +193,7 @@ exit();
                             </ul>
                         </div>
                         <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 500px;">
+                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px;">
                                 <table class="table">
                                     <thead>
                                         <tr>
