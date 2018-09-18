@@ -28,7 +28,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         <div class="col-md-3">
                             <input type="text" id="to_date" name="to_date" class="form-control" placeholder="To Date"> 
                         </div>
-						<input type="button" id="btn_filter" name="btn_filter" value="Filter" class="btn btn-success" onclick="">   
+						<input type="button" id="btn_filter" name="btn_filter" value="Filter" class="btn btn-success" onclick="function()">   
     </div>  
 
  							<div style="clear:both; padding:15px;">
