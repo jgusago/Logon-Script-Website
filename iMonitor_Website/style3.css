@@ -307,8 +307,7 @@ thead th
 }
 .modal-footer 
 {
-        padding: 10;
-  
+        padding: 10; 
 }    
 .modal-footer .btn-group button 
 {
@@ -323,10 +322,6 @@ u
 	float:left;
 	padding-top: 9px;
 }
-/* .checkbox
-{
-    margin-left: -170px;
-} */
 .modal-form td
 {
 	padding:5px;

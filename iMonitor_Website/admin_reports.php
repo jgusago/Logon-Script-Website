@@ -348,61 +348,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </div>
                     </div>
                 </div>
-                <!-- <div class="tab-pane fade" id="tab3default">
-                    <div class="pane pane--table1" style="padding-right: 55px;">
-                        <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" id="from_date3" placeholder="From Date"> 
-                        </div>
-                        <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" id="to_date3" placeholder="To Date"> 
-                        </div>
-                        <div class="col-md-3">
-                            <select name="department" id="department" class="form-control">
-                                <option value="" selected>--All department--</option>
-                                <option value="Marvin 5th">Marvin 5th</option>
-                                <option value="Marvin 10th">Marvin 10th</option>
-                                <option value="AT">AT</option>
-                            </select> 
-                        </div>
-                        <div class="col-md-3">
-                            <select name="dub_dept" id="sub_dept" class="form-control">
-                                <option value="" selected>--All sub department</option>
-                                <option value="OM">IT-OM</option>
-                                <option value="AUD">IT-AUD</option>
-                                <option value="WEB">IT-WEB</option>
-                            </select>
-                        </div>
-                        <div class="col-md-8"><br>
-                            <input type="text" id="search-user" name="search-user" class="form-control" placeholder="Search for user... ">
-                        </div>
-                        <div class="col-md-4">
-                            <br>
-                            <input type="button" name="clear" id="clear" value="Clear" class="btn btn-default">
-                            <input type="button" name="Excel" id="Excel" value="Excel" class="btn btn-success" onclick="">
-                            <input type="button" name="PDF" id="PDF" value="PDF" class="btn btn-danger" onclick="">
-                        </div>
-                        <div style="clear:both; padding:15px;">
-                            <table class="table table-bordered" id="comp_logs">
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Computer Name</th>
-                                    <th>IP Address</th>
-                                    <th>Platform</th>
-                                    <th>Status</th>
-                                    <th>Remarks</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>ITOMAU033022</td>
-                                    <td>192.168.33.22</td>
-                                    <td>Windows PC</td>
-                                    <td>End Task</td>
-                                    <td>Trasferred</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
