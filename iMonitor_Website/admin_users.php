@@ -440,25 +440,6 @@ $ID=$_GET['id'];
 </html>
 
 <script>
-       $(document).ready(function(){
-            $(".dropdown").hover(            
-                function() {
-                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-                    $(this).toggleClass('open');        
-                },
-                function() {
-                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-                    $(this).toggleClass('open');       
-                }
-            );
-        });
-
-                $(document).ready(function () {
-                        $('#sidebarCollapse').on('click', function () {
-                            $('#sidebar').toggleClass('active');
-                        });
-                    });
-					  
         function isNumber(input) {
           var regex =/[^0-9]/gi;
           input.value = input.value.replace(regex,"");
@@ -482,6 +463,25 @@ $ID=$_GET['id'];
             {
                 x.type = "password";
             }
-        }       
+		}  
+		
+		$(document).ready(function(){
+            $(".dropdown").hover(            
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                    $(this).toggleClass('open');        
+                },
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                    $(this).toggleClass('open');       
+                }
+            );
+        });
+
+                $(document).ready(function () {
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar').toggleClass('active');
+                        });
+                    });
     </script>
 
