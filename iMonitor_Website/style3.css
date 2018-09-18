@@ -145,10 +145,11 @@ p
     display: block;
     /* align-items: stretch; */
     height: 100vh;
+    width: 250px;
 }
 #sidebar 
 {
-    margin-top:10px;
+    margin-top:30px;
     min-width: 250px;
     height: -webkit-fill-available;
     max-width: 250px;
@@ -223,7 +224,7 @@ ul ul a {
     height:45px;
     position: absolute;
     display: block;
-    margin-top:-3px;
+    margin-top:-11px;
 }
 .info p
 {
