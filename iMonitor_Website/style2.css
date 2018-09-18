@@ -14,7 +14,7 @@ p
 }
 .navbar-default
 {
-    height:70px; 
+    height:60px; 
     padding:10px;
 }
 .navbar {
@@ -108,7 +108,7 @@ p
 }
 #sidebar 
 {
-    margin-top:40px;
+    margin-top:30px;
     min-width: 250px;
     height: -webkit-fill-available;
     max-width: 250px;
@@ -170,9 +170,8 @@ a[aria-expanded="true"]::before
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background:#fff8c4b5;
+    /* background:#fff8c4b5; */
 }
-
 .info
 {
     width:100%;
@@ -183,7 +182,7 @@ ul ul a {
     height:45px;
     position: fixed;
     display: block;
-    margin-top:-3px;
+    margin-top:-11px;
 }
 .info p
 {
