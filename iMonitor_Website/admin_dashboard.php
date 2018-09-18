@@ -83,7 +83,7 @@ exit();
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href=""><small><em>Show all notifications</em></small></a>
+                            <a href=""><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>
