@@ -133,8 +133,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         <div class="panel-heading">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab0default" data-toggle="tab">Computer Logs</a></li>
-                <li><a href="#tab2default" data-toggle="tab">Active List</a></li>
-                <li><a href="#tab3default" data-toggle="tab">Inactive List</a></li>
+                <li><a href="#tab2default" data-toggle="tab">Computer List</a></li>
             </ul>
         </div>
         <div class="panel-body">
