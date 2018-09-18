@@ -207,7 +207,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['status']; ?></td>
 						
 						<!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value= "echo '$_SESSION['id'] = $id ';" >Edit Record</button></td>-->
-                        <td><a href="test_edit.php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+                        <td><a href="test_edit.php <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
 					<?php } ?>
             	</tbody>
