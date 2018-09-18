@@ -112,7 +112,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-		<nav id="sidebar">
+		<nav id="sidebar" style="margin-top:30px;">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
@@ -141,7 +141,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	<!-- End of Sidebar -->
 
     <!-- Table -->
-    <div class="info" style="margin-left:250px;">
+    <div class="info" style="margin-left:250px; margin-top:-11px;">
         <p><strong>Reports</strong></p>
     </div>
     </div>
