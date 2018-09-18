@@ -17,7 +17,7 @@ p
     font-size: 15px;
     line-height: 1.7em;
     color: black;
-    margin-top: inherit;
+    /* margin-top: inherit; */
 }
 a, a:hover, a:focus {
     color: inherit;
