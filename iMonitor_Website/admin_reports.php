@@ -182,10 +182,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 <div class="tab-pane fade in active" id="tab0default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" name="from_date" class="form-control" id="from_date" placeholder="From Date"> 
+                            <input type="text" name="from_date" class="form-control" placeholder="From Date" id="from_date"/> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" name="to_date" class="form-control" id="to_date" placeholder="To Date"> 
+                            <input type="text" name="to_date" class="form-control" placeholder="To Date" id="to_date"/> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -382,7 +382,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     </script>
 
-
+    <script src = "ajax.js"></script>
 <!-- <script>
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
@@ -488,8 +488,6 @@ var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla"
 autocomplete(document.getElementById("user"), countries);
 </script> -->
 </body>
-<input type="button" name="btn_filter" id="btn_filter" value="Filter" class="btn btn-success">
-<script src = "ajax.js"></script>
 </html>
     
 
