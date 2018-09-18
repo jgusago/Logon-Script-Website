@@ -382,7 +382,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     </script>
 
-<script src = "ajax.js"></script>
 
 <!-- <script>
     function autocomplete(inp, arr) {
@@ -489,6 +488,7 @@ var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla"
 autocomplete(document.getElementById("user"), countries);
 </script> -->
 </body>
+<script src = "ajax.js"></script>
 </html>
     
 
