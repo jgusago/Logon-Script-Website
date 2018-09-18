@@ -8,7 +8,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>SKYLUSTER</title>
-    <link href="test.css" rel="stylesheet" type="text/css" />
   
   </head>
   <body>
@@ -22,11 +21,17 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
       <center>
         <h3><p>Search</p></h3>
       </center>  
-    <div>
-          
+    					<div>
+						<div class="col-md-3">
+                            <input type="text" id="from_date" name="from_date" class="form-control" placeholder="From Date"> 
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="to_date" name="to_date" class="form-control" placeholder="To Date"> 
+                        </div>
+	<input type="button" id="btn_filter" name="btn_filter"  value="Filter" class="btn btn-success">   
     </div>  
 
- <div style="clear:both; padding:15px;">
+ 							<div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
                             <thead>
                                 <tr>
