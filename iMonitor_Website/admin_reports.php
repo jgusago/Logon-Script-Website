@@ -42,11 +42,29 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:5px;">
-				<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
+	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
-	            <li class="dropdown">
+                    <a href="#" style="padding-right: 30px; margin-top: 5px;">
+                        <span class="glyphicon glyphicon-envelope"></span></a></li> 
+				<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
+                        <span class="glyphicon glyphicon-bell"></span>
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;">22</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><strong>New computer added</strong><br>
+                            <small><em>New Computer added into databse</em></small></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><strong>New computer added</strong><br>
+                            <small><em>New Computer added into databse</em></small></a>
+                        </li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
                     
                     <?php
@@ -59,17 +77,15 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         echo 'Welcome: ' . $row['name'];
                         }
                     ?>
-
-                    <span class="glyphicon glyphicon-down"></span>
-	            	</a>
-	            		<ul class="dropdown-menu" role="menu">
-	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
-	            			<li class="sub-header"><a href="#">Account Settings</a></li>
-	            			<li class="divider"></li>
-	            			<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
-	            		</ul>
+	                </a>
+	            	<ul class="dropdown-menu" role="menu">
+	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
+	            		<li class="sub-header"><a href="#">Account Settings</a></li>
+	            		<li class="divider"></li>
+	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+	            	</ul>
 	            </li>
-	        </ul>
+            </ul>
 	</nav>
 	<!-- End Navigation-->
 
@@ -359,6 +375,27 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
             $( "#from_date3" ).datepicker();
             $( "#to_date3" ).datepicker();
         } );
+
+         $(document).ready(function(){
+            $(".dropdown").hover(            
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                    $(this).toggleClass('open');        
+                },
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                    $(this).toggleClass('open');       
+                }
+            );
+        });
+
+                $(document).ready(function () {
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar').toggleClass('active');
+                        });
+                    });
+        
+
     </script>
 
 <script src = "ajax.js"></script>
