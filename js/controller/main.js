@@ -210,7 +210,7 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid){
             var loop = 0;
 
             while(newdata[loop]){
-                load_branchcomputerlist_content(newdata[loop],rowdiv,parent);
+                load_branchcomputerlist_content(newdata[loop],newdiv,parent);
                 loop++;
             }
         }
