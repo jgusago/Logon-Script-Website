@@ -91,4 +91,5 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     </div>
     </div>
   </body>
+  <script src = "ajax.js"></script>
 </html>
