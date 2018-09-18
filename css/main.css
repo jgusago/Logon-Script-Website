@@ -448,9 +448,7 @@ footer.sticky-footer {
     background-color: green;
 }
 
-
-
-#root li a{
+#root li a, #rootII li a{
   cursor: pointer;
 }
 #loaderdiv{
