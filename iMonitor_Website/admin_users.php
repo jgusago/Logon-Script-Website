@@ -325,7 +325,7 @@ $ID=$_GET['id'];
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
 					<?php     
-              			$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '$_SESSION['userid']' ";
+              			$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid =".$_SESSION['userid'];
               			$stmt = $db->prepare($sql);
               			$stmt->execute();
 						$count = 1;
