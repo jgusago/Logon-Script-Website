@@ -28,7 +28,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         <div class="col-md-3">
                             <input type="text" id="to_date" name="to_date" class="form-control" placeholder="To Date"> 
                         </div>
-	<input type="button" id="btn_filter" name="btn_filter"  value="Filter" class="btn btn-success">   
+						<input type="button" id="btn_filter" name="btn_filter" value="Filter" class="btn btn-success" onclick="">   
     </div>  
 
  							<div style="clear:both; padding:15px;">
@@ -55,13 +55,12 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <tbody id = "load_data">
                                     <?php
                                        $sql = "select user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, 
-                                       iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log 
-                                       WHERE user != 'Administrator' ";
+                                       iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log";
                                        $stmt = $db->prepare($sql);
                                        $stmt->execute();
                                        $count = 1;
-                                       foreach($stmt as $row) {
-                                       //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+                                       //foreach($stmt as $row) {
+                                       while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 	            	                 ?>
                                 <tr> 
                                     <td><?php echo $count++ ?></td>

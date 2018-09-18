@@ -5,12 +5,12 @@ $to_date = date("Y-m-d", strtotime($_POST['to_date']));
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	
-$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log";
+$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log scan_time BETWEEN $from_date and $to_date";
 $stmt = $db->prepare($sql);
 $row_count = $stmt->rowCount();
 if($row_count > 0){
-    foreach($stmt as $row) {
-    //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+    //foreach($stmt as $row) {
+    while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 	?>
 	<tr>
 		<td><?php echo $row['log_no']; ?></td>
