@@ -378,6 +378,8 @@ $(document).ready(function(){
 function selectUser(val) {
 $("#user").val(val);
 $("#suggestion_list").hide();
+var x = document.getElementById("user");
+    x.value = x.value();
 }
 </script>
 </body>
