@@ -182,7 +182,7 @@ exit();
 	   		</ul>
         </nav>
         <div class="container" style="width:2000px;">
-            <div class="panel" style="margin-top: 60px; background-color: #b2dc9c80;">
+            <div class="panel" style="margin-top: 60px; background-color: #bdda96;">
                 <div class="col-lg-12">
                     <div class="panel with-nav-tabs pane-default">
                         <div class="panel-heading">
