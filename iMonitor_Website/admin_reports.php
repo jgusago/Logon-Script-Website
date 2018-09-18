@@ -209,7 +209,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         <div class="col-md-4">
                             <br>
                             <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                            <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
+                            <input type="button" name="btn_filter" id=btn_filter value="Filter" class="btn btn-success" onclick="">
                             <input type="button" id="btn_search" name="btn_search"  value="Search" class="btn btn-danger">
                         </div>
                         <div style="clear:both; padding:15px;">
