@@ -211,7 +211,7 @@ a[aria-expanded="true"]::before
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background:#dfdcdc;
+    /* background:#dfdcdc; */
 }
 
 .info
