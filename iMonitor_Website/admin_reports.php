@@ -294,7 +294,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Remarks</th>
                                 </tr>
                                 <?php
-		            	               $sql = "select user,hostname, ip_address,iMonitor_Status,connection_status, from tbl_log WHERE user != 'Administrator' ";
+		            	               $sql = "select user,hostname, ip_address,iMonitor_Status,connection_status from tbl_log WHERE user != 'Administrator' ";
                                        $stmt = $db->prepare($sql);
                                        $stmt->execute();
                                        $count = 1;
