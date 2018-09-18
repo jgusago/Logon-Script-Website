@@ -181,8 +181,8 @@ exit();
 		        </li>	  
 	   		</ul>
         </nav>
-        <div class="container">
-            <div class="panel">
+        <div class="container" style="width:2000px;">
+            <div class="panel" style="margin-top: 60px;">
                 <div class="col-lg-12">
                     <div class="panel with-nav-tabs pane-default">
                         <div class="panel-heading">
