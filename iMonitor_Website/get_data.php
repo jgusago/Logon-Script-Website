@@ -1,6 +1,6 @@
 <?php
-$from_date = date("Y-m-d", strtotime($_POST['from_date']));
-$to_date = date("Y-m-d", strtotime($_POST['to_date']));
+$from_date = date("mm-dd-Y", strtotime($_POST['from_date']));
+$to_date = date("mm-dd-Y", strtotime($_POST['to_date']));
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
