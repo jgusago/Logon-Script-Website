@@ -204,12 +204,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             </select>
                         </div>
                         <div class="col-md-8"><br>
-                            <!-- <form autocomplete="off" action="">
-                                <div class="autocomplete" style="width:300px;"> -->
                                     <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
-                                <!-- </div>
-                            </form> -->
-                            <div id="suggestion_list"></div>
                         </div>
                         <div class="col-md-4">
                             <br>
