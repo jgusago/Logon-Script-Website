@@ -75,7 +75,7 @@ $ID=$_GET['id'];
                             }
                         ?>
                         <li>
-                            <a href=""><small>Show all notifications</small></a>
+                            <a href="admin_notifications.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>

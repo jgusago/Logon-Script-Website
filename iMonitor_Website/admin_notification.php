@@ -160,7 +160,7 @@ exit();
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
 		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
