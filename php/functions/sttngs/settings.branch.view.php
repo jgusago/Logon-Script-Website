@@ -17,17 +17,14 @@ foreach($result as $row){
 }
 
     $parent = "root";
-    echo "root";
-    $tab = "";
-    getchild($parent,$tab);
+    getchild($parent);
 
 
 //function
 
-function getchild($parent,$tab){
+function getchild($parent){
     $colcount = 0;
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-    $tab = $tab."&nbsp&nbsp&nbsp&nbsp&nbsp";
 
     $bvtreecode = "SELECT * FROM logonscript.tbl_tree
     WHERE treeparent LIKE :parent";
@@ -35,28 +32,32 @@ function getchild($parent,$tab){
     $pdo2 = $db->prepare($bvtreecode);
     $pdo2->bindParam(":parent",$parent);
     $pdo2->execute();
-
+    $countroom = 0;
     $treeresult = $pdo2->fetchAll();
 foreach($treeresult as $row){
     $name = $row['treename'];
-    echo "|$name:";
-    $childcount = colcount($name,$parent,0);
-    echo "$childcount";
-    getchild($name,$tab);
-
+    $childcount = colcount($name,0);
+    $trtd = colbreaker($parent,$name,0);
+    if($parent == "root" && $countroom == 0){
+        //do nothing
+    }
+    else{
+        echo "||";
+    }
+    echo "$name;$childcount;$trtd";
+    getchild($name);
+    $countroom++;
 }
 
 }
 
-function colcount($ccparent,$ccgrandparent,$colcount){
+function colcount($ccparent,$colcount){
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     $cc = $colcount;
 
     $ccquery = "SELECT * FROM logonscript.tbl_tree WHERE treeparent LIKE :ccparent";
-    //echo "<br>SELECT * FROM logonscript.tbl_tree WHERE treename LIKE $ccparent AND treeparent LIKE $ccgrandparent";
     $ccpdo = $db->prepare($ccquery);
     $ccpdo->bindParam(":ccparent",$ccparent);
-    //$ccpdo->bindParam(":ccgrandparent",$ccgrandparent);
     $ccpdo->execute();
     $ccrowcount = $ccpdo->rowCount();
     $ccresult = $ccpdo->fetchAll();
@@ -64,7 +65,7 @@ function colcount($ccparent,$ccgrandparent,$colcount){
     if($ccrowcount>0){
         foreach($ccresult as $row){
             $ccname = $row['treename'];
-            $cc = colcount($ccname,$ccparent,$cc);
+            $cc = colcount($ccname,$cc);
         }
     }
     else{
@@ -72,6 +73,33 @@ function colcount($ccparent,$ccgrandparent,$colcount){
     }
     return $cc;
 }
+
+function colbreaker($parent,$name){
+    require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+    $brkquery = "SELECT * FROM logonscript.tbl_tree WHERE treeparent LIKE :brkparent";
+    $brkpdo = $db->prepare($brkquery);
+    $brkpdo->bindParam(":brkparent",$parent);
+    $brkpdo->execute();
+    $brkcount = $brkpdo->rowCount();
+    $brkresult = $brkpdo->fetchAll();
+    $count = 0;
+    $countII = 0;
+    foreach($brkresult as $row){
+        $brkcurrentrow[$count] = $row['treename'];  
+        $count++;
+    }
+
+    for($countII=0;$brkcurrentrow[$countII] != $name; $countII++){
+    }
+
+    if($countII > 0 || $parent == 'root'){
+        return "tr";
+    }
+    else{
+        return "td,";
+    }
+}
+
 
 
 
