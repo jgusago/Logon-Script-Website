@@ -61,7 +61,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                     ?>
 
                     <span class="glyphicon glyphicon-down"></span>
-	            	<span class="caret"></span></a>
+	            	</a>
 	            		<ul class="dropdown-menu" role="menu">
 	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
 	            			<li class="sub-header"><a href="#">Account Settings</a></li>
