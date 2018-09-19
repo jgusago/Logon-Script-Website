@@ -63,7 +63,7 @@ exit();
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>
-                    <p id="demo"></p>
+                    <p id="demo" hidden></p>
                 </li>
 
                 <script>
