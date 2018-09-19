@@ -11,7 +11,7 @@ $(document).ready(function(){
 			setTimeout(function(){
 				$loader.remove();
 				$.ajax({
-					url: '../../php/connection/get_data_byname.php',
+					url: 'get_data_byname.php',
 					type: 'POST',
 					data: {
 						user: $user
