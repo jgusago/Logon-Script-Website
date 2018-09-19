@@ -529,7 +529,7 @@ autocomplete(document.getElementById("user"), countries);
             var pdf = new jsPDF('p', 'pt', 'letter');
             // source can be HTML-formatted string, or a reference
             // to an actual DOM element from which the text will be scraped.
-            source = $('#load_data')[0];
+            source = $('#comp_logs')[0];
 
             // we support special element handlers. Register them with jQuery-style 
             // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
