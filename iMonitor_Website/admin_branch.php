@@ -181,7 +181,13 @@ exit();
 		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
-		</nav>
+        </nav>
+        <div class="container">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active">Branch Settings</li>
+                <li></li>
+            </ul>
+        </div>
 	</div>               
     <!-- End of Sidebar -->
 
