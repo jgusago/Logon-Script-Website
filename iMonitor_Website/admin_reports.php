@@ -320,7 +320,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Remarks</th>
                                 </tr>
                                 <thead>
-                                <tbody id = "load_data">
+                                <tbody id = "load_datal">
                                 <?php
 		            	               $sql = "select user,hostname, ip_address,iMonitor_Status,connection_status from tbl_log WHERE user != 'Administrator' ";
                                        $stmt = $db->prepare($sql);
