@@ -690,8 +690,6 @@ function miniwindow_computer_details(host){
     var cb = document.getElementById("mncb");
     var cf = document.getElementById("mncf");
 
-    document.getElementById("mncb").innerHTML = "";
-
     //Clear Previous Text
     ch.innerHTML = "";
     cb.innerHTML = "";
@@ -773,6 +771,67 @@ function overlay(){
 function addbranch(){
     document.getElementById("overlay").style.display = "block";
     document.getElementById("miniwindow").style.display = "block";
+
+        //get mini window ID;
+        var ch = document.getElementById("mnch");
+        var cb = document.getElementById("mncb");
+        var cf = document.getElementById("mncf");
+    
+        //Clear Previous Text
+        ch.innerHTML = "";
+        cb.innerHTML = "";
+        cf.innerHTML = "";
+
+        var form = document.createElement("form");
+        cb.appendChild(form);
+
+        var fgi = document.createElement("div");
+        fgi.classList.add("form-group");
+        form.appendChild(fgi);
+
+            var labeli = document.createElement("label");
+            labeli.setAttribute("for","addparentname");
+            fgi.appendChild(labeli);
+
+            var inputi = document.createElement("input");
+            inputi.setAttribute("id","addparentname");
+            inputi.setAttribute("type","text");
+            inputi.setAttribute("readonly");
+            fgi.appendChild(inputi);
+
+        var fgii = document.createElement("div");
+        fgii.classList("from-group");
+        form.appendChild(fgii);
+
+            var labelii = document.createElement("label");
+            labelii.setAttribute("for","addchildname");
+            fgii.appendChild(labeii);
+
+            var inputii = document.createElement("input");
+            inputii.setAttribute("id","addchildname");
+            inputii.setAttribute("type","text");
+            fgii.appendChild(inputii);
+
+        var fgiii = document.createElement("div");
+        fgiii.classList.add("form-group");
+        from.appendChild(fgiii);
+
+            var labeliii = document.createElement("label");
+            labeliii.setAttribute("for","addchildcondition");
+            fgiii.appendChild(labeliii);
+
+            var inputiii = document.createElement("input");
+            inputiii.setAttribute("id","addchildcondition");
+            inputiii.setAttribute("type","text");
+            fgiii.appendChild(inputiii);
+
+        var btn = document.createElement("button");
+        btn.classList.add("btn");
+        btn.classList.add("btn-primary");
+        form.appendChild(btn);
+
+            var btntxt = document.createTextNode("Add");
+            btn.appendChild(btntxt);
 }
 
 function editbranch(){
