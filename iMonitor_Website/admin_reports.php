@@ -309,6 +309,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         </div>
                         <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
+                                <thead>
                                 <tr>
                                     <th>No.</th>
                                     <th>Computer Name</th>
@@ -317,6 +318,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <th>Port Connection</th>
                                     <th>Remarks</th>
                                 </tr>
+                                <thead>
+                                <tbody id = "load_data">
                                 <?php
 		            	               $sql = "select user,hostname, ip_address,iMonitor_Status,connection_status from tbl_log WHERE user != 'Administrator' ";
                                        $stmt = $db->prepare($sql);
@@ -339,6 +342,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     ?></td>
                                 </tr>
                                 <?php } ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>
