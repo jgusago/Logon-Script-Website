@@ -182,7 +182,7 @@ exit();
 	   		</ul>
         </nav>
         <div class="container" style="width:2000px;">
-            <div class="panel" style="margin-top: 0px; background-color: #bdda96; margin-left: -15px;">
+            <div class="panel" style="margin-top: 60px; background-color: #e3e5e3eb;">
                 <div class="col-lg-12">
                     <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;">
                         <div class="panel-heading">
@@ -193,7 +193,7 @@ exit();
                             </ul>
                         </div>
                         <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px; background-color: background-color: #d5d5d5b5;">
+                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px; width: 92%;">
                                 <table class="table table-hover" style="background: #ffffff;">
                                     <thead>
                                         <tr>
