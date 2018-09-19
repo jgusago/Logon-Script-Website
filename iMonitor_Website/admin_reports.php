@@ -389,6 +389,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     <script src = "../js/controller/ajax_bydate.js"></script>
     <script src = "../js/controller/ajax_byname.js"></script>
+    <script src = "../js/controller/ajax_bynamel.js"></script>
 <!-- <script>
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,

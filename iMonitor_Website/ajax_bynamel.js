@@ -13,7 +13,7 @@ $(document).ready(function(){
 			setTimeout(function(){
 				$loader.remove();
 				$.ajax({
-					url: 'get_data_bynamel.php',
+					url: 'get_data_byname.php',
 					type: 'POST',
 					data: {
 						user: $user
