@@ -3,7 +3,7 @@ $user = $_POST['user'];
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$sql = "select select user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, 
+$sql = "select user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, 
 iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log WHERE user='$user'";	
 //$sql = "select * from tbl_log WHERE user='$user'";
 $stmt = $db->prepare($sql);
