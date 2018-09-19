@@ -1,5 +1,7 @@
 <?php
+$from_date = $date.' '.$time
 $from_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['from_date']));
+$to_date = $date.' '.$time
 $to_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['to_date']));
 
 session_start();
