@@ -271,10 +271,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 <div class="tab-pane fade" id="tab2default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
                         <div class="col-md-3">
-                            <input type="text" id="from_date2" name="from_date" class="form-control" placeholder="From Date"> 
+                            <input type="text" id="from_date2" name="from_date2" class="form-control" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
-                            <input type="text" id="to_date2" name="to_date" class="form-control" placeholder="To Date"> 
+                            <input type="text" id="to_date2" name="to_date2" class="form-control" placeholder="To Date"> 
                         </div>
                         <div class="col-md-3">
                             <select name="department" id="department" class="form-control">
@@ -305,6 +305,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         <div class="col-md-4">
                             <br>
                             <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
+                            <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
                             <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
                             <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="">
                         </div>
@@ -389,6 +390,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     <script src = "../js/controller/ajax_bydate.js"></script>
     <script src = "../js/controller/ajax_byname.js"></script>
+    <script src = "../js/controller/ajax_bydatel.js"></script>
     <script src = "../js/controller/ajax_bynamel.js"></script>
 <!-- <script>
     function autocomplete(inp, arr) {
