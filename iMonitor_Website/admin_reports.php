@@ -54,7 +54,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style3.css">
 
-    <script type="text/javascript" src="jspdf.debug.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa; height:60px;">
@@ -237,7 +236,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <br>
                             <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                             <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
-                            <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="javascript:demoFromHTML()">
+                            <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
                             <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="">
                         </div>
                         <div style="clear:both; padding:15px;">
@@ -523,48 +522,6 @@ var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla"
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("user"), countries);
 </script> -->
-
-<script type="text/javascript">
-        function demoFromHTML() {
-            var pdf = new jsPDF('p', 'pt', 'letter');
-            // source can be HTML-formatted string, or a reference
-            // to an actual DOM element from which the text will be scraped.
-            source = $('#comp_logs')[0];
-
-            // we support special element handlers. Register them with jQuery-style 
-            // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
-            // There is no support for any other type of selectors 
-            // (class, of compound) at this time.
-            specialElementHandlers = {
-                // element with id of "bypass" - jQuery style selector
-                '#bypassme': function(element, renderer) {
-                    // true = "handled elsewhere, bypass text extraction"
-                    return true
-                }
-            };
-            margins = {
-                top: 80,
-                bottom: 60,
-                left: 40,
-                width: 522
-            };
-            // all coords and widths are in jsPDF instance's declared units
-            // 'inches' in this case
-            pdf.fromHTML(
-                    source, // HTML string or DOM elem ref.
-                    margins.left, // x coord
-                    margins.top, {// y coord
-                        'width': margins.width, // max width of content on PDF
-                        'elementHandlers': specialElementHandlers
-                    },
-            function(dispose) {
-                // dispose: object with X, Y of the last line add to the PDF 
-                //          this allow the insertion of new lines after html
-                pdf.save('Test.pdf');
-            }
-            , margins);
-        }
-    </script>
 
 </body>
 </html>
