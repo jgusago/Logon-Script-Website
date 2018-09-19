@@ -31,4 +31,5 @@ else {
         echo "<script>alert('Account updated successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
         }
     }
+}
 ?>
