@@ -66,7 +66,7 @@ exit();
                 <li>
                     <p id="demo" hidden><?php header('Refresh:1') ?></p>
                 </li>
-                <script>
+                <!-- <script>
                 var myVar = setInterval(myTimer, 60000);
 
                 function myTimer() 
@@ -75,7 +75,7 @@ exit();
                     document.getElementById("demo").innerHTML = d.toLocaleTimeString();
             
                 }
-                </script>
+                </script> -->
 
 				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
