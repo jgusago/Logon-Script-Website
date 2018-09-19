@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$ID=$_GET['id'];
+//$ID=$_GET['id'];
 ?>
 
 <!DOCTYPE html>
