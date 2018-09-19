@@ -64,6 +64,7 @@ $ID=$_GET['id'];
 
       <form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
 	    <input type="text" id="password2" name="password2"></td>
+		<input type="text" id="userid2" name="userid2"></td>
         <label for="username">Username:</label><br>
         <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID" onkeypress="return isNumberKey(event)"/><br>
         <label for="username">Name:</label><br>
@@ -163,6 +164,7 @@ $ID=$_GET['id'];
 	  <script type="text/javascript">
 						function populateSecondTextBox() {
    						document.getElementById('password2').value = document.getElementById('password').value;
+						document.getElementById('userid2').value = document.getElementById('userid').value;
 						}
 					</script>                                             
     </div>                                  
