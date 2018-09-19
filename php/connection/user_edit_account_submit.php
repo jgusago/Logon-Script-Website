@@ -22,7 +22,7 @@ if($_POST['userid'] !== $_POST['userid2']) {
     $row_count = $stmt->rowCount();
     
     if ($row_count > 0){
-        echo "<script>alert('Username exist!'); window.location='../../iMonitor_Website/test_edit.php'</script>";
+        echo "<script>alert('Username exist!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
     }
 else {
         $stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', status='$status', password='$hashed_password' WHERE id='$get_id'");
