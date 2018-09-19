@@ -1,15 +1,11 @@
 <?php
-$from_date = $date.' '.$time
-$from_date = date("MMM-dd-yyyy hh:mm", strtotime($from_date));
-//$from_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['from_date']));
-$to_date = $date.' '.$time
-$to_date = date("MMM-dd-yyyy hh:mm", strtotime($to_date));
-//$to_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['to_date']));
+$from_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['from_date']));
+$to_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['to_date']));
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	
-$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log WHERE scan_time BETWEEN '$from_date' AND '$to_date'";
+$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log WHERE scan_time BETWEEN 'Sep-11-2018 11:10' AND 'Sep-11-2018 11:10'";
 $stmt = $db->prepare($sql);
 $row_count = $stmt->rowCount();
 if($row_count > 0){
