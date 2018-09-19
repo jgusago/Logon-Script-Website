@@ -247,8 +247,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <tr> 
                                     <td><?php echo $count++ ?></td>
                                     <td><?php echo $row['user']; ?></td>
-                                    <td><?php echo $row['domain_name']; ?></td>
                                     <td><?php echo $row['hostname']; ?></td>
+                                    <td><?php echo $row['domain_name']; ?></td>
                                     <td><?php echo $row['ip_address']; ?></td>
                                     <td><?php echo $row['ip_date_modified']; ?></td>
                                     <td><?php echo $row['old_ip_address']; ?></td>
