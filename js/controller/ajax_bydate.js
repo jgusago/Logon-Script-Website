@@ -1,7 +1,9 @@
 $(document).ready(function(){
 	$('#from_date').datepicker();
 	$('#to_date').datepicker();
-	$('#btn_filter').on('click', function(){	
+	//$('#btn_filter').on('click', function(){	
+		$('#to_date').on('keypress', function(e){
+			if(event.keyCode==13){
 		if($('#from_date').val() == "" || $('#to_date').val() == ""){
 			alert("Please Select Date");
 		}else{
@@ -25,6 +27,7 @@ $(document).ready(function(){
 				});
 			}, 3000);
 		}	
+	}
 	});
 	
 	$('#reset').on('click', function(){
