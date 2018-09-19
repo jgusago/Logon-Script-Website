@@ -27,7 +27,7 @@ $(document).ready(function(){
 	}	
 	});
 	
-	$('#reset').on('click', function(){
+	$('#resetl').on('click', function(){
 		location.reload();
 	});
 });
