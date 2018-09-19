@@ -9,6 +9,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute(); 
 $row_count = $stmt->rowCount();
 if($row_count > 0){
+    foreach($stmt as $row) {
     //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 	?>
 	<tr>
