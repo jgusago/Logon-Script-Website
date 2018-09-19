@@ -1,8 +1,10 @@
 <?php
 $from_date = $date.' '.$time
-$from_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['from_date']));
+$from_date = date("MMM-dd-yyyy hh:mm", strtotime($from_date));
+//$from_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['from_date']));
 $to_date = $date.' '.$time
-$to_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['to_date']));
+$to_date = date("MMM-dd-yyyy hh:mm", strtotime($to_date));
+//$to_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['to_date']));
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
