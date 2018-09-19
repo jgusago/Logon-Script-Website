@@ -15,7 +15,7 @@ $status= $_POST['status'];
 $hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
 //$password= md5($_POST['password']);
 
-//if($_POST['userid'] !== $_POST['userid2']) {
+if($_POST['userid'] !== $_POST['userid2']) {
 if(!isset($error)){
     $stmt = $db->prepare("SELECT userid FROM tbl_user WHERE userid = :userid");
     $stmt->execute(array($userid));
@@ -31,5 +31,5 @@ else {
         echo "<script>alert('Account updated successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
         }
     }
-
+}
 ?>
