@@ -78,3 +78,12 @@ img {
 {
     background: #fefefe;
 }
+.nav>.nav-pills>.nav stacked
+{
+  margin-top: 60px;
+  background: #024c9e;
+  padding: 10px;
+  color: white;
+  margin-left: -15px;
+  width: 105%;
+}
