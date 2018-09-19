@@ -260,7 +260,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     <td><?php echo $row['serverIP']; ?></td>
                                     <td><?php echo $row['connection_status']?></td>
                                     <td><?php echo $row['branch']; ?></td>
-                                    <td><?php echo $row['scan_time']; ?></td>
+                                    <td><?php echo date("MMM-dd-yyyy hh:mm", strtotime($row['scan_time'])) ?></td>
                                 </tr>
                                 <?php } ?>
                                 </tbody>
