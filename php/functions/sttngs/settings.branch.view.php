@@ -96,7 +96,7 @@ function colbreaker($parent,$name){
         return "tr";
     }
     else{
-        return "td,";
+        return "td";
     }
 }
 

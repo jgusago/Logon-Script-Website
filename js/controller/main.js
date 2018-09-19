@@ -793,11 +793,18 @@ function addbranch(){
         cf.innerHTML = "";
 
         var form = document.createElement("form");
+        form.setAttribute("onsubmit","return addnewchild()");
         cb.appendChild(form);
+
+        var fg = document.createElement("div");
+        fg.classList.add("alert");
+        fg.setAttribute("id","addparentalert");
+        form.appendChild(fg);
 
         var fgi = document.createElement("div");
         fgi.classList.add("form-group");
         form.appendChild(fgi);
+
 
             var labeli = document.createElement("label");
             labeli.setAttribute("for","addparentname");
@@ -806,12 +813,31 @@ function addbranch(){
                 labeltxti = document.createTextNode("Select Parent Branch/Department");
                 labeli.appendChild(labeltxti);
 
-            var inputi = document.createElement("input");
+            var inputi = document.createElement("select");
             inputi.classList.add("form-control");
             inputi.setAttribute("id","addparentname");
-            inputi.setAttribute("type","text");
-            inputi.setAttribute("readonly","true");
             fgi.appendChild(inputi);
+
+                $.post("php/functions/sttngs/settings.branch.view.add.php",function(data){
+                    data = data.split("|");
+                    var loop = 0;
+                    var opt=[], opttxt=[];
+                    while(data[loop]){
+                        opt[loop] = document.createElement("option");
+                        inputi.appendChild(opt[loop]);
+
+                            opttxt[loop] = document.createTextNode(data[loop]);
+                            opt[loop].appendChild(opttxt[loop]);
+                        loop++;
+                    }
+
+                    var newoption = document.createElement("option");
+                    inputi.appendChild(newoption);
+
+                        var newoptxt = document.createTextNode("root");
+                        newoption.appendChild(newoptxt);
+
+                });
 
         var fgii = document.createElement("div");
         fgii.classList.add("from-group");
@@ -828,6 +854,7 @@ function addbranch(){
             inputii.classList.add("form-control");
             inputii.setAttribute("id","addchildname");
             inputii.setAttribute("type","text");
+            inputii.setAttribute("required",true);
             fgii.appendChild(inputii);
 
         var fgiii = document.createElement("div");
@@ -850,6 +877,7 @@ function addbranch(){
         var btn = document.createElement("button");
         btn.classList.add("btn");
         btn.classList.add("btn-primary");
+        btn.classList.add("btn-block");
         form.appendChild(btn);
 
             var btntxt = document.createTextNode("Add");
@@ -859,6 +887,26 @@ function addbranch(){
 function editbranch(){
     document.getElementById("overlay").style.display = "block";
     document.getElementById("miniwindow").style.display = "block";
+}
+
+function addnewchild(){
+
+    var parent = document.getElementById("addparentname");
+    var childname = document.getElementById("addchildname");
+    var condition = document.getElementById("addchildcondition");
+
+    $.post("php/functions/sttngs/settings.branch.view.add.data.php",{parent:parent,childname:childname,condition:condition},function(data){
+
+        if (data == "success"){
+
+        }
+        else{
+
+        }
+        return false;
+    });
+
+    return false;
 }
 /* ---------------------------- END of EVENT FUNCTIONS --------------------------- */
 
