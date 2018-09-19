@@ -193,8 +193,8 @@ exit();
                             </ul>
                         </div>
                         <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px;">
-                                <table class="table">
+                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px; background-color: background-color: #d5d5d5b5;">
+                                <table class="table table-hover" style="background: #ffffff;">
                                     <thead>
                                         <tr>
                                             <th>Subject</th>
