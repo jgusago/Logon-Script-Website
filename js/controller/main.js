@@ -766,6 +766,16 @@ function overlay(){
     document.getElementById("loaderdiv").style.display = "none";
     document.getElementById("miniwindow").style.display = "none";
 
+        //get mini window ID;
+        var ch = document.getElementById("mnch");
+        var cb = document.getElementById("mncb");
+        var cf = document.getElementById("mncf");
+    
+        //Clear Previous Text
+        ch.innerHTML = "";
+        cb.innerHTML = "";
+        cf.innerHTML = "";
+
 }
 
 function addbranch(){
@@ -793,34 +803,46 @@ function addbranch(){
             labeli.setAttribute("for","addparentname");
             fgi.appendChild(labeli);
 
+                labeltxti = document.createTextNode("Select Parent Branch/Department");
+                labeli.appendChild(labeltxti);
+
             var inputi = document.createElement("input");
+            inputi.classList.add("form-control");
             inputi.setAttribute("id","addparentname");
             inputi.setAttribute("type","text");
-            inputi.setAttribute("readonly");
+            inputi.setAttribute("readonly","true");
             fgi.appendChild(inputi);
 
         var fgii = document.createElement("div");
-        fgii.classList("from-group");
+        fgii.classList.add("from-group");
         form.appendChild(fgii);
 
             var labelii = document.createElement("label");
             labelii.setAttribute("for","addchildname");
-            fgii.appendChild(labeii);
+            fgii.appendChild(labelii);
+
+            labeltxtii = document.createTextNode("Branch/Department name");
+            labelii.appendChild(labeltxtii);
 
             var inputii = document.createElement("input");
+            inputii.classList.add("form-control");
             inputii.setAttribute("id","addchildname");
             inputii.setAttribute("type","text");
             fgii.appendChild(inputii);
 
         var fgiii = document.createElement("div");
         fgiii.classList.add("form-group");
-        from.appendChild(fgiii);
+        form.appendChild(fgiii);
 
             var labeliii = document.createElement("label");
             labeliii.setAttribute("for","addchildcondition");
             fgiii.appendChild(labeliii);
 
+            labeltxtiii = document.createTextNode("Add Condition for Computer names (Optional)");
+            labeliii.appendChild(labeltxtiii);
+
             var inputiii = document.createElement("input");
+            inputiii.classList.add("form-control");
             inputiii.setAttribute("id","addchildcondition");
             inputiii.setAttribute("type","text");
             fgiii.appendChild(inputiii);
