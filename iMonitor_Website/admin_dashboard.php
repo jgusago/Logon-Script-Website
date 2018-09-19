@@ -61,12 +61,27 @@ exit();
         <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
+            <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
+                <li>
+                    <p id="demo"></p>
+                </li>
+
+                <script>
+                var myVar = setInterval(myTimer, 1000);
+
+                function myTimer() 
+                {
+                    var d = new Date();
+                    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+                }
+                </script>
+
 				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li> 
+
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
@@ -220,10 +235,6 @@ exit();
             input.value = input.value.replace(regex,"");   
      }  
 
-     var myVar = setInterval(myTimer ,1000);
-function myTimer() {
-    var d = new Date();
-    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
 }
 	
 </body>
