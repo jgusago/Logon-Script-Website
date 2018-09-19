@@ -211,8 +211,7 @@ exit();
                                                 echo '
                                                 <tr>
                                                     <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'</td>
-                                                    <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'</td>
-                                                    <td>'.$row['branch'].'</td>
+                                                    <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].' Building : '.$row['branch'].'</td>
                                                     <td>'.$row['scan_time'].'</td>
                                                 </tr>
                                                 ';
