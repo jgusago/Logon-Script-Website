@@ -63,7 +63,7 @@ $ID=$_GET['id'];
     									</script>
 
       <form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
-	    <input type="hidden" id="password2" name="password2"></td>
+	    <input type="text" id="password2" name="password2"></td>
         <label for="username">Username:</label><br>
         <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID" onkeypress="return isNumberKey(event)"/><br>
         <label for="username">Name:</label><br>
