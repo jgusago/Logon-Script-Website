@@ -160,10 +160,10 @@ exit();
 		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
-		        <li class="active">
+		        <li>
 		            <a href="admin/_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
-		        <li>
+		        <li class="active">
 		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
