@@ -203,26 +203,21 @@ exit();
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>End Task</td>
-                                            <td>Hostname: ITOMPH084 <br> User: Kemerut</td>
-                                            <td>Sept 19, 2018</td>
-                                        </tr>
-                                        <tr>
-                                            <td>End Task</td>
-                                            <td>Hostname: ITWEB039089 <br> User: Veh</td>
-                                            <td>Sept 19, 2018</td>
-                                        </tr>
-                                        <tr>
-                                            <td>End Task</td>
-                                            <td>Hostname: ITWEB039075 <br> User: Mamsh</td>
-                                            <td>Sept 19, 2018</td>
-                                        </tr>
-                                        <tr>
-                                            <td>End Task</td>
-                                            <td>Hostname: ITOMNET039081 <br> User: Jemina</td>
-                                            <td>Sept 19, 2018</td>
-                                        </tr>
+                                        <?php
+                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                                            $query->execute();
+                                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                                            while ($row = $query->fetch()) {
+                                                echo '
+                                                <tr>
+                                                    <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'</td>
+                                                    <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'</td>
+                                                    <td>'.$row['branch'].'</td>
+                                                    <td>'.$row['scan_time'].'</td>
+                                                </tr>
+                                                ';
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
