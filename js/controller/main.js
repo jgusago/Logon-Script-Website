@@ -99,7 +99,7 @@ function load_branchviewbtn(){
             //Branch View
             bvbtn = document.createElement("a");
             bvbtn.setAttribute("id","branchviewbtn");
-            bvbtn.setAttribute("onclick","ddashboard_click_branchview(\"brancview\")");
+            bvbtn.setAttribute("onclick","dashboard_click_event(\"brancview\")");
             bvlist.appendChild(bvbtn);
 
             bvbtntxt = document.createTextNode("Branch View");
@@ -108,7 +108,7 @@ function load_branchviewbtn(){
             //Branch Computer
             bvcbtn = document.createElement("a");
             bvcbtn.setAttribute("id","branchcomputerbtn");
-            bvcbtn.setAttribute("onclick","dashboard_click_computer(\"branchcomputer\")");
+            bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputer\")");
             bvclist.appendChild(bvbtn);
 
             bvcbtntxt = document.createTextNode("Branch Computer List");
@@ -124,7 +124,7 @@ function load_branchviewbtn(){
 
             bva = document.createElement("a");
             //bva.setAttribute("href","#"+data[loop]);
-            bva.setAttribute("onclick","dashboard_click_branchview(\""+data[loop]+"\")");
+            bva.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"\")");
             bvnewli.appendChild(bva);
 
             anode = document.createTextNode(data[loop]);
@@ -135,7 +135,7 @@ function load_branchviewbtn(){
 
             bvca = document.createElement("a");
             //bva.setAttribute("href","#"+data[loop]);
-            bvca.setAttribute("onclick","dashboard_click_computer(\""+data[loop]+"-CL\")");
+            bvca.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
             bvcnewli.appendChild(bvca);
 
             anode = document.createTextNode(data[loop]);
@@ -331,7 +331,13 @@ function load_branchbiew_data(list, parent){
 
 
 }
+function load_branchcomputerlist_table(parent){
 
+    $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
+        
+    });
+
+}
 /* Tables */
 //Load Table List
 function load_list(status){
@@ -617,13 +623,33 @@ function settings_branchview(){
                 
             });
 
+        cardfoot = document.createElement("div");
+        cardfoot.classList.add("card-footer");
+        card.appendChild(cardfoot);
+
+        var toolbar = document.createElement("div");
+        toolbar.classList.add("btn-toolbar");
+        toolbar.classList.add("mb-3");
+        toolbar.setAttribute("role","toolbar");
+        cardfoot.appendChild(toolbar);
+
+        var inputgroup = document.createElement("div");
+        inputgroup.classList.add("btn-group");
+        inputgroup.classList.add("mr-2");
+        toolbar.appendChild(inputgroup);
+
         var btnadd = document.createElement("input");
         btnadd.setAttribute("type","button");
         btnadd.setAttribute("onclick","addbranch();");
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary")
         btnadd.value = "Add Another Branch";
-        cardbody.appendChild(btnadd);
+        inputgroup.appendChild(btnadd);
+
+        var inputgroupII = document.createElement("div");
+        inputgroupII.classList.add("btn-group");
+        inputgroupII.classList.add("mr-2");
+        toolbar.appendChild(inputgroupII);
 
         var btnadd = document.createElement("input");
         btnadd.setAttribute("type","button");
@@ -631,11 +657,7 @@ function settings_branchview(){
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary")
         btnadd.value = "Edit a Branch";
-        cardbody.appendChild(btnadd);
-
-        cardfoot = document.createElement("div");
-        cardfoot.classList.add("card-footer");
-        card.appendChild(cardfoot);
+        inputgroupII.appendChild(btnadd);
 
 }
 
@@ -645,7 +667,7 @@ function settings_branchview(){
 
 /* ------------------------------- EVENT FUNCTIONS ------------------------------- */
 // Hide All Div except Clicked DiV
-function dashboard_click_branchview(div){
+function dashboard_click_event(div){
     thisdiv = document.getElementById(div);
     divclass = document.getElementsByClassName("contentdataview");
     divclassl = divclass.length;
@@ -656,17 +678,7 @@ function dashboard_click_branchview(div){
     }
     thisdiv.removeAttribute("hidden","true");
 }
-function dashboard_click_computer(div){
-    thisdiv = document.getElementById(div);
-    divclass = document.getElementsByClassName("contentdataview");
-    divclassl = divclass.length;
-    for(var loop = 0; loop < divclassl; loop ++){
-        rootchilddiv = document.getElementsByClassName("contentdataview")[loop].id;
-        childdiv = document.getElementById(rootchilddiv);
-        childdiv.setAttribute("hidden","true");
-    }
-    thisdiv.removeAttribute("hidden","true");
-}
+
 // Mini Window Show Computer Details
 function miniwindow_computer_details(host){
 
@@ -713,8 +725,6 @@ function miniwindow_computer_details_data(tbody, host){
        var cftn = "Reference No:";
        var tr = [];
    
-       //th.setAttribute("colspan","\""+datahdrl+"\"");
-   
        rowl = data[0].split("|");
        rowlength = rowl.length;
    
@@ -743,16 +753,8 @@ function miniwindow_computer_details_data(tbody, host){
    
                tdnode = document.createTextNode(multiArray[j][i]);
                td.appendChild(tdnode);
-   
-   
-   
            }
-   
-   
-   
-   
        }
-   
    });
    
    
@@ -766,6 +768,16 @@ function overlay(){
     document.getElementById("loaderdiv").style.display = "none";
     document.getElementById("miniwindow").style.display = "none";
 
+}
+
+function addbranch(){
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("miniwindow").style.display = "block";
+}
+
+function editbranch(){
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("miniwindow").style.display = "block";
 }
 /* ---------------------------- END of EVENT FUNCTIONS --------------------------- */
 
