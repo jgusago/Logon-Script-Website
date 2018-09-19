@@ -293,7 +293,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             </select>
                         </div>
                         <div class="col-md-4"><br>
-                            <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                            <input type="text" id="userl" name="userl" class="form-control" placeholder="Search for user... ">
                         </div>
                         <div class="col-md-4"><br>
                             <select name="sub_status" id="sub_status" class="form-control">

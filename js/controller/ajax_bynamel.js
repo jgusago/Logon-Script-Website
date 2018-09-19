@@ -1,15 +1,15 @@
 $(document).ready(function(){
-	$('#user').text();
+	$('#userl').text();
 	//$('#btn_search').on('click', function(){	
-		$('#user').on('keypress', function(e){
+		$('#userl').on('keypress', function(e){
 			if(event.keyCode==13){
-		if($('#user').val() == ""){
+		if($('#userl').val() == ""){
 			alert("Please enter name");
 		}else{
-			$user = $('#user').val();
-			$('#load_data').empty();
+			$user = $('#userl').val();
+			$('#load_datal').empty();
 			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
-			$loader.appendTo('#load_data');
+			$loader.appendTo('#load_datal');
 			setTimeout(function(){
 				$loader.remove();
 				$.ajax({
@@ -19,7 +19,7 @@ $(document).ready(function(){
 						user: $user
 					},
 					success: function(res){
-						$('#load_data').html(res);
+						$('#load_datal').html(res);
 					}
 				});
 			}, 3000);
