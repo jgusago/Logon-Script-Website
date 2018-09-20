@@ -92,7 +92,7 @@ $ID=$_GET['id'];
 	    <input type="hidden" id="password2" name="password2"></td>
 		<input type="hidden" id="userid2" name="userid2"></td>
         <label for="username">Username:</label><br>
-        <input type="text" id="userid" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID" onkeypress="return isNumberKey(event)"/><br>
+        <input type="text" id="userid" pattern="[0-9]+" name="userid" value="<?php echo $row['userid']; ?>" required placeholder="Used ID" onkeypress="return isNumberKey(event)"/><br>
         <label for="username">Name:</label><br>
         <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/><br>
         <label for="password">Password:</label><br>
