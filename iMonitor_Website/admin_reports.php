@@ -338,7 +338,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printData('printable')" />
                         </div>
                         <div style="clear:both; padding:15px;">
-                            <table class="table table-bordered" id="comp_logs">
+                            <table class="table table-bordered" id="comp">
                                 <thead>
                                 <tr>
                                     <th>No.</th>
@@ -442,7 +442,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script type="text/javascript">
         function printData()
         {
-        var divToPrint=document.getElementById("comp_logs");
+        var divToPrint=document.getElementById("comp");
         newWin= window.open("");
         newWin.document.write(divToPrint.outerHTML);
         newWin.print();
