@@ -20,7 +20,7 @@ if($_POST['userid'] !== $_POST['userid2']) {
     $stmt = $db->prepare("SELECT userid FROM tbl_user WHERE userid = :userid");
     $stmt->execute(array($userid));
     $row_count = $stmt->rowCount();
-    
+    }
     if ($row_count > 0){
         echo "<script>alert('Username exist!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
     }
@@ -29,6 +29,5 @@ else {
         $stmt->execute(array());
         $affected_rows = $stmt->rowCount();
         echo "<script>alert('Account updated successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
-        }
-    }     
+        }    
 ?>
