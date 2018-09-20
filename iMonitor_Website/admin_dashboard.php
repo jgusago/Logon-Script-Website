@@ -39,7 +39,7 @@ exit();
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <meta http-equiv="refresh" content="300"> -->
+    <meta http-equiv="refresh" content="300">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -64,7 +64,9 @@ exit();
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>
-                    <p id="demo" hidden><?php header('Refresh:1') ?></p>
+                    <p id="demo" hidden>
+                        
+                    </p>
                 </li>
                 <!-- <script>
                 var myVar = setInterval(myTimer, 60000);
