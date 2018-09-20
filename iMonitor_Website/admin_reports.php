@@ -208,13 +208,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="tab0default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
-                        <div class="col-md-3">
+                        <!-- <div class="col-md-3">
                             <input type="text" id="from_date" name="from_date" class="form-control" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
                             <input type="text" id="to_date" name="to_date" class="form-control" placeholder="To Date"> 
-                        </div>
-                        <div class="col-md-3">
+                        </div> -->
+                        <div class="col-md-6">
                             <select name="department" id="department" class="form-control">
                                 <option value="" selected>--All department--</option>
                                 <option value="Marvin 5th">Marvin 5th</option>
@@ -222,7 +222,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <option value="AT">AT</option>
                             </select> 
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <select name="dub_dept" id="sub_dept" class="form-control">
                                 <option value="" selected>--All sub department</option>
                                 <option value="OM">IT-OM</option>
@@ -297,13 +297,13 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                 </div>
                 <div class="tab-pane fade" id="tab2default">
                     <div class="pane pane--table1" style="padding-right: 55px;">
-                        <div class="col-md-3">
+                        <!-- <div class="col-md-3">
                             <input type="text" id="from_date2" name="from_date2" class="form-control" placeholder="From Date"> 
                         </div>
                         <div class="col-md-3">
                             <input type="text" id="to_date2" name="to_date2" class="form-control" placeholder="To Date"> 
-                        </div>
-                        <div class="col-md-3">
+                        </div> -->
+                        <div class="col-md-6">
                             <select name="department" id="department" class="form-control">
                                 <option value="" selected>--All department--</option>
                                 <option value="Marvin 5th">Marvin 5th</option>
@@ -311,7 +311,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <option value="AT">AT</option>
                             </select> 
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <select name="dub_dept" id="sub_dept" class="form-control">
                                 <option value="" selected>--All sub department</option>
                                 <option value="OM">IT-OM</option>
