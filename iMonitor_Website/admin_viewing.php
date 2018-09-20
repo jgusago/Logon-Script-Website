@@ -129,9 +129,18 @@ $ID=$_GET['id'];
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i> Computer List</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a href="admin_viewing.php">Marvin 5th</a></li>
-                        <li><a href="admin_viewing.php">Marvin 10th</a></li>
-                        <li><a href="admin_viewing.php">COP</a></li>
+                        <?php 
+                            $query = $db->prepare("SELECT treename FROM tbl_tree");
+                            $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            while ($row = $query->fetch()) {
+                                echo '
+                                <li><a href="admin_viewing.php">'.$row['treename'].'</a></li>
+                                ';
+                            }
+                        ?>
+                        
                     </ul>
                 </li>
                 <li>
