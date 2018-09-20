@@ -134,9 +134,10 @@ $ID=$_GET['id'];
                             $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
                             $query->execute();
                             $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $count = 1;
                             while ($row = $query->fetch()) {
                                 echo '
-                                <li><a href="admin_viewing.php">'.$row['treename'].'</a></li>
+                                <li><a href="admin_viewing.php"><p value='.$count++.'>'.$row['treename'].'</p></a></li>
                                 ';
                             }
                         ?>
