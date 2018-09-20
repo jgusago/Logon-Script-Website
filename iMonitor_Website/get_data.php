@@ -5,7 +5,7 @@ $to_date = date("M-d-Y h:m", strtotime($_POST['to_date']));
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	
-$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log WHERE scan_time BETWEEN '$format_fromdate' AND '$format_todate'";
+$sql = "select log_no, user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log WHERE scan_time BETWEEN '$from_date' AND '$to_date'";
 $stmt = $db->prepare($sql);
 $count = 1; 
 $row_count = $stmt->rowCount();
