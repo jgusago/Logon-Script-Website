@@ -1,9 +1,9 @@
 <?php
 //$from_date = date("m/d/Y", strtotime($_POST['from_date']));
 //$to_date = date("m/d/Y", strtotime($_POST['to_date']));
-$from_date = new DateTime($POST['from_date']);
+$from_date = new DateTime($row['scan_time']);
 $format_fromdate = date_format($from_date, 'M-d-Y');
-$to_date = new DateTime($POST['to_date']);
+$to_date = new DateTime($POST['scan_time']);
 $format_todate = date_format($to_date, 'M-d-Y');
 
 session_start();
