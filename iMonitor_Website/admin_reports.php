@@ -335,7 +335,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
                             <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
                             <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
-                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="">
+                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv('printablediv')" />
                         </div>
                         <div style="clear:both; padding:15px;" id="print">
                             <table class="table table-bordered" id="comp_logs">
