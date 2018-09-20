@@ -337,7 +337,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
                             <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="">
                         </div>
-                        <div style="clear:both; padding:15px;">
+                        <div style="clear:both; padding:15px;" id="print">
                             <table class="table table-bordered" id="comp_logs">
                                 <thead>
                                 <tr>
@@ -426,17 +426,12 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     <script type="text/javascript">
     	function printDiv(divID) {
-        //Get the HTML of div
         var divElements = document.getElementById("print").innerHTML;
-        //Get the HTML of whole page
         var oldPage = document.body.innerHTML;
-        //Reset the page's HTML with div's HTML only
         document.body.innerHTML = 
           "<html><head><title></title></head><body>" + 
           divElements + "</body>";
-        //Print Page
         window.print();
-        //Restore orignal HTML
         document.body.innerHTML = oldPage;
 
     }
