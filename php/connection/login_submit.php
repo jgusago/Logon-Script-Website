@@ -29,7 +29,8 @@ else {
     $stmt->execute(); 
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-    if (count($row) > 0) {
+    if (count($row) > 0) 
+    {
         $hashed_password = $row[0]['password']; 
         $status = $row[0]['status']; 
             if($status == 'Inactive') {
@@ -42,6 +43,10 @@ else {
             else {  
             header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
             }
-        } 
+    }
+    else
+    {
+        header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
+    } 
            
 ?>
