@@ -427,7 +427,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script type="text/javascript">
     	function printDiv(divID) {
         //Get the HTML of div
-        var divElements = document.getElementById(divID).innerHTML;
+        var divElements = document.getElementById("print").innerHTML;
         //Get the HTML of whole page
         var oldPage = document.body.innerHTML;
         //Reset the page's HTML with div's HTML only
