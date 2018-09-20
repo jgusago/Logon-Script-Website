@@ -238,9 +238,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                             <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
                             <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
-                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="">
+                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv('printablediv')" />
                         </div>
-                        <div style="clear:both; padding:15px;">
+                        <div style="clear:both; padding:15px;" id="print">
                             <table class="table table-bordered" id="comp_logs">
                                 <thead>
                                     <tr>
@@ -420,6 +420,28 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script src = "../js/controller/ajax_byname.js"></script>
     <script src = "../js/controller/ajax_bydatel.js"></script>
     <script src = "../js/controller/ajax_bynamel.js"></script>
+
+
+    <!-- For Printing -->
+
+    <script type="text/javascript">
+    	function printDiv(divID) {
+        //Get the HTML of div
+        var divElements = document.getElementById(divID).innerHTML;
+        //Get the HTML of whole page
+        var oldPage = document.body.innerHTML;
+        //Reset the page's HTML with div's HTML only
+        document.body.innerHTML = 
+          "<html><head><title></title></head><body>" + 
+          divElements + "</body>";
+        //Print Page
+        window.print();
+        //Restore orignal HTML
+        document.body.innerHTML = oldPage;
+
+    }
+	</script>
+
 <!-- <script>
     function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
