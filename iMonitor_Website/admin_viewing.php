@@ -63,12 +63,61 @@ $ID=$_GET['id'];
         <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:5px;">
-				<li><a href="#"><i class="glyphicon glyphicon-envelope"></i></a></li> 
+            <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
+                <li>
+                    <p id="demo" hidden>
+                        
+                    </p>
+                </li>
+
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell"></i></a></li>
-	            <li class="dropdown">
-	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+                    <a href="#" style="padding-right: 30px; margin-top: 5px;">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </a>
+                </li> 
+
+                <!-- Notification Dropdwon -->
+				<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
+                        <span class="glyphicon glyphicon-bell"></span>
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;">
+                        <?php
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $countdown = 0;
+                            while ($row = $query->fetch()) {
+                                $countdown++;
+                            }
+                            echo  $countdown;
+                        ?>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php 
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            while ($row = $query->fetch()) {
+                                echo '
+                                <li>
+                                    <a href="#"><strong>'.$row['hostname'].'</strong><br>
+                                    <small><em>'.$row['iMonitor_Status'].'</em></small></a>
+                                </li>
+                                <li class="divider"></li>
+                                ';
+                            }
+                        ?>
+                        <li>
+                            <a href="admin_notification.php"><small>Show all notifications</small></a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- End of Notification Dropdown -->
+
+                <!-- User Dropdown -->
+	            <li class="dropdown" style="padding-left: 5px;">
+	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
                     <?php
                         $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
@@ -80,17 +129,16 @@ $ID=$_GET['id'];
                         echo 'Welcome: ' . $row['name'];
                         }
                     ?>
-
-                    <span class="glyphicon glyphicon-down"></span>
-	            	<span class="caret"></span></a>
-	            		<ul class="dropdown-menu" role="menu">
-	            			<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
-	            			<li class="sub-header"><a href="#">Account Settings</a></li>
-	            			<li class="divider"></li>
-	            			<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
-	            		</ul>
-	            </li>
-	        </ul>
+	                </a>
+	            	<ul class="dropdown-menu" role="menu">
+	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
+	            		<li class="sub-header"><a href="#">Account Settings</a></li>
+	            		<li class="divider"></li>
+	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
+	            	</ul>
+                </li>
+                <!-- End of User Dropdown -->
+            </ul>
 	</nav>
 	<!-- End Navigation-->
 
