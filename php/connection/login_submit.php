@@ -33,12 +33,17 @@ else {
     {
         $hashed_password = $row[0]['password']; 
         $status = $row[0]['status']; 
-            if($status == 'Inactive') {
+        $role = $row[0]['role']; 
+            if($status == 'Inactive') 
+            {
                 header("Location: ../../iMonitor_Website/index.php?msg2=wrong");
             }
             elseif(($status == 'Active') && (password_verify($password, $hashed_password))) { 
                     $_SESSION["userid"] = $row[0]['userid']; 
-                    header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
+                    if($role == "ADMINISTRATOR")
+                        header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
+                    else
+                        header("Location: ../../iMonitor_Website/user_dashboard.php"); 
             }
             else {  
             header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
