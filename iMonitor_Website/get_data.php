@@ -1,6 +1,6 @@
 <?php
-$from_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['from_date']));
-$to_date = date("MMM-dd-yyyy hh:mm", strtotime($_POST['to_date']));
+$from_date = date("M-d-Y h:m", strtotime($_POST['from_date']));
+$to_date = date("M-d-Y h:m", strtotime($_POST['to_date']));
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
@@ -28,7 +28,7 @@ if($row_count > 0){
         <td><?php echo $row['serverIP']; ?></td>
         <td><?php echo $row['connection_status']?></td>
         <td><?php echo $row['branch']; ?></td>
-        <td><?php echo date("MMM-dd-yyyy hh:mm", strtotime($row['scan_time'])) ?></td>
+        <td><?php echo date("M-d-Y h:m", strtotime($row['scan_time'])) ?></td>
 	</tr>
 	<?php
 	}
