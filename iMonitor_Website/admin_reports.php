@@ -335,10 +335,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
                             <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
                             <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
-                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printData('printable')" />
+                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv2('printable')" />
                         </div>
-                        <div style="clear:both; padding:15px;">
-                            <table class="table table-bordered" id="comp">
+                        <div style="clear:both; padding:15px;" id="print2">
+                            <table class="table table-bordered" id="comp_logs">
                                 <thead>
                                 <tr>
                                     <th>No.</th>
@@ -425,7 +425,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <!-- For Printing -->
 
     <script type="text/javascript">
-    	function printDiv(divID) {
+    	function printDiv() {
         var divElements = document.getElementById("print").innerHTML;
         var oldPage = document.body.innerHTML;
         document.body.innerHTML = 
@@ -433,25 +433,21 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
           divElements + "</body>";
         window.print();
         document.body.innerHTML = oldPage;
-
     }
 	</script>
 
     <!-- For Printing -->
 
     <script type="text/javascript">
-        function printData()
-        {
-        var divToPrint=document.getElementById("comp");
-        newWin= window.open("");
-        newWin.document.write(divToPrint.outerHTML);
-        newWin.print();
-        newWin.close();
-        }
-
-        $('button').on('click',function(){
-        printData();
-        })
+      function printDiv2() {
+        var divElements = document.getElementById("print2").innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML = 
+          "<html><head><title></title></head><body>" + 
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+    }
 	</script>
 
 <!-- <script>
