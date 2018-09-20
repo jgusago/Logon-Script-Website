@@ -49,7 +49,7 @@ $ID=$_GET['id'];
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
+	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa; height: 60px;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -163,7 +163,7 @@ $ID=$_GET['id'];
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-        <nav id="sidebar">
+        <nav id="sidebar" style="padding-top:30px;">
             <ul class="list-unstyled components">
                 <p></p>
                  <li>
