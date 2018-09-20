@@ -335,9 +335,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
                             <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
                             <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
-                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv('printablediv')" />
+                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printData('printable')" />
                         </div>
-                        <div style="clear:both; padding:15px;" id="print">
+                        <div style="clear:both; padding:15px;">
                             <table class="table table-bordered" id="comp_logs">
                                 <thead>
                                 <tr>
@@ -435,6 +435,23 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         document.body.innerHTML = oldPage;
 
     }
+	</script>
+
+    <!-- For Printing -->
+
+    <script type="text/javascript">
+        function printData()
+        {
+        var divToPrint=document.getElementById("comp_logs");
+        newWin= window.open("");
+        newWin.document.write(divToPrint.outerHTML);
+        newWin.print();
+        newWin.close();
+        }
+
+        $('button').on('click',function(){
+        printData();
+        })
 	</script>
 
 <!-- <script>
