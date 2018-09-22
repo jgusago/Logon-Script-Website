@@ -7,7 +7,8 @@ function confirmlogin(){
     var message = document.getElementById("login-alert-message");
 
     $.post("php/functions/login/login_confirm.php",{username:username,password:password},function(data){
-        var dts = data.split(";");
+
+        var dts = data.split(":");
 
         switch(dts[0]){
             case "success":
@@ -17,24 +18,52 @@ function confirmlogin(){
                 message.innerHTML = "Please wait a moment while you are loging in";
                 notif.style.display = "block";
 
-                $.post("php/functions/session/ssn.crt.php",{username:username},function(data){
+                switch(dts[1]){
+                    case "admin":
+                        setTimeout(function(){
+                            window.location.href = '.admin.html';
+                        },1500);
+                    break;
+                    case "superadmin":
+                        setTimeout(function(){
+                            window.location.href = '.superadmin.html';
+                        },1500);
+                    break;
+                    case "user":
+                        setTimeout(function(){
+                            window.location.href = '.user.html';
+                        },1500);
+                    break;
+                    default:
+                }
 
-
-
-                });
-
-                setTimeout(function(){
-                    window.location.href= '.superadmin.html';
-                },3000);
             break;
             case "failed":
                 notif.classList.remove("alert-success");
                 notif.classList.add('alert-danger');
-                type.innerHTML = "Failed";
-                message.innerHTML = "Please enter the information correctly and try again";
+                type.innerHTML = "Failed!!";
                 notif.style.display = "block";
+
+                switch(dts[1]){
+                    case "inactive":
+                        message.innerHTML = "Your account is disabled/inactive";
+                    break;
+                    case "password":
+                        message.innerHTML = "Your password and account doesn't match";
+                    break;
+                    case "user":
+                        message.innerHTML = "Your account doesn't exist";
+                    break;
+                    default:
+                        message.innerHTML = "Unknown Error have been accured!!<br>The current site have been modefied<br>please refresh the page and try again";
+                }
             break;
             default:
+            notif.classList.remove("alert-success");
+                notif.classList.add('alert-danger');
+                type.innerHTML = "Failed!!!";
+                message.innerHTML ="Unknown Error have been accured!!<br>The current site have been modefied<br>please refresh the page and try again"+data;
+                notif.style.display = "block";
 
         }
 

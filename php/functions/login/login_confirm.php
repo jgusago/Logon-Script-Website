@@ -1,23 +1,45 @@
 <?php
+if (isset($_POST["username"]) && isset($_POST["password"])){
 
-$username = $_POST["username"];
-$password = $_POST["password"];
-$ecpassword =  md5(sha1($password));
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+    require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-$stmt = $db->prepare("SELECT * from tbl_user WHERE userid=? AND password=?");
-$stmt->execute(array($username, $ecpassword));
-$row_count = $stmt->rowCount();
+    $stmt = $db->prepare("SELECT * FROM tbl_user WHERE userid=:userid LIMIT 1"); 
+    $stmt->bindValue(':userid', $username, PDO::PARAM_STR); 
+    $stmt->execute(); 
+    $row = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-if ($row_count > 0) {
 
-    echo "success";
-
+    if (count($row) > 0) {
+        $hashed_password = $row[0]['password']; 
+        $status = $row[0]['status']; 
+        $role = $row[0]['role']; 
+            if($status == 'Inactive'){
+                echo "failed:inactive";
+            }
+            elseif(($status == 'Active') && (password_verify($password, $hashed_password))) { 
+                $_SESSION["userid"] = $row[0]['userid']; 
+                if($role == "ADMINISTRATOR"){
+                    echo "success:admin";
+                }
+                else if($role == "SUPER ADMIN"){
+                    echo "success:superadmin";
+                }
+                else{
+                    echo "success:user";
+                }
+            }
+            else {
+            echo "failed:password";
+            }
     }
-
-else {
-    
-    echo "failed";
+    else{
+    echo "failed:user"; 
+    }
+}
+else{
+    echo "failed:unkown";
 }
 ?>

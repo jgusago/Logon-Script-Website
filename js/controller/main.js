@@ -198,7 +198,7 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid){
     newdiv.classList.add("row-eq-height");
     newdiv.classList.add("col-xs-4");
     newdiv.classList.add("col-lg-12");
-    newdiv.setAttribute("id","branchcomputerlist");
+    newdiv.setAttribute("id","branchcomputer");
     div.appendChild(newdiv);
 
     //Get Data
@@ -285,7 +285,7 @@ function load_branchcomputerlist_content(parent, div, grandparent){
         cardbody.classList.add("card-body");
         card.appendChild(cardbody);
 
-            load_branchcomputerlist_table(parent);
+            load_branchcomputerlist_table(parent,cardbody);
 
         var cardfooter = document.createElement('div');
         cardfooter.classList.add("card-footer");
@@ -331,10 +331,9 @@ function load_branchbiew_data(list, parent){
 
 
 }
-function load_branchcomputerlist_table(parent){
-
+function load_branchcomputerlist_table(parent, parentdiv){
     $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
-        
+        parentdiv.innerHTML = data;
     });
 
 }
@@ -799,6 +798,7 @@ function addbranch(){
         var fg = document.createElement("div");
         fg.classList.add("alert");
         fg.setAttribute("id","addparentalert");
+        fg.setAttribute("hidden","true");
         form.appendChild(fg);
 
         var fgi = document.createElement("div");
@@ -891,17 +891,59 @@ function editbranch(){
 
 function addnewchild(){
 
-    var parent = document.getElementById("addparentname");
-    var childname = document.getElementById("addchildname");
-    var condition = document.getElementById("addchildcondition");
+    var parent = document.getElementById("addparentname").value;
+    var childname = document.getElementById("addchildname").value;
+    var condition = document.getElementById("addchildcondition").value;
+    var alert = document.getElementById("addparentalert");
 
     $.post("php/functions/sttngs/settings.branch.view.add.data.php",{parent:parent,childname:childname,condition:condition},function(data){
 
         if (data == "success"){
+            alert.classList.remove("alert-danger");
+            alert.innerHTML = "";
+            alert.classList.add("alert-success");
+            alert.removeAttribute("hidden");
 
+                alertnode = document.createTextNode("Adding Success!!");
+                alertnode2 = document.createTextNode("Please wait while the settings is updating");
+                alert.appendChild(alertnode);
+                alert.appendChild(alertnode2);
+
+                var bcb = document.getElementById("branchcomputerlist");
+                var bvb = document.getElementById("branchviewlist");
+                var bvs = document.getElementById("branchviewsettings");
+                var bcl = document.getElementById("branchcomputer");
+                var bvl = document.getElementById("branchview");
+                var branchview = document.getElementById("contentview");
+                //Empty their content
+                bcb.innerHTML = "";
+                bvb.innerHTML = "";
+
+                bvs.parentNode.removeChild(bvs);
+                bcl.parentNode.removeChild(bcl);
+                bvl.parentNode.removeChild(bvl);
+
+                load_branchviewbtn();
+                settings_branchview();
+                load_branchview("root", branchview, "0");
+                load_branchcomputerlist("root", branchview, "0","rootII");
+
+                setTimeout(function(){
+                    dashboard_click_event('branchviewsettings');
+                    document.getElementById("overlay").style.display = "none";
+                    document.getElementById("miniwindow").style.display = "none";
+                },500);
         }
         else{
+            alert.classList.remove("alert-success");
+            alert.innerHTML = "";
+            alert.classList.add("alert-danger");
+            alert.removeAttribute("hidden");
 
+                alertnode = document.createTextNode("Something went wrong");
+                alertnode2 = document.createTextNode("Please Check if the NAME already existed"+data);
+                alert.appendChild(alertnode);
+                alert.appendChild(alertnode2);
         }
         return false;
     });
