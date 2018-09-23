@@ -352,8 +352,7 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 			</div>
-</body>
-	<?php     
+					<?php     
 							$sql = "select userid, name, department, position, role,  status from tbl_user WHERE id='$ID'";
 							$stmt = $db->prepare($sql);
 							$stmt->execute();
@@ -428,6 +427,7 @@ $ID=$_GET['id'];
 	</div>
 	<!-- End of Edit User Modal -->
 </form>
+</body>
 </html>
 
 <script>
