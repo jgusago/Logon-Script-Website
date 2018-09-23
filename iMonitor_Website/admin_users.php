@@ -231,9 +231,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						
-						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>
-                        <!--<td><a href="test_edit.php <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td> -->
+                        <td><a href="test_edit.php <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
 					<?php } ?>
             	</tbody>
@@ -394,14 +392,6 @@ $ID=$_GET['id'];
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
-					<?php     
-              			/*$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '{$_SESSION['id']}' ";
-              			$stmt = $db->prepare($sql);
-              			$stmt->execute();
-						$count = 1;
-              			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){*/
-              			
-            		?>
 					<div class="body">
 						<form style="padding:10px;">
 							<table class="modal-form">
