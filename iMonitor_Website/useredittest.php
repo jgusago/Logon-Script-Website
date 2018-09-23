@@ -200,13 +200,12 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						
-						
+								
 					</tr>
 					<?php } ?>
+					<td><a href="#editUser <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>
             	</tbody>
-			</table>
-			<td><a href="#editUser <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>
+			</table>		
 		</div> 
 		<!-- End of User Table -->
 
