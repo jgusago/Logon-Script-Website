@@ -354,6 +354,8 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 			</div>
+	
+</body>
 
 <!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
@@ -429,8 +431,6 @@ $ID=$_GET['id'];
 	</div>
 </form>
 <!-- End of Edit User Modal -->
-	
-</body>
 </html>
 
 <script>
