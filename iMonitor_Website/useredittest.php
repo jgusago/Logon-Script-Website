@@ -360,7 +360,6 @@ $ID=$_GET['id'];
 							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 								
 					?>
-					<?php } ?>
 					
 <!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
@@ -428,6 +427,7 @@ $ID=$_GET['id'];
 	</div>
 	<!-- End of Edit User Modal -->
 </form>
+<?php } ?>
 </body>
 </html>
 
