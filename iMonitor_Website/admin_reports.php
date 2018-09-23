@@ -236,10 +236,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                         <div class="col-md-4">
                             <br>
                             <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                            <input type="button" name="btn_filter" id=btn_filter value="Excel" class="btn btn-success" onclick="">
-                            <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">
-                            <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv('printablediv')" />
+                            <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport();">
+                            <input type="button" name="btn_search" id="btn_search" value="PDF" class="btn btn-danger" onclick="">
+                            <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-primary" onclick="javascript:printDiv('printablediv')" />
                         </div>
+                        <iframe id="txtArea1" style="display:none"></iframe>
                         <div style="clear:both; padding:15px;" id="print">
                             <table class="table table-bordered" id="comp_logs">
                                 <thead>
@@ -449,6 +450,47 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         document.body.innerHTML = oldPage;
     }
 	</script>
+
+    <!-- For Exporting to Exel -->
+
+    <script type="text/javascript">
+     function fnExcelReport()
+        {
+             var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+             var textRange; var j=0;
+          tab = document.getElementById('comp_logs'); // id of table
+
+
+          for(j = 0 ; j < tab.rows.length ; j++) 
+          {     
+                tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+                //tab_text=tab_text+"</tr>";
+          }
+
+          tab_text=tab_text+"</table>";
+          tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+          tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+                      tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+               var ua = window.navigator.userAgent;
+              var msie = ua.indexOf("MSIE "); 
+
+                 if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+                    {
+                           txtArea1.document.open("txt/html","replace");
+                           txtArea1.document.write(tab_text);
+                           txtArea1.document.close();
+                           txtArea1.focus(); 
+                            sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+                          }  
+                  else                 //other browser not tested on IE 11
+                      sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+
+                      return (sa);
+                            }
+	</script>
+
 
 <!-- <script>
     function autocomplete(inp, arr) {
