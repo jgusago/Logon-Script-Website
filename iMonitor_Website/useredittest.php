@@ -201,7 +201,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
 						
-						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>
+						<td><a href="#edi_tUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>
                         <!--<td><a href="test_edit.php <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td> -->
 					</tr>
 					<?php } ?>
@@ -354,6 +354,9 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 			</div>
+</body>
+</html>
+
 					<?php     
 							$sql = "select userid, name, department, position, role,  status from tbl_user WHERE id='$ID'";
 							$stmt = $db->prepare($sql);
@@ -362,9 +365,9 @@ $ID=$_GET['id'];
 							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
 					
-	<!-- Edit User Modal -->
+<!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
-	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+	<div class="modal fade" id="edit_User" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
@@ -429,8 +432,7 @@ $ID=$_GET['id'];
 	</div>
 	<!-- End of Edit User Modal -->
 </form>
-</body>
-</html>
+
 
 <script>
         function isNumber(input) {
