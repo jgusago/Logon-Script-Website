@@ -200,7 +200,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a href="#editUser <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>		
+						<td><a href="#editUser echo '?id='.$id;" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>		
 					</tr>
 					<?php } ?>			
             	</tbody>
@@ -353,7 +353,7 @@ $ID=$_GET['id'];
 			</div>
 			</div>
 </body>
-<?php     
+	<?php     
 							$sql = "select userid, name, department, position, role,  status from tbl_user WHERE id='$ID'";
 							$stmt = $db->prepare($sql);
 							$stmt->execute();
@@ -428,7 +428,6 @@ $ID=$_GET['id'];
 	</div>
 	<!-- End of Edit User Modal -->
 </form>
-
 </html>
 
 <script>
