@@ -354,21 +354,17 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 			</div>
-			<?php     
-              			function getdata(){
+					<?php     
 							$sql = "select userid, name, department, position, role,  status from tbl_user WHERE id='$ID'";
 							$stmt = $db->prepare($sql);
 							$stmt->execute();
 						  	$count = 1;
 							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-								
-						  }
-              			$data = getdata();
 					?>
-					<?php } ?>
+					
 	<!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
-	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;" onload="$data">
+	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
@@ -430,8 +426,9 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 	</div>
+	<!-- End of Edit User Modal -->
 </form>
-<!-- End of Edit User Modal -->
+<?php } ?>
 </body>
 </html>
 
