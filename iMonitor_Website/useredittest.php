@@ -361,12 +361,14 @@ $ID=$_GET['id'];
 							$stmt->execute();
 						  	$count = 1;
 							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+								
 						  }
               			$data = getdata();
-            		?>
+					?>
+					<?php } ?>
 	<!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
-	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;" onload="$data">
+	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
@@ -419,7 +421,6 @@ $ID=$_GET['id'];
 									<td></td>
 									<td><button class="btn btn-primary">Update</button></td>
 								</tr>
-								<?php } ?>
 							</table>
 						</form>
 					</div>					
