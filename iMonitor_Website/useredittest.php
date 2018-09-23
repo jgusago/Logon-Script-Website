@@ -377,6 +377,7 @@ $ID=$_GET['id'];
 									<td><b>ID Number:</b></td>
 									<td><input type="text" id="userid" value=<?php echo $row['userid']?> name="userid" required placeholder="User ID"></td>
 								</tr>
+								<?php } ?>
 								<tr>
 									<td><b>Name:</b></td>
 									<td><input type="text" id="name" name="name" value=<?php echo $row['name']?>  required  class="validate"></td>
@@ -428,7 +429,6 @@ $ID=$_GET['id'];
 	</div>
 	<!-- End of Edit User Modal -->
 </form>
-<?php } ?>
 </body>
 </html>
 
