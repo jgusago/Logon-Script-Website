@@ -428,12 +428,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     <script type="text/javascript">
     	function printDiv() {
-            var nrColumns = $("#reportPrintPreviewTableBody tr:first td").length;
-        //here I can put as many "if"-s as I need
-        if (nrColumns >= 14) {
-        $("#reportPrintPreviewTable").css("font-size", "10px");
-        }else if (nrColumns >= 10) {
-        $("#reportPrintPreviewTable").css("font-size", "14px");
         var divElements = document.getElementById("print").innerHTML;
         var oldPage = document.body.innerHTML;
         document.body.innerHTML = 
@@ -441,7 +435,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
           divElements + "</body>";
         window.print();
         document.body.innerHTML = oldPage;
-    }
         }
 	</script>
 
