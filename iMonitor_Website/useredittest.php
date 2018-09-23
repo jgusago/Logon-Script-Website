@@ -361,8 +361,7 @@ $ID=$_GET['id'];
 							$stmt = $db->prepare($sql);
 							$stmt->execute();
 						  	$count = 1;
-							//while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-							foreach($stmt as $row){
+							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 					?>
 					
 <!-- Edit User Modal -->
