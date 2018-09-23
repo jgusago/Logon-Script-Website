@@ -424,10 +424,16 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script src = "../js/controller/ajax_bynamel.js"></script>
 
 
-    <!-- For Printing -->
+    <!-- For Printing List-->
 
     <script type="text/javascript">
     	function printDiv() {
+            var nrColumns = $("#reportPrintPreviewTableBody tr:first td").length;
+        //here I can put as many "if"-s as I need
+        if (nrColumns >= 14) {
+        $("#reportPrintPreviewTable").css("font-size", "10px");
+        }else if (nrColumns >= 10) {
+        $("#reportPrintPreviewTable").css("font-size", "14px");
         var divElements = document.getElementById("print").innerHTML;
         var oldPage = document.body.innerHTML;
         document.body.innerHTML = 
@@ -436,9 +442,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         window.print();
         document.body.innerHTML = oldPage;
     }
+        }
 	</script>
 
-    <!-- For Printing -->
+    <!-- For Printing Logs-->
 
     <script type="text/javascript">
       function printDiv2() {
@@ -452,7 +459,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     }
 	</script>
 
-    <!-- For Exporting to Exel -->
+    <!-- For Exporting to Exel List-->
 
     <script type="text/javascript">
      function fnExcelReport()
@@ -492,7 +499,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             }
 	</script>
 
-    <!-- For Exporting to Exel -->
+    <!-- For Exporting to Exel Logs-->
 
     <script type="text/javascript">
      function fnExcelReport2()
