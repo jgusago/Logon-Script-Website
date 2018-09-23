@@ -445,7 +445,6 @@ $ID=$_GET['id'];
                                         </div>
                                     </td>
                                 </tr>
-								<?php } ?>
 								<tr>
 									<td></td>
 									<td><button class="btn btn-primary">Update</button></td>
