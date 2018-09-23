@@ -482,7 +482,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                            txtArea1.document.write(tab_text);
                            txtArea1.document.close();
                            txtArea1.focus(); 
-                            sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+                            sa=txtArea1.document.execCommand("SaveAs",true,"Computer List.xls");
                           }  
                   else                 //other browser not tested on IE 11
                       sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
@@ -522,7 +522,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                            txtArea1.document.write(tab_text);
                            txtArea1.document.close();
                            txtArea1.focus(); 
-                            sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+                            sa=txtArea1.document.execCommand("SaveAs",true,"Computer Logs.xls");
                           }  
                   else                 //other browser not tested on IE 11
                       sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
