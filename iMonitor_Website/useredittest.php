@@ -358,7 +358,9 @@ $ID=$_GET['id'];
 							$stmt->execute();
 						  	$count = 1;
 							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+								
 					?>
+					<?php } ?>
 					
 <!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
@@ -415,7 +417,6 @@ $ID=$_GET['id'];
 									<td></td>
 									<td><button class="btn btn-primary">Update</button></td>
 								</tr>
-							<?php } ?>
 							</table>
 						</form>
 					</div>					
