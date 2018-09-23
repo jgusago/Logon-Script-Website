@@ -366,11 +366,11 @@ $ID=$_GET['id'];
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
 					<?php     
-              			/*$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '{$_SESSION['id']}' ";
+              			$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '{$_SESSION['id']}' ";
               			$stmt = $db->prepare($sql);
               			$stmt->execute();
 						$count = 1;
-              			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){*/
+              			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
               			
             		?>
 					<div class="body">
@@ -420,6 +420,7 @@ $ID=$_GET['id'];
 									<td></td>
 									<td><button class="btn btn-primary">Update</button></td>
 								</tr>
+								<?php } ?>
 							</table>
 						</form>
 					</div>					
