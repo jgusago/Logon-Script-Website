@@ -353,9 +353,7 @@ $ID=$_GET['id'];
 			</div>
 			</div>
 </body>
-</html>
-
-					<?php     
+<?php     
 							$sql = "select userid, name, department, position, role,  status from tbl_user WHERE id='$ID'";
 							$stmt = $db->prepare($sql);
 							$stmt->execute();
@@ -431,6 +429,7 @@ $ID=$_GET['id'];
 	<!-- End of Edit User Modal -->
 </form>
 
+</html>
 
 <script>
         function isNumber(input) {
