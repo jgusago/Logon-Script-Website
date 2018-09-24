@@ -45,11 +45,13 @@ $ID=$_GET['id'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style1.css">
+    
+    <link rel="stylesheet" href="general.css">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa; height: 60px;">
+<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -138,9 +140,9 @@ $ID=$_GET['id'];
                 <!-- End of User Dropdown -->
             </ul>
 	</nav>
-	<!-- End Navigation-->
+	<!-- End of Top Navigation-->
 
- 	<!-- Modal -->
+ 	<!-- Logout Modal -->
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -159,46 +161,36 @@ $ID=$_GET['id'];
 			</div>
 		</div>
 	</div>
-	<!-- End of Modal -->
+	<!-- End of Logout Modal -->
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-        <nav id="sidebar" style="margin-top:30px;">
-            <ul class="list-unstyled components">
-                <p></p>
-                 <li>
-                    <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i> Branch Settings</a>
-                </li>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i> Computer List</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <?php 
-                            $query = $db->prepare("SELECT treename FROM tbl_tree");
-                            $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
-                            $query->execute();
-                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                            $count = 1;
-                            while ($row = $query->fetch()) {
-                                echo '
-                                <li><a href="admin_viewing.php"><p value='.$count++.'>'.$row['treename'].'</p></a></li>
-                                ';
-                            }
-                        ?>
-                        
-                    </ul>
-                </li>
-                <li>
-                    <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
-                </li>
-                <li>
-                    <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
-                </li>	  
-            </ul>
-        </nav>
-    </div>                 
+		<nav id="sidebar">
+			<ul class="list-unstyled components">
+		        <p></p>
+		        <li class="active">
+		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		        </li>
+		        <li>
+		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		        </li>
+		        <li >
+		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <ul class="collapse list-unstyled" id="homeSubmenu">
+		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
+		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
+		                <li><a href="admin_viewing.php">COP</a></li>
+		            </ul>
+		        </li>
+		        <li>
+		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
+		        </li>
+		        <li>
+		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		        </li>	  
+	   		</ul>
+		</nav>
+	</div>   
 	<!-- End of Sidebar -->
 
     <!-- Table -->
