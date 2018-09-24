@@ -244,14 +244,14 @@ $ID=$_GET['id'];
 
   <!-- Modal New Edit-->
   	<div class="modal fade" id="editAccount" role="dialog">
-	  <?php
+	  
+    	<div class="modal-dialog">
+		<?php
 		$stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
 	 	$stmt->execute();
 	 	for($i=0; $row = $stmt->fetch(); $i++){
 	 	$id=$row['id'];
-  	?>
-    	<div class="modal-dialog">
-    
+  		?>
       <!-- Modal content-->
       	<div class="modal-content">
         	<div class="modal-header">
