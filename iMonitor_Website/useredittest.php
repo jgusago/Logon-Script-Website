@@ -1,20 +1,54 @@
+<script type="text/javascript">
+var IDLE_TIMEOUT = 600; //seconds
+var _idleSecondsCounter = 0;
+document.onclick = function() {
+_idleSecondsCounter = 0;
+};
+document.onmousemove = function() {
+_idleSecondsCounter = 0;
+};
+document.onkeypress = function() {
+_idleSecondsCounter = 0;
+};
+window.setInterval(CheckIdleTime, 1000);
+function CheckIdleTime() {
+_idleSecondsCounter++;
+var oPanel = document.getElementById("SecondsUntilExpire");
+if (oPanel)
+oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
+if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+//alert("Time expired!");
+document.location.href = "../php/connection/logout.php";
+}
+}
+</script>
+
+<?php 
+error_reporting(0);
+
+session_start();
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+$ID=$_GET['id'];
+	if(!isset($_SESSION["userid"])) {
+    	header("Location: index.php");
+  	exit();
+  	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="refresh" content="300">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style2.css">
- 
 </head>
 <body onload="populateSecondTextBox();">
-
 	<!-- Top navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa; height:60px;">
 		<div class="navbar-header">
@@ -352,34 +386,127 @@
 			</div>
 			</div>
 
-
-<div class="container">
-  <h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div>
-
+<!-- Edit User Modal -->
+<form action="user_edit_account_submit.php" method="POST">	
+	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+			<div class="modal-dialog modal-md" role="document">
+				<div class="modal-content">
+					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
+						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<?php     
+              			/*$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '{$_SESSION['id']}' ";
+              			$stmt = $db->prepare($sql);
+              			$stmt->execute();
+						$count = 1;
+              			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){*/
+              			
+            		?>
+					<div class="body">
+						<form style="padding:10px;">
+							<table class="modal-form">
+								<tr>
+									<td><b>ID Number:</b></td>
+									<td><input type="text" id="userid" value=<?php echo $row['userid']?> name="userid" required placeholder="User ID"></td>
+								</tr>
+								<tr>
+									<td><b>Name:</b></td>
+									<td><input type="text" id="name" name="name" value=<?php echo $row['name']?>  required  class="validate"></td>
+								</tr>
+								<tr>
+									<td><b>Department:</b></td>
+									<td class="dropdown-dept">
+										<select name="department">
+										<option value=<?php echo $row['userid']?>> <?php echo $row['department']?> </option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td><b>Position:</b></td>
+									<td class="dropdown-dept">
+										<select name="position">
+										<option value=<?php echo $row['userid']?> > <?php echo $row['position']?> </option>
+										</select>
+								</tr>
+								<tr>
+									<td><b>Role:</b></td>
+									<td class="dropdown-role"> 
+										<select name="role">
+										<option value=<?php echo $row['userid']?>> <?php echo $row['role']?> </option>
+										</select>
+									</td>
+                                </tr>
+                                <tr class="reset-password">
+                                    <td><b>Password:</b></td>
+                                    <td><input id="default-pass" type="password" value=<?php echo $row['password']?>></td> 
+                                    <td>
+                                        <div>
+                                            <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
+                                        </div>
+                                    </td>
+                                </tr>
+								<tr>
+									<td></td>
+									<td><button class="btn btn-primary">Update</button></td>
+								</tr>
+							</table>
+						</form>
+					</div>					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
+					</div>			
+				</div>
+			</div>
+	</div>
+</form>
+<!-- End of Edit User Modal -->
+	
 </body>
 </html>
+
+<script>
+        function isNumber(input) {
+          var regex =/[^0-9]/gi;
+          input.value = input.value.replace(regex,"");
+               
+        }
+               
+        function lettersOnly(input) {
+          var regex = /[^a-z]/gi;
+          input.value = input.value.replace(regex,"");
+               
+             }   
+             
+         function resetPass() 
+         {
+            var x = document.getElementById("default-pass");
+            if (x.type === "password")
+            {
+                x.type = "text";
+            } 
+            else 
+            {
+                x.type = "password";
+            }
+		}  
+		
+		$(document).ready(function(){
+            $(".dropdown").hover(            
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                    $(this).toggleClass('open');        
+                },
+                function() {
+                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                    $(this).toggleClass('open');       
+                }
+            );
+        });
+
+                $(document).ready(function () {
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar').toggleClass('active');
+                        });
+                    });
+    </script>
+
