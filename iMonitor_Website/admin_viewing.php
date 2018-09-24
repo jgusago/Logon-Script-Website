@@ -203,7 +203,7 @@ $ID=$_GET['id'];
                         </div>
                         <div class="panel panel-body"> 
                             <div class="tab-pane fade in active" id="tab1default">
-                                <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px; width: 92%;">
+                                <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px; width: 88%;">
                                     <table class="table table-hover" style="background: #ffffff;">
                                         <thead>
                                             <tr>
