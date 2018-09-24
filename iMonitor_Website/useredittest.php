@@ -200,7 +200,8 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></a></td>		
+						<!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></a></td>-->	
+						<button class="btn btn-primary" data-toggle="modal" data-target="#editUser" data-formid="<?php echo $id; ?>">Edit Record<?php echo $id; ?></button>	
 					</tr>
 					<?php } ?>			
             	</tbody>
@@ -358,7 +359,7 @@ $ID=$_GET['id'];
 							$stmt->execute();
 							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){					
 					?>
-					<?php } ?>
+					
 <!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
@@ -372,7 +373,7 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" value="" name="userid" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" value="<?php echo $row['userid']; ?>" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
@@ -416,6 +417,7 @@ $ID=$_GET['id'];
 								</tr>
 							</table>
 						</form>
+						<?php } ?>
 					</div>					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
