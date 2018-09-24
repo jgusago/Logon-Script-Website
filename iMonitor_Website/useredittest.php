@@ -236,7 +236,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccount">Edit Record</button></td>-->
+						<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccount <?php echo '?id='.$ID; ?>">Edit Record</button></td>-->
 					</tr>
 					<?php } ?>
             	</tbody>
@@ -247,7 +247,7 @@ $ID=$_GET['id'];
 	 for($i=0; $row = $stmt->fetch(); $i++){
 	 $id=$row['id'];
   ?>
-  <?php } ?>
+  
   <!-- Modal New Edit-->
   	<div class="modal fade" id="editAccount" role="dialog">
     	<div class="modal-dialog">
@@ -265,6 +265,7 @@ $ID=$_GET['id'];
 					<td><b>ID Number:</b></td>
 					<td><input type="text" id="userid" value="<?php echo $row['userid']; ?>" name="userid" required placeholder="User ID"></td>
 				</tr>
+				<?php } ?>
 				<tr>
 					<td><b>Name:</b></td>
 					<td><input type="text" id="name" name="name" value="" required  class="validate"></td>
