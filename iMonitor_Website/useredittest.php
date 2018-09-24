@@ -237,7 +237,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
 						<!--<td><a href="#myModal <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
-						<td><a href="#myModal <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary" data-target="#myModal">Edit Record</button></a></td>
+						<td><a href="#myModal <?php echo '?id='.$id; ?>" data-toggle="modal"></a><a href ="#myModal" data-toggle="modal" button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
 					<?php } ?>
             	</tbody>
