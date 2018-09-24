@@ -236,13 +236,17 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<!--<td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#editAccount">Open Modal</button></td>-->
 						<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccount">Edit Record</button></td>-->
 					</tr>
 					<?php } ?>
             	</tbody>
             </table>
-	
+  <?php
+	 $stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
+	 $stmt->execute();
+	 for($i=0; $row = $stmt->fetch(); $i++){
+	 $id=$row['id'];
+  ?>
   <!-- Modal New Edit-->
   	<div class="modal fade" id="editAccount" role="dialog">
     	<div class="modal-dialog">
@@ -258,17 +262,17 @@ $ID=$_GET['id'];
 			<table class="modal-form">
 				<tr>
 					<td><b>ID Number:</b></td>
-					<td><input type="text" id="userid" value=<?php echo $row['userid']?> name="userid" required placeholder="User ID"></td>
+					<td><input type="text" id="userid" value="<?php echo $row['userid']; ?>" name="userid" required placeholder="User ID"></td>
 				</tr>
 				<tr>
 					<td><b>Name:</b></td>
-					<td><input type="text" id="name" name="name" value=<?php echo $row['name']?>  required  class="validate"></td>
+					<td><input type="text" id="name" name="name" value="" required  class="validate"></td>
 				</tr>
 				<tr>
 					<td><b>Department:</b></td>
 					<td class="dropdown-dept">
 						<select name="department">
-							<option value=<?php echo $row['userid']?>> <?php echo $row['department']?> </option>
+							<option value=""> </option>
 						</select>
 					</td>
 				</tr>
@@ -276,20 +280,20 @@ $ID=$_GET['id'];
 					<td><b>Position:</b></td>
 					<td class="dropdown-dept">
 						<select name="position">
-							<option value=<?php echo $row['userid']?> > <?php echo $row['position']?> </option>
+							<option value=""> </option>
 						</select>
 				</tr>
 				<tr>
 					<td><b>Role:</b></td>
 					<td class="dropdown-role"> 
 						<select name="role">
-							<option value=<?php echo $row['userid']?>> <?php echo $row['role']?> </option>
+							<option value=""> </option>
 						</select>
 					</td>
                 </tr>
                 <tr class="reset-password">
                     <td><b>Password:</b></td>
-                    <td><input id="default-pass" type="password" value=<?php echo $row['password']?>></td> 
+                    <td><input id="default-pass" type="password" value=""></td> 
                     <td>
             	<div>
                 	<label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
@@ -302,14 +306,15 @@ $ID=$_GET['id'];
 				</tr>
 			</table>
 		</form>
+		<?php } ?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-      	</div>    
+      </div>    
     </div>
-</div>
-		</div> 
+  </div>
+</div> 
 		<!-- End of User Table -->
 
 <!-- Add User Modal -->
@@ -465,30 +470,22 @@ $ID=$_GET['id'];
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
-					<?php     
-              			/*$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '{$_SESSION['id']}' ";
-              			$stmt = $db->prepare($sql);
-              			$stmt->execute();
-						$count = 1;
-              			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){*/
-              			
-            		?>
 					<div class="body">
 						<form style="padding:10px;">
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" value=<?php echo $row['userid']?> name="userid" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" value="" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" value=<?php echo $row['name']?>  required  class="validate"></td>
+									<td><input type="text" id="name" name="name" value=""  required  class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-										<option value=<?php echo $row['userid']?>> <?php echo $row['department']?> </option>
+										<option value=""></option>
 										</select>
 									</td>
 								</tr>
@@ -496,20 +493,20 @@ $ID=$_GET['id'];
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="position">
-										<option value=<?php echo $row['userid']?> > <?php echo $row['position']?> </option>
+										<option value=""> </option>
 										</select>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-										<option value=<?php echo $row['userid']?>> <?php echo $row['role']?> </option>
+										<option value=""> </option>
 										</select>
 									</td>
                                 </tr>
                                 <tr class="reset-password">
                                     <td><b>Password:</b></td>
-                                    <td><input id="default-pass" type="password" value=<?php echo $row['password']?>></td> 
+                                    <td><input id="default-pass" type="password" value=""></td> 
                                     <td>
                                         <div>
                                             <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
