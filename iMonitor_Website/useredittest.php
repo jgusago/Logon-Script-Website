@@ -388,7 +388,7 @@ $ID=$_GET['id'];
 			</div>
 
 <!-- Edit User Modal -->
-<form action="user_edit_account_submit.php" method="POST">	
+<!--<form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -459,7 +459,7 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 	</div>
-</form>
+</form>-->
 <!-- End of Edit User Modal -->
 	
 <div class="container">
