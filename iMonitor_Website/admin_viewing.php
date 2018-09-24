@@ -163,7 +163,7 @@ $ID=$_GET['id'];
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-        <nav id="sidebar" style="padding-top:30px;">
+        <nav id="sidebar" style="margin-top:30px;">
             <ul class="list-unstyled components">
                 <p></p>
                  <li>
@@ -208,7 +208,7 @@ $ID=$_GET['id'];
         </div>
          <div class="container-table">
             <div class="row">
-                <table class="table-viewing" style="margin-top: 120px; position:relative;">
+                <table class="table-viewing" style="margin-top: 80px; position:relative;">
                     <tr class="tr-dept">
                         <td><b>Sub Department:</b></td>
                         <td><select name="branches">
@@ -252,7 +252,7 @@ $ID=$_GET['id'];
                 </ul>
             </div>     -->
             <div class="container">
-                <table class="table table-bordered" style="position: fixed; margin-left:2px; margin-top: 290px; margin-bottom:0px; width:88%;">
+                <table class="table table-bordered" style="position: fixed; margin-left:2px; margin-top: 250px; margin-bottom:0px; width:88%;">
                     <thead>
                         <tr>
                             <th style="padding-bottom:15px;">No.</th>
