@@ -372,7 +372,7 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" value="<?php echo $row['userid']; ?>" name="userid" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" value="" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
@@ -475,10 +475,5 @@ $ID=$_GET['id'];
                     });
     </script>
 
-	<script>
-		function showModal() { 
-    	document.getElementById("#editUser").showModal(); 
-		} 
-	</script>
 
 
