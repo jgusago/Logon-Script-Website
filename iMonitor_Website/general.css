@@ -210,6 +210,50 @@ ul ul a {
 {
     border-radius: 10px;
 }
+.container-fluid
+ {
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    background: white;
+
+}
+.container
+{
+  width:2000px;
+}
+.panel
+{
+  margin-top: 0px;
+  width: 105%;
+  margin-bottom: 20px;
+  background-color: #e3e5e3eb;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-hover
+{
+    background: #fefefe;
+}
+.table>tbody>tr>td,
+{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px solid #ada4a4;
+}
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content 
+{
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
