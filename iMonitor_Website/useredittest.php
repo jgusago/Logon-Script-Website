@@ -236,7 +236,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a href="#editUser" <?php echo '?id='.$id; ?> data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+						<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editUser <?php echo '?id='.$id; ?>">Edit Record</button></td>
 					</tr>
 					<?php } ?>
             	</tbody>
