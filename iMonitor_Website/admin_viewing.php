@@ -168,13 +168,13 @@ $ID=$_GET['id'];
 		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
-		        <li class="active">
+		        <li>
 		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
-		        <li >
+		        <li class="active">
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
