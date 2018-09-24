@@ -241,7 +241,13 @@ $ID=$_GET['id'];
 					<?php } ?>
             	</tbody>
             </table>
-  
+	<?php
+		$stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
+	 	$stmt->execute();
+	 	for($i=0; $row = $stmt->fetch(); $i++){
+	 	$id=$row['id'];
+  	?>
+	  
   <!-- Modal New Edit-->
   	<div class="modal fade" id="editAccount" role="dialog">
     	<div class="modal-dialog">
@@ -253,12 +259,6 @@ $ID=$_GET['id'];
         	<h4 class="modal-title">Edit User Information</h4>
         </div>
         <div class="modal-body">
-		<?php
-		 $stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
-	 	$stmt->execute();
-	 	for($i=0; $row = $stmt->fetch(); $i++){
-	 	$id=$row['id'];
-  		?>
 		<form style="padding:10px;">
 			<table class="modal-form">
 				<tr>
