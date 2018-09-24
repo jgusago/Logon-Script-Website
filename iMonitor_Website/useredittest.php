@@ -231,8 +231,8 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						
-						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>
+						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+						<!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>-->
                         <!--<td><a href="test_edit.php <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td> -->
 					</tr>
 					<?php } ?>
@@ -462,10 +462,6 @@ $ID=$_GET['id'];
 <!-- End of Edit User Modal -->
 	
 <div class="container">
-  <h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -488,7 +484,7 @@ $ID=$_GET['id'];
   </div>
   
 </div>
-
+  
 </body>
 </html>
 
