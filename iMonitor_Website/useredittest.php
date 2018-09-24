@@ -45,6 +45,7 @@ $ID=$_GET['id'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style2.css">
 </head>
@@ -384,7 +385,7 @@ $ID=$_GET['id'];
 			</div>
 			</div>
 
-<!-- Edit User Modal -->
+<!-- Edit User Modal 
 <form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
@@ -392,14 +393,14 @@ $ID=$_GET['id'];
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
 						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					</div>
-					<?php     
+					    
               			/*$sql = "select userid, name, department, position, role,  status from tbl_user WHERE userid = '{$_SESSION['id']}' ";
               			$stmt = $db->prepare($sql);
               			$stmt->execute();
 						$count = 1;
               			while($row=$stmt->fetch(PDO::FETCH_ASSOC)){*/
               			
-            		?>
+            		
 					<div class="body">
 						<form style="padding:10px;">
 							<table class="modal-form">
@@ -456,7 +457,35 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 	</div>
-</form>
+</form>-->
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
 <!-- End of Edit User Modal -->
 	
 </body>
