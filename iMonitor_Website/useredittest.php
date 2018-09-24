@@ -200,7 +200,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><button class="btn btn-primary" value="" onclick="showModal()">Edit Record</button></td>
+						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" onclick="showModal()">Edit Record</button></td>
 					</tr>
 					<?php } ?>			
             	</tbody>
