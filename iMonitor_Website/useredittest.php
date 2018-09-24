@@ -200,7 +200,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><button class="btn btn-primary" value="" >Edit Record</button></a></td>
+						<td><button class="btn btn-primary" value="" onclick="showModal()">Edit Record</button></td>
 					</tr>
 					<?php } ?>			
             	</tbody>
@@ -474,4 +474,11 @@ $ID=$_GET['id'];
                         });
                     });
     </script>
+
+	<script>
+		function showModal() { 
+    	document.getElementById("editUser").showModal(); 
+		} 
+	</script>
+
 
