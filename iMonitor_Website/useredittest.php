@@ -477,7 +477,7 @@ $ID=$_GET['id'];
 
 	<script>
 		function showModal() { 
-    	document.getElementById("editUser").showModal(); 
+    	document.getElementById("#editUser").showModal(); 
 		} 
 	</script>
 
