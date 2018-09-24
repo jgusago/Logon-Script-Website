@@ -356,9 +356,7 @@ $ID=$_GET['id'];
 							$sql = "select userid, name, department, position, role,  status from tbl_user WHERE id='$ID'";
 							$stmt = $db->prepare($sql);
 							$stmt->execute();
-						  	$count = 1;
-							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-								
+							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){					
 					?>
 					
 <!-- Edit User Modal -->
