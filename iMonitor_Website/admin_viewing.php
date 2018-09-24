@@ -169,7 +169,7 @@ $ID=$_GET['id'];
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
@@ -204,6 +204,22 @@ $ID=$_GET['id'];
                         <div class="panel panel-body"> 
                             <div class="tab-pane fade in active" id="tab1default">
                                 <div class="pane pane--1" style="margin-right: 480px; margin-left: 0px; width: 89%;">
+                                    <div class="col-md-6" style="padding-top:15px;">
+                                        <select name="department" id="department" class="form-control">
+                                            <option value="" selected>--All department--</option>
+                                            <option value="Marvin 5th">Marvin 5th</option>
+                                            <option value="Marvin 10th">Marvin 10th</option>
+                                            <option value="AT">AT</option>
+                                        </select> 
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:15px;">
+                                        <select name="dub_dept" id="sub_dept" class="form-control">
+                                            <option value="" selected>--All sub department</option>
+                                            <option value="OM">IT-OM</option>
+                                            <option value="AUD">IT-AUD</option>
+                                            <option value="WEB">IT-WEB</option>
+                                        </select>
+                                    </div>
                                     <table class="table table-hover" style="background: #ffffff;">
                                         <thead>
                                             <tr>
@@ -245,8 +261,7 @@ $ID=$_GET['id'];
                     </div>
                 </div>
             </div>
-        </div>
-	</div>   
+    </div>
 	<!-- End of Sidebar -->
 
     <!-- Table -->
