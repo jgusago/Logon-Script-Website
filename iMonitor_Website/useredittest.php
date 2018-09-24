@@ -236,87 +236,12 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccount <?php echo '?id='.$id; ?>">Edit Record</button></td>-->
+						<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editUser <?php echo '?id='.$id; ?>">Edit Record</button></td>-->
 					</tr>
 					<?php } ?>
             	</tbody>
             </table>
-			<?php
-		$stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
-	 	$stmt->execute();
-	 	for($i=0; $row = $stmt->fetch(); $i++){
-	 	$id=$row['id'];
-  		?>
-  <!-- Modal New Edit-->
-  	<div class="modal fade" id="editAccount" role="dialog">
-	  
-    	<div class="modal-dialog">
-		
-      <!-- Modal content-->
-      	<div class="modal-content">
-        	<div class="modal-header">
-          	<button type="button" class="close" data-dismiss="modal">&times;</button>
-        	<h4 class="modal-title">Edit User Information</h4>
-        </div>
-        <div class="modal-body">
-		<form style="padding:10px;">
-			<table class="modal-form">
-				<tr>
-					<td><b>ID Number:</b></td>
-					<td><input type="text" id="userid" value="<?php echo $row['userid']; ?>" name="userid" required placeholder="User ID"></td>
-				</tr>
-				
-				<tr>
-					<td><b>Name:</b></td>
-					<td><input type="text" id="name" name="name" value="" required  class="validate"></td>
-				</tr>
-				<tr>
-					<td><b>Department:</b></td>
-					<td class="dropdown-dept">
-						<select name="department">
-							<option value=""> </option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td><b>Position:</b></td>
-					<td class="dropdown-dept">
-						<select name="position">
-							<option value=""> </option>
-						</select>
-				</tr>
-				<tr>
-					<td><b>Role:</b></td>
-					<td class="dropdown-role"> 
-						<select name="role">
-							<option value=""> </option>
-						</select>
-					</td>
-                </tr>
-                <tr class="reset-password">
-                    <td><b>Password:</b></td>
-                    <td><input id="default-pass" type="password" value=""></td> 
-                    <td>
-            	<div>
-                	<label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
-            	</div>
-                    </td>
-                </tr>
-				<tr>
-					<td></td>
-					<td><button class="btn btn-primary">Update</button></td>
-				</tr>
-			</table>
-		</form>
-		<?php } ?>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>    
-    </div>
-  </div>
-</div> 
+		</div>	
 		<!-- End of User Table -->
 
 <!-- Add User Modal -->
@@ -434,9 +359,9 @@ $ID=$_GET['id'];
 									<td></td>
 									<td><button class="btn btn-success">Register</button></td>
 								</tr>
-							</table>
-						</form>
-                    </div>
+						</table>
+				</form>
+   		 </div>
 </form>
 
 <!-- End of Add User Modal  -->
