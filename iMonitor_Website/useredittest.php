@@ -247,6 +247,7 @@ $ID=$_GET['id'];
 	 for($i=0; $row = $stmt->fetch(); $i++){
 	 $id=$row['id'];
   ?>
+  <?php } ?>
   <!-- Modal New Edit-->
   	<div class="modal fade" id="editAccount" role="dialog">
     	<div class="modal-dialog">
@@ -306,7 +307,7 @@ $ID=$_GET['id'];
 				</tr>
 			</table>
 		</form>
-		<?php } ?>
+		
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
