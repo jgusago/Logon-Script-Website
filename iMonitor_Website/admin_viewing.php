@@ -201,43 +201,45 @@ $ID=$_GET['id'];
                                 </li>
                             </ul>
                         </div>
-                        <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px; width: 92%;">
-                                <table class="table table-hover" style="background: #ffffff;">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Computer Name</th>
-                                            <th>IP Address</th>
-                                            <th>Status</th>
-                                            <th>Platform</th>
-                                            <th>Remarks</th>
-                                            <th>Agent Version</th>
-                                            <th>Options</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            $query = $db->prepare("SELECT compID, hostname, ip, status, platform, remarks, agent_Version FROM tbl_computer_details");
-                                            $query->execute();
-                                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                                            while ($row = $query->fetch()) {
-                                                echo '
-                                                <tr>
-                                                    <td> '.$row['compID'].'</td>
-                                                    <td> '.$row['hostname'].'</td>
-                                                    <td>'.$row['ip'].'</td>
-                                                    <td>'.$row['status'].'</td>
-                                                    <td> '.$row['platform'].'</td>
-                                                    <td>'.$row['remarks'].'</td>
-                                                    <td>'.$row['agent_Version'].'</td>
-                                                    <td><input type="button value="View" class="btn btn-primary"></td>
-                                                </tr>
-                                                ';
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
+                        <div class="panel panel-body"> 
+                            <div class="tab-pane fade in active" id="tab1default">
+                                <div class="pane pane--1" style="margin-right: 480px; margin-left: 20px; width: 92%;">
+                                    <table class="table table-hover" style="background: #ffffff;">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Computer Name</th>
+                                                <th>IP Address</th>
+                                                <th>Status</th>
+                                                <th>Platform</th>
+                                                <th>Remarks</th>
+                                                <th>Agent Version</th>
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $query = $db->prepare("SELECT compID, hostname, ip, status, platform, remarks, agent_Version FROM tbl_computer_details");
+                                                $query->execute();
+                                                $query->setFetchMode(PDO::FETCH_ASSOC);
+                                                while ($row = $query->fetch()) {
+                                                    echo '
+                                                    <tr>
+                                                        <td> '.$row['compID'].'</td>
+                                                        <td> '.$row['hostname'].'</td>
+                                                        <td>'.$row['ip'].'</td>
+                                                        <td>'.$row['status'].'</td>
+                                                        <td> '.$row['platform'].'</td>
+                                                        <td>'.$row['remarks'].'</td>
+                                                        <td>'.$row['agent_Version'].'</td>
+                                                        <td><input type="button" value="View" class="btn btn-primary"></td>
+                                                    </tr>
+                                                    ';
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
