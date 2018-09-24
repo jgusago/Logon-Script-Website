@@ -358,7 +358,7 @@ $ID=$_GET['id'];
 							$stmt->execute();
 							while($row=$stmt->fetch(PDO::FETCH_ASSOC)){					
 					?>
-					
+					<?php } ?>
 <!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
@@ -425,7 +425,6 @@ $ID=$_GET['id'];
 	</div>
 	<!-- End of Edit User Modal -->
 </form>
-<?php } ?>
 </body>
 </html>
 
