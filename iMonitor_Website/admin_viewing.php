@@ -265,7 +265,7 @@ $ID=$_GET['id'];
 	<!-- End of Sidebar -->
 
     <!-- Table -->
-    <div class="container-body">
+    <!-- <div class="container-body">
         <div class="info">
             <p><strong>MARVIN 5TH | COMPUTER LIST</strong></p>
         </div>
@@ -314,7 +314,7 @@ $ID=$_GET['id'];
                     <li><a href="">&raquo;</a></li>
                 </ul>
             </div>     -->
-            <div class="container">
+            <!-- <div class="container">
                 <table class="table table-bordered" style="position: fixed; margin-left:2px; margin-top: 250px; margin-bottom:0px; width:88%;">
                     <thead>
                         <tr>
@@ -354,7 +354,7 @@ $ID=$_GET['id'];
                 </table>
             </div>
         </div>           
-    </div>
+    </div> --> -->
 
     <!-- Edit Modal -->
     <div id="myModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
