@@ -200,8 +200,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<!--<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></a></td>-->	
-						<td><button class="btn btn-primary" data-toggle="modal" data-target="#editUser" data-formid="<?php echo $id; ?>">Edit Record<?php echo $id; ?></button></td>	
+						<td><button class="btn btn-primary" value="" >Edit Record</button></a></td>
 					</tr>
 					<?php } ?>			
             	</tbody>
