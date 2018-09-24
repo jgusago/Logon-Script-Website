@@ -253,7 +253,10 @@ ul ul a {
     min-height: 100vh;
     transition: all 0.3s;
 }
-
+.btn-primary
+{
+    width:90px;
+}
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;

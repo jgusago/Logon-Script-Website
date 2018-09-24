@@ -231,7 +231,7 @@ $ID=$_GET['id'];
                                                     <td> '.$row['platform'].'</td>
                                                     <td>'.$row['remarks'].'</td>
                                                     <td>'.$row['agent_Version'].'</td>
-                                                    <td><input type="button" name="View" class="btn btn-primary"></td>
+                                                    <td><input type="button value="View" class="btn btn-primary"></td>
                                                 </tr>
                                                 ';
                                             }
