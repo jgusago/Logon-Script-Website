@@ -458,8 +458,10 @@ $ID=$_GET['id'];
 			</div>
 	</div>
 </form>-->
-
-<div class="container">
+<!-- End of Edit User Modal -->
+	
+</body>
+<div class="footer-2">
   <h2>Modal Example</h2>
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
@@ -486,9 +488,6 @@ $ID=$_GET['id'];
   </div>
   
 </div>
-<!-- End of Edit User Modal -->
-	
-</body>
 </html>
 
 <script>
