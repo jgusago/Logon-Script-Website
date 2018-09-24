@@ -238,9 +238,9 @@ $ID=$_GET['id'];
 						<td><?php echo $row['status']; ?></td>
 						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
+					<?php } ?>
             	</tbody>
             </table>
-			<?php } ?>
 		</div>	
 		<!-- End of User Table -->
 
