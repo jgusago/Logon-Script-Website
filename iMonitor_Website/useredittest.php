@@ -24,15 +24,15 @@ document.location.href = "../php/connection/logout.php";
 </script>
 
 <?php 
-error_reporting(0);
+//error_reporting(0);
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $ID=$_GET['id'];
-	if(!isset($_SESSION["userid"])) {
-    	header("Location: index.php");
-  	exit();
-  	}
+	//if(!isset($_SESSION["userid"])) {
+    	//header("Location: index.php");
+  	//exit();
+  	//}
 ?>
 
 <!DOCTYPE html>
@@ -230,10 +230,8 @@ $ID=$_GET['id'];
 						<td><?php echo $row['department']; ?></td>
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
-						<td><?php echo $row['status']; ?></td>
-						
+						<td><?php echo $row['status']; ?></td>				
 						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></td>
-                        <!--<td><a href="test_edit.php <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td> -->
 					</tr>
 					<?php } ?>
             	</tbody>
