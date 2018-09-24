@@ -200,7 +200,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a href="#editUser <?php echo '?id='.$ID; ?>" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></a></td>		
+						<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary" value="" >Edit Record</button></a></td>		
 					</tr>
 					<?php } ?>			
             	</tbody>
@@ -361,7 +361,7 @@ $ID=$_GET['id'];
 					<?php } ?>
 <!-- Edit User Modal -->
 <form action="user_edit_account_submit.php" method="POST">	
-	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;" onload="<?php echo '?id='.$ID; ?>">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
