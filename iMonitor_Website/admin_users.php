@@ -301,13 +301,7 @@ $ID=$_GET['id'];
 										</select>
 									</td>
 								</tr>
-								<tr>
-									<td class="dropdown-dept">
-										<select name="subdepartment">
-											<option>ITDEVPH</option>
-										</select>
-									</td>
-								</tr>
+								
 								<tr>
 									<td><b>Position:</b></td>
 									<td><input type="text" id="position" name="position" required></td>
