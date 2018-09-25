@@ -264,7 +264,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </thead>
                                 <tbody id = "load_data">
                                     <?php
-                                        $sql = "select user, domain_name, hostname, ip_address, ip_date_modified, old_ip_address, old_ip_modified, 
+                                        $sql = "select user, domain_name, hostname, ip_address, ip_date_modified,
                                         iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log 
                                         WHERE user != 'Administrator' ";
                                         $stmt = $db->prepare($sql);
@@ -281,8 +281,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                         <td><?php echo $row['domain_name']; ?></td>
                                         <td><?php echo $row['ip_address']; ?></td>
                                         <td><?php echo $row['ip_date_modified']; ?></td>
-                                        <td><?php echo $row['old_ip_address']; ?></td>
-                                        <td><?php echo $row['old_ip_modified']; ?></td>
                                         <td><?php echo $row['iMonitor_Status']; ?></td>
                                         <td><?php echo $row['services']; ?></td>
                                         <td><?php echo $row['sysSetting_File']; ?></td>
