@@ -295,7 +295,7 @@ $ID=$_GET['id'];
               									$stmt->execute();
 
               									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['department'].'</option>'; 
+                								echo '<option>'.$row['branch_name'].'</option>'; 
               									}
             								?>
 										</select>
