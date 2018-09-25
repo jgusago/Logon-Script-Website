@@ -204,7 +204,7 @@ $ID=$_GET['id'];
                         <div class="panel panel-body"> 
                             <div class="tab-pane fade in active" id="tab1default">
                                 <div class="pane pane--1" style="margin-right: 480px; margin-left: 0px; width: 89%;">
-                                    <div class="col-md-6" style="padding-top:15px;">
+                                    <div class="col-md-6" style="padding-top:0px;">
                                         <select name="department" id="department" class="form-control">
                                             <option value="" selected>--All department--</option>
                                             <option value="Marvin 5th">Marvin 5th</option>
@@ -212,7 +212,7 @@ $ID=$_GET['id'];
                                             <option value="AT">AT</option>
                                         </select> 
                                     </div>
-                                    <div class="col-md-6" style="padding-top:15px;">
+                                    <div class="col-md-6" style="padding-top:0px;">
                                         <select name="dub_dept" id="sub_dept" class="form-control">
                                             <option value="" selected>--All sub department</option>
                                             <option value="OM">IT-OM</option>
@@ -227,7 +227,6 @@ $ID=$_GET['id'];
                                                 <th>Computer Name</th>
                                                 <th>IP Address</th>
                                                 <th>Status</th>
-                                                <th>Platform</th>
                                                 <th>Remarks</th>
                                                 <th>Agent Version</th>
                                                 <th>Options</th>
@@ -235,7 +234,7 @@ $ID=$_GET['id'];
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $query = $db->prepare("SELECT compID, hostname, ip, status, platform, remarks, agent_Version FROM tbl_computer_details");
+                                                $query = $db->prepare("SELECT compID, hostname, ip, status, remarks, agent_Version FROM tbl_computer_details");
                                                 $query->execute();
                                                 $query->setFetchMode(PDO::FETCH_ASSOC);
                                                 while ($row = $query->fetch()) {
@@ -245,7 +244,6 @@ $ID=$_GET['id'];
                                                         <td> '.$row['hostname'].'</td>
                                                         <td>'.$row['ip'].'</td>
                                                         <td>'.$row['status'].'</td>
-                                                        <td> '.$row['platform'].'</td>
                                                         <td>'.$row['remarks'].'</td>
                                                         <td>'.$row['agent_Version'].'</td>
                                                         <td><input type="button" value="View" class="btn btn-primary"></td>
