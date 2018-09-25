@@ -28,6 +28,7 @@ error_reporting(0);
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+include('test_modal.php');
 $ID=$_GET['id'];
 	if(!isset($_SESSION["userid"])) {
     	header("Location: index.php");
