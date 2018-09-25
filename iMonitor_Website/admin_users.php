@@ -28,7 +28,6 @@ error_reporting(0);
 
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-include('test_modal.php');
 $ID=$_GET['id'];
 	if(!isset($_SESSION["userid"])) {
     	header("Location: index.php");
@@ -235,7 +234,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['status']; ?></td>
 						<!--<td><a href="test_edit.php <?php //echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
 						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Records</button></a></td>
-						
+						<?php require "{$_SERVER['DOCUMENT_ROOT']}/iMonitor_Website/test_modal.php"; ?>
 					</tr>
 					<?php } ?>
             	</tbody>
