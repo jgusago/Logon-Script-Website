@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
 			<div class="container-fluid">
-			<form method="POST" action="edit.php?id=<?php echo $row['id']; ?>">
+			<form method="POST" action="../php/connection/user_account_submit.php?id=<?php echo $row['id']; ?>">
 				<div class="row form-group">
 					<div class="col-sm-2">
 						<label class="control-label" style="position:relative; top:7px;">User ID:</label>
