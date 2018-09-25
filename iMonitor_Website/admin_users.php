@@ -216,12 +216,13 @@ $ID=$_GET['id'];
                 </thead>
                 <tbody class="table-users">
 
- 					<?php
-		            	$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
-		            	$stmt->execute();
-		            	for($i=0; $row = $stmt->fetch(); $i++){
-						$id=$row['id'];
-						
+					 <?php
+					  $sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
+					  foreach ($db->query($sql) as $row) {
+		            	//$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
+		            	//$stmt->execute();
+		            	//for($i=0; $row = $stmt->fetch(); $i++){
+						//$id=$row['id'];			
 	            	?>
                 	<tr>
 						<td><?php echo $row['id']; ?></td>
@@ -233,9 +234,9 @@ $ID=$_GET['id'];
 						<td><?php echo $row['status']; ?></td>
 						<!--<td><a href="test_edit.php <?php //echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
 						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Records</button></a></td>
+						<?php include('test_modal.php'); ?>
 					</tr>
 					<?php } ?>
-					<?php include('test_modal.php'); ?>
             	</tbody>
             </table>
 		</div> 
