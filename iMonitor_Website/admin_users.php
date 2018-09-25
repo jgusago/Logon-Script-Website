@@ -232,7 +232,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<!--<td><a href="test_edit.php <?php //echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
+						<!--<td><a href="test_edit.php ?php //echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
 						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Records</button></a></td>
 						<?php require "{$_SERVER['DOCUMENT_ROOT']}/iMonitor_Website/test_modal.php"; ?>
 					</tr>
@@ -362,7 +362,7 @@ $ID=$_GET['id'];
 			</div>
 
 <!-- Edit User Modal -->
-<form action="user_edit_account_submit.php" method="POST">	
+<!--<form action="user_edit_account_submit.php" method="POST">	
 	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
@@ -374,17 +374,17 @@ $ID=$_GET['id'];
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" value=<?php echo $row['userid']?> name="userid" required placeholder="User ID"></td>
+									<td><input type="text" id="userid" value="" name="userid" required placeholder="User ID"></td>
 								</tr>
 								<tr>
 									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" value=<?php echo $row['name']?>  required  class="validate"></td>
+									<td><input type="text" id="name" name="name" value=""  required  class="validate"></td>
 								</tr>
 								<tr>
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-										<option value=<?php echo $row['userid']?>> <?php echo $row['department']?> </option>
+										<option value=""> </option>
 										</select>
 									</td>
 								</tr>
@@ -392,20 +392,20 @@ $ID=$_GET['id'];
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="position">
-										<option value=<?php echo $row['userid']?> > <?php echo $row['position']?> </option>
+										<option value=""> </option>
 										</select>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-										<option value=<?php echo $row['userid']?>> <?php echo $row['role']?> </option>
+										<option value=""> </option>
 										</select>
 									</td>
                                 </tr>
                                 <tr class="reset-password">
                                     <td><b>Password:</b></td>
-                                    <td><input id="default-pass" type="password" value=<?php echo $row['password']?>></td> 
+                                    <td><input id="default-pass" type="password" value="">></td> 
                                     <td>
                                         <div>
                                             <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
@@ -425,7 +425,7 @@ $ID=$_GET['id'];
 				</div>
 			</div>
 	</div>
-</form>
+</form>-->
 <!-- End of Edit User Modal -->
 	
 </body>
