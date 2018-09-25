@@ -290,7 +290,7 @@ $ID=$_GET['id'];
 										<select id= "department" name="department" required>
 											<option></option>
 											<?php     
-              									$sql = "select department from tbl_department";
+              									$sql = "select branch_name from tbl_department";
               									$stmt = $db->prepare($sql);
               									$stmt->execute();
 
