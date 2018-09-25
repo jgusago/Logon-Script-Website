@@ -251,8 +251,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                         <th>Domain</th>
                                         <th>IP Address</th>
                                         <th>Date Modified</th>
-                                        <th>Old IP Address</th>
-                                        <th>Date Modified</th>
                                         <th>iMonitor Status</th>
                                         <th>Services Not Found</th>
                                         <th>SysSetting File</th>
