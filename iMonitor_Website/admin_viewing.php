@@ -206,18 +206,18 @@ $ID=$_GET['id'];
                                     </select> 
                                 </div>
                                 <div class="col-md-3" style="padding-top:0px;">
-                                   
-                                </div>
-                                <div class="col-md-3" style="padding-top:0px;">
-                                    
-                                </div>
-                                <div class="col-md-3" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept" class="form-control">
                                         <option value="" selected>--All sub department</option>
                                         <option value="OM">IT-OM</option>
                                         <option value="AUD">IT-AUD</option>
                                         <option value="WEB">IT-WEB</option>
                                     </select>
+                                </div>
+                                <div class="col-md-3" style="padding-top:0px;">
+                                   
+                                </div>
+                                <div class="col-md-3" style="padding-top:0px;">
+                                    
                                 </div>
                                 <div class="table-responsive" style="overflow-x:auto;">
                                     <table style="background: #ffffff;">
