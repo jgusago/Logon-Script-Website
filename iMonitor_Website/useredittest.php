@@ -238,7 +238,7 @@ $ID=$_GET['id'];
 				<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Edit</a>
 				<a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 			</td>
-			<?php include('edit_modal.php'); ?>
+			<?php include('test_modal.php'); ?>
 		</tr>
 		<?php 
 	}
