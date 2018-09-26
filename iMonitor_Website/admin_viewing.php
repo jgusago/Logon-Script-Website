@@ -191,55 +191,56 @@ $ID=$_GET['id'];
 	   		</ul>
         </nav>
         <div class="container" style="width:100%;">
-            <div class="panel">Computer List
-                <div class="col-lg-12">
-                    <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;">
-                        <div class="panel-heading">
-                            <ul class="nav nav-tabs">
-                                <li class="active">
-                                    <a href="#tab1default" data-toggle="tab">Computer List</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="panel panel-body"> 
-                            <div class="tab-pane fade in active" id="tab1default">
-                                <div class="pane pane--1" style="margin-right: 480px; margin-left: 0px; width: 89%;">
-                                    <div class="col-md-6" style="padding-top:0px;">
-                                        <select name="department" id="department" class="form-control">
-                                            <option value="" selected>--All department--</option>
-                                            <option value="Marvin 5th">Marvin 5th</option>
-                                            <option value="Marvin 10th">Marvin 10th</option>
-                                            <option value="AT">AT</option>
-                                        </select> 
-                                    </div>
-                                    <div class="col-md-6" style="padding-top:0px;">
-                                        <select name="dub_dept" id="sub_dept" class="form-control">
-                                            <option value="" selected>--All sub department</option>
-                                            <option value="OM">IT-OM</option>
-                                            <option value="AUD">IT-AUD</option>
-                                            <option value="WEB">IT-WEB</option>
-                                        </select>
-                                    </div>
-                                    <div class="table-responsive" style="overflow-x:auto;">
-                                        <table style="background: #ffffff;">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Computer Name</th>
-                                                    <th>IP Address</th>
-                                                    <th>Status</th>
-                                                    <th>Remarks</th>
-                                                    <th>Agent Version</th>
-                                                    <th>Options</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                    $query = $db->prepare("SELECT compID, hostname, ip, status, remarks, agent_Version FROM tbl_computer_details");
-                                                    $query->execute();
-                                                    $query->setFetchMode(PDO::FETCH_ASSOC);
-                                                    while ($row = $query->fetch()) {
-                                                        echo '
+            <div class="panel">Computer List</div>
+            <div class="col-lg-12">
+                <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;">
+                    <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#tab1default" data-toggle="tab">Computer List</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel panel-body"> 
+                        <div class="tab-pane fade in active" id="tab1default">
+                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 0px; width: 89%;">
+                                <div class="col-md-6" style="padding-top:0px;">
+                                    <select name="department" id="department" class="form-control">
+                                        <option value="" selected>--All department--</option>
+                                        <option value="Marvin 5th">Marvin 5th</option>
+                                        <option value="Marvin 10th">Marvin 10th</option>
+                                        <option value="AT">AT</option>
+                                    </select> 
+                                </div>
+                                <div class="col-md-6" style="padding-top:0px;">
+                                    <select name="dub_dept" id="sub_dept" class="form-control">
+                                        <option value="" selected>--All sub department</option>
+                                        <option value="OM">IT-OM</option>
+                                        <option value="AUD">IT-AUD</option>
+                                        <option value="WEB">IT-WEB</option>
+                                    </select>
+                                </div>
+                                <div class="table-responsive" style="overflow-x:auto;">
+                                    <table style="background: #ffffff;">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Computer Name</th>
+                                                <th>IP Address</th>
+                                                <th>Status</th>
+                                                <th>Remarks</th>
+                                                <th>Agent Version</th>
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $query = $db->prepare("SELECT compID, hostname, ip, status, remarks, agent_Version FROM tbl_computer_details");
+                                                $query->execute();
+                                                $query->setFetchMode(PDO::FETCH_ASSOC);
+                                                while ($row = $query->fetch()) 
+                                                {
+                                                    echo '
                                                         <tr>
                                                             <td> '.$row['compID'].'</td>
                                                             <td> '.$row['hostname'].'</td>
@@ -250,11 +251,10 @@ $ID=$_GET['id'];
                                                             <td><input type="button" value="View" class="btn btn-primary"></td>
                                                         </tr>
                                                         ';
-                                                    }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
