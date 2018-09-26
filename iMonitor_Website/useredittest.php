@@ -222,24 +222,31 @@ $ID=$_GET['id'];
                 <tbody class="table-users">
 
  					<?php
-		            	$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
-		            	$stmt->execute();
-		            	for($i=0; $row = $stmt->fetch(); $i++){
-						//$id=$row['id'];
-						
-	            	?>
-                	<tr>
-						<td><?php echo $row['id']; ?></td>
+		            
+
+try{	
+	$sql = 'SELECT * FROM tbl_user';
+	foreach ($db->query($sql) as $row) {
+		?>
+		<tr>
+		<td><?php echo $row['id']; ?></td>
 						<td><?php echo $row['userid']; ?></td>
 						<td><?php echo $row['name']; ?></td>
 						<td><?php echo $row['department']; ?></td>
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
-						<?php require "{$_SERVER['DOCUMENT_ROOT']}/iMonitor_Website/test_modal.php"; ?>
-					</tr>
-					<?php } ?>
+			<td>
+				<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+				<a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+			</td>
+			<?php include('edit_modal.php'); ?>
+		</tr>
+		<?php 
+	}
+}
+					
+					?>
             	</tbody>
             </table>
 		</div>	
