@@ -1,5 +1,5 @@
 
- <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+ <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="false" style="margin-top:150px;">
  	<div class="modal-dialog" role="document">
       <!-- Modal content-->
       <div class="modal-content">
