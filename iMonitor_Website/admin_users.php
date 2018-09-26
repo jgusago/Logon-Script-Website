@@ -232,9 +232,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<!--<td><a href="test_edit.php ?php //echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>-->
-						<td><a href="#edit" data-toggle="modal"><button class="btn btn-primary">Edit Records</button></a></td>
-						<?php require "{$_SERVER['DOCUMENT_ROOT']}/iMonitor_Website/test_modal.php"; ?>
+						<td><a href="test_edit.php <?php echo '?id='.$id; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 					</tr>
 					<?php } ?>
             	</tbody>
@@ -245,73 +243,123 @@ $ID=$_GET['id'];
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
-			<div class="modal-dialog modal-md" role="document">
-				<div class="modal-content">
-					<div class="modal-header" style="background-color:#16811430;"><b>User Registration</b>
-						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					</div>
-					<div class="body">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header" style="background-color:#16811430;"><b>User Registration</b>
+					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="body">
 
-						<form style="padding:20px;">
-							<table class="modal-form">
+					<form style="padding:20px;">
+						<table class="modal-form">
 
-										<script type="text/javascript">
-											function isNumberKey(evt){
-											var charCode = (evt.which) ? evt.which : evt.keyCode;
-    										if (charCode > 31 && (charCode < 48 || charCode > 57))
-        									return false;
-    										return true;
-											}
-										</script>
+							<script type="text/javascript">
+							function isNumberKey(evt)
+							{
+								var charCode = (evt.which) ? evt.which : evt.keyCode;
+								if (charCode > 31 && (charCode < 48 || charCode > 57))
+									return false;
+									return true;
+							}
+							</script>
 
-								<tr>
-									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID" onkeypress="return isNumberKey(event)"/></td>
-								</tr>
+							<tr>
+								<td><b>ID Number:</b></td>
+								<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID" onkeypress="return isNumberKey(event)"/></td>
+							</tr>
 
-										<script type="text/javascript">
-        									function numberOnly(txt, e) {
-            								var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
-            								var code;
-            								if (window.event)
-                							code = e.keyCode;
-            								else
-                							code = e.which;
-            								var char = keychar = String.fromCharCode(code);
-            								if (arr.indexOf(char) == -1)
+								<script type="text/javascript">
+								function numberOnly(txt, e) 
+								{
+            						var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+            						var code;
+            						if (window.event)
+										code = e.keyCode;
+									else
+                						code = e.which;
+            							var char = keychar = String.fromCharCode(code);
+            							if (arr.indexOf(char) == -1)
                 							return false;
-        									}
-    									</script>
+        						}
+    							</script>
 
-								<tr>
-									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/></td>
-								</tr>
-								<tr>
-									<td><b>Department:</b></td>
-									<td class="dropdown-dept">
-										<select id= "department" name="department" required>
-											<option></option>
-											<?php     
-              									$sql = "select branch_name from tbl_department";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
+							<tr>
+								<td><b>Name:</b></td>
+								<td><input type="text" id="name" name="name" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/></td>
+							</tr>
+							<tr>
+								<td><b>Department:</b></td>
+								<td class="dropdown-dept">
+									<select id= "department" name="department" required>
+										<option></option>
+										<?php     
+              								$sql = "select branch_name from tbl_department";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
 
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+											  while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											  {
                 								echo '<option>'.$row['branch_name'].'</option>'; 
-              									}
-            								?>
+              								}
+            							?>
+									</select>
+								</td>
+							</tr>
+								
+<<<<<<< HEAD
+							<tr>
+								<td><b>Position:</b></td>
+								<td><input type="text" id="position" name="position" required></td>
+							</tr>
+							<tr>
+								<td><b>Role:</b></td>
+								<td><input type="text" id="role" name="role" required></td>
+							</tr>
+							<tr>
+								<td><b>Status:</b> </td>
+								<td class="dropdown-status">
+									<select id="status" name="status" required>
+										<option></option>
+										<option value="Active">Active</option>
+										<option value="Inactive">Inactive</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><b>Password:</b></td>
+								<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><button class="btn btn-success">Register</button></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+										
+				<script type="text/javascript">
+				function populateSecondTextBox() 
+				{
+   					document.getElementById('password2').value = document.getElementById('password').value;
+				}
+				</script>
+=======
+								<tr>
+									<td><b>Position:</b></td>
+									<td class="dropdown-dept">
+										<select id= "postion" name="position" required>
+											<option>ITDEVPH</option>
 										</select>
 									</td>
 								</tr>
-								
-								<tr>
-									<td><b>Position:</b></td>
-									<td><input type="text" id="position" name="position" required></td>
-								</tr>
 								<tr>
 									<td><b>Role:</b></td>
-									<td><input type="text" id="role" name="role" required></td>
+									<td class="dropdown-dept">
+										<select id= "role" name="role" required>
+											<option>STAFF</option>
+											<option>ADMIN</option>
+										</select>
+									</td>
 								</tr>
 								<tr>
 									<td><b>Status:</b> </td>
@@ -342,24 +390,27 @@ $ID=$_GET['id'];
    						document.getElementById('password2').value = document.getElementById('password').value;
 						}
 					</script>
+>>>>>>> 2aeba90b98753c02288f08cb098a3a6985442418
 
-					<script type="text/javascript">
-    						function ClearFields() {
-        					document.getElementById("userid").value = "";
-							document.getElementById("name").value = "";
-							document.getElementById("department").selectedIndex = "0";
-							document.getElementById("position").value = "";
-							document.getElementById("role").selectedIndex = "0";
-    						}
-					</script>
+				<script type="text/javascript">
+				function ClearFields() 
+				{
+        			document.getElementById("userid").value = "";
+					document.getElementById("name").value = "";
+					document.getElementById("department").selectedIndex = "0";
+					document.getElementById("position").value = "";
+					document.getElementById("role").selectedIndex = "0";
+    			}
+				</script>
 
-					<div class="modal-footer">
-						<input type="hidden" id="password2" name="password2"></td>
-						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="ClearFields();">Close</button>
-					</div>
+				<div class="modal-footer">
+					<input type="hidden" id="password2" name="password2"></td>
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
-			</div>
+		</div>
+	</div>
+</form>
 
 <!-- Edit User Modal -->
 <!--<form action="user_edit_account_submit.php" method="POST">	
@@ -432,6 +483,29 @@ $ID=$_GET['id'];
 </html>
 
 <script>
+
+	$(document).ready(function()
+	{
+		$(".dropdown").hover(function() 
+		{
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');        
+        },
+		function() 
+		{
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');       
+        });
+    });
+
+	(document).ready(function () 
+	{
+		$('#sidebarCollapse').on('click', function () 
+		{
+            $('#sidebar').toggleClass('active');
+        });
+	});
+					
         function isNumber(input) {
           var regex =/[^0-9]/gi;
           input.value = input.value.replace(regex,"");
@@ -456,24 +530,5 @@ $ID=$_GET['id'];
                 x.type = "password";
             }
 		}  
-		
-		$(document).ready(function(){
-            $(".dropdown").hover(            
-                function() {
-                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-                    $(this).toggleClass('open');        
-                },
-                function() {
-                    $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-                    $(this).toggleClass('open');       
-                }
-            );
-        });
-
-                $(document).ready(function () {
-                        $('#sidebarCollapse').on('click', function () {
-                            $('#sidebar').toggleClass('active');
-                        });
-                    });
-    </script>
+</script>
 
