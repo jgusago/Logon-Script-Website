@@ -8,8 +8,7 @@
           <h4 class="modal-title">Edit User Information</h4>
         </div>
         <div class="modal-body">
-				<div class="container-fluid">
-        <form style="padding:10px;">
+        	<form style="padding:5px;">
 							<table class="modal-form">
 								<tr>
 									<td><b>ID Number:</b></td>
@@ -57,12 +56,10 @@
 								</tr>
 							</table>
 						</form>
-        
+        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-				</div>
-      </div>
 	   </div>  
     </div>
   </div>
