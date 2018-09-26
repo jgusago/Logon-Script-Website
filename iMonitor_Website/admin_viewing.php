@@ -190,8 +190,8 @@ $ID=$_GET['id'];
 		        </li>	  
 	   		</ul>
         </nav>
-        <div class="container" style="width:2000px;">
-            <div class="panel" style="margin-top: 60px; background-color: #e3e5e3eb; margin-left:-15px;">
+        <div class="container" style="width:100%;">
+            <div class="panel">Computer List
                 <div class="col-lg-12">
                     <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;">
                         <div class="panel-heading">
