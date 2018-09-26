@@ -307,11 +307,22 @@ $ID=$_GET['id'];
 							</tr>
 							<tr>
 								<td><b>Position:</b></td>
-								<td><input type="text" id="position" name="position" required></td>
+								<td class="dropdown-status">
+									<select id="postion" name="postion" required>
+										<option></option>
+										<option value="ITDEVPH">ITDEVPH</option>
+									</select>
+								</td>
 							</tr>
 							<tr>
 								<td><b>Role:</b></td>
-								<td><input type="text" id="role" name="role" required></td>
+								<td class="dropdown-status">
+									<select id="role" name="role" required>
+										<option></option>
+										<option value="Admin">Asmin</option>
+										<option value="Staff">Staff</option>
+									</select>
+								</td>
 							</tr>
 							<tr>
 								<td><b>Status:</b> </td>
