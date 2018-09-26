@@ -225,7 +225,7 @@ $ID=$_GET['id'];
 		            	$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
 		            	$stmt->execute();
 		            	for($i=0; $row = $stmt->fetch(); $i++){
-						$id=$row['id'];
+						//$id=$row['id'];
 						
 	            	?>
                 	<tr>
@@ -237,6 +237,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
 						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+						<?php require "{$_SERVER['DOCUMENT_ROOT']}/iMonitor_Website/test_modal.php"; ?>
 					</tr>
 					<?php } ?>
             	</tbody>
