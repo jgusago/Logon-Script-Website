@@ -47,7 +47,7 @@ $ID=$_GET['id'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="general.css">
-    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="viewing.css">
 
 </head>
 <body>
@@ -220,7 +220,7 @@ $ID=$_GET['id'];
                                             <option value="WEB">IT-WEB</option>
                                         </select>
                                     </div>
-                                    <div class="table-responsive">
+                                    <div class="table-responsive" style="overflow-x:auto;">
                                         <table style="background: #ffffff;">
                                             <thead>
                                                 <tr>
