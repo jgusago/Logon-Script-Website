@@ -308,7 +308,7 @@ $ID=$_GET['id'];
 							<tr>
 								<td><b>Position:</b></td>
 								<td class="dropdown-status">
-									<select id="postion" name="postion" required>
+									<select id="position" name="position" required>
 										<option></option>
 										<option value="ITDEVPH">ITDEVPH</option>
 									</select>

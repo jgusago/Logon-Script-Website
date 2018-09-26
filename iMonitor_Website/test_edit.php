@@ -98,91 +98,71 @@ $ID=$_GET['id'];
         <label for="password">Password:</label><br>
         <input type="text" id="password" name="password" value="Aa123456" disabled><br>
         <label for="department">Department:</label><br>
-            <select id="department" name="department">
+            			<select id="department" name="department">
 
                           				<?php     
-              									$sql = "select department from tbl_user WHERE id='$id'";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
+              								$sql = "select department from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
 
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['department'].'</option>'; 
-              									}
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['department'].'</option>'; 
+              								}
             							?>
 
-											    <?php     
-              									$sql = "select department from tbl_department";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
+										<?php     
+              								$sql = "select department from tbl_department";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
 
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['department'].'</option>'; 
-              									}
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['department'].'</option>'; 
+              								}
             							?>
-					  </select><br>
+					  	</select><br>
 
           	<label for="role">Position:</label><br>
-             	<select id="position" name="position">
+             			<select id="position" name="position">
 
                           				<?php     
-              									$sql = "select position from tbl_user WHERE id='$id'";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
+              								$sql = "select position from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
 
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['position'].'</option>'; 
-              									}
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['position'].'</option>'; 
+              								}
             							?>
 
-											    <?php     
-              									$sql = "select position from tbl_position";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['position'].'</option>'; 
-              									}
-            							?>
-					  </select><br>           
+					  	</select><br>           
         	<label for="role">Role:</label><br>
             	<select id="role" name="role">
+										<?php     
+              								$sql = "select role from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
 
-                          				<?php     
-              									$sql = "select role from tbl_user WHERE id='$id'";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['role'].'</option>'; 
-              									}
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['role'].'</option>'; 
+              								}
             							?>
-
-											    <?php     
-              									$sql = "select role from tbl_role";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['role'].'</option>'; 
-              									}
-            							?>
+							<option>Admin</option>
+							<option>Staff</option>
 					  </select><br>
 			<label for="status">Status:</label><br>
-            	<select id="status" name="status">
+            			<select id="status" name="status">
+										<?php     
+              								$sql = "select status from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
 
-                          				<?php     
-              									$sql = "select status from tbl_user WHERE id='$id'";
-              									$stmt = $db->prepare($sql);
-              									$stmt->execute();
-
-              									while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                								echo '<option>'.$row['status'].'</option>'; 
-              									}
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['status'].'</option>'; 
+              								}
             							?>
-
-										<option>Active</option>
-										<option>Inactive</option>
-					  </select><br>
+							<option>Active</option>
+							<option>Inactive</option>
+					  	</select><br>
         <input class="submit" type="submit" value="Update">
       </form>
       <?php } ?>      
