@@ -196,7 +196,7 @@ $ID=$_GET['id'];
                 <div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 480px; margin-left: 0px; width: 89%;">
+                            <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-6" style="padding-top:0px;">
                                     <select name="department" id="department" class="form-control">
                                         <option value="" selected>--All department--</option>
