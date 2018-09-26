@@ -223,10 +223,7 @@ $ID=$_GET['id'];
 
  					<?php
 		            
-					$database = new Connection();
-					$db = $database->open();
-try{	
-	$sql = 'SELECT * FROM tbl_user';
+					$sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user";
 	foreach ($db->query($sql) as $row) {
 		?>
 		<tr>
@@ -245,14 +242,6 @@ try{
 		</tr>
 		<?php 
 	}
-}
-catch(PDOException $e){
-	echo "There is some problem in connection: " . $e->getMessage();
-}
-
-//close connection
-$database->close();
-
 					?>
             	</tbody>
             </table>
