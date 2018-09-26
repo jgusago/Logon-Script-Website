@@ -221,28 +221,25 @@ $ID=$_GET['id'];
                 </thead>
                 <tbody class="table-users">
 
- 					<?php
-		            
-					$sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user";
-	foreach ($db->query($sql) as $row) {
-		?>
-		<tr>
-		<td><?php echo $row['id']; ?></td>
+ 					<?php  
+						$sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user";
+						foreach ($db->query($sql) as $row) {
+					?>
+					<tr>
+						<td><?php echo $row['id']; ?></td>
 						<td><?php echo $row['userid']; ?></td>
 						<td><?php echo $row['name']; ?></td>
 						<td><?php echo $row['department']; ?></td>
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-			<td>
-				<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-				<a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Delete</a>
-			</td>
-			<?php include('test_modal.php'); ?>
-		</tr>
-		<?php 
-	}
-					?>
+						<td>
+							<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+							<a href="#delete_<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+						</td>
+						<td><?php include('test_modal.php'); ?></td>
+					</tr>
+					<?php } ?>
             	</tbody>
             </table>
 		</div>	
