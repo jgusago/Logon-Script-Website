@@ -111,12 +111,12 @@ $ID=$_GET['id'];
             							?>
 
 										<?php     
-              								$sql = "select department from tbl_department";
+              								$sql = "select branch_name from tbl_department";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
               								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                							echo '<option>'.$row['department'].'</option>'; 
+                							echo '<option>'.$row['branch_name'].'</option>'; 
               								}
             							?>
 					  	</select><br>
