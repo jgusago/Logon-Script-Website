@@ -222,7 +222,7 @@ $ID=$_GET['id'];
 		            	//$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
 		            	//$stmt->execute();
 		            	//for($i=0; $row = $stmt->fetch(); $i++){
-						//$id=$row['id'];			
+						$id=$row['id'];			
 	            	?>
                 	<tr>
 						<td><?php echo $row['id']; ?></td>
