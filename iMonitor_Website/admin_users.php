@@ -305,8 +305,6 @@ $ID=$_GET['id'];
 									</select>
 								</td>
 							</tr>
-								
-<<<<<<< HEAD
 							<tr>
 								<td><b>Position:</b></td>
 								<td><input type="text" id="position" name="position" required></td>
@@ -336,71 +334,31 @@ $ID=$_GET['id'];
 						</table>
 					</form>
 				</div>
-										
-				<script type="text/javascript">
-				function populateSecondTextBox() 
-				{
-   					document.getElementById('password2').value = document.getElementById('password').value;
-				}
-				</script>
-=======
-								<tr>
-									<td><b>Position:</b></td>
-									<td class="dropdown-dept">
-										<select id= "postion" name="position" required>
-											<option>ITDEVPH</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><b>Role:</b></td>
-									<td class="dropdown-dept">
-										<select id= "role" name="role" required>
-											<option>STAFF</option>
-											<option>ADMIN</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><b>Status:</b> </td>
-									<td class="dropdown-status">
-										<select id="status" name="status" required>
-											<option></option>
-											<option value="Active">Active</option>
-											<option value="Inactive">Inactive</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><b>Password:</b></td>
-									<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td><button class="btn btn-success">Register</button></td>
-								</tr>
-							</table>
-						</form>
-                    </div>
-</form>
-
+</form>										
 <!-- End of Add User Modal  -->
+
+				<script type="text/javascript">
+					function populateSecondTextBox() 
+					{
+   						document.getElementById('password2').value = document.getElementById('password').value;
+					}
+				</script>
+
 					<script type="text/javascript">
 						function populateSecondTextBox() {
-   						document.getElementById('password2').value = document.getElementById('password').value;
+   							document.getElementById('password2').value = document.getElementById('password').value;
 						}
 					</script>
->>>>>>> 2aeba90b98753c02288f08cb098a3a6985442418
 
 				<script type="text/javascript">
-				function ClearFields() 
-				{
-        			document.getElementById("userid").value = "";
-					document.getElementById("name").value = "";
-					document.getElementById("department").selectedIndex = "0";
-					document.getElementById("position").value = "";
-					document.getElementById("role").selectedIndex = "0";
-    			}
+					function ClearFields() 
+					{
+        				document.getElementById("userid").value = "";
+						document.getElementById("name").value = "";
+						document.getElementById("department").selectedIndex = "0";
+						document.getElementById("position").value = "";
+						document.getElementById("role").selectedIndex = "0";
+    				}
 				</script>
 
 				<div class="modal-footer">
