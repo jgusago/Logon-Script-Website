@@ -191,7 +191,7 @@ $ID=$_GET['id'];
 	   		</ul>
         </nav>
         <div class="container" style="width:100%;">
-            <div class="panel">Computer List</div>
+            <div class="well">Computer List</div>
             <div class="col-lg-12">
                 <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;">
                     <div class="panel-heading">
