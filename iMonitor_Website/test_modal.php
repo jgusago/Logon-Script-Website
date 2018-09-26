@@ -1,5 +1,5 @@
 
-  <div class="modal fade" id="edit_<?php echo $row['id']; ?>" role="dialog">
+ <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -9,6 +9,7 @@
           <h4 class="modal-title">Edit User Information</h4>
         </div>
         <div class="modal-body">
+				<div class="container-fluid">
         <form style="padding:10px;">
 							<table class="modal-form">
 								<tr>
@@ -62,6 +63,6 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+	   </div>  
     </div>
   </div>
