@@ -44,7 +44,7 @@
                 </tr>
                 <tr class="reset-password">
                   <td><b>Password:</b></td>
-                  <td><input id="default-pass" type="password" value="Aa123456"></td> 
+                  <td><input id="default-pass" type="password" value="Aa123456"></td></br>
 									<td>
                       <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
                   </td>
