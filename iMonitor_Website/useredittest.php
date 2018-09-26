@@ -233,7 +233,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+						<td><a href="#edit_<?php echo $row['id']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
 						<td><?php include('test_modal.php'); ?></td>
 					</tr>
 					<?php } ?>
