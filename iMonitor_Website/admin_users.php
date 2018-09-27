@@ -310,15 +310,7 @@ $ID=$_GET['id'];
 								<td class="dropdown-status">
 									<select id="position" name="position" required>
 										<option></option>
-										<?php
-										$sql = "select sub_department from tbl_department WHERE branch_name='B2B'";
-    									$stmt = $db->prepare($sql);
-    									$stmt->execute();
-
-										while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        								echo '<option>'.$row['sub_department'].'</option>'; 
-										}      
-										?>      						
+										
 									</select>
 								</td>
 							</tr>
@@ -388,6 +380,26 @@ $ID=$_GET['id'];
 		</div>
 	</div>
 </form>
+
+<!-- FOR SUB DEPARTMENT -->
+
+ <script type="text/javascript">
+       $(document).on('change','#department',function(){
+             var val = $(this).val();
+             $.ajax({
+                   url: 'get_sub_department.php',
+                   data: {distrito:val},
+                   type: 'GET',
+                   dataType: 'html',
+                   success: function(result){
+                        $('#position').html();  
+                        $('#position').html(result); 
+                   }
+              });
+       });
+  </script>
+
+<!-- END -->
 
 <!-- Edit User Modal -->
 <!--<form action="user_edit_account_submit.php" method="POST">	
