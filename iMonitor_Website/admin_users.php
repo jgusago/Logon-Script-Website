@@ -382,7 +382,7 @@ $ID=$_GET['id'];
 
 <!-- FOR SUB DEPARTMENT -->
 
- <script type="text/javascript">
+<script type="text/javascript">
 var xmlHttp;
 function AjaxFunction()
 {
