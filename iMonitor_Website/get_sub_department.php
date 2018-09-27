@@ -12,7 +12,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     $stmt->execute();
 
 	while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        //echo '<option>''</option>';
+        echo '<option>''</option>';
         echo '<option>'.$row['sub_department'].'</option>'; 
     }            						
 ?>
