@@ -124,15 +124,7 @@ $ID=$_GET['id'];
           	<label for="role">Position:</label><br>
              			<select id="position" name="position">
 
-                          				<?php     
-              								$sql = "select position from tbl_user WHERE id='$id'";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
-
-              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                							echo '<option>'.$row['position'].'</option>'; 
-              								}
-            							?>
+                          				
 
 					  	</select><br>           
         	<label for="role">Role:</label><br>
