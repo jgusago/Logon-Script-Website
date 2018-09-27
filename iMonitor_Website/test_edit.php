@@ -98,7 +98,7 @@ $ID=$_GET['id'];
         <label for="password">Password:</label><br>
         <input type="text" id="password" name="password" value="Aa123456" disabled><br>
         <label for="department">Department:</label><br>
-            			<select id="department" name="department" value="<?php echo $row['department']; ?>">
+            			<select id="department" name="department">
 
                           				<?php     
               								$sql = "select branch_name from tbl_department";
