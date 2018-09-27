@@ -293,7 +293,7 @@ $ID=$_GET['id'];
 									<select id= "department" name="department" required>
 										<option></option>
 										<?php     
-              								$sql = "select branch_name from tbl_department";
+              								$sql = "select DISTINCT branch_name from tbl_department";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
@@ -310,7 +310,15 @@ $ID=$_GET['id'];
 								<td class="dropdown-status">
 									<select id="position" name="position" required>
 										<option></option>
-										<option value="ITDEVPH">ITDEVPH</option>
+										<?php
+										$sql = "select sub_department from tbl_department WHERE branch_name='B2B'";
+    									$stmt = $db->prepare($sql);
+    									$stmt->execute();
+
+										while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+        								echo '<option>'.$row['sub_department'].'</option>'; 
+										}      
+										?>      						
 									</select>
 								</td>
 							</tr>
