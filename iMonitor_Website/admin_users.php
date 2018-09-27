@@ -309,6 +309,7 @@ $ID=$_GET['id'];
 								<td><b>Position:</b></td>
 								<td class="dropdown-status">
 									<select id="position" name="position" required>
+									<?php require "{$_SERVER['DOCUMENT_ROOT']}/get_sub_department.php"; ?>
 										<option></option>
 										
 									</select>
@@ -383,7 +384,7 @@ $ID=$_GET['id'];
 
 <!-- FOR SUB DEPARTMENT -->
 
- <script type="text/javascript">
+ <!--<script type="text/javascript">
        $(document).on('change','#department',function(){
              var val = $(this).val();
              $.ajax({
@@ -397,7 +398,7 @@ $ID=$_GET['id'];
                    }
               });
        });
-  </script>
+  </script>-->
 
 <!-- END -->
 
