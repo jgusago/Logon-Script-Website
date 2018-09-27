@@ -383,55 +383,9 @@ $ID=$_GET['id'];
 <!-- FOR SUB DEPARTMENT -->
 
 <script type="text/javascript">
-var xmlHttp;
-function AjaxFunction()
-{
-var str = department.value;
-if(str == "Select State")
-alert("State Select kar!");
-xmlHttp=GetXmlHttpObject();
-if (xmlHttp==null)
-{
-alert ("Your browser does not support AJAX!");
-return;
-}
-var url="get_sub_department.php";
-url=url+"?branch_name="+str;
-url=url+"&sid="+Math.random();
-xmlHttp.onreadystatechange=stateChanged;
-xmlHttp.open("GET",url,true);
-xmlHttp.send(null);
-}
-function stateChanged()
-{
-if (xmlHttp.readyState==4)
-{
-document.getElementById("txtHint").innerHTML=xmlHttp.responseText;
-}
-}
-
-function GetXmlHttpObject()
-{
-var xmlHttp=null;
-try
-{
-// Firefox, Opera 8.0+, Safari
-xmlHttp=new XMLHttpRequest();
-}
-catch (e)
-{
-// Internet Explorer
-try
-{
-xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-}
-catch (e)
-{
-xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-}
-}
-return xmlHttp;
-}
+	$("#department").change(function() {
+  	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+	});
 </script>
 
 <!-- END -->
