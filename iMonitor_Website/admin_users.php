@@ -291,7 +291,7 @@ $ID=$_GET['id'];
 							<tr>
 								<td><b>Department:</b></td>
 								<td class="dropdown-dept">
-									<select id= "department" name="department" onchange="AjaxFunction();" required>
+									<select id= "department" name="department" required>
 										<option></option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department";
@@ -310,7 +310,6 @@ $ID=$_GET['id'];
 								<td><b>Position:</b></td>
 								<td class="dropdown-status">
 									<select id="position" name="position" required>
-										<option></option>
 									</select>
 								</td>
 							</tr>
