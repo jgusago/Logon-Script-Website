@@ -309,7 +309,7 @@ $ID=$_GET['id'];
 								<td><b>Position:</b></td>
 								<td class="dropdown-status">
 									<select id="position" name="position" required>
-									<?php require "{$_SERVER['DOCUMENT_ROOT']}/get_sub_department.php"; ?>
+									<?php include 'get_sub_department.php'; ?>
 										<option></option>
 										
 									</select>
