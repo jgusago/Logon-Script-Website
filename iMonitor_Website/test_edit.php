@@ -112,6 +112,16 @@ $ID=$_GET['id'];
                 							echo '<option>'.$row['department'].'</option>'; 
               								}
             							?>
+										
+										<?php     
+              								$sql = "select branch_name from tbl_department ORDER BY branch_name";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['branch_name'].'</option>'; 
+              								}
+            							?>
 
                           				
 										
