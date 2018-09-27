@@ -254,6 +254,8 @@ tr:hover
 .modal-content
 {
     width:500px;
+    z-index: 9999;
+
 }
 .modal-footer .btn-group button 
 {
