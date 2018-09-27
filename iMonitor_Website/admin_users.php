@@ -242,7 +242,7 @@ $ID=$_GET['id'];
 		<!-- End of User Table -->
 
 <!-- Add User Modal -->
-<form action="../php/connection/user_account_submit.php" method="POST">
+<form action="../php/connection/user_account_submit.php" name="adduser" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -291,7 +291,7 @@ $ID=$_GET['id'];
 							<tr>
 								<td><b>Department:</b></td>
 								<td class="dropdown-dept">
-									<select id= "department" name="department" required>
+									<select id= "department" name="department" required onchange=AjaxFunction();>
 										<option></option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department";
@@ -382,7 +382,68 @@ $ID=$_GET['id'];
 
 <!-- FOR SUB DEPARTMENT -->
 
- <script src = "../js/controller/ajax_bybranch_name.js"></script>
+ <script type="text/javascript">
+function AjaxFunction()
+{
+var httpxml;
+try
+  {
+  // Firefox, Opera 8.0+, Safari
+  httpxml=new XMLHttpRequest();
+  }
+catch (e)
+  {
+  // Internet Explorer
+		  try
+   			 		{
+   				 httpxml=new ActiveXObject("Msxml2.XMLHTTP");
+    				}
+  			catch (e)
+    				{
+    			try
+      		{
+      		httpxml=new ActiveXObject("Microsoft.XMLHTTP");
+     		 }
+    			catch (e)
+      		{
+      		alert("Your browser does not support AJAX!");
+      		return false;
+      		}
+    		}
+  }
+function stateck() 
+    {
+    if(httpxml.readyState==4)
+      {
+//alert(httpxml.responseText);
+var myarray = JSON.parse(httpxml.responseText);
+// Remove the options from 2nd dropdown list 
+for(j=document.adduser.position.options.length-1;j>=0;j--)
+{
+document.adduser.position.remove(j);
+}
+
+
+for (i=0;i<myarray.data.length;i++)
+{
+var optn = document.createElement("OPTION");
+optn.text = myarray.data[i].sub_department;
+optn.value = myarray.data[i].sub_department;  // You can change this to subcategory 
+document.adduser.position.options.add(optn);
+
+} 
+      }
+    } // end of function stateck
+	var url="get_sub_department.php";
+var cat_id=document.getElementById('department').value;
+//url=url+"?cat_id="+cat_id;
+//url=url+"&sid="+Math.random();
+httpxml.onreadystatechange=stateck;
+//alert(url);
+httpxml.open("GET",url,true);
+httpxml.send(null);
+  }
+</script>
 
 <!-- END -->
 
