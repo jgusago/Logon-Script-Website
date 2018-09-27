@@ -4,7 +4,6 @@ $(document).ready(function(){
 		if($('#department').val() == ""){
 			alert("Please enter name");
 		}else{
-			$department = $('#department').val();
 				$.ajax({
 					url: 'get_sub_department.php',
 					type: 'POST',
