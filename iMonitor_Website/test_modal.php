@@ -22,7 +22,18 @@
 									<td><b>Department:</b></td>
 									<td class="dropdown-dept">
 										<select name="department">
-										<option value=<?php echo $row['userid']?>> <?php echo $row['department']?> </option>
+
+													<?php     
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+											  			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											  			{
+                								echo '<option>'.$row['branch_name'].'</option>'; 
+              								}
+            							?>
+
 										</select>
 									</td>
 								</tr>
@@ -30,14 +41,15 @@
 									<td><b>Position:</b></td>
 									<td class="dropdown-dept">
 										<select name="position">
-										<option value=<?php echo $row['userid']?> > <?php echo $row['position']?> </option>
+										<option>TEST</option>					
 										</select>
 								</tr>
 								<tr>
 									<td><b>Role:</b></td>
 									<td class="dropdown-role"> 
 										<select name="role">
-										<option value=<?php echo $row['userid']?>> <?php echo $row['role']?> </option>
+										<option>Admin</option>
+										<option>STAFF</option>
 										</select>
 									</td>
                 </tr>
