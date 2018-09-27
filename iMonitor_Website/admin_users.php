@@ -292,7 +292,7 @@ $ID=$_GET['id'];
 								<td><b>Department:</b></td>
 								<td class="dropdown-dept">
 									<select id= "department" name="department" required>
-										<option></option>
+										
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department";
               								$stmt = $db->prepare($sql);
