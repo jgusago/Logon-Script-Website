@@ -98,19 +98,9 @@ $ID=$_GET['id'];
         <label for="password">Password:</label><br>
         <input type="text" id="password" name="password" value="Aa123456" disabled><br>
         <label for="department">Department:</label><br>
-            			<select id="department" name="department">
+            			<select id="department" name="department" value="<?php echo $row['branch_name']; ?>">
 
                           				<?php     
-              								$sql = "select department from tbl_user WHERE id='$id'";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
-
-              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                							echo '<option>'.$row['department'].'</option>'; 
-              								}
-            							?>
-
-										<?php     
               								$sql = "select branch_name from tbl_department";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -119,6 +109,7 @@ $ID=$_GET['id'];
                 							echo '<option>'.$row['branch_name'].'</option>'; 
               								}
             							?>
+										
 					  	</select><br>
 
           	<label for="role">Position:</label><br>
