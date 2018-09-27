@@ -101,7 +101,7 @@ $ID=$_GET['id'];
         <label for="password">Password:</label><br>
         <input type="text" id="password" name="password" value="Aa123456" disabled><br>
         <label for="department">Department:</label><br>
-						<select id="department" name="department"
+						<select id="department" name="department">
 						
 										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
@@ -111,7 +111,7 @@ $ID=$_GET['id'];
               								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 							echo '<option>'.$row['department'].'</option>'; 
               								}
-            							?>>
+            							?>
 
                           				
 										
