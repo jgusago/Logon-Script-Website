@@ -294,7 +294,7 @@ $ID=$_GET['id'];
 									<select id= "department" name="department" required>
 										<option></option>
 										<?php     
-              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ACS";
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
