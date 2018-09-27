@@ -177,6 +177,17 @@ $ID=$_GET['id'];
     </div>           
     <div class="footer">
     </div>
-    </div>
+	</div>
+	
+<!-- FOR SUB DEPARTMENT -->
+
+<script type="text/javascript">
+	$("#department").change(function() {
+  	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+	});
+</script>
+
+<!-- END -->
+
   </body>
 </html>
