@@ -383,66 +383,55 @@ $ID=$_GET['id'];
 <!-- FOR SUB DEPARTMENT -->
 
  <script type="text/javascript">
+var xmlHttp;
 function AjaxFunction()
 {
-var httpxml;
-try
-  {
-  // Firefox, Opera 8.0+, Safari
-  httpxml=new XMLHttpRequest();
-  }
-catch (e)
-  {
-  // Internet Explorer
-		  try
-   			 		{
-   				 httpxml=new ActiveXObject("Msxml2.XMLHTTP");
-    				}
-  			catch (e)
-    				{
-    			try
-      		{
-      		httpxml=new ActiveXObject("Microsoft.XMLHTTP");
-     		 }
-    			catch (e)
-      		{
-      		alert("Your browser does not support AJAX!");
-      		return false;
-      		}
-    		}
-  }
-function stateck() 
-    {
-    if(httpxml.readyState==4)
-      {
-//alert(httpxml.responseText);
-var myarray = JSON.parse(httpxml.responseText);
-// Remove the options from 2nd dropdown list 
-for(j=document.adduser.position.options.length-1;j>=0;j--)
+var str = department.value;
+if(str == "Select State")
+alert("State Select kar!");
+xmlHttp=GetXmlHttpObject();
+if (xmlHttp==null)
 {
-document.adduser.position.remove(j);
+alert ("Your browser does not support AJAX!");
+return;
+}
+var url="get_sub_department.php";
+url=url+"?branch_name="+str;
+url=url+"&sid="+Math.random();
+xmlHttp.onreadystatechange=stateChanged;
+xmlHttp.open("GET",url,true);
+xmlHttp.send(null);
+}
+function stateChanged()
+{
+if (xmlHttp.readyState==4)
+{
+document.getElementById("txtHint").innerHTML=xmlHttp.responseText;
+}
 }
 
-
-for (i=0;i<myarray.data.length;i++)
+function GetXmlHttpObject()
 {
-var optn = document.createElement("OPTION");
-optn.text = myarray.data[i].sub_department;
-optn.value = myarray.data[i].sub_department;  // You can change this to subcategory 
-document.adduser.position.options.add(optn);
-
-} 
-      }
-    } // end of function stateck
-	var url="get_sub_department.php";
-var cat_id=document.getElementById('department').value;
-//url=url+"?cat_id="+cat_id;
-//url=url+"&sid="+Math.random();
-httpxml.onreadystatechange=stateck;
-//alert(url);
-httpxml.open("GET",url,true);
-httpxml.send(null);
-  }
+var xmlHttp=null;
+try
+{
+// Firefox, Opera 8.0+, Safari
+xmlHttp=new XMLHttpRequest();
+}
+catch (e)
+{
+// Internet Explorer
+try
+{
+xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+}
+catch (e)
+{
+xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+}
+return xmlHttp;
+}
 </script>
 
 <!-- END -->
