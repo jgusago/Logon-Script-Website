@@ -114,7 +114,7 @@ $ID=$_GET['id'];
             							?>>
 
                           				<?php     
-              								$sql = "select branch_name from tbl_department ORDER BY branch_name ACS";
+              								$sql = "select branch_name from tbl_department ORDER BY branch_name";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
