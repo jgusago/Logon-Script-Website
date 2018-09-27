@@ -292,7 +292,7 @@ $ID=$_GET['id'];
 								<td><b>Department:</b></td>
 								<td class="dropdown-dept">
 									<select id= "department" name="department" required>
-										
+										<option></option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department";
               								$stmt = $db->prepare($sql);
@@ -382,21 +382,7 @@ $ID=$_GET['id'];
 
 <!-- FOR SUB DEPARTMENT -->
 
- <script type="text/javascript">
-       $(document).on('change','#department',function(){
-             var val = $(this).val();
-             $.ajax({
-                   url: 'get_sub_department.php',
-                   data: {distrito:val},
-                   type: 'GET',
-                   dataType: 'html',
-                   success: function(result){
-                        $('#position').html();  
-                        $('#position').html(result); 
-                   }
-              });
-       });
-  </script>
+ <script src = "../js/controller/ajax_bybranch_name.js"></script>
 
 <!-- END -->
 
