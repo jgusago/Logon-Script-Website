@@ -44,6 +44,7 @@ $ID=$_GET['id'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style2.css">
@@ -309,9 +310,8 @@ $ID=$_GET['id'];
 								<td><b>Position:</b></td>
 								<td class="dropdown-status">
 									<select id="position" name="position" required>
-									<?php include 'get_sub_department.php'; ?>
-										<option></option>
-										
+									<option></option>
+																			
 									</select>
 								</td>
 							</tr>
@@ -384,7 +384,7 @@ $ID=$_GET['id'];
 
 <!-- FOR SUB DEPARTMENT -->
 
- <!--<script type="text/javascript">
+ <script type="text/javascript">
        $(document).on('change','#department',function(){
              var val = $(this).val();
              $.ajax({
@@ -398,7 +398,7 @@ $ID=$_GET['id'];
                    }
               });
        });
-  </script>-->
+  </script>
 
 <!-- END -->
 
