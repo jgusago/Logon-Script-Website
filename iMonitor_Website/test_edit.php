@@ -109,12 +109,12 @@ $ID=$_GET['id'];
               								$stmt->execute();
 
               								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                							echo '<option>'.$row['position'].'</option>'; 
+                							echo '<option>'.$row['department'].'</option>'; 
               								}
             							?>>
 
                           				<?php     
-              								$sql = "select DISTINCT branch_name from tbl_department";
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
