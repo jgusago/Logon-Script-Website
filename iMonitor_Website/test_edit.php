@@ -101,7 +101,17 @@ $ID=$_GET['id'];
         <label for="password">Password:</label><br>
         <input type="text" id="password" name="password" value="Aa123456" disabled><br>
         <label for="department">Department:</label><br>
-            			<select id="department" name="department" value="<?php echo $row['department']; ?>">
+						<select id="department" name="department"
+						
+										<?php     
+              								$sql = "select department from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['position'].'</option>'; 
+              								}
+            							?>>
 
                           				<?php     
               								$sql = "select branch_name from tbl_department";
@@ -118,7 +128,15 @@ $ID=$_GET['id'];
           	<label for="role">Position:</label><br>
              			<select id="position" name="position">
 
-                          				
+                          				<?php     
+              								$sql = "select position from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['position'].'</option>'; 
+              								}
+            							?>
 
 					  	</select><br>           
         	<label for="role">Role:</label><br>
