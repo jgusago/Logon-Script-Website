@@ -284,15 +284,16 @@ u
 .modal-form .btn-success
 {
     width: 250px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 35px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .modal-form .btn-primary
 {
     width:200px;
     margin-left:60px;
     margin-top:0px;
+    margin-bottom: 10px;
 }
 .dropdown-dept select
 {

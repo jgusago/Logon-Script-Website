@@ -433,12 +433,14 @@ $ID=$_GET['id'];
 										</select>
 									</td>
                                 </tr>
-                                <tr class="reset-password">
+                                <tr>
                                     <td><b>Password:</b></td>
                                     <td><input id="default-pass" type="password" value=""></td> 
                                     <td>
                                         <div>
-                                            <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
+                                            <label class="checkbox-inline">
+												<input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -185px; margin-top: 10px;">Reset password
+											</label>
                                         </div>
                                     </td>
                                 </tr>
