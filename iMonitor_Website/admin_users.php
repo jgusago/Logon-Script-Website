@@ -191,7 +191,7 @@ $ID=$_GET['id'];
             <p><strong>User Accounts</strong></p>
         </div>
         <div class="container-table" style="position:sticky;  overflow: hidden;">
-            <div class="row" style="margin-top:200px">
+            <div class="row" style="margin-top:230px">
                 <div class="panel panel-default" style="margin-top:0px;">
                     <div class="panel-heading">
                         <a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
@@ -202,7 +202,7 @@ $ID=$_GET['id'];
 		
 		<!-- User table -->
         <div class="container">
-            <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:210px; margin-bottom:10px; width:87%">
+            <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:240px; margin-bottom:10px; width:87%">
                 <thead>
                     <tr>
                         <th style="padding-bottom:15px;">No.</th>
