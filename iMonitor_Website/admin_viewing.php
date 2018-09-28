@@ -213,11 +213,10 @@ $ID=$_GET['id'];
                                         <option value="WEB">IT-WEB</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3" style="padding-top:0px;">
-                                   
-                                </div>
-                                <div class="col-md-3" style="padding-top:0px;">
-                                    
+                                <div class="col-md-6" style="padding-top:0px;">
+                                    <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
+                                    <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
+                                    <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv2('printable')" />
                                 </div>
                                 <div class="table-responsive" style="overflow-x:auto;">
                                     <table style="background: #ffffff;">
