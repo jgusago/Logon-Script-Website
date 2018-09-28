@@ -435,7 +435,7 @@ $ID=$_GET['id'];
                                 </tr>
                                 <tr class="reset-password">
                                     <td><b>Password:</b></td>
-                                    <td><input id="default-pass" type="password" value="">></td> 
+                                    <td><input id="default-pass" type="password" value=""></td> 
                                     <td>
                                         <div>
                                             <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
