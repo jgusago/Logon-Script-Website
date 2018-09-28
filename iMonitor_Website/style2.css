@@ -25,6 +25,15 @@ p
     margin-bottom: 0px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
+.modal-backdrop
+{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
 .nav-logo
 {
   width:45px; 
