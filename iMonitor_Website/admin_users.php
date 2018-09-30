@@ -393,7 +393,7 @@ $ID=$_GET['id'];
 
 	<div id="theModal" class="modal fade text-center">
 		<div class="modal-dialog">
-			<div class="modal-content"></div>
+			<div class="modal-content" style="height: 500px;"></div>
 		</div>
 	</div>
 

@@ -130,7 +130,8 @@ a, a:hover, a:focus {
     padding: 20px 0;
 }
 
-#sidebar ul li a {
+#sidebar ul li a 
+{
     padding: 20px;
     font-size: 2em;
     display: block;
@@ -148,11 +149,13 @@ a, a:hover, a:focus {
 }
 
 
-a[data-toggle="collapse"] {
+a[data-toggle="collapse"] 
+{
     position: relative;
 }
 
-a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before
+{
     content: '\e259';
     display: block;
     position: absolute;
@@ -163,7 +166,8 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
 a[aria-expanded="true"]::before {
     content: '\e260';
 }
-ul ul a {
+ul ul a 
+{
     font-size: 0.9em !important;
     padding-left: 30px !important;
 }
@@ -212,26 +216,12 @@ ul ul a {
 }
 .container-fluid
  {
-    /* padding-right: 15px; */
-    /* padding-left: 15px; */
-    /* margin-right: auto; */
-    /* margin-left: auto; */
     background: white;
 
 }
 .container
 {
   width:2000px;
-}
-.panel
-{
-  margin-top: 0px;
-  width: 105%;
-  margin-bottom: 20px;
-  background-color:#e3e5e378;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 .table-hover
 {
@@ -257,7 +247,8 @@ ul ul a {
 {
     width:90px;
 }
-@media (max-width: 768px) {
+@media (max-width: 768px)
+{
     #sidebar {
         margin-left: -250px;
     }
