@@ -220,8 +220,9 @@ $ID=$_GET['id'];
                                 </div>
                                 <div style="clear:both"></div>
                                 <br>
+                                <br>
                                 <div class="table-responsive" style="overflow-x:auto;">
-                                    <table style="background: #ffffff;">
+                                    <table class="table table-bordered" style="background: #ffffff;">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
