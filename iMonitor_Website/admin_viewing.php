@@ -218,10 +218,16 @@ $ID=$_GET['id'];
                                     <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
                                     <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv2('printable')" />
                                 </div>
+                                <div class=" col-md-8" style="padding-top:0px;">
+                                    <input type="text" id="searchfield" name="Search" value="Search...">
+                                </div>
+                                <div class="col-md-4" style="padding-top:0px;">
+
+                                </div>
                                 <div style="clear:both"></div>
                                 <br>
                                 <br>
-                                <div class="table-responsive" style="overflow-x:auto;">
+                                <div class="table-responsive" style="overflow-x:auto; padding-left:18px;">
                                     <table class="table table-bordered" style="background: #ffffff;">
                                         <thead>
                                             <tr>
