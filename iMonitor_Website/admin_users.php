@@ -140,7 +140,7 @@ $ID=$_GET['id'];
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header" style="background-color: #66bb307a;">
+				<div class="modal-header">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 				<div class="modal-body">
@@ -241,18 +241,18 @@ $ID=$_GET['id'];
 
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
+    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header" style="background-color:#16811430;"><b>User Registration</b>
+				<div class="modal-header" style="background-color:#16811430;">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">User Registration</h4>
 				</div>
-				<div class="body">
 
-					<form style="padding:20px;">
-						<table class="modal-form">
-
-							<script type="text/javascript">
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+						<script type="text/javascript">
 							function isNumberKey(evt)
 							{
 								var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -262,37 +262,24 @@ $ID=$_GET['id'];
 							}
 							</script>
 
-							<tr>
-								<td><b>ID Number:</b></td>
-								<td><input type="text" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="User ID" onkeypress="return isNumberKey(event)"/></td>
-							</tr>
-
-								<script type="text/javascript">
-								function numberOnly(txt, e) 
-								{
-            						var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
-            						var code;
-            						if (window.event)
-										code = e.keyCode;
-									else
-                						code = e.which;
-            							var char = keychar = String.fromCharCode(code);
-            							if (arr.indexOf(char) == -1)
-                							return false;
-        						}
-    							</script>
-
-							<tr>
-								<td><b>Name:</b></td>
-								<td><input type="text" id="name" name="name" required placeholder="Name" onkeypress="return numberOnly(this, event)" maxlength="30"/></td>
-							</tr>
-							<tr>
-								<td><b>Department:</b></td>
-								<td class="dropdown-dept">
-									<select id= "department" name="department" required>
-										<option></option>
-										<?php     
-              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name";
+							<label class="col-sm-2 control-label" for="userID">ID Number</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="userName">Name</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="name" placeholder="Name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="Dept">Department</label>
+							<div class="col-sm-10">
+								<select class="form-control" name="dept" id="dept" placeholder="--Select department--">
+									<option>
+									<?php     
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
@@ -301,48 +288,72 @@ $ID=$_GET['id'];
                 								echo '<option>'.$row['branch_name'].'</option>'; 
               								}
             							?>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td><b>Position:</b></td>
-								<td class="dropdown-status">
-									<select id="position" name="position" required>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td><b>Role:</b></td>
-								<td class="dropdown-status">
-									<select id="role" name="role" required>
-										<option></option>
-										<option value="Admin">Asmin</option>
-										<option value="Staff">Staff</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td><b>Status:</b> </td>
-								<td class="dropdown-status">
-									<select id="status" name="status" required>
-										<option></option>
+									</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="position">Position</label>
+							<div class="col-sm-10">
+								<select class="form-control" name="position" id="position" placeholder="--Select position--">
+										<option>
+										<?php     
+												$sql = "select DISTINCT sub_department from tbl_department ORDER BY sub_department ASC";
+												$stmt = $db->prepare($sql);
+												$stmt->execute();
+
+												while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+												{
+													echo '<option>'.$row['branch_name'].'</option>'; 
+												}
+											?>
+									</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="Role">Role</label>
+							<div class="col-sm-10">
+								<select class="form-control" name="dept" id="role" placeholder="--Select role--">
+									<option value=""></option>
+									<option value="Adminsitrator">Administrator</option>
+									<option value="Staff">Staff</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="position">Status</label>
+							<div class="col-sm-10">
+								<select class="form-control" name="position" id="position" placeholder="--Select status--">
+										<option value=""></option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td><b>Password:</b></td>
-								<td><input type="text" id="password" name="password" value="Aa123456" disabled></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td><button class="btn btn-success">Register</button></td>
-							</tr>
-						</table>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="position">Password</label>
+							<div class="col-sm-10">
+								<input type="text" id="password" name="password" value="Aa123456" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="position">Password</label>
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default">Register</button>
+							</div>
+						</div>
 					</form>
 				</div>
-</form>										
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
 <!-- End of Add User Modal  -->
 
 				<script type="text/javascript">
@@ -369,23 +380,17 @@ $ID=$_GET['id'];
     				}
 				</script>
 
-				<div class="modal-footer">
+				<!-- <div class="modal-footer">
 					<input type="hidden" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="ClearFields();">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</form>
+				</div> -->
 
 <!-- FOR SUB DEPARTMENT -->
-
 <script type="text/javascript">
 	$("#department").change(function() {
   	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
 	});
 </script>
-
 <!-- END -->
 
 <!-- Edit User Modal -->
