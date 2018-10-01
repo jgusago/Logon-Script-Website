@@ -279,7 +279,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="dept" placeholder="--Select department--">
+								<select class="form-control" name="dept" id="dept">
 									<option>
 									<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -308,7 +308,7 @@ $ID=$_GET['id'];
 
 												while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 												{
-													echo '<option>'.$row['branch_name'].'</option>'; 
+													echo '<option>'.$row['sub_department'].'</option>'; 
 												}
 											?>
 									</option>
@@ -319,8 +319,8 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="role" placeholder="--Select role--">
-									<option value=""></option>
+								<select class="form-control" name="dept" id="role" >
+									<option value="">"--Select role--"</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -330,8 +330,8 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="position" id="position" placeholder="--Select status--">
-										<option value=""></option>
+								<select class="form-control" name="position" id="position">
+										<option value="">"--Select status--"</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
