@@ -47,7 +47,8 @@ $ID=$_GET['id'];
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="users.css">
 </head>
 <body onload="populateSecondTextBox();">
 	<!-- Top navigation -->
@@ -157,90 +158,90 @@ $ID=$_GET['id'];
 	<!-- End of Logout Modal -->
 
 	<!-- Sidebar -->
-	<div class="wrapper" style="height: 105vh;"> 
-		<nav id="sidebar" style="position:fixed;margin-top:30px;">
+	<div class="wrapper">
+		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
 		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
-		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i> Branch Settings</a>
+		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
-		        <li>
-		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i> Computer List</a>
+		        <li class="active">
+		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
 		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
 		                <li><a href="admin_viewing.php">COP</a></li>
 		            </ul>
 		        </li>
-		        <li class="active">
-		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i> User Accounts</a>
+		        <li>
+		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
-		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i> Reports</a>
+		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
 		</nav>
-	</div>               
-	<!-- End of Sidebar -->
-
-    <div class="container-body">
-        <div class="info" style="margin-top:-11px;">
-            <p><strong>User Accounts</strong></p>
-        </div>
-        <div class="container-table" style="position:sticky;  overflow: hidden;">
-            <div class="row" style="margin-top:230px">
-                <div class="panel panel-default" style="margin-top:0px;">
-                    <div class="panel-heading">
-                        <a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
+		<div class="container" style="width:100%;">
+            <div class="well">User Accounts</div>
+            <div class="col-lg-12">
+				<div class="panel panel-default" style="margin-left: -30px;">
+					<div class="panel-heading">
+						<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
 					</div>
+                    <div class="panel panel-body"> 
+                        <div class="tab-pane fade in active" id="tab1default">
+                            <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
+                                <div style="clear:both"></div>
+                                <br>
+                                <div class="table-responsive" style="overflow-x:auto; padding-left:18px;">
+                                    <table class="table table-bordered" style="background: #ffffff;">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>ID Number</th>
+                                                <th>Name</th>
+                                                <th>Department</th>
+                                                <th>Position</th>
+                                                <th>Role</th>
+												<th>Status</th>
+												<th>Option</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $query = $db->prepare("SELECT id, userid, name, department,position, role, status, FROM tbl_user");
+                                                $query->execute();
+                                                $query->setFetchMode(PDO::FETCH_ASSOC);
+                                                while ($row = $query->fetch()) 
+                                                {
+                                                    echo '
+                                                        <tr>
+                                                            <td> '.$row['id'].'</td>
+                                                            <td> '.$row['userid'].'</td>
+                                                            <td>'.$row['name'].'</td>
+                                                            <td>'.$row['department'].'</td>
+                                                            <td>'.$row['position'].'</td>
+															<td>'.$row['role'].'</td>
+															<td>'.$row['status'].'</td>
+                                                            <td><a href="#theModal" data-toggle="modal"><input type="button" value="Edi Record" class="btn btn-primary"></a></td>
+                                                        </tr>
+                                                        ';
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-			</div>
-		</div>
-		
-		<!-- User table -->
-        <div class="container">
-            <table class="table table-bordered" style="position: fixed; margin-left:12px; margin-top:240px; margin-bottom:10px; width:87%">
-                <thead>
-                    <tr>
-                        <th style="padding-bottom:15px;">No.</th>
-                        <th style="padding-bottom:15px;">ID Number</th>
-                        <th style="padding-bottom:15px;">Name</th>
-                        <th style="padding-bottom:15px;">Department</th>
-                        <th style="padding-bottom:15px;">Position</th>
-						<th style="padding-bottom:15px;">Role</th>
-						<th style="padding-bottom:15px;">Status</th>
-                        <th style="padding-bottom:15px;">Option</th>
-                    </tr>
-                </thead>
-                <tbody class="table-users">
-
-					 <?php
-					  $sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
-					  foreach ($db->query($sql) as $row) {
-		            	//$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
-		            	//$stmt->execute();
-		            	//for($i=0; $row = $stmt->fetch(); $i++){
-						$id=$row['id'];			
-	            	?>
-                	<tr>
-						<td><?php echo $row['id']; ?></td>
-						<td><?php echo $row['userid']; ?></td>
-						<td><?php echo $row['name']; ?></td>
-						<td><?php echo $row['department']; ?></td>
-						<td><?php echo $row['position']; ?></td>
-						<td><?php echo $row['role']; ?></td>
-						<td><?php echo $row['status']; ?></td>
-						<td><a href="user.html" data-target="#theModal" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
-					
-					</tr>
-					<?php } ?>
-            	</tbody>
-            </table>
-		</div> 
-		<!-- End of User Table -->
+            </div>
+		</div>	
+	</div>		
+<!-- End of Sidebar -->
 
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">

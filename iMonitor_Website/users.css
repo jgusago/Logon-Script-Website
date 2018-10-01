@@ -176,24 +176,16 @@ a[aria-expanded="true"]::before
 {
     content: '\e260';
 }
-.info
+.well
 {
-    width:100%;
-    background-color:#103d8a;
-    top: 7.6%;
-    padding: 10px;
-    margin-left: 25px;
-    height:45px;
-    position: fixed;
-    display: block;
-    margin-top:-11px;
-}
-.info p
-{
+    margin-top: 60px;
     color: white;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding-left:5px;
-    font-size:18px;
+    background-color:#103d8a;
+    margin-left: -15px;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 0px;
+    width: 110%;
 }
 .container-body
 {
