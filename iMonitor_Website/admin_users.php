@@ -244,7 +244,7 @@ $ID=$_GET['id'];
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header" style="background-color:#16811430;">
+				<div class="modal-header">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="myModalLabel">User Registration</h4>
 				</div>
