@@ -16,16 +16,21 @@
     padding: 10px;
     font-size: 18px;
     margin-bottom: 0px;
-    width: 110%;
+    width: 102%;
 }
 .panel
 {
-  width: 105%;
+  width: 102%;
   margin-bottom: 20px;
   background-color:#fdfdfd78;
   border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0,0,0,.05); 
+}
+.panel-heading
+{
+    height: 55px;
+    background-color: #e4e3e0;
 }
 .table-bordered th, td
 {
