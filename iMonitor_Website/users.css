@@ -43,6 +43,13 @@ thead th
 {
 	padding-bottom:15px;
 }
+.form-group {
+    margin-bottom: 15px;
+}
+.form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
 .modal-body .form-horizontal .col-sm-2
 {
     width: 100%;
@@ -69,6 +76,7 @@ thead th
 {
     position: relative;
     padding: 15px;
+    height: 500px;
 }
 .tr-dept select
 {
