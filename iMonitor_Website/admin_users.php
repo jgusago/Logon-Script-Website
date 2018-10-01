@@ -211,26 +211,26 @@ $ID=$_GET['id'];
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                                $query = $db->prepare("SELECT id, userid, name, department,position, role, status, FROM tbl_user");
-                                                $query->execute();
-                                                $query->setFetchMode(PDO::FETCH_ASSOC);
-                                                while ($row = $query->fetch()) 
-                                                {
-                                                    echo '
-                                                        <tr>
-                                                            <td> '.$row['id'].'</td>
-                                                            <td> '.$row['userid'].'</td>
-                                                            <td>'.$row['name'].'</td>
-                                                            <td>'.$row['department'].'</td>
-                                                            <td>'.$row['position'].'</td>
-															<td>'.$row['role'].'</td>
-															<td>'.$row['status'].'</td>
-                                                            <td><a href="#theModal" data-toggle="modal"><input type="button" value="Edi Record" class="btn btn-primary"></a></td>
-                                                        </tr>
-                                                        ';
-                                                }
-                                            ?>
+										<?php
+											$sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
+											foreach ($db->query($sql) as $row) {
+												//$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
+												//$stmt->execute();
+												//for($i=0; $row = $stmt->fetch(); $i++){
+												$id=$row['id'];			
+											?>
+											<tr>
+												<td><?php echo $row['id']; ?></td>
+												<td><?php echo $row['userid']; ?></td>
+												<td><?php echo $row['name']; ?></td>
+												<td><?php echo $row['department']; ?></td>
+												<td><?php echo $row['position']; ?></td>
+												<td><?php echo $row['role']; ?></td>
+												<td><?php echo $row['status']; ?></td>
+												<td><a href="user.html" data-target="#theModal" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+											
+											</tr>
+											<?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
