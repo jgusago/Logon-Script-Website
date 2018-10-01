@@ -219,7 +219,7 @@ $ID=$_GET['id'];
                                 <div class="col-md-6" style="padding-top:25px;">
                                     <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport2();">
-                                    <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv2('printable')" />
+                                    <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-danger" onclick="javascript:printDiv2('printable')" />
                                 </div>
                                 <div style="clear:both"></div>
                                 <br>
