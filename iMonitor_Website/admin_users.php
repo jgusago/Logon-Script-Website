@@ -187,13 +187,13 @@ $ID=$_GET['id'];
 		<div class="container" style="width:100%;">
             <div class="well">User Accounts</div>
             <div class="col-lg-12">
-				<div class="panel panel-default" style="margin-left: -30px;">
+				<div class="panel panel-default" style="margin-left: -30px; margin-bottom:0px;">
 					<div class="panel-heading">
 						<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
 					</div>
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 0px; margin-left: -15px; width: 100%;">
+                            <div class="pane pane--1" style="margin-right: 0px; margin-left: -15px; width: 100%; padding-right:40px;">
                                 <div style="clear:both"></div>
                                 <br>
                                 <div class="table-responsive" style="overflow-x:auto; padding-left:18px;">
