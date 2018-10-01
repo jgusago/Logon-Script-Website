@@ -320,7 +320,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="Role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="dept" id="role" >
-									<option value="">"--Select role--"</option>
+									<option value="">--Select role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -331,7 +331,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="position">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="position" id="position">
-										<option value="">"--Select status--"</option>
+										<option value="">--Select status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
