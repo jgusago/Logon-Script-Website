@@ -187,7 +187,7 @@ a[aria-expanded="true"]::before
     margin-bottom: 0px;
     width: 110%;
 }
-.container-body
+/* .container-body
 {
     overflow: hidden;
     margin-left:225px;
@@ -196,12 +196,10 @@ a[aria-expanded="true"]::before
 .container-table
 {
     margin-left:auto;
-}
+} */
 .container
 {
-    width:100%;
-    margin-left:0px;
-    margin-top:-10px;
+    padding-left:15px;
 }
 .table-bordered th, td
 {
