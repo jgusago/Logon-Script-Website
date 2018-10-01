@@ -269,15 +269,15 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="userName">Name</label>
-							<div class="col-sm-8">
+							<label class="col-sm-12 control-label" for="userName">Name</label>
+							<div class="col-sm-12">
 								<input type="text" class="form-control" id="name" placeholder="Name">
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="Dept">Department</label>
-							<div class="col-sm-8">
+							<label class="col-sm-12 control-label" for="Dept">Department</label>
+							<div class="col-sm-12">
 								<select class="form-control" name="dept" id="dept" placeholder="--Select department--">
 									<option>
 									<?php     
@@ -296,8 +296,8 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="position">Position</label>
-							<div class="col-sm-8">
+							<label class="col-sm-12 control-label" for="position">Position</label>
+							<div class="col-sm-12">
 								<select class="form-control" name="position" id="position" placeholder="--Select position--">
 										<option>
 										<?php     
@@ -316,8 +316,8 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="Role">Role</label>
-							<div class="col-sm-8">
+							<label class="col-sm-12 control-label" for="Role">Role</label>
+							<div class="col-sm-12">
 								<select class="form-control" name="dept" id="role" placeholder="--Select role--">
 									<option value=""></option>
 									<option value="Adminsitrator">Administrator</option>
@@ -327,8 +327,8 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="position">Status</label>
-							<div class="col-sm-8">
+							<label class="col-sm-12 control-label" for="position">Status</label>
+							<div class="col-sm-12">
 								<select class="form-control" name="position" id="position" placeholder="--Select status--">
 										<option value=""></option>
 										<option value="Active">Active</option>
@@ -338,8 +338,8 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-4 control-label" for="position">Password</label>
-							<div class="col-sm-8">
+							<label class="col-sm-12 control-label" for="position">Password</label>
+							<div class="col-sm-12">
 								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
