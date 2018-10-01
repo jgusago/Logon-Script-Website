@@ -167,7 +167,7 @@ $ID=$_GET['id'];
 		        <li>
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
-		        <li class="active">
+		        <li>
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
@@ -175,7 +175,7 @@ $ID=$_GET['id'];
 		                <li><a href="admin_viewing.php">COP</a></li>
 		            </ul>
 		        </li>
-		        <li>
+		        <li  class="active">
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
