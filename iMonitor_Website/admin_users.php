@@ -372,7 +372,7 @@ $ID=$_GET['id'];
 					<h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
 				</div>
 
-				<div class="modal-body">
+				<div class="modal-body1">
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
@@ -470,7 +470,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
+								<input class="form-control" type="password" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
 						<br>

@@ -107,6 +107,12 @@ label
     padding: 15px;
     height: 570px;
 }
+.modal-body1
+{
+    position: relative;
+    padding: 15px;
+    height: 650px;
+}
 .btn-success
 {
     width:200px;
@@ -122,4 +128,13 @@ u
 .btn-primary
 {
     width:100px;
+}
+.checkbox label, .radio label 
+{
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: -15px;
 }
