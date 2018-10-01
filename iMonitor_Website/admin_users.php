@@ -193,7 +193,7 @@ $ID=$_GET['id'];
 					</div>
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
+                            <div class="pane pane--1" style="margin-right: 0px; margin-left: -15px; width: 100%;">
                                 <div style="clear:both"></div>
                                 <br>
                                 <div class="table-responsive" style="overflow-x:auto; padding-left:18px;">
