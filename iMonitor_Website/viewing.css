@@ -1,7 +1,7 @@
-/* .table-bordered th, td
+.form-control
 {
-    text-align: center;
-} */
+    width:600px;
+}
 .well
 {
     margin-top: 60px;
@@ -35,10 +35,6 @@ table
 {
     border-collapse: collapse;
     width: 100%;
-}
-.form-control
-{
-    width:550px;
 }
 /* th
 {
