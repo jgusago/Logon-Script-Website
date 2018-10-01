@@ -46,7 +46,8 @@ $ID=$_GET['id'];
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Our Custom CSS -->
+	<!-- Our Custom CSS -->
+	<link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="users.css">
 </head>
 <body onload="populateSecondTextBox();">
