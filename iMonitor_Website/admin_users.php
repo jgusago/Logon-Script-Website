@@ -347,7 +347,7 @@ $ID=$_GET['id'];
 						<br>
 						<div class="form-group">
 							<div class="col-sm-12">
-								<button type="submit" class="btn btn-success">Register</button>
+								<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Register</button>
 							</div>
 						</div>
 					</form>
