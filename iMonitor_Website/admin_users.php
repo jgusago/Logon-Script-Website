@@ -267,12 +267,14 @@ $ID=$_GET['id'];
 								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
 							</div>
 						</div>
+						<br>
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="userName">Name</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="name" placeholder="Name">
 							</div>
 						</div>
+						<br>
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Dept">Department</label>
 							<div class="col-sm-8">
@@ -292,6 +294,7 @@ $ID=$_GET['id'];
 								</select>
 							</div>
 						</div>
+						<br>
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="position">Position</label>
 							<div class="col-sm-8">
@@ -311,6 +314,7 @@ $ID=$_GET['id'];
 								</select>
 							</div>
 						</div>
+						<br>
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="Role">Role</label>
 							<div class="col-sm-8">
@@ -321,6 +325,7 @@ $ID=$_GET['id'];
 								</select>
 							</div>
 						</div>
+						<br>
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="position">Status</label>
 							<div class="col-sm-8">
@@ -331,12 +336,14 @@ $ID=$_GET['id'];
 								</select>
 							</div>
 						</div>
+						<br>
 						<div class="form-group">
 							<label class="col-sm-4 control-label" for="position">Password</label>
 							<div class="col-sm-8">
 								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
+						<br>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<button type="submit" class="btn btn-default">Register</button>
