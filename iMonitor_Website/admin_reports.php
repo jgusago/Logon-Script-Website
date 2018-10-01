@@ -196,7 +196,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <div class="info" style="margin-left:250px; margin-top:-10px;">
         <p><strong>Reports</strong></p>
     </div>
-    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top: -860px; margin-left: 252px;">
+    </div>
+    <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top: -890px; margin-left: 252px;">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab0default" data-toggle="tab" style="padding-right:35px;">Computer Logs</a></li>
@@ -392,6 +393,33 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         } );
     </script>
 
+    <script>
+    
+    $(document).ready(function()
+    {
+        $(".dropdown").hover(function() 
+        {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');        
+        },
+        function() 
+        {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');       
+        }
+    );
+    });
+
+    $(document).ready(function ()
+    {
+        $('#sidebarCollapse').on('click', function () 
+        {
+            $('#sidebar').toggleClass('active');
+         });
+    });
+    
+    </script>
+
     <script src = "../js/controller/ajax_bydate.js"></script>
     <script src = "../js/controller/ajax_byname.js"></script>
     <script src = "../js/controller/ajax_bydatel.js"></script>
@@ -508,46 +536,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 </body>
 </html>
+    
 
-<script>
-
-$(document).ready(function()
-{
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-            $(this).toggleClass('open');       
-        }
-    );
-});
-
-    $(document).ready(function () 
-    {
-                $('#sidebarCollapse').on('click', function () 
-                {
-                    $('#sidebar').toggleClass('active');
-                });
-    });
-
-
-
-    function isNumber(input) 
-    {
-    var regex =/[^0-9]/gi;
-    input.value = input.value.replace(regex,"");
-        
-    }
-
-
-    function lettersOnly(input) 
-    {
-    var regex = /[^a-z]/gi;
-    input.value = input.value.replace(regex,"");   
-    }  
-
-}
 

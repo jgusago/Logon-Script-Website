@@ -13,18 +13,10 @@
     margin-bottom: 0px;
     width: 110%;
 }
-.btn-default
-{
-    margin-right:10px;
-}
-.btn-success
-{
-    margin-right:10px;
-}
 .panel
 {
   width: 105%;
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
   background-color:#fdfdfd78;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -46,16 +38,24 @@ table
 }
 .form-control
 {
-    width:600px;
+    width:400px;
 }
+/* th
+{
+    height:50px;
+}
+thead th
+{
+    padding-bottom:15px;
+} */
 td .btn-primary
 {
     width:90px;      
 }
-/* td .btn-success
+td .btn-success
 {
     width:90px; 
-} */
+}
 .modal-body .table-bordered
 {
     margin-left:80px;

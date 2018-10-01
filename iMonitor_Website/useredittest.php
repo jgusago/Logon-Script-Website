@@ -233,14 +233,12 @@ $ID=$_GET['id'];
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
 						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
-						<td><?php include('test_modal.php'); ?></td><td><?php include('test_modal.php'); ?></td>
+						<?php include('test_modal.php'); ?>
 					</tr>
 					<?php } ?>
             	</tbody>
             </table>
 		</div>	
-		<!-- End of User Table -->
-
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
