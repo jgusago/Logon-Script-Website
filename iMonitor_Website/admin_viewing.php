@@ -197,7 +197,7 @@ $ID=$_GET['id'];
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
-                                <div class="col-md-3" style="padding-top:0px;">
+                                <div class="col-md-6" style="padding-top:0px;">
                                     <select name="department" id="department" class="form-control">
                                         <option value="" selected>--All department--</option>
                                         <option value="Marvin 5th">Marvin 5th</option>
@@ -205,7 +205,7 @@ $ID=$_GET['id'];
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-3" style="padding-top:0px;">
+                                <div class="col-md-6" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept" class="form-control">
                                         <option value="" selected>--All sub department</option>
                                         <option value="OM">IT-OM</option>
@@ -213,14 +213,17 @@ $ID=$_GET['id'];
                                         <option value="WEB">IT-WEB</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3" style="padding-top:0px;">
-                                   
+                                <div class="col-md-6" style="padding-top:0px;">
+                                   <input type="text" class="form-control" name="search" value="Search ...">
                                 </div>
-                                <div class="col-md-3" style="padding-top:0px;">
-                                    
+                                <div class="col-md-6" style="padding-top:0px;">
+                                    <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                                    <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                    <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
                                 </div>
+
                                 <div class="table-responsive" style="overflow-x:auto;">
-                                    <table style="background: #ffffff;">
+                                    <table class="table table-bordered" style="background: #ffffff;">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -247,7 +250,7 @@ $ID=$_GET['id'];
                                                             <td>'.$row['status'].'</td>
                                                             <td>'.$row['remarks'].'</td>
                                                             <td>'.$row['agent_Version'].'</td>
-                                                            <td><input type="button" value="View" class="btn btn-primary"></td>
+                                                            <td><a href="view.php"><input type="button" value="View" class="btn btn-primary"></a></td>
                                                         </tr>
                                                         ';
                                                 }
