@@ -242,7 +242,7 @@ $ID=$_GET['id'];
 		<!-- End of User Table -->
 		<script>
 			jQuery.noConflict(); 
-			$('#edit_').modal('show'); 
+			$('#edit_<?php echo $row['id']; ?>').modal('show'); 
 </script>
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
