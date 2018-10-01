@@ -252,19 +252,20 @@ $ID=$_GET['id'];
 				<div class="modal-body">
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
-						<script type="text/javascript">
-							function isNumberKey(evt)
-							{
-								var charCode = (evt.which) ? evt.which : evt.keyCode;
-								if (charCode > 31 && (charCode < 48 || charCode > 57))
-									return false;
-									return true;
-							}
-							</script>
-
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+
+								<script type="text/javascript">
+									function isNumberKey(evt)
+									{
+										var charCode = (evt.which) ? evt.which : evt.keyCode;
+										if (charCode > 31 && (charCode < 48 || charCode > 57))
+											return false;
+											return true;
+									}
+								</script>
+
 							</div>
 						</div>
 						<br>
