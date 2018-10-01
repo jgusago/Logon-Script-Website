@@ -27,7 +27,7 @@ function getchild($parent){
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     $bvtreecode = "SELECT * FROM logonscript.tbl_tree
-    WHERE treeparent LIKE :parent";
+    WHERE tree_parent LIKE :parent";
 
     $pdo2 = $db->prepare($bvtreecode);
     $pdo2->bindParam(":parent",$parent);
@@ -35,7 +35,7 @@ function getchild($parent){
     $countroom = 0;
     $treeresult = $pdo2->fetchAll();
 foreach($treeresult as $row){
-    $name = $row['treename'];
+    $name = $row['tree_name'];
     $childcount = colcount($name,0);
     $trtd = colbreaker($parent,$name,0);
     if($parent == "root" && $countroom == 0){
@@ -55,7 +55,7 @@ function colcount($ccparent,$colcount){
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     $cc = $colcount;
 
-    $ccquery = "SELECT * FROM logonscript.tbl_tree WHERE treeparent LIKE :ccparent";
+    $ccquery = "SELECT * FROM logonscript.tbl_tree WHERE tree_parent LIKE :ccparent";
     $ccpdo = $db->prepare($ccquery);
     $ccpdo->bindParam(":ccparent",$ccparent);
     $ccpdo->execute();
@@ -64,7 +64,7 @@ function colcount($ccparent,$colcount){
 
     if($ccrowcount>0){
         foreach($ccresult as $row){
-            $ccname = $row['treename'];
+            $ccname = $row['tree_name'];
             $cc = colcount($ccname,$cc);
         }
     }
@@ -76,7 +76,7 @@ function colcount($ccparent,$colcount){
 
 function colbreaker($parent,$name){
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-    $brkquery = "SELECT * FROM logonscript.tbl_tree WHERE treeparent LIKE :brkparent";
+    $brkquery = "SELECT * FROM logonscript.tbl_tree WHERE tree_parent LIKE :brkparent";
     $brkpdo = $db->prepare($brkquery);
     $brkpdo->bindParam(":brkparent",$parent);
     $brkpdo->execute();
@@ -85,7 +85,7 @@ function colbreaker($parent,$name){
     $count = 0;
     $countII = 0;
     foreach($brkresult as $row){
-        $brkcurrentrow[$count] = $row['treename'];  
+        $brkcurrentrow[$count] = $row['tree_name'];  
         $count++;
     }
 

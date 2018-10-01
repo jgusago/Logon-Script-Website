@@ -1,5 +1,4 @@
 /* ------------------------------ LOADING FUNCTIONS ------------------------------ */
-
 //Default Load
 function load(){
 
@@ -26,6 +25,7 @@ function load(){
     /* ----- Settings ----- */
     settings_branchview();
 
+
     /* ----- Loading ----- */
     setInterval(function(){
         if(wdth <= 100){
@@ -36,6 +36,7 @@ function load(){
             $("#progressbardiv").hide();
         }
     },10);
+    pagination();
 }
 /* Dashboard buttons */
 //Load for the Branc View Buttons
@@ -424,7 +425,7 @@ function load_list(status){
                 tablediv = document.createElement("table");
                 tablediv.classList.add("table");
                 tablediv.classList.add("table-bordered");
-                tablediv.setAttribute("id","dataTable");
+                tablediv.classList.add("display");
                 tablediv.setAttribute("width","100%");
                 tablediv.setAttribute("cellspacing","0");
                 tblrspnsv.appendChild(tablediv);
@@ -504,6 +505,7 @@ function loadtableactive(athead, atfoot, atdata){
             }
         }
     });
+
     
 }
 //Load Monitoring: Inactivelist
@@ -704,6 +706,7 @@ function miniwindow_computer_details(host){
     table.classList.add("table");
     table.classList.add("table-hover");
     table.classList.add("table-bordered");
+    table.classList.add("display");
     cb.appendChild(table);
 
     var tbody = document.createElement("tbody");
@@ -960,5 +963,20 @@ function serverip(){
     var svrip = location.hostname;
     return svrip;
 }
+function pagination(parent){
 
-/* ------------------------- END of BACKGROUND FUNCTIONS ------------------------- */
+    var bodydiv = document.getElementById("scripts");
+
+    var paginationscript = document.createElement("script");
+    paginationscript.setAttribute("src","js/controller/main-admin-datatables.min.js");
+    bodydiv.appendChild(paginationscript);
+
+    
+}
+
+/* 
+
+
+    <script src="design/datatables/jquery.dataTables.js"></script>
+    <script src="design/datatables/dataTables.bootstrap4.js"></script>
+------------------------- END of BACKGROUND FUNCTIONS ------------------------- */

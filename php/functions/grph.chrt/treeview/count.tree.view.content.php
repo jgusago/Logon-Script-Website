@@ -6,7 +6,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $query = "SELECT *
             FROM logonscript.tbl_tree
-            WHERE treename LIKE :tree AND treeparent LIKE :parent";
+            WHERE tree_name LIKE :tree AND tree_parent LIKE :parent";
 
 $stmt = $db->prepare($query);
 $stmt->bindParam(":tree",$branch);
@@ -16,7 +16,7 @@ $rowcount = $stmt->rowCount();
 $result = $stmt->fetchAll();
 if($rowcount>0){
     foreach($result as $row){
-        $filter = $row["treefilter"];
+        $filter = $row["tree_filter"];
         
         $secondquery = "SELECT *
                         FROM logonscript.tbl_log

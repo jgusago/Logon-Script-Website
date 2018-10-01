@@ -4,9 +4,9 @@ $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT * 
-            FROM logonscript.tbl_tree 
-            WHERE treeparent=:bld
-            ORDER BY treename";
+            FROM logonscript.tbl_tree
+            WHERE tree_parent LIKE :bld
+            ORDER BY tree_name";
 
 $stmt = $db->prepare($query);
 $stmt->bindParam(":bld",$bld);
@@ -15,7 +15,7 @@ $result = $stmt->fetchAll();
 
 foreach($result as $row){
 
-    $treename = $row['treename'];
+    $treename = $row['tree_name'];
 
     if($count>0)
     {
