@@ -225,7 +225,7 @@ $ID=$_GET['id'];
 												<td><?php echo $row['position']; ?></td>
 												<td><?php echo $row['role']; ?></td>
 												<td><?php echo $row['status']; ?></td>
-												<td><a href="user.html" data-target="#theModal" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+												<td><a href="#editUser" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 											
 											</tr>
 										<?php } ?>
@@ -360,8 +360,144 @@ $ID=$_GET['id'];
 		</div>
 	</div>
 </form>
-
 <!-- End of Add User Modal  -->
+
+<!-- Edit User Modal -->
+<form action="../php/connection/user_account_submit.php" method="POST">
+    <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
+				</div>
+
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="userID">ID Number</label>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+
+								<script type="text/javascript">
+									function isNumberKey(evt)
+									{
+										var charCode = (evt.which) ? evt.which : evt.keyCode;
+										if (charCode > 31 && (charCode < 48 || charCode > 57))
+											return false;
+											return true;
+									}
+								</script>
+
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="userName">Name</label>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="name" placeholder="Name">
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="Dept">Department</label>
+							<div class="col-sm-12">
+								<select class="form-control" name="dept" id="dept">
+									<option>
+									<?php     
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+											  while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											  {
+                								echo '<option>'.$row['branch_name'].'</option>'; 
+              								}
+            							?>
+									</option>
+								</select>
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="position">Position</label>
+							<div class="col-sm-12">
+								<select class="form-control" name="position" id="position" placeholder="--Select position--">
+										<option>
+										<?php     
+												$sql = "select DISTINCT sub_department from tbl_department ORDER BY sub_department ASC";
+												$stmt = $db->prepare($sql);
+												$stmt->execute();
+
+												while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+												{
+													echo '<option>'.$row['sub_department'].'</option>'; 
+												}
+											?>
+									</option>
+								</select>
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="Role">Role</label>
+							<div class="col-sm-12">
+								<select class="form-control" name="dept" id="role" >
+									<option value="">--Select role--</option>
+									<option value="Adminsitrator">Administrator</option>
+									<option value="Staff">Staff</option>
+								</select>
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="position">Status</label>
+							<div class="col-sm-12">
+								<select class="form-control" name="position" id="position">
+										<option value="">--Select status--</option>
+										<option value="Active">Active</option>
+										<option value="Inactive">Inactive</option>
+								</select>
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="position">Password</label>
+							<div class="col-sm-12">
+								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="position">Password</label>
+							<div class="col-sm-12">
+								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<div class="checkbox">
+									<label><input type="checkbox"/>Reset password</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Update</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
 
 				<script type="text/javascript">
 					function populateSecondTextBox() 
