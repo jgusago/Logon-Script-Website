@@ -66,6 +66,12 @@ thead th
  {
     margin-left: 15px;
 }
+label 
+{
+    display: inline-block;
+    max-width: 100%;
+    font-weight: bold;
+}
 .modal-header 
 {
     min-height: 16.42857143px;
