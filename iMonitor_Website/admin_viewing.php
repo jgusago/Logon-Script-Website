@@ -191,7 +191,7 @@ $ID=$_GET['id'];
 	   		</ul>
         </nav>
         <div class="container" style="width:100%;">
-            <div class="well">Computer List</div>
+            <div class="well" style="padding: 10px;">Computer List</div>
             <div class="col-lg-12">
                 <div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
                     <div class="panel panel-body"> 
@@ -223,7 +223,7 @@ $ID=$_GET['id'];
                                 </div>
                                 <div style="clear:both"></div>
                                 <br>
-                                <div class="table-responsive" style="overflow-x:auto;">
+                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;">
                                     <table class="table table-bordered" style="background: #ffffff;">
                                         <thead>
                                             <tr>
