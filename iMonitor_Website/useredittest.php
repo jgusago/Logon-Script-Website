@@ -233,8 +233,8 @@ $ID=$_GET['id'];
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
 						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+						<?php include('test_modal.php'); ?>
 					</tr>
-					<?php include('test_modal.php'); ?>
 					<?php } ?>
             	</tbody>
             </table>
