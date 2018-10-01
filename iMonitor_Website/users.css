@@ -110,7 +110,9 @@ label
 .btn-success
 {
     width:200px;
-   align-items: center;
+    margin-top:20px;
+    display: flex;
+    justify-content: center;
 }   
 u
 {
