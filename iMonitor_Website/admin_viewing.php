@@ -197,7 +197,7 @@ $ID=$_GET['id'];
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
-                                <div class="col-md-4" style="padding-top:0px;" >
+                                <div class="col-md-6" style="padding-top:0px;" >
                                     <select name="department" id="department" class="form-control">
                                         <option value="" selected>--All department--</option>
                                         <option value="Marvin 5th">Marvin 5th</option>
@@ -205,7 +205,7 @@ $ID=$_GET['id'];
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-4" style="padding-top:0px;">
+                                <div class="col-md-6" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept" class="form-control">
                                         <option value="" selected>--All sub department</option>
                                         <option value="OM">IT-OM</option>
@@ -213,16 +213,13 @@ $ID=$_GET['id'];
                                         <option value="WEB">IT-WEB</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4" style="padding-top:0px;">
+                                <div class=" col-md-6" style="padding-top:10px;">
+                                    <input class="form-control" type="text" id="searchfield" name="Search" value="Search..." style="margin-top:20px;">
+                                </div>
+                                <div class="col-md-6" style="padding-top:0px;">
                                     <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
                                     <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-primary" onclick="javascript:printDiv2('printable')" />
-                                </div>
-                                <div class=" col-md-8" style="padding-top:10px;">
-                                    <input class="form-control" type="text" id="searchfield" name="Search" value="Search...">
-                                </div>
-                                <div class="col-md-4" style="padding-top:0px;">
-
                                 </div>
                                 <div style="clear:both"></div>
                                 <br>
