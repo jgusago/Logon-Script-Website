@@ -467,12 +467,6 @@ $ID=$_GET['id'];
 								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="col-sm-12 control-label" for="position">Password</label>
-							<div class="col-sm-12">
-								<input class="form-control" type="password" id="password" name="password" value="Aa123456" disabled>
-							</div>
-						</div>
 						<br>
 						<div class="form-group">
 							<div class="col-sm-12">
