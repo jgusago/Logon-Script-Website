@@ -232,7 +232,7 @@ $ID=$_GET['id'];
 						<td><?php echo $row['position']; ?></td>
 						<td><?php echo $row['role']; ?></td>
 						<td><?php echo $row['status']; ?></td>
-						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary" onclick="show_modal();">Edit Record</button></a></td>
+						<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 						
 					</tr>
 					<?php } ?>
@@ -241,9 +241,8 @@ $ID=$_GET['id'];
 		</div>	
 		<!-- End of User Table -->
 		<script>
-			function show_modal(){
-  			MyModal.style.display = 'block';
-			}
+			jQuery.noConflict(); 
+			$('#edit_').modal('show'); 
 </script>
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
