@@ -94,10 +94,10 @@ u
 	float:left;
 	padding-top: 9px;
 }
-/* .checkbox
+.btn-primary
 {
-    margin-left: -170px;
-} */
+    width:100px;
+}
 .modal-form td
 {
 	padding:5px;
