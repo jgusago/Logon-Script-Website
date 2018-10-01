@@ -120,6 +120,13 @@ label
     display: flex;
     justify-content: center;
 }   
+.btn-warning
+{
+    width:200px;
+    margin-top:20px;
+    display: flex;
+    justify-content: center;
+}   
 u
 {
 	float:left;

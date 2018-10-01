@@ -483,7 +483,7 @@ $ID=$_GET['id'];
 						</div>
 						<div class="form-group">
 							<div class="col-sm-12">
-								<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Update</button>
+								<button type="submit" class="btn btn-warning" style="margin: auto; margin-top: 5px;">Update</button>
 							</div>
 						</div>
 					</form>
