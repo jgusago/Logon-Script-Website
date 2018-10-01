@@ -241,7 +241,9 @@ $ID=$_GET['id'];
 		</div>	
 		<!-- End of User Table -->
 		<script>
-		
+			function show_modal(){
+  			MyModal.style.display = 'block';
+			}
 </script>
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
