@@ -262,20 +262,20 @@ $ID=$_GET['id'];
 							}
 							</script>
 
-							<label class="col-sm-2 control-label" for="userID">ID Number</label>
-							<div class="col-sm-10">
+							<label class="col-sm-4 control-label" for="userID">ID Number</label>
+							<div class="col-sm-8">
 								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="userName">Name</label>
-							<div class="col-sm-10">
+							<label class="col-sm-4 control-label" for="userName">Name</label>
+							<div class="col-sm-8">
 								<input type="text" class="form-control" id="name" placeholder="Name">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="Dept">Department</label>
-							<div class="col-sm-10">
+							<label class="col-sm-4 control-label" for="Dept">Department</label>
+							<div class="col-sm-8">
 								<select class="form-control" name="dept" id="dept" placeholder="--Select department--">
 									<option>
 									<?php     
@@ -293,8 +293,8 @@ $ID=$_GET['id'];
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="position">Position</label>
-							<div class="col-sm-10">
+							<label class="col-sm-4 control-label" for="position">Position</label>
+							<div class="col-sm-8">
 								<select class="form-control" name="position" id="position" placeholder="--Select position--">
 										<option>
 										<?php     
@@ -312,8 +312,8 @@ $ID=$_GET['id'];
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="Role">Role</label>
-							<div class="col-sm-10">
+							<label class="col-sm-4 control-label" for="Role">Role</label>
+							<div class="col-sm-8">
 								<select class="form-control" name="dept" id="role" placeholder="--Select role--">
 									<option value=""></option>
 									<option value="Adminsitrator">Administrator</option>
@@ -322,8 +322,8 @@ $ID=$_GET['id'];
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="position">Status</label>
-							<div class="col-sm-10">
+							<label class="col-sm-4 control-label" for="position">Status</label>
+							<div class="col-sm-8">
 								<select class="form-control" name="position" id="position" placeholder="--Select status--">
 										<option value=""></option>
 										<option value="Active">Active</option>
@@ -332,8 +332,8 @@ $ID=$_GET['id'];
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label" for="position">Password</label>
-							<div class="col-sm-10">
+							<label class="col-sm-4 control-label" for="position">Password</label>
+							<div class="col-sm-8">
 								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
