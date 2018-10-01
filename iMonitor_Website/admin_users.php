@@ -262,8 +262,8 @@ $ID=$_GET['id'];
 							}
 							</script>
 
-							<label class="col-sm-4 control-label" for="userID">ID Number</label>
-							<div class="col-sm-8">
+							<label class="col-sm-12 control-label" for="userID">ID Number</label>
+							<div class="col-sm-12">
 								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
 							</div>
 						</div>
