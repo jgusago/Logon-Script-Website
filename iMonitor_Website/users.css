@@ -29,6 +29,10 @@
 {
     margin-top:0px;
 }
+.panel-body
+{
+    margin-bottom:0px;
+}
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -140,6 +144,10 @@ u
     margin-left:60px;
     margin-top:0px;
     margin-bottom: 10px;
+}
+.btn-primary
+{
+    width:100px;
 }
 .dropdown-dept select
 {
