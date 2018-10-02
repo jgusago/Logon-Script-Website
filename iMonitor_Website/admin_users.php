@@ -418,9 +418,9 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department">
-									<option>
-									<?php     
+								<select class="form-control" id="department" name="department" required>
+									<option></option>
+										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -430,7 +430,6 @@ $ID=$_GET['id'];
                 								echo '<option>'.$row['branch_name'].'</option>'; 
               								}
             							?>
-									</option>
 								</select>
 							</div>
 						</div>
@@ -438,7 +437,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position">
+								<select class="form-control" id="position" name="position" required>
 								</select>
 							</div>
 						</div>
