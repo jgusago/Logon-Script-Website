@@ -370,12 +370,6 @@ $ID=$_GET['id'];
 </form>
 <!-- End of Add User Modal  -->
 
- 		<?php
-		      $stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
-		      $stmt->execute();
-		      for($i=0; $row = $stmt->fetch(); $i++){
-		      $id=$row['id'];
-	    ?>
 
 <!-- Edit User Modal -->
 <form action="../php/connection/user_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
@@ -508,7 +502,6 @@ $ID=$_GET['id'];
 		</div>
 	</div>
 </form>
-<?php } ?>
 
 
 				<script type="text/javascript">
