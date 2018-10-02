@@ -254,7 +254,8 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+								<input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="ID Number" onkeypress="return isNumberKey(event)"/>
+							</div>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -266,14 +267,28 @@ $ID=$_GET['id'];
 									}
 								</script>
 
-							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userName">Name</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" placeholder="Name">
+								<input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(this, event)" maxlength="30"/>
 							</div>
+									
+								<script type="text/javascript">
+									function LettersrOnly(txt, e) 
+									{
+            							var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+            							var code;
+            							if (window.event)
+										code = e.keyCode;
+										else
+                						code = e.which;
+            							var char = keychar = String.fromCharCode(code);
+            							if (arr.indexOf(char) == -1)
+                							return false;
+        							}
+    							</script>
 						</div>
 						<br>
 						<div class="form-group">
