@@ -196,7 +196,7 @@ $ID=$_GET['id'];
             <div class="col-lg-12">
 				<div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
 					<div class="panel panel-heading">
-						<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
+						<a href="#addUser" data-toggle="modal" onclick="populateSecondTextBox();"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
 					</div>
                     <div class="panel panel-body"> 
                         <div style="clear:both"></div>
@@ -510,13 +510,6 @@ $ID=$_GET['id'];
    						document.getElementById('password2').value = document.getElementById('password').value;
 					}
 				</script>
-
-					<script type="text/javascript">
-						function populateSecondTextBox() {
-   							document.getElementById('password2').value = document.getElementById('password').value;
-						}
-					</script>
-
 
 				<script type="text/javascript">
 					function ClearFields() 
