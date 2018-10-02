@@ -193,7 +193,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
         <div class="container" style="width:100%;">
             <div class="well" style="padding: 10px;">Reports</div>
             <div class="col-lg-12">
-                <div class="panel with-nav-tabs panel-default" style="width: 89.5%; position: relative; margin-top: -890px; margin-left: 252px;">
+                <div class="panel with-nav-tabs panel-default" style="width: 103%; position: relative;  margin-left: 30px;">
                     <div class="panel-heading">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab0default" data-toggle="tab" style="padding-right:35px;">Computer Logs</a></li>
