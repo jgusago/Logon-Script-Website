@@ -52,7 +52,35 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" value=<?php echo $row['department']?> required>
+								<select class="form-control" id="department" name="department" required>
+
+													<?php     
+              								$sql = "select department from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['department'].'</option>'; 
+              								}
+            							?>
+
+													<?php     
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+											  			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											  			{
+                								echo '<option>'.$row['branch_name'].'</option>'; 
+              								}
+            							?>
+
+																<script type="text/javascript">
+																		$("#department").change(function() {
+  																	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+																		});
+																</script>
+
 								</select>
 							</div>
 						</div>
@@ -61,7 +89,17 @@
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
-									<option value="">--Select Position--</option>
+								
+													<?php     
+              								$sql = "select position from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['position'].'</option>'; 
+              								}
+            							?>
+
 								</select>
 							</div>
 						</div>
@@ -70,7 +108,16 @@
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="dept" id="role" required>
-									<option value="">--Select role--</option>
+													<?php     
+              								$sql = "select role from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['role'].'</option>'; 
+              								}
+            							?>
+
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -81,7 +128,17 @@
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="status" id="status" required>
-										<option value="">--Select status--</option>
+										
+													<?php     
+              								$sql = "select status from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['status'].'</option>'; 
+              								}
+            							?>
+
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
@@ -91,14 +148,32 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="password" name="password" disabled>
+								<input class="form-control" type="password" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="checkbox">
+<<<<<<< HEAD
 									<label><input  on-click="myFunction()" type="checkbox"/>Reset password</label>
+=======
+									<label><input type="checkbox" id="myCheck" onclick="resetPass()"/>Reset password</label>
+										<script>
+ 												function resetPass() 
+         								{
+            						var x = document.getElementById("password");
+            							if (x.type === "password")
+            							{
+                					x.type = "text";
+            							} 
+            							else 
+            							{
+                					x.type = "password";
+            							}
+												}  
+											</script>
+>>>>>>> 982be14680dd4ccc0d35e1dff08a74b7b1cdfdd9
 								</div>
 							</div>
 						</div>
