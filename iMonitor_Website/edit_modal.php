@@ -156,7 +156,7 @@
 							<div class="col-sm-12">
 								<div class="checkbox">
 									<label><input type="checkbox" id="myCheck" onclick="resetPass()"/>Reset password</label>
-										<script>
+											<script>
  												function resetPass() 
          								{
             						var x = document.getElementById("password");
@@ -182,7 +182,14 @@
 				</div>
 
 				<div class="modal-footer">
+					<input type="text" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+						<script type="text/javascript">
+							function populateSecondTextBox() {
+   							document.getElementById('password2').value = document.getElementById('password').value;
+							}
+					</script>
 				</div>
 			</div>
 		</div>
