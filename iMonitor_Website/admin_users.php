@@ -418,7 +418,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="dept">
+								<select class="form-control" id="department" name="department">
 									<option>
 									<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -439,18 +439,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="position" id="position" placeholder="--Select position--">
-										<option>
-										<?php     
-												$sql = "select DISTINCT sub_department from tbl_department ORDER BY sub_department ASC";
-												$stmt = $db->prepare($sql);
-												$stmt->execute();
-
-												while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-												{
-													echo '<option>'.$row['sub_department'].'</option>'; 
-												}
-											?>
-									</option>
+										<option></option>
 								</select>
 							</div>
 						</div>
