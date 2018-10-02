@@ -148,14 +148,14 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="password" name="password" value=<?php echo $row['password']?> disabled>
+								<input class="form-control" type="password" id="password" name="password" disabled>
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="checkbox">
-									<label><input type="checkbox"/>Reset password</label>
+									<label><input type="checkbox" id="myCheck" onclick="resetPass()"/>Reset password</label>
 								</div>
 							</div>
 						</div>
