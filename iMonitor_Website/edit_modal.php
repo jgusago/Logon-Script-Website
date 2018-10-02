@@ -1,6 +1,5 @@
 <!-- Edit User Modal -->
-<form action="../php/connection/user_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
-    <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
+    <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -30,7 +29,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Name">Name</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(this, event)" maxlength="30"/>
+								<input type="text" class="form-control" id="name" name="name" value=<?php echo $row['name']?> required placeholder="Name" onkeypress="return LettersrOnly(this, event)" maxlength="30"/>
 							</div>
 
 								<script type="text/javascript">
@@ -128,4 +127,3 @@
 			</div>
 		</div>
 	</div>
-</form>
