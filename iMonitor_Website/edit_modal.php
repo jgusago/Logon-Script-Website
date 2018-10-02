@@ -98,7 +98,7 @@
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="checkbox">
-									<label><input type="checkbox"/>Reset password</label>
+									<label><input  on-click="myFunction()" type="checkbox"/>Reset password</label>
 								</div>
 							</div>
 						</div>
@@ -116,3 +116,31 @@
 			</div>
 		</div>
 	</div>
+
+
+<script>
+function myFunction() {
+    var checkBox = document.getElementById("myCheck");
+    var text = document.getElementById("text");
+	if (checkBox.checked == true)
+	{
+        myCheck.style.display = "block";
+	} else 
+	{
+       myCheck.style.display = "none";
+	}
+	
+	function myFunction() 
+         {
+            var x = document.getElementById("password");
+            if (x.type === "password")
+            {
+                x.type = "text";
+            } 
+            else 
+            {
+                x.type = "password";
+            }
+
+
+</script>
