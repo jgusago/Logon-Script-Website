@@ -364,7 +364,7 @@ $ID=$_GET['id'];
 				</div>
 
 				<div class="modal-footer">
-				<input type="text" id="password2" name="password2"></td>
+				<input type="text" id="password2" value="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
@@ -580,8 +580,8 @@ $(document).ready(function(){
 
 
 <script>
-	function myFunction() {
-    var x = document.getElementById("myCheck");
+	function resetPass() {
+    var x = document.getElementById("password2");
     if (x.type === "password") {
         x.type = "text";
     } else {
