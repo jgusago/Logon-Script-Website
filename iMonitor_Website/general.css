@@ -110,9 +110,9 @@ a, a:hover, a:focus {
     color: black;
     transition: all 0.3s;
     box-shadow: 1px 1px #d2cbcb;
-    z-index: 1000;
+    /* z-index: 1000;
     position: fixed;
-    overflow-y: auto;
+    overflow-y: auto; */
 }
 .wrapper {
     display: flex;
