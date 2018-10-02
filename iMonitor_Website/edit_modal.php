@@ -167,9 +167,3 @@
 			</div>
 		</div>
 	</div>
-
-	<script type="text/javascript">
-		$("#department").change(function() {
-  	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
-		});
-	</script>
