@@ -370,8 +370,15 @@ $ID=$_GET['id'];
 </form>
 <!-- End of Add User Modal  -->
 
+ 		<?php
+		      $stmt = $db->query("SELECT id, userid, name, department, position, status, role, status FROM tbl_user WHERE id='$ID'");
+		      $stmt->execute();
+		      for($i=0; $row = $stmt->fetch(); $i++){
+		      $id=$row['id'];
+	    ?>
+
 <!-- Edit User Modal -->
-<form action="../php/connection/user_account_submit.php" method="POST">
+<form action="../php/connection/user_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
     <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -385,7 +392,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
+								<input type="text" class="form-control" id="userid" name="userid" value="<?php echo $row['userid']; ?>" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -501,7 +508,7 @@ $ID=$_GET['id'];
 		</div>
 	</div>
 </form>
-
+<?php } ?>
 
 
 				<script type="text/javascript">
