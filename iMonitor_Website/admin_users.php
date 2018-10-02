@@ -254,7 +254,8 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+								<input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="ID Number" onkeypress="return isNumberKey(event)"/>
+							</div>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -266,14 +267,28 @@ $ID=$_GET['id'];
 									}
 								</script>
 
-							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userName">Name</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" placeholder="Name">
+								<input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(this, event)" maxlength="30"/>
 							</div>
+									
+								<script type="text/javascript">
+									function LettersrOnly(txt, e) 
+									{
+            							var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+            							var code;
+            							if (window.event)
+										code = e.keyCode;
+										else
+                						code = e.which;
+            							var char = keychar = String.fromCharCode(code);
+            							if (arr.indexOf(char) == -1)
+                							return false;
+        							}
+    							</script>
 						</div>
 						<br>
 						<div class="form-group">
@@ -403,7 +418,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="dept">
+								<select class="form-control" id="department" name="department">
 									<option>
 									<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -423,19 +438,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="position" id="position" placeholder="--Select position--">
-										<option>
-										<?php     
-												$sql = "select DISTINCT sub_department from tbl_department ORDER BY sub_department ASC";
-												$stmt = $db->prepare($sql);
-												$stmt->execute();
-
-												while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-												{
-													echo '<option>'.$row['sub_department'].'</option>'; 
-												}
-											?>
-									</option>
+								<select class="form-control" id="position" name="position">
 								</select>
 							</div>
 						</div>
