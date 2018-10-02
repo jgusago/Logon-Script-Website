@@ -155,6 +155,9 @@
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="checkbox">
+<<<<<<< HEAD
+									<label><input  on-click="myFunction()" type="checkbox"/>Reset password</label>
+=======
 									<label><input type="checkbox" id="myCheck" onclick="resetPass()"/>Reset password</label>
 											<script>
  												function resetPass() 
@@ -170,6 +173,7 @@
             							}
 												}  
 											</script>
+>>>>>>> 982be14680dd4ccc0d35e1dff08a74b7b1cdfdd9
 								</div>
 							</div>
 						</div>
@@ -194,3 +198,31 @@
 			</div>
 		</div>
 	</div>
+
+
+<script>
+function myFunction() {
+    var checkBox = document.getElementById("myCheck");
+    var text = document.getElementById("text");
+	if (checkBox.checked == true)
+	{
+        myCheck.style.display = "block";
+	} else 
+	{
+       myCheck.style.display = "none";
+	}
+	
+	function myFunction() 
+         {
+            var x = document.getElementById("password");
+            if (x.type === "password")
+            {
+                x.type = "text";
+            } 
+            else 
+            {
+                x.type = "password";
+            }
+
+
+</script>
