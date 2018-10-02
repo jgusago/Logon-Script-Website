@@ -196,7 +196,7 @@ $ID=$_GET['id'];
             <div class="col-lg-12">
 				<div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
 					<div class="panel panel-heading">
-						<a href="#addUser" data-toggle="modal" onclick="populateSecondTextBox();"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
+						<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
 					</div>
                     <div class="panel panel-body"> 
                         <div style="clear:both"></div>
@@ -298,7 +298,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" required>
+								<select class="form-control" id="department" name="department" required onchange="populateSecondTextBox();">
 									<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
