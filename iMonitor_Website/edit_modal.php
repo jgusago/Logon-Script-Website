@@ -158,21 +158,6 @@
 								<div class="checkbox">
 									<label><input type="checkbox" onclick="resetPass()"/>Reset password</label>
 								</div>
-
-								<script>
-									function resetPass() 
-									{
-										var x = document.getElementById("myCheck");
-										if (x.type === "password")
-										{
-											x.type = "text";
-										} 
-										else 
-										{
-											x.type = "password";
-										}
-									}  
-								</script>
 							</div>
 						</div>
 						<div class="form-group">
@@ -191,4 +176,19 @@
 		</div>
 	</div>
 </form>
+
+<script>
+									function resetPass() 
+									{
+										var x = document.getElementById("myCheck");
+										if (x.type === "password")
+										{
+											x.type = "text";
+										} 
+										else 
+										{
+											x.type = "password";
+										}
+									}  
+								</script>
 	
