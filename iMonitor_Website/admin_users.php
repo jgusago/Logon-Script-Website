@@ -263,7 +263,6 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="ID Number" onkeypress="return isNumberKey(event)"/>
 							</div>
-
 								<script type="text/javascript">
 									function isNumberKey(evt)
 									{
@@ -273,15 +272,13 @@ $ID=$_GET['id'];
 											return true;
 									}
 								</script>
-
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="userName">Name</label>
+							<label class="col-sm-12 control-label" for="Name">Name</label>
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(this, event)" maxlength="30"/>
-							</div>
-									
+							</div>		
 								<script type="text/javascript">
 									function LettersrOnly(txt, e) 
 									{
@@ -299,7 +296,7 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="Dept">Department</label>
+							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
@@ -327,7 +324,7 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="Role">Role</label>
+							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
 									<option value="">--Select role--</option>
@@ -338,7 +335,7 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="position">Status</label>
+							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="status" name="status" required>
 										<option value="">--Select status--</option>
@@ -349,7 +346,7 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="position">Password</label>
+							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
 								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
@@ -388,7 +385,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="idnumber" placeholder="ID Number" required>
+								<input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -399,22 +396,37 @@ $ID=$_GET['id'];
 											return true;
 									}
 								</script>
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label class="col-sm-12 control-label" for="Name">Name</label>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(this, event)" maxlength="30"/>
+							</div>
 
-							</div>
+								<script type="text/javascript">
+									function LettersrOnly(txt, e) 
+									{
+            							var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+            							var code;
+            							if (window.event)
+										code = e.keyCode;
+										else
+                						code = e.which;
+            							var char = keychar = String.fromCharCode(code);
+            							if (arr.indexOf(char) == -1)
+                							return false;
+        							}
+    							</script>
+
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="userName">Name</label>
+							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" placeholder="Name" required>
-							</div>
-						</div>
-						<br>
-						<div class="form-group">
-							<label class="col-sm-12 control-label" for="Dept">Department</label>
-							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" placeholder="--Select Department--" required>
-									<option></option>
+								<select class="form-control" id="department" name="department" required>
+									<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
@@ -433,14 +445,15 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
+									<option value="">--Select Position--</option>
 								</select>
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="Role">Role</label>
+							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="role" >
+								<select class="form-control" name="dept" id="role" required>
 									<option value="">--Select role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
@@ -449,9 +462,9 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="position">Status</label>
+							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="position" id="position">
+								<select class="form-control" name="status" id="status" required>
 										<option value="">--Select status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
@@ -460,7 +473,7 @@ $ID=$_GET['id'];
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="position">Password</label>
+							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
 								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
