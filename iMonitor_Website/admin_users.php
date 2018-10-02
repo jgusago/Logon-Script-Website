@@ -512,9 +512,9 @@ $ID=$_GET['id'];
         				document.getElementById("userid").value = "";
 						document.getElementById("name").value = "";
 						document.getElementById("department").selectedIndex = "0";
-						document.getElementById("position").selectedIndex = "0";
-						document.getElementById("status").selectedIndex = "0";
-						document.getElementById("role").selectedIndex = "0";
+						document.getElementById("position").selectedIndex = "1";
+						document.getElementById("status").selectedIndex = "1";
+						document.getElementById("role").selectedIndex = "1";
     				}
 				</script>
 
