@@ -40,19 +40,28 @@
 {
     padding-right:45px;
 }
-.panel-heading
+/* .panel-heading
 {
     padding: 10px 5px;
 }
 .panel-body
 {
     padding:0px;
+} */
+.panel
+{
+  width: 105%;
+  margin-bottom: 20px;
+  background-color:#fdfdfd78;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05); 
 }
-.panel-default
+/* .panel-default
 {
     margin-top: -293px;
     margin-left: 224px;
-}
+} */
 .container
 {
     padding-left:15px;

@@ -90,55 +90,6 @@ td .btn-success
 {
     margin-bottom:20px;
 }
-/* .print-pdf
-{
-    padding-left:550px;
-}
-.export
-{
-    padding-right:120px;
-}
-.input-Status input
-{
-    text-align: center;    
-}
-.input-Remarks input
-{
-    text-align: center;
-}
-h4
-{
-    color:black;
-}
-.pagination.pagination-sm
-{
-    display: inline-block;
-    margin-left:27px; 
-    margin-bottom:0px;
-    position:fixed;
-    margin-top:246px;
-    background-color: #f1f1f1;
-}
-.pagination a
-{
-    color: black;
-    padding: 20px 30px;
-    text-decoration: none;
-    float:right;
-}
-.pagination li a
-{
-        padding:10px;
-}
-.pagination a.active
-{
-    background-color: #4CAF50;
-    color:white;
-}
-.pagination a:hover:not(.active)
-{
-    background-color: #ddd;
-} */
 .container
 {
     padding-left:15px;
