@@ -75,6 +75,12 @@
               								}
             							?>
 
+																<script type="text/javascript">
+																		$("#department").change(function() {
+  																	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+																		});
+																</script>
+
 								</select>
 							</div>
 						</div>
@@ -142,7 +148,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="password" name="password" disabled>
+								<input class="form-control" type="password" id="password" name="password" value=<?php echo $row['password']?> disabled>
 							</div>
 						</div>
 						<br>
