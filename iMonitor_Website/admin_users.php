@@ -364,7 +364,7 @@ $ID=$_GET['id'];
 				</div>
 
 				<div class="modal-footer">
-				<input type="text" id="password2" name="password2"></td>
+				<input type="hidden" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
