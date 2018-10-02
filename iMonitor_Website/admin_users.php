@@ -155,9 +155,9 @@ $ID=$_GET['id'];
 						<p class="logout-modal">Are you sure you want to logout?</p>
 					</form>
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer2">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px;">Cancel</button>
-					<a class="btn btn-warning" href="../php/connection/logout.php" style="font-size:12px;">Logout</i></a>
+					<a class="btn btn-warning2" href="../php/connection/logout.php" style="font-size:12px;">Logout</i></a>
 				</div>
 			</div>
 		</div>
