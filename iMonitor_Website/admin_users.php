@@ -52,7 +52,7 @@ $ID=$_GET['id'];
 </head>
 <body onload="populateSecondTextBox();">
 	<!-- Top navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa; height:60px;">
+	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -64,12 +64,19 @@ $ID=$_GET['id'];
         <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
+            <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
+                <li>
+                    <p id="demo" hidden>
+                        
+                    </p>
+                </li>
+
 				<li class="dropdown">
-                    <a href="#" style="padding-right: 30px;">
+                    <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li> 
+
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
@@ -535,100 +542,50 @@ $ID=$_GET['id'];
 </script>
 <!-- END -->
 
-<!-- Edit User Modal -->
-<!--<form action="user_edit_account_submit.php" method="POST">	
-	<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
-			<div class="modal-dialog modal-md" role="document">
-				<div class="modal-content">
-					<div class="modal-header" style="background-color:#16811430;"><b>Edit User Information</b>
-						<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					</div>
-					<div class="body">
-						<form style="padding:10px;">
-							<table class="modal-form">
-								<tr>
-									<td><b>ID Number:</b></td>
-									<td><input type="text" id="userid" value="" name="userid" required placeholder="User ID"></td>
-								</tr>
-								<tr>
-									<td><b>Name:</b></td>
-									<td><input type="text" id="name" name="name" value=""  required  class="validate"></td>
-								</tr>
-								<tr>
-									<td><b>Department:</b></td>
-									<td class="dropdown-dept">
-										<select name="department">
-										<option value=""> </option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td><b>Position:</b></td>
-									<td class="dropdown-dept">
-										<select name="position">
-										<option value=""> </option>
-										</select>
-								</tr>
-								<tr>
-									<td><b>Role:</b></td>
-									<td class="dropdown-role"> 
-										<select name="role">
-										<option value=""> </option>
-										</select>
-									</td>
-                                </tr>
-                                <tr class="reset-password">
-                                    <td><b>Password:</b></td>
-                                    <td><input id="default-pass" type="password" value="">></td> 
-                                    <td>
-                                        <div>
-                                            <label class="checkbox-inline"><input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password</label>
-                                        </div>
-                                    </td>
-                                </tr>
-								<tr>
-									<td></td>
-									<td><button class="btn btn-primary">Update</button></td>
-								</tr>
-							</table>
-						</form>
-					</div>					
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Close</button>
-					</div>			
-				</div>
-			</div>
-	</div>
-</form>-->
-<!-- End of Edit User Modal -->
-	
+
+<script>
+
+$(document).ready(function(){
+	$(".dropdown").hover(            
+		function() {
+			$('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+			$(this).toggleClass('open');        
+		},
+		function() {
+			$('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+			$(this).toggleClass('open');       
+		}
+	);
+});
+
+		$(document).ready(function () {
+				$('#sidebarCollapse').on('click', function () {
+					$('#sidebar').toggleClass('active');
+				});
+			});
+
+
+
+	function isNumber(input) {
+	var regex =/[^0-9]/gi;
+	input.value = input.value.replace(regex,"");
+		
+	}
+
+
+	function lettersOnly(input) {
+	var regex = /[^a-z]/gi;
+	input.value = input.value.replace(regex,"");   
+}  
+
+}
+</script>
+
 </body>
 </html>
 
 <script>
-
-	$(document).ready(function()
-	{
-		$(".dropdown").hover(function() 
-		{
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-            $(this).toggleClass('open');        
-        },
-		function() 
-		{
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-            $(this).toggleClass('open');       
-        });
-    });
-
-	(document).ready(function () 
-	{
-		$('#sidebarCollapse').on('click', function () 
-		{
-            $('#sidebar').toggleClass('active');
-        });
-	});
-					
+				
         function isNumber(input) {
           var regex =/[^0-9]/gi;
           input.value = input.value.replace(regex,"");
