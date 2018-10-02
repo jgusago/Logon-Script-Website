@@ -52,18 +52,8 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" required>
+								<select class="form-control" id="department" name="department" value=<?php echo $row['department']?> required>
 									<option value="">--Select Department--</option>
-										<?php     
-              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
-
-											  while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											  {
-                								echo '<option>'.$row['branch_name'].'</option>'; 
-              								}
-            							?>
 								</select>
 							</div>
 						</div>
