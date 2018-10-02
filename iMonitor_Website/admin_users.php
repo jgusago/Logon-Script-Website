@@ -381,7 +381,7 @@ $ID=$_GET['id'];
 					<h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
 				</div>
 
-				<div class="modal-body1" style="height: 580px;">
+				<div class="modal-body1" style="height: 570px;">
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
@@ -476,15 +476,31 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
+								<input class="form-control" type="password" id="myCheck" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="checkbox">
-									<label><input type="checkbox"/>Reset password</label>
+									<label><input type="checkbox" onclick="resetPass()"/>Reset password</label>
 								</div>
+
+								<script>
+									function resetPass() 
+									{
+										var x = document.getElementById("myCheck");
+										if (x.type === "password")
+										{
+											x.type = "text";
+										} 
+										else 
+										{
+											x.type = "password";
+										}
+									}  
+								</script>
+
 							</div>
 						</div>
 						<div class="form-group">

@@ -8,7 +8,7 @@
 					<h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
 				</div>
 
-				<div class="modal-body1" style="height: 580px;">
+				<div class="modal-body1" style="height: 570px;">
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
@@ -158,6 +158,21 @@
 								<div class="checkbox">
 									<label><input type="checkbox" onclick="resetPass()"/>Reset password</label>
 								</div>
+
+								<script>
+									function resetPass() 
+									{
+										var x = document.getElementById("myCheck");
+										if (x.type === "password")
+										{
+											x.type = "text";
+										} 
+										else 
+										{
+											x.type = "password";
+										}
+									}  
+								</script>
 							</div>
 						</div>
 						<div class="form-group">
@@ -176,19 +191,4 @@
 		</div>
 	</div>
 	</form>
-
-
-	<script>
-		function resetPass() 
-		{
-			var x = document.getElementById("myCheck");
-			if (x.type === "password")
-			{
-				x.type = "text";
-			} 
-			else 
-			{
-				x.type = "password";
-			}
-		}  
-	</script>
+	
