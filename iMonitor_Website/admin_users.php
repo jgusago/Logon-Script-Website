@@ -510,6 +510,12 @@ $ID=$_GET['id'];
    						document.getElementById('password2').value = document.getElementById('password').value;
 					}
 				</script>
+				
+				<script type="text/javascript">
+					function populateSecondTextBox() {
+   					document.getElementById('password2').value = document.getElementById('password').value;
+					}
+				</script>
 
 				<script type="text/javascript">
 					function ClearFields() 
