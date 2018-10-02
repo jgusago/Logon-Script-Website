@@ -119,6 +119,14 @@ label
     padding: 10px;
     margin-bottom: -10px;
 }
+.modal-footer
+{
+    padding-bottom: 10px;
+}
+.modal-header
+{
+    padding-bottom: 10px;
+}
 .btn-default
 {
     font-size:12px;

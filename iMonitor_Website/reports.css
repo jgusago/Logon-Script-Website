@@ -66,16 +66,6 @@
     margin-left:225px;
     margin-top:8px;
 }
-.container-table
-{
-    margin-left:auto;
-}
-/* .container
-{
-    width:100%;
-    margin-left:-2px;
-    margin-top:300px;
-} */
 .table-bordered th, td
 {
 	text-align: center;
@@ -122,59 +112,26 @@ thead th
 {
     width: 600px;
 }
-.modal-header 
+.modal-footer
 {
-    padding-bottom: 5px;
-    color: white;
+    padding-bottom: 10px;
 }
-.modal-footer 
+.modal-header
 {
-        padding: 10; 
-}    
-.modal-footer .btn-group button 
+    padding-bottom: 10px;
+} 
+/* .modal-footer .btn-group button 
 {
     height:40px;
     border-top-left-radius : 0;
     border-top-right-radius : 0;
     border: none;
     border-right: 1px solid #ddd;
-}
+} */
 u
 {
 	float:left;
 	padding-top: 9px;
-}
-.modal-form td
-{
-	padding:5px;
-	padding-left:15px;
-	text-align:left;
-}
-.modal-form .btn-success
-{
-	width:320px;
-}
-.dropdown-dept select
-{
-	width:320px;
-	height:30px;
-} 
-.dropdown-role select
-{
-	width:320px;
-	height:30px;
-}
-.modal-form input
-{
-	width:320px;
-}
-.modal-form td
-{
-	font-family: century gothic;
-}
-.modal-footer .btn-group:last-child > button 
-{
-    border-right: 0;
 }
 .modal-body
 {
