@@ -64,6 +64,17 @@
               								}
             							?>
 
+													<?php     
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+											  			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											  			{
+                								echo '<option>'.$row['branch_name'].'</option>'; 
+              								}
+            							?>
+
 								</select>
 							</div>
 						</div>
@@ -72,7 +83,17 @@
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
-									<option value="">--Select Position--</option>
+								
+													<?php     
+              								$sql = "select position from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['position'].'</option>'; 
+              								}
+            							?>
+
 								</select>
 							</div>
 						</div>
@@ -81,7 +102,16 @@
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="dept" id="role" required>
-									<option value="">--Select role--</option>
+													<?php     
+              								$sql = "select role from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['role'].'</option>'; 
+              								}
+            							?>
+
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -92,7 +122,17 @@
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="status" id="status" required>
-										<option value="">--Select status--</option>
+										
+													<?php     
+              								$sql = "select status from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['status'].'</option>'; 
+              								}
+            							?>
+
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
@@ -127,3 +167,9 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		$("#department").change(function() {
+  	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+		});
+	</script>
