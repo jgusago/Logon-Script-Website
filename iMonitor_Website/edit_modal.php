@@ -156,6 +156,20 @@
 							<div class="col-sm-12">
 								<div class="checkbox">
 									<label><input type="checkbox" id="myCheck" onclick="resetPass()"/>Reset password</label>
+										<script>
+ 												function resetPass() 
+         								{
+            						var x = document.getElementById("default-pass");
+            							if (x.type === "password")
+            							{
+                					x.type = "text";
+            							} 
+            							else 
+            							{
+                					x.type = "password";
+            							}
+												}  
+											</script>
 								</div>
 							</div>
 						</div>
