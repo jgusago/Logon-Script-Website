@@ -185,7 +185,7 @@ exit();
         <div class="container" style="width:2000px;">
             <div class="panel" style="margin-top: 60px; background-color: #e3e5e3eb; margin-left:-15px;">
                 <div class="col-lg-12">
-                    <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;">
+                    <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;  width: 102%;">
                         <div class="panel-heading">
                             <ul class="nav nav-tabs">
                                 <li class="active">
