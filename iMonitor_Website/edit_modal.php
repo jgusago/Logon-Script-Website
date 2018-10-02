@@ -52,7 +52,18 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" value=<?php echo $row['department']?> required>
+								<select class="form-control" id="department" name="department" required>
+
+													<?php     
+              								$sql = "select department from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['department'].'</option>'; 
+              								}
+            							?>
+
 								</select>
 							</div>
 						</div>
