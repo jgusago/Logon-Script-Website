@@ -114,11 +114,11 @@ thead th
 }
 .modal-footer
 {
-    padding-bottom: 10px;
+    padding: 10px;
 }
 .modal-header
 {
-    padding-bottom: 10px;
+    padding: 10px;
 } 
 /* .modal-footer .btn-group button 
 {
