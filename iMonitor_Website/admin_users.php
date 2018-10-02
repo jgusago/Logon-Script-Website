@@ -363,6 +363,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<div class="col-sm-12">
 								<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Register</button>
+								<input type="text" hidden>
 							</div>
 						</div>
 					</form>
@@ -387,7 +388,7 @@ $ID=$_GET['id'];
 					<h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
 				</div>
 
-				<div class="modal-body1">
+				<div class="modal-body1" style="height: 580px;">
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
@@ -493,6 +494,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<div class="col-sm-12">
 								<button type="submit" class="btn btn-warning" style="margin: auto; margin-top: 5px;">Update</button>
+								<input type="text" hidden>
 							</div>
 						</div>
 					</form>
