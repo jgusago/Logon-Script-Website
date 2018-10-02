@@ -340,7 +340,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position" required>
+								<select class="form-control" id="status" name="status" required>
 										<option value="">--Select status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
