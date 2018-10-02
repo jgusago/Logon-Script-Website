@@ -36,17 +36,9 @@
 {
     padding-right:45px;
 }
-/* .panel-heading
-{
-    padding: 10px 5px;
-}
-.panel-body
-{
-    padding:0px;
-} */
 .panel
 {
-  width: 105%;
+  width: 103%;
   margin-bottom: 20px;
   background-color:#fdfdfd78;
   border: 1px solid transparent;
