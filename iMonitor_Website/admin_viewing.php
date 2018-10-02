@@ -223,7 +223,7 @@ $ID=$_GET['id'];
                                 </div>
                                 <div style="clear:both"></div>
                                 <br>
-                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;">
+                                <div class="table-responsive" style="overflow-x:auto; padding-right:5px;">
                                     <table class="table table-bordered" style="background: #ffffff;">
                                         <thead>
                                             <tr>
