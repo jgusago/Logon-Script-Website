@@ -102,20 +102,21 @@ a, a:hover, a:focus {
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
-.wrapper {
-    display: flex;
-    align-items: stretch;
-}
-
 #sidebar {
     margin-top:30px;
     min-width: 250px;
-    height: -webkit-fill-available;
     max-width: 250px;
     background: #fffafa;
     color: black;
     transition: all 0.3s;
     box-shadow: 1px 1px #d2cbcb;
+    z-index: 1000;
+    position: fixed;
+    overflow-y: auto;
+}
+.wrapper {
+    display: flex;
+    align-items: stretch;
 }
 #sidebar li.active
 {
@@ -222,16 +223,6 @@ ul ul a {
 .container
 {
   width:2000px;
-}
-.panel
-{
-  margin-top: 0px;
-  width: 105%;
-  margin-bottom: 20px;
-  background-color:#e3e5e378;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 .table-hover
 {

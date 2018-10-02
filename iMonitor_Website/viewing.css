@@ -11,11 +11,10 @@
     padding: 10px;
     font-size: 18px;
     margin-bottom: 0px;
-    width: 110%;
+    width: 103%;
 }
 .panel
 {
-  width: 105%;
   margin-bottom: 20px;
   background-color:#fdfdfd78;
   border: 1px solid transparent;
@@ -36,14 +35,6 @@ table
     border-collapse: collapse;
     width: 100%;
 }
-/* th
-{
-    height:50px;
-}
-thead th
-{
-    padding-bottom:15px;
-} */
 td .btn-primary
 {
     width:90px;      
@@ -93,4 +84,8 @@ td .btn-success
 .container
 {
     padding-left:15px;
+}
+.col-md-6
+{
+    padding-top:20px;
 }

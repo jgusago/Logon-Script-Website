@@ -68,16 +68,6 @@ exit();
                         
                     </p>
                 </li>
-                <!-- <script>
-                var myVar = setInterval(myTimer, 60000);
-
-                function myTimer() 
-                {
-                    var d = new Date();
-                    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-            
-                }
-                </script> -->
 
 				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
@@ -203,7 +193,7 @@ exit();
     <!-- End of Sidebar -->
 
 
-	<script>
+<script>
 
         $(document).ready(function(){
             $(".dropdown").hover(            
@@ -239,6 +229,8 @@ exit();
      }  
 
 }
+
+</script>   
 	
 </body>
 </html>

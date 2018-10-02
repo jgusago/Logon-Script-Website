@@ -193,7 +193,7 @@ $ID=$_GET['id'];
         <div class="container" style="width:100%;">
             <div class="well" style="padding: 10px;">Computer List</div>
             <div class="col-lg-12">
-                <div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
+                <div class="panel with-nav-tabs pane-default" style="margin-left: -30px; width: 103%;">
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
@@ -223,7 +223,7 @@ $ID=$_GET['id'];
                                 </div>
                                 <div style="clear:both"></div>
                                 <br>
-                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;">
+                                <div class="table-responsive" style="overflow-x:auto; padding-right:5px;">
                                     <table class="table table-bordered" style="background: #ffffff;">
                                         <thead>
                                             <tr>
