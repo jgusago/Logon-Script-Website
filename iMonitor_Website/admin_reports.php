@@ -219,10 +219,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                         <option value="WEB">IT-WEB</option>
                                     </select>
                                 </div>
-                                <div class="col-md-8"><br>
+                                <div class="col-md-6"><br>
                                     <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                 <br>
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport();">
