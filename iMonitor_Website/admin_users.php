@@ -469,7 +469,6 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<div class="col-sm-12">
 								<button type="submit" class="btn btn-warning" style="margin: auto; margin-top: 5px;">Update</button>
-								<input type="text" id="password2" name="password2"></td>
 							</div>
 						</div>
 					</form>
@@ -477,6 +476,7 @@ $ID=$_GET['id'];
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<input type="text" id="password2" name="password2"></td>
 				</div>
 			</div>
 		</div>
