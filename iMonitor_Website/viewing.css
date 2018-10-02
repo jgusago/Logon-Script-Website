@@ -15,7 +15,6 @@
 }
 .panel
 {
-  margin-bottom: 20px;
   background-color:#fdfdfd78;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -43,9 +42,11 @@ td .btn-success
 {
     width:90px; 
 }
-.modal-body .table-bordered
+.modal-body 
 {
-    margin-left:80px;
+    position: relative;
+    padding: 10px;
+    margin-bottom: -10px;
 }
 .modal-header 
 {

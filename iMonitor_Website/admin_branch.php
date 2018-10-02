@@ -45,8 +45,8 @@ exit();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styleIndex.css">
+    <link rel="stylesheet" href="general.css">
+    <!-- <link rel="stylesheet" href="styleIndex.css"> -->
 </head>
 <body>
     <!-- Top Navigation -->
@@ -139,7 +139,7 @@ exit();
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header" style="background-color: #66bb307a;">
+				<div class="modal-header" style="background-color: #ffffff7a;">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 				<div class="modal-body">
@@ -148,8 +148,8 @@ exit();
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-success" href="../php/connection/logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px;">Cancel</button>
+					<a class="btn btn-warning" href="../php/connection/logout.php" style="font-size:12px;">Logout</i></a>
 				</div>
 			</div>
 		</div>

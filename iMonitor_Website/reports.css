@@ -114,10 +114,10 @@ thead th
     height:30px;
     margin-left: -340px;
 }
-.modal-body .table-bordered
+/* .modal-body .table-bordered
 {
     margin-left:80px;
-}
+} */
 .modal-dialog
 {
     width: 600px;
@@ -125,7 +125,7 @@ thead th
 .modal-header 
 {
     padding-bottom: 5px;
-    color: black;;
+    color: white;
 }
 .modal-footer 
 {
@@ -178,7 +178,9 @@ u
 }
 .modal-body
 {
-    padding:20px;
+    position: relative;
+    padding: 10px;
+    margin-bottom: -10px;
 }
 .modal-footer .btn-default
 {

@@ -156,8 +156,8 @@ $ID=$_GET['id'];
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-default" href="../php/connection/logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px;">Cancel</button>
+					<a class="btn btn-warning" href="../php/connection/logout.php" style="font-size:12px;">Logout</i></a>
 				</div>
 			</div>
 		</div>
@@ -201,7 +201,7 @@ $ID=$_GET['id'];
                     <div class="panel panel-body"> 
                         <div style="clear:both"></div>
                         <br>
-                        	<div class="table-responsive" style="overflow-x:auto; margin-top:-50px;">
+                        	<div class="table-responsive" style=" margin-top:-50px;">
                                 <table class="table table-bordered" style="background: #ffffff;">
                                     <thead>
                                     	<tr>

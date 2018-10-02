@@ -155,8 +155,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-success" href="../php/connection/logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px;">Cancel</button>
+					<a class="btn btn-warning" href="../php/connection/logout.php" style="font-size:12px;">Logout</i></a>
 				</div>
 			</div>
 		</div>
