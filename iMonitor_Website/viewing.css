@@ -50,7 +50,7 @@ td .btn-success
 }
 .modal-header 
 {
-    padding-bottom: 5px;
+   padding:10px;
     color: white;
 }
 .modal-footer
@@ -61,14 +61,14 @@ td .btn-success
 {
     padding-bottom: 10px;
 }     
-.modal-footer .btn-group button 
+/* .modal-footer .btn-group button 
 {
     height:40px;
     border-top-left-radius : 0;
     border-top-right-radius : 0;
     border: none;
     border-right: 1px solid #ddd;
-}
+} */
 .tr-dept td
 {
     padding-top:25px;
