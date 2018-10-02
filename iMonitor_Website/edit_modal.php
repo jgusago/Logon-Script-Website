@@ -1,4 +1,5 @@
 <!-- Edit User Modal -->
+<form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
     <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -188,3 +189,4 @@
 			</div>
 		</div>
 	</div>
+	</form>
