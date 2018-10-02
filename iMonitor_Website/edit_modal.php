@@ -148,7 +148,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="password" name="password" disabled>
+								<input class="form-control" type="password" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
 						<br>
