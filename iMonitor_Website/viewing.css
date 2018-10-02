@@ -53,11 +53,14 @@ td .btn-success
     padding-bottom: 5px;
     color: white;
 }
-.modal-footer 
+.modal-footer
 {
-    padding: 10px;
-  
-}    
+    padding-bottom: 10px;
+}
+.modal-header
+{
+    padding-bottom: 10px;
+}     
 .modal-footer .btn-group button 
 {
     height:40px;
@@ -65,14 +68,6 @@ td .btn-success
     border-top-right-radius : 0;
     border: none;
     border-right: 1px solid #ddd;
-}
-  
-.modal-footer .btn-group:last-child > button 
-{
-    border-right: 0;
-}
-.dropdown-menu .this{
-    background-color: white;
 }
 .tr-dept td
 {
