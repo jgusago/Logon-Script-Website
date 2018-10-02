@@ -358,7 +358,7 @@ $ID=$_GET['id'];
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
 		</div>
@@ -505,6 +505,7 @@ $ID=$_GET['id'];
 						document.getElementById("name").value = "";
 						document.getElementById("department").selectedIndex = "0";
 						document.getElementById("position").value = "";
+						document.getElementById("status").selectedIndex = "0";
 						document.getElementById("role").selectedIndex = "0";
     				}
 				</script>
