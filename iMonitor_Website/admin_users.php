@@ -298,7 +298,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" required onchange="populateSecondTextBox();">
+								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
