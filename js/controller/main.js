@@ -500,8 +500,17 @@ function loadtableactive(athead, atfoot, atdata){
                 td = document.createElement("td");
                 tr.appendChild(td);
 
-                tdtxt = document.createTextNode(tddata[j]);
-                td.appendChild(tdtxt);
+                tdmd = tddata[j].split("~");
+                tdmdl = tdmd.length;
+
+                for (var k = 0; k < tdmdl; k++){
+
+                    tdtxtp = document.createElement("tr");
+                    td.appendChild(tdtxtp);
+                    tdtxt = document.createTextNode(tdmd[k]);
+                    tdtxtp.appendChild(tdtxt);
+                }
+
             }
         }
     });
