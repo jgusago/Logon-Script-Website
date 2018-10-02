@@ -372,7 +372,7 @@ $ID=$_GET['id'];
 					<h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
 				</div>
 
-				<div class="modal-body1">
+				<div class="modal-body1" style="height: 580px;">
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
