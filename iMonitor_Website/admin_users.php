@@ -438,8 +438,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="position" id="position" placeholder="--Select position--">
-										<option></option>
+								<select class="form-control" id="position" name="position">
 								</select>
 							</div>
 						</div>
