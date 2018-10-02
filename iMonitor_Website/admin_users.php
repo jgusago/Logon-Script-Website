@@ -348,7 +348,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<div class="col-sm-12">
 								<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Register</button>
-								<input type="text" class="form-control" hidden>
+								<input type="text" hidden>
 							</div>
 						</div>
 					</form>
@@ -479,7 +479,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<div class="col-sm-12">
 								<button type="submit" class="btn btn-warning" style="margin: auto; margin-top: 5px;">Update</button>
-								<input type="text"  hidden>
+								<input type="text" >
 							</div>
 						</div>
 					</form>
