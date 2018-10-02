@@ -485,22 +485,6 @@ $ID=$_GET['id'];
 								<div class="checkbox">
 									<label><input type="checkbox" onclick="resetPass()"/>Reset password</label>
 								</div>
-
-								<script>
-									function resetPass() 
-									{
-										var x = document.getElementById("myCheck");
-										if (x.type === "password")
-										{
-											x.type = "text";
-										} 
-										else 
-										{
-											x.type = "password";
-										}
-									}  
-								</script>
-
 							</div>
 						</div>
 						<div class="form-group">
@@ -591,6 +575,22 @@ $(document).ready(function(){
 }
 </script>
 
+
+<script>
+	function resetPass() 
+	{
+		var x = document.getElementById("myCheck");
+		if (x.type === "password")
+		{
+			x.type = "text";
+		} 
+		else 
+		{
+			x.type = "password";
+		}
+	}  
+</script>
+
 </body>
 </html>
 
@@ -607,18 +607,5 @@ $(document).ready(function(){
           input.value = input.value.replace(regex,"");
                
              }   
-             
-         function resetPass() 
-         {
-            var x = document.getElementById("default-pass");
-            if (x.type === "password")
-            {
-                x.type = "text";
-            } 
-            else 
-            {
-                x.type = "password";
-            }
-		}  
 </script>
 
