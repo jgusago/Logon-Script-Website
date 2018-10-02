@@ -113,6 +113,11 @@ label
     padding: 15px;
     height: 580px;
 }
+.modal-body2
+{
+    position: relative;
+    padding: 15px;
+}
 .btn-success
 {
     width:200px;
