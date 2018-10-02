@@ -301,9 +301,9 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="dept">
+								<select class="form-control" id="department" name="department" placeholder="--Select Department--">
 									<option>
-									<?php     
+										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -321,19 +321,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="position" id="position" placeholder="--Select position--">
-										<option>
-										<?php     
-												$sql = "select DISTINCT sub_department from tbl_department ORDER BY sub_department ASC";
-												$stmt = $db->prepare($sql);
-												$stmt->execute();
-
-												while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-												{
-													echo '<option>'.$row['sub_department'].'</option>'; 
-												}
-											?>
-									</option>
+								<select class="form-control" id="position" name="position" required>
 								</select>
 							</div>
 						</div>
@@ -377,7 +365,7 @@ $ID=$_GET['id'];
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
 		</div>
@@ -400,7 +388,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+								<input type="text" class="form-control" id="idnumber" placeholder="ID Number" required>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -418,16 +406,16 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userName">Name</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" placeholder="Name">
+								<input type="text" class="form-control" id="name" placeholder="Name" required>
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department">
-									<option>
-									<?php     
+								<select class="form-control" id="department" name="department" placeholder="--Select Department--" required>
+									<option></option>
+										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -437,7 +425,6 @@ $ID=$_GET['id'];
                 								echo '<option>'.$row['branch_name'].'</option>'; 
               								}
             							?>
-									</option>
 								</select>
 							</div>
 						</div>
@@ -445,7 +432,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position">
+								<select class="form-control" id="position" name="position" required>
 								</select>
 							</div>
 						</div>
@@ -489,7 +476,6 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<div class="col-sm-12">
 								<button type="submit" class="btn btn-warning" style="margin: auto; margin-top: 5px;">Update</button>
-								<input type="text" hidden>
 							</div>
 						</div>
 					</form>
@@ -497,6 +483,7 @@ $ID=$_GET['id'];
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<input type="text" id="password2" name="password2"></td>
 				</div>
 			</div>
 		</div>
@@ -525,6 +512,7 @@ $ID=$_GET['id'];
 						document.getElementById("name").value = "";
 						document.getElementById("department").selectedIndex = "0";
 						document.getElementById("position").value = "";
+						document.getElementById("status").selectedIndex = "0";
 						document.getElementById("role").selectedIndex = "0";
     				}
 				</script>
