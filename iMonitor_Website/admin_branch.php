@@ -184,10 +184,7 @@ exit();
 	   		</ul>
         </nav>
         <div class="container">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active">Branch Settings</li>
-                <li></li>
-            </ul>
+            <div class="well" style="padding: 10px;">Branch Settings</div>
         </div>
 	</div>               
     <!-- End of Sidebar -->
