@@ -301,7 +301,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department">
+								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -329,7 +329,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="role" name="role">
+								<select class="form-control" id="role" name="role" required>
 									<option value="">--Select role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
@@ -340,7 +340,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position">
+								<select class="form-control" id="position" name="position" required>
 										<option value="">--Select status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
@@ -484,7 +484,6 @@ $ID=$_GET['id'];
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<input type="text" id="password2" name="password2"></td>
 				</div>
 			</div>
 		</div>
@@ -512,9 +511,9 @@ $ID=$_GET['id'];
         				document.getElementById("userid").value = "";
 						document.getElementById("name").value = "";
 						document.getElementById("department").selectedIndex = "0";
-						document.getElementById("position").selectedIndex = "1";
-						document.getElementById("status").selectedIndex = "1";
-						document.getElementById("role").selectedIndex = "1";
+						document.getElementById("position").selectedIndex = "0";
+						document.getElementById("status").selectedIndex = "0";
+						document.getElementById("role").selectedIndex = "0";
     				}
 				</script>
 
