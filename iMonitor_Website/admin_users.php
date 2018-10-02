@@ -381,7 +381,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+								<input type="text" class="form-control" id="idnumber" placeholder="ID Number" required>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -399,7 +399,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userName">Name</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" placeholder="Name">
+								<input type="text" class="form-control" id="name" placeholder="Name" required>
 							</div>
 						</div>
 						<br>
