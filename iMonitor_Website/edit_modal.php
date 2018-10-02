@@ -53,7 +53,6 @@
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" value=<?php echo $row['department']?> required>
-									<option value="">--Select Department--</option>
 								</select>
 							</div>
 						</div>
