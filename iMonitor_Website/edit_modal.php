@@ -149,28 +149,14 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="password" name="password" value="Aa123456" disabled>
+								<input class="form-control" type="password" id="myCheck"  value="Aa123456" name="password" disabled>
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="checkbox">
-									<label><input type="checkbox" id="myCheck" onclick="resetPass()"/>Reset password</label>
-											<script>
- 												function resetPass() 
-         								{
-            						var x = document.getElementById("password");
-            							if (x.type === "password")
-            							{
-                							x.type = "text";
-            							} 
-            							else 
-            							{
-                							x.type = "password";
-            							}
-												}  
-											</script>
+									<label><input type="checkbox" onclick="resetPass()"/>Reset password</label>
 								</div>
 							</div>
 						</div>
@@ -183,10 +169,26 @@
 				</div>
 
 				<div class="modal-footer">
-					<input type="hidden" id="password2" name="password2" value="Aa123456"></td>
+					<input type="text" id="password2" name="password2" value="Aa123456" hidden></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	</form>
+
+
+	<script>
+		function resetPass() 
+		{
+			var x = document.getElementById("myCheck");
+			if (x.type === "password")
+			{
+				x.type = "text";
+			} 
+			else 
+			{
+				x.type = "password";
+			}
+		}  
+	</script>
