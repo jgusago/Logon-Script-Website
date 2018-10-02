@@ -224,7 +224,7 @@ ul ul a {
 {
   width:2000px;
 }
-.panel
+/* .panel
 {
   margin-top: 0px;
   width: 105%;
@@ -233,7 +233,7 @@ ul ul a {
   border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
+} */
 .table-hover
 {
     background: #fefefe;
