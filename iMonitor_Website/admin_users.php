@@ -348,7 +348,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="text" id="myCheck" name="password" value="Aa123456" disabled>
+								<input class="form-control" type="text" id="myCheck" value="Aa123456" disabled>
 								<div class="checkbox">
 									<label><input type="checkbox" onclick="resetPass()"/>Reset password</label>
 								</div>
@@ -580,18 +580,14 @@ $(document).ready(function(){
 
 
 <script>
-	function resetPass() 
-	{
-		var x = document.getElementById("myCheck");
-		if (x.type === "password")
-		{
-			x.type = "text";
-		} 
-		else 
-		{
-			x.type = "password";
-		}
-	}  
+	function myFunction() {
+    var x = document.getElementById("myCheck");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
 </script>
 
 </body>
