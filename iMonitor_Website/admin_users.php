@@ -406,7 +406,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="Dept">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" required>
+								<select class="form-control" id="department" name="department" placeholder="--Select Department--" required>
 									<option></option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
