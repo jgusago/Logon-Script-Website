@@ -159,7 +159,7 @@
 										<script>
  												function resetPass() 
          								{
-            						var x = document.getElementById("default-pass");
+            						var x = document.getElementById("password");
             							if (x.type === "password")
             							{
                 					x.type = "text";
