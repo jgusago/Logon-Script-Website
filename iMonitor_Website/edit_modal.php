@@ -182,14 +182,8 @@
 				</div>
 
 				<div class="modal-footer">
-					<input type="text" id="password2" name="password2"></td>
+					<input type="hidden" id="password2" name="password2" value="Aa123456"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-						<script type="text/javascript">
-							function populateSecondTextBox() {
-   							document.getElementById('password2').value = document.getElementById('password').value;
-							}
-					</script>
 				</div>
 			</div>
 		</div>
