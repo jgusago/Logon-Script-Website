@@ -372,7 +372,7 @@ $ID=$_GET['id'];
 
 
 <!-- Edit User Modal -->
-<form action="../php/connection/user_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
+<!-- <form action="../php/connection/user_account_submit.php INSERT PHP CODE" method="POST">
     <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -386,7 +386,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="userid" name="userid" value="<?php echo $row['userid']; ?>" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
+								<input type="text" class="form-control" id="userid" name="userid" value="INSERT PHP CODES" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -428,16 +428,10 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
-										<?php     
-              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
+										
+									//INSERT PHP CODES HERE //
 
-											  while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											  {
-                								echo '<option>'.$row['branch_name'].'</option>'; 
-              								}
-            							?>
+
 								</select>
 							</div>
 						</div>
@@ -517,7 +511,7 @@ $ID=$_GET['id'];
 			</div>
 		</div>
 	</div>
-</form>
+</form> -->
 
 
 				<script type="text/javascript">
