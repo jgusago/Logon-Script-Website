@@ -73,7 +73,6 @@
                 								echo '<option>'.$row['branch_name'].'</option>'; 
               									}
             							?>
-										<option value="">--Select Department--</option>
 								</select>
 							</div>
 						</div>
@@ -103,7 +102,6 @@
                 								echo '<option>'.$row['sub_department'].'</option>'; 
               								}
             							?>
-										<option value="">--Select Position--</option>
 								</select>
 							</div>
 						</div>
@@ -122,7 +120,6 @@
                 							echo '<option>'.$row['role'].'</option>'; 
               								}
             							?>
-									<option value="">--Select Role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -143,7 +140,6 @@
                 							echo '<option>'.$row['status'].'</option>'; 
               								}
             							?>
-										<option value="">--Select Status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
@@ -172,7 +168,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="password2" name="password2" value="Aa123456">
+					<input type="text" id="password2" name="password2" value="Aa123456">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
@@ -205,12 +201,6 @@
 <script type="text/javascript">
 	function ClearFields() 
 		{
-        	document.getElementById("userid").value = "";
-			document.getElementById("name").value = "";
-			document.getElementById("department").selectedIndex = "0";
-			document.getElementById("position").selectedIndex = "0";
-			document.getElementById("status").selectedIndex = "0";
-			document.getElementById("role").selectedIndex = "0";
 			document.getElementById("userid2").value = "";
     	}
 </script>
