@@ -77,8 +77,8 @@
 								</select>
 
 												<script type="text/javascript">
-													$("#department").change(function() {
-  													$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+													$("#departments").change(function() {
+  													$("#positions").load("get_sub_department2.php?branch_name=" + $("#departments").val());
 													});
 												</script>
 
