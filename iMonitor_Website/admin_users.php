@@ -319,6 +319,14 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
 								</select>
+
+								<!-- FOR SUB DEPARTMENT -->
+								<script type="text/javascript">
+									$("#department").change(function() {
+  									$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+									});
+								</script>
+								<!-- END -->
 							</div>
 						</div>
 						<br>
@@ -362,6 +370,13 @@ $ID=$_GET['id'];
 				<div class="modal-footer">
 				<input type="text" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
+
+					<script type="text/javascript">
+						function populatesecondtextbox()
+							{
+								document.getElementById('password2').value = document.getElementById('password').value;
+							}
+				</script>
 				</div>
 			</div>
 		</div>
@@ -508,12 +523,7 @@ $ID=$_GET['id'];
 </form>-->
 
 
-				<script type="text/javascript">
-					function populatesecondtextbox()
-						{
-							document.getElementById('password2').value = document.getElementById('password').value;
-						}
-				</script>
+				
 
 				<script type="text/javascript">
 					function ClearFields() 
@@ -531,15 +541,6 @@ $ID=$_GET['id'];
 					<input type="hidden" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="ClearFields();">Close</button>
 				</div> -->
-
-<!-- FOR SUB DEPARTMENT -->
-<script type="text/javascript">
-	$("#department").change(function() {
-  	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
-	});
-</script>
-<!-- END -->
-
 
 <script>
 
