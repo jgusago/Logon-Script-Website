@@ -141,7 +141,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="myCheck"  value="Aa123456" name="password" disabled>
+								<input class="form-control" type="password" id="myCheck"  value="Aa123456" name="password" disabled onchange="mirrorFunction();">
 							</div>
 						</div>
 						<br>
@@ -159,8 +159,8 @@
 						</div>
 					</form>
 				</div>
-
 				<div class="modal-footer">
+					<input type="text" id="password3" name="password3"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -187,4 +187,11 @@
 	$("#departments").change(function() {
   	$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
 	});
+</script>
+
+<script type="text/javascript">
+	function mirrorFunction()
+		{
+			document.getElementById('password3').value = document.getElementById('myCheck').value;
+		}
 </script>
