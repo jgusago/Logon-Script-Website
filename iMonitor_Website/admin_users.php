@@ -50,7 +50,7 @@ $ID=$_GET['id'];
 	<link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="users.css">
 </head>
-<body>
+<body onclick="mirrorFunction();">
 	<!-- Top navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
@@ -369,8 +369,7 @@ $ID=$_GET['id'];
 
 				<div class="modal-footer">
 				<input type="text" id="password2" name="password2"></td>
-					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
-					<button type="button" class="btn btn-default" onclick="mirrorFunction();">Mirror</button>					
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>				
 					<script type="text/javascript">
 						function mirrorFunction()
 							{
@@ -520,10 +519,7 @@ $ID=$_GET['id'];
 			</div>
 		</div>
 	</div>
-</form>-->
-
-
-				
+</form>-->			
 
 				<script type="text/javascript">
 					function ClearFields() 
