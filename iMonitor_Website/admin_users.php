@@ -522,15 +522,17 @@ $ID=$_GET['id'];
 
 				<script type="text/javascript">
 					function populatesecondtextbox()
-					//get the input elements from HTML DOM
-					var password = document.getElementById("password");
-					var password2 = document.getElementById("password");
-					//Get the value of textOne textbox input
-					var passwordvalue = password.value;
+						{
+							//get the input elements from HTML DOM
+							var password = document.getElementById("password");
+							var password2 = document.getElementById("password");
+							//Get the value of textOne textbox input
+							var passwordvalue = password.value;
  
-					var password2value = passwordvalue;
-					//Assign the value of textOne textbox to textTwo textbox
-					password2.value = password2value;
+							var password2value = passwordvalue;
+							//Assign the value of textOne textbox to textTwo textbox
+							password2.value = password2value;
+						}
 				</script>
 
 				<script type="text/javascript">
