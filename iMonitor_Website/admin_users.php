@@ -298,7 +298,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" required>
+								<select class="form-control" id="departments" name="departments" required>
 									<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -317,13 +317,13 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position" required>
+								<select class="form-control" id="positions" name="positions" required>
 								</select>
 
 								<!-- FOR SUB DEPARTMENT -->
 								<script type="text/javascript">
-									$("#department").change(function() {
-  									$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+									$("#departments").change(function() {
+  									$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
 									});
 								</script>
 								<!-- END -->
@@ -376,7 +376,7 @@ $ID=$_GET['id'];
 							{
 								document.getElementById('password2').value = document.getElementById('password').value;
 							}
-				</script>
+					</script>
 				</div>
 			</div>
 		</div>
