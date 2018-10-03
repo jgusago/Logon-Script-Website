@@ -100,7 +100,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="role" id="role" required>
+								<select class="form-control" name="role" id="roles" required>
 										<?php     
               								$sql = "select role from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -120,7 +120,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="status" id="status" required>
+								<select class="form-control" name="status" id="statuss" required>
 										
 													<?php     
               								$sql = "select status from tbl_user WHERE id='$id'";
