@@ -14,7 +14,7 @@
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="userid" name="userid" value="<?php echo $row['userid']; ?>" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
-
+								<input type="text" id="userid2" name="userid2">
 								<script type="text/javascript">
 									function isNumberKey(evt)
 									{
@@ -168,7 +168,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="text" id="password2" name="password2" value="Aa123456">
+					<input type="hidden" id="password2" name="password2" value="Aa123456">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
