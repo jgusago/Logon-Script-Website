@@ -161,7 +161,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" id="password2" name="password2" value="Aa123456">
-					<input type="text" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
+					<input type="text" id="userid2" name="userid2">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -188,11 +188,4 @@
 	$("#departments").change(function() {
   	$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
 	});
-</script>
-
-<script type="text/javascript">
-	function mirrorFunction2()
-		{
-			document.getElementById('userid2').value = document.getElementById('userid').value;
-		}
 </script>
