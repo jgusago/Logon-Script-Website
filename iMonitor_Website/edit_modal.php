@@ -53,9 +53,9 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" required onchange="populateSecondTextBox();">
+								<select class="form-control" id="departments" name="department" required onchange="populateSecondTextBox();">
 
-													<?php     
+										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -65,23 +65,15 @@
               								}
             							?>
 
-													<?php     
+										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
-											  			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											  			{
+											  	while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['branch_name'].'</option>'; 
-              								}
+              									}
             							?>
-
-																<script type="text/javascript">
-																		$("#department").change(function() {
-  																	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
-																		});
-																</script>
-
 								</select>
 							</div>
 						</div>
@@ -89,9 +81,9 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position" required>
+								<select class="form-control" id="positions" name="position" required>
 								
-													<?php     
+										<?php     
               								$sql = "select position from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -108,8 +100,8 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="role" required>
-													<?php     
+								<select class="form-control" name="role" id="roles" required>
+										<?php     
               								$sql = "select role from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -128,7 +120,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="status" id="status" required>
+								<select class="form-control" name="status" id="statuss" required>
 										
 													<?php     
               								$sql = "select status from tbl_user WHERE id='$id'";
@@ -149,7 +141,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="myCheck"  value="Aa123456" name="password" disabled>
+								<input class="form-control" type="password" id="myCheck"  value="Aa123456" name="password" disabled onchange="mirrorFunction();">
 							</div>
 						</div>
 						<br>
@@ -167,9 +159,8 @@
 						</div>
 					</form>
 				</div>
-
 				<div class="modal-footer">
-					<input type="text" id="password2" name="password2" value="Aa123456" hidden></td>
+					<input type="hidden" id="password2" name="password2" value="Aa123456"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -178,17 +169,22 @@
 </form>
 
 <script>
-									function resetPass() 
-									{
-										var x = document.getElementById("myCheck");
-										if (x.type === "password")
-										{
-											x.type = "text";
-										} 
-										else 
-										{
-											x.type = "password";
-										}
-									}  
-								</script>
+	function resetPass() 
+		{
+			var x = document.getElementById("myCheck");
+			if (x.type === "password")
+				{
+					x.type = "text";
+				} 
+			else 
+				{
+					x.type = "password";
+				}
+			}  
+</script>
 	
+<script type="text/javascript">
+	$("#departments").change(function() {
+  	$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
+	});
+</script>

@@ -50,7 +50,7 @@ $ID=$_GET['id'];
 	<link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="users.css">
 </head>
-<body>
+<body onclick="mirrorFunction();">
 	<!-- Top navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
@@ -317,8 +317,17 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position" required onchange="populatesecondtextbox();">
+								<select class="form-control" id="position" name="position" required>
+								<option value="">--Select Position--</option>
 								</select>
+								
+								<!-- FOR SUB DEPARTMENT -->
+								<script type="text/javascript">
+									$("#department").change(function() {
+  									$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+									});
+								</script>
+								<!-- END -->
 							</div>
 						</div>
 						<br>
@@ -326,7 +335,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
-									<option value="">--Select role--</option>
+									<option value="">--Select Role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -337,7 +346,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="status" name="status" required>
-										<option value="">--Select status--</option>
+										<option value="">--Select Status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
@@ -347,7 +356,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="text" value="Aa123456" disabled>
+								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
 						<br>
@@ -360,8 +369,27 @@ $ID=$_GET['id'];
 				</div>
 
 				<div class="modal-footer">
-				<input type="text" id="password2" name="password2"></td>
-					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
+				<input type="hidden" id="password2" name="password2"></td>
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>	
+					<script type="text/javascript">
+						function mirrorFunction()
+							{
+								document.getElementById('password2').value = document.getElementById('password').value;
+							}
+					</script>
+
+					<script type="text/javascript">
+					function ClearFields() 
+						{
+        					document.getElementById("userid").value = "";
+							document.getElementById("name").value = "";
+							document.getElementById("department").selectedIndex = "0";
+							document.getElementById("position").selectedIndex = "0";
+							document.getElementById("status").selectedIndex = "0";
+							document.getElementById("role").selectedIndex = "0";
+							document.getElementById("password2").value = "";
+    					}
+					</script>
 				</div>
 			</div>
 		</div>
@@ -371,7 +399,7 @@ $ID=$_GET['id'];
 
 
 <!-- Edit User Modal -->
-<!-- <form action="../php/connection/user_account_submit.php INSERT PHP CODE" method="POST">
+<!--<form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -385,7 +413,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="userid" name="userid" value="INSERT PHP CODES" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
+								<input type="text" class="form-control" id="userid" name="userid" value="" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -427,10 +455,6 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
-										
-									//INSERT PHP CODES HERE //
-
-
 								</select>
 							</div>
 						</div>
@@ -509,41 +533,12 @@ $ID=$_GET['id'];
 			</div>
 		</div>
 	</div>
-</form> -->
-
-
-				<script type="text/javascript">
-					function populatesecondtextbox()
-						{
-							document.getElementById('password2').value = document.getElementById('password').value;
-						}
-				</script>
-
-				<script type="text/javascript">
-					function ClearFields() 
-					{
-        				document.getElementById("userid").value = "";
-						document.getElementById("name").value = "";
-						document.getElementById("department").selectedIndex = "0";
-						document.getElementById("position").selectedIndex = "0";
-						document.getElementById("status").selectedIndex = "0";
-						document.getElementById("role").selectedIndex = "0";
-    				}
-				</script>
+</form>-->			
 
 				<!-- <div class="modal-footer">
 					<input type="hidden" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;" onclick="ClearFields();">Close</button>
 				</div> -->
-
-<!-- FOR SUB DEPARTMENT -->
-<script type="text/javascript">
-	$("#department").change(function() {
-  	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
-	});
-</script>
-<!-- END -->
-
 
 <script>
 
