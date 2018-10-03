@@ -54,9 +54,17 @@
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="dept" name="department" required>
-
 										
+										<?php     
+              								$sql = "select department from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
 
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['department'].'</option>'; 
+              								}
+            							?>
+										
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
@@ -75,7 +83,27 @@
 							<div class="col-sm-12">
 								<select class="form-control" id="postn" name="position" required>
 								
-										
+										<?php     
+              								$sql = "select position from tbl_user WHERE id='$id'";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                							echo '<option>'.$row['position'].'</option>'; 
+              								}
+            							?>
+
+										<?php     
+              								$sql = "select DISTINCT sub_department from tbl_department ORDER BY sub_department ASC";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+											while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											{
+                								echo '<option>'.$row['sub_department'].'</option>'; 
+              								}
+            							?>
+
 								</select>
 							</div>
 						</div>
@@ -83,7 +111,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="role" id="roles" required>
+								<select class="form-control" name="role" id="role" required>
 										<?php     
               								$sql = "select role from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -103,7 +131,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="status" id="statuss" required>
+								<select class="form-control" name="status" id="status" required>
 										
 													<?php     
               								$sql = "select status from tbl_user WHERE id='$id'";
@@ -152,8 +180,8 @@
 </form>
 
 <script type="text/javascript">
-	$("#dept").change(function() {
-  	$("#postn").load("get_sub_department2.php?branch_name=" + $("#dept").val());
+	$("#").change(function() {
+  	$("#").load("get_sub_department2.php?branch_name=" + $("#d").val());
 	});
 </script>
 
