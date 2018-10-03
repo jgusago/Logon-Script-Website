@@ -523,7 +523,7 @@ $ID=$_GET['id'];
 				<script type="text/javascript">
 					function populateSecondTextBox() 
 					{
-   						document.getElementById('password2').value = document.getElementById('password').value;
+   						document.getElementById('password').value = document.getElementById('password2').value;
 					}
 				</script>
 
