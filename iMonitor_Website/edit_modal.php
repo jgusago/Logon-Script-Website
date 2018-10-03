@@ -54,7 +54,7 @@
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="dept" name="department" required>
-										
+										<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -82,7 +82,7 @@
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="postn" name="position" required>
-								
+										<option value="">--Select Position--</option>
 										<?php     
               								$sql = "select position from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -112,6 +112,7 @@
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="role" id="role" required>
+									<option value="">--Select Role--</option>	
 										<?php     
               								$sql = "select role from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -132,7 +133,7 @@
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="status" id="status" required>
-										
+										<option value="">--Select Status--</option>
 													<?php     
               								$sql = "select status from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -199,4 +200,17 @@
 					x.type = "password";
 				}
 			}  
+</script>
+
+<script type="text/javascript">
+	function ClearFields() 
+		{
+        	document.getElementById("userid").value = "";
+			document.getElementById("name").value = "";
+			document.getElementById("department").selectedIndex = "0";
+			document.getElementById("position").selectedIndex = "0";
+			document.getElementById("status").selectedIndex = "0";
+			document.getElementById("role").selectedIndex = "0";
+			document.getElementById("userid2").value = "";
+    	}
 </script>
