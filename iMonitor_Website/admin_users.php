@@ -334,7 +334,6 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
-									<option value="">--Select role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -345,7 +344,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="status" name="status" required>
-										<option value="">--Select status--</option>
+										<!--<option value="">--Select status--</option>-->
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
@@ -368,7 +367,7 @@ $ID=$_GET['id'];
 				</div>
 
 				<div class="modal-footer">
-				<input type="text" id="password2" name="password2"></td>
+				<input type="hidden" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>				
 					<script type="text/javascript">
 						function mirrorFunction()
