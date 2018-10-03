@@ -53,7 +53,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="departments" name="departments" required onchange="populateSecondTextBox();">
+								<select class="form-control" id="departments" name="department" required onchange="populateSecondTextBox();">
 
 										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
@@ -81,7 +81,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="positions" name="positions" required>
+								<select class="form-control" id="positions" name="position" required>
 								
 										<?php     
               								$sql = "select position from tbl_user WHERE id='$id'";
