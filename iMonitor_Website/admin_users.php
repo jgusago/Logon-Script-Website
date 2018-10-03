@@ -530,6 +530,7 @@ $ID=$_GET['id'];
 						document.getElementById("position").selectedIndex = "0";
 						document.getElementById("status").selectedIndex = "0";
 						document.getElementById("role").selectedIndex = "0";
+						document.getElementById("password2").value = "";
     				}
 				</script>
 
