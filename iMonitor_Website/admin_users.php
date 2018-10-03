@@ -319,7 +319,7 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
 								</select>
-								<option></option>
+								<option value="">--Select Position--</option>
 								<!-- FOR SUB DEPARTMENT -->
 								<script type="text/javascript">
 									$("#department").change(function() {
@@ -334,7 +334,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
-									<option></option>
+									<option value="">--Select Role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -345,7 +345,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="status" name="status" required>
-										<option></option>
+										<option value="">--Select Statudt--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
