@@ -50,7 +50,7 @@ $ID=$_GET['id'];
 	<link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="users.css">
 </head>
-<body onload="populateSecondTextBox();">
+<body>
 	<!-- Top navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
@@ -317,8 +317,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position" required>
-								<option value="">--Select Position--</option>
+								<select class="form-control" id="position" name="position" required onchange="populatesecondtextbox();">
 								</select>
 							</div>
 						</div>
@@ -361,7 +360,7 @@ $ID=$_GET['id'];
 				</div>
 
 				<div class="modal-footer">
-				<input type="password" id="myInput" value="password2"></td>
+				<input type="text" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
@@ -440,7 +439,6 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
-									<option value="">--Select Position--</option>
 								</select>
 							</div>
 						</div>
@@ -515,10 +513,10 @@ $ID=$_GET['id'];
 
 
 				<script type="text/javascript">
-					function populateSecondTextBox() 
-					{
-   						document.getElementById('password2').value = document.getElementById('password').value;
-					}
+					function populatesecondtextbox()
+						{
+							document.getElementById('password2').value = document.getElementById('password').value;
+						}
 				</script>
 
 				<script type="text/javascript">
@@ -583,6 +581,7 @@ $(document).ready(function(){
 }  
 
 }
+</script>
 
 </body>
 </html>
