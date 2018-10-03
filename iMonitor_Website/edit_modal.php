@@ -53,7 +53,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="departments" name="department" required onchange="populateSecondTextBox();">
+								<select class="form-control" id="departments" name="department" required>
 
 										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
@@ -141,7 +141,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="password">Password</label>
 							<div class="col-sm-12">
-								<input class="form-control" type="password" id="myCheck"  value="Aa123456" name="password" disabled onchange="mirrorFunction();">
+								<input class="form-control" type="password" id="myCheck"  value="Aa123456" name="password" disabled>
 							</div>
 						</div>
 						<br>
@@ -161,7 +161,6 @@
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" id="password2" name="password2" value="Aa123456">
-					<input type="text" id="userid2" name="userid2">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
