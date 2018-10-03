@@ -53,7 +53,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="departments" name="department" required>
+								<select class="form-control" id="department" name="department" required>
 
 										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
@@ -75,13 +75,20 @@
               									}
             							?>
 								</select>
+
+												<script type="text/javascript">
+													$("#department").change(function() {
+  													$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+													});
+												</script>
+
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="positions" name="position" required>
+								<select class="form-control" id="position" name="position" required>
 								
 										<?php     
               								$sql = "select position from tbl_user WHERE id='$id'";
@@ -100,7 +107,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="role" id="roles" required>
+								<select class="form-control" name="role" id="role" required>
 										<?php     
               								$sql = "select role from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -120,7 +127,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="status" id="statuss" required>
+								<select class="form-control" name="status" id="status" required>
 										
 													<?php     
               								$sql = "select status from tbl_user WHERE id='$id'";
@@ -181,10 +188,4 @@
 					x.type = "password";
 				}
 			}  
-</script>
-	
-<script type="text/javascript">
-	$("#departments").change(function() {
-  	$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
-	});
 </script>
