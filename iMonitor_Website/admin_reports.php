@@ -225,7 +225,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <div class="col-md-6">
                                 <br>
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                    <input type="button" name="btnExport" id="btnExport" value="Export" class="btn btn-success" onclick="fnExcelReport();">
                                         <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
                                 </div>
