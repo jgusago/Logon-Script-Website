@@ -160,7 +160,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="text" id="password3" name="password3"></td>
+					<input type="hidden" id="password2" name="password2" value="Aa123456"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -187,11 +187,4 @@
 	$("#departments").change(function() {
   	$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
 	});
-</script>
-
-<script type="text/javascript">
-	function mirrorFunction()
-		{
-			document.getElementById('password3').value = document.getElementById('myCheck').value;
-		}
 </script>
