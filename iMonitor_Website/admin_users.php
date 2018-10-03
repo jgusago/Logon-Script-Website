@@ -376,6 +376,19 @@ $ID=$_GET['id'];
 								document.getElementById('password2').value = document.getElementById('password').value;
 							}
 					</script>
+
+					<script type="text/javascript">
+					function ClearFields() 
+						{
+        					document.getElementById("userid").value = "";
+							document.getElementById("name").value = "";
+							document.getElementById("department").selectedIndex = "0";
+							document.getElementById("position").selectedIndex = "0";
+							document.getElementById("status").selectedIndex = "0";
+							document.getElementById("role").selectedIndex = "0";
+							document.getElementById("password2").value = "";
+    					}
+					</script>
 				</div>
 			</div>
 		</div>
@@ -520,19 +533,6 @@ $ID=$_GET['id'];
 		</div>
 	</div>
 </form>-->			
-
-				<script type="text/javascript">
-					function ClearFields() 
-					{
-        				document.getElementById("userid").value = "";
-						document.getElementById("name").value = "";
-						document.getElementById("department").selectedIndex = "0";
-						document.getElementById("position").selectedIndex = "0";
-						document.getElementById("status").selectedIndex = "0";
-						document.getElementById("role").selectedIndex = "0";
-						document.getElementById("password2").value = "";
-    				}
-				</script>
 
 				<!-- <div class="modal-footer">
 					<input type="hidden" id="password2" name="password2"></td>
