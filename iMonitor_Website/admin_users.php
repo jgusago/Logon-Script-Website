@@ -50,7 +50,7 @@ $ID=$_GET['id'];
 	<link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="users.css">
 </head>
-<body>
+<body onclick="populatesecondtextbox();">
 	<!-- Top navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
@@ -317,7 +317,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position" required onchange="populatesecondtextbox();">
+								<select class="form-control" id="position" name="position" required>
 								</select>
 							</div>
 						</div>
@@ -371,7 +371,7 @@ $ID=$_GET['id'];
 
 
 <!-- Edit User Modal -->
-<!-- <form action="../php/connection/user_account_submit.php INSERT PHP CODE" method="POST">
+<!--<form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
@@ -385,7 +385,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="userid" name="userid" value="INSERT PHP CODES" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
+								<input type="text" class="form-control" id="userid" name="userid" value="" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
 
 								<script type="text/javascript">
 									function isNumberKey(evt)
@@ -427,10 +427,6 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
-										
-									//INSERT PHP CODES HERE //
-
-
 								</select>
 							</div>
 						</div>
@@ -509,7 +505,7 @@ $ID=$_GET['id'];
 			</div>
 		</div>
 	</div>
-</form> -->
+</form>-->
 
 
 				<script type="text/javascript">
