@@ -298,7 +298,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="departments" name="departments" required>
+								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -317,13 +317,13 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="positions" name="positions" required>
+								<select class="form-control" id="position" name="position" required>
 								</select>
 
 								<!-- FOR SUB DEPARTMENT -->
 								<script type="text/javascript">
-									$("#departments").change(function() {
-  									$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
+									$("#department").change(function() {
+  									$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
 									});
 								</script>
 								<!-- END -->
