@@ -54,7 +54,6 @@
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="dept" name="department" required>
-										<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -74,6 +73,7 @@
                 								echo '<option>'.$row['branch_name'].'</option>'; 
               									}
             							?>
+										<option value="">--Select Department--</option>
 								</select>
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="postn" name="position" required>
-										<option value="">--Select Position--</option>
+										
 										<?php     
               								$sql = "select position from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -103,7 +103,7 @@
                 								echo '<option>'.$row['sub_department'].'</option>'; 
               								}
             							?>
-
+										<option value="">--Select Position--</option>
 								</select>
 							</div>
 						</div>
@@ -112,7 +112,7 @@
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="role" id="role" required>
-									<option value="">--Select Role--</option>	
+										
 										<?php     
               								$sql = "select role from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
@@ -122,7 +122,7 @@
                 							echo '<option>'.$row['role'].'</option>'; 
               								}
             							?>
-
+									<option value="">--Select Role--</option>
 									<option value="Adminsitrator">Administrator</option>
 									<option value="Staff">Staff</option>
 								</select>
@@ -133,8 +133,8 @@
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" name="status" id="status" required>
-										<option value="">--Select Status--</option>
-													<?php     
+										
+										<?php     
               								$sql = "select status from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -143,7 +143,7 @@
                 							echo '<option>'.$row['status'].'</option>'; 
               								}
             							?>
-
+										<option value="">--Select Status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
