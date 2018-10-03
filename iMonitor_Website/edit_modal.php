@@ -53,7 +53,7 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="departments" name="department" required>
+								<select class="form-control" id="dept" name="department" required>
 
 										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
@@ -75,20 +75,13 @@
               									}
             							?>
 								</select>
-
-												<script type="text/javascript">
-													$("#departments").change(function() {
-  													$("#positions").load("get_sub_department2.php?branch_name=" + $("#departments").val());
-													});
-												</script>
-
 							</div>
 						</div>
 						<br>
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="positions" name="position" required>
+								<select class="form-control" id="postn" name="position" required>
 								
 										<?php     
               								$sql = "select position from tbl_user WHERE id='$id'";
@@ -174,6 +167,13 @@
 		</div>
 	</div>
 </form>
+
+<script type="text/javascript">
+	$("#dept").change(function() {
+  	$("#postn").load("get_sub_department2.php?branch_name=" + $("#dept").val());
+	});
+</script>
+
 
 <script>
 	function resetPass() 
