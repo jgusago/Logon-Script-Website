@@ -161,7 +161,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" id="password2" name="password2" value="Aa123456"></td>
-					<input type="text" id="userid2" name="userid2"></td>
+					<!--<input type="text" id="userid2" name="userid2"></td>-->
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
