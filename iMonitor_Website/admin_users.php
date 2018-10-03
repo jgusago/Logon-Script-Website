@@ -446,7 +446,6 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
-									<option value="">--Select Position--</option>
 								</select>
 							</div>
 						</div>
