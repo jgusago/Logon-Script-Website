@@ -55,7 +55,7 @@
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required onchange="populateSecondTextBox();">
 
-													<?php     
+										<?php     
               								$sql = "select department from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -65,23 +65,15 @@
               								}
             							?>
 
-													<?php     
+										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
 
-											  			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											  			{
+											  	while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                 								echo '<option>'.$row['branch_name'].'</option>'; 
-              								}
+              									}
             							?>
-
-																<script type="text/javascript">
-																		$("#department").change(function() {
-  																	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
-																		});
-																</script>
-
 								</select>
 							</div>
 						</div>
@@ -91,7 +83,7 @@
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
 								
-													<?php     
+										<?php     
               								$sql = "select position from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -108,8 +100,8 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
-								<select class="form-control" name="dept" id="role" required>
-													<?php     
+								<select class="form-control" name="role" id="role" required>
+										<?php     
               								$sql = "select role from tbl_user WHERE id='$id'";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -169,7 +161,6 @@
 				</div>
 
 				<div class="modal-footer">
-					<input type="text" id="password2" name="password2" value="Aa123456" hidden></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -178,17 +169,22 @@
 </form>
 
 <script>
-									function resetPass() 
-									{
-										var x = document.getElementById("myCheck");
-										if (x.type === "password")
-										{
-											x.type = "text";
-										} 
-										else 
-										{
-											x.type = "password";
-										}
-									}  
-								</script>
+	function resetPass() 
+		{
+			var x = document.getElementById("myCheck");
+			if (x.type === "password")
+				{
+					x.type = "text";
+				} 
+			else 
+				{
+					x.type = "password";
+				}
+			}  
+</script>
 	
+<script type="text/javascript">
+	$("#department").change(function() {
+  	$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
+	});
+</script>
