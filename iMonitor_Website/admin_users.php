@@ -369,7 +369,9 @@ $ID=$_GET['id'];
 
 				<div class="modal-footer">
 				<input type="hidden" id="password2" name="password2"></td>
-					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>				
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>	
+					<button type="button" class="btn btn-default" onclick="ClearFields();">Test</button>
+
 					<script type="text/javascript">
 						function mirrorFunction()
 							{
