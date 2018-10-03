@@ -298,7 +298,7 @@ $ID=$_GET['id'];
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
-								<select class="form-control" id="department" name="department" onchange="mirrorFunction()" required>
+								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -369,7 +369,7 @@ $ID=$_GET['id'];
 
 				<div class="modal-footer">
 				<input type="text" id="password2" name="password2"></td>
-					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="mirrorFunction();">Close</button>
 
 					<script type="text/javascript">
 						function mirrorFunction()
