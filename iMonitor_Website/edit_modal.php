@@ -1,6 +1,6 @@
 <!-- Edit User Modal -->
 <form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
-    <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
+    <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;" onload="mirrorFunction2();>
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -188,4 +188,11 @@
 	$("#departments").change(function() {
   	$("#positions").load("get_sub_department.php?branch_name=" + $("#departments").val());
 	});
+</script>
+
+<script type="text/javascript">
+	function mirrorFunction2()
+		{
+			document.getElementById('userid2').value = document.getElementById('userid').value;
+		}
 </script>
