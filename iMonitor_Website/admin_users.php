@@ -50,7 +50,7 @@ $ID=$_GET['id'];
 	<link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="users.css">
 </head>
-<body>
+<body onload="populatesecondtextbox();">
 	<!-- Top navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
@@ -523,7 +523,7 @@ $ID=$_GET['id'];
 				<script type="text/javascript">
 					function populatesecondtextbox()
 						{
-							document.getElementById('password2').value = document.getElementById('password').value ;
+							document.getElementById('password2').value = document.getElementById('password').value;
 						}
 				</script>
 
