@@ -318,8 +318,9 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="position">Position</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="position" name="position" required>
-								</select>
 								<option value="">--Select Position--</option>
+								</select>
+								
 								<!-- FOR SUB DEPARTMENT -->
 								<script type="text/javascript">
 									$("#department").change(function() {
@@ -345,7 +346,7 @@ $ID=$_GET['id'];
 							<label class="col-sm-12 control-label" for="status">Status</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="status" name="status" required>
-										<option value="">--Select Statudt--</option>
+										<option value="">--Select Status--</option>
 										<option value="Active">Active</option>
 										<option value="Inactive">Inactive</option>
 								</select>
@@ -370,8 +371,6 @@ $ID=$_GET['id'];
 				<div class="modal-footer">
 				<input type="hidden" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>	
-					<button type="button" class="btn btn-default" onclick="ClearFields();">Test</button>
-
 					<script type="text/javascript">
 						function mirrorFunction()
 							{
