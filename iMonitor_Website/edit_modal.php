@@ -83,15 +83,7 @@
 							<div class="col-sm-12">
 								<select class="form-control" id="postn" name="position" required>
 								
-										<?php     
-              								$sql = "select position from tbl_user WHERE id='$id'";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
-
-              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                							echo '<option>'.$row['position'].'</option>'; 
-              								}
-            							?>
+										
 
 								</select>
 							</div>
