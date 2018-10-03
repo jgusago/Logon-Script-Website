@@ -55,15 +55,7 @@
 							<div class="col-sm-12">
 								<select class="form-control" id="dept" name="department" required>
 
-										<?php     
-              								$sql = "select department from tbl_user WHERE id='$id'";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
-
-              								while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                							echo '<option>'.$row['department'].'</option>'; 
-              								}
-            							?>
+										
 
 										<?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -84,7 +76,6 @@
 								<select class="form-control" id="postn" name="position" required>
 								
 										
-
 								</select>
 							</div>
 						</div>
