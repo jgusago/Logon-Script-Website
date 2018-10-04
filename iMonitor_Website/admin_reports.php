@@ -225,7 +225,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <div class="col-md-6">
                                 <br>
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" id="btnExport" name="btnExport" value="Export" class="btn btn-success" onclick="fnExcelReport();">
+                                    <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
                                         <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
                                     <input type="button" id="print" name="print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
                                 </div>
@@ -312,7 +312,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <div class="col-md-4">
                                 <br>
                                     <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" id="btnExport2" name="btnExport2" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
+                                    <input type="button" id="btnExport2" name="btnExport2" value="Export to Exel" class="btn btn-success" onclick="fnExcelReport2();">
                                         <!--<input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">-->
                                     <input type="button" id="print2" name="print2" value="Print" class="btn btn-danger" onclick="javascript:printDiv2('printable')" />
                                 </div>
@@ -413,7 +413,7 @@ $(document).ready(function(){
 
     <script type="text/javascript">
     	function printDiv() {
-        var divElements = document.getElementById("btn_print").innerHTML;
+        var divElements = document.getElementById("print").innerHTML;
         var oldPage = document.body.innerHTML;
         document.body.innerHTML = 
           "<html><head><title></title></head><body>" + 
