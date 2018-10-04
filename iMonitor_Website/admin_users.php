@@ -85,11 +85,14 @@ $ID=$_GET['id'];
                         <?php
 							$d=strtotime("Now");		
 							$dateNow = date("Y-m-d h:i:sa", $d);
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE scan_time != '$dateNow' AND iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                             $query->execute();
                             $query->setFetchMode(PDO::FETCH_ASSOC);
-                            $countdown = 0;
+							$countdown = 0;
                             while ($row = $query->fetch()) {
+								if($row['scan_time'] != $dateNow){
+									$countdown += 1;
+								}
                                 $countdown++;
                             }
                             echo  $countdown;
@@ -98,7 +101,7 @@ $ID=$_GET['id'];
                     </a>
                     <ul class="dropdown-menu">
                         <?php 
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE scan_time != '$dateNow' AND iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
                             $query->execute();
                             $query->setFetchMode(PDO::FETCH_ASSOC);
                             while ($row = $query->fetch()) {
