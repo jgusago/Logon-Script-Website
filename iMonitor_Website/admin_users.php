@@ -344,8 +344,8 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
 									<option value="">--Select Role--</option>
-									<option value="Adminsitrator">ADMINISTRATOR</option>
-									<option value="Staff">STAFF</option>
+									<option value="ADMINISTRATOR">ADMINISTRATOR</option>
+									<option value="STAFF">STAFF</option>
 								</select>
 							</div>
 						</div>
@@ -355,8 +355,8 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="status" name="status" required>
 										<option value="">--Select Status--</option>
-										<option value="Active">ACTIVE</option>
-										<option value="Inactive">INACTIVE</option>
+										<option value="ACTIVE">ACTIVE</option>
+										<option value="INACTIVE">INACTIVE</option>
 								</select>
 							</div>
 						</div>

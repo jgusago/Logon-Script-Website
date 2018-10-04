@@ -129,8 +129,8 @@ $get_id=$_REQUEST['id'];
                 							echo '<option>'.$row['role'].'</option>'; 
               								}
             							?>
-									<option value="Adminsitrator">ADMINISTRATOR</option>
-									<option value="Staff">STAFF</option>
+									<option value="ADMINISTRATOR">ADMINISTRATOR</option>
+									<option value="STAFF">STAFF</option>
 								</select>
 							</div>
 						</div>
@@ -149,8 +149,8 @@ $get_id=$_REQUEST['id'];
                 							echo '<option>'.$row['status'].'</option>'; 
               								}
             							?>
-										<option value="Active">ACTIVE</option>
-										<option value="Inactive">INACTIVE</option>
+										<option value="ACTIVE">ACTIVE</option>
+										<option value="INACTIVE">INACTIVE</option>
 								</select>
 							</div>
 						</div>
