@@ -108,7 +108,7 @@ exit();
                             }
                         ?>
                         <li>
-                            <a href="#"><small>Show all notifications</small></a>
+                            <a href="admin_notif.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>
@@ -171,10 +171,10 @@ exit();
 		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
-		            <a href="#" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <a href="admin_viewing.php" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
 		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
@@ -182,7 +182,7 @@ exit();
 		            </ul> -->
 		        </li>
 		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
 		</nav>
