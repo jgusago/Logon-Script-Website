@@ -1,3 +1,11 @@
+.panel
+{
+    background-color: #fff;
+    border: 2 solid transparent;
+    border-radius: 4px;
+    /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); */
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
 .container
 {
     padding-left:15px;
@@ -30,12 +38,4 @@ label .col-md-4 .control-label
     min-height: 1px;
     /* padding-right: 0px;
     padding-left: 0px; */
-}
-.panel
-{
-    background-color: #fff;
-    border: 2 solid transparent;
-    border-radius: 4px;
-    /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); */
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
