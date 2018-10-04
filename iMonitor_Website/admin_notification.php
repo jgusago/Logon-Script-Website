@@ -206,7 +206,7 @@ exit();
                                     <tbody>
                                         <?php
                                             $d=strtotime("Now");		
-                                            $dateNow = date("Y-m-d h:i:sa", $d);
+                                            $dateNow = date("M-d-Y", $d);
                                             $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -219,17 +219,20 @@ exit();
                                                     </tr>
                                                 ';
                                             }
-                                            $query2 = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  scan_time != '$dateNow' AND user != 'Administrator' ");
+                                            $query2 = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  user != 'Administrator' ");
                                             $query2->execute();
                                             $query2->setFetchMode(PDO::FETCH_ASSOC);
+                                            
                                             while ($row2 = $query2->fetch()) {
-                                                echo '
-                                                <tr>
-                                                    <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
-                                                    <td>Hostname: '.$row['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row['branch'].'</td>
-                                                    <td>'.$row2['scan_time'].'</td>
-                                                </tr>
-                                            ';
+                                                if(date("M-d-Y", strtotime($row2['scan_time']) != $dateNow){
+                                                    echo '
+                                                    <tr>
+                                                        <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
+                                                        <td>Hostname: '.$row['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row['branch'].'</td>
+                                                        <td>'.$row2['scan_time'].'</td>
+                                                    </tr>
+                                                    ';
+                                                } 
                                             } 
                                         ?>
                                     </tbody>
