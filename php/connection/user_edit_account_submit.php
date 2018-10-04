@@ -12,7 +12,7 @@ $department= $_POST['department'];
 $position= $_POST['position'];
 $role= $_POST['role'];
 $status= $_POST['status'];
-$hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
+$hashed_password = password_hash($_POST["password3"],PASSWORD_DEFAULT);
 //$password= md5($_POST['password']);
 
 if($_POST['userid'] !== $_POST['userid2']) {
