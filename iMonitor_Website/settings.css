@@ -33,6 +33,12 @@ label .col-md-4
     font-size:15px;
     text-align: left;
 }
+.form-horizontal .control-label 
+{
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
 .col-md-4
 {
     position: relative;
