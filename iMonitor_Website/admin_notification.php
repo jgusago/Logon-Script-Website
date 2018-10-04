@@ -219,7 +219,7 @@ exit();
                                                     </tr>
                                                 ';
                                             }
-                                            $query2 = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  scan_time='$dateNow' AND user != 'Administrator' ");
+                                            $query2 = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  scan_time != '$dateNow' AND user != 'Administrator' ");
                                             $query2->execute();
                                             $query2->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row2 = $query2->fetch()) {
