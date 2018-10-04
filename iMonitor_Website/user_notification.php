@@ -46,7 +46,7 @@ exit();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="branch.css">
+    <!-- <link rel="stylesheet" href="styleIndex.css"> -->
 </head>
 <body>
     <!-- Top Navigation -->
@@ -62,13 +62,12 @@ exit();
         <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-            <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
+	        <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
 				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li> 
-
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
@@ -164,8 +163,8 @@ exit();
 		        <li>
 		            <a href="user_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
-		        <li class="active">
-		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		        <li>
+		            <a href="user_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
 		            <a href="user_viewing.php" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
@@ -175,13 +174,73 @@ exit();
 		        </li>	  
 	   		</ul>
         </nav>
-        <div class="container">
-            <div class="well" style="padding: 10px;">Branch Settings</div>
+        <div class="container" style="width:2000px;">
+            <div class="panel" style="margin-top: 60px; background-color: #e3e5e3eb; margin-left:-15px;">
+                <div class="col-lg-12">
+                    <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;  width: 102%;">
+                        <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab1default" data-toggle="tab">Notifications</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade in active" id="tab1default">
+                            <div class="pane pane--1" style="margin-left: 20px; width: 100%; padding-right: 40px;">
+                                <table class="table table-hover" style="background: #ffffff;">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Details</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            $d=strtotime("Now");		
+                                            $dateNow = date("M-d-Y", $d);
+                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                                            $query->execute();
+                                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                                            while ($row = $query->fetch()) {
+                                                echo '
+                                                    <tr>
+                                                        <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'<br/> Scan Time:'.$row['scan_time'].'</td>
+                                                        <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'<br/> Building : '.$row['branch'].'</td>
+                                                        <td>'.$row['scan_time'].'</td>
+                                                    </tr>
+                                                ';
+                                            }
+                                            $query2 = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  user != 'Administrator' ");
+                                            $query2->execute();
+                                            $query2->setFetchMode(PDO::FETCH_ASSOC);
+                                            
+                                            while ($row2 = $query2->fetch()) {
+                                                if(date("M-d-Y", strtotime($row2['scan_time'])) != $dateNow){
+                                                    echo '
+                                                    <tr>
+                                                        <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
+                                                        <td>Hostname: '.$row2['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row2['branch'].'</td>
+                                                        <td>'.$row2['scan_time'].'</td>
+                                                    </tr>
+                                                    ';
+                                                } 
+                                            } 
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 	</div>               
     <!-- End of Sidebar -->
 
 
+
+    
 	<script>
 
         $(document).ready(function(){
@@ -217,8 +276,11 @@ exit();
             input.value = input.value.replace(regex,"");   
      }  
 
+     var myVar = setInterval(myTimer ,1000);
+function myTimer() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
 }
 	
 </body>
 </html>
-

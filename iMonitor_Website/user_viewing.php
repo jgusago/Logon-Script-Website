@@ -109,7 +109,7 @@ $ID=$_GET['id'];
                             }
                         ?>
                         <li>
-                            <a href="admin_notification.php"><small>Show all notifications</small></a>
+                            <a href="user_notification.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>

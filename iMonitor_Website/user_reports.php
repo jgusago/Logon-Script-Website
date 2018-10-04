@@ -109,7 +109,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             }
                         ?>
                         <li>
-                            <a href="admin_notification.php"><small>Show all notifications</small></a>
+                            <a href="user_notification.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>
@@ -266,7 +266,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="tab2default">
-                                <div class="col-md-3" style="padding-top:15px;">
+                                <div class="col-md-3" style="padding-top:0px;">
                                     <select name="department" id="department" class="form-control">
                                         <option value="" selected>--All sub departments--</option>
                                         <option value="Marvin 5th">Marvin 5th</option>
@@ -285,7 +285,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     </select>
                                 </div>
                                 <div class="col-md-3"  style="padding-top:0px;">
-                                <br>
                                     <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
                                         <!--<input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">-->
