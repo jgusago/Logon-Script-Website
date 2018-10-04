@@ -103,7 +103,7 @@ $ID=$_GET['id'];
 						<?php 
 							$d=strtotime("Now");		
 							$dateNow = date("Y-m-d h:i:sa", $d);
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE (iMonitor_Status = 'End Task' AND scan_time = '$dateNow' ) AND user != 'Administrator' LIMIT 5 ");
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE (iMonitor_Status = 'End Task' OR scan_time = '$dateNow' ) AND user != 'Administrator' LIMIT 5 ");
                             $query->execute();
                             $query->setFetchMode(PDO::FETCH_ASSOC);
                             while ($row = $query->fetch()) {
