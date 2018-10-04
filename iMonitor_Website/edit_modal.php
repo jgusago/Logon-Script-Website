@@ -168,7 +168,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="password2" name="password2" value="Aa123456">
+					<input type="text" id="password3" name="password3" value="Aa123456">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
