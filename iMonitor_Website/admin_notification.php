@@ -224,11 +224,11 @@ exit();
                                             $query2->setFetchMode(PDO::FETCH_ASSOC);
                                             
                                             while ($row2 = $query2->fetch()) {
-                                                if(date("M-d-Y", strtotime($row2['scan_time']) != $dateNow){
+                                                if(date("M-d-Y", strtotime($row2['scan_time'])) != $dateNow){
                                                     echo '
                                                     <tr>
                                                         <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
-                                                        <td>Hostname: '.$row['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row['branch'].'</td>
+                                                        <td>Hostname: '<div class="$row2"></div>['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row2['branch'].'</td>
                                                         <td>'.$row2['scan_time'].'</td>
                                                     </tr>
                                                     ';
