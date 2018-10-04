@@ -229,7 +229,7 @@ exit();
                                                     <tr>
                                                         <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
                                                         <td>Hostname: '.$row2['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row2['branch'].'</td>
-                                                        <td>'.$row2['scan_time'].'</td>
+                                                        <td>'.date("d-Y", strtotime($row2['scan_time'])).'</td>
                                                     </tr>
                                                     ';
                                                 } 
