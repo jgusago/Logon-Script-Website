@@ -24,6 +24,7 @@ $get_id=$_REQUEST['id'];
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="userid" name="userid" value="<?php echo $row['userid']; ?>" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
 								<input type="hidden" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
+								<input type="text" id="password3" name="password3" value="<?php echo $row['password']; ?>">
 								<script type="text/javascript">
 									function isNumberKey(evt)
 									{
@@ -177,7 +178,6 @@ $get_id=$_REQUEST['id'];
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="text" id="password3" name="password3" value="<?php echo $row['password']; ?>">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
