@@ -220,15 +220,15 @@ exit();
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Department: </label>
-                                <p>1040359</p>
+                                <p class="col-md-8">Marvin(IT)</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Job Position: </label>
-                                <p class="col-md-8">Camille Kate Esio</p>
+                                <p class="col-md-8">OM-Audit</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Role: </label>
-                                <p class="col-md-8">1040359</p>
+                                <p class="col-md-8">Staff</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Password: </label>
