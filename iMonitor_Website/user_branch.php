@@ -168,7 +168,7 @@ exit();
 		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
-		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <a href="user_viewing.php" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
