@@ -83,7 +83,9 @@ $ID=$_GET['id'];
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
                         <?php
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+							$d=strtotime("Now");		
+							$dateNow = date("Y-m-d h:i:sa", $d);
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE scan_time != '$dateNow' AND iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                             $query->execute();
                             $query->setFetchMode(PDO::FETCH_ASSOC);
                             $countdown = 0;
@@ -96,14 +98,15 @@ $ID=$_GET['id'];
                     </a>
                     <ul class="dropdown-menu">
                         <?php 
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE scan_time != '$dateNow' AND iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
                             $query->execute();
                             $query->setFetchMode(PDO::FETCH_ASSOC);
                             while ($row = $query->fetch()) {
                                 echo '
                                 <li>
                                     <a href="#"><strong>'.$row['hostname'].'</strong><br>
-                                    <small><em>'.$row['iMonitor_Status'].'</em></small></a>
+									<small><em>'.$row['iMonitor_Status'].'</em></small></a>
+									<small><em>'.$row['scan_time'].'</em></small></a>
                                 </li>
                                 <li class="divider"></li>
                                 ';
