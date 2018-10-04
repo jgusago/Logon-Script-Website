@@ -46,7 +46,7 @@ exit();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="general.css">
-    <!-- <link rel="stylesheet" href="styleIndex.css"> -->
+    <link rel="stylesheet" href="branch.css">
 </head>
 <body>
     <!-- Top Navigation -->
@@ -63,12 +63,6 @@ exit();
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
-                <li>
-                    <p id="demo" hidden>
-                        
-                    </p>
-                </li>
-
 				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
@@ -108,7 +102,7 @@ exit();
                             }
                         ?>
                         <li>
-                            <a href="admin_notif.php"><small>Show all notifications</small></a>
+                            <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>
@@ -145,7 +139,7 @@ exit();
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header" style="background-color: #66bb307a;">
+				<div class="modal-header" style="background-color: #ffffff7a;">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 				<div class="modal-body">
@@ -154,8 +148,8 @@ exit();
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:15px;">Cancel</button>
-					<a class="btn btn-success" href="../php/connection/logout.php" style="font-size:15px;"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px;">Cancel</button>
+					<a class="btn btn-warning" href="../php/connection/logout.php" style="font-size:12px;">Logout</i></a>
 				</div>
 			</div>
 		</div>
@@ -167,25 +161,31 @@ exit();
 		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
-		        <li class="active">
-		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
-		        </li>
 		        <li>
-		            <a href="user_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		        </li>
+		        <li class="active">
+		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
-		            <a href="user_viewing.php" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">
+		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
 		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
 		                <li><a href="admin_viewing.php">COP</a></li>
-		            </ul> -->
+		            </ul>
 		        </li>
 		        <li>
-		            <a href="user_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
+		        </li>
+		        <li>
+		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
-		</nav>
+        </nav>
+        <div class="container">
+            <div class="well" style="padding: 10px;">Branch Settings</div>
+        </div>
 	</div>               
     <!-- End of Sidebar -->
 
