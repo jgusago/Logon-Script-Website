@@ -206,7 +206,7 @@ exit();
                                     <tbody>
                                         <?php
                                             $d=strtotime("Now");		
-                                            $dateNow = date("d-YY", $d);
+                                            $dateNow = date("M-d-Y", $d);
                                             $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -224,12 +224,12 @@ exit();
                                             $query2->setFetchMode(PDO::FETCH_ASSOC);
                                             
                                             while ($row2 = $query2->fetch()) {
-                                                if(date("d-yy", strtotime($row2['scan_time'])) != $dateNow){
+                                                if(date("M-d-Y", strtotime($row2['scan_time'])) != $dateNow){
                                                     echo '
                                                     <tr>
                                                         <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
                                                         <td>Hostname: '.$row2['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row2['branch'].'</td>
-                                                        <td>'.date("dd-yy", strtotime($row2['scan_time'])).'</td>
+                                                        <td>'.date("M-d-Y", strtotime($row2['scan_time'])).'</td>
                                                     </tr>
                                                     ';
                                                 } 
