@@ -212,11 +212,11 @@ exit();
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">User id: </label>
-                                <p>1040359</p>
+                                <p class="col-md-8">1040359</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Name: </label>
-                                <p>Camille Kate Esio</p>
+                                <p class="col-md-8">Camille Kate Esio</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Department: </label>
@@ -224,15 +224,15 @@ exit();
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Job Position: </label>
-                                <p>Camille Kate Esio</p>
+                                <p class="col-md-8">Camille Kate Esio</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Role: </label>
-                                <p>1040359</p>
+                                <p class="col-md-8">1040359</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Password: </label>
-                                <a href=""><button class="btn btn-danger">Change Password</button></a>
+                                <a href="" class="col-md-8"><button class="btn btn-danger">Change Password</button></a>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
