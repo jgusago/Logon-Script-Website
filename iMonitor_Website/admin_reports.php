@@ -231,7 +231,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </div>
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
-                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;">
+                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;" id="tb_div">
                                     <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                         <thead>
                                             <tr>
@@ -318,7 +318,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </div>
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
-                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;">
+                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;" id="tb_div2">
                                     <table class="table table-bordered" style="background: #ffffff;" id="comp_logs2">
                                         <thead>
                                             <tr>
@@ -413,7 +413,7 @@ $(document).ready(function(){
 
     <script type="text/javascript">
     	function printDiv() {
-        var divElements = document.getElementById("print").innerHTML;
+        var divElements = document.getElementById("tb_div").innerHTML;
         var oldPage = document.body.innerHTML;
         document.body.innerHTML = 
           "<html><head><title></title></head><body>" + 
@@ -427,7 +427,7 @@ $(document).ready(function(){
 
     <script type="text/javascript">
       function printDiv2() {
-        var divElements = document.getElementById("print2").innerHTML;
+        var divElements = document.getElementById("tb_div2").innerHTML;
         var oldPage = document.body.innerHTML;
         document.body.innerHTML = 
           "<html><head><title></title></head><body>" + 
