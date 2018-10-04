@@ -190,11 +190,15 @@ exit();
 	   		</ul>
         </nav>
         <div class="container">
-            <div class="col-lg-12">
-                <div style="clear:both"></div>
-                <br>
-                <div style="clear:both"></div>
-                <br>
+            <div style="clear:both"></div>
+            <br>
+            <div style="clear:both"></div>
+            <br>
+            <div style="clear:both"></div>
+            <br>
+            <div style="clear:both"></div>
+            <br>
+            <div class="col-lg-12" style="">
                 <div class="col-md-12">
                     <img src="settings.png" alt="settings">Personal Information
                 </div>
@@ -225,7 +229,7 @@ exit();
                         <p>1040359</p>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="userid">Passowrd </label>
+                        <label class="col-md-4 control-label" for="userid">Password: </label>
                         <a href=""><button class="btn btn-danger">Change Password</button></a>
                     </div>
                     <div class="form-group">
