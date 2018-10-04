@@ -177,7 +177,7 @@ $get_id=$_REQUEST['id'];
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="password3" name="password3" value="Aa123456">
+					<input type="hidden" id="password3" name="password3" value="<?php echo $row['password']; ?>">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
