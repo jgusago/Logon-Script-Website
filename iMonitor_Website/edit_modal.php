@@ -23,7 +23,8 @@ $get_id=$_REQUEST['id'];
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="userid" name="userid" value="<?php echo $row['userid']; ?>" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
-								<input type="text" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
+								<input type="hidden" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
+								<input type="text" id="password3" name="password3" value="<?php echo $row['password']; ?>">
 								<script type="text/javascript">
 									function isNumberKey(evt)
 									{
@@ -129,8 +130,8 @@ $get_id=$_REQUEST['id'];
                 							echo '<option>'.$row['role'].'</option>'; 
               								}
             							?>
-									<option value="Adminsitrator">Administrator</option>
-									<option value="Staff">Staff</option>
+									<option value="Adminsitrator">ADMINISTRATOR</option>
+									<option value="Staff">STAFF</option>
 								</select>
 							</div>
 						</div>
@@ -149,8 +150,8 @@ $get_id=$_REQUEST['id'];
                 							echo '<option>'.$row['status'].'</option>'; 
               								}
             							?>
-										<option value="Active">Active</option>
-										<option value="Inactive">Inactive</option>
+										<option value="Active">ACTIVE</option>
+										<option value="Inactive">INACTIVE</option>
 								</select>
 							</div>
 						</div>
@@ -177,7 +178,6 @@ $get_id=$_REQUEST['id'];
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="text" id="password3" name="password3" value="Aa123456">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
