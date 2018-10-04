@@ -225,7 +225,7 @@ $ID=$_GET['id'];
                                     </thead>
                                     <tbody>
 										<?php
-											$sql = "SELECT id, userid, name, department, position, status, role, password FROM tbl_user WHERE role<>'SUPER ADMIN'";
+											$sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
 											foreach ($db->query($sql) as $row) {
 												//$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
 												//$stmt->execute();
@@ -240,7 +240,6 @@ $ID=$_GET['id'];
 												<td><?php echo $row['position']; ?></td>
 												<td><?php echo $row['role']; ?></td>
 												<td><?php echo $row['status']; ?></td>
-												<td><?php echo $row['password']; ?></td>
 												<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
 												<?php include('edit_modal.php'); ?>
 											</tr>
