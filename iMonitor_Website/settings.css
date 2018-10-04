@@ -58,3 +58,8 @@ p
     /* padding-right: 0px;
     padding-left: 0px; */
 }
+input
+{
+    margin-top: -30px;
+    width: 250px;
+}
