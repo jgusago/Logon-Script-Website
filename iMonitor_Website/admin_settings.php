@@ -199,45 +199,47 @@ exit();
             <div style="clear:both"></div>
             <br>
             <div class="col-lg-12" style="">
-                <div class="col-md-12">
-                    <img class="icon" src="icons/settings.png" alt="settings"><h3><strong>Personal Information</strong></h3>
+                <div class="panel panel-default">
+                    <div class="col-md-12">
+                        <img class="icon" src="icons/settings.png" alt="settings"><h3><strong>Personal Information</strong></h3>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <h4>Administrator</h4>
+                    </div> -->
+                    <div style="clear:both"></div>
+                    <br>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="userid">User id: </label>
+                            <p>1040359</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="userid">Name: </label>
+                            <p>Camille Kate Esio</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="userid">Department: </label>
+                            <p>1040359</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="userid">Job Position: </label>
+                            <p>Camille Kate Esio</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="userid">Role: </label>
+                            <p>1040359</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="userid">Password: </label>
+                            <a href=""><button class="btn btn-danger">Change Password</button></a>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Save Information</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <!-- <div class="col-md-6">
-                    <h4>Administrator</h4>
-                </div> -->
-                <div style="clear:both"></div>
-                <br>
-                <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="userid">User id: </label>
-                        <p>1040359</p>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="userid">Name: </label>
-                        <p>Camille Kate Esio</p>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="userid">Department: </label>
-                        <p>1040359</p>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="userid">Job Position: </label>
-                        <p>Camille Kate Esio</p>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="userid">Role: </label>
-                        <p>1040359</p>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="userid">Password: </label>
-                        <a href=""><button class="btn btn-danger">Change Password</button></a>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-							<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Save Information</button>
-						</div>
-                    </div>
-                </form>
             </div>
         </div>
 	</div>               
