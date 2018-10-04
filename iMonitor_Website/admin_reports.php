@@ -232,7 +232,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
                                 <div class="table-responsive" style="overflow-x:auto; margin-left:15px;">
-                                    <table class="table table-bordered" style="background: #ffffff;">
+                                    <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
@@ -319,7 +319,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
                                 <div class="table-responsive" style="overflow-x:auto; margin-left:15px;">
-                                    <table class="table table-bordered" style="background: #ffffff;">
+                                    <table class="table table-bordered" style="background: #ffffff;" id="comp_logs2">
                                         <thead>
                                             <tr>
                                                 <th>No.</th>
