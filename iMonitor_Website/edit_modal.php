@@ -1,3 +1,12 @@
+<?php
+error_reporting(0);
+
+session_start();
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+
+$get_id=$_REQUEST['id'];
+?>
+
 <!-- Edit User Modal -->
 <form action="../php/connection/user_edit_account_submit.php <?php echo '?id='.$id; ?>" method="POST">
     <div class="modal fade" id="edit_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
@@ -14,7 +23,7 @@
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="userid" name="userid" value="<?php echo $row['userid']; ?>" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
-								<input type="hidden" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
+								<input type="text" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
 								<script type="text/javascript">
 									function isNumberKey(evt)
 									{
@@ -168,7 +177,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" id="password3" name="password3" value="Aa123456">
+					<input type="text" id="password3" name="password3" value="Aa123456">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>
 				</div>
 			</div>
