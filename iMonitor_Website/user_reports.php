@@ -203,10 +203,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="padding-top:0px;">
                                     <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                 </div>                              
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="padding-top:0px;">
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Export" class="btn btn-success" onclick="fnExcelReport();">
                                         <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
@@ -266,33 +266,25 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="tab2default">
-                                <div class="col-md-6" style="padding-top:15px;">
+                                <div class="col-md-3" style="padding-top:15px;">
                                     <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--All department--</option>
+                                        <option value="" selected>--All sub departments--</option>
                                         <option value="Marvin 5th">Marvin 5th</option>
                                         <option value="Marvin 10th">Marvin 10th</option>
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-6" style="padding-top:15px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--All sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4"><br>
+                                <div class="col-md-3" style="padding-top:0px;">
                                     <input type="text" id="userl" name="userl" class="form-control" placeholder="Search for user... ">
                                 </div>
-                                <div class="col-md-4"><br>
+                                <div class="col-md-3"  style="padding-top:0px;">
                                     <select name="sub_status" id="sub_status" class="form-control">
                                         <option value="" selected>--Status--</option>
                                         <option value="OM">Active</option>
                                         <option value="AUD">Inactive</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3"  style="padding-top:0px;">
                                 <br>
                                     <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
