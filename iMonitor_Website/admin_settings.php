@@ -232,7 +232,8 @@ exit();
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Password: </label>
-                                <a href="" class="col-md-8"><button class="btn btn-danger">Change Password</button></a>
+                                <a href="#" class="col-md-8"><button class="btn btn-danger">Change Password</button></a>
+                                <input type="text" class="form-control col-md-8" hidden>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
@@ -246,6 +247,10 @@ exit();
         </div>
 	</div>               
     <!-- End of Sidebar -->
+
+
+
+    <!-- Change Password Modal -->
 
 
 <script>
