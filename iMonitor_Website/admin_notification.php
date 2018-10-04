@@ -207,17 +207,22 @@ exit();
                                         <?php
                                             $d=strtotime("Now");		
                                             $dateNow = date("Y-m-d h:i:sa", $d);
-                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE (iMonitor_Status = 'End Task' OR scan_time='$dateNow') AND user != 'Administrator' ");
+                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) {
-                                                echo '
-                                                <tr>
-                                                    <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'<br/> Scan Time:'.$row['scan_time'].'</td>
-                                                    <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'<br/> Building : '.$row['branch'].'</td>
-                                                    <td>'.$row['scan_time'].'</td>
-                                                </tr>
+                                                $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  scan_time='$dateNow' AND user != 'Administrator' ");
+                                                $query->execute();
+                                                $query->setFetchMode(PDO::FETCH_ASSOC);
+                                                while ($row2 = $query->fetch()) {
+                                                    echo '
+                                                    <tr>
+                                                        <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'<br/> Scan Time:'.$row['scan_time'].'</td>
+                                                        <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'<br/> Building : '.$row['branch'].'</td>
+                                                        <td>'.$row['scan_time'].'</td>
+                                                    </tr>
                                                 ';
+                                                } 
                                             }
                                         ?>
                                     </tbody>
