@@ -46,7 +46,7 @@ exit();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="general.css">
-    <!-- <link rel="stylesheet" href="styleIndex.css"> -->
+    <link rel="stylesheet" href="settings.css">
 </head>
 <body>
     <!-- Top Navigation -->
@@ -188,7 +188,50 @@ exit();
 		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
-		</nav>
+        </nav>
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="col-md-12">
+                    <img src="settings.png" alt="settings">Personal Information
+                </div>
+                <!-- <div class="col-md-6">
+                    <h4>Administrator</h4>
+                </div> -->
+                <div style="clear:both"></div>
+                <br>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="userid">User id: </label>
+                        <p>1040359</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="userid">Name: </label>
+                        <p>Camille Kate Esio</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="userid">Department: </label>
+                        <p>1040359</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="userid">Job Position: </label>
+                        <p>Camille Kate Esio</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="userid">Role: </label>
+                        <p>1040359</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="userid">Passowrd </label>
+                        <a href=""><button class="btn btn-danger">Change Password</button></a>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+							<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Save Information</button>
+						</div>
+                    </div>
+                </form>
+            </div>
+        </div>
 	</div>               
     <!-- End of Sidebar -->
 
