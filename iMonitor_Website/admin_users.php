@@ -355,8 +355,8 @@ $ID=$_GET['id'];
 							<div class="col-sm-12">
 								<select class="form-control" id="status" name="status" required>
 										<option value="">--Select Status--</option>
-										<option value="ACTIVE">ACTIVE</option>
-										<option value="INACTIVE">INACTIVE</option>
+										<option value="Active">ACTIVE</option>
+										<option value="Inactive">INACTIVE</option>
 								</select>
 							</div>
 						</div>

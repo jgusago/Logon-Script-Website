@@ -149,8 +149,8 @@ $get_id=$_REQUEST['id'];
                 							echo '<option>'.$row['status'].'</option>'; 
               								}
             							?>
-										<option value="ACTIVE">ACTIVE</option>
-										<option value="INACTIVE">INACTIVE</option>
+										<option value="Active">Active</option>
+										<option value="Inactive">Inactive</option>
 								</select>
 							</div>
 						</div>
