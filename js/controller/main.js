@@ -25,6 +25,9 @@ function load(){
     /* ----- Settings ----- */
     settings_branchview();
 
+    /* ----- Account Settings ----- */
+    accountmanagement();
+
 
     /* ----- Loading ----- */
     setInterval(function(){
@@ -669,6 +672,11 @@ function settings_branchview(){
         btnadd.value = "Edit a Branch";
         inputgroupII.appendChild(btnadd);
 
+}
+
+function accountmanagement(){
+
+    
 }
 
 /* --------------------------- END of LOADING FUNCTIONS -------------------------- */

@@ -1,54 +1,23 @@
-<!DOCTYPE html>
-<html>
-<body>
+<?php
 
-<p>Click the button to display the hostname of the current URL.</p>
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-<button onclick="myFunction()">Try it</button>
+$query = "SELECT * FROM logonscript.tbl_log WHERE log_no = :logno";
 
-<p id="demo"></p>
+$stmt = $db->prepare($query);
+$stmt->bindParam(":logno",$branch);
+$stmt->execute();
+$rowcount = $stmt->rowCount();
+$result = $stmt->fetchAll();
 
-<script>
-function myFunction() {
-    var x = location.hostname;
-    document.getElementById("demo").innerHTML= x;
+foreach($result as $row){
+  echo $date = $row['ip_date_modified'];
+
+  $newdate = date_create($date);
+
+  $newdate2 = date_format($newdate, "Y-m-d");
+
+  echo $newdate2;
+  echo "waweawea";
 }
-
-
-
-</script>
-
-<p>hostname here:  
-<?php
-
-$hn = gethostname();
-
-$hosts = gethostbyname($hn);
-print_r($hosts);
-
 ?>
-
-
-<br>
-<?php
-
-if (!empty($_SERVER['HTTP_CLIENT_IP']))   
-  {
-    $ip_address = $_SERVER['HTTP_CLIENT_IP'];
-  }
-//whether ip is from proxy
-elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))  
-  {
-    $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
-  }
-//whether ip is from remote address
-else
-  {
-    $ip_address = $_SERVER['REMOTE_ADDR'];
-  }
-echo $ip_address;
-?>
-</p>
-
-</body>
-</html>
