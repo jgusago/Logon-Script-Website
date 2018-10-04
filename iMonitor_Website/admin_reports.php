@@ -413,7 +413,7 @@ $(document).ready(function(){
 
     <script type="text/javascript">
     	function printDiv() {
-        var divElements = document.getElementById("print").innerHTML;
+        var divElements = document.getElementById("btn_print").innerHTML;
         var oldPage = document.body.innerHTML;
         document.body.innerHTML = 
           "<html><head><title></title></head><body>" + 
