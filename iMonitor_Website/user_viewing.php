@@ -169,19 +169,16 @@ $ID=$_GET['id'];
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
-		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		            <a href="user_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
-		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		            <a href="user_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li class="active">
-		            <a href="user_viewing.php" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <a href="user_viewing.php"  aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		        </li>
 		        <li>
-		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
-		        </li>
-		        <li>
-		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		            <a href="user_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
         </nav>
