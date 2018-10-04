@@ -9,3 +9,12 @@
     margin-right: -15px;
     margin-left: -15px;
 }
+.icon
+{
+    width: 100px;
+    height: 100px;
+}
+.col-md-12
+{
+    padding-right:0px;
+}
