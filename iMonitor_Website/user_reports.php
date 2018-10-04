@@ -203,11 +203,10 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-4"><br>
+                                <div class="col-md-4">
                                     <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                 </div>                              
                                 <div class="col-md-4">
-                                <br>
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Export" class="btn btn-success" onclick="fnExcelReport();">
                                         <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->

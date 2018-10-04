@@ -197,10 +197,10 @@ $ID=$_GET['id'];
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
+                                <div class="col-md-4" style="padding-top:0px;">
                                    <input type="text" class="form-control" name="search" value="Search ...">
                                 </div>
-                                <div class="col-md-4" style="padding-top:15px;">
+                                <div class="col-md-4" >
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
