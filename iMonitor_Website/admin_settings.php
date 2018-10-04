@@ -200,7 +200,7 @@ exit();
             <br>
             <div class="col-lg-12" style="">
                 <div class="col-md-12">
-                    <img src="settings.png" alt="settings">Personal Information
+                    <img src="icons/settings.png" alt="settings"><h3><strong>Personal Information</strong></h3>
                 </div>
                 <!-- <div class="col-md-6">
                     <h4>Administrator</h4>
