@@ -19,7 +19,7 @@
 {
     padding-right:0px;
 }
-.form-group label 
+label .col-md-4 .control-label
 {
     font-size:15px;
     text-align: left;
