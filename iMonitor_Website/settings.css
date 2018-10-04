@@ -34,7 +34,7 @@ label .col-md-4 .control-label
 .panel
 {
     background-color: #fff;
-    border: 1px solid transparent;
+    border: 2 solid transparent;
     border-radius: 4px;
     /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); */
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
