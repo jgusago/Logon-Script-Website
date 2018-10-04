@@ -132,7 +132,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
 	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
-	            		<li class="sub-header"><a href="#">Account Settings</a></li>
+	            		<li class="sub-header"><a href="admin_settings.php">Account Settings</a></li>
 	            		<li class="divider"></li>
 	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
 	            	</ul>
