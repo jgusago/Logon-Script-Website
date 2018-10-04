@@ -19,7 +19,12 @@
 {
     padding-right:0px;
 }
-label .col-md-4
+.form-group label 
 {
     font-size:18px;
+}
+.col-md-4
+{
+    position: relative;
+    min-height: 1px;
 }
