@@ -25,7 +25,8 @@ if($_POST['userid'] !== $_POST['userid2']) {
         echo "<script>alert('Username exist!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
     }
 else {
-        $stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', status='$status', password='$hashed_password' WHERE id='$get_id'");
+        //$stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', status='$status', password='$hashed_password' WHERE id='$get_id'");
+        $stmt = $db->prepare("UPDATE tbl_user SET userid='$userid', name='$name', department='$department', position='$position', role='$role', status='$status' WHERE id='$get_id'");
         $stmt->execute(array());
         $affected_rows = $stmt->rowCount();
         echo "<script>alert('Account updated successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
