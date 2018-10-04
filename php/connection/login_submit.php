@@ -44,7 +44,7 @@ else {
                         echo "<script>alert('Welcome Admin!');location.href='../../iMonitor_Website/user_dashboard.php';</script>";
                         // header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
                     else
-                        header("Location: ../../iMonitor_Website/user_dashboard.php"); 
+                    echo "<script>alert('Welcome Staff!');location.href='../../iMonitor_Website/user_dashboard.php';</script>";
             }
             else {  
             header("Location: ../../iMonitor_Website/index.php?msg=wrong"); 
