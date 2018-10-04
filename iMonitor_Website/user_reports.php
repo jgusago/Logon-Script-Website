@@ -175,7 +175,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		            <a href="user_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li>
-		            <a href="user_viewing.php" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <a href="user_viewing.php" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		        </li>
 		        <li class="active">
 		            <a href="user_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
