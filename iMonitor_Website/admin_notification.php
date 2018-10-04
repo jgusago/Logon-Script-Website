@@ -227,7 +227,7 @@ exit();
                                                 if(date("M-d-Y", strtotime($row2['scan_time']) != $dateNow){
                                                     echo '
                                                     <tr>
-                                                        <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
+                                                        <td>LogWindowsApp : Data Not Updated = '.date("M-d-Y", strtotime($row2['scan_time']).'</td>
                                                         <td>Hostname: '.$row['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row['branch'].'</td>
                                                         <td>'.$row2['scan_time'].'</td>
                                                     </tr>
