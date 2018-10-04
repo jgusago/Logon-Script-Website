@@ -41,7 +41,7 @@ else {
             elseif(($status == 'Active') && (password_verify($password, $hashed_password))) { 
                     $_SESSION["userid"] = $row[0]['userid']; 
                     if($role == "ADMINISTRATOR")
-                        echo "<script>alert('Welcome Admin!');location.href='../../iMonitor_Website/user_dashboard.php';</script>";
+                        echo "<script>alert('Welcome Admin!');location.href='../../iMonitor_Website/admin_dashboard.php';</script>";
                         // header("Location: ../../iMonitor_Website/admin_dashboard.php"); 
                     else
                     echo "<script>alert('Welcome Staff!');location.href='../../iMonitor_Website/user_dashboard.php';</script>";
