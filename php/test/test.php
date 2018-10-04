@@ -1,6 +1,9 @@
 <?php
 
+echo "lol";
+
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+$branch = 226;
 
 $query = "SELECT * FROM logonscript.tbl_log WHERE log_no = :logno";
 
@@ -12,12 +15,11 @@ $result = $stmt->fetchAll();
 
 foreach($result as $row){
   echo $date = $row['ip_date_modified'];
-
-  $newdate = date_create($date);
-
-  $newdate2 = date_format($newdate, "Y-m-d");
-
-  echo $newdate2;
-  echo "waweawea";
+  echo "<br>";
+  $date2 = DateTime::createFromFormat('d-M-Y', $date);
+  $date2->format('Y-m-d');
+  echo $date2;
 }
+
+
 ?>
