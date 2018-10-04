@@ -205,9 +205,9 @@ exit();
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $d=strtotime("Now");		
-                                            $dateNow = date("M-d-Y", $d);
-                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                                            $datetime = new DateTime();		
+                                            $datetime->format('Y-m-d');
+                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE (date('Y-m-d', strtotime(scan_time)) != $datetime AND iMonitor_Status = 'End Task') AND user != 'Administrator' ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) {
@@ -219,21 +219,6 @@ exit();
                                                     </tr>
                                                 ';
                                             }
-                                            $query2 = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  user != 'Administrator' ");
-                                            $query2->execute();
-                                            $query2->setFetchMode(PDO::FETCH_ASSOC);
-                                            
-                                            while ($row2 = $query2->fetch()) {
-                                                if(date("M-d-Y", strtotime($row2['scan_time'])) != $dateNow){
-                                                    echo '
-                                                    <tr>
-                                                        <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
-                                                        <td>Hostname: '.$row2['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row2['branch'].'</td>
-                                                        <td>'.date("M-d-Y", strtotime($row2['scan_time'])).'</td>
-                                                    </tr>
-                                                    ';
-                                                } 
-                                            } 
                                         ?>
                                     </tbody>
                                 </table>
