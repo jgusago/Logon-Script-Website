@@ -225,9 +225,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <div class="col-md-6">
                                 <br>
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" name="btnExport" id="btnExport" value="Export" class="btn btn-success" onclick="fnExcelReport();">
+                                    <input type="button" id="btnExport" name="btnExport" value="Export" class="btn btn-success" onclick="fnExcelReport();">
                                         <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
-                                    <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
+                                    <input type="button" id="print" name="print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
                                 </div>
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
@@ -312,9 +312,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <div class="col-md-4">
                                 <br>
                                     <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" name="btnExport" id="btnExport" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
+                                    <input type="button" id="btnExport2" name="btnExport2" value="Excel" class="btn btn-success" onclick="fnExcelReport2();">
                                         <!--<input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">-->
-                                    <input type="button" name="btn_print" id=btn_print value="Print" class="btn btn-danger" onclick="javascript:printDiv2('printable')" />
+                                    <input type="button" id="print2" name="print2" value="Print" class="btn btn-danger" onclick="javascript:printDiv2('printable')" />
                                 </div>
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
