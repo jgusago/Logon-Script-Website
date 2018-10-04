@@ -111,6 +111,7 @@ a, a:hover, a:focus {
     transition: all 0.3s;
     box-shadow: 1px 1px #d2cbcb;
     height: -webkit-fill-available;
+    overflow-y: auto;
     /* z-index: 1000;
     position: fixed;
     overflow-y: auto; */
