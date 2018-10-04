@@ -195,26 +195,18 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                     <div class="panel-body">
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab0default">
-                                <div class="col-md-6" style="padding-top:15px;">
+                                <div class="col-md-4" style="padding-top:15px;">
                                     <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--All department--</option>
+                                        <option value="" selected>--All sub departments--</option>
                                         <option value="Marvin 5th">Marvin 5th</option>
                                         <option value="Marvin 10th">Marvin 10th</option>
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-6" style="padding-top:15px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--All sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6"><br>
+                                <div class="col-md-4"><br>
                                     <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
-                                </div>
-                                <div class="col-md-6">
+                                </div>                              
+                                <div class="col-md-4">
                                 <br>
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Export" class="btn btn-success" onclick="fnExcelReport();">

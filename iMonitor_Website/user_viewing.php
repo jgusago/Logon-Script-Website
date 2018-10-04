@@ -191,27 +191,15 @@ $ID=$_GET['id'];
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--All department--</option>
+                                        <option value="" selected>--All sub departments--</option>
                                         <option value="Marvin 5th">Marvin 5th</option>
                                         <option value="Marvin 10th">Marvin 10th</option>
                                         <option value="AT">AT</option>
                                     </select> 
                                 </div>
-                                <div class="col-md-4" style="padding-top:0px;">
-
-                                </div>
-                                <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--All sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
                                    <input type="text" class="form-control" name="search" value="Search ...">
                                 </div>
-                                <div class="col-md-4" style="padding-top:0px; margin-top:15px;"> </div>
                                 <div class="col-md-4" style="padding-top:15px;">
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
