@@ -23,7 +23,7 @@ $get_id=$_REQUEST['id'];
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
 								<input type="text" class="form-control" id="userid" name="userid" value="<?php echo $row['userid']; ?>" pattern="[0-9]{7}" placeholder="ID Number" required onkeypress="return isNumberKey(event)"/>
-								<input type="hidden" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
+								<input type="text" id="userid2" name="userid2" value="<?php echo $row['userid']; ?>">
 								<script type="text/javascript">
 									function isNumberKey(evt)
 									{
