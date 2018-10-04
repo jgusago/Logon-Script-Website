@@ -191,6 +191,10 @@ exit();
         </nav>
         <div class="container">
             <div class="col-lg-12">
+                <div style="clear:both"></div>
+                <br>
+                <div style="clear:both"></div>
+                <br>
                 <div class="col-md-12">
                     <img src="settings.png" alt="settings">Personal Information
                 </div>
