@@ -167,7 +167,7 @@ exit();
 		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
-		        <li>
+		        <li class="active">
 		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
@@ -189,6 +189,12 @@ exit();
 		        </li>	  
 	   		</ul>
 		</nav>
+        <div class="container" id=content>
+            <div class="col-lg-12">
+                
+            </div>
+        
+        </div>
 	</div>               
     <!-- End of Sidebar -->
 
