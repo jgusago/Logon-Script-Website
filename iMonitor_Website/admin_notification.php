@@ -205,9 +205,7 @@ exit();
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $datetime = new DateTime();		
-                                            $datetime->format('Y-m-d');
-                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE (date('Y-m-d', strtotime(scan_time)) != $datetime AND iMonitor_Status = 'End Task') AND user != 'Administrator' ");
+                                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
                                             while ($row = $query->fetch()) {
