@@ -28,7 +28,7 @@
 {
     padding-right:0px;
 }
-label .col-md-4 
+label .col-md-3 
 {
     font-size:15px;
     text-align: left;
@@ -51,12 +51,16 @@ p
     margin-bottom: 0;
     text-align: left;
 }
-.col-md-4
+.col-md-3
 {
     position: relative;
     min-height: 1px;
     /* padding-right: 0px;
     padding-left: 0px; */
+}
+p .col-md-3
+{
+    width:65%;
 }
 input
 {
