@@ -198,7 +198,7 @@ exit();
             <br>
             <div style="clear:both"></div>
             <br>
-            <div class="col-lg-12" style="">
+            <div class="col-lg-6" style="">
                 <div class="panel panel-default">
                     <div class="panel panel-body">
                         <div class="col-md-12">
@@ -211,24 +211,24 @@ exit();
                         <br>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="userid">User id: </label>
-                                <p class="col-md-8">1040359</p>
+                                <label class="col-md-3 control-label" for="userid">User id: </label>
+                                <p class="col-md-3">1040359</p>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="userid">Name: </label>
-                                <p class="col-md-8">Camille Kate Esio</p>
+                                <label class="col-md-3 control-label" for="userid">Name: </label>
+                                <p class="col-md-3">Camille Kate Esio</p>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="userid">Department: </label>
-                                <p class="col-md-8">Marvin(IT)</p>
+                                <label class="col-md-3 control-label" for="userid">Department: </label>
+                                <p class="col-md-3">Marvin(IT)</p>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="userid">Job Position: </label>
-                                <p class="col-md-8">OM-Audit</p>
+                                <label class="col-md-3 control-label" for="userid">Job Position: </label>
+                                <p class="col-md-3">OM-Audit</p>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="userid">Role: </label>
-                                <p class="col-md-8">Staff</p>
+                                <label class="col-md-3 control-label" for="userid">Role: </label>
+                                <p class="col-md-3">Staff</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="userid">Password: </label>
