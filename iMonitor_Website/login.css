@@ -20,10 +20,14 @@ body
         display: flex;
         align-items: stretch;
 }
+.col-lg-12 
+{
+        width: 50%;
+}
 .panel
 {
         border-radius:15px; 
-	background:#ffffff5c;
+	background-color:#e0dddd78;
 	padding: 30px 60px; 
 	width: 700px; 
 	height: 330px; 
