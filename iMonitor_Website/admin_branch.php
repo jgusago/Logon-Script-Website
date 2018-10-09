@@ -170,9 +170,10 @@ exit();
 		        <li >
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li>
-                            
-                        </li>
+		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
+		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
+		                <li><a href="admin_viewing.php">COP</a></li>
+		            </ul>
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
