@@ -211,7 +211,7 @@ $ID=$_GET['id'];
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="dept_viewing" id="dept_viewing" class="form-control" onchange="handleSelect()">
-                                        <option value="" selected>--All Department--</option>
+                                        <option value="--All Department--" selected>--All Department--</option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
@@ -250,7 +250,7 @@ $ID=$_GET['id'];
 
                                          <script>
                                             function handleSelect2() {
-                                                if (this.value == 0) {
+                                                if (this.value == "--All Department--") {
                                                     document.getElementById('sub_dept_viewing').disabled = true;
                                                 } else {
                                                     document.getElementById('sub_dept_viewing').disabled = false;
