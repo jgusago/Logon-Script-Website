@@ -47,7 +47,6 @@ exit();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="general.css">
-    <!-- <link rel="stylesheet" href="styleIndex.css"> -->
 </head>
 <body>
     <!-- Top Navigation -->
