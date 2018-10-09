@@ -18,7 +18,7 @@ if(isset($_SESSION["userid"])) {
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body style="height: -webkit-fill-available;">
     <div class="wrapper">
         <div class="col-lg-12">
             <div>
@@ -27,7 +27,7 @@ if(isset($_SESSION["userid"])) {
             <div>
 
             </div>
-            <div class="panel" style="background-color:#e0dddd78; top:55%; left:51.5%; width: 700px;">
+            <div class="panel" style="background-color:#e0dddd78; top:55%; left:51.5%; width: 700px; margin-top:-240px; margin-left:-360px;">
                 <?php
                     if(isset($_GET['msg']))                      
                     {                    
@@ -61,8 +61,8 @@ if(isset($_SESSION["userid"])) {
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="input-group">
-                            <button type="submit" name="submit" class="btn btn-primary">Login</button></a>
+                        <div>
+                            <button type="submit" name="submit" class="btn btn-primary" style="width:70%; margin-bottom:20px;">Login</button></a>
                         </div>
                     </div>
                 </form>
