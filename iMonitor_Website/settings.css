@@ -35,8 +35,8 @@ label .col-md-3
 }
 p
 {
-    margin-left: -310px;
-    padding-top: 3px;
+    margin-left: 75px;
+    padding-top: 0px;
 }
 .btn-danger
 {
@@ -55,7 +55,7 @@ p
 {
     position: relative;
     min-height: 1px;
-    width:65%;
+    width:20%;
     /* padding-right: 0px;
     padding-left: 0px; */
 }
