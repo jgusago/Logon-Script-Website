@@ -211,7 +211,7 @@ $ID=$_GET['id'];
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="dept_viewing" id="dept_viewing" class="form-control">
-                                        <option value=""></option>
+                                        <option value="" selected>--All Department--</option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
@@ -232,12 +232,7 @@ $ID=$_GET['id'];
                                         <option value="" selected>--All Sub-Department--</option>
                                          <!-- FOR SUB DEPARTMENT -->
 								            <script type="text/javascript">
-                                            $("#dept_viewing").change(function() {
-                                                if ($(this).val() == "") {
-                                                    $("dept_viewing").prop("disabled", true);        
-                                                } else
-                                                $("dept_viewing").prop("disabled", false);
-									            
+									            $("#dept_viewing").change(function() {
   									            $("#sub_dept_viewing").load("get_sub_department.php?branch_name=" + $("#dept_viewing").val());
 									            });
 								            </script>
