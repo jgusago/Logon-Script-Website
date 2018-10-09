@@ -24,10 +24,12 @@ if(isset($_SESSION["userid"])) {
             <div>
 
             </div>
+            <br>
             <div>
 
             </div>
-            <div class="panel" style="background-color:#e0dddd78; top:55%; left:51.5%; width: 700px; margin-top:-240px; margin-left:-360px;">
+            <br>
+            <div class="panel" style="background-color:#e0dddd78; width: 700px; padding: 20px 50px; margin:auto;">
                 <?php
                     if(isset($_GET['msg']))                      
                     {                    
@@ -62,7 +64,7 @@ if(isset($_SESSION["userid"])) {
                     </div>
                     <div class="form-group">
                         <div>
-                            <button type="submit" name="submit" class="btn btn-primary" style="width:70%; margin-bottom:20px;">Login</button></a>
+                            <button type="submit" name="submit" class="btn btn-primary" style="width:70%; margin-bottom:20px; margin-left:110px;">Login</button></a>
                         </div>
                     </div>
                 </form>

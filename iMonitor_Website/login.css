@@ -39,19 +39,10 @@ body
 	margin-left:-360px;
         overflow: hidden;
 }
-/* .container
+div
 {
-        margin-top:auto;
-        display:block;
-        margin-bottom: auto;
-        position: relative;
- }
-.row
-{
-        margin-right: -75px;
-        margin-left: -70px;
-       
-} */
+        height: 175px;
+}
 .header input 
 {
         width: 30%;
@@ -85,6 +76,6 @@ body
         height:40px; 
         border-radius: 3px;
         /* margin-top:20px; */
-        margin-left:48px; 
+        margin-left:110px; 
         margin-bottom:20px;
 } 
