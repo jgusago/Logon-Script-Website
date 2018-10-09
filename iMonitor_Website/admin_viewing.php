@@ -210,7 +210,7 @@ $ID=$_GET['id'];
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dept_viewing" id="dept_viewing" class="form-control">
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control" onChange="makeEnable(this.value)">
                                         <option value="" selected>--All Department--</option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -228,7 +228,7 @@ $ID=$_GET['id'];
 
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dub_dept" id="sub_dept_viewing" class="form-control">
+                                    <select name="dub_dept" id="sub_dept_viewing" class="form-control" disabled>
                                         <option value="" selected>--All Sub Department</option>
                                          <!-- FOR SUB DEPARTMENT -->
 								            <script type="text/javascript">
@@ -237,6 +237,17 @@ $ID=$_GET['id'];
 									            });
 								            </script>
 								        <!-- END -->
+
+                                        <script>
+                                            function makeEnable(value) {
+                                                if(val==="--All Department--")
+                                                    document.getElementById("mySelect").disabled=false;
+                                                else
+                                                    document.getElementById("mySelect").disabled=true;
+                                                }
+                                        </script>
+                                                
+
                                     </select>
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
