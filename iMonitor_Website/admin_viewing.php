@@ -53,7 +53,7 @@ $ID=$_GET['id'];
     <link rel="stylesheet" href="viewing.css">
 
 </head>
-<body onchange="handleSelect()">
+<body onchange="handleSelect2()">
     <nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
@@ -244,6 +244,16 @@ $ID=$_GET['id'];
                                                     document.getElementById('sub_dept_viewing').disabled = false;
                                                 } else {
                                                     document.getElementById('sub_dept_viewing').disabled = true;
+                                                }
+                                            }
+                                        </script>
+
+                                         <script>
+                                            function handleSelect2() {
+                                                if (this.value == "--All Sub Department--") {
+                                                    document.getElementById('sub_dept_viewing').disabled = true;
+                                                } else {
+                                                    document.getElementById('sub_dept_viewing').disabled = false;
                                                 }
                                             }
                                         </script>
