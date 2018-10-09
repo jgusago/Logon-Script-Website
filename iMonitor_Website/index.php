@@ -25,7 +25,7 @@ if(isset($_SESSION["userid"])) {
 
             </div>
             <br>
-            <div class="panel" style="background-color:#e0dddd78; width: 610px; padding: 20px 50px; margin:auto;">
+            <div class="panel" style="background-color:#e0dddd78; width: 610px; padding: 20px 50px; margin:auto; margin-bottom: 170px;">
                 <?php
                     if(isset($_GET['msg']))                      
                     {                    
@@ -42,7 +42,7 @@ if(isset($_SESSION["userid"])) {
                         //login();
                 ?>
                  <form action="../php/connection/login_submit.php" method="POST">
-                    <div class="form-group">
+                    <div class="form-group" style="margin-left: -39px;">
                         <div class="input-group">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-user"></i>
