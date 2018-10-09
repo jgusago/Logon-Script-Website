@@ -231,9 +231,9 @@ exit();
                                 <p class="col-md-3">Staff</p>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="userid">Password: </label>
-                                <a href="#" class="col-md-8"><button class="btn btn-danger">Change Password</button></a>
-                                <input type="hidden" class="form-control col-md-8">
+                                <label class="col-md-3 control-label" for="userid">Password: </label>
+                                <a href="#" class="col-md-3"><button class="btn btn-danger">Change Password</button></a>
+                                <input type="hidden" class="form-control col-md-3">
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">

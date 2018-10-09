@@ -55,12 +55,9 @@ p
 {
     position: relative;
     min-height: 1px;
+    width:65%;
     /* padding-right: 0px;
     padding-left: 0px; */
-}
-p .col-md-3
-{
-    width:65%;
 }
 input
 {
