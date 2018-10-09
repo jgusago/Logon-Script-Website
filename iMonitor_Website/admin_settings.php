@@ -212,28 +212,28 @@ exit();
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">User id: </label>
-                                <p class="col-md-3">1040359</p>
+                                <p class="col-md-3" style="margin-left: 75px;">1040359</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Name: </label>
-                                <p class="col-md-3">Camille Kate Esio</p>
+                                <p class="col-md-3" style="margin-left: 75px;">Camille Kate Esio</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Department: </label>
-                                <p class="col-md-3">Marvin(IT)</p>
+                                <p class="col-md-3" style="margin-left: 75px;">Marvin(IT)</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Job Position: </label>
-                                <p class="col-md-3">OM-Audit</p>
+                                <p class="col-md-3" style="margin-left: 75px;">OM-Audit</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Role: </label>
-                                <p class="col-md-3">Staff</p>
+                                <p class="col-md-3" style="margin-left: 75px;">Staff</p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Password: </label>
-                                <a href="#" class="col-md-3"><button class="btn btn-danger">Change Password</button></a>
-                                <input type="hidden" class="form-control col-md-3">
+                                <a href="#" class="col-md-3" style="margin-left: 75px;"><button class="btn btn-danger">Change Password</button></a>
+                                <input type="hidden" class="form-control col-md-3" style="margin-left: 75px;">
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
