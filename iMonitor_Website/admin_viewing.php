@@ -180,8 +180,7 @@ $ID=$_GET['id'];
 		        <li class="active">
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li>
-                                        <?php     
+		                     <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
               								$stmt->execute();
@@ -191,7 +190,7 @@ $ID=$_GET['id'];
                 								echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
               								}
             							 ?>
-                       </li> 
+
 		            </ul>
 		        </li>
 		        <li>
