@@ -233,7 +233,7 @@ exit();
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Password: </label>
                                 <a href="#" class="col-md-3"><button id="button" class="btn btn-danger"  style="margin-left: -50px;">Change Password</button></a>
-                                <input id="pass" type="password" class="form-control col-md-3" style="margin-left: -50px;" hidden>
+                                <input id="pass" type="hidden" class="form-control col-md-3" style="margin-left: -210px; width: 250px; height:30px;">
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12">
