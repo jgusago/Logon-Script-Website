@@ -170,10 +170,18 @@ exit();
 		        <li >
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
-		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
-		                <li><a href="admin_viewing.php">COP</a></li>
-		            </ul>
+		                <li>
+                            <?php     
+              					$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              					$stmt = $db->prepare($sql);
+              					$stmt->execute();
+
+								while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+								    {
+                				    echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
+              				        }
+            				?>
+                        </li>
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
