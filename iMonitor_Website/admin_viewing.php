@@ -180,9 +180,18 @@ $ID=$_GET['id'];
 		        <li class="active">
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
-		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
-		                <li><a href="admin_viewing.php">COP</a></li>
+		                <li>
+                            <?php     
+              				    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              				    $stmt = $db->prepare($sql);
+              				    $stmt->execute();
+
+							    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+							        {
+                					echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
+              				        }
+            				?>
+                       </li> 
 		            </ul>
 		        </li>
 		        <li>
@@ -202,10 +211,17 @@ $ID=$_GET['id'];
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--All department--</option>
-                                        <option value="Marvin 5th">Marvin 5th</option>
-                                        <option value="Marvin 10th">Marvin 10th</option>
-                                        <option value="AT">AT</option>
+                                        <option value="" selected>--All Department--</option>
+                                         <?php     
+              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+											while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											{
+                								echo '<option>'.$row['branch_name'].'</option>'; 
+              								}
+            							 ?>
                                     </select> 
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
@@ -213,10 +229,17 @@ $ID=$_GET['id'];
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--All sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
+                                        <option value="" selected>--All Sub Department</option>
+                                         <?php     
+              								$sql = "select sub_department from tbl_department ORDER BY sub_department ASC";
+              								$stmt = $db->prepare($sql);
+              								$stmt->execute();
+
+											while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											{
+                								echo '<option>'.$row['sub_department'].'</option>'; 
+              								}
+            							 ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
@@ -314,7 +337,7 @@ $ID=$_GET['id'];
                     </tr>
                 </table>
             </div>
-            <!-- <div>
+             <div>
                 <ul class="pagination pagination-sm">
                     <li><a href="">&laquo;</a></li>
                     <li><a class="active" href="" >1</a></li>
@@ -365,7 +388,7 @@ $ID=$_GET['id'];
                 </table>
             </div>
         </div>           
-    </div> --> -->
+    </div> -->
 
     <!-- Edit Modal -->
     <div id="myModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
