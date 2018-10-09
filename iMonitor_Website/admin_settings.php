@@ -209,27 +209,37 @@ exit();
                         </div> -->
                         <div style="clear:both"></div>
                         <br>
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form" method="post">
+                            <?php
+                                $query = $db->prepare("SELECT userid,name,department,position,role,status,password FROM tbl_user WHERE userid=:userid");
+                                $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
+                                $query->execute();
+                                $query->setFetchMode(PDO::FETCH_ASSOC);
+                
+                                if($row = $query->fetch()) {
+                               
+                            ?>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">User id: </label>
-                                <p class="col-md-3" style="margin-left: -50px;">1040359</p>
+                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['userid']; ?></p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Name: </label>
-                                <p class="col-md-3" style="margin-left: -50px;">Camille Kate Esio</p>
+                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['name']; ?></p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Department: </label>
-                                <p class="col-md-3" style="margin-left: -50px;">Marvin(IT)</p>
+                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['department']; ?></p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Job Position: </label>
-                                <p class="col-md-3" style="margin-left: -50px;">OM-Audit</p>
+                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['position']; ?></p>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Role: </label>
-                                <p class="col-md-3" style="margin-left: -50px;">Staff</p>
+                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['role']; ?></p>
                             </div>
+                            <?php  } ?>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="userid">Password: </label>
                                 <a href="#" class="col-md-3"><button id="button" class="btn btn-danger"  style="margin-left: -50px;">Change Password</button></a>
