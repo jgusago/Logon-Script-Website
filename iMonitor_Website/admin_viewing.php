@@ -182,14 +182,14 @@ $ID=$_GET['id'];
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li>
                             <?php     
-              				$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              				$stmt = $db->prepare($sql);
-              				$stmt->execute();
+              				    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              				    $stmt = $db->prepare($sql);
+              				    $stmt->execute();
 
-							while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-							    {
+							    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+							        {
                 					echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
-              				    }
+              				        }
             				?>
                        </li> 
 		            </ul>
