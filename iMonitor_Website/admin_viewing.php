@@ -202,6 +202,7 @@ $ID=$_GET['id'];
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="department" id="department" class="form-control">
+                                        <option value="">--Select Department--</option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
