@@ -189,7 +189,7 @@ exit();
 		        </li>	  
 	   		</ul>
         </nav>
-        <div class="container">
+        <div class="content">
             <div style="clear:both"></div>
             <br>
             <div style="clear:both"></div>
@@ -198,17 +198,84 @@ exit();
             <br>
             <div style="clear:both"></div>
             <br>
-            <div class="col-lg-6" style="">
+            <div class="col-lg-12" style="">
                 <div class="panel panel-default">
                     <div class="panel panel-body">
-                        <div class="col-md-12">
+                        <div class="tab-content">
                             <img class="icon" src="icons/settings.png" alt="settings"><h3><strong>Personal Information</strong></h3>
                         </div>
-                        <!-- <div class="col-md-6">
-                            <h4>Administrator</h4>
-                        </div> -->
                         <div style="clear:both"></div>
                         <br>
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label class="control-label" for="userid">User id: </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <p style="margin-left: -50px;"><?php echo $row['userid']; ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label class="control-label" for="username">Name: </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                <p style="margin-left: -50px;"><?php echo $row['name']; ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label class="control-label" for="dept">Department: </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <p style="margin-left: -50px;"><?php echo $row['department']; ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <label class="control-label" for="position">Job Position: </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <p style="margin-left: -50px;"><?php echo $row['position']; ?></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                <label class="control-label" for="role">Role: </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <p style="margin-left: -50px;"><?php echo $row['role']; ?></p>
+                                </div>
+                            </div>
+                            <?php  } ?>
+                            <div class="form-group">
+                                <div class="col-md-6"> 
+                                    <label class="control-label" for="passwordd">Password: </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6"> 
+                                    <a href="#" class="col-md-3"><button id="button" class="btn btn-danger"  style="margin-left: -50px;">Change Password</button></a>
+                                    <input id="pass" type="hidden" class="form-control col-md-3" style="margin-left: -210px; width: 250px; height:30px;">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Save Information</button>
+                                </div>
+                            </div>
+                        </fieldset>
+
                         <form class="form-horizontal" role="form" method="post">
                             <?php
                                 $query = $db->prepare("SELECT userid,name,department,position,role,status,password FROM tbl_user WHERE userid=:userid");
@@ -219,37 +286,7 @@ exit();
                                 if($row = $query->fetch()) {
                                
                             ?>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="userid">User id: </label>
-                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['userid']; ?></p>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="userid">Name: </label>
-                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['name']; ?></p>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="userid">Department: </label>
-                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['department']; ?></p>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="userid">Job Position: </label>
-                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['position']; ?></p>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="userid">Role: </label>
-                                <p class="col-md-3" style="margin-left: -50px;"><?php echo $row['role']; ?></p>
-                            </div>
-                            <?php  } ?>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="userid">Password: </label>
-                                <a href="#" class="col-md-3"><button id="button" class="btn btn-danger"  style="margin-left: -50px;">Change Password</button></a>
-                                <input id="pass" type="hidden" class="form-control col-md-3" style="margin-left: -210px; width: 250px; height:30px;">
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Save Information</button>
-                                </div>
-                            </div>
+                            
                         </form>
                     </div>
                 </div>
@@ -257,11 +294,6 @@ exit();
         </div>
 	</div>               
     <!-- End of Sidebar -->
-
-
-
-    <!-- Change Password Modal -->
-
 
 <script>
 

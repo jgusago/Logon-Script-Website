@@ -7,9 +7,16 @@
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
     margin-bottom: 0px;
 }
-.container
+.panel-body
 {
-    padding-left:15px;
+    padding: 15px;
+}
+.content
+{
+    /* padding-left:15px; */
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
 }
 .form-group {
     margin-bottom: 15px;
@@ -28,15 +35,15 @@
 {
     padding-right:0px;
 }
-label .col-md-3 
+label 
 {
-    font-size:15px;
     text-align: left;
+    margin: 5px;
 }
-p .col-md-3 
+p 
 {
     margin-left: 75px;
-    padding-top: 0px;
+    margin:5px;
 }
 .btn-danger
 {
@@ -50,14 +57,6 @@ p .col-md-3
     padding-top: 7px;
     margin-bottom: 0;
    float: left;
-}
-.col-md-3
-{
-    position: relative;
-    min-height: 1px;
-    width:30%;
-    /* padding-right: 0px;
-    padding-left: 0px; */
 }
 input
 {
