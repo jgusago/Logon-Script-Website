@@ -211,7 +211,7 @@ $ID=$_GET['id'];
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="dept_viewing" id="dept_viewing" class="form-control" onchange="handleSelect()">
-                                        <option value="--All Department--" selected>--All Department--</option>
+                                        <option value=""></option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								$stmt = $db->prepare($sql);
@@ -229,7 +229,7 @@ $ID=$_GET['id'];
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept_viewing" class="form-control">
-                                        <option value=""></option>
+                                        <option value="" selected>--All Sub-Department--</option>
                                          <!-- FOR SUB DEPARTMENT -->
 								            <script type="text/javascript">
 									            $("#dept_viewing").change(function() {
