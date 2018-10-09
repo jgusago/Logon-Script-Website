@@ -10,11 +10,17 @@ body
         background-repeat: no-repeat;
         background-position: center;
 }
-.div   
+/* .div   
 {
         position: fixed;
+} */
+
+.wrapper 
+{
+        display: flex;
+        align-items: stretch;
 }
-.header
+.panel
 {
         border-radius:15px; 
 	background:#ffffff5c;
@@ -28,7 +34,7 @@ body
 	margin-left:-360px;
         overflow: hidden;
 }
-.container
+/* .container
 {
         margin-top:auto;
         display:block;
@@ -40,7 +46,7 @@ body
         margin-right: -75px;
         margin-left: -70px;
        
-}
+} */
 .header input 
 {
         width: 30%;
