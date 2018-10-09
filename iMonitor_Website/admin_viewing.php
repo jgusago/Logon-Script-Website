@@ -210,7 +210,7 @@ $ID=$_GET['id'];
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="department" id="department" class="form-control">
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control">
                                         <option value="" selected>--All Department--</option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -228,18 +228,15 @@ $ID=$_GET['id'];
 
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control" disabled>
+                                    <select name="dub_dept" id="sub_dept_viewing" class="form-control">
                                         <option value="" selected>--All Sub Department</option>
-                                         <?php     
-              								$sql = "select sub_department from tbl_department ORDER BY sub_department ASC";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
-
-											while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											{
-                								echo '<option>'.$row['sub_department'].'</option>'; 
-              								}
-            							 ?>
+                                         <!-- FOR SUB DEPARTMENT -->
+								            <script type="text/javascript">
+									            $("#dept_viewing").change(function() {
+  									            $("#sub_dept_viewing").load("get_sub_department.php?branch_name=" + $("#dept_viewing").val());
+									            });
+								            </script>
+								        <!-- END -->
                                     </select>
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
