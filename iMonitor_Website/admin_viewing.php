@@ -229,7 +229,7 @@ $ID=$_GET['id'];
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept_viewing" class="form-control">
-                                        <option value="" selected>--All Sub Department--</option>
+                                        <option value=""></option>
                                          <!-- FOR SUB DEPARTMENT -->
 								            <script type="text/javascript">
 									            $("#dept_viewing").change(function() {
@@ -240,7 +240,7 @@ $ID=$_GET['id'];
 
                                         <script>
                                             function handleSelect() {
-                                                if (this.value == "--All Department--") {
+                                                if (this.value == "") {
                                                     document.getElementById('sub_dept_viewing').disabled = false;
                                                 } else {
                                                     document.getElementById('sub_dept_viewing').disabled = true;
@@ -250,7 +250,7 @@ $ID=$_GET['id'];
 
                                          <script>
                                             function handleSelect2() {
-                                                if (this.value == "--All Department--") {
+                                                if (this.value == "") {
                                                     document.getElementById('sub_dept_viewing').disabled = true;
                                                 } else {
                                                     document.getElementById('sub_dept_viewing').disabled = false;
