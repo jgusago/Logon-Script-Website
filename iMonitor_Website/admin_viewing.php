@@ -228,7 +228,7 @@ $ID=$_GET['id'];
 
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
+                                    <select name="dub_dept" id="sub_dept" class="form-control" disabled>
                                         <option value="" selected>--All Sub Department</option>
                                          <?php     
               								$sql = "select sub_department from tbl_department ORDER BY sub_department ASC";
