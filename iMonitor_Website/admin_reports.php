@@ -215,7 +215,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                     </select> 
                                 </div>
                                 <div class="col-md-6" style="padding-top:15px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
+                                    <select name="dub_dept" id="sub_dept" class="form-control" disabled>
                                         <option value="" selected>--All sub department</option>
                                         <option value="OM">IT-OM</option>
                                         <option value="AUD">IT-AUD</option>
