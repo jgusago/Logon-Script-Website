@@ -312,9 +312,16 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                                 <div class="col-md-6" style="padding-top:15px;">
                                     <select name="department" id="department" class="form-control">
                                         <option value="" selected>--All department--</option>
-                                        <option value="Marvin 5th">Marvin 5th</option>
-                                        <option value="Marvin 10th">Marvin 10th</option>
-                                        <option value="AT">AT</option>
+                                        <?php     
+              								    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              								    $stmt = $db->prepare($sql);
+              								    $stmt->execute();
+
+											        while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+											        {
+                								        echo '<option>'.$row['branch_name'].'</option>'; 
+              								        }
+            							?>
                                     </select> 
                                 </div>
                                 <div class="col-md-6" style="padding-top:15px;">
