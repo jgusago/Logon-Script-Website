@@ -21,7 +21,7 @@ if(isset($_SESSION["userid"])) {
 <body style="height: -webkit-fill-available;">
     <div class="wrapper">
         <div class="col-lg-12">
-            <div style="height:175px;">
+            <div style="height:165px;">
 
             </div>
             <br>
@@ -50,7 +50,7 @@ if(isset($_SESSION["userid"])) {
                             <input class="form-control" id="userid" placeholder="User ID" name="userid" type="text" autofocus="autofocus" required>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-left: -39px;">
                         <div class="input-group">
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-lock"></i>
@@ -58,7 +58,7 @@ if(isset($_SESSION["userid"])) {
                             <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-left: -39px;">
                         <div>
                             <button type="submit" name="submit" class="btn btn-primary" style="width:70%; margin-bottom:20px; margin-left:110px;">Login</button></a>
                         </div>
