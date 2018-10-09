@@ -232,11 +232,12 @@ $ID=$_GET['id'];
                                         <option value="" selected>--All Sub-Department--</option>
                                          <!-- FOR SUB DEPARTMENT -->
 								            <script type="text/javascript">
+                                            $("#dept_viewing").change(function() {
                                                 if ($(this).val() == "") {
                                                     $("dept_viewing").prop("disabled", true);        
                                                 } else
                                                 $("dept_viewing").prop("disabled", false);
-									            $("#dept_viewing").change(function() {
+									            
   									            $("#sub_dept_viewing").load("get_sub_department.php?branch_name=" + $("#dept_viewing").val());
 									            });
 								            </script>
