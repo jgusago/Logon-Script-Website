@@ -257,7 +257,7 @@ exit();
                                     <p style="margin-left: -50px;"><?php echo $row['role']; ?></p>
                                 </div>
                             </div>
-                            <?php  } ?>
+                            <?php   ?>
                             <div class="form-group">
                                 <div class="col-md-6"> 
                                     <label class="control-label" for="passwordd">Password: </label>
