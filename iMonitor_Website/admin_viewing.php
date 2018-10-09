@@ -210,7 +210,7 @@ $ID=$_GET['id'];
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dept_viewing" id="dept_viewing" class="form-control" onchange="handleSelect()">
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control">
                                         <option value=""></option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -232,32 +232,15 @@ $ID=$_GET['id'];
                                         <option value="" selected>--All Sub-Department--</option>
                                          <!-- FOR SUB DEPARTMENT -->
 								            <script type="text/javascript">
+                                                if ($(this).val() == "") {
+                                                    $("dept_viewing").prop("disabled", true);        
+                                                } else
+                                                $("dept_viewing").prop("disabled", false);
 									            $("#dept_viewing").change(function() {
   									            $("#sub_dept_viewing").load("get_sub_department.php?branch_name=" + $("#dept_viewing").val());
 									            });
 								            </script>
-								        <!-- END -->
-
-                                        <script>
-                                            function handleSelect() {
-                                                if (this.value == null) {
-                                                    document.getElementById('sub_dept_viewing').disabled = false;
-                                                } else {
-                                                    document.getElementById('sub_dept_viewing').disabled = true;
-                                                }
-                                            }
-                                        </script>
-
-                                         <script>
-                                            function handleSelect2() {
-                                                if (this.value == null) {
-                                                    document.getElementById('sub_dept_viewing').disabled = true;
-                                                } else {
-                                                    document.getElementById('sub_dept_viewing').disabled = false;
-                                                }
-                                            }
-                                        </script>
-                                                
+								        <!-- END -->                                    
 
                                     </select>
                                 </div>
