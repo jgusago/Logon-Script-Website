@@ -210,7 +210,7 @@ $ID=$_GET['id'];
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dept_viewing" id="dept_viewing" class="form-control" onChange="makeEnable(this.value)">
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control" onChange="EnableandDisabled()">
                                         <option value="" selected>--All Department--</option>
                                          <?php     
               								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -239,11 +239,11 @@ $ID=$_GET['id'];
 								        <!-- END -->
 
                                         <script>
-                                            function makeEnable(value) {
+                                            function EnableandDisabled() {
                                                 if(val==="--All Department--")
-                                                    document.getElementById("mySelect").disabled=false;
+                                                    document.getElementById("sub_dept_viewing").disabled=false;
                                                 else
-                                                    document.getElementById("mySelect").disabled=true;
+                                                    document.getElementById("sub_dept_viewing").disabled=true;
                                                 }
                                         </script>
                                                 
