@@ -19,7 +19,7 @@ if(isset($_SESSION["userid"])) {
     <link href="../design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="header">
+    <div class="container">
         <?php
             if(isset($_GET['msg']))                      
             {                    
@@ -63,7 +63,9 @@ if(isset($_SESSION["userid"])) {
             </div>
          </form>
     </div>
-    <h1 style="padding-top:50px; font-family: Verdana, tahoma;color: white; text-align:center; font-size: 60px; margin-top: 790px;">SKYLUSTER TECHNOLOGY INC.</h1>
+    <div>
+        <h1 style="padding-top:50px; font-family: Verdana, tahoma;color: white; text-align:center; font-size: 60px; margin-top: 790px;">SKYLUSTER TECHNOLOGY INC.</h1>
+    </div>
 
 </body>
 </html>
