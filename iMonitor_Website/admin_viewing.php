@@ -250,7 +250,7 @@ $ID=$_GET['id'];
 
                                          <script>
                                             function handleSelect2() {
-                                                if (this.value == "--All Department--") {
+                                                if (this.value == 0) {
                                                     document.getElementById('sub_dept_viewing').disabled = true;
                                                 } else {
                                                     document.getElementById('sub_dept_viewing').disabled = false;
