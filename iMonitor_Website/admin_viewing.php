@@ -53,7 +53,7 @@ $ID=$_GET['id'];
     <link rel="stylesheet" href="viewing.css">
 
 </head>
-<body>
+<body onchange="handleSelect()">
     <nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="icons/sky_luster.png">
@@ -228,7 +228,7 @@ $ID=$_GET['id'];
 
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dub_dept" id="sub_dept_viewing" class="form-control" disabled>
+                                    <select name="dub_dept" id="sub_dept_viewing" class="form-control">
                                         <option value="" selected>--All Sub Department--</option>
                                          <!-- FOR SUB DEPARTMENT -->
 								            <script type="text/javascript">
@@ -240,7 +240,7 @@ $ID=$_GET['id'];
 
                                         <script>
                                             function handleSelect() {
-                                                if (this.value == '--All Department--') {
+                                                if (this.value == "") {
                                                     document.getElementById('sub_dept_viewing').disabled = false;
                                                 } else {
                                                     document.getElementById('sub_dept_viewing').disabled = true;
