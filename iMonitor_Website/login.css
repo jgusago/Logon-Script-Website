@@ -4,7 +4,7 @@
 }
 body
 {
-        height:24.9vh;
+        /* height:24.9vh; */
         background-image: url(icons/background1.jpg);
         background-size: cover;
         background-repeat: no-repeat;

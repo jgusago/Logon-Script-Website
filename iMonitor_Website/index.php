@@ -19,27 +19,24 @@ if(isset($_SESSION["userid"])) {
     <link href="../design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div>
-        <div class="header">
-                <div>
-                    <?php
-                        if(isset($_GET['msg']))                      
-                        {                    
-                            echo "<p align='center' class='error'>Wrong username or password.</p>";
-                        }
-                    ?>
-                    <?php
-                        if(isset($_GET['msg2']))                      
-                        {                    
-                            echo "<p align='center' class='error'>Your account is Inactive.</p>";
-                        }
-                    ?>
-                </div>
-            <?php
+    <div class="header">
+        <?php
+            if(isset($_GET['msg']))                      
+            {                    
+                echo "<p align='center' class='error'>Wrong username or password.</p>";
+            }
+        ?>
+        <?php
+            if(isset($_GET['msg2']))                      
+            {                    
+                 echo "<p align='center' class='error'>Your account is Inactive.</p>";
+            }
+        ?>
+        <?php
                 //login();
-            ?>
-            <form action="../php/connection/login_submit.php" method="POST">
-            <div class="row">
+        ?>
+        <form action="../php/connection/login_submit.php" method="POST">
+            <div class="row col-sm-12 col-md-10  col-md-offset-1">
                 <div class="col-sm-12 col-md-10  col-md-offset-1">
                     <div class="form-group">
                         <div class="input-group">
@@ -64,10 +61,9 @@ if(isset($_SESSION["userid"])) {
                     </div>
                 </div>
             </div>
-        </div>
-            </form>
-        <h1 style="padding-top:50px; font-family: Verdana, tahoma;color: white; text-align:center; font-size: 60px; margin-top: 790px;">SKYLUSTER TECHNOLOGY INC.</h1>
+         </form>
     </div>
+    <h1 style="padding-top:50px; font-family: Verdana, tahoma;color: white; text-align:center; font-size: 60px; margin-top: 790px;">SKYLUSTER TECHNOLOGY INC.</h1>
 
 </body>
 </html>
