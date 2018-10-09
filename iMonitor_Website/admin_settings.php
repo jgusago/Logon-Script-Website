@@ -278,6 +278,7 @@ exit();
         $("#button").click(function()
          {
                 $("#pass").show();
+                $("#button").hide();
         });
 
 
