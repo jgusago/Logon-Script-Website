@@ -6,7 +6,7 @@ body
 {
         /* height:24.9vh; */
         background-image: url(icons/background1.jpg);
-        background-size: cover;
+        /* background-size: cover; */
         background-repeat: no-repeat;
         background-position: center;
 }
@@ -14,15 +14,15 @@ body
 {
         position: fixed;
 }
-.header
+.container
 {
         border-radius:15px; 
 	background:#ffffff5c;
 	padding: 30px 60px; 
 	width: 700px; 
 	height: 330px; 
-	top:50%;
-	left:50%;	
+	top:55%;
+	left:51.5%;	
 	position: fixed;
 	margin-top:-240px;
 	margin-left:-360px;
