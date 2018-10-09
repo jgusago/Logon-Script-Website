@@ -25,6 +25,11 @@ body
 {
         width: 50%;
 }
+.form-group 
+{
+        margin-bottom: 15px;
+        margin-left: -39px;
+}
 .panel
 {
         border-radius:15px; 
