@@ -21,10 +21,10 @@ if(isset($_SESSION["userid"])) {
 <body style="height: -webkit-fill-available;">
     <div class="wrapper">
         <div class="col-lg-12">
-            <div style="height:165px;">
+            <!-- <div style="height:165px;">
 
             </div>
-            <br>
+            <br> -->
             <div class="container">
                 <?php
                     if(isset($_GET['msg']))                      
@@ -66,9 +66,9 @@ if(isset($_SESSION["userid"])) {
                 </form>
             </div>
         </div>
-        <div>
+        <!-- <div>
             <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1>
-        </div>
+        </div> -->
     </div>
 
 </body>
