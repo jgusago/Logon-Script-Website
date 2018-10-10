@@ -142,7 +142,12 @@ label
     margin-top:20px;
     display: flex;
     justify-content: center;
-}   
+}  
+.btn-warning2
+{
+    width:80px;
+    /* margin-top:20px; */
+}  
 u
 {
 	float:left;
