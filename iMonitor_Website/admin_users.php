@@ -163,7 +163,7 @@ $ID=$_GET['id'];
 				</div>
 				<div class="modal-footer2">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px;">Cancel</button>
-					<a class="btn btn-warning2" href="../php/connection/logout.php" style="font-size:12px;">Logout</i></a>
+					<a class="btn btn-warning2" href="../php/connection/logout.php" style="font-size:12px; color: #fff; background-color: #f0ad4e; border-color: #eea236;">Logout</i></a>
 				</div>
 			</div>
 		</div>
