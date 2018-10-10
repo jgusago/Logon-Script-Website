@@ -15,12 +15,12 @@ div
 {
     margin-top: 60px;
     color: white;
-    background-color: #000000;
     margin-left: -15px;
     padding: 10px;
     font-size: 18px;
     margin-bottom: 0px;
     width: 102%;
+    background-color: #000000;
 }
 .panel
 {
@@ -146,10 +146,6 @@ label
 .btn-warning2
 {
     width:80px;
-    color: #fff;
-    background-color: #f0ad4e;
-    border-color: #eea236;
-    /* margin-top:20px; */
 }  
 u
 {
