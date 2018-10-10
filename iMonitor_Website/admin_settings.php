@@ -214,7 +214,7 @@ exit();
                                 $query->setFetchMode(PDO::FETCH_ASSOC);
                 
                                 if($row = $query->fetch()) {
-                                }
+                                
                                
                         ?>
                         <fieldset>
