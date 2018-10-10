@@ -146,6 +146,9 @@ label
 .btn-warning2
 {
     width:80px;
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
     /* margin-top:20px; */
 }  
 u
