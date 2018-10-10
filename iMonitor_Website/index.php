@@ -25,7 +25,7 @@ if(isset($_SESSION["userid"])) {
 
             </div>
             <br>
-            <div class="panel" style="background-color:#e0dddd78; width: 610px; padding: 20px 50px; margin:auto; margin-bottom: 200px;">
+            <div class="panel">
                 <?php
                     if(isset($_GET['msg']))                      
                     {                    
