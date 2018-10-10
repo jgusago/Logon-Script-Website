@@ -206,6 +206,17 @@ exit();
                         </div>
                         <div style="clear:both"></div>
                         <br>
+                        <form class="form-horizontal" role="form" method="post">
+                            <?php
+                                $query = $db->prepare("SELECT userid,name,department,position,role,status,password FROM tbl_user WHERE userid=:userid");
+                                $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
+                                $query->execute();
+                                $query->setFetchMode(PDO::FETCH_ASSOC);
+                
+                                if($row = $query->fetch()) {
+                                }
+                               
+                        ?>
                         <fieldset>
                             <div class="form-group">
                                 <div class="col-md-6">
@@ -263,6 +274,7 @@ exit();
                                     <label class="control-label" for="passwordd">Password: </label>
                                 </div>
                             </div>
+                            <?php } ?>
                             <div class="form-group">
                                 <div class="col-md-6"> 
                                     <a href="#" class="col-md-3"><button id="button" class="btn btn-danger"  style="margin-left: -50px;">Change Password</button></a>
@@ -276,17 +288,7 @@ exit();
                             </div>
                         </fieldset>
 
-                        <form class="form-horizontal" role="form" method="post">
-                            <?php
-                                $query = $db->prepare("SELECT userid,name,department,position,role,status,password FROM tbl_user WHERE userid=:userid");
-                                $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
-                                $query->execute();
-                                $query->setFetchMode(PDO::FETCH_ASSOC);
-                
-                                if($row = $query->fetch()) {
-                                }
-                               
-                            ?>
+                        
                             
                         </form>
                     </div>
