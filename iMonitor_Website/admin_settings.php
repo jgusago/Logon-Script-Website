@@ -274,7 +274,7 @@ exit();
                                     <label class="control-label" for="passwordd">Password: </label>
                                 </div>
                             </div>
-                            <?php } ?>
+                            <?php  ?>
                             <div class="form-group">
                                 <div class="col-md-6"> 
                                     <a href="#" class="col-md-3"><button id="button" class="btn btn-danger"  style="margin-left: -50px;">Change Password</button></a>
