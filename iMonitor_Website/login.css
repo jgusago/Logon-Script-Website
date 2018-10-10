@@ -12,12 +12,30 @@ body
         background-position: center;
         overflow: hidden;
 }
+.Absolute-Center 
+{
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+}
+.Absolute-Center.is-Responsive {
+        width: 50%; 
+        height: 50%;
+        min-width: 200px;
+        max-width: 400px;
+        padding: 40px;
+      }
+
+
+
+
+
 /* .div   
 {
         position: fixed;
 } */
 
-.wrapper 
+/* .wrapper 
 {
         display: flex;
         align-items: stretch;
@@ -79,4 +97,4 @@ body
         /* margin-top:20px; */
         margin-left:110px; 
         margin-bottom:20px;
-} 
+}  */

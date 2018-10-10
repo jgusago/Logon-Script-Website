@@ -19,55 +19,47 @@ if(isset($_SESSION["userid"])) {
     <link href="../design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body style="height: -webkit-fill-available;">
-    <div class="wrapper">
-        <div class="col-lg-12">
-            <div style="clear:both; height:165px;"></div>
-            <br>
-            <div class="container">
-                <?php
-                    if(isset($_GET['msg']))                      
-                    {                    
-                        echo "<p align='center' class='error'>Wrong username or password.</p>";
-                    }
-                ?>
-                <?php
-                    if(isset($_GET['msg2']))                      
-                    {                    
-                        echo "<p align='center' class='error'>Your account is Inactive.</p>";
-                    }
-                ?>
-                <?php
-                        //login();
-                ?>
-                 <form action="../php/connection/login_submit.php" method="POST">
-                    <div class="form-group" style="margin-left: -39px;">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-user"></i>
-                            </span> 
+    <div class="container">
+        <div class="row">
+            <div class="Absolute-Center is-Responsive">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <?php
+                        if(isset($_GET['msg']))                      
+                        {                    
+                            echo "<p align='center' class='error'>Wrong username or password.</p>";
+                        }
+                    ?>
+                    <?php
+                        if(isset($_GET['msg2']))                      
+                        {                    
+                            echo "<p align='center' class='error'>Your account is Inactive.</p>";
+                        }
+                    ?>
+                    <?php
+                            //login();
+                    ?>
+                    <form action="../php/connection/login_submit.php" method="POST">
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input class="form-control" id="userid" placeholder="User ID" name="userid" type="text" autofocus="autofocus" required>
                         </div>
-                    </div>
-                    <div class="form-group" style="margin-left: -39px;">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-lock"></i>
-                            </span>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         </div>
-                    </div>
-                    <div class="form-group" style="margin-left: -39px;">
-                        <div>
-                            <button type="submit" name="submit" class="btn btn-primary" style="width:70%; margin-bottom:20px; margin-left:110px;">Login</button></a>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-block" style="width:70%; margin-bottom:20px; margin-left:110px;">Login</button></a>
                         </div>
-                    </div>
-                </form>
+                        <div class="form-group text-center">
+                            <a href="#">Forgot Password</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <!-- <div>
-            <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1>
-        </div> -->
     </div>
+
+    <!-- <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1> -->
 
 </body>
 </html>
