@@ -67,7 +67,7 @@ if(isset($_SESSION["userid"])) {
             </div>
         </div>
         <div>
-            <h1 style="padding-top:110px; font-family: Verdana, tahoma;color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1>
+            <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1>
         </div>
     </div>
 
