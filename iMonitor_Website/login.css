@@ -10,6 +10,7 @@ body
         /* background-size: cover; */
         background-repeat: no-repeat;
         background-position: center;
+        overflow: hidden;
 }
 /* .div   
 {
@@ -35,14 +36,13 @@ body
         border-radius:15px; 
 	background-color:#e0dddd78;
 	padding: 30px 60px; 
-	width: 700px; 
+	width: 610px; 
 	height: 330px; 
-	top:55%;
-	left:51.5%;	
+	/* top:55%;
+	left:51.5%;	 */
 	position: fixed;
 	margin-top:-240px;
 	margin-left:-360px;
-        overflow: hidden;
 }
 div
 {
