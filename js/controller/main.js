@@ -182,7 +182,7 @@ function load_branchviewbtn(){
 
             //Branch Computer Logs
             bvclogsnewli = document.createElement("li");
-            bvcomlogbtn.appendChild(bvclogsnewli);
+            bvclog.appendChild(bvclogsnewli);
 
             bvcologs = document.createElement("a");
             bvcologs.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CLogs\")");
