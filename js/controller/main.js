@@ -108,8 +108,8 @@ function load_branchviewbtn(){
             bvcbtn.classList.add("nav-link-collapse");
             bvcbtn.classList.add("collapdatased");
 
-            bvcbtn.setAttribute("data-toggle","collapse");
-            bvcbtn.setAttribute("href","#rootIII");
+            // bvcbtn.setAttribute("data-toggle","collapse");
+            // bvcbtn.setAttribute("href","#rootIII");
 
             bvclist.appendChild(bvcbtn);
 
