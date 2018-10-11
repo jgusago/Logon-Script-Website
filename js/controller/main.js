@@ -184,12 +184,12 @@ function load_branchviewbtn(){
             bvclogsnewli = document.createElement("li");
             bvcomlogbtn.appendChild(bvclogsnewli);
 
-            bvcolog = document.createElement("a");
-            bvcolog.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CLogs\")");
-            bvclogsnewli.appendChild(bvcolog);
+            bvcologs = document.createElement("a");
+            bvcologs.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CLogs\")");
+            bvclogsnewli.appendChild(bvcologs);
 
             anode = document.createTextNode(data[loop]);
-            bvcolog.appendChild(anode);
+            bvcologs.appendChild(anode);
 
         }
 
