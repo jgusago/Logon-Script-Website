@@ -252,7 +252,7 @@ $ID=$_GET['id'];
                                 <div style="clear:both"></div>
                                 <br>
                                 <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
-                                    <table class="table table-bordered" style="background: #ffffff;">
+                                    <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -313,7 +313,7 @@ $ID=$_GET['id'];
                             <option value="fn">Finance</option>
                             <option value="om">IT-OM</option>
                             <option value="aud">Audit</option>
-                            <option value="devja">Java Developers</option>\
+                            <option value="devja">Java Developers</option>
                             <option value="devios">iOS Developers</option>
                             <option value="devand">Android Developers</option>
                             <option value="omnet">Networks</option>
