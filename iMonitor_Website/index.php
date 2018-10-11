@@ -48,7 +48,7 @@ if(isset($_SESSION["userid"])) {
                             <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" style="width: 150%;" required>
                         </div>
                         <div class="form-group">
-                            <button type="submit" name="submit" class="btn btn-primary btn-block" style="width:70%; margin-left:70px;">Login</button></a>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block" style="width:70%; margin-left:50px; position: inherit;">Login</button></a>
                         </div>
                         <div class="form-group text-center">
                             <a href="#" style="color:white;">Forgot Password</a>
