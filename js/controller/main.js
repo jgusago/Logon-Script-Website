@@ -167,6 +167,7 @@ function load_branchviewbtn(){
 
             anode = document.createTextNode(data[loop]);
             bva.appendChild(anode);
+
             //Branch Computer
             bvcnewli = document.createElement("li");
             bvcul.appendChild(bvcnewli);
@@ -178,6 +179,18 @@ function load_branchviewbtn(){
 
             anode = document.createTextNode(data[loop]);
             bvca.appendChild(anode);
+
+            //Branch Computer Logs
+            bvclogsnewli = document.createElement("li");
+            bvcomlogbtn.appendChild(bvclogsnewli);
+
+            bvcolog = document.createElement("a");
+            bvcolog.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
+            bvclogsnewli.appendChild(bvcolog);
+
+            anode = document.createTextNode(data[loop]);
+            bvcolog.appendChild(anode);
+
         }
 
     });
