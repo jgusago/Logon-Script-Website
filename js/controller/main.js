@@ -52,7 +52,7 @@ function load_branchviewbtn(){
         data = data.split("|");
         datalength = data.length;
         bvclist = document.getElementById("branchcomputerlist");
-        bvclogslist = document.getElementById("branchcomplogs");
+        bvclist = document.getElementById("branchcomplogs");
         bvlist = document.getElementById("branchviewlist");
 
         if(data[0] != 0)
@@ -103,25 +103,25 @@ function load_branchviewbtn(){
 
             //Branch Computer Logs
             bvcbtn = document.createElement("a");
-            bvcbtn.setAttribute("id","branchcomputerlogsbtn");
+            bvcbtn.setAttribute("id","branchcomputerbtn");
 
             bvcbtn.classList.add("nav-link-collapse");
             bvcbtn.classList.add("collapdatased");
 
             bvcbtn.setAttribute("data-toggle","collapse");
-            bvcbtn.setAttribute("href","#rootIII");
+            bvcbtn.setAttribute("href","#rootII");
 
-            bvclogslist.appendChild(bvcbtn);
+            bvclist.appendChild(bvcbtn);
 
                 bvcbtntxt = document.createTextNode("Computer Logs");
-                bvclogslist.appendChild(bvcbtntxt);
+                bvcbtn.appendChild(bvcbtntxt);
 
-            bvclogul = document.createElement("ul");
-            bvclogul.classList.add("sidenav-third-level");
-            bvclogul.classList.add("collapse");
-            bvclogul.setAttribute("id","rootIII");
+            bvcul = document.createElement("ul");
+            bvcul.classList.add("sidenav-third-level");
+            bvcul.classList.add("collapse");
+            bvcul.setAttribute("id","rootII");
 
-            bvclogslist.appendChild(bvclogul);
+            bvclist.appendChild(bvcul);
         }
         else
         {
@@ -134,22 +134,13 @@ function load_branchviewbtn(){
             bvbtntxt = document.createTextNode("Branch View");
             bvbtn.appendChild(bvbtntxt);
 
-            //Branch Computer List
+            //Branch Computer
             bvcbtn = document.createElement("a");
             bvcbtn.setAttribute("id","branchcomputerbtn");
             bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputer\")");
             bvclist.appendChild(bvbtn);
 
             bvcbtntxt = document.createTextNode("Computer List");
-            bvcbtn.appendChild(bvcbtntxt);
-
-            //Branch Computer Logs
-            bvcbtn = document.createElement("a");
-            bvcbtn.setAttribute("id","branchcomputerlogsbtn");
-            bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputerlogs\")");
-            bvclogslist.appendChild(bvbtn);
-
-            bvcbtntxt = document.createTextNode("Computer Logs");
             bvcbtn.appendChild(bvcbtntxt);
 
 
@@ -168,18 +159,6 @@ function load_branchviewbtn(){
             anode = document.createTextNode(data[loop]);
             bva.appendChild(anode);
             //Branch Computer
-            bvcnewli = document.createElement("li");
-            bvcul.appendChild(bvcnewli);
-
-            bvca = document.createElement("a");
-            //bva.setAttribute("href","#"+data[loop]);
-            bvca.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
-            bvcnewli.appendChild(bvca);
-
-            anode = document.createTextNode(data[loop]);
-            bvca.appendChild(anode);
-
-            //Branch Computer Logs
             bvcnewli = document.createElement("li");
             bvcul.appendChild(bvcnewli);
 
