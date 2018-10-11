@@ -120,7 +120,7 @@ function load_branchviewbtn(){
             bvclog.classList.add("collapse");
             bvclog.setAttribute("id","rootII");
     
-            bvcomlogbtn.appendChild(bvclog);
+            bvcomlogs.appendChild(bvclog);
 
         }
         else
@@ -142,6 +142,15 @@ function load_branchviewbtn(){
 
             bvcbtntxt = document.createTextNode("Computer List");
             bvcbtn.appendChild(bvcbtntxt);
+
+            //Branch Computer Logs
+            bvcomlogbtn = document.createElement("a");
+            bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
+            bvcomlogbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputerlogs\")");
+            bvcomlogs.appendChild(bvcomlogbtn);
+
+            bvcomlogsbtntxt = document.createTextNode("Computer List");
+            bvcomlogbtn.appendChild(bvcomlogsbtntxt);
 
 
         }
