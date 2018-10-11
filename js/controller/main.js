@@ -52,7 +52,7 @@ function load_branchviewbtn(){
         data = data.split("|");
         datalength = data.length;
         bvclist = document.getElementById("branchcomputerlist");
-        bvclist = document.getElementById("branchcomplogs");
+        bvcomlogs = document.getElementById("branchcomplogs");
         bvlist = document.getElementById("branchviewlist");
 
         if(data[0] != 0)
@@ -102,26 +102,26 @@ function load_branchviewbtn(){
             bvclist.appendChild(bvcul);
 
             //Branch Computer Logs
-            bvcbtn = document.createElement("a");
-            bvcbtn.setAttribute("id","branchcomputerbtn");
+            bvcomlogbtn = document.createElement("a");
+            bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
 
-            bvcbtn.classList.add("nav-link-collapse");
-            bvcbtn.classList.add("collapdatased");
+            bvcomlogbtn.classList.add("nav-link-collapse");
+            bvcomlogbtn.classList.add("collapdatased");
 
-            bvcbtn.setAttribute("data-toggle","collapse");
-            bvcbtn.setAttribute("href","#rootII");
+            bvcomlogbtn.setAttribute("data-toggle","collapse");
+            bvcomlogbtn.setAttribute("href","#rootIII");
 
-            bvclist.appendChild(bvcbtn);
+            bvcomlogs.appendChild(bvcomlogbtn);
+                bvcomlogsbtntxt = document.createTextNode("Computer Logs");
+                bvcomlogbtn.appendChild(bvcomlogsbtntxt);
+            
+            bvclog = document.createElement("ul");
+            bvclog.classList.add("sidenav-third-level");
+            bvclog.classList.add("collapse");
+            bvclog.setAttribute("id","rootII");
+    
+            bvcomlogbtn.appendChild(bvclog);
 
-                bvcbtntxt = document.createTextNode("Computer Logs");
-                bvcbtn.appendChild(bvcbtntxt);
-
-            bvcul = document.createElement("ul");
-            bvcul.classList.add("sidenav-third-level");
-            bvcul.classList.add("collapse");
-            bvcul.setAttribute("id","rootII");
-
-            bvclist.appendChild(bvcul);
         }
         else
         {
