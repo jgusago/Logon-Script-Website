@@ -185,7 +185,7 @@ function load_branchviewbtn(){
             bvcomlogbtn.appendChild(bvclogsnewli);
 
             bvcolog = document.createElement("a");
-            bvcolog.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
+            bvcolog.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CLogs\")");
             bvclogsnewli.appendChild(bvcolog);
 
             anode = document.createTextNode(data[loop]);
