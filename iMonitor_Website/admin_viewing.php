@@ -251,7 +251,7 @@ $ID=$_GET['id'];
                                 </div>
                                 <div style="clear:both"></div>
                                 <br>
-                                <div class="table-responsive" style="overflow-x:auto; padding-right:5px;">
+                                <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
                                     <table class="table table-bordered" style="background: #ffffff;">
                                         <thead>
                                             <tr>
@@ -264,7 +264,7 @@ $ID=$_GET['id'];
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id = "load_data>
                                             <?php
                                                 $query = $db->prepare("SELECT compID, hostname, ip, status, remarks, agent_Version FROM tbl_computer_details");
                                                 $query->execute();
@@ -443,6 +443,60 @@ $ID=$_GET['id'];
         </div>
     </div>
     <!-- End of Edit Modal -->
+
+    <!-- For Printing List-->
+
+    <script type="text/javascript">
+    	function printDiv() {
+        var divElements = document.getElementById("tb_div").innerHTML;
+        var oldPage = document.body.innerHTML;
+        document.body.innerHTML = 
+          "<html><head><title></title></head><body>" + 
+          divElements + "</body>";
+        window.print();
+        document.body.innerHTML = oldPage;
+        }
+	</script>
+
+    <!-- For Exporting to Exel List-->
+
+    <script type="text/javascript">
+     function fnExcelReport()
+        {
+             var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+             var textRange; var j=0;
+          tab = document.getElementById('comp_logs'); // id of table
+
+
+          for(j = 0 ; j < tab.rows.length ; j++) 
+          {     
+                tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+                //tab_text=tab_text+"</tr>";
+          }
+
+          tab_text=tab_text+"</table>";
+          tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+          tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+                      tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+               var ua = window.navigator.userAgent;
+              var msie = ua.indexOf("MSIE "); 
+
+                 if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+                    {
+                           txtArea1.document.open("txt/html","replace");
+                           txtArea1.document.write(tab_text);
+                           txtArea1.document.close();
+                           txtArea1.focus(); 
+                            sa=txtArea1.document.execCommand("SaveAs",true,"Computer List.xls");
+                          }  
+                  else                 //other browser not tested on IE 11
+                      sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+
+                      return (sa);
+                            }
+	</script>
 
  <script>
 
