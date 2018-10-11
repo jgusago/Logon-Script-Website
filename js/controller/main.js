@@ -149,7 +149,7 @@ function load_branchviewbtn(){
             bvcomlogbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputerlogs\")");
             bvcomlogs.appendChild(bvcomlogbtn);
 
-            bvcomlogsbtntxt = document.createTextNode("Computer List");
+            bvcomlogsbtntxt = document.createTextNode("Computer Logs");
             bvcomlogbtn.appendChild(bvcomlogsbtntxt);
 
 
