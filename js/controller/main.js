@@ -52,7 +52,7 @@ function load_branchviewbtn(){
         data = data.split("|");
         datalength = data.length;
         bvclist = document.getElementById("branchcomputerlist");
-        bvclist = document.getElementById("branchcomplogs");
+        bvclogslist = document.getElementById("branchcomplogs");
         bvlist = document.getElementById("branchviewlist");
 
         if(data[0] != 0)
@@ -108,20 +108,20 @@ function load_branchviewbtn(){
             bvcbtn.classList.add("nav-link-collapse");
             bvcbtn.classList.add("collapdatased");
 
-            // bvcbtn.setAttribute("data-toggle","collapse");
-            // bvcbtn.setAttribute("href","#rootIII");
+            bvcbtn.setAttribute("data-toggle","collapse");
+            bvcbtn.setAttribute("href","#rootIII");
 
-            bvclist.appendChild(bvcbtn);
+            bvclogslist.appendChild(bvcbtn);
 
                 bvcbtntxt = document.createTextNode("Computer Logs");
-                bvcbtn.appendChild(bvcbtntxt);
+                bvclogslist.appendChild(bvcbtntxt);
 
-            bvcul = document.createElement("ul");
-            bvcul.classList.add("sidenav-third-level");
-            bvcul.classList.add("collapse");
-            bvcul.setAttribute("id","rootIII");
+            bvclogul = document.createElement("ul");
+            bvclogul.classList.add("sidenav-third-level");
+            bvclogul.classList.add("collapse");
+            bvclogul.setAttribute("id","rootIII");
 
-            bvclist.appendChild(bvcul);
+            bvclogslist.appendChild(bvclogul);
         }
         else
         {
@@ -147,7 +147,7 @@ function load_branchviewbtn(){
             bvcbtn = document.createElement("a");
             bvcbtn.setAttribute("id","branchcomputerlogsbtn");
             bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputerlogs\")");
-            bvclist.appendChild(bvbtn);
+            bvclogslist.appendChild(bvbtn);
 
             bvcbtntxt = document.createTextNode("Computer Logs");
             bvcbtn.appendChild(bvcbtntxt);
