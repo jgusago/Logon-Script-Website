@@ -22,23 +22,23 @@ if(isset($_SESSION["userid"])) {
     <div class="container">
         <div class="row">
             <div class="Absolute-Center is-Responsive">
-                <div class="col-sm-12 col-md-10 col-md-offset-1">
-                    <?php
-                        if(isset($_GET['msg']))                      
-                        {                    
-                            echo "<p align='center' class='error'>Wrong username or password.</p>";
-                        }
-                    ?>
-                    <?php
-                        if(isset($_GET['msg2']))                      
-                        {                    
-                            echo "<p align='center' class='error'>Your account is Inactive.</p>";
-                        }
-                    ?>
-                    <?php
-                            //login();
-                    ?>
-                    <div class="panel" style="background-color:#e0dddd78; width: 610px;">
+                <div class="panel" style="background-color:#e0dddd78;">
+                    <div class="col-sm-12 col-md-10 col-md-offset-1">
+                        <?php
+                            if(isset($_GET['msg']))                      
+                            {                    
+                                echo "<p align='center' class='error'>Wrong username or password.</p>";
+                            }
+                        ?>
+                        <?php
+                            if(isset($_GET['msg2']))                      
+                            {                    
+                                echo "<p align='center' class='error'>Your account is Inactive.</p>";
+                            }
+                        ?>
+                        <?php
+                                //login();
+                        ?>
                         <form action="../php/connection/login_submit.php" method="POST">
                             <div class="form-group input-group" style="margin-left: -90px; padding: 30px 30px; margin-bottom: 0px;">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
