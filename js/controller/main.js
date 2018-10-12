@@ -198,7 +198,8 @@ function load_branchviewbtn(){
 
 /* Charts */
 //Load Branch View
-function load_branchview(parent, div, grandparent){
+function load_branchview(parent, div, grandparent)
+{
 
     var rowdiv = document.createElement("div");
     rowdiv.classList.add("row");
@@ -241,8 +242,11 @@ function load_branchview(parent, div, grandparent){
     });
 
 }
-//Bamch Computer List
-function load_branchcomputerlist(parent, div, grandparent, $parentid){
+
+
+//Branch Computer List
+function load_branchcomputerlist(parent, div, grandparent, $parentid)
+{
 
     var newdiv  = document.createElement("div");
     newdiv.classList.add("row");
@@ -270,6 +274,40 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid){
     });
 
 }
+
+
+//Branch Computer Logs
+function load_branchcomputerlogs(parent, div, grandparent, $parentid)
+{
+
+    var logsdiv  = document.createElement("div");
+    logsdiv.classList.add("row");
+    logsdiv.classList.add("row-eq-height");
+    logsdiv.classList.add("col-xs-4");
+    logsdiv.classList.add("col-lg-12");
+    logsdiv.setAttribute("id","branchcomputer");
+    div.appendChild(logsdiv);
+
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var datalogs = data.split("|");
+            var loop = 0;
+
+            while(datalogs[loop]){
+                load_branchcomputerlogs_content(datalogs[loop],logsdiv,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
+
+    });
+
+}
+
+
 //Load Branch View Content
 function load_branchview_content(parent, div, grandparent){
 
@@ -308,6 +346,8 @@ function load_branchview_content(parent, div, grandparent){
         mbdiv.appendChild(footerdiv);
 
 }
+
+
 //Load Branch View Data List
 function load_branchcomputerlist_content(parent, div, grandparent){
 
@@ -342,6 +382,7 @@ function load_branchcomputerlist_content(parent, div, grandparent){
         cardfooter.classList.add("card-footer");
         card.appendChild(cardfooter);
 }
+
 
 //Load Branch View Data
 function load_branchbiew_data(list, parent){
