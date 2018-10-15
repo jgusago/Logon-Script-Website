@@ -377,6 +377,7 @@ function load_branchcomputerlist_content(parent, div, grandparent){
         card.appendChild(cardbody);
 
             load_branchcomputerlist_table(parent,cardbody);
+            load_branchcomputerlogs_table(parent,cardbody);
 
         var cardfooter = document.createElement('div');
         cardfooter.classList.add("card-footer");
@@ -433,7 +434,7 @@ function load_branchcomputerlist_table(parent, parentdiv){
 }
 
 //Computer Logs
-function load_branchcomputerlist_table(parent, parentdiv){
+function load_branchcomputerlogs_table(parent, parentdiv){
     $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
         parentdiv.innerHTML = data;
     });
