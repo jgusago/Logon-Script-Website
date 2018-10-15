@@ -358,8 +358,7 @@ function load_branchcomputerlist_content(parent, div, grandparent){
     var card = document.createElement("div");
     card.classList.add("card");
     card.classList.add("mb-3");
-    card.setAttribute("id",parent1);
-    document.getElementById("parent1").style.width = "-webkit-fill-available";
+    card.setAttribute("id",parent+"-CL");
 
     if (grandparent == "root"){
         card.setAttribute("hidden","true");
