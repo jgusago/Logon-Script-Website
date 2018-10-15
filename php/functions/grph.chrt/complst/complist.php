@@ -38,12 +38,17 @@ $result = $pdo->fetchAll();
 foreach($result as $row){
     $count++;
     $hostname = $row['hostname'];
+    $ip_address = $row['ip_address'];
+    if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
+        $status = "ACTIVE";
+    else
+        $status = "INACTIVE"
 
     echo "<tr>
         <td>$count</td>
         <td>$hostname</td>
-        <td>To be Added</td>
-        <td>To be Added</td>
+        <td>{$ip_address}</td>
+        <td>{$status}</td>
         <td>To be Added</td>
         <td>To be Added</td>
     </tr>";
