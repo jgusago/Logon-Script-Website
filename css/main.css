@@ -72,8 +72,11 @@ body.fixed-nav {
       padding: 0.5em 0; }
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:focus, #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:hover,
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:focus,
-      #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:hover {
-        text-decoration: none; }
+      #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:hover 
+      {
+        text-decoration: none; 
+        background: #64c13dad;
+      }
   #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a {
     padding-left: 1em; }
   #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a {
@@ -581,9 +584,4 @@ footer.sticky-footer {
   margin-right: -50%;
   transform: translate(-50%, -50%);
   z-index: 4380;
-}
-.collapse.navbar-collapse ul li a:hover
-{
-  color: black;
-  background: #64c13dad;
 }
