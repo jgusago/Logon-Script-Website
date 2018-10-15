@@ -359,6 +359,8 @@ function load_branchcomputerlist_content(parent, div, grandparent){
     card.classList.add("card");
     card.classList.add("mb-3");
     card.setAttribute("id",parent+"-CL");
+    card.style.width = "-webkit-fill-available";
+    card.style.marginLeft = "20px";
 
     if (grandparent == "root"){
         card.setAttribute("hidden","true");
