@@ -324,6 +324,11 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
       background: #f8f9fa; } }
 
+.nav-item a:hover
+{
+  background: #64c13dad;
+}
+
 .card-body-icon {
   position: absolute;
   z-index: 0;
