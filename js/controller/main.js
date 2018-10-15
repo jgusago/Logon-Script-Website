@@ -143,12 +143,6 @@ function load_branchviewbtn(){
             bvcbtntxt = document.createTextNode("Computer List");
             bvcbtn.appendChild(bvcbtntxt);
 
-            var element = document.getElementById("dtitle");
-            element.innerHTML = "Reports";
-
-            var element1 = document.getElementById("dtitle2");
-            element1.innerHTML = "Computer List";
-
             //Branch Computer Logs
             bvcomlogbtn = document.createElement("a");
             bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
@@ -174,7 +168,7 @@ function load_branchviewbtn(){
             anode = document.createTextNode(data[loop]);
             bva.appendChild(anode);
 
-            //Branch Computer
+            //Branch Computer List
             bvcnewli = document.createElement("li");
             bvcul.appendChild(bvcnewli);
 
@@ -185,6 +179,8 @@ function load_branchviewbtn(){
 
             anode = document.createTextNode(data[loop]);
             bvca.appendChild(anode);
+
+            document.getElementById("dtitle").innerHTML = "Reports";
 
             //Branch Computer Logs
             bvclogsnewli = document.createElement("li");
@@ -272,6 +268,7 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid)
 
             while(newdata[loop])
             {
+                document.getElementById("dtitle").innerHTML = "Reports";
                 load_branchcomputerlist_content(newdata[loop],newdiv,parent);
                 loop++;
             }
@@ -303,7 +300,8 @@ function load_branchcomputerlogs(parent, div, grandparent, $parentid)
             var datalogs = data.split("|");
             var loop = 0;
 
-            while(datalogs[loop]){
+            while(datalogs[loop])
+            {
                 load_branchcomputerlogs_content(datalogs[loop],logsdiv,parent);
                 loop++;
             }
@@ -439,6 +437,17 @@ function load_branchcomputerlist_table(parent, parentdiv)
     });
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
