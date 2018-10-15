@@ -69,13 +69,15 @@ body.fixed-nav {
     #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a,
     #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a {
       display: block;
-      padding: 0.5em 0; }
+      padding: 0.5em 0; 
+      background: #64c13dad;
+    
+    }
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:focus, #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:hover,
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:focus,
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:hover 
       {
         text-decoration: none; 
-        background: #64c13dad;
       }
   #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a {
     padding-left: 1em; }
@@ -83,9 +85,12 @@ body.fixed-nav {
     padding-left: 2em; }
   #mainNav .navbar-collapse .sidenav-toggler {
     display: none; }
-  #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link {
+  #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link
+   {
     position: relative;
-    min-width: 45px; }
+    min-width: 45px; 
+    background: #64c13dad;
+  }
     #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
       float: right;
       width: auto;
