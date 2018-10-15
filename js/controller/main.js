@@ -423,12 +423,23 @@ function load_branchbiew_data(list, parent){
 
 
 }
+
+//computer List
 function load_branchcomputerlist_table(parent, parentdiv){
     $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
         parentdiv.innerHTML = data;
     });
 
 }
+
+//Computer Logs
+function load_branchcomputerlist_table(parent, parentdiv){
+    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
+        parentdiv.innerHTML = data;
+    });
+
+}
+
 /* Tables */
 //Load Table List
 function load_list(status){
