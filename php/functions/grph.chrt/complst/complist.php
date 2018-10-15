@@ -42,7 +42,7 @@ foreach($result as $row){
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $status = "ACTIVE";
     else
-        $status = "INACTIVE"
+        $status = "INACTIVE";
 
     echo "<tr>
         <td>$count</td>
