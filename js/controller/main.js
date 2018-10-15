@@ -139,7 +139,8 @@ function load_branchviewbtn(){
             bvcbtn = document.createElement("a");
             bvcbtn.setAttribute("id","branchcomputerbtn");
             bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputer\")");
-            document.getElementById("dtitle").innerHTML = "Reports";
+            // bvcbtn.setAttribute("onclick","sidenav_click_event()");
+            // document.getElementById("dtitle").innerHTML = "Reports";
             bvclist.appendChild(bvbtn);
 
             bvcbtntxt = document.createTextNode("Computer List");
