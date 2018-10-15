@@ -168,7 +168,7 @@ function load_branchviewbtn(){
             anode = document.createTextNode(data[loop]);
             bva.appendChild(anode);
 
-            //Branch Computer
+            //Branch Computer List
             bvcnewli = document.createElement("li");
             bvcul.appendChild(bvcnewli);
 
@@ -179,6 +179,8 @@ function load_branchviewbtn(){
 
             anode = document.createTextNode(data[loop]);
             bvca.appendChild(anode);
+
+            document.getElementById("dtitle").innerHTML = "Reports";
 
             //Branch Computer Logs
             bvclogsnewli = document.createElement("li");
@@ -247,7 +249,7 @@ function load_branchview(parent, div, grandparent)
 //Branch Computer List
 function load_branchcomputerlist(parent, div, grandparent, $parentid)
 {
-
+    
     var newdiv  = document.createElement("div");
     newdiv.classList.add("row");
     newdiv.classList.add("row-eq-height");
@@ -264,7 +266,9 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid)
             var newdata = data.split("|");
             var loop = 0;
 
-            while(newdata[loop]){
+            while(newdata[loop])
+            {
+                document.getElementById("dtitle").innerHTML = "Reports";
                 load_branchcomputerlist_content(newdata[loop],newdiv,parent);
                 loop++;
             }
@@ -296,7 +300,8 @@ function load_branchcomputerlogs(parent, div, grandparent, $parentid)
             var datalogs = data.split("|");
             var loop = 0;
 
-            while(datalogs[loop]){
+            while(datalogs[loop])
+            {
                 load_branchcomputerlogs_content(datalogs[loop],logsdiv,parent);
                 loop++;
             }
@@ -377,7 +382,6 @@ function load_branchcomputerlist_content(parent, div, grandparent){
         card.appendChild(cardbody);
 
             load_branchcomputerlist_table(parent,cardbody);
-            load_branchcomputerlogs_table(parent,cardbody);
 
         var cardfooter = document.createElement('div');
         cardfooter.classList.add("card-footer");
@@ -425,21 +429,37 @@ function load_branchbiew_data(list, parent){
 
 }
 
-//computer List
-function load_branchcomputerlist_table(parent, parentdiv){
+
+function load_branchcomputerlist_table(parent, parentdiv)
+{
     $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
         parentdiv.innerHTML = data;
     });
 
 }
 
-//Computer Logs
-function load_branchcomputerlogs_table(parent, parentdiv){
-    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
-        parentdiv.innerHTML = data;
-    });
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Tables */
 //Load Table List
