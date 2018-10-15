@@ -40,9 +40,9 @@ foreach($result as $row){
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
-        $status = "ACTIVE";
+        $status = "online";
     else
-        $status = "INACTIVE";
+        $status = "offline";
 
     echo "<tr>
         <td>$count</td>
