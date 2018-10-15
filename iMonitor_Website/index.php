@@ -51,7 +51,7 @@ if(isset($_SESSION["userid"])) {
                             <button type="submit" name="submit" class="btn btn-primary btn-block" style="width:70%; margin-left:50px; position: inherit;">Login</button></a>
                         </div>
                         <div class="form-group text-center">
-                            <a href="#" style="color:white;">Forgot Password</a>
+                            <!-- <a href="#" style="color:white;">Forgot Password</a> -->
                         </div>
                     </form>
                     <!-- <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1> -->
