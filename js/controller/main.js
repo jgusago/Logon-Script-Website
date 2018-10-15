@@ -247,7 +247,12 @@ function load_branchview(parent, div, grandparent)
 //Branch Computer List
 function load_branchcomputerlist(parent, div, grandparent, $parentid)
 {
+    var element = document.getElementById("dtitle");
+    element.innerHTML = "Reports";
 
+    var element1 = document.getElementById("dtitle2");
+    element1.innerHTML = "Computer List";
+    
     var newdiv  = document.createElement("div");
     newdiv.classList.add("row");
     newdiv.classList.add("row-eq-height");
@@ -377,7 +382,6 @@ function load_branchcomputerlist_content(parent, div, grandparent){
         card.appendChild(cardbody);
 
             load_branchcomputerlist_table(parent,cardbody);
-            load_branchcomputerlogs_table(parent,cardbody);
 
         var cardfooter = document.createElement('div');
         cardfooter.classList.add("card-footer");
@@ -425,21 +429,26 @@ function load_branchbiew_data(list, parent){
 
 }
 
-//computer List
-function load_branchcomputerlist_table(parent, parentdiv){
+
+function load_branchcomputerlist_table(parent, parentdiv)
+{
     $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
         parentdiv.innerHTML = data;
     });
 
 }
 
-//Computer Logs
-function load_branchcomputerlogs_table(parent, parentdiv){
-    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
-        parentdiv.innerHTML = data;
-    });
 
-}
+
+
+
+
+
+
+
+
+
+
 
 /* Tables */
 //Load Table List
