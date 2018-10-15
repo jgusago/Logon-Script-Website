@@ -24,7 +24,6 @@ echo "
 <th>No.</th>
 <th>Computer Name</th>
 <th>IP Addtress</th>
-<th>Platform</th>
 <th>Status</th>
 <th>Remarks</th>
 <th>Agent Version</th>
@@ -44,7 +43,6 @@ foreach($result as $row){
     echo "<tr>
         <td>$count</td>
         <td>$hostname</td>
-        <td>To be Added</td>
         <td>To be Added</td>
         <td>To be Added</td>
         <td>To be Added</td>
