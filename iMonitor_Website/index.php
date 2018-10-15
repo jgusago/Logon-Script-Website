@@ -52,6 +52,7 @@ if(isset($_SESSION["userid"])) {
                         </div>
                         <div class="form-group text-center">
                             <!-- <a href="#" style="color:white;">Forgot Password</a> -->
+                            <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px;">SKYLUSTER TECHNOLOGY INC.</h1> -->
                         </div>
                     </form>
                     <!-- <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1> -->
