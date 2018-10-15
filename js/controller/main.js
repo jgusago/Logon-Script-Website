@@ -112,6 +112,7 @@ function load_branchviewbtn(){
             bvcomlogbtn.setAttribute("href","#rootIII");
 
             bvcomlogs.appendChild(bvcomlogbtn);
+
                 bvcomlogsbtntxt = document.createTextNode("Computer Logs");
                 bvcomlogbtn.appendChild(bvcomlogsbtntxt);
             
@@ -134,16 +135,17 @@ function load_branchviewbtn(){
             bvbtntxt = document.createTextNode("Branch View");
             bvbtn.appendChild(bvbtntxt);
 
-            //Branch Computer
+            // Computer List
             bvcbtn = document.createElement("a");
             bvcbtn.setAttribute("id","branchcomputerbtn");
             bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputer\")");
+            document.getElementById("dtitle").innerHTML = "Reports";
             bvclist.appendChild(bvbtn);
 
             bvcbtntxt = document.createTextNode("Computer List");
             bvcbtn.appendChild(bvcbtntxt);
 
-            //Branch Computer Logs
+            // Computer Logs
             bvcomlogbtn = document.createElement("a");
             bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
             bvcomlogbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputerlogs\")");
@@ -179,8 +181,6 @@ function load_branchviewbtn(){
 
             anode = document.createTextNode(data[loop]);
             bvca.appendChild(anode);
-
-            document.getElementById("dtitle").innerHTML = "Reports";
 
             //Branch Computer Logs
             bvclogsnewli = document.createElement("li");
@@ -268,7 +268,6 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid)
 
             while(newdata[loop])
             {
-                document.getElementById("dtitle").innerHTML = "Reports";
                 load_branchcomputerlist_content(newdata[loop],newdiv,parent);
                 loop++;
             }

@@ -582,3 +582,8 @@ footer.sticky-footer {
   transform: translate(-50%, -50%);
   z-index: 4380;
 }
+.collapse.navbar-collapse ul li a:hover
+{
+  color: black;
+  background: #64c13dad;
+}
