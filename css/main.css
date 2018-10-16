@@ -247,7 +247,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   margin-top:150px;
 }
-#settingsDropdown
+.dropdown-menu
 {
   width: -webkit-fill-available;
 }
