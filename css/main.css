@@ -124,7 +124,9 @@ body.fixed-nav {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
-      margin-top: 56px; }
+      margin-top: 70px; 
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
       #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
         width: 250px;
         padding: 0; }
@@ -245,7 +247,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   margin-top:150px;
 }
-#settingsDropdown .dropdown-menu.show
+#settingsDropdown
 {
   width: -webkit-fill-available;
 }
