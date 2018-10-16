@@ -233,6 +233,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   width: auto;
   text-align: center;
 }
+.nav-link a:focus
+{
+  color: black;
+}
 .modal-header
 {
     display: flex;
