@@ -226,7 +226,11 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   background: #b7ab22f2;
 }
-
+.fa-fw 
+{
+  width: auto;
+  text-align: center;
+}
 #sidenavToggler i {
   font-weight: 800; }
 
