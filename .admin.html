@@ -7,23 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>iMonitor Management</title>
+  <title>Monitoring</title>
   <!-- Bootstrap core CSS-->
   <link href="design/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="design/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-  <!-- Controller Script -->
-  <script type="text/javascript" src="js/controller/ctrl.js"></script>
-  <!--Custom Style-->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="startup();loadsession();announcement();">
+<body class="sticky-footer fixed-nav bg-light" id="page-top" onload="load()">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="#">IT OM PH iMonitor Management</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav" style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">
+    <img class="nav-logo" src="iMonitor_Website/icons/sky_luster.png" height="50px" width="45px" />
+    <a class="navbar-brand" href="#">Monitoring</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,169 +30,62 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <!-- Dashboard -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="#" id="dashboard">                                                                                                                        
+          <a class="nav-link" href=".superadmin.html" id="a-home" onclick="myFucntion(this)"id="a-home" onclick="myFucntion(this)">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
-        <!-- ^ End of Dashboard -->
 
-        <!-- Charts -->
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#charts" data-parent="#exampleAccordion">
-          <i class="fa fa-fw fa-area-chart"></i>
-          <span class="nav-link-text">Charts and Graphs</span>
-        </a>
-        <!-- Second Level Tab -->
-        <ul class="sidenav-second-level collapse" id="charts">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-              <a class="nav-link" id="" href="#">
-              <i class="fa fa-fw fa-server"></i>
-              <span class="nav-link-text">Server Status</span>
+        <!-- Graphs and Charts -->
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Graphs and Charts">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCharts" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Reports</span>
           </a>
-          </li>
-          <li>
-            <a href="#" id="" class="active">
-                  <i class="fa fa-fw fa-area-chart"></i>
-                  <span class="nav-link-text">Resolve Data View</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" id="">
-                  <i class="fa fa-fw fa-area-chart"></i>
-                  <span class="nav-link-text">Department View</span>
-            </a>
-          </li>
-          <li>
-            <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-            <!-- Third Level Tab -->
-            <ul class="sidenav-third-level collapse" id="collapseMulti2">
-              <li>
-                <a href="#">Third Level Item</a>
+
+          <!-- Charts Collapse -->
+          <ul class="sidenav-second-level collapse" id="collapseCharts">
+              <li id="branchcomputerlist" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
               </li>
-              <li>
-                <a href="#">Third Level Item</a>
+              <li id="branchcomplogs" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
               </li>
-              <li>
-                <a href="#">Third Level Item</a>
+              <li id="branchviewlist" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer View">
               </li>
-            </ul>
-            <!-- Third Level Tab End -->
-          </li>
-        </ul>
-        <!-- Second Level Tab End -->
-      </li>
-      <!-- ^ Menu Level Tab -->
-
-
-        <!-- Tables -->
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#tables" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
-          </a>
-          <!-- Second Level Tab -->
-          <ul class="sidenav-second-level collapse" id="tables">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" id="tablebtn" href="#">
-                <i class="fa fa-fw fa-table"></i>
-                <span class="nav-link-text">Imonitor View</span>
-            </a>
-            </li>
-            <li>
-              <a href="#" id="resolvebtn">
-                    <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Resolve Data View</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">Menu Levels</a>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-              <!-- Third Level Tab -->
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-              </ul>
-              <!-- Third Level Tab End -->
-            </li>
-          </ul>
-          <!-- Second Level Tab End -->
-        </li>
-        <!-- ^ Menu Level Tab -->
-
-        
-
-
-        <!-- Tables -->
-
-        <!-- ^ End of Table -->
-
-        <!-- Components Tab -->
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#components" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="components">
-            <li>
-              <a href="#" id="compnavbarbtn">Navbar</a>
-            </li>
-            <li>
-              <a href="#">Cards</a>
-            </li>
           </ul>
         </li>
-        <!-- ^ End of Components Tab -->
+        <!-- End of Charts and Graphs -->
 
-        <!-- Sample Tab -->
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile and Account">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-user"></i>
-            <span class="nav-link-text">Profile and Account</span>
+            <span class="nav-link-text">Profile and Accounts</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="#" ><i class="fa fa-fw fa-address-book"></i><span class="nav-link-text">Profile Settings</span></a>
+              <a href="#" id="accountmngmtlst">Account Management</a>
             </li>
             <li>
-              <a href="#" id="adduser"><i class="fa fa-fw fa-user-plus"></i><span class="nav-link-text">Add User</span></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-fw fa-cog"></i><span class="nav-link-text">User Management</span></a>
-            </li>
-            <li>
-              <a href="#" id="resetuserpass"><i class="fa fa-fw fa-unlock-alt"></i><span class="nav-link-text">Reset User Password</span></a>
+              <a href="#" id="profilesttingslst">Profile Settings</a>
             </li>
           </ul>
         </li>
-        <!-- ^ End of Sample Tab -->
-
-        <!-- Menu Level Tab -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">Settings</span>
           </a>
-          <!-- Second Level Tab -->
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#" id="treeviewbtn">Tree View</a>
+              <a href="#" onclick="dashboard_click_event('branchviewsettings')">Branch View Settings</a>
             </li>
             <li>
-              <a href="#">Menu Levels</a>
+              <a href="#">Second Level Item</a>
             </li>
             <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-              <!-- Third Level Tab -->
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapdatased" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
               <ul class="sidenav-third-level collapse" id="collapseMulti2">
                 <li>
                   <a href="#">Third Level Item</a>
@@ -205,23 +97,16 @@
                   <a href="#">Third Level Item</a>
                 </li>
               </ul>
-              <!-- Third Level Tab End -->
             </li>
           </ul>
-          <!-- Second Level Tab End -->
         </li>
-        <!-- ^ Menu Level Tab -->
-        <!-- Link Tab -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
         </li>
-        <!-- ^ End of link Tab -->
       </ul>
-
-      <!-- Sidenave Toggler -->
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
@@ -229,11 +114,7 @@
           </a>
         </li>
       </ul>
-      <!-- End of Sidenave Toggler -->
-
-      <!-- Navbar Top -->
       <ul class="navbar-nav ml-auto">
-        
 
         <!-- Messages -->
         <li class="nav-item dropdown">
@@ -270,79 +151,100 @@
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
-        <!-- ^ End of Messages -->
 
-        <!-- Message Warning -->
+        <!-- Alerts -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-bell"></i>
+            <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label>3</label></i>
             <span class="d-lg-none">Alerts
-              <!-- Notificaiton Count -->
-                <span class="badge badge-pill badge-warning" id="notificationcountmobile"></span>
-            <!-- Notification Count End-->
+              <span class="badge badge-pill badge-warning">6 New</span>
             </span>
             <span class="indicator text-warning d-none d-lg-block">
-              <!-- Notification icon -->
-                  <span class="badge badge-pill badge-warning" id="notificationcountweb"></span>
-              <!-- Notification icon end -->
+              <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown" id="notificationview">
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Sample</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all alerts</a>
           </div>
         </li>
-        <!-- End of Message Warning -->
-
-        <!-- profilename-->
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" value="your name" id="profilename">
-              <i class="fa fa-fw fa-user"></i></a>
-        </li>
-
-        <!-- Search bar -->
-        <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </form>
-        </li>
-        <!-- ^ End of Search Bar -->
 
         <!-- Logout -->
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
+            <i class="fa fa-fw fa-user">Welcome: Administrator</i>
+            <span class="d-lg-none">User</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="settingsDropdown">
+              <h6 class="dropdown-header"><i class="glyphicon glyphicon-cog"></i>Settings</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Account Settings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
+              </a>
+          </div>
         </li>
-        <!-- ^ End of Logout -->
+
       </ul>
-      <!-- End of Navbar Top -->
     </div>
   </nav>
   <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#" id="dtitle">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active" id="dtitle2">My Dashboard</li>
+      </ol>
+    </div>
 
-    <!-- View -->
-    <div class="container-fluid" id="view" hidden>
+    <!-- Content View -->
+    <div class="container-fluid" id="contentview">
+    </div>
+    <!-- Overlay -->
+    <div id="overlay" onclick="overlay();">
+    </div>
+    <div id="miniwindow">
+      <div class="card">
+        <div class="card-header" id="mnch"></div>
+        <div class="card-body" id="mncb"></div>
+        <div class="card-footer small text-muted" id="mncf"></div>
+
+      </div>
+    </div>
+    <div id="loaderdiv">
+        <div class="lds-css ng-scope">
+            <div style="width:100%;height:100%" class="lds-wedges"><div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div></div>
+        </div>
+    </div>
+
+    <!-- Progress Bar-->
+    <div class="progress" id="progressbardiv">
+        <div class="hexagon"><img src="img/sky_luster.png"></div>
+        <div class="text"><p>SKYLUSTER</p></div>
+        <div id="progressbar">
+        <div id="processingbar"></div>
+    <p id="loadingtext">Loading...</p>
+    </div>
 
     </div>
-    <!-- End of View -->
-
-    <!-- Loading -->
-    <div class="container-fluid" id="loadingview" hidden>
-      <img src="img/loading.gif" class="" style="display: block;margin-left: auto;margin-right: auto;margin-top: 15%; margin-bottom: 15%">
-
-    </div>
-    <!-- Loading End -->
 
     <!-- Footer -->
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Skyluster Technology Inc 2018</small>
+          <small>Copyright © Your Website 2018</small>
         </div>
       </div>
     </footer>
@@ -350,7 +252,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -361,52 +262,30 @@
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-body">Are you sure you want to logout?</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="#" id="logout">Logout</a>
+            <a class="btn btn-warning" href="login.html">Logout</a>
           </div>
         </div>
       </div>
-    </div>  
-    <!-- End of Logout Modal-->
-
-    <!-- Overlay-->
-    <div class="modal fade" id="overlay" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">Are You Sure to Remove this one?<p id="overlaydataprint"Sample Should be here></p></div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-              <a class="btn btn-primary" href="#" id="overlayyesbtn">Yes</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    <!-- End of Overlay -->
-
+    </div>
+    <div id="scripts">
     <!-- Bootstrap core JavaScript-->
     <script src="design/jquery/jquery.min.js"></script>
     <script src="design/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="design/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/controller/mainctrl.min.js"></script>
-    <!-- Controller Script -->
-    <script type="text/javascript" src="js/controller/ctrl.js"></script>
-    <script src="design/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="design/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/jssource/jquery/jquery-3.3.1.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="design/chart.js/Chart.min.js"></script>
-  <!-- /.content-wrapper-->
+    <script src="design/datatables/jquery.dataTables.js"></script>
+    <script src="design/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/controller/main-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script type="text/javascript" src="js/controller/admin.js" async></script>
+    </div>
   </div>
-
 </body>
 
 </html>
