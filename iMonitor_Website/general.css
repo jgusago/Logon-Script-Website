@@ -131,13 +131,16 @@ a, a:hover, a:focus {
 {
     padding: 20px 0;
 }
-
+#branch li a
+{
+    text-align: -webkit-center;
+}
 #sidebar ul li a {
     padding: 20px;
     font-size: 2em;
     display: block;
     font-size: 15px;
-    text-align: -webkit-center;
+    /* text-align: -webkit-center; */
 }
 #sidebar ul li a:hover {
     color: black;
