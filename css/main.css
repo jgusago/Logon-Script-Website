@@ -251,9 +251,35 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   margin-top:150px;
 }
-#settingsDropdown1 .dropdown-menu
+.dropdown-menu1.show 
 {
+  display: block;
   width: -webkit-fill-available;
+}
+.dropdown-menu1
+{
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+}
+.navbar-nav .dropdown-menu1 
+{
+  float: none;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu1 
+{
+  position: absolute;
 }
 .navbar-expand-lg .navbar-nav .nav-link 
 {
