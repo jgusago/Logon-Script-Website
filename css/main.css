@@ -236,13 +236,29 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
 }
-#sidenavToggler i {
-  font-weight: 800; }
+.btn-warning 
+{
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.modal-footer 
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5px;
+  border-top: 1px solid #e9ecef;
+}
+#sidenavToggler i 
+{
+  font-weight: 800; 
+}
 
 .navbar-sidenav-tooltip.show {
   display: none; }
