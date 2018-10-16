@@ -338,6 +338,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   background: #64c13dad;
 }
+.nav-item dropdown
+{
+  width:10em;
+}
 
 .card-body-icon {
   position: absolute;
