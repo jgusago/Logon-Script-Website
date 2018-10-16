@@ -241,6 +241,19 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
 }
+.modal-content
+{
+  margin-top:150px;
+}
+#settingsDropdown .dropdown-menu.show
+{
+  width: -webkit-fill-available;
+}
+.navbar-expand-lg .navbar-nav .nav-link 
+{
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 .btn-warning 
 {
   color: #fff;
