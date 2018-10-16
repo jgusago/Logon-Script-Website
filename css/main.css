@@ -222,7 +222,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     .content-wrapper {
       margin-left: 250px; } }
 
-.navbar-nav .navbar-sidenav li:active
+.navbar-nav .navbar-sidenav li.active
 {
   background: #b7ab22f2;
 }
