@@ -17,6 +17,7 @@ function load(){
     load_branchcomputerlist("root", branchview, "0","root");
     load_branchcomputerlogs("root", branchview, "0","root");
 
+
     /* ----- Tables ----- */
     //load_activelist
     load_list("active");
@@ -28,6 +29,8 @@ function load(){
 
     /* ----- Account Settings ----- */
     accountmanagement();
+
+    load_useracct();
 
 
     /* ----- Loading ----- */
@@ -481,7 +484,73 @@ function load_branchcomputerlogs_table(parent, parentdiv)
     });
 
 }
+// User Accounts
 
+function load_useraccounts(parent, div, grandparent, $parentid)
+{
+    
+    var newdivs  = document.createElement("div");
+    newdivs.classList.add("row");
+    newdivs.classList.add("row-eq-height");
+    newdivs.classList.add("col-xs-4");
+    newdivs.classList.add("col-lg-12");
+    newdivs.setAttribute("id","userAcct");
+    div.appendChild(newdivs);
+
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var newdatas = data.split("|");
+            var loop = 0;
+
+            while(newdata[loop])
+            {
+                load_useracct_content(newdatas[loop],newdivs,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
+
+    });
+
+}
+
+//Load Branch View Data List
+function load_useracct_content(parent, div, grandparent){
+
+    var card1 = document.createElement("div");
+    card1.classList.add("card");
+    card1.classList.add("mb-3");
+    card1.setAttribute("id",parent+"-UA");
+
+    if (grandparent == "root"){
+        card1.setAttribute("hidden","true");
+        card1.classList.add("contentdataview");
+    }
+    div.appendChild(card1);
+
+        //Create Card Header
+        var cardhead = document.createElement("div");
+        cardhead.classList.add("card-header");
+        card1.appendChild(cardhead);
+
+            //Header text Node
+            var textnode = document.createTextNode(parent);
+            cardhead.appendChild(textnode);
+
+        // Create Card Body
+        var cardbody = document.createElement("div");
+        cardbody.classList.add("card-body");
+        card1.appendChild(cardbody);
+
+            load_branchcomputerlist_table(parent,cardbody);
+
+        var cardfooter = document.createElement('div');
+        cardfooter.classList.add("card-footer");
+        card1.appendChild(cardfooter);
+}
 
 
 
@@ -1111,6 +1180,7 @@ function addnewchild(){
                 settings_branchview();
                 load_branchview("root", branchview, "0");
                 load_branchcomputerlist("root", branchview, "0","rootII");
+                load_branchcomputerlogs("root", branchview, "0","rootIII");
 
                 setTimeout(function(){
                     dashboard_click_event('branchviewsettings');
