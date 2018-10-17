@@ -6,6 +6,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		echo "ID|User ID|Name|Department|Position|Status|Role";
 
 		$sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
+
+
+		
 		foreach ($db->query($sql) as $row) {
 	
 			$id = $row['id'] ?: 'null';
@@ -17,6 +20,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 			$role = $row['role'] ?: 'All Running';
 		
 			echo "#$id|$userid|$name|$department|$position|$status|$role";
+
+			$row = explode('|', $row);
+			foreach($row as $row){
+    			echo $row.'<br>';  
+			}
 
 		}
 	?>
