@@ -1,4 +1,4 @@
-/* Loading Functions */
+/* ----------------------- Loads ----------------------- */
 function load(){
     var branchview = document.getElementById("contentview");
     var loading = document.getElementById("processingbar");
@@ -175,3 +175,6 @@ function load_branchviewbtn(){
 
     });
 }
+
+/* Buttons */
+/* ----------------------- Loads ----------------------- */

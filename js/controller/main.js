@@ -14,8 +14,8 @@ function load(){
     /* ----- Charts ----- */
     //load Branch View
     load_branchview("root", branchview, "0");
-    load_branchcomputerlist("root", branchview, "0","rootII");
-    load_branchcomputerlist("root", branchview, "0","rootIII");
+    load_branchcomputerlist("root", branchview, "0","root");
+    load_branchcomputerlogs("root", branchview, "0","root");
 
     /* ----- Tables ----- */
     //load_activelist
@@ -189,7 +189,7 @@ function load_branchviewbtn(){
             bvclog.appendChild(bvclogsnewli);
 
             bvcologs = document.createElement("a");
-            bvcologs.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
+            bvcologs.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CLG\")");
             bvclogsnewli.appendChild(bvcologs);
 
             anode = document.createTextNode(data[loop]);
@@ -257,7 +257,7 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid)
     newdiv.classList.add("row-eq-height");
     newdiv.classList.add("col-xs-4");
     newdiv.classList.add("col-lg-12");
-    newdiv.setAttribute("id","branchcomputer");
+    newdiv.setAttribute("id","branchcomputer-CL");
     div.appendChild(newdiv);
 
     //Get Data
@@ -290,7 +290,7 @@ function load_branchcomputerlogs(parent, div, grandparent, $parentid)
     logsdiv.classList.add("row-eq-height");
     logsdiv.classList.add("col-xs-4");
     logsdiv.classList.add("col-lg-12");
-    logsdiv.setAttribute("id","branchcomputer");
+    logsdiv.setAttribute("id","branchcomputer-CLG");
     div.appendChild(logsdiv);
 
     //Get Data
@@ -395,7 +395,7 @@ function load_branchcomputerlogs_content(parent, div, grandparent){
     var cards = document.createElement("div");
     cards.classList.add("card");
     cards.classList.add("mb-3");
-    cards.setAttribute("id",parent+"-CL");
+    cards.setAttribute("id",parent+"-CLG");
 
     if (grandparent == "root"){
         cards.setAttribute("hidden","true");
