@@ -10,22 +10,37 @@ echo "
 <thead>
 <tr role='row'>
 <th>No.</th>
+<th>User</th>
 <th>Computer Name</th>
+<th>Domain</th>
 <th>IP Addtress</th>
-<th>Status</th>
-<th>Remarks</th>
-<th>Agent Version</th>
+<th>Date Modified</th>
+<th>iMonitor Status</th>
+<th>Services Not Found</th>
+<th>SysSetting File</th>
+<th>Server IP</th>
+<th>Connection Status</th>
+<th>Branch</th>
+<th>Scan Time</th>
+
 </tr>
 </thead>
 
 <tfoot>
 <tr role='row'>
 <th>No.</th>
+<th>User</th>
 <th>Computer Name</th>
+<th>Domain</th>
 <th>IP Addtress</th>
-<th>Status</th>
-<th>Remarks</th>
-<th>Agent Version</th>
+<th>Date Modified</th>
+<th>iMonitor Status</th>
+<th>Services Not Found</th>
+<th>SysSetting File</th>
+<th>Server IP</th>
+<th>Connection Status</th>
+<th>Branch</th>
+<th>Scan Time</th>
 </tr>
 </tfoot>";
 
@@ -37,8 +52,19 @@ $pdo->execute();
 $result = $pdo->fetchAll();
 foreach($result as $row){
     $count++;
+    $user = $row['user'];
     $hostname = $row['hostname'];
+    $domain = $row['domain_name'];
     $ip_address = $row['ip_address'];
+    $ip_date = = $row['ip_date_modified'];
+    $imonitor_status = $row['iMonitor_Status'];
+    $services = $row['services'];
+    $sysSetting = $row['sysSetting_File'];
+    $server_ip = $row['serverIP'];
+    $port_status = $row['connection_status'];
+    $branch = $row['branch'];
+    $scan_time = $row['scan_time'];
+    
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $status = "On-line";
     else
@@ -46,11 +72,18 @@ foreach($result as $row){
 
     echo "<tr>
         <td>$count</td>
-        <td>$hostname</td>
+        <td>$user</td>
+        <td>{$hostname}</td>
+        <td>{$domain}</td>
         <td>{$ip_address}</td>
-        <td>{$status}</td>
-        <td>To be Added</td>
-        <td>To be Added</td>
+        <td>{$ip_date}</td>
+        <td>{$imonito_status}</td>
+        <td>{$services}</td>
+        <td>{$sysSetting}</td>
+        <td>{$server_ip}</td>
+        <td>{$port_status}</td>
+        <td>{$branch}</td>
+        <td>{$scan_time}</td>
     </tr>";
 }
 echo "</table></div>";
