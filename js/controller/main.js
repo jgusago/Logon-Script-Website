@@ -1181,11 +1181,6 @@ function loadtableuseraccount(athead, atfoot, atdata){
 
         var content = document.createTextNode(data);
         newuseraccdiv.appendChild(content);
-
-        datarw = data.split("#");
-        datarwlgth = datarw.length;
-        thdata = datarw[0].split("|");
-        thdatalgnth = thdata.length;
     });
 
     
