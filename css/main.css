@@ -124,7 +124,7 @@ body.fixed-nav {
       -ms-flex-direction: column;
       flex-direction: column;
       margin-top: 70px; 
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
     }
       #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
         width: 250px;
@@ -184,7 +184,7 @@ body.fixed-nav {
 #mainNav.fixed-top.navbar-light .sidenav-toggler {
   background-color: #dee2e6; }
   #mainNav.fixed-top.navbar-light .sidenav-toggler a i {
-    color: rgba(0, 0, 0, 0.5); }
+    color: white; }
 
 body.sidenav-toggled #mainNav.fixed-top .sidenav-toggler {
   overflow-x: hidden;
@@ -236,6 +236,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   color: black;
   background: #b7ab22f2;
+}
+.nav-link.text-center
+{
+  background-color: #113b65;
 }
 .modal-header
 {
@@ -431,7 +435,8 @@ footer.sticky-footer {
   bottom: 0;
   width: 100%;
   height: 56px;
-  background-color: #e9ecef;
+  background-color: #113b65;
+  color: white;
   line-height: 55px; }
   @media (min-width: 992px) {
     footer.sticky-footer {

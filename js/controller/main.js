@@ -148,12 +148,6 @@ function load_branchviewbtn(){
             bvcbtntxt = document.createTextNode("Computer List");
             bvcbtn.appendChild(bvcbtntxt);
 
-            var element = document.getElementById("dtitle");
-            element.innerHTML = "Reports";
-
-            var elements = document.getElementById("dtitle2");
-            element.innerHTML = "Computer List";
-
             // Computer Logs
             bvcomlogbtn = document.createElement("a");
             bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
@@ -190,12 +184,6 @@ function load_branchviewbtn(){
 
             anode = document.createTextNode(data[loop]);
             bvca.appendChild(anode);
-
-            var element = document.getElementById("dtitle");
-            element.innerHTML = "Reports";
-
-            var elements = document.getElementById("dtitle2");
-            element.innerHTML = "Computer List";
 
             //Branch Computer Logs
             bvclogsnewli = document.createElement("li");
