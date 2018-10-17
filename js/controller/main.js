@@ -1182,23 +1182,6 @@ function loadtableuseraccount(athead, atfoot, atdata){
     
 }
 
-//Load Monitoring: Computer Logs
-function loadtableuseraccount(athead, atfoot, atdata){
-    var branchview = document.getElementById("contentview");
-
-    var newuseraccdiv = document.createElement("div");
-    branchview.appendChild(newuseraccdiv);
-
-    $.post("comp_logs_fetch.php",function(data){
-
-        var content = document.createTextNode(data);
-        newuseraccdiv.appendChild(content);
-
-    });
-
-    
-}
-
 /* 
 
 
