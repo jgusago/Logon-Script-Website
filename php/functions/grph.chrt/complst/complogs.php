@@ -56,7 +56,7 @@ foreach($result as $row){
     $hostname = $row['hostname'];
     $domain = $row['domain_name'];
     $ip_address = $row['ip_address'];
-    $ip_date = = $row['ip_date_modified'];
+    $ip_date = $row['ip_date_modified'];
     $imonitor_status = $row['iMonitor_Status'];
     $services = $row['services'];
     $sysSetting = $row['sysSetting_File'];
