@@ -15,6 +15,7 @@ function load(){
     //load Branch View
     load_branchview("root", branchview, "0");
     load_branchcomputerlist("root", branchview, "0","rootII");
+    load_branchcomputerlist("root", branchview, "0","rootIII");
 
     /* ----- Tables ----- */
     //load_activelist
@@ -188,7 +189,7 @@ function load_branchviewbtn(){
             bvclog.appendChild(bvclogsnewli);
 
             bvcologs = document.createElement("a");
-            bvcologs.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CLogs\")");
+            bvcologs.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
             bvclogsnewli.appendChild(bvcologs);
 
             anode = document.createTextNode(data[loop]);
@@ -388,6 +389,41 @@ function load_branchcomputerlist_content(parent, div, grandparent){
         card.appendChild(cardfooter);
 }
 
+// Load Branch View Data Logs
+function load_branchcomputerlogs_content(parent, div, grandparent){
+
+    var cards = document.createElement("div");
+    cards.classList.add("card");
+    cards.classList.add("mb-3");
+    cards.setAttribute("id",parent+"-CL");
+
+    if (grandparent == "root"){
+        cards.setAttribute("hidden","true");
+        cards.classList.add("contentdataview");
+    }
+    div.appendChild(cards);
+
+        //Create Card Header
+        var cardheads = document.createElement("div");
+        cardheads.classList.add("card-header");
+        cards.appendChild(cardheads);
+
+            //Header text Node
+            var textnodes = document.createTextNode(parent);
+            cardheads.appendChild(textnodes);
+
+        // Create Card Body
+        var cardsbody = document.createElement("div");
+        cardsbody.classList.add("card-body");
+        cards.appendChild(cardsbody);
+
+            load_branchcomputerlogs_table(parent,cardbody);
+
+        var cardsfooter = document.createElement('div');
+        cardsfooter.classList.add("card-footer");
+        cards.appendChild(cardsfooter);
+}
+
 
 //Load Branch View Data
 function load_branchbiew_data(list, parent){
@@ -433,6 +469,14 @@ function load_branchbiew_data(list, parent){
 function load_branchcomputerlist_table(parent, parentdiv)
 {
     $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
+        parentdiv.innerHTML = data;
+    });
+
+}
+
+function load_branchcomputerlogs_table(parent, parentdiv)
+{
+    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
         parentdiv.innerHTML = data;
     });
 

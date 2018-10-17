@@ -235,6 +235,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 .nav-link a:focus
 {
   color: black;
+  background: #b7ab22f2;
 }
 .modal-header
 {
