@@ -1165,6 +1165,23 @@ function pagination(parent){
     
 }
 
+//Load Monitoring: User Accounts
+function loadtableuseraccount(athead, atfoot, atdata){
+    var branchview = document.getElementById("contentview");
+
+    var newuseraccdiv = document.createElement("div");
+    branchview.appendChild(newuseraccdiv);
+
+    $.post("user_account_fetch.php",function(data){
+
+        var content = document.createTextNode(data);
+        newuseraccdiv.appendChild(content);
+
+    });
+
+    
+}
+
 /* 
 
 

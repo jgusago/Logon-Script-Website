@@ -2,15 +2,6 @@
 error_reporting(0);
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-?>
-<!DOCTYPE html>
-<html>
-  <head>
-
-  </head>
-
-  <body>
-    <?php
 
 		echo "ID|User ID|Name|Department|Position|Status|Role";
 
@@ -29,6 +20,3 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 		}
 	?>
-
-  </body>
-</html>
