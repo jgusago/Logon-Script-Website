@@ -64,11 +64,6 @@ foreach($result as $row){
     $port_status = $row['connection_status'];
     $branch = $row['branch'];
     $scan_time = $row['scan_time'];
-    
-    if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
-        $status = "On-line";
-    else
-        $status = "Off-line";
 
     echo "<tr>
         <td>$count</td>
