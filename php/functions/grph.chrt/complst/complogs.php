@@ -72,7 +72,7 @@ foreach($result as $row){
         <td>{$domain}</td>
         <td>{$ip_address}</td>
         <td>{$ip_date}</td>
-        <td>{$imonito_status}</td>
+        <td>{$imonitor_status}</td>
         <td>{$services}</td>
         <td>{$sysSetting}</td>
         <td>{$server_ip}</td>

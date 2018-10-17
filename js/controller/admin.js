@@ -43,6 +43,7 @@ function load_branchviewbtn(){
 
             bvbtn.setAttribute("data-toggle","collapse");
             bvbtn.setAttribute("href","#root");
+            bvbtn.setAttribute("data-parent","#collapseCharts")
 
             bvlist.appendChild(bvbtn);
 
@@ -75,6 +76,7 @@ function load_branchviewbtn(){
             bvcul.classList.add("sidenav-third-level");
             bvcul.classList.add("collapse");
             bvcul.setAttribute("id","rootII");
+            bvcul.setAttribute("data-parent","#collapseCharts")
 
             bvclist.appendChild(bvcul);
 
@@ -97,6 +99,7 @@ function load_branchviewbtn(){
             bvclog.classList.add("sidenav-third-level");
             bvclog.classList.add("collapse");
             bvclog.setAttribute("id","rootIII");
+            bvclog.setAttribute("data-parent","#collapseCharts")
     
             bvcomlogs.appendChild(bvclog);
 
@@ -126,7 +129,7 @@ function load_branchviewbtn(){
             // Computer Logs
             bvcomlogbtn = document.createElement("a");
             bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
-            bvcomlogbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputerlogs\")");
+            bvcomlogbtn.setAttribute("onclick","DSHBRDCompLogs(\"root\")");
             bvcomlogs.appendChild(bvcomlogbtn);
 
             bvcomlogsbtntxt = document.createTextNode("Computer Logs");
@@ -141,7 +144,6 @@ function load_branchviewbtn(){
             bvul.appendChild(bvnewli);
 
             bva = document.createElement("a");
-            //bva.setAttribute("href","#"+data[loop]);
             bva.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"\")");
             bvnewli.appendChild(bva);
 
@@ -153,7 +155,6 @@ function load_branchviewbtn(){
             bvcul.appendChild(bvcnewli);
 
             bvca = document.createElement("a");
-            //bva.setAttribute("href","#"+data[loop]);
             bvca.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
             bvcnewli.appendChild(bvca);
 
@@ -165,7 +166,7 @@ function load_branchviewbtn(){
             bvclog.appendChild(bvclogsnewli);
 
             bvcologs = document.createElement("a");
-            bvcologs.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CLogs\")");
+            bvcologs.setAttribute("onclick","DSHBRDCompLogs(\""+data[loop]+"\")");
             bvclogsnewli.appendChild(bvcologs);
 
             anode = document.createTextNode(data[loop]);
@@ -178,3 +179,33 @@ function load_branchviewbtn(){
 
 /* Buttons */
 /* ----------------------- Loads ----------------------- */
+
+/* ----------------------- Events ----------------------- */
+/* Buttons */
+
+function DSHBRDCompLogs(parent){
+
+    var view = document.getElementById("contentview");
+    //Delete View Content
+    view.innerHTML = "";
+    
+    var tblcomplogs = document.createElement("table");
+    tblcomplogs.classList.add("table");
+    tblcomplogs.classList.add("table-hover");
+    tblcomplogs.classList.add("pagination");
+    tblcomplogs.setAttribute("width","100%");
+    tblcomplogs.setAttribute("cellspacing","0");
+
+    view.appendChild(tblcomplogs);
+
+    theadcomplogs = document.createElement("thead");
+    tbodycomplogs = document.createElement("tbody");
+    tfootcomplogs = document.createElement("tfoot");
+
+    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
+        view.innerHTML = data;
+    });
+    
+}
+/* Buttons */
+/* ----------------------- Events ----------------------- */
