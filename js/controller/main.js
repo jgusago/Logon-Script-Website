@@ -1122,7 +1122,7 @@ function pagination(parent){
 }
 
 //Load Monitoring: User Accounts
-function loadtableactive(athead, atfoot, atdata){
+function loadtableuseraccount(athead, atfoot, atdata){
 
     athrw = document.createElement("tr");
     athead.appendChild(athrw);
