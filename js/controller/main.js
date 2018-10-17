@@ -420,7 +420,7 @@ function load_branchcomputerlogs_content(parent, div, grandparent){
         cardsbody.classList.add("card-body");
         cards.appendChild(cardsbody);
 
-            load_branchcomputerlogs_table(parent,cardbody);
+            load_branchcomputerlogs_table(parent,cardsbody);
 
         var cardsfooter = document.createElement('div');
         cardsfooter.classList.add("card-footer");
@@ -807,6 +807,10 @@ function loadtableinactive(ithead, itfoot, tdata){
 /* Components */
 
 /* Profile and Accounts */
+function loadtableuseraccount()
+{
+
+}
 
 /* Settings */
 //Load Branch View Settings
