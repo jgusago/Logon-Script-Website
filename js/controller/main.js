@@ -1130,7 +1130,7 @@ function loadtableactive(athead, atfoot, atdata){
     atfrw = document.createElement("tr");
     atfoot.appendChild(atfrw);
 
-    $.post("../../test_query.php",function(data){
+    $.post("test_query.php",function(data){
 
         datarw = data.split("#");
         datarwlgth = datarw.length;
