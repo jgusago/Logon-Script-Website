@@ -30,7 +30,7 @@ function load(){
     /* ----- Account Settings ----- */
     accountmanagement();
 
-    load_useracct();
+    // load_useracct();
 
 
     /* ----- Loading ----- */
