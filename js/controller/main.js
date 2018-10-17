@@ -1121,6 +1121,67 @@ function pagination(parent){
     
 }
 
+//Load Monitoring: User Accounts
+function loadtableactive(athead, atfoot, atdata){
+
+    athrw = document.createElement("tr");
+    athead.appendChild(athrw);
+
+    atfrw = document.createElement("tr");
+    atfoot.appendChild(atfrw);
+
+    $.post("../../test_query.php",function(data){
+
+        datarw = data.split("#");
+        datarwlgth = datarw.length;
+        thdata = datarw[0].split("|");
+        thdatalgnth = thdata.length;
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            athrw.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            atfrw.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+        for(var i = 1; i < datarwlgth; i++){
+
+            tr = document.createElement("tr");
+            atdata.appendChild(tr);
+
+            tddata = datarw[i].split("|");
+            tddatalgth = tddata.length;
+
+            for(var j = 0; j < tddatalgth; j++){
+                td = document.createElement("td");
+                tr.appendChild(td);
+
+                tdmd = tddata[j].split("~");
+                tdmdl = tdmd.length;
+
+                for (var k = 0; k < tdmdl; k++){
+
+                    tdtxtp = document.createElement("tr");
+                    td.appendChild(tdtxtp);
+                    tdtxt = document.createTextNode(tdmd[k]);
+                    tdtxtp.appendChild(tdtxt);
+                }
+
+            }
+        }
+    });
+
+    
+}
+
 /* 
 
 
