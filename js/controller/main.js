@@ -143,12 +143,16 @@ function load_branchviewbtn(){
             bvcbtn = document.createElement("a");
             bvcbtn.setAttribute("id","branchcomputerbtn");
             bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputer\")");
-            // bvcbtn.setAttribute("onclick","sidenav_click_event()");
-            // document.getElementById("dtitle").innerHTML = "Reports";
             bvclist.appendChild(bvbtn);
 
             bvcbtntxt = document.createTextNode("Computer List");
             bvcbtn.appendChild(bvcbtntxt);
+
+            var element = document.getElementById("dtitle");
+            element.innerHTML = "Reports";
+
+            var elements = document.getElementById("dtitle2");
+            element.innerHTML = "Computer List";
 
             // Computer Logs
             bvcomlogbtn = document.createElement("a");
@@ -186,6 +190,12 @@ function load_branchviewbtn(){
 
             anode = document.createTextNode(data[loop]);
             bvca.appendChild(anode);
+
+            var element = document.getElementById("dtitle");
+            element.innerHTML = "Reports";
+
+            var elements = document.getElementById("dtitle2");
+            element.innerHTML = "Computer List";
 
             //Branch Computer Logs
             bvclogsnewli = document.createElement("li");
