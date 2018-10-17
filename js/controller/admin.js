@@ -18,7 +18,6 @@ function load(){
     },10);
 }
 
-
 /* Buttons */
 
 function load_branchviewbtn(){
