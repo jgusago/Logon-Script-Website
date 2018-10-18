@@ -21,10 +21,5 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		
 			echo "#$id|$userid|$name|$department|$position|$status|$role";
 
-			$row = explode('|', $row);
-			foreach($row as $row){
-    			echo $row.'<br>';  
-			}
-
 		}
 	?>
