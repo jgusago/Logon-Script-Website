@@ -1,4 +1,4 @@
-/* ----------------------- Loads ----------------------- */
+/* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load(){
     var branchview = document.getElementById("contentview");
     var loading = document.getElementById("processingbar");
@@ -178,34 +178,127 @@ function load_branchviewbtn(){
 }
 
 /* Buttons */
-/* ----------------------- Loads ----------------------- */
+/* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 
-/* ----------------------- Events ----------------------- */
-/* Buttons */
+/* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
+/* OnClick */
 
 function DSHBRDCompLogs(parent){
 
     var view = document.getElementById("contentview");
-    //Delete View Content
     view.innerHTML = "";
+    //Create Card
+    var card = {};
+    CNTVWcrtcrd(card);
+    //Create Table
+    var tbl = {};
+    var clss = ["table","table-hover","display","pagination"];
+    var atrb = ["width:100%","cellspacing:0"];
+    CNTVWcrttbl(tbl, clss, atrb);
+
+    view.appendChild(card.card);
+
+    card.body.appendChild(tbl.table);
     
-    var tblcomplogs = document.createElement("table");
-    tblcomplogs.classList.add("table");
-    tblcomplogs.classList.add("table-hover");
-    tblcomplogs.classList.add("pagination");
-    tblcomplogs.setAttribute("width","100%");
-    tblcomplogs.setAttribute("cellspacing","0");
 
-    view.appendChild(tblcomplogs);
+    $.post("php/functions/reports/computer.logs.php", {parent:parent}, function(data){
 
-    theadcomplogs = document.createElement("thead");
-    tbodycomplogs = document.createElement("tbody");
-    tfootcomplogs = document.createElement("tfoot");
+        data = data.split("#");
+        datalength = data.length;
 
-    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
-        view.innerHTML = data;
+        thfdata = data[0].split("|");
+        thflgth = thfdata.length;
+        for (var k = 0; k < thflgth; k++){
+            th = document.createElement("th");
+
+        }
+
+        for(var l = 1; l < datalength; l++){
+
+        }
+        sample = document.createTextNode(data);
+        tbl.body.appendChild(sample);
+
     });
     
 }
-/* Buttons */
-/* ----------------------- Events ----------------------- */
+/* OnClick */
+
+/* Background */
+
+function LNKbrdcmps(data){
+    var address = document.getElementById('address');
+    address.innerHTML = "";
+
+}
+// CONTENT VIEW create card
+function CNTVWcrtcrd(card){
+
+    var crd = document.createElement("div");
+    crd.classList.add("card");
+    
+    var crdheader = document.createElement("div");
+    crdheader.classList.add("card-header");
+    crd.appendChild(crdheader);
+
+    var crdbody = document.createElement("div");
+    crdbody.classList.add("card-body");
+    crd.appendChild(crdbody);
+
+    crdfooter = document.createElement("div");
+    crdfooter.classList.add("card-footer");
+    crdfooter.classList.add("small");
+    crdfooter.classList.add("text-muted");
+    crd.appendChild(crdfooter);
+
+    card.card = crd;
+    card.head = crdheader;
+    card.body = crdbody;
+    card.foot = crdfooter;
+}
+
+//CONTENTVIEW Create Table (Array return Value, Classes, Attributes)
+function CNTVWcrttbl(tbl, clss, atrb){
+
+    var table = document.createElement("table");
+    clsslgth = clss.length;
+    for (var i = 0; i < clsslgth; i++){
+        table.classList.add(clss[i]);
+    }
+    atrblgth = atrb.length;
+    for (var j = 0; j < atrblgth; j++){
+        set = atrb[j].split(":");
+        table.setAttribute(set[0],set[1]);
+    }
+
+    thead = document.createElement("thead");
+    table.appendChild(thead);
+
+    tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+
+    tfoot = document.createElement("tfoot");
+    table.appendChild(tfoot);
+
+    tbl.table = table;
+    tbl.head = thead;
+    tbl.body = tbody;
+    tbl.foot = tfoot;
+
+}
+
+function CNTVWcrttbltr(data){
+    
+}
+
+//
+
+/* Background */
+/* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
+/*
+Functions Abbriviations
+DSHBRD - dashboard
+LNK - link
+CNTVW - Contentview
+
+*/
