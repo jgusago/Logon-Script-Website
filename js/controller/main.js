@@ -817,7 +817,7 @@ function loadtableuseraccount()
     div.style.color = "white";
     div.innerHTML = "Hello";
 
-    document.getElementById("main").appendChild(div);
+    document.getElementById("contentview").appendChild(div);
 }
 
 /* Settings */
