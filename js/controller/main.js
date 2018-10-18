@@ -1246,18 +1246,55 @@ function loadtableuseraccount(athead, atfoot, atdata){
     var newuseraccdiv = document.createElement("div");
     branchview.appendChild(newuseraccdiv);
 
-        //datarw = data.split("#");
-        //datarwlgth = datarw.length;
-        //thdata = datarw[0].split("|");
-        //thdatalgnth = thdata.length;
-
     $.post("user_account_fetch.php",function(data){
 
-        var content = document.createTextNode(data);
-        newuseraccdiv.appendChild(content);
+        datarw = data.split("#");
+        datarwlgth = datarw.length;
+        thdata = datarw[0].split("|");
+        thdatalgnth = thdata.length;
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            newuseraccdiv.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            newuseraccdiv.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+        for(var i = 1; i < datarwlgth; i++){
+
+            tr = document.createElement("tr");
+            atdata.appendChild(tr);
+
+            tddata = datarw[i].split("|");
+            tddatalgth = tddata.length;
+
+            for(var j = 0; j < tddatalgth; j++){
+                td = document.createElement("td");
+                tr.appendChild(td);
+
+                tdmd = tddata[j].split("~");
+                tdmdl = tdmd.length;
+
+                for (var k = 0; k < tdmdl; k++){
+
+                    tdtxtp = document.createElement("tr");
+                    td.appendChild(tdtxtp);
+                    tdtxt = document.createTextNode(tdmd[k]);
+                    tdtxtp.appendChild(tdtxt);
+                }
+
+            }
+        }
     });
 
-    
 }
 
 /* 
