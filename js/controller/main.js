@@ -1238,25 +1238,11 @@ function pagination(parent){
 }
 
 //Load Monitoring: User Accounts
-//function loadtableuseraccount(athead, atfoot, atdata){
-    //var branchview = document.getElementById("contentview");
-
-    //var newuseraccdiv = document.createElement("div");
-    //branchview.appendChild(newuseraccdiv);
-
-    //$.post("user_account_fetch.php",function(data){
-
-    //});
-
-//}
-
 function loadtableuseraccount(athead, atfoot, atdata){
+    var branchview = document.getElementById("contentview");
 
-    athrw = document.createElement("tr");
-    athead.appendChild(athrw);
-
-    atfrw = document.createElement("tr");
-    atfoot.appendChild(atfrw);
+    var newuseraccdiv = document.createElement("div");
+    branchview.appendChild(newuseraccdiv);
 
     $.post("user_account_fetch.php",function(data){
 
@@ -1267,7 +1253,7 @@ function loadtableuseraccount(athead, atfoot, atdata){
 
         for(var i = 0;i<thdatalgnth;i++){
             th = document.createElement("th");
-            athrw.appendChild(th);
+            newuseraccdiv.appendChild(th);
 
             thtxt = document.createTextNode(thdata[i]);
             th.appendChild(thtxt);
@@ -1275,7 +1261,7 @@ function loadtableuseraccount(athead, atfoot, atdata){
 
         for(var i = 0;i<thdatalgnth;i++){
             th = document.createElement("th");
-            atfrw.appendChild(th);
+            newuseraccdiv.appendChild(th);
 
             thtxt = document.createTextNode(thdata[i]);
             th.appendChild(thtxt);
@@ -1307,7 +1293,6 @@ function loadtableuseraccount(athead, atfoot, atdata){
         }
     });
 
-    
 }
 
 /* 
