@@ -1244,10 +1244,10 @@ function loadtableuseraccount(athead, atfoot, atdata){
     var newuseraccdiv = document.createElement("div");
     branchview.appendChild(newuseraccdiv);
 
-        //datarw = data.split("#");
-        //datarwlgth = datarw.length;
-        //thdata = datarw[0].split("|");
-        //thdatalgnth = thdata.length;
+        datarw = data.split("#");
+        datarwlgth = datarw.length;
+        thdata = datarw[0].split("|");
+        thdatalgnth = thdata.length;
 
     $.post("user_account_fetch.php",function(data){
 
