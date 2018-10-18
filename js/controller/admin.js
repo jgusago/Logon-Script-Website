@@ -189,12 +189,12 @@ function DSHBRDCompLogs(parent){
     view.innerHTML = "";
     //Create Card
     var card = {};
-    CNTVWcrtcrd(card);
+    createCard(card);
     //Create Table
     var tbl = {};
     var clss = ["table","table-hover","display","pagination"];
     var atrb = ["width:100%","cellspacing:0"];
-    CNTVWcrttbl(tbl, clss, atrb);
+    createTable(tbl, clss, atrb);
 
     view.appendChild(card.card);
 
@@ -232,7 +232,7 @@ function LNKbrdcmps(data){
 
 }
 // CONTENT VIEW create card
-function CNTVWcrtcrd(card){
+function createCard(card){
 
     var crd = document.createElement("div");
     crd.classList.add("card");
@@ -258,7 +258,7 @@ function CNTVWcrtcrd(card){
 }
 
 //CONTENTVIEW Create Table (Array return Value, Classes, Attributes)
-function CNTVWcrttbl(tbl, clss, atrb){
+function createTable(tbl, clss, atrb){
 
     var table = document.createElement("table");
     clsslgth = clss.length;
@@ -287,8 +287,8 @@ function CNTVWcrttbl(tbl, clss, atrb){
 
 }
 
-function CNTVWcrttbltr(data){
-    
+function createTableContent(data){
+
 }
 
 //
