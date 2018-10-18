@@ -1248,12 +1248,45 @@ function loadtableuseraccount(athead, atfoot, atdata){
 
         var content = document.createTextNode(data);
         newuseraccdiv.appendChild(content);
-    });
 
         datarw = data.split("#");
         datarwlgth = datarw.length;
         thdata = datarw[0].split("|");
         thdatalgnth = thdata.length;
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            ithrw.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            itfrw.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+        for(var i = 1; i < datarwlgth; i++){
+
+            tr = document.createElement("tr");
+            tdata.appendChild(tr);
+
+            tddata = datarw[i].split("|");
+            tddatalgth = tddata.length;
+
+            for(var j = 0; j < tddatalgth; j++){
+                td = document.createElement("td");
+                tr.appendChild(td);
+
+                tdtxt = document.createTextNode(tddata[j]);
+                td.appendChild(tdtxt);
+            }
+        }
+    });
+
 }
 
 /* 
