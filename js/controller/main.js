@@ -43,6 +43,7 @@ function load(){
             $("#progressbardiv").hide();
         }
     },10);
+
     pagination();
 }
 /* Dashboard buttons */
@@ -1226,6 +1227,7 @@ function serverip(){
     var svrip = location.hostname;
     return svrip;
 }
+
 function pagination(parent){
 
     var bodydiv = document.getElementById("scripts");
