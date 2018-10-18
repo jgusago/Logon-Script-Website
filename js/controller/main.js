@@ -1238,16 +1238,27 @@ function pagination(parent){
 }
 
 //Load Monitoring: User Accounts
-function loadtableuseraccount(athead, atfoot, atdata){
-    var branchview = document.getElementById("contentview");
+//function loadtableuseraccount(athead, atfoot, atdata){
+    //var branchview = document.getElementById("contentview");
 
-    var newuseraccdiv = document.createElement("div");
-    branchview.appendChild(newuseraccdiv);
+    //var newuseraccdiv = document.createElement("div");
+    //branchview.appendChild(newuseraccdiv);
+
+    //$.post("user_account_fetch.php",function(data){
+
+    //});
+
+//}
+
+function loadtableuseraccount(athead, atfoot, atdata){
+
+    athrw = document.createElement("tr");
+    athead.appendChild(athrw);
+
+    atfrw = document.createElement("tr");
+    atfoot.appendChild(atfrw);
 
     $.post("user_account_fetch.php",function(data){
-
-        var content = document.createTextNode(data);
-        newuseraccdiv.appendChild(content);
 
         datarw = data.split("#");
         datarwlgth = datarw.length;
@@ -1256,7 +1267,7 @@ function loadtableuseraccount(athead, atfoot, atdata){
 
         for(var i = 0;i<thdatalgnth;i++){
             th = document.createElement("th");
-            ithrw.appendChild(th);
+            athrw.appendChild(th);
 
             thtxt = document.createTextNode(thdata[i]);
             th.appendChild(thtxt);
@@ -1264,7 +1275,7 @@ function loadtableuseraccount(athead, atfoot, atdata){
 
         for(var i = 0;i<thdatalgnth;i++){
             th = document.createElement("th");
-            itfrw.appendChild(th);
+            atfrw.appendChild(th);
 
             thtxt = document.createTextNode(thdata[i]);
             th.appendChild(thtxt);
@@ -1272,7 +1283,7 @@ function loadtableuseraccount(athead, atfoot, atdata){
         for(var i = 1; i < datarwlgth; i++){
 
             tr = document.createElement("tr");
-            tdata.appendChild(tr);
+            atdata.appendChild(tr);
 
             tddata = datarw[i].split("|");
             tddatalgth = tddata.length;
@@ -1281,12 +1292,22 @@ function loadtableuseraccount(athead, atfoot, atdata){
                 td = document.createElement("td");
                 tr.appendChild(td);
 
-                tdtxt = document.createTextNode(tddata[j]);
-                td.appendChild(tdtxt);
+                tdmd = tddata[j].split("~");
+                tdmdl = tdmd.length;
+
+                for (var k = 0; k < tdmdl; k++){
+
+                    tdtxtp = document.createElement("tr");
+                    td.appendChild(tdtxtp);
+                    tdtxt = document.createTextNode(tdmd[k]);
+                    tdtxtp.appendChild(tdtxt);
+                }
+
             }
         }
     });
 
+    
 }
 
 /* 
