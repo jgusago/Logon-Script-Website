@@ -387,7 +387,9 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
     background: #f8f9fa; }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a {
       color: #000 !important;
-      background-color: #e9ecef; }
+      /* background-color: #e9ecef;  */
+      background:#b7ab22f2;
+    }
       #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:hover 
       {
         color: #000; 
