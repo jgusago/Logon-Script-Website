@@ -68,7 +68,7 @@ foreach($result as $row){
         <td>{$position}</td>
         <td>{$status}</td>
         <td>{$role}</td>
-        <td><a href="" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+        <td><button class="btn btn-primary">Edit Record</button></a></td>
     </tr>";
 
 
