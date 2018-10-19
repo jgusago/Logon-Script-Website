@@ -886,6 +886,35 @@ function loadtableuseraccount()
     document.getElementById("contentview").appendChild(newdivv);
 }
 
+function loadtableuserprofile()
+{
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Profile Settings";
+
+    var newdivv  = document.createElement("div");
+    newdivv.classList.add("panel");
+    newdivv.classList.add("row-eq-height");
+    newdivv.classList.add("col-xs-4");
+    newdivv.classList.add("col-lg-12");
+    // div.appendChild(newdivv);
+
+    newdivv.style.width = "inherit";
+    newdivv.style.height = "auto";
+    newdivv.style.background = "#c9cac9";
+    newdivv.style.color = "white";
+    newdivv.innerHTML = "Hello";
+    newdivv.style.margin = "margin: initial";
+
+    // var div = document.createElement("div");
+    // div.style.width = "100px";
+    // div.style.height = "100px";
+    // div.style.background = "red";
+    // div.style.color = "white";
+    // div.innerHTML = "Hello";
+
+    document.getElementById("contentview").appendChild(newdivv);
+}
+
 function loadreports()
 {
     document.getElementById("dtitle").innerHTML = "Reports";
