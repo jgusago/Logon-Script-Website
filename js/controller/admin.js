@@ -187,19 +187,17 @@ function DSHBRDCompLogs(parent){
 
     var view = document.getElementById("contentview");
     view.innerHTML = "";
-    //Create Card
-    var card = {};
-    createCard(card);
-    //Create Table
-    var tbl = {};
-    var clss = ["table","table-hover","display","pagination"];
-    var atrb = ["width:100%","cellspacing:0"];
-    createTable(tbl, clss, atrb);
-
-    view.appendChild(card.card);
-
-    card.body.appendChild(tbl.table);
     
+    tableid = idgenerator();
+
+    var card = {};
+    createCard(card, view, [], []);
+
+    var table = {};
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
+
 
     $.post("php/functions/reports/computer.logs.php", {parent:parent}, function(data){
 
@@ -207,20 +205,17 @@ function DSHBRDCompLogs(parent){
         datalength = data.length;
 
         thfdata = data[0].split("|");
-        thflgth = thfdata.length;
-        for (var k = 0; k < thflgth; k++){
-            th = document.createElement("th");
+        var tbheader = {}, tbfooter = {};
+        createTableContent([], table.head, [], [], "th", thfdata);
+        createTableContent([], table.foot, [], [], "th", thfdata);
 
-        }
+        for (var i = 1; i < datalength;i++){
+            newdata = data[i].split("|");
+            createTableContent([], table.body, [],[], "td", newdata);
 
-        for(var l = 1; l < datalength; l++){
-
-        }
-        sample = document.createTextNode(data);
-        tbl.body.appendChild(sample);
-
+            }
     });
-    
+    pagination(tableid);
 }
 /* OnClick */
 
@@ -229,65 +224,6 @@ function DSHBRDCompLogs(parent){
 function LNKbrdcmps(data){
     var address = document.getElementById('address');
     address.innerHTML = "";
-
-}
-// CONTENT VIEW create card
-function createCard(card){
-
-    var crd = document.createElement("div");
-    crd.classList.add("card");
-    
-    var crdheader = document.createElement("div");
-    crdheader.classList.add("card-header");
-    crd.appendChild(crdheader);
-
-    var crdbody = document.createElement("div");
-    crdbody.classList.add("card-body");
-    crd.appendChild(crdbody);
-
-    crdfooter = document.createElement("div");
-    crdfooter.classList.add("card-footer");
-    crdfooter.classList.add("small");
-    crdfooter.classList.add("text-muted");
-    crd.appendChild(crdfooter);
-
-    card.card = crd;
-    card.head = crdheader;
-    card.body = crdbody;
-    card.foot = crdfooter;
-}
-
-//CONTENTVIEW Create Table (Array return Value, Classes, Attributes)
-function createTable(tbl, clss, atrb){
-
-    var table = document.createElement("table");
-    clsslgth = clss.length;
-    for (var i = 0; i < clsslgth; i++){
-        table.classList.add(clss[i]);
-    }
-    atrblgth = atrb.length;
-    for (var j = 0; j < atrblgth; j++){
-        set = atrb[j].split(":");
-        table.setAttribute(set[0],set[1]);
-    }
-
-    thead = document.createElement("thead");
-    table.appendChild(thead);
-
-    tbody = document.createElement("tbody");
-    table.appendChild(tbody);
-
-    tfoot = document.createElement("tfoot");
-    table.appendChild(tfoot);
-
-    tbl.table = table;
-    tbl.head = thead;
-    tbl.body = tbody;
-    tbl.foot = tfoot;
-
-}
-
-function createTableContent(data){
 
 }
 

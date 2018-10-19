@@ -3,7 +3,7 @@ $parent = $_POST["parent"];
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
-echo "Computer NameASas|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
+echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
 
 $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent AND user not like 'admi%' group by hostname";
 
