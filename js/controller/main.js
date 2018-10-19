@@ -861,7 +861,7 @@ function loadtableuseraccount()
 {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
-    document.getElementById("panelid2").remove();
+    // document.getElementById("panelid2").remove();
 
     var newdivv  = document.createElement("div");
     newdivv.classList.add("panel");
