@@ -1,4 +1,4 @@
-/* ------------------------------ LOADING FUNCTIONS ------------------------------ */
+-/* ------------------------------ LOADING FUNCTIONS ------------------------------ */
 //Default Load
 function load(){
 
@@ -870,21 +870,32 @@ function loadtableuseraccount()
     newdivv.classList.add("col-lg-12");
     newdivv.setAttribute("id", "panelid");
 
-    var panelhead = document.createElement("div");
-    panelhead.classList.add("panel");
-    panelhead.classList.add("panel-heading");
-    panelhead.classList.add("col-xs-4");
-    panelhead.classList.add("col-lg-12");
+    var cards2 = document.createElement("div");
+    cards2.classList.add("card");
+    cards2.classList.add("mb-3");
+    cards2.setAttribute("id","AM");
 
-    newdivv.appendChild(panelhead);
+    newdivv.appendChild(cards2);
 
-    var panelbody = document.createElement("div");
-    panelbody.classList.add("panel");
-    panelbody.classList.add("panel-body");
-    panelbody.classList.add("col-xs-4");
-    panelbody.classList.add("col-lg-12");
+        //Create Card Header
+        var cardheads = document.createElement("div");
+        cardheads.classList.add("card-header");
+        cards2.appendChild(cardheads);
 
-    newdivv.appendChild(panelbody);
+            //Header text Node
+            var textnodes = document.createTextNode(parent);
+            cardheads.appendChild(textnodes);
+
+        // Create Card Body
+        var cardsbody = document.createElement("div");
+        cardsbody.classList.add("card-body");
+        cards2.appendChild(cardsbody);
+
+            load_useraccount_table(parent,cardsbody);
+
+        var cardsfooter = document.createElement('div');
+        cardsfooter.classList.add("card-footer");
+        cards2.appendChild(cardsfooter);
 
     // var newdiv = document.createElement("div");
     // newdiv.style.clear = "both";
@@ -896,10 +907,6 @@ function loadtableuseraccount()
     
     // var table = document.createElement("table");
     // table.classList.add("table-bordered");
-
-    
-
-
 
     // div.appendChild(newdivv);
 
