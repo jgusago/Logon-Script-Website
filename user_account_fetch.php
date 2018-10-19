@@ -50,7 +50,8 @@ $pdo->bindParam(":parent",$parent);
 $pdo->execute();
 $result = $pdo->fetchAll();
 
-foreach($result as $row){
+foreach($result as $row)
+{
     $count++;
     $userid = $row['userid'] ?: 'null';
 	$name = $row['name'] ?: 'null';
@@ -86,6 +87,7 @@ foreach($result as $row){
 		// 	echo "$userid|$name|$department|$position|$status|$role";
 
 		// }
+}
 
 		echo "</table></div>";
 	?>
