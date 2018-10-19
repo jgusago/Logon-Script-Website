@@ -16,6 +16,7 @@ function load(){
     load_branchview("root", branchview, "0");
     load_branchcomputerlist("root", branchview, "0","root");
     load_branchcomputerlogs("root", branchview, "0","root");
+    load_useraccount("root", branchview, "0","root");
 
 
     /* ----- Tables ----- */
@@ -282,113 +283,6 @@ function load_branchcomputerlist(parent, div, grandparent, $parentid)
 
 }
 
-
-//Branch Computer Logs
-function load_branchcomputerlogs(parent, div, grandparent, $parentid)
-{
-
-    var logsdiv  = document.createElement("div");
-    logsdiv.classList.add("row");
-    logsdiv.classList.add("row-eq-height");
-    logsdiv.classList.add("col-xs-4");
-    logsdiv.classList.add("col-lg-12");
-    logsdiv.setAttribute("id","branchcomputer-CLG");
-    div.appendChild(logsdiv);
-
-    //Get Data
-    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
-
-        if (data != 0){
-
-            var datalogs = data.split("|");
-            var loop = 0;
-
-            while(datalogs[loop])
-            {
-                load_branchcomputerlogs_content(datalogs[loop],logsdiv,parent);
-                loop++;
-            }
-        }
-        //Else do nothing
-
-    });
-
-}
-
-
-//Account Management
-function load_useracctrlist(parent, div, grandparent, $parentid)
-{
-    
-    var newdivv  = document.createElement("div");
-    newdivv.classList.add("row");
-    newdivv.classList.add("row-eq-height");
-    newdivv.classList.add("col-xs-4");
-    newdivv.classList.add("col-lg-12");
-    newdivv.setAttribute("id","useracct-CLU");
-    div.appendChild(newdivv);
-
-    //Get Data
-    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
-
-        if (data != 0){
-
-            var newdatas = data.split("|");
-            var loop = 0;
-
-            while(newdatas[loop])
-            {
-                load_useracct_content(newdatsa[loop],newdivv,parent);
-                loop++;
-            }
-        }
-        //Else do nothing
-
-    });
-
-}
-
-
-//Load Branch View Content
-function load_branchview_content(parent, div, grandparent){
-
-    // Create for Mobile Display
-    var mbdiv = document.createElement("div");
-    mbdiv.classList.add("card");
-    mbdiv.classList.add("mb-3");
-    mbdiv.setAttribute("id",parent);
-
-    if (grandparent == "root"){
-        mbdiv.setAttribute("hidden","true");
-        mbdiv.classList.add("contentdataview");
-    }
-    div.appendChild(mbdiv);
-
-        // Create Header Div
-        var headerdiv = document.createElement("div");
-        headerdiv.classList.add("card-header");
-        mbdiv.appendChild(headerdiv);
-
-            //Header Node Text
-            var headertxt = document.createTextNode(parent);
-            headerdiv.appendChild(headertxt);
-
-        // Create Body Div
-        var bodydiv = document.createElement("div");
-        bodydiv.classList.add("card-body");
-        mbdiv.appendChild(bodydiv);
-
-            //loop to getlevel
-            load_branchview(parent, bodydiv, grandparent);
-
-        // Footer Div
-        var footerdiv = document.createElement("div");
-        footerdiv.classList.add("card-footer");
-        mbdiv.appendChild(footerdiv);
-
-}
-
-
 //Load Branch View Data List
 function load_branchcomputerlist_content(parent, div, grandparent){
 
@@ -422,6 +316,46 @@ function load_branchcomputerlist_content(parent, div, grandparent){
         var cardfooter = document.createElement('div');
         cardfooter.classList.add("card-footer");
         card.appendChild(cardfooter);
+}
+
+function load_branchcomputerlist_table(parent, parentdiv)
+{
+    $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
+        parentdiv.innerHTML = data;
+    });
+
+}
+
+//Branch Computer Logs
+function load_branchcomputerlogs(parent, div, grandparent, $parentid)
+{
+
+    var logsdiv  = document.createElement("div");
+    logsdiv.classList.add("row");
+    logsdiv.classList.add("row-eq-height");
+    logsdiv.classList.add("col-xs-4");
+    logsdiv.classList.add("col-lg-12");
+    logsdiv.setAttribute("id","branchcomputer-CLG");
+    div.appendChild(logsdiv);
+
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var datalogs = data.split("|");
+            var loop = 0;
+
+            while(datalogs[loop])
+            {
+                load_branchcomputerlogs_content(datalogs[loop],logsdiv,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
+
+    });
+
 }
 
 // Load Branch View Data Logs
@@ -459,8 +393,49 @@ function load_branchcomputerlogs_content(parent, div, grandparent){
         cards.appendChild(cardsfooter);
 }
 
+function load_branchcomputerlogs_table(parent, parentdiv)
+{
+    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
+        parentdiv.innerHTML = data;
+    });
+
+}
+
+//Account Management
+function load_useraccount(parent, div, grandparent, $parentid)
+{
+    
+    var newdivv  = document.createElement("div");
+    newdivv.classList.add("row");
+    newdivv.classList.add("row-eq-height");
+    newdivv.classList.add("col-xs-4");
+    newdivv.classList.add("col-lg-12");
+    newdivv.setAttribute("id","useracct-CLU");
+    div.appendChild(newdivv);
+
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var newdatas = data.split("|");
+            var loop = 0;
+
+            while(newdatas[loop])
+            {
+                load_useraccount_content(newdatas[loop],newdivv,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
+
+    });
+
+}
+
 // Load User Account Management 
-function load_useracct_content(parent, div, grandparent){
+function load_useraccount_content(parent, div, grandparent)
+{
 
     var cards2 = document.createElement("div");
     cards2.classList.add("card");
@@ -494,63 +469,6 @@ function load_useracct_content(parent, div, grandparent){
         cards2.appendChild(cardsfooter);
 }
 
-//Load Branch View Data
-function load_branchbiew_data(list, parent)
-{
-
-    //column = document.createElement("div");
-    //parent.appendChild(column);
-
-    card = document.createElement("div");
-    card.classList.add("card");
-    card.classList.add("bg-primary");
-    card.classList.add("bvcard");
-    //card.setAttribute("style","margin: 3px; width: 250px;");
-    parent.appendChild(card);
-
-        cbody = document.createElement("a");
-        cbody.classList.add("card-body");
-        cbody.classList.add("text-white");
-        cbody.setAttribute("href","javascript:void(0)")
-        cbody.setAttribute("onClick","miniwindow_computer_details(\""+ list + "\");")
-        //cbody.setAttribute("style","heigth: 100px;");
-        card.appendChild(cbody);
-
-        spanl = document.createElement("span");
-        spanl.classList.add("float-left");
-        cbody.appendChild(spanl);
-
-            link = document.createTextNode(list);
-            spanl.appendChild(link);
-
-        spanr = document.createElement("span");
-        spanr.classList.add("float-right");
-        cbody.appendChild(spanr);
-
-            icon = document.createElement("i");
-            icon.classList.add("fa");
-            icon.classList.add("fa-angle-right");
-            spanr.appendChild(icon);
-}
-
-
-function load_branchcomputerlist_table(parent, parentdiv)
-{
-    $.post("php/functions/grph.chrt/complst/complist.php", {parent:parent}, function(data){
-        parentdiv.innerHTML = data;
-    });
-
-}
-
-function load_branchcomputerlogs_table(parent, parentdiv)
-{
-    $.post("php/functions/grph.chrt/complst/complogs.php", {parent:parent}, function(data){
-        parentdiv.innerHTML = data;
-    });
-
-}
-// User Accounts
-
 function load_useraccount_table(parent, parentdiv)
 {
     $.post("user_account_fetch.php", {parent:parent}, function(data){
@@ -562,38 +480,9 @@ function load_useraccount_table(parent, parentdiv)
 //Load Monitoring: User Accounts
 function loadtableuseraccount(parent, div, grandparent)
 {
-    var cards2 = document.createElement("div");
-    cards2.classList.add("card");
-    cards2.classList.add("mb-3");
-    cards2.setAttribute("id",parent+"-CLU");
-
-    if (grandparent == "root")
-    {
-        cards2.setAttribute("hidden","true");
-        cards2.classList.add("contentdataview");
-    }
-    div.appendChild(cards2);
-
-        //Create Card Header
-        var cardheads = document.createElement("div");
-        cardheads.classList.add("card-header");
-        cards2.appendChild(cardheads);
-
-            //Header text Node
-            var textnodes = document.createTextNode(parent);
-            cardheads.appendChild(textnodes);
-
-        // Create Card Body
-        var cardsbody = document.createElement("div");
-        cardsbody.classList.add("card-body");
-        cards2.appendChild(cardsbody);
-
-            load_useraccount_table(parent,cardsbody);
-
-        var cardsfooter = document.createElement('div');
-        cardsfooter.classList.add("card-footer");
-        cards2.appendChild(cardsfooter);
-        
+   load_useraccount();
+   load_useraccount_content();
+   
 
     // var branchview = document.getElementById("contentview");
 
@@ -663,71 +552,85 @@ function loadtableuseraccount(parent, div, grandparent)
 
 
 
-function load_useraccounts(parent, div, grandparent, $parentid)
-{
-    
-    var newdivs  = document.createElement("div");
-    newdivs.classList.add("row");
-    newdivs.classList.add("row-eq-height");
-    newdivs.classList.add("col-xs-4");
-    newdivs.classList.add("col-lg-12");
-    newdivs.setAttribute("id","userAcct");
-    div.appendChild(newdivs);
 
-    //Get Data
-    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+//Load Branch View Content
+function load_branchview_content(parent, div, grandparent){
 
-        if (data != 0){
-
-            var newdatas = data.split("|");
-            var loop = 0;
-
-            while(newdata[loop])
-            {
-                load_useracct_content(newdatas[loop],newdivs,parent);
-                loop++;
-            }
-        }
-        //Else do nothing
-
-    });
-
-}
-
-//Load Branch View Data List
-function load_useracct_content(parent, div, grandparent){
-
-    var card1 = document.createElement("div");
-    card1.classList.add("card");
-    card1.classList.add("mb-3");
-    card1.setAttribute("id",parent+"-UA");
+    // Create for Mobile Display
+    var mbdiv = document.createElement("div");
+    mbdiv.classList.add("card");
+    mbdiv.classList.add("mb-3");
+    mbdiv.setAttribute("id",parent);
 
     if (grandparent == "root"){
-        card1.setAttribute("hidden","true");
-        card1.classList.add("contentdataview");
+        mbdiv.setAttribute("hidden","true");
+        mbdiv.classList.add("contentdataview");
     }
-    div.appendChild(card1);
+    div.appendChild(mbdiv);
 
-        //Create Card Header
-        var cardhead = document.createElement("div");
-        cardhead.classList.add("card-header");
-        card1.appendChild(cardhead);
+        // Create Header Div
+        var headerdiv = document.createElement("div");
+        headerdiv.classList.add("card-header");
+        mbdiv.appendChild(headerdiv);
 
-            //Header text Node
-            var textnode = document.createTextNode(parent);
-            cardhead.appendChild(textnode);
+            //Header Node Text
+            var headertxt = document.createTextNode(parent);
+            headerdiv.appendChild(headertxt);
 
-        // Create Card Body
-        var cardbody = document.createElement("div");
-        cardbody.classList.add("card-body");
-        card1.appendChild(cardbody);
+        // Create Body Div
+        var bodydiv = document.createElement("div");
+        bodydiv.classList.add("card-body");
+        mbdiv.appendChild(bodydiv);
 
-            load_useraccount_table(parent,cardbody);
+            //loop to getlevel
+            load_branchview(parent, bodydiv, grandparent);
 
-        var cardfooter = document.createElement('div');
-        cardfooter.classList.add("card-footer");
-        card1.appendChild(cardfooter);
+        // Footer Div
+        var footerdiv = document.createElement("div");
+        footerdiv.classList.add("card-footer");
+        mbdiv.appendChild(footerdiv);
+
 }
+
+//Load Branch View Data
+function load_branchbiew_data(list, parent)
+{
+
+    //column = document.createElement("div");
+    //parent.appendChild(column);
+
+    card = document.createElement("div");
+    card.classList.add("card");
+    card.classList.add("bg-primary");
+    card.classList.add("bvcard");
+    //card.setAttribute("style","margin: 3px; width: 250px;");
+    parent.appendChild(card);
+
+        cbody = document.createElement("a");
+        cbody.classList.add("card-body");
+        cbody.classList.add("text-white");
+        cbody.setAttribute("href","javascript:void(0)")
+        cbody.setAttribute("onClick","miniwindow_computer_details(\""+ list + "\");")
+        //cbody.setAttribute("style","heigth: 100px;");
+        card.appendChild(cbody);
+
+        spanl = document.createElement("span");
+        spanl.classList.add("float-left");
+        cbody.appendChild(spanl);
+
+            link = document.createTextNode(list);
+            spanl.appendChild(link);
+
+        spanr = document.createElement("span");
+        spanr.classList.add("float-right");
+        cbody.appendChild(spanr);
+
+            icon = document.createElement("i");
+            icon.classList.add("fa");
+            icon.classList.add("fa-angle-right");
+            spanr.appendChild(icon);
+}
+
 
 
 
