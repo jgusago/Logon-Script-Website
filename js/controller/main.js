@@ -867,7 +867,6 @@ function loadtableuseraccount()
     newdivv.classList.add("row-eq-height");
     newdivv.classList.add("col-xs-4");
     newdivv.classList.add("col-lg-12");
-    newdivv.setAttribute("id","useracct-CLU");
     // div.appendChild(newdivv);
 
     newdivv.style.width = "100px";
@@ -875,24 +874,6 @@ function loadtableuseraccount()
     newdivv.style.background = "red";
     newdivv.style.color = "white";
     newdivv.innerHTML = "Hello";
-
-    //Get Data
-    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
-
-        if (data != 0){
-
-            var newdatas = data.split("|");
-            var loop = 0;
-
-            while(newdatas[loop])
-            {
-                load_useraccount_content(newdatas[loop],newdivv,parent);
-                loop++;
-            }
-        }
-        //Else do nothing
-
-    });
 
     // var div = document.createElement("div");
     // div.style.width = "100px";
