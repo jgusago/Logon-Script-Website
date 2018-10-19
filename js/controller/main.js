@@ -867,6 +867,7 @@ function loadtableuseraccount()
     newdivv.classList.add("row-eq-height");
     newdivv.classList.add("col-xs-4");
     newdivv.classList.add("col-lg-12");
+    newdivv.setAttribute("id", "panelid");
     // div.appendChild(newdivv);
 
     newdivv.style.width = "inherit";
@@ -890,6 +891,7 @@ function loadtableuserprofile()
 {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
+    document.getElementById("panelid").remove();
 
     var newdivv  = document.createElement("div");
     newdivv.classList.add("panel");
