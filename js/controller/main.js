@@ -482,7 +482,7 @@ function loadtableuseraccount(parent, div, grandparent)
 {
    load_useraccount();
    load_useraccount_content();
-   
+
 
     // var branchview = document.getElementById("contentview");
 
@@ -867,19 +867,19 @@ function loadtableinactive(ithead, itfoot, tdata){
 /* Components */
 
 /* Profile and Accounts */
-// function loadtableuseraccount()
-// {
-//     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+function loadtableuseraccount()
+{
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
 
-//     var div = document.createElement("div");
-//     div.style.width = "100px";
-//     div.style.height = "100px";
-//     div.style.background = "red";
-//     div.style.color = "white";
-//     div.innerHTML = "Hello";
+    var div = document.createElement("div");
+    div.style.width = "100px";
+    div.style.height = "100px";
+    div.style.background = "red";
+    div.style.color = "white";
+    div.innerHTML = "Hello";
 
-//     document.getElementById("contentview").appendChild(div);
-// }
+    document.getElementById("contentview").appendChild(div);
+}
 
 // document.body.onload = loadtableuseraccount();
 
