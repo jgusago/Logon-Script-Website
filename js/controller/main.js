@@ -316,6 +316,39 @@ function load_branchcomputerlogs(parent, div, grandparent, $parentid)
 }
 
 
+//Account Management
+function load_useracctrlist(parent, div, grandparent, $parentid)
+{
+    
+    var newdivv  = document.createElement("div");
+    newdivv.classList.add("row");
+    newdivv.classList.add("row-eq-height");
+    newdivv.classList.add("col-xs-4");
+    newdivv.classList.add("col-lg-12");
+    newdivv.setAttribute("id","useracct-CLU");
+    div.appendChild(newdivv);
+
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var newdatas = data.split("|");
+            var loop = 0;
+
+            while(newdatas[loop])
+            {
+                load_useracct_content(newdatsa[loop],newdivv,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
+
+    });
+
+}
+
+
 //Load Branch View Content
 function load_branchview_content(parent, div, grandparent){
 
@@ -426,9 +459,44 @@ function load_branchcomputerlogs_content(parent, div, grandparent){
         cards.appendChild(cardsfooter);
 }
 
+// Load User Account Management 
+function load_useracct_content(parent, div, grandparent){
+
+    var cards2 = document.createElement("div");
+    cards2.classList.add("card");
+    cards2.classList.add("mb-3");
+    cards2.setAttribute("id",parent+"-CLU");
+
+    if (grandparent == "root"){
+        cards2.setAttribute("hidden","true");
+        cards2.classList.add("contentdataview");
+    }
+    div.appendChild(cards2);
+
+        //Create Card Header
+        var cardheads = document.createElement("div");
+        cardheads.classList.add("card-header");
+        cards2.appendChild(cardheads);
+
+            //Header text Node
+            var textnodes = document.createTextNode(parent);
+            cardheads.appendChild(textnodes);
+
+        // Create Card Body
+        var cardsbody = document.createElement("div");
+        cardsbody.classList.add("card-body");
+        cards2.appendChild(cardsbody);
+
+            load_useraccount_table(parent,cardsbody);
+
+        var cardsfooter = document.createElement('div');
+        cardsfooter.classList.add("card-footer");
+        cards2.appendChild(cardsfooter);
+}
 
 //Load Branch View Data
-function load_branchbiew_data(list, parent){
+function load_branchbiew_data(list, parent)
+{
 
     //column = document.createElement("div");
     //parent.appendChild(column);
@@ -463,8 +531,6 @@ function load_branchbiew_data(list, parent){
             icon.classList.add("fa");
             icon.classList.add("fa-angle-right");
             spanr.appendChild(icon);
-
-
 }
 
 
@@ -484,6 +550,118 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 
 }
 // User Accounts
+
+function load_useraccount_table(parent, parentdiv)
+{
+    $.post("user_account_fetch.php", {parent:parent}, function(data){
+        parentdiv.innerHTML = data;
+    });
+
+}
+
+//Load Monitoring: User Accounts
+function loadtableuseraccount(parent, div, grandparent)
+{
+    var cards2 = document.createElement("div");
+    cards2.classList.add("card");
+    cards2.classList.add("mb-3");
+    cards2.setAttribute("id",parent+"-CLU");
+
+    if (grandparent == "root")
+    {
+        cards2.setAttribute("hidden","true");
+        cards2.classList.add("contentdataview");
+    }
+    div.appendChild(cards2);
+
+        //Create Card Header
+        var cardheads = document.createElement("div");
+        cardheads.classList.add("card-header");
+        cards2.appendChild(cardheads);
+
+            //Header text Node
+            var textnodes = document.createTextNode(parent);
+            cardheads.appendChild(textnodes);
+
+        // Create Card Body
+        var cardsbody = document.createElement("div");
+        cardsbody.classList.add("card-body");
+        cards2.appendChild(cardsbody);
+
+            load_useraccount_table(parent,cardsbody);
+
+        var cardsfooter = document.createElement('div');
+        cardsfooter.classList.add("card-footer");
+        cards2.appendChild(cardsfooter);
+        
+
+    // var branchview = document.getElementById("contentview");
+
+    // var newuseraccdiv = document.createElement("div");
+    // newuseraccdiv.classList("panel");
+    // branchview.appendChild(newuseraccdiv);
+
+    // $.post("user_account_fetch.php",function(data)
+    // {
+
+    //     datarw = data.split("#");
+    //     datarwlgth = datarw.length;
+    //     thdata = datarw[0].split("|");
+    //     thdatalgnth = thdata.length;
+
+    //     for(var i = 0;i<thdatalgnth;i++){
+    //         th = document.createElement("th");
+    //         newuseraccdiv.appendChild(th);
+
+    //         thtxt = document.createTextNode(thdata[i]);
+    //         th.appendChild(thtxt);
+    //     }
+
+    //     for(var i = 0;i<thdatalgnth;i++){
+    //         th = document.createElement("th");
+    //         newuseraccdiv.appendChild(th);
+
+    //         thtxt = document.createTextNode(thdata[i]);
+    //         th.appendChild(thtxt);
+    //     }
+    //     for(var i = 1; i < datarwlgth; i++){
+
+    //         tr = document.createElement("tr");
+    //         atdata.appendChild(tr);
+
+    //         tddata = datarw[i].split("|");
+    //         tddatalgth = tddata.length;
+
+    //         for(var j = 0; j < tddatalgth; j++){
+    //             td = document.createElement("td");
+    //             tr.appendChild(td);
+
+    //             tdmd = tddata[j].split("~");
+    //             tdmdl = tdmd.length;
+
+    //             for (var k = 0; k < tdmdl; k++){
+
+    //                 tdtxtp = document.createElement("tr");
+    //                 td.appendChild(tdtxtp);
+    //                 tdtxt = document.createTextNode(tdmd[k]);
+    //                 tdtxtp.appendChild(tdtxt);
+    //             }
+
+    //         }
+    //     }
+    // });
+
+}
+
+
+
+
+
+
+
+
+
+
 
 function load_useraccounts(parent, div, grandparent, $parentid)
 {
@@ -1249,73 +1427,6 @@ function pagination(parent){
     
 }
 
-function load_useraccount_table(parent, parentdiv)
-{
-    $.post("user_account_fetch.php", {parent:parent}, function(data){
-        parentdiv.innerHTML = data;
-    });
-
-}
-
-//Load Monitoring: User Accounts
-function loadtableuseraccount(athead, atfoot, atdata)
-{
-    var branchview = document.getElementById("contentview");
-
-    var newuseraccdiv = document.createElement("div");
-    newuseraccdiv.classList("panel");
-    branchview.appendChild(newuseraccdiv);
-
-    $.post("user_account_fetch.php",function(data){
-
-        datarw = data.split("#");
-        datarwlgth = datarw.length;
-        thdata = datarw[0].split("|");
-        thdatalgnth = thdata.length;
-
-        for(var i = 0;i<thdatalgnth;i++){
-            th = document.createElement("th");
-            newuseraccdiv.appendChild(th);
-
-            thtxt = document.createTextNode(thdata[i]);
-            th.appendChild(thtxt);
-        }
-
-        for(var i = 0;i<thdatalgnth;i++){
-            th = document.createElement("th");
-            newuseraccdiv.appendChild(th);
-
-            thtxt = document.createTextNode(thdata[i]);
-            th.appendChild(thtxt);
-        }
-        for(var i = 1; i < datarwlgth; i++){
-
-            tr = document.createElement("tr");
-            atdata.appendChild(tr);
-
-            tddata = datarw[i].split("|");
-            tddatalgth = tddata.length;
-
-            for(var j = 0; j < tddatalgth; j++){
-                td = document.createElement("td");
-                tr.appendChild(td);
-
-                tdmd = tddata[j].split("~");
-                tdmdl = tdmd.length;
-
-                for (var k = 0; k < tdmdl; k++){
-
-                    tdtxtp = document.createElement("tr");
-                    td.appendChild(tdtxtp);
-                    tdtxt = document.createTextNode(tdmd[k]);
-                    tdtxtp.appendChild(tdtxt);
-                }
-
-            }
-        }
-    });
-
-}
 
 /* 
 
