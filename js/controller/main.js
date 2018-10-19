@@ -402,72 +402,72 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 }
 
 //Account Management
-// function load_useraccount(parent, div, grandparent, $parentid)
-// {
+function load_useraccount(parent, div, grandparent, $parentid)
+{
     
-//     var newdivv  = document.createElement("div");
-//     newdivv.classList.add("row");
-//     newdivv.classList.add("row-eq-height");
-//     newdivv.classList.add("col-xs-4");
-//     newdivv.classList.add("col-lg-12");
-//     newdivv.setAttribute("id","useracct-CLU");
-//     div.appendChild(newdivv);
+    var newdivv  = document.createElement("div");
+    newdivv.classList.add("row");
+    newdivv.classList.add("row-eq-height");
+    newdivv.classList.add("col-xs-4");
+    newdivv.classList.add("col-lg-12");
+    newdivv.setAttribute("id","useracct-CLU");
+    div.appendChild(newdivv);
 
-//     //Get Data
-//     $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
 
-//         if (data != 0){
+        if (data != 0){
 
-//             var newdatas = data.split("|");
-//             var loop = 0;
+            var newdatas = data.split("|");
+            var loop = 0;
 
-//             while(newdatas[loop])
-//             {
-//                 load_useraccount_content(newdatas[loop],newdivv,parent);
-//                 loop++;
-//             }
-//         }
-//         //Else do nothing
+            while(newdatas[loop])
+            {
+                load_useraccount_content(newdatas[loop],newdivv,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
 
-//     });
+    });
 
-// }
+}
 
 // Load User Account Management 
-// function load_useraccount_content(parent, div, grandparent)
-// {
+function load_useraccount_content(parent, div, grandparent)
+{
 
-//     var cards2 = document.createElement("div");
-//     cards2.classList.add("card");
-//     cards2.classList.add("mb-3");
-//     cards2.setAttribute("id",parent+"-CLU");
+    var cards2 = document.createElement("div");
+    cards2.classList.add("card");
+    cards2.classList.add("mb-3");
+    cards2.setAttribute("id",parent+"-CLU");
 
-//     if (grandparent == "root"){
-//         cards2.setAttribute("hidden","true");
-//         cards2.classList.add("contentdataview");
-//     }
-//     div.appendChild(cards2);
+    if (grandparent == "root"){
+        cards2.setAttribute("hidden","true");
+        cards2.classList.add("contentdataview");
+    }
+    div.appendChild(cards2);
 
-//         //Create Card Header
-//         var cardheads = document.createElement("div");
-//         cardheads.classList.add("card-header");
-//         cards2.appendChild(cardheads);
+        //Create Card Header
+        var cardheads = document.createElement("div");
+        cardheads.classList.add("card-header");
+        cards2.appendChild(cardheads);
 
-//             //Header text Node
-//             var textnodes = document.createTextNode(parent);
-//             cardheads.appendChild(textnodes);
+            //Header text Node
+            var textnodes = document.createTextNode(parent);
+            cardheads.appendChild(textnodes);
 
-//         // Create Card Body
-//         var cardsbody = document.createElement("div");
-//         cardsbody.classList.add("card-body");
-//         cards2.appendChild(cardsbody);
+        // Create Card Body
+        var cardsbody = document.createElement("div");
+        cardsbody.classList.add("card-body");
+        cards2.appendChild(cardsbody);
 
-//             load_useraccount_table(parent,cardsbody);
+            load_useraccount_table(parent,cardsbody);
 
-//         var cardsfooter = document.createElement('div');
-//         cardsfooter.classList.add("card-footer");
-//         cards2.appendChild(cardsfooter);
-// }
+        var cardsfooter = document.createElement('div');
+        cardsfooter.classList.add("card-footer");
+        cards2.appendChild(cardsfooter);
+}
 
 function load_useraccount_table(parent, parentdiv)
 {
@@ -478,79 +478,69 @@ function load_useraccount_table(parent, parentdiv)
 }
 
 //Load Monitoring: User Accounts
-function loadtableuseraccount(parent, div, grandparent)
-{
-   load_useraccount();
-   load_useraccount_content();
+// function loadtableuseraccount(parent, div, grandparent)
+// {
+//    load_useraccount();
+//    load_useraccount_content();
 
 
-    // var branchview = document.getElementById("contentview");
+//     // var branchview = document.getElementById("contentview");
 
-    // var newuseraccdiv = document.createElement("div");
-    // newuseraccdiv.classList("panel");
-    // branchview.appendChild(newuseraccdiv);
+//     // var newuseraccdiv = document.createElement("div");
+//     // newuseraccdiv.classList("panel");
+//     // branchview.appendChild(newuseraccdiv);
 
-    // $.post("user_account_fetch.php",function(data)
-    // {
+//     // $.post("user_account_fetch.php",function(data)
+//     // {
 
-    //     datarw = data.split("#");
-    //     datarwlgth = datarw.length;
-    //     thdata = datarw[0].split("|");
-    //     thdatalgnth = thdata.length;
+//     //     datarw = data.split("#");
+//     //     datarwlgth = datarw.length;
+//     //     thdata = datarw[0].split("|");
+//     //     thdatalgnth = thdata.length;
 
-    //     for(var i = 0;i<thdatalgnth;i++){
-    //         th = document.createElement("th");
-    //         newuseraccdiv.appendChild(th);
+//     //     for(var i = 0;i<thdatalgnth;i++){
+//     //         th = document.createElement("th");
+//     //         newuseraccdiv.appendChild(th);
 
-    //         thtxt = document.createTextNode(thdata[i]);
-    //         th.appendChild(thtxt);
-    //     }
+//     //         thtxt = document.createTextNode(thdata[i]);
+//     //         th.appendChild(thtxt);
+//     //     }
 
-    //     for(var i = 0;i<thdatalgnth;i++){
-    //         th = document.createElement("th");
-    //         newuseraccdiv.appendChild(th);
+//     //     for(var i = 0;i<thdatalgnth;i++){
+//     //         th = document.createElement("th");
+//     //         newuseraccdiv.appendChild(th);
 
-    //         thtxt = document.createTextNode(thdata[i]);
-    //         th.appendChild(thtxt);
-    //     }
-    //     for(var i = 1; i < datarwlgth; i++){
+//     //         thtxt = document.createTextNode(thdata[i]);
+//     //         th.appendChild(thtxt);
+//     //     }
+//     //     for(var i = 1; i < datarwlgth; i++){
 
-    //         tr = document.createElement("tr");
-    //         atdata.appendChild(tr);
+//     //         tr = document.createElement("tr");
+//     //         atdata.appendChild(tr);
 
-    //         tddata = datarw[i].split("|");
-    //         tddatalgth = tddata.length;
+//     //         tddata = datarw[i].split("|");
+//     //         tddatalgth = tddata.length;
 
-    //         for(var j = 0; j < tddatalgth; j++){
-    //             td = document.createElement("td");
-    //             tr.appendChild(td);
+//     //         for(var j = 0; j < tddatalgth; j++){
+//     //             td = document.createElement("td");
+//     //             tr.appendChild(td);
 
-    //             tdmd = tddata[j].split("~");
-    //             tdmdl = tdmd.length;
+//     //             tdmd = tddata[j].split("~");
+//     //             tdmdl = tdmd.length;
 
-    //             for (var k = 0; k < tdmdl; k++){
+//     //             for (var k = 0; k < tdmdl; k++){
 
-    //                 tdtxtp = document.createElement("tr");
-    //                 td.appendChild(tdtxtp);
-    //                 tdtxt = document.createTextNode(tdmd[k]);
-    //                 tdtxtp.appendChild(tdtxt);
-    //             }
+//     //                 tdtxtp = document.createElement("tr");
+//     //                 td.appendChild(tdtxtp);
+//     //                 tdtxt = document.createTextNode(tdmd[k]);
+//     //                 tdtxtp.appendChild(tdtxt);
+//     //             }
 
-    //         }
-    //     }
-    // });
+//     //         }
+//     //     }
+//     // });
 
-}
-
-
-
-
-
-
-
-
-
-
+// }
 
 
 //Load Branch View Content
@@ -879,38 +869,8 @@ function loadtableuseraccount()
     // div.style.color = "white";
     // div.innerHTML = "Hello";
 
-    var cards2 = document.createElement("div");
-    cards2.classList.add("card");
-    cards2.classList.add("mb-3");
-    cards2.setAttribute("id",parent+"-CLU");
-
-    // // if (grandparent == "root"){
-    // //     cards2.setAttribute("hidden","true");
-    // //     cards2.classList.add("contentdataview");
-    // // }
-    // div.appendChild(cards2);
-
-        //Create Card Header
-    var cardheads = document.createElement("div");
-    cardheads.classList.add("card-header");
-    cards2.appendChild(cardheads);
-
-    //Header text Node
-    var textnodes = document.createTextNode(parent);
-    cardheads.appendChild(textnodes);
-
-    // Create Card Body
-    var cardsbody = document.createElement("div");
-    cardsbody.classList.add("card-body");
-    cards2.appendChild(cardsbody);
-
-        load_useraccount_table(parent,cardsbody);
-
-    var cardsfooter = document.createElement('div');
-    cardsfooter.classList.add("card-footer");
-    cards2.appendChild(cardsfooter);
-
-    document.getElementById("contentview").appendChild(cards2);
+    load_useraccount();
+    // document.getElementById("contentview").appendChild(cards2);
 }
 
 // document.body.onload = loadtableuseraccount();
