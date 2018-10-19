@@ -820,16 +820,16 @@ function loadtableinactive(ithead, itfoot, tdata){
 //     document.getElementById("contentview").appendChild(div);
 // }
 
-document.body.onload = loadtableuseraccount();
+// document.body.onload = loadtableuseraccount();
 
-function loadtableuseraccount()
-{
-    var newDiv = document.createElement("div");
-    newDiv.classList("panel");
+// function loadtableuseraccount()
+// {
+//     var newDiv = document.createElement("div");
+//     newDiv.classList("panel");
 
-    var currentDiv = document.getElementById("contentview");
-    document.body.insertBefore(newDiv, currentDiv);
-}
+//     var currentDiv = document.getElementById("contentview");
+//     document.body.insertBefore(newDiv, currentDiv);
+// }
 
 
 
@@ -1270,10 +1270,12 @@ function pagination(parent){
 }
 
 //Load Monitoring: User Accounts
-function loadtableuseraccount(athead, atfoot, atdata){
+function loadtableuseraccount(athead, atfoot, atdata)
+{
     var branchview = document.getElementById("contentview");
 
     var newuseraccdiv = document.createElement("div");
+    newuseraccdiv.classList("panel");
     branchview.appendChild(newuseraccdiv);
 
     $.post("user_account_fetch.php",function(data){
