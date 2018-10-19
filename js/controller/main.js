@@ -870,6 +870,12 @@ function loadtableuseraccount()
     newdivv.setAttribute("id","useracct-CLU");
     // div.appendChild(newdivv);
 
+    newdivv.style.width = "100px";
+    newdivv.style.height = "100px";
+    newdivv.style.background = "red";
+    newdivv.style.color = "white";
+    newdivv.innerHTML = "Hello";
+
     //Get Data
     $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
 
