@@ -67,8 +67,8 @@ foreach($result as $row){
         <td>{$department}</td>
         <td>{$position}</td>
         <td>{$status}</td>
-        <td>{$role}</td>
-        <td><button class="btn btn-primary">Edit Record</button></a></td>
+		<td>{$role}</td>
+		<td>{$role}</td>
     </tr>";
 
 
