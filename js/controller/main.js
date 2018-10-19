@@ -1054,16 +1054,19 @@ function accountmanagement(){
 
 /* ------------------------------- EVENT FUNCTIONS ------------------------------- */
 // Hide All Div except Clicked DiV
-function dashboard_click_event(div){
+function dashboard_click_event(div)
+{
     thisdiv = document.getElementById(div);
     divclass = document.getElementsByClassName("contentdataview");
     divclassl = divclass.length;
-    for(var loop = 0; loop < divclassl; loop ++){
+    for(var loop = 0; loop < divclassl; loop ++)
+    {
         rootchilddiv = document.getElementsByClassName("contentdataview")[loop].id;
         childdiv = document.getElementById(rootchilddiv);
         childdiv.setAttribute("hidden","true");
     }
     thisdiv.removeAttribute("hidden","true");
+    document.getElementById("panelid").remove();
 }
 
 // Mini Window Show Computer Details
