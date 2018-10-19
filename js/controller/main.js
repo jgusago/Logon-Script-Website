@@ -1067,8 +1067,8 @@ function dashboard_click_event(div)
     }
     thisdiv.removeAttribute("hidden","true");
     document.getElementById("panelid").remove();
-    document.getElementById("dtitle").innerHTML = "Reports";
 }
+
 
 // Mini Window Show Computer Details
 function miniwindow_computer_details(host){
