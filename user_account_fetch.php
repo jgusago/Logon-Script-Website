@@ -42,8 +42,8 @@ echo "
 
 		// echo "ID|User ID|Name|Department|Position|Status|Role";
 
-$sql = "SELECT userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
-
+$sql = "SELECT userid, name, department, position, status, role FROM logonscript.tbl_user WHERE role :parent";
+// role<>'SUPER ADMIN'
 
 $pdo = $db->prepare($sql);
 $pdo->bindParam(":parent",$parent);
