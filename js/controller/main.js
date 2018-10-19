@@ -806,19 +806,40 @@ function loadtableinactive(ithead, itfoot, tdata){
 /* Components */
 
 /* Profile and Accounts */
+// function loadtableuseraccount()
+// {
+//     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+
+//     var div = document.createElement("div");
+//     div.style.width = "100px";
+//     div.style.height = "100px";
+//     div.style.background = "red";
+//     div.style.color = "white";
+//     div.innerHTML = "Hello";
+
+//     document.getElementById("contentview").appendChild(div);
+// }
+
+document.body.onload = loadtableuseraccount();
+
 function loadtableuseraccount()
 {
-    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    var newDiv = document.createElement("div");
+    newDiv.classList("panel");
 
-    var div = document.createElement("div");
-    div.style.width = "100px";
-    div.style.height = "100px";
-    div.style.background = "red";
-    div.style.color = "white";
-    div.innerHTML = "Hello";
-
-    document.getElementById("contentview").appendChild(div);
+    var currentDiv = document.getElementById("contentview");
+    document.body.insertBefore(newDiv, currentDiv);
 }
+
+
+
+
+
+
+
+
+
+
 
 /* Settings */
 //Load Branch View Settings
