@@ -862,6 +862,32 @@ function loadtableuseraccount()
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
 
+    var newdivv  = document.createElement("div");
+    newdivv.classList.add("row");
+    newdivv.classList.add("row-eq-height");
+    newdivv.classList.add("col-xs-4");
+    newdivv.classList.add("col-lg-12");
+    newdivv.setAttribute("id","useracct-CLU");
+    // div.appendChild(newdivv);
+
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var newdatas = data.split("|");
+            var loop = 0;
+
+            while(newdatas[loop])
+            {
+                load_useraccount_content(newdatas[loop],newdivv,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
+
+    });
+
     // var div = document.createElement("div");
     // div.style.width = "100px";
     // div.style.height = "100px";
@@ -869,8 +895,7 @@ function loadtableuseraccount()
     // div.style.color = "white";
     // div.innerHTML = "Hello";
 
-    load_useraccount();
-    // document.getElementById("contentview").appendChild(cards2);
+    document.getElementById("contentview").appendChild(newdivv);
 }
 
 // document.body.onload = loadtableuseraccount();
