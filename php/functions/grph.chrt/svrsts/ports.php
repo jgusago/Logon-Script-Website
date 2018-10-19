@@ -1,7 +1,7 @@
  
 <?php 
 //SQL Connection
-require "C:/xampp/htdocs/om3/php/connection/connection.php";
+require "D:/xampp/htdocs/Logon-Script-Website/php/connection/connection.php";
 //Page Variables 
     $online='<td style="background-color:#00FF00; padding:5px;">Online</td>'; 
     $offline='<td style="background-color:#FF0000; padding:5px;">Offline</td>'; 
@@ -29,11 +29,14 @@ require "C:/xampp/htdocs/om3/php/connection/connection.php";
         fclose($fp); 
     } 
 //Ports and Services to check 
+
+$newport = '172.16.60.206';
 $services=array( 
-    'HTTP (Port 80)' => array('172.16.39.241' => 80), 
-    'HTTPS (Port 443)' => array('172.16.39.241' => 443), 
-    'MySQL (Port 3306)' => array('172.16.39.241' => 3306),
-    'Internet (Port 80)' => array('172.16.39.241' => 80),
+
+    'HTTP (Port 80)' => array($newport => 80), 
+    'HTTPS (Port 443)' => array($newport => 443), 
+    'MySQL (Port 3306)' => array($newport => 3306),
+    'Internet (Port 80)' => array($newport => 80),
 ); 
 
 //$server_lst= mysqli_query($con,"SELECT * FROM tbl_server");
