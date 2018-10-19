@@ -45,7 +45,7 @@ echo "
 $sql = "SELECT userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
 
 
-$pdo = $db->prepare($query);
+$pdo = $db->prepare($sql);
 $pdo->bindParam(":parent",$parent);
 $pdo->execute();
 $result = $pdo->fetchAll();
