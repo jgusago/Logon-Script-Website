@@ -544,32 +544,12 @@ function load_useracct_content(parent, div, grandparent){
         cardbody.classList.add("card-body");
         card1.appendChild(cardbody);
 
-            load_branchcomputerlist_table(parent,cardbody);
+            load_useraccount_table(parent,cardbody);
 
         var cardfooter = document.createElement('div');
         cardfooter.classList.add("card-footer");
         card1.appendChild(cardfooter);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1267,6 +1247,14 @@ function pagination(parent){
     bodydiv.appendChild(paginationscript);
 
     
+}
+
+function load_useraccount_table(parent, parentdiv)
+{
+    $.post("user_account_fetch.php", {parent:parent}, function(data){
+        parentdiv.innerHTML = data;
+    });
+
 }
 
 //Load Monitoring: User Accounts
