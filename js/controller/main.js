@@ -861,6 +861,7 @@ function loadtableuseraccount()
 {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
+    document.getElementById("panelid2").remove();
 
     var newdivv  = document.createElement("div");
     newdivv.classList.add("panel");
@@ -898,7 +899,7 @@ function loadtableuserprofile()
     newdivv.classList.add("row-eq-height");
     newdivv.classList.add("col-xs-4");
     newdivv.classList.add("col-lg-12");
-    // div.appendChild(newdivv);
+    newdivv.setAttribute("id", "panelid2");
 
     newdivv.style.width = "inherit";
     newdivv.style.height = "auto";
@@ -1066,7 +1067,6 @@ function dashboard_click_event(div)
         childdiv.setAttribute("hidden","true");
     }
     thisdiv.removeAttribute("hidden","true");
-    document.getElementById("panelid").remove();
 }
 
 
