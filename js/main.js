@@ -870,45 +870,33 @@ function loadtableuseraccount()
     newdivv.classList.add("col-lg-12");
     newdivv.setAttribute("id", "panelid");
 
-    var cards2 = document.createElement("div");
-    cards2.classList.add("card");
-    cards2.classList.add("mb-3");
-    cards2.setAttribute("id","AM");
+    // var cards2 = document.createElement("div");
+    // cards2.classList.add("card");
+    // cards2.classList.add("mb-3");
+    // cards2.setAttribute("id","AM");
 
-    newdivv.appendChild(cards2);
+    // newdivv.appendChild(cards2);
 
-        //Create Card Header
-        var cardheads = document.createElement("div");
-        cardheads.classList.add("card-header");
-        cards2.appendChild(cardheads);
+    //     //Create Card Header
+    //     var cardheads = document.createElement("div");
+    //     cardheads.classList.add("card-header");
+    //     cards2.appendChild(cardheads);
 
-            //Header text Node
-            var textnodes = document.createTextNode(parent);
-            cardheads.appendChild(textnodes);
+    //         //Header text Node
+    //         var textnodes = document.createTextNode(parent);
+    //         cardheads.appendChild(textnodes);
 
-        // Create Card Body
-        var cardsbody = document.createElement("div");
-        cardsbody.classList.add("card-body");
-        cards2.appendChild(cardsbody);
+    //     // Create Card Body
+    //     var cardsbody = document.createElement("div");
+    //     cardsbody.classList.add("card-body");
+    //     cards2.appendChild(cardsbody);
 
-            load_useraccount_table(parent,cardsbody);
+    //         load_useraccount_table(parent,cardsbody);
 
-        var cardsfooter = document.createElement('div');
-        cardsfooter.classList.add("card-footer");
-        cards2.appendChild(cardsfooter);
+    //     var cardsfooter = document.createElement('div');
+    //     cardsfooter.classList.add("card-footer");
+    //     cards2.appendChild(cardsfooter);
 
-    // var newdiv = document.createElement("div");
-    // newdiv.style.clear = "both";
-
-    // panelbody.appendChild(newdiv);
-
-    // var divtable = document.createElement("div");
-    // divtable.classList.add("table-responsive");
-    
-    // var table = document.createElement("table");
-    // table.classList.add("table-bordered");
-
-    // div.appendChild(newdivv);
 
     newdivv.style.width = "inherit";
     newdivv.style.height = "auto";
@@ -916,13 +904,6 @@ function loadtableuseraccount()
     newdivv.style.color = "white";
     newdivv.innerHTML = "Hello";
     newdivv.style.margin = "margin: initial";
-
-    // var div = document.createElement("div");
-    // div.style.width = "100px";
-    // div.style.height = "100px";
-    // div.style.background = "red";
-    // div.style.color = "white";
-    // div.innerHTML = "Hello";
 
     document.getElementById("contentview").appendChild(newdivv);
 }
