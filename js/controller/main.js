@@ -869,6 +869,38 @@ function loadtableuseraccount()
     newdivv.classList.add("col-xs-4");
     newdivv.classList.add("col-lg-12");
     newdivv.setAttribute("id", "panelid");
+
+    var panelhead = document.createElement("div");
+    panelhead.classList.add("panel");
+    panelhead.classList.add("panel-heading");
+    panelhead.classList.add("col-xs-4");
+    panelhead.classList.add("col-lg-12");
+
+    newdivv.appendChild(panelhead);
+
+    var panelbody = document.createElement("div");
+    panelbody.classList.add("panel");
+    panelbody.classList.add("panel-body");
+    panelbody.classList.add("col-xs-4");
+    panelbody.classList.add("col-lg-12");
+
+    newdivv.appendChild(panelbody);
+
+    // var newdiv = document.createElement("div");
+    // newdiv.style.clear = "both";
+
+    // panelbody.appendChild(newdiv);
+
+    // var divtable = document.createElement("div");
+    // divtable.classList.add("table-responsive");
+    
+    // var table = document.createElement("table");
+    // table.classList.add("table-bordered");
+
+    
+
+
+
     // div.appendChild(newdivv);
 
     newdivv.style.width = "inherit";
