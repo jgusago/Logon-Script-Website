@@ -34,43 +34,45 @@ echo "
 <th>Option</th>
 
 </tr>
-</tfoot>";
+</tfoot>
+</table>
+</div>";
 
-// error_reporting(0);
-// session_start();
-// require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+// // error_reporting(0);
+// // session_start();
+// // require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-		// echo "ID|User ID|Name|Department|Position|Status|Role";
+// 		// echo "ID|User ID|Name|Department|Position|Status|Role";
 
-$sql = "SELECT userid, name, department, position, status, role FROM logonscript.tbl_user WHERE role :parent";
-// role<>'SUPER ADMIN'
+// $sql = "SELECT userid, name, department, position, status, role FROM logonscript.tbl_user WHERE role :parent";
+// // role<>'SUPER ADMIN'
 
-$pdo = $db->prepare($sql);
-$pdo->bindParam(":parent",$parent);
-$pdo->execute();
-$result = $pdo->fetchAll();
+// $pdo = $db->prepare($sql);
+// $pdo->bindParam(":parent",$parent);
+// $pdo->execute();
+// $result = $pdo->fetchAll();
 
-foreach($result as $row)
-{
-    $count++;
-    $userid = $row['userid'] ?: 'null';
-	$name = $row['name'] ?: 'null';
-	$department = $row['department'] ?: 'null';
-	$position = $row['position'] ?: 'null';
-	$status = $row['status'] ?: 'Not Found';
-	$role = $row['role'] ?: 'All Running';
+// foreach($result as $row)
+// {
+//     $count++;
+//     $userid = $row['userid'] ?: 'null';
+// 	$name = $row['name'] ?: 'null';
+// 	$department = $row['department'] ?: 'null';
+// 	$position = $row['position'] ?: 'null';
+// 	$status = $row['status'] ?: 'Not Found';
+// 	$role = $row['role'] ?: 'All Running';
 
-	echo 
-	"<tr>
-        <td>$count</td>
-        <td>$userid</td>
-        <td>{$name}</td>
-        <td>{$department}</td>
-        <td>{$position}</td>
-        <td>{$status}</td>
-		<td>{$role}</td>
-		<td>{$role}</td>
-    </tr>";
+// 	echo 
+// 	"<tr>
+//         <td>$count</td>
+//         <td>$userid</td>
+//         <td>{$name}</td>
+//         <td>{$department}</td>
+//         <td>{$position}</td>
+//         <td>{$status}</td>
+// 		<td>{$role}</td>
+// 		<td>{$role}</td>
+//     </tr>";
 
 
 		
@@ -89,5 +91,5 @@ foreach($result as $row)
 		// }
 }
 
-		echo "</table></div>";
+		// echo "</table></div>";
 	?>
