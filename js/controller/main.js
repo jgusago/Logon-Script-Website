@@ -476,6 +476,7 @@ function load_useraccount_table(parent, parentdiv)
 }
 
 //Load Monitoring: User Accounts
+<<<<<<< HEAD
  function loadtableuseraccount(parent, div, grandparent)
     {
         load_useraccount();
@@ -490,6 +491,72 @@ function load_useraccount_table(parent, parentdiv)
             {
         });
     }
+=======
+function loadtableuseraccount(parent, div, grandparent)
+{
+
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Account Management";
+
+
+    var branchview = document.getElementById("contentview");
+
+    var newuseraccdiv = document.createElement("div");
+    newuseraccdiv.classList("row");
+    branchview.appendChild(newuseraccdiv);
+
+    $.post("user_account_fetch.php",function(data)
+    {
+
+        datarw = data.split("#");
+        datarwlgth = datarw.length;
+        thdata = datarw[0].split("|");
+        thdatalgnth = thdata.length;
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            newuseraccdiv.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+
+        for(var i = 0;i<thdatalgnth;i++){
+            th = document.createElement("th");
+            newuseraccdiv.appendChild(th);
+
+            thtxt = document.createTextNode(thdata[i]);
+            th.appendChild(thtxt);
+        }
+        for(var i = 1; i < datarwlgth; i++){
+
+            tr = document.createElement("tr");
+            atdata.appendChild(tr);
+
+            tddata = datarw[i].split("|");
+            tddatalgth = tddata.length;
+
+            for(var j = 0; j < tddatalgth; j++){
+                td = document.createElement("td");
+                tr.appendChild(td);
+
+                tdmd = tddata[j].split("~");
+                tdmdl = tdmd.length;
+
+                for (var k = 0; k < tdmdl; k++){
+
+                    tdtxtp = document.createElement("tr");
+                    td.appendChild(tdtxtp);
+                    tdtxt = document.createTextNode(tdmd[k]);
+                    tdtxtp.appendChild(tdtxt);
+                }
+
+            }
+        }
+    });
+
+}
+>>>>>>> 5a5807583c0f7b05728df68af8950639f223f013
 
 
 //Load Branch View Content
@@ -804,50 +871,110 @@ function loadtableinactive(ithead, itfoot, tdata){
 }
 
 /* Profile and Accounts */
-function loadtableuseraccount()
-{
+// function loadtableuseraccount()
+// {
 
-    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-    document.getElementById("dtitle2").innerHTML = "Account Management";
-    // document.getElementById("panelid2").remove();
-
-    load_user_account();
-
-    // var cards2 = document.createElement("div");
-    // cards2.classList.add("card");
-    // cards2.classList.add("mb-3");
-    // cards2.setAttribute("id","AM");
-
-    // newdivv.appendChild(cards2);
-
-    //     //Create Card Header
-    //     var cardheads = document.createElement("div");
-    //     cardheads.classList.add("card-header");
-    //     cards2.appendChild(cardheads);
-
-    //         //Header text Node
-    //         var textnodes = document.createTextNode(parent);
-    //         cardheads.appendChild(textnodes);
-
-    //     // Create Card Body
-    //     var cardsbody = document.createElement("div");
-    //     cardsbody.classList.add("card-body");
-    //     cards2.appendChild(cardsbody);
-
-    //         load_useraccount_table(parent,cardsbody);
-
-    //     var cardsfooter = document.createElement('div');
-    //     cardsfooter.classList.add("card-footer");
-    //     cards2.appendChild(cardsfooter);
+//     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+//     document.getElementById("dtitle2").innerHTML = "Account Management";
 
 
-    // newdivv.style.width = "inherit";
-    // newdivv.style.height = "auto";
-    newdivv.style.background = "#c9cac9";
-    // newdivv.style.color = "white";
-    // newdivv.innerHTML = "Hello";
-    // newdivv.style.margin = "margin: initial";
-}
+//     // newdivv.style.width = "inherit";
+//     // newdivv.style.height = "auto";
+//     newdivv.style.background = "#c9cac9";
+//     // newdivv.style.color = "white";
+//     // newdivv.innerHTML = "Hello";
+//     // newdivv.style.margin = "margin: initial";
+// }
+
+
+// window.onload = function () 
+
+// {
+
+//     var chart = new CanvasJS.Chart("chartContainer", 
+//     {
+//         exportEnabled: true,
+//         animationEnabled: true,
+//         title:
+//         {
+//             text: "Number of Installed Imonitor Agent in Different Branches"
+//         },
+//         subtitles: 
+//         [{
+//             text: "Click Legend to Hide or Unhide Data Series"
+//         }], 
+//         axisX: 
+//         {
+//             title: "States"
+//         },
+//         axisY:
+//         {
+//             title: "Installed Agent",
+//             titleFontColor: "#4F81BC",
+//             lineColor: "#4F81BC",
+//             labelFontColor: "#4F81BC",
+//             tickColor: "#4F81BC"
+//         },
+//         axisY2: 
+//         {
+//             title: "Uninstalled Agent",
+//             titleFontColor: "#C0504E",
+//             lineColor: "#C0504E",
+//             labelFontColor: "#C0504E",
+//             tickColor: "#C0504E"
+//         },
+//         toolTip: 
+//         {
+//             shared: true
+//         },
+//         legend:
+//         {
+//             cursor: "pointer",
+//             itemclick: toggleDataSeries
+//         },
+//         data: 
+//         [{
+//             type: "column",
+//             name: "Oil Filter",
+//             showInLegend: true,      
+//             yValueFormatString: "#,##0.# Units",
+//             dataPoints: [
+//                 { label: "New Jersey",  y: 19034.5 },
+//                 { label: "Texas", y: 20015 },
+//                 { label: "Oregon", y: 25342 },
+//                 { label: "Montana",  y: 20088 },
+//                 { label: "Massachusetts",  y: 28234 }
+//         ]},
+//         {
+//             type: "column",
+//             name: "Clutch",
+//             axisYType: "secondary",
+//             showInLegend: true,
+//             yValueFormatString: "#,##0.# Units",
+//             dataPoints: [
+//                 { label: "New Jersey", y: 210.5 },
+//                 { label: "Texas", y: 135 },
+//                 { label: "Oregon", y: 425 },
+//                 { label: "Montana", y: 130 },
+//                 { label: "Massachusetts", y: 528 }
+//             ]
+//         }]
+//     });
+//     chart.render();
+    
+//     function toggleDataSeries(e) {
+//         if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+//             e.dataSeries.visible = false;
+//         } else {
+//             e.dataSeries.visible = true;
+//         }
+//         e.chart.render();
+//     }
+    
+//     }
+
+
+
 
 function loadtableuserprofile()
 {
