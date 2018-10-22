@@ -482,17 +482,17 @@ function load_useraccount_table(parent, parentdiv)
 
         document.getElementById("dtitle").innerHTML = "Profile & Accounts";
         document.getElementById("dtitle2").innerHTML = "Account Management";
-        load_user_account();
-        // load_useraccount_content();
+        // load_user_account();
+        // // load_useraccount_content();
 
-        var branchview = document.getElementById("contentview");
-        var newuseraccdiv = document.createElement("div");
-        newuseraccdiv.classList("panel");
-        branchview.appendChild(newuseraccdiv);
+        // var branchview = document.getElementById("contentview");
+        // var newuseraccdiv = document.createElement("div");
+        // newuseraccdiv.classList("panel");
+        // branchview.appendChild(newuseraccdiv);
 
-                $.post("user_account_fetch.php",function(data)
-            {
-        });
+        //         $.post("user_account_fetch.php",function(data)
+        //     {
+        // });
 }
 
 //Load Branch View Content
