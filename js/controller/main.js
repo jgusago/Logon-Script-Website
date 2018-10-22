@@ -478,9 +478,12 @@ function load_useraccount_table(parent, parentdiv)
 
 //Load Monitoring: User Accounts
  function loadtableuseraccount(parent, div, grandparent)
-    {
-        load_useraccount();
-        load_useraccount_content();
+{
+
+        document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+        document.getElementById("dtitle2").innerHTML = "Account Management";
+        load_user_account();
+        // load_useraccount_content();
 
         var branchview = document.getElementById("contentview");
         var newuseraccdiv = document.createElement("div");
@@ -490,7 +493,7 @@ function load_useraccount_table(parent, parentdiv)
                 $.post("user_account_fetch.php",function(data)
             {
         });
-    }
+}
 
 //Load Branch View Content
 function load_branchview_content(parent, div, grandparent){
