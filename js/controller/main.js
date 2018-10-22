@@ -16,7 +16,7 @@ function load(){
     load_branchview("root", branchview, "0");
     load_branchcomputerlist("root", branchview, "0","root");
     load_branchcomputerlogs("root", branchview, "0","root");
-    load_useraccount("root", branchview, "0","root");
+    // load_useraccount("root", branchview, "0","root");
 
 
     /* ----- Tables ----- */
@@ -402,7 +402,7 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 }
 
 //Account Management
-function load_useraccount(parent, div, grandparent, $parentid)
+function load_useraccount(parent, div)
 {
     
     var newdivvs  = document.createElement("div");
@@ -869,6 +869,8 @@ function loadtableuseraccount()
     newdivv.classList.add("col-xs-4");
     newdivv.classList.add("col-lg-12");
     newdivv.setAttribute("id", "panelid");
+
+    load_useraccount();
 
     // var cards2 = document.createElement("div");
     // cards2.classList.add("card");
