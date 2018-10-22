@@ -852,19 +852,15 @@ function loadtableinactive(ithead, itfoot, tdata){
 
 }
 
-/* Components */
-
 /* Profile and Accounts */
 function loadtableuseraccount()
 {
-
-    load_user_account();
 
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
     // document.getElementById("panelid2").remove();
 
-    // load_useraccount();
+    load_user_account();
 
     // var cards2 = document.createElement("div");
     // cards2.classList.add("card");
