@@ -478,14 +478,15 @@ function load_useraccount_table(parent, parentdiv)
 //Load Monitoring: User Accounts
 function loadtableuseraccount(parent, div, grandparent)
 {
-   load_useraccount();
-   load_useraccount_content();
+
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Account Management";
 
 
     var branchview = document.getElementById("contentview");
 
     var newuseraccdiv = document.createElement("div");
-    newuseraccdiv.classList("panel");
+    newuseraccdiv.classList("row");
     branchview.appendChild(newuseraccdiv);
 
     $.post("user_account_fetch.php",function(data)
