@@ -405,13 +405,13 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 function load_useraccount(parent, div, grandparent, $parentid)
 {
     
-    var newdivv  = document.createElement("div");
-    newdivv.classList.add("row");
-    newdivv.classList.add("row-eq-height");
-    newdivv.classList.add("col-xs-4");
-    newdivv.classList.add("col-lg-12");
-    newdivv.setAttribute("id","useracct-CLU");
-    div.appendChild(newdivv);
+    var newdivvs  = document.createElement("div");
+    newdivvs.classList.add("row");
+    newdivvs.classList.add("row-eq-height");
+    newdivvs.classList.add("col-xs-4");
+    newdivvs.classList.add("col-lg-12");
+    // newdivv.setAttribute("id","useracct-CLU");
+    div.appendChild(newdivvs);
 
     //Get Data
     $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
@@ -423,7 +423,7 @@ function load_useraccount(parent, div, grandparent, $parentid)
 
             while(newdatas[loop])
             {
-                load_useraccount_content(newdatas[loop],newdivv,parent);
+                load_useraccount_content(newdatas[loop],newdivvs,parent);
                 loop++;
             }
         }
