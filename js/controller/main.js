@@ -477,7 +477,7 @@ function load_useraccount_table(parent, parentdiv)
 }
 
 //Load Monitoring: User Accounts
- function loadtableuseraccount(parent, div, grandparent)
+ function loadtableuseraccount()
 {
 
         document.getElementById("dtitle").innerHTML = "Profile & Accounts";
