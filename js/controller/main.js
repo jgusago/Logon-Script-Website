@@ -870,6 +870,25 @@ function loadtableuseraccount()
     newdivv.classList.add("col-lg-12");
     newdivv.setAttribute("id", "panelid");
 
+    //Get Data
+    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+
+        if (data != 0){
+
+            var newdatas = data.split("|");
+            var loop = 0;
+
+            while(newdatas[loop])
+            {
+                load_useraccount_content(newdatas[loop],newdivv,parent);
+                loop++;
+            }
+        }
+        //Else do nothing
+
+    });
+    
+
     load_useraccount();
 
     // var cards2 = document.createElement("div");
@@ -900,12 +919,12 @@ function loadtableuseraccount()
     //     cards2.appendChild(cardsfooter);
 
 
-    newdivv.style.width = "inherit";
-    newdivv.style.height = "auto";
-    newdivv.style.background = "#c9cac9";
-    newdivv.style.color = "white";
-    newdivv.innerHTML = "Hello";
-    newdivv.style.margin = "margin: initial";
+    // newdivv.style.width = "inherit";
+    // newdivv.style.height = "auto";
+    // newdivv.style.background = "#c9cac9";
+    // newdivv.style.color = "white";
+    // newdivv.innerHTML = "Hello";
+    // newdivv.style.margin = "margin: initial";
 
     document.getElementById("contentview").appendChild(newdivv);
 }
