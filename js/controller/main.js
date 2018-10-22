@@ -401,29 +401,29 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 
 }
 
-//Account Management
-function load_useraccount(parent, div)
+
+function load_user_account(parent, div, grandparent, $parentid)
 {
-    
-    var newdivvs  = document.createElement("div");
-    newdivvs.classList.add("row");
-    newdivvs.classList.add("row-eq-height");
-    newdivvs.classList.add("col-xs-4");
-    newdivvs.classList.add("col-lg-12");
-    // newdivv.setAttribute("id","useracct-CLU");
-    div.appendChild(newdivvs);
+
+    var logsdiv  = document.createElement("div");
+    logsdiv.classList.add("row");
+    logsdiv.classList.add("row-eq-height");
+    logsdiv.classList.add("col-xs-4");
+    logsdiv.classList.add("col-lg-12");
+    logsdiv.setAttribute("id","branchcomputer-CLU");
+    div.appendChild(logsdiv);
 
     //Get Data
     $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
 
         if (data != 0){
 
-            var newdatas = data.split("|");
+            var datalogs = data.split("|");
             var loop = 0;
 
-            while(newdatas[loop])
+            while(datalogs[loop])
             {
-                load_useraccount_content(newdatas[loop],newdivvs,parent);
+                load_account_content(datalogs[loop],logsdiv,parent);
                 loop++;
             }
         }
@@ -433,25 +433,23 @@ function load_useraccount(parent, div)
 
 }
 
-// Load User Account Management 
-function load_useraccount_content(parent, div, grandparent)
-{
+function load_useraccount_content(parent, div, grandparent){
 
-    var cards2 = document.createElement("div");
-    cards2.classList.add("card");
-    cards2.classList.add("mb-3");
-    cards2.setAttribute("id",parent+"-CLU");
+    var cards = document.createElement("div");
+    cards.classList.add("card");
+    cards.classList.add("mb-3");
+    cards.setAttribute("id",parent+"-CLU");
 
     if (grandparent == "root"){
-        cards2.setAttribute("hidden","true");
-        cards2.classList.add("contentdataview");
+        cards.setAttribute("hidden","true");
+        cards.classList.add("contentdataview");
     }
-    div.appendChild(cards2);
+    div.appendChild(cards);
 
         //Create Card Header
         var cardheads = document.createElement("div");
         cardheads.classList.add("card-header");
-        cards2.appendChild(cardheads);
+        cards.appendChild(cardheads);
 
             //Header text Node
             var textnodes = document.createTextNode(parent);
@@ -460,13 +458,13 @@ function load_useraccount_content(parent, div, grandparent)
         // Create Card Body
         var cardsbody = document.createElement("div");
         cardsbody.classList.add("card-body");
-        cards2.appendChild(cardsbody);
+        cards.appendChild(cardsbody);
 
             load_useraccount_table(parent,cardsbody);
 
         var cardsfooter = document.createElement('div');
         cardsfooter.classList.add("card-footer");
-        cards2.appendChild(cardsfooter);
+        cards.appendChild(cardsfooter);
 }
 
 function load_useraccount_table(parent, parentdiv)
@@ -859,37 +857,12 @@ function loadtableinactive(ithead, itfoot, tdata){
 /* Profile and Accounts */
 function loadtableuseraccount()
 {
+
+    load_user_account();
+
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
     // document.getElementById("panelid2").remove();
-
-    var newdivv  = document.createElement("div");
-    newdivv.classList.add("panel");
-    newdivv.classList.add("row-eq-height");
-    newdivv.classList.add("col-xs-4");
-    newdivv.classList.add("col-lg-12");
-    newdivv.setAttribute("id", "panelid");
-
-    //Get Data
-    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
-
-        if (data != 0){
-
-            var newdatas = data.split("|");
-            var loop = 0;
-
-            while(newdatas[loop])
-            {
-                load_useraccount_content(newdatas[loop],newdivv,parent);
-                loop++;
-            }
-        }
-        //Else do nothing
-
-    });
-
-    
-    
 
     // load_useraccount();
 
@@ -927,8 +900,6 @@ function loadtableuseraccount()
     // newdivv.style.color = "white";
     // newdivv.innerHTML = "Hello";
     // newdivv.style.margin = "margin: initial";
-
-    document.getElementById("contentview").appendChild(newdivv);
 }
 
 function loadtableuserprofile()
