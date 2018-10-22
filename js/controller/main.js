@@ -482,6 +482,14 @@ function load_useraccount_table(parent, parentdiv)
 
         document.getElementById("dtitle").innerHTML = "Profile & Accounts";
         document.getElementById("dtitle2").innerHTML = "Account Management";
+
+        var ctnview = document.getElementById("contentview");
+        var div = document.createElement("div");
+        div.classList.add("panel");
+        ctnview.appendChild(div);
+
+        div.style.background = "#c9cac9";
+
         // load_user_account();
         // // load_useraccount_content();
 
