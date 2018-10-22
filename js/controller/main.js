@@ -887,9 +887,11 @@ function loadtableuseraccount()
         //Else do nothing
 
     });
+
+    
     
 
-    load_useraccount();
+    // load_useraccount();
 
     // var cards2 = document.createElement("div");
     // cards2.classList.add("card");
@@ -921,7 +923,7 @@ function loadtableuseraccount()
 
     // newdivv.style.width = "inherit";
     // newdivv.style.height = "auto";
-    // newdivv.style.background = "#c9cac9";
+    newdivv.style.background = "#c9cac9";
     // newdivv.style.color = "white";
     // newdivv.innerHTML = "Hello";
     // newdivv.style.margin = "margin: initial";
