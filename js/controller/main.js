@@ -477,71 +477,20 @@ function load_useraccount_table(parent, parentdiv)
 }
 
 //Load Monitoring: User Accounts
-function loadtableuseraccount(parent, div, grandparent)
-{
-
-    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-    document.getElementById("dtitle2").innerHTML = "Account Management";
-
-
-    var branchview = document.getElementById("contentview");
-
-    var newuseraccdiv = document.createElement("div");
-    newuseraccdiv.classList("row");
-    branchview.appendChild(newuseraccdiv);
-
-    $.post("user_account_fetch.php",function(data)
+ function loadtableuseraccount(parent, div, grandparent)
     {
+        load_useraccount();
+        load_useraccount_content();
 
-        datarw = data.split("#");
-        datarwlgth = datarw.length;
-        thdata = datarw[0].split("|");
-        thdatalgnth = thdata.length;
+        var branchview = document.getElementById("contentview");
+        var newuseraccdiv = document.createElement("div");
+        newuseraccdiv.classList("panel");
+        branchview.appendChild(newuseraccdiv);
 
-        for(var i = 0;i<thdatalgnth;i++){
-            th = document.createElement("th");
-            newuseraccdiv.appendChild(th);
-
-            thtxt = document.createTextNode(thdata[i]);
-            th.appendChild(thtxt);
-        }
-
-        for(var i = 0;i<thdatalgnth;i++){
-            th = document.createElement("th");
-            newuseraccdiv.appendChild(th);
-
-            thtxt = document.createTextNode(thdata[i]);
-            th.appendChild(thtxt);
-        }
-        for(var i = 1; i < datarwlgth; i++){
-
-            tr = document.createElement("tr");
-            atdata.appendChild(tr);
-
-            tddata = datarw[i].split("|");
-            tddatalgth = tddata.length;
-
-            for(var j = 0; j < tddatalgth; j++){
-                td = document.createElement("td");
-                tr.appendChild(td);
-
-                tdmd = tddata[j].split("~");
-                tdmdl = tdmd.length;
-
-                for (var k = 0; k < tdmdl; k++){
-
-                    tdtxtp = document.createElement("tr");
-                    td.appendChild(tdtxtp);
-                    tdtxt = document.createTextNode(tdmd[k]);
-                    tdtxtp.appendChild(tdtxt);
-                }
-
-            }
-        }
-    });
-
-}
-
+                $.post("user_account_fetch.php",function(data)
+            {
+        });
+    }
 
 //Load Branch View Content
 function load_branchview_content(parent, div, grandparent){
