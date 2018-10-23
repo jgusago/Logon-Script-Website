@@ -17,7 +17,7 @@ $result = $stmt->fetchAll();
 if($rowcount>0){
     foreach($result as $row){
         $filter = $row["tree_filter"];
-        
+
         $secondquery = "SELECT *
                         FROM logonscript.tbl_log
                         WHERE branch like ?
@@ -44,9 +44,9 @@ if($rowcount>0){
                 {
                     echo '|';
                 }
-            
+
                 echo $data;
-            
+
                 $count++;
 
             }

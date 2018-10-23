@@ -7,15 +7,6 @@ function load(){
 
     load_branchviewbtn();
 
-    setInterval(function(){
-        if(wdth <= 100){
-        loading.style.width = wdth + "%";
-        wdth = wdth+1;
-        }
-        else{
-            $("#progressbardiv").hide();
-        }
-    },10);
 }
 
 /* Buttons */
@@ -94,13 +85,13 @@ function load_branchviewbtn(){
 
                 bvcomlogsbtntxt = document.createTextNode("Computer Logs");
                 bvcomlogbtn.appendChild(bvcomlogsbtntxt);
-            
+
             bvclog = document.createElement("ul");
             bvclog.classList.add("sidenav-third-level");
             bvclog.classList.add("collapse");
             bvclog.setAttribute("id","rootIII");
             bvclog.setAttribute("data-parent","#collapseCharts")
-    
+
             bvcomlogs.appendChild(bvclog);
 
         }
@@ -187,7 +178,7 @@ function DSHBRDCompLogs(parent){
 
     var view = document.getElementById("contentview");
     view.innerHTML = "";
-    
+
     tableid = idgenerator();
 
     var card = {};
