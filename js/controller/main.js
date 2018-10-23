@@ -489,6 +489,8 @@ function load_useraccount_table(parent, parentdiv)
         ctnview.appendChild(div);
 
         div.style.background = "#c9cac9";
+        div.style.width = "500px";
+        div.style.height = "300px";
 
         // load_user_account();
         // // load_useraccount_content();
