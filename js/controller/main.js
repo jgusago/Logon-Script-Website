@@ -16,7 +16,7 @@ function load(){
     load_branchview("root", branchview, "0");
     load_branchcomputerlist("root", branchview, "0","root");
     load_branchcomputerlogs("root", branchview, "0","root");
-    load_useraccount("root", branchview, "0","root");
+    // load_useraccount("root", branchview, "0","root");
 
 
     /* ----- Tables ----- */
@@ -30,6 +30,7 @@ function load(){
 
     /* ----- Account Settings ----- */
     accountmanagement();
+    // loadtableuseraccount();
 
     // load_useracct();
 
@@ -401,29 +402,29 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 
 }
 
-//Account Management
-function load_useraccount(parent, div, grandparent, $parentid)
+
+function load_user_account(parent, div, grandparent, $parentid)
 {
-    
-    var newdivv  = document.createElement("div");
-    newdivv.classList.add("row");
-    newdivv.classList.add("row-eq-height");
-    newdivv.classList.add("col-xs-4");
-    newdivv.classList.add("col-lg-12");
-    newdivv.setAttribute("id","useracct-CLU");
-    div.appendChild(newdivv);
+
+    var logsdiv  = document.createElement("div");
+    logsdiv.classList.add("row");
+    logsdiv.classList.add("row-eq-height");
+    logsdiv.classList.add("col-xs-4");
+    logsdiv.classList.add("col-lg-12");
+    logsdiv.setAttribute("id","branchcomputer-CLU");
+    div.appendChild(logsdiv);
 
     //Get Data
     $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
 
         if (data != 0){
 
-            var newdatas = data.split("|");
+            var datalogs = data.split("|");
             var loop = 0;
 
-            while(newdatas[loop])
+            while(datalogs[loop])
             {
-                load_useraccount_content(newdatas[loop],newdivv,parent);
+                load_account_content(datalogs[loop],logsdiv,parent);
                 loop++;
             }
         }
@@ -433,25 +434,23 @@ function load_useraccount(parent, div, grandparent, $parentid)
 
 }
 
-// Load User Account Management 
-function load_useraccount_content(parent, div, grandparent)
-{
+function load_useraccount_content(parent, div, grandparent){
 
-    var cards2 = document.createElement("div");
-    cards2.classList.add("card");
-    cards2.classList.add("mb-3");
-    cards2.setAttribute("id",parent+"-CLU");
+    var cards = document.createElement("div");
+    cards.classList.add("card");
+    cards.classList.add("mb-3");
+    cards.setAttribute("id",parent+"-CLU");
 
     if (grandparent == "root"){
-        cards2.setAttribute("hidden","true");
-        cards2.classList.add("contentdataview");
+        cards.setAttribute("hidden","true");
+        cards.classList.add("contentdataview");
     }
-    div.appendChild(cards2);
+    div.appendChild(cards);
 
         //Create Card Header
         var cardheads = document.createElement("div");
         cardheads.classList.add("card-header");
-        cards2.appendChild(cardheads);
+        cards.appendChild(cardheads);
 
             //Header text Node
             var textnodes = document.createTextNode(parent);
@@ -460,13 +459,13 @@ function load_useraccount_content(parent, div, grandparent)
         // Create Card Body
         var cardsbody = document.createElement("div");
         cardsbody.classList.add("card-body");
-        cards2.appendChild(cardsbody);
+        cards.appendChild(cardsbody);
 
             load_useraccount_table(parent,cardsbody);
 
         var cardsfooter = document.createElement('div');
         cardsfooter.classList.add("card-footer");
-        cards2.appendChild(cardsfooter);
+        cards.appendChild(cardsfooter);
 }
 
 function load_useraccount_table(parent, parentdiv)
@@ -478,70 +477,33 @@ function load_useraccount_table(parent, parentdiv)
 }
 
 //Load Monitoring: User Accounts
-// function loadtableuseraccount(parent, div, grandparent)
-// {
-//    load_useraccount();
-//    load_useraccount_content();
+ function loadtableuseraccount()
+{
 
+        document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+        document.getElementById("dtitle2").innerHTML = "Account Management";
 
-//     // var branchview = document.getElementById("contentview");
+        var ctnview = document.getElementById("contentview");
+        var div = document.createElement("div");
+        div.classList.add("panel");
+        ctnview.appendChild(div);
 
-//     // var newuseraccdiv = document.createElement("div");
-//     // newuseraccdiv.classList("panel");
-//     // branchview.appendChild(newuseraccdiv);
+        div.style.background = "#c9cac9";
+        div.style.width = "500px";
+        div.style.height = "300px";
 
-//     // $.post("user_account_fetch.php",function(data)
-//     // {
+        // load_user_account();
+        // // load_useraccount_content();
 
-//     //     datarw = data.split("#");
-//     //     datarwlgth = datarw.length;
-//     //     thdata = datarw[0].split("|");
-//     //     thdatalgnth = thdata.length;
+        // var branchview = document.getElementById("contentview");
+        // var newuseraccdiv = document.createElement("div");
+        // newuseraccdiv.classList("panel");
+        // branchview.appendChild(newuseraccdiv);
 
-//     //     for(var i = 0;i<thdatalgnth;i++){
-//     //         th = document.createElement("th");
-//     //         newuseraccdiv.appendChild(th);
-
-//     //         thtxt = document.createTextNode(thdata[i]);
-//     //         th.appendChild(thtxt);
-//     //     }
-
-//     //     for(var i = 0;i<thdatalgnth;i++){
-//     //         th = document.createElement("th");
-//     //         newuseraccdiv.appendChild(th);
-
-//     //         thtxt = document.createTextNode(thdata[i]);
-//     //         th.appendChild(thtxt);
-//     //     }
-//     //     for(var i = 1; i < datarwlgth; i++){
-
-//     //         tr = document.createElement("tr");
-//     //         atdata.appendChild(tr);
-
-//     //         tddata = datarw[i].split("|");
-//     //         tddatalgth = tddata.length;
-
-//     //         for(var j = 0; j < tddatalgth; j++){
-//     //             td = document.createElement("td");
-//     //             tr.appendChild(td);
-
-//     //             tdmd = tddata[j].split("~");
-//     //             tdmdl = tdmd.length;
-
-//     //             for (var k = 0; k < tdmdl; k++){
-
-//     //                 tdtxtp = document.createElement("tr");
-//     //                 td.appendChild(tdtxtp);
-//     //                 tdtxt = document.createTextNode(tdmd[k]);
-//     //                 tdtxtp.appendChild(tdtxt);
-//     //             }
-
-//     //         }
-//     //     }
-//     // });
-
-// }
-
+        //         $.post("user_account_fetch.php",function(data)
+        //     {
+        // });
+}
 
 //Load Branch View Content
 function load_branchview_content(parent, div, grandparent){
@@ -854,59 +816,111 @@ function loadtableinactive(ithead, itfoot, tdata){
 
 }
 
-/* Components */
-
 /* Profile and Accounts */
-function loadtableuseraccount()
-{
-    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-    document.getElementById("dtitle2").innerHTML = "Account Management";
-    // document.getElementById("panelid2").remove();
+// function loadtableuseraccount()
+// {
 
-    var newdivv  = document.createElement("div");
-    newdivv.classList.add("panel");
-    newdivv.classList.add("row-eq-height");
-    newdivv.classList.add("col-xs-4");
-    newdivv.classList.add("col-lg-12");
-    newdivv.setAttribute("id", "panelid");
-
-    // var cards2 = document.createElement("div");
-    // cards2.classList.add("card");
-    // cards2.classList.add("mb-3");
-    // cards2.setAttribute("id","AM");
-
-    // newdivv.appendChild(cards2);
-
-    //     //Create Card Header
-    //     var cardheads = document.createElement("div");
-    //     cardheads.classList.add("card-header");
-    //     cards2.appendChild(cardheads);
-
-    //         //Header text Node
-    //         var textnodes = document.createTextNode(parent);
-    //         cardheads.appendChild(textnodes);
-
-    //     // Create Card Body
-    //     var cardsbody = document.createElement("div");
-    //     cardsbody.classList.add("card-body");
-    //     cards2.appendChild(cardsbody);
-
-    //         load_useraccount_table(parent,cardsbody);
-
-    //     var cardsfooter = document.createElement('div');
-    //     cardsfooter.classList.add("card-footer");
-    //     cards2.appendChild(cardsfooter);
+//     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+//     document.getElementById("dtitle2").innerHTML = "Account Management";
 
 
-    newdivv.style.width = "inherit";
-    newdivv.style.height = "auto";
-    newdivv.style.background = "#c9cac9";
-    newdivv.style.color = "white";
-    newdivv.innerHTML = "Hello";
-    newdivv.style.margin = "margin: initial";
+//     // newdivv.style.width = "inherit";
+//     // newdivv.style.height = "auto";
+//     newdivv.style.background = "#c9cac9";
+//     // newdivv.style.color = "white";
+//     // newdivv.innerHTML = "Hello";
+//     // newdivv.style.margin = "margin: initial";
+// }
 
-    document.getElementById("contentview").appendChild(newdivv);
-}
+
+// window.onload = function () 
+
+// {
+
+//     var chart = new CanvasJS.Chart("chartContainer", 
+//     {
+//         exportEnabled: true,
+//         animationEnabled: true,
+//         title:
+//         {
+//             text: "Number of Installed Imonitor Agent in Different Branches"
+//         },
+//         subtitles: 
+//         [{
+//             text: "Click Legend to Hide or Unhide Data Series"
+//         }], 
+//         axisX: 
+//         {
+//             title: "States"
+//         },
+//         axisY:
+//         {
+//             title: "Installed Agent",
+//             titleFontColor: "#4F81BC",
+//             lineColor: "#4F81BC",
+//             labelFontColor: "#4F81BC",
+//             tickColor: "#4F81BC"
+//         },
+//         axisY2: 
+//         {
+//             title: "Uninstalled Agent",
+//             titleFontColor: "#C0504E",
+//             lineColor: "#C0504E",
+//             labelFontColor: "#C0504E",
+//             tickColor: "#C0504E"
+//         },
+//         toolTip: 
+//         {
+//             shared: true
+//         },
+//         legend:
+//         {
+//             cursor: "pointer",
+//             itemclick: toggleDataSeries
+//         },
+//         data: 
+//         [{
+//             type: "column",
+//             name: "Oil Filter",
+//             showInLegend: true,      
+//             yValueFormatString: "#,##0.# Units",
+//             dataPoints: [
+//                 { label: "New Jersey",  y: 19034.5 },
+//                 { label: "Texas", y: 20015 },
+//                 { label: "Oregon", y: 25342 },
+//                 { label: "Montana",  y: 20088 },
+//                 { label: "Massachusetts",  y: 28234 }
+//         ]},
+//         {
+//             type: "column",
+//             name: "Clutch",
+//             axisYType: "secondary",
+//             showInLegend: true,
+//             yValueFormatString: "#,##0.# Units",
+//             dataPoints: [
+//                 { label: "New Jersey", y: 210.5 },
+//                 { label: "Texas", y: 135 },
+//                 { label: "Oregon", y: 425 },
+//                 { label: "Montana", y: 130 },
+//                 { label: "Massachusetts", y: 528 }
+//             ]
+//         }]
+//     });
+//     chart.render();
+    
+//     function toggleDataSeries(e) {
+//         if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+//             e.dataSeries.visible = false;
+//         } else {
+//             e.dataSeries.visible = true;
+//         }
+//         e.chart.render();
+//     }
+    
+//     }
+
+
+
 
 function loadtableuserprofile()
 {
