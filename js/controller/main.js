@@ -539,12 +539,12 @@ function load_useraccount_table(parent, parentdiv)
         td5.innerHTML = "Staff";
         var td6 = document.createElement("td");
         td6.innerHTML = "Active";
-        // var td7 = document.createElement("td");
-        // var btnedit = document.createElement("button");
-        // btnedit.classList.add("btn");
-        // btnedit.classList.add("btn-primary");
-        // var btntxt = document.createTextNode("Edit User Record");
-        // btntxt.setAttribute("id", "editUser");
+        var td7 = document.createElement("td");
+        var btnedit = document.createElement("button");
+        btnedit.classList.add("btn");
+        btnedit.classList.add("btn-primary");
+        var btntxt = document.createTextNode("Edit User Record");
+        btntxt.setAttribute("id", "editUser");
 
         var div3 = document.createElement("div");
         div3.classList.add("panel-footer");
@@ -557,8 +557,8 @@ function load_useraccount_table(parent, parentdiv)
         div3.appendChild(btnadd);
         btnadd.appendChild(txtnode);
 
-        // td7.appendChild(btnedit);
-        // btnedit.appendChild(btntxt);
+        td7.appendChild(btnedit);
+        btnedit.appendChild(btntxt);
 
         tr.appendChild(th);
         tr.appendChild(th1);
@@ -576,7 +576,7 @@ function load_useraccount_table(parent, parentdiv)
         trb.appendChild(td4);
         trb.appendChild(td5);
         trb.appendChild(td6);
-        // trb.appendChild(td7);
+        trb.appendChild(td7);
 
         thead.appendChild(tr);
         tbody.appendChild(trb);
