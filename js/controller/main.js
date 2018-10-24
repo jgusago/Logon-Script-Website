@@ -542,6 +542,10 @@ function load_useraccount_table(parent, parentdiv)
         var btnedit = document.createElement("button");
         btnedit.classList.add("btn");
         btnedit.classList.add("btn-primary");
+        btnedit.setAttribute("data-target", "#editUser");
+        // btnadd.setAttribute("onclick","addUsers()");
+        btnedit.setAttribute("href", "#editUser");
+        btnedit.setAttribute("data-toggle","modal");
         var btntxt = document.createTextNode("Edit User Record");
         // btntxt.setAttribute("id", "editUser");
 
