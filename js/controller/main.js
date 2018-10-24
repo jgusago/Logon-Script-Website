@@ -503,7 +503,14 @@ function load_useraccount_table(parent, parentdiv)
         tbl.classList.add("table-bordered");
         var thead = document.createElement("thead");
         var tr = document.createElement("tr");
+        var th = document.createElement("th")
+        th.innerHTML = "No.";
+        var th1 = document.createElement("th")
+        th1.innerHTML = "ID Number";
+        
 
+        tr.appendChild(th);
+        tr.appendChild(th1);
         thead.appendChild(tr);
         tbl.appendChild(thead);
         divv2.appendChild(tbl);
@@ -521,6 +528,9 @@ function load_useraccount_table(parent, parentdiv)
 
         divv2.style.width = "-webkit-fill-available";
         divv2.style.margin = "15px";
+
+        th.style.paddingBottom = "15px";
+        th1.style.paddingBottom = "15px";
 
         // load_user_account();
         // // load_useraccount_content();
