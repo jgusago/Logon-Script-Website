@@ -543,8 +543,8 @@ function load_useraccount_table(parent, parentdiv)
         var btnedit = document.createElement("button");
         btnedit.classList.add("btn");
         btnedit.classList.add("btn-primary");
-        var btntxt = document.createTextNode("Edit User Record");
-        btntxt.setAttribute("id", "editUser");
+        // var btntxt = document.createTextNode("Edit User Record");
+        // btntxt.setAttribute("id", "editUser");
 
         var div3 = document.createElement("div");
         div3.classList.add("panel-footer");
@@ -558,7 +558,7 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.appendChild(txtnode);
 
         td7.appendChild(btnedit);
-        btnedit.appendChild(btntxt);
+        // btnedit.appendChild(btntxt);
 
         tr.appendChild(th);
         tr.appendChild(th1);
