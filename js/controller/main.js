@@ -522,7 +522,18 @@ function load_useraccount_table(parent, parentdiv)
         var th7 = document.createElement("th")
         th7.innerHTML = "Option";
 
+        var div3 = documnet.createElement("div")
+        div3.classList.add("panel");
+        div3.classList.add("panel-footer");
+        var btnadd = document.createElement("button");
+        btnadd.classList.add("btn");
+        btnadd.classList.add("btn-primary");
+        btnadd.createTextNode("Add user");
         
+
+
+
+        div3.appendChild(btnadd);
 
         tr.appendChild(th);
         tr.appendChild(th1);
@@ -541,6 +552,7 @@ function load_useraccount_table(parent, parentdiv)
         div.appendChild(div1);
         ctnview.appendChild(div);
         div.appendChild(div2);
+        div.appendChild(div3);
 
         div.style.background = "rgba(213, 213, 213, 0.3)";
         div.style.width = "-webkit-fill-available";
