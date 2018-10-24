@@ -527,18 +527,18 @@ function load_useraccount_table(parent, parentdiv)
 
         var td = document.createElement("td");
         td.innerHTML = "1";
-        // var td1 = document.createElement("td");
-        // td1.innerHTML = "1040359";
-        // var td2 = document.createElement("td");
-        // td2.innerHTML = "Camille Kate";
-        // var td3 = document.createElement("td");
-        // td3.innerHTML = "Marvin(IT)";
-        // var td4 = document.createElement("td");
-        // td4.innerHTML = "OM-Audit";
-        // var td5 = document.createElement("td");
-        // td5.innerHTML = "Staff";
-        // var td6 = document.createElement("td");
-        // td6.innerHTML = "Active";
+        var td1 = document.createElement("td");
+        td1.innerHTML = "1040359";
+        var td2 = document.createElement("td");
+        td2.innerHTML = "Camille Kate";
+        var td3 = document.createElement("td");
+        td3.innerHTML = "Marvin(IT)";
+        var td4 = document.createElement("td");
+        td4.innerHTML = "OM-Audit";
+        var td5 = document.createElement("td");
+        td5.innerHTML = "Staff";
+        var td6 = document.createElement("td");
+        td6.innerHTML = "Active";
         // var td7 = document.createElement("td");
         // var btnedit = document.createElement("button");
         // btnedit.classList.add("btn");
@@ -570,12 +570,12 @@ function load_useraccount_table(parent, parentdiv)
         tr.appendChild(th7);
 
         trb.appendChild(td);
-        // trb.appendChild(td1);
-        // trb.appendChild(td2);
-        // trb.appendChild(td3);
-        // trb.appendChild(td4);
-        // trb.appendChild(td5);
-        // trb.appendChild(td6);
+        trb.appendChild(td1);
+        trb.appendChild(td2);
+        trb.appendChild(td3);
+        trb.appendChild(td4);
+        trb.appendChild(td5);
+        trb.appendChild(td6);
         // trb.appendChild(td7);
 
         thead.appendChild(tr);
