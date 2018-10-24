@@ -944,7 +944,7 @@ function loadtableuserprofile()
 {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
-    document.getElementById("contentview").remove();
+    // document.getElementById("contentview").reomove();
 
     var newdivv  = document.createElement("div");
     newdivv.classList.add("panel");
