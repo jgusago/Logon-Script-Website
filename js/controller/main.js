@@ -527,6 +527,7 @@ function load_useraccount_table(parent, parentdiv)
         var btnadd = document.createElement("button");
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
+        btnadd.setAttribute("id", "addUser");
         var txtnode = document.createTextNode("Add user");
 
         div3.appendChild(btnadd);
@@ -565,6 +566,8 @@ function load_useraccount_table(parent, parentdiv)
         th1.style.paddingBottom = "15px";
 
         tr.style.textAlign = "-webkit-center";
+
+        btnadd.style.margin = "15px";
 
 
         // load_user_account();
