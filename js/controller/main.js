@@ -603,7 +603,7 @@ function load_useraccount_table(parent, parentdiv)
         th1.style.paddingBottom = "15px";
 
         tr.style.textAlign = "-webkit-center";
-        td.style.textAlign = "-webkit-center";
+        trb.style.textAlign = "-webkit-center";
 
         btnadd.style.margin = "15px";
 
