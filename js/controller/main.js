@@ -510,8 +510,8 @@ function load_useraccount_table(parent, parentdiv)
         div2.appendChild(divv2);
         div1.appendChild(h3);
         div.appendChild(div1);
+        ctnview.appendChild(div2);
         ctnview.appendChild(div);
-        ctnview.append(div2);
 
         div.style.background = "#c9cac9";
         div.style.width = "-webkit-fill-available";
