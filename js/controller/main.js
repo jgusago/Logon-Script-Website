@@ -543,7 +543,6 @@ function load_useraccount_table(parent, parentdiv)
         btnedit.classList.add("btn");
         btnedit.classList.add("btn-primary");
         btnedit.setAttribute("data-target", "#editUser");
-        // btnadd.setAttribute("onclick","addUsers()");
         btnedit.setAttribute("href", "#editUser");
         btnedit.setAttribute("data-toggle","modal");
         var btntxt = document.createTextNode("Edit User Record");
@@ -555,7 +554,6 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
         btnadd.setAttribute("data-target", "#addUser");
-        // btnadd.setAttribute("onclick","addUsers()");
         btnadd.setAttribute("href", "#addUser");
         btnadd.setAttribute("data-toggle","modal");
         var txtnode = document.createTextNode("Add user");
@@ -625,11 +623,6 @@ function load_useraccount_table(parent, parentdiv)
         //         $.post("user_account_fetch.php",function(data)
         //     {
         // });
-}
-
-function addUsers()
-{
-    document.getElementById("addUser").showModal();
 }
 
 //Load Branch View Content
