@@ -552,6 +552,7 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
         btnadd.setAttribute("id", "addUser");
+        btnadd.setAttribute("onclick","addUser()");
         btnadd.setAttribute("data-toggle","modal");
         var txtnode = document.createTextNode("Add user");
 
@@ -620,6 +621,26 @@ function load_useraccount_table(parent, parentdiv)
         //         $.post("user_account_fetch.php",function(data)
         //     {
         // });
+}
+
+function addUser()
+{
+    var modal = document.getElementById("addUser");
+    var btn = document.getElementById("addUser");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function()
+    {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event)
+    {
+        if(event.target == modal)
+        {
+            modal.style.display = "none";
+        }
+    }
 }
 
 //Load Branch View Content
@@ -932,111 +953,6 @@ function loadtableinactive(ithead, itfoot, tdata){
     });
 
 }
-
-/* Profile and Accounts */
-// function loadtableuseraccount()
-// {
-
-//     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-//     document.getElementById("dtitle2").innerHTML = "Account Management";
-
-
-//     // newdivv.style.width = "inherit";
-//     // newdivv.style.height = "auto";
-//     newdivv.style.background = "#c9cac9";
-//     // newdivv.style.color = "white";
-//     // newdivv.innerHTML = "Hello";
-//     // newdivv.style.margin = "margin: initial";
-// }
-
-
-// window.onload = function () 
-
-// {
-
-//     var chart = new CanvasJS.Chart("chartContainer", 
-//     {
-//         exportEnabled: true,
-//         animationEnabled: true,
-//         title:
-//         {
-//             text: "Number of Installed Imonitor Agent in Different Branches"
-//         },
-//         subtitles: 
-//         [{
-//             text: "Click Legend to Hide or Unhide Data Series"
-//         }], 
-//         axisX: 
-//         {
-//             title: "States"
-//         },
-//         axisY:
-//         {
-//             title: "Installed Agent",
-//             titleFontColor: "#4F81BC",
-//             lineColor: "#4F81BC",
-//             labelFontColor: "#4F81BC",
-//             tickColor: "#4F81BC"
-//         },
-//         axisY2: 
-//         {
-//             title: "Uninstalled Agent",
-//             titleFontColor: "#C0504E",
-//             lineColor: "#C0504E",
-//             labelFontColor: "#C0504E",
-//             tickColor: "#C0504E"
-//         },
-//         toolTip: 
-//         {
-//             shared: true
-//         },
-//         legend:
-//         {
-//             cursor: "pointer",
-//             itemclick: toggleDataSeries
-//         },
-//         data: 
-//         [{
-//             type: "column",
-//             name: "Oil Filter",
-//             showInLegend: true,      
-//             yValueFormatString: "#,##0.# Units",
-//             dataPoints: [
-//                 { label: "New Jersey",  y: 19034.5 },
-//                 { label: "Texas", y: 20015 },
-//                 { label: "Oregon", y: 25342 },
-//                 { label: "Montana",  y: 20088 },
-//                 { label: "Massachusetts",  y: 28234 }
-//         ]},
-//         {
-//             type: "column",
-//             name: "Clutch",
-//             axisYType: "secondary",
-//             showInLegend: true,
-//             yValueFormatString: "#,##0.# Units",
-//             dataPoints: [
-//                 { label: "New Jersey", y: 210.5 },
-//                 { label: "Texas", y: 135 },
-//                 { label: "Oregon", y: 425 },
-//                 { label: "Montana", y: 130 },
-//                 { label: "Massachusetts", y: 528 }
-//             ]
-//         }]
-//     });
-//     chart.render();
-    
-//     function toggleDataSeries(e) {
-//         if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-//             e.dataSeries.visible = false;
-//         } else {
-//             e.dataSeries.visible = true;
-//         }
-//         e.chart.render();
-//     }
-    
-//     }
-
-
 
 
 function loadtableuserprofile()
