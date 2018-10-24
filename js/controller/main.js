@@ -518,7 +518,7 @@ function load_useraccount_table(parent, parentdiv)
         var th5 = document.createElement("th")
         th5.innerHTML = "Role";
         var th6 = document.createElement("th")
-        th6.innerHTML = "Status.";
+        th6.innerHTML = "Status";
         var th7 = document.createElement("th")
         th7.innerHTML = "Option";
 
