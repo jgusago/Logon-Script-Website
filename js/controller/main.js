@@ -553,7 +553,7 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.classList.add("btn-primary");
         btnadd.setAttribute("id", "addUser");
         btnadd.setAttribute("onclick","addUsers()");
-        btnadd.setAttribute("href", "addUser");
+        btnadd.setAttribute("href", "addUser()");
         btnadd.setAttribute("data-toggle","modal");
         var txtnode = document.createTextNode("Add user");
 
@@ -624,10 +624,10 @@ function load_useraccount_table(parent, parentdiv)
         // });
 }
 
-function addUsers()
-{
-    document.getElementById("addUser").showModal();
-}
+// function addUsers()
+// {
+//     document.getElementById("addUser").showModal();
+// }
 
 //Load Branch View Content
 function load_branchview_content(parent, div, grandparent){
