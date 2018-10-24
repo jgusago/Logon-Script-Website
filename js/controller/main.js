@@ -522,16 +522,12 @@ function load_useraccount_table(parent, parentdiv)
         var th7 = document.createElement("th")
         th7.innerHTML = "Option";
 
-        var div3 = documnet.createElement("div")
-        div3.classList.add("panel");
+        var div3 = documnet.createElement("div");
         div3.classList.add("panel-footer");
         var btnadd = document.createElement("button");
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
         btnadd.createTextNode("Add user");
-        
-
-
 
         div3.appendChild(btnadd);
 
