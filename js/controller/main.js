@@ -552,6 +552,7 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
         btnadd.setAttribute("id", "addUser");
+        btnadd.setAttribute("data-toggle","modal");
         var txtnode = document.createTextNode("Add user");
 
         div3.appendChild(btnadd);
