@@ -598,7 +598,7 @@ function load_useraccount_table(parent, parentdiv)
         divv2.style.width = "-webkit-fill-available";
         divv2.style.margin = "15px";
 
-        tbl.style.background = "#d7ef126b";
+        tbl.style.background = "rgba(204, 205, 200, 0.42)";
         th.style.paddingBottom = "15px";
         th1.style.paddingBottom = "15px";
 
