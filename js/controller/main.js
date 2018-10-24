@@ -503,6 +503,9 @@ function load_useraccount_table(parent, parentdiv)
         tbl.classList.add("table-bordered");
         var thead = document.createElement("thead");
         var tr = document.createElement("tr");
+        var tbody = document.createElement("tbody");
+        var trb = document.createElement("tr");
+        var td = document.createElement("td");
 
 
         var th = document.createElement("th");
@@ -521,10 +524,6 @@ function load_useraccount_table(parent, parentdiv)
         th6.innerHTML = "Status";
         var th7 = document.createElement("th");
         th7.innerHTML = "Option";
-
-        var tbody = document.createElement("tbody");
-        var trb = document.createElement("tr");
-        var td = document.createElement("td");
 
         var td = document.createElement("td");
         td.innerHTML = "1";
@@ -558,18 +557,6 @@ function load_useraccount_table(parent, parentdiv)
         div3.appendChild(btnadd);
         btnadd.appendChild(txtnode);
 
-        tbody.appendChild(trb);
-        trb.appendChild(td);
-
-        trb.appendChild(td);
-        trb.appendChild(td1);
-        trb.appendChild(td2);
-        trb.appendChild(td3);
-        trb.appendChild(td4);
-        trb.appendChild(td5);
-        trb.appendChild(td6);
-        trb.appendChild(td7);
-
         td7.appendChild(btnedit);
         btnedit.appendChild(btntxt);
 
@@ -582,7 +569,17 @@ function load_useraccount_table(parent, parentdiv)
         tr.appendChild(th6);
         tr.appendChild(th7);
 
+        trb.appendChild(td);
+        trb.appendChild(td1);
+        trb.appendChild(td2);
+        trb.appendChild(td3);
+        trb.appendChild(td4);
+        trb.appendChild(td5);
+        trb.appendChild(td6);
+        trb.appendChild(td7);
+
         thead.appendChild(tr);
+        tbody.appendChild(trb);
         tbl.appendChild(thead);
         tbl.appendChild(tbody);
         divv2.appendChild(tbl);
