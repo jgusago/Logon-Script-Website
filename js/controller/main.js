@@ -539,6 +539,7 @@ function load_useraccount_table(parent, parentdiv)
         var td6 = document.createElement("td");
         td6.innerHTML = "Active";
         var td7 = document.createElement("td");
+
         var btnedit = document.createElement("button");
         btnedit.classList.add("btn");
         btnedit.classList.add("btn-primary");
@@ -546,10 +547,10 @@ function load_useraccount_table(parent, parentdiv)
         btnedit.setAttribute("href", "#editUser");
         btnedit.setAttribute("data-toggle","modal");
         var btntxt = document.createTextNode("Edit User Record");
-        // btntxt.setAttribute("id", "editUser");
 
         var div3 = document.createElement("div");
         div3.classList.add("panel-footer");
+        
         var btnadd = document.createElement("button");
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
