@@ -522,6 +522,31 @@ function load_useraccount_table(parent, parentdiv)
         var th7 = document.createElement("th")
         th7.innerHTML = "Option";
 
+        var tbody = document.createElement("tbody");
+        var trb = document.createElement("tr");
+        var td = document.createElement("td");
+
+        var td = document.createElement("td")
+        td.innerHTML = "1";
+        var td1 = document.createElement("td")
+        td1.innerHTML = "1040359";
+        var td2 = document.createElement("td")
+        td2.innerHTML = "Camille Kate";
+        var td3 = document.createElement("td")
+        td3.innerHTML = "Marvin(IT)";
+        var td4 = document.createElement("td")
+        td4.innerHTML = "OM-Audit";
+        var td5 = document.createElement("td")
+        td5.innerHTML = "Staff";
+        var td6 = document.createElement("td")
+        td6.innerHTML = "Active";
+        var td7 = document.createElement("td")
+        var btnedit = document.createElement("button");
+        btnedit.classList.add("btn");
+        btnedit.classList.add("btn-primary");
+        var btntxt = document.createTextNode("Edit User Record");
+        btntxt.setAttribute("id", "editUser");
+
         var div3 = document.createElement("div");
         div3.classList.add("panel-footer");
         var btnadd = document.createElement("button");
@@ -532,6 +557,21 @@ function load_useraccount_table(parent, parentdiv)
 
         div3.appendChild(btnadd);
         btnadd.appendChild(txtnode);
+
+        tbody.appendChild(trb);
+        trb.appendChild(td);
+
+        trb.appendChild(td);
+        trb.appendChild(td1);
+        trb.appendChild(td2);
+        trb.appendChild(td3);
+        trb.appendChild(td4);
+        trb.appendChild(td5);
+        trb.appendChild(td6);
+        trb.appendChild(td7);
+
+        td7.appendChild(btnedit);
+        btnedit.appendChild(btntxt);
 
         tr.appendChild(th);
         tr.appendChild(th1);
@@ -544,6 +584,7 @@ function load_useraccount_table(parent, parentdiv)
 
         thead.appendChild(tr);
         tbl.appendChild(thead);
+        tbl.appendChild(tbody);
         divv2.appendChild(tbl);
         div2.appendChild(divv2);
         div1.appendChild(h3);
@@ -552,7 +593,6 @@ function load_useraccount_table(parent, parentdiv)
         div.appendChild(div2);
         div.appendChild(div3);
 
-        div.style.background = "rgba(213, 213, 213, 0.3)";
         div.style.width = "-webkit-fill-available";
         div.style.height = "300px";
 
@@ -566,6 +606,7 @@ function load_useraccount_table(parent, parentdiv)
         th1.style.paddingBottom = "15px";
 
         tr.style.textAlign = "-webkit-center";
+        td.style.textAlign = "-webkit-center";
 
         btnadd.style.margin = "15px";
 
