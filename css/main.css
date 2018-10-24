@@ -242,6 +242,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   background-color: #113b65;
 }
+.form-group
+{
+  margin-bottom:0rem;
+}
 .modal-header
 {
     display: flex;
