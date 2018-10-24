@@ -505,42 +505,42 @@ function load_useraccount_table(parent, parentdiv)
         var tr = document.createElement("tr");
 
 
-        var th = document.createElement("th")
+        var th = document.createElement("th");
         th.innerHTML = "No.";
-        var th1 = document.createElement("th")
+        var th1 = document.createElement("th");
         th1.innerHTML = "ID Number";
-        var th2 = document.createElement("th")
+        var th2 = document.createElement("th");
         th2.innerHTML = "Name";
-        var th3 = document.createElement("th")
+        var th3 = document.createElement("th");
         th3.innerHTML = "Department";
-        var th4 = document.createElement("th")
+        var th4 = document.createElement("th");
         th4.innerHTML = "Position";
-        var th5 = document.createElement("th")
+        var th5 = document.createElement("th");
         th5.innerHTML = "Role";
-        var th6 = document.createElement("th")
+        var th6 = document.createElement("th");
         th6.innerHTML = "Status";
-        var th7 = document.createElement("th")
+        var th7 = document.createElement("th");
         th7.innerHTML = "Option";
 
         var tbody = document.createElement("tbody");
         var trb = document.createElement("tr");
         var td = document.createElement("td");
 
-        var td = document.createElement("td")
+        var td = document.createElement("td");
         td.innerHTML = "1";
-        var td1 = document.createElement("td")
+        var td1 = document.createElement("td");
         td1.innerHTML = "1040359";
-        var td2 = document.createElement("td")
+        var td2 = document.createElement("td");
         td2.innerHTML = "Camille Kate";
-        var td3 = document.createElement("td")
+        var td3 = document.createElement("td");
         td3.innerHTML = "Marvin(IT)";
-        var td4 = document.createElement("td")
+        var td4 = document.createElement("td");
         td4.innerHTML = "OM-Audit";
-        var td5 = document.createElement("td")
+        var td5 = document.createElement("td");
         td5.innerHTML = "Staff";
-        var td6 = document.createElement("td")
+        var td6 = document.createElement("td");
         td6.innerHTML = "Active";
-        var td7 = document.createElement("td")
+        var td7 = document.createElement("td");
         var btnedit = document.createElement("button");
         btnedit.classList.add("btn");
         btnedit.classList.add("btn-primary");
