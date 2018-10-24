@@ -479,13 +479,12 @@ function load_useraccount_table(parent, parentdiv)
 //Load Monitoring: User Accounts
  function loadtableuseraccount()
 {
-
-        document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-        document.getElementById("dtitle2").innerHTML = "Account Management";
-
         var ctnview = document.getElementById("contentview");
         var div = document.createElement("div");
         div.classList.add("panel");
+
+        document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+        document.getElementById("dtitle2").innerHTML = "Account Management";
 
         var div1 = document.createElement("div");
         div1.classList.add("panel");
