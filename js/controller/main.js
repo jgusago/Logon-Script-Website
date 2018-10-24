@@ -599,7 +599,7 @@ function load_useraccount_table(parent, parentdiv)
         divv2.style.width = "-webkit-fill-available";
         divv2.style.margin = "15px";
 
-        tbl.style.background = "rgba(204, 205, 200, 0.42)";
+        tbl.style.background = "rgba(255, 255, 255, 0.42)";
         th.style.paddingBottom = "15px";
         th1.style.paddingBottom = "15px";
 
@@ -607,7 +607,7 @@ function load_useraccount_table(parent, parentdiv)
         trb.style.textAlign = "-webkit-center";
 
         btnadd.style.margin = "15px";
-
+        btnadd.style.marginTop = "0px";
 
         // load_user_account();
         // // load_useraccount_content();
