@@ -514,7 +514,7 @@ function load_useraccount_table(parent, parentdiv)
         var th3 = document.createElement("th")
         th3.innerHTML = "Department";
         var th4 = document.createElement("th")
-        th4.innerHTML = "Position.";
+        th4.innerHTML = "Position";
         var th5 = document.createElement("th")
         th5.innerHTML = "Role";
         var th6 = document.createElement("th")
@@ -542,7 +542,7 @@ function load_useraccount_table(parent, parentdiv)
         ctnview.appendChild(div);
         div.appendChild(div2);
 
-        div.style.background = "#c9cac9";
+        div.style.background = "rgba(213, 213, 213, 0.3)";
         div.style.width = "-webkit-fill-available";
         div.style.height = "300px";
 
