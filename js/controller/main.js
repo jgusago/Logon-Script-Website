@@ -486,11 +486,41 @@ function load_useraccount_table(parent, parentdiv)
         var ctnview = document.getElementById("contentview");
         var div = document.createElement("div");
         div.classList.add("panel");
+
+        var div1 = document.createElement("div");
+        div1.classList.add("panel");
+        div1.classList.add("panel-heading");
+        var h3= document.createElement("h3");
+        h3.innerHTML = "User Accounts";
+
+        var div2 = document.createElement("div");
+        div2.classList.add("panel");
+        div2.classList.add("panel-body");
+        var divv2 =document.createElement("div");
+        divv2.classList.add("table-responsive");
+        var tbl = document.createElement("table");
+        tbl.classList.add("table");
+        tbl.classList.add("table-bordered");
+        var thead = document.createElement("thead");
+        var tr = document.createElement("tr");
+
+        thead.appendChild(tr);
+        tbl.appendChild(thead);
+        divv2.appendChild(tbl);
+        div2.appendChild(divv2);
+        div1.appendChild(h3);
+        div.appendChild(div1);
         ctnview.appendChild(div);
+        ctnview.append(div2);
 
         div.style.background = "#c9cac9";
-        div.style.width = "500px";
+        div.style.width = "-webkit-fill-available";
         div.style.height = "300px";
+
+        h3.style.padding = "10px";
+
+        divv2.style.width = "-webkit-fill-available";
+        divv2.style.margin = "15px";
 
         // load_user_account();
         // // load_useraccount_content();
