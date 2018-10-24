@@ -625,27 +625,7 @@ function load_useraccount_table(parent, parentdiv)
 
 function addUser()
 {
-    var modal = document.getElementById("addUser");
-    var btn = document.getElementById("addUser");
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function()
-    {
-        modal.style.display = "block";
-    }
-
-    span.onclick = function() 
-    {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event)
-    {
-        if(event.target == modal)
-        {
-            modal.style.display = "none";
-        }
-    }
+    document.getElementById("addUser").showModal();
 }
 
 //Load Branch View Content
