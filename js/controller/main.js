@@ -522,7 +522,7 @@ function load_useraccount_table(parent, parentdiv)
         var th7 = document.createElement("th")
         th7.innerHTML = "Option";
 
-        var div3 = documnet.createElement("div");
+        var div3 = document.createElement("div");
         div3.classList.add("panel-footer");
         var btnadd = document.createElement("button");
         btnadd.classList.add("btn");
