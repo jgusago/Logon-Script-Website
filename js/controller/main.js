@@ -503,14 +503,36 @@ function load_useraccount_table(parent, parentdiv)
         tbl.classList.add("table-bordered");
         var thead = document.createElement("thead");
         var tr = document.createElement("tr");
+
+
         var th = document.createElement("th")
         th.innerHTML = "No.";
         var th1 = document.createElement("th")
         th1.innerHTML = "ID Number";
+        var th2 = document.createElement("th")
+        th2.innerHTML = "Name";
+        var th3 = document.createElement("th")
+        th3.innerHTML = "Department";
+        var th4 = document.createElement("th")
+        th4.innerHTML = "Position.";
+        var th5 = document.createElement("th")
+        th5.innerHTML = "Role";
+        var th6 = document.createElement("th")
+        th6.innerHTML = "Status.";
+        var th7 = document.createElement("th")
+        th7.innerHTML = "Option";
+
         
 
         tr.appendChild(th);
         tr.appendChild(th1);
+        tr.appendChild(th2);
+        tr.appendChild(th3);
+        tr.appendChild(th4);
+        tr.appendChild(th5);
+        tr.appendChild(th6);
+        tr.appendChild(th7);
+
         thead.appendChild(tr);
         tbl.appendChild(thead);
         divv2.appendChild(tbl);
