@@ -552,7 +552,7 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
         btnadd.setAttribute("id", "addUser");
-        btnadd.setAttribute("onclick","addUser()");
+        btnadd.setAttribute("onclick","addUsers()");
         btnadd.setAttribute("data-toggle","modal");
         var txtnode = document.createTextNode("Add user");
 
@@ -623,7 +623,7 @@ function load_useraccount_table(parent, parentdiv)
         // });
 }
 
-function addUser()
+function addUsers()
 {
     document.getElementById("addUser").showModal();
 }
