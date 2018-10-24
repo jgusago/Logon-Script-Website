@@ -504,8 +504,8 @@ function load_useraccount_table(parent, parentdiv)
         var thead = document.createElement("thead");
         var tr = document.createElement("tr");
         var tbody = document.createElement("tbody");
-         var trb = document.createElement("tr");
-        // var td = document.createElement("td");
+        var trb = document.createElement("tr");
+        var td = document.createElement("td");
 
 
         var th = document.createElement("th");
@@ -525,8 +525,8 @@ function load_useraccount_table(parent, parentdiv)
         var th7 = document.createElement("th");
         th7.innerHTML = "Option";
 
-        // var td = document.createElement("td");
-        // td.innerHTML = "1";
+        var td = document.createElement("td");
+        td.innerHTML = "1";
         // var td1 = document.createElement("td");
         // td1.innerHTML = "1040359";
         // var td2 = document.createElement("td");
@@ -569,7 +569,7 @@ function load_useraccount_table(parent, parentdiv)
         tr.appendChild(th6);
         tr.appendChild(th7);
 
-        // trb.appendChild(td);
+        trb.appendChild(td);
         // trb.appendChild(td1);
         // trb.appendChild(td2);
         // trb.appendChild(td3);
