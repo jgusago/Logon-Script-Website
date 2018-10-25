@@ -1511,7 +1511,43 @@ function pagination(parent){
     
 }
 
+/* For User Accounts */
 
+function load_user_accounts(parent){
+
+    var view = document.getElementById("accountmngmtlst");
+    view.innerHTML = "";
+
+    tableid = idgenerator();
+
+    var card = {};
+    createCard(card, view, [], []);
+
+    var table = {};
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
+
+
+    $.post("user_account_fetch.php", {parent:parent}, function(data){
+
+        data = data.split("#");
+        datalength = data.length;
+
+        thfdata = data[0].split("|");
+        var tbheader = {}, tbfooter = {};
+        createTableContent([], table.head, [], [], "th", thfdata);
+        createTableContent([], table.foot, [], [], "th", thfdata);
+
+        for (var i = 1; i < datalength;i++){
+            newdata = data[i].split("|");
+            createTableContent([], table.body, [],[], "td", newdata);
+
+            }
+    });
+    pagination(tableid);
+}
+/* End */
 /* 
 
 
