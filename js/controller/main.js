@@ -662,12 +662,16 @@ function loadtableuserprofile()
     lbl.classList.add("control-label");
     lbl.innerHTML = "ID Number";
 
-    var fgroup1 = document.createElement("div");
-    fgroup1.classList.add("form-group");
-    var col1 = document.createElement("div");
     col1.classList.add("col-md-6");
     var p = document.createElement("p");
     p.innerHTML = "1040359";
+
+    // var fgroup1 = document.createElement("div");
+    // fgroup1.classList.add("form-group");
+    // var col1 = document.createElement("div");
+    // col1.classList.add("col-md-6");
+    // var p = document.createElement("p");
+    // p.innerHTML = "1040359";
 
     // var fgroup = document.createElement("div");
     // fgroup.classList.add("form-group");
@@ -759,7 +763,7 @@ function loadtableuserprofile()
     fset.appendChild(fgroup);
     fset.appendChild(fgroup1);
     fgroup.appendChild(col);
-    fgroup1.appendChild(col1);
+    fgroup.appendChild(col1);
     col1.appendChild(p);
     col.appendChild(lbl);
     // col.appendChild(btnpass);
