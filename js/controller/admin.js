@@ -5,167 +5,48 @@ function load(){
 
     var wdth = 0;
 
-    load_branchviewbtn();
+    DSHBRDNavBarBtns();
+
 
 }
 
 /* Buttons */
 
-function load_branchviewbtn(){
+function DSHBRDNavBarBtns(){
+  /* Get All Elements with generatebutton Class */
+  var btnclass = "generatebutton";
+  parent = document.getElementsByClassName(btnclass);
 
-    var parent = "root";
+  $.post("php/functions/load/dashboard.buttons.php",{branch:"root"},function(data){
 
-    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
+    newdata = data.split("|");
 
-        data = data.split("|");
-        datalength = data.length;
-        bvclist = document.getElementById("branchcomputerlist");
-        bvcomlogs = document.getElementById("branchcomplogs");
-        bvlist = document.getElementById("branchviewlist");
+    for (var i = 0; i < parent.length; i++){
+      var link = [];
+      var list = [];
+      var onClick = [];
+      //create link
+      var value = document.getElementsByClassName(btnclass)[i].getAttribute("data");
+      var parentid = document.getElementsByClassName(btnclass)[i].getAttribute("id");
+      linkid = idgenerator();
+      var linkclasses = ["nav-link", "nav-link-collapse"];
+      var linkattrib = ["data-toggle:collapse","href:#"+linkid];
+      createLink(link, parent[i], value, linkclasses, linkattrib);
 
-        if(data[0] != 0)
-        {
-            //Branch View List
-            bvbtn = document.createElement("a");
-            bvbtn.setAttribute("id","branchviewbtn");
+      //create list
+      var listclasses = ["sidenav-third-level", "collapse"];
+      var listattrib = ["id:"+linkid,"data-parent:#DSHBRDRecords"];
+      createList(list, parent[i], "ul", newdata.length, listclasses, listattrib);
+      //create Button onClick Function
+      //create list value
+      var ListLink = [];
+      for (var j = 0; j < newdata.length; j++){
+        createLink(ListLink, list.li[j], newdata[j], [], ["data:#"+parentid,"onClick:DSHBRDContent('"+newdata[j]+"')"]);
+      }
+    }
 
-            bvbtn.classList.add("nav-link-collapse");
-            bvbtn.classList.add("collapdatased");
+  });
 
-            bvbtn.setAttribute("data-toggle","collapse");
-            bvbtn.setAttribute("href","#root");
-            bvbtn.setAttribute("data-parent","#collapseCharts")
-
-            bvlist.appendChild(bvbtn);
-
-                bvbtntxt = document.createTextNode("Branch View");
-                bvbtn.appendChild(bvbtntxt);
-
-            bvul = document.createElement("ul");
-            bvul.classList.add("sidenav-third-level");
-            bvul.classList.add("collapse");
-            bvul.setAttribute("id","root");
-
-            bvlist.appendChild(bvul);
-
-            //Branch Computer List
-            bvcbtn = document.createElement("a");
-            bvcbtn.setAttribute("id","branchcomputerbtn");
-
-            bvcbtn.classList.add("nav-link-collapse");
-            bvcbtn.classList.add("collapdatased");
-
-            bvcbtn.setAttribute("data-toggle","collapse");
-            bvcbtn.setAttribute("href","#rootII");
-
-            bvclist.appendChild(bvcbtn);
-
-                bvcbtntxt = document.createTextNode("Computer List");
-                bvcbtn.appendChild(bvcbtntxt);
-
-            bvcul = document.createElement("ul");
-            bvcul.classList.add("sidenav-third-level");
-            bvcul.classList.add("collapse");
-            bvcul.setAttribute("id","rootII");
-            bvcul.setAttribute("data-parent","#collapseCharts")
-
-            bvclist.appendChild(bvcul);
-
-            //Branch Computer Logs
-            bvcomlogbtn = document.createElement("a");
-            bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
-
-            bvcomlogbtn.classList.add("nav-link-collapse");
-            bvcomlogbtn.classList.add("collapdatased");
-
-            bvcomlogbtn.setAttribute("data-toggle","collapse");
-            bvcomlogbtn.setAttribute("href","#rootIII");
-
-            bvcomlogs.appendChild(bvcomlogbtn);
-
-                bvcomlogsbtntxt = document.createTextNode("Computer Logs");
-                bvcomlogbtn.appendChild(bvcomlogsbtntxt);
-
-            bvclog = document.createElement("ul");
-            bvclog.classList.add("sidenav-third-level");
-            bvclog.classList.add("collapse");
-            bvclog.setAttribute("id","rootIII");
-            bvclog.setAttribute("data-parent","#collapseCharts")
-
-            bvcomlogs.appendChild(bvclog);
-
-        }
-        else
-        {
-            //Branch View
-            bvbtn = document.createElement("a");
-            bvbtn.setAttribute("id","branchviewbtn");
-            bvbtn.setAttribute("onclick","dashboard_click_event(\"brancview\")");
-            bvlist.appendChild(bvbtn);
-
-            bvbtntxt = document.createTextNode("Branch View");
-            bvbtn.appendChild(bvbtntxt);
-
-            // Computer List
-            bvcbtn = document.createElement("a");
-            bvcbtn.setAttribute("id","branchcomputerbtn");
-            bvcbtn.setAttribute("onclick","dashboard_click_event(\"branchcomputer\")");
-            // bvcbtn.setAttribute("onclick","sidenav_click_event()");
-            // document.getElementById("dtitle").innerHTML = "Reports";
-            bvclist.appendChild(bvbtn);
-
-            bvcbtntxt = document.createTextNode("Computer List");
-            bvcbtn.appendChild(bvcbtntxt);
-
-            // Computer Logs
-            bvcomlogbtn = document.createElement("a");
-            bvcomlogbtn.setAttribute("id","branchcomputerlogsbtn");
-            bvcomlogbtn.setAttribute("onclick","DSHBRDCompLogs(\"root\")");
-            bvcomlogs.appendChild(bvcomlogbtn);
-
-            bvcomlogsbtntxt = document.createTextNode("Computer Logs");
-            bvcomlogbtn.appendChild(bvcomlogsbtntxt);
-
-
-        }
-
-        for (loop = 0 ; loop < datalength; loop++){
-            //branch View
-            bvnewli = document.createElement("li");
-            bvul.appendChild(bvnewli);
-
-            bva = document.createElement("a");
-            bva.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"\")");
-            bvnewli.appendChild(bva);
-
-            anode = document.createTextNode(data[loop]);
-            bva.appendChild(anode);
-
-            //Branch Computer List
-            bvcnewli = document.createElement("li");
-            bvcul.appendChild(bvcnewli);
-
-            bvca = document.createElement("a");
-            bvca.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"-CL\")");
-            bvcnewli.appendChild(bvca);
-
-            anode = document.createTextNode(data[loop]);
-            bvca.appendChild(anode);
-
-            //Branch Computer Logs
-            bvclogsnewli = document.createElement("li");
-            bvclog.appendChild(bvclogsnewli);
-
-            bvcologs = document.createElement("a");
-            bvcologs.setAttribute("onclick","DSHBRDCompLogs(\""+data[loop]+"\")");
-            bvclogsnewli.appendChild(bvcologs);
-
-            anode = document.createTextNode(data[loop]);
-            bvcologs.appendChild(anode);
-
-        }
-
-    });
 }
 
 /* Buttons */
@@ -174,17 +55,17 @@ function load_branchviewbtn(){
 /* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
 /* OnClick */
 
-function DSHBRDCompLogs(parent){
+function DSHBRDContent(parent){
 
     var view = document.getElementById("contentview");
     view.innerHTML = "";
 
     tableid = idgenerator();
 
-    var card = {};
+    var card = [];
     createCard(card, view, [], []);
 
-    var table = {};
+    var table = [];
     var classes = ["table","table-bordered"];
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
@@ -192,11 +73,11 @@ function DSHBRDCompLogs(parent){
 
     $.post("php/functions/reports/computer.logs.php", {parent:parent}, function(data){
 
-        data = data.split("#");
+        data = data.split("#");//split header and data
         datalength = data.length;
 
-        thfdata = data[0].split("|");
-        var tbheader = {}, tbfooter = {};
+        thfdata = data[0].split("|");//split by value
+        var tbheader = [], tbfooter = [];
         createTableContent([], table.head, [], [], "th", thfdata);
         createTableContent([], table.foot, [], [], "th", thfdata);
 
