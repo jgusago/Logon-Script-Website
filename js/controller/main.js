@@ -1196,6 +1196,9 @@ function accountmanagement(){
 // Hide All Div except Clicked DiV
 function dashboard_click_event(div)
 {
+    document.getElementById("dtitle").innerHTML = "Reports";
+    // document.getElementById("dtitle2").innerHTML = "Profile Settings";
+
     thisdiv = document.getElementById(div);
     divclass = document.getElementsByClassName("contentdataview");
     divclassl = divclass.length;
