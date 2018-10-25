@@ -1,7 +1,7 @@
 <?php
 	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-	echo echo "User ID|Name|Department|Position|Status|Role";
+	echo "User ID|Name|Department|Position|Status|Role";
 
 	$sql = "SELECT userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
 		
