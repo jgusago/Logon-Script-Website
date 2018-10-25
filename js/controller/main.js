@@ -757,10 +757,13 @@ function loadtableuserprofile()
     panelbody.appendChild(br);
     panelbody.appendChild(fset);
     fset.appendChild(fgroup);
+    fset.appendChild(fgroup1);
     fgroup.appendChild(col);
+    fgroup1.appendChild(col1);
+    col1.appendChild(p);
     col.appendChild(lbl);
     col.appendChild(btnpass);
-    col.appendChild(p);
+    // col.appendChild(p);
     btnpass.appendChild(btntext);
    
 
