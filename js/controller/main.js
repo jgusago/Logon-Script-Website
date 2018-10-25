@@ -669,82 +669,82 @@ function loadtableuserprofile()
     var p = document.createElement("p");
     p.innerHTML = "1040359";
 
-    var fgroup = document.createElement("div");
-    fgroup.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var lbl = document.createElement("label");
-    lbl.classList.add("control-label");
-    lbl.innerHTML = "Name";
+    // var fgroup = document.createElement("div");
+    // fgroup.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var lbl = document.createElement("label");
+    // lbl.classList.add("control-label");
+    // lbl.innerHTML = "Name";
 
-    var fgroup1 = document.createElement("div");
-    fgroup1.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var p = document.createElement("p");
-    p.innerHTML = "Camille Kate";
+    // var fgroup1 = document.createElement("div");
+    // fgroup1.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var p = document.createElement("p");
+    // p.innerHTML = "Camille Kate";
 
-    var fgroup = document.createElement("div");
-    fgroup.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var lbl = document.createElement("label");
-    lbl.classList.add("control-label");
-    lbl.innerHTML = "Department";
+    // var fgroup = document.createElement("div");
+    // fgroup.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var lbl = document.createElement("label");
+    // lbl.classList.add("control-label");
+    // lbl.innerHTML = "Department";
 
-    var fgroup1 = document.createElement("div");
-    fgroup1.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var p = document.createElement("p");
-    p.innerHTML = "Marvin(IT)";
+    // var fgroup1 = document.createElement("div");
+    // fgroup1.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var p = document.createElement("p");
+    // p.innerHTML = "Marvin(IT)";
 
-    var fgroup = document.createElement("div");
-    fgroup.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var lbl = document.createElement("label");
-    lbl.classList.add("control-label");
-    lbl.innerHTML = "Job Position";
+    // var fgroup = document.createElement("div");
+    // fgroup.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var lbl = document.createElement("label");
+    // lbl.classList.add("control-label");
+    // lbl.innerHTML = "Job Position";
 
-    var fgroup1 = document.createElement("div");
-    fgroup1.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var p = document.createElement("p");
-    p.innerHTML = "OM-Audit";
+    // var fgroup1 = document.createElement("div");
+    // fgroup1.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var p = document.createElement("p");
+    // p.innerHTML = "OM-Audit";
 
-    var fgroup = document.createElement("div");
-    fgroup.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var lbl = document.createElement("label");
-    lbl.classList.add("control-label");
-    lbl.innerHTML = "Role";
+    // var fgroup = document.createElement("div");
+    // fgroup.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var lbl = document.createElement("label");
+    // lbl.classList.add("control-label");
+    // lbl.innerHTML = "Role";
 
-    var fgroup1 = document.createElement("div");
-    fgroup1.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var p = document.createElement("p");
-    p.innerHTML = "Staff";
+    // var fgroup1 = document.createElement("div");
+    // fgroup1.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var p = document.createElement("p");
+    // p.innerHTML = "Staff";
 
-    var fgroup = document.createElement("div");
-    fgroup.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var lbl = document.createElement("label");
-    lbl.classList.add("control-label");
-    lbl.innerHTML = "Password";
+    // var fgroup = document.createElement("div");
+    // fgroup.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var lbl = document.createElement("label");
+    // lbl.classList.add("control-label");
+    // lbl.innerHTML = "Password";
 
-    var fgroup1 = document.createElement("div");
-    fgroup1.classList.add("form-group");
-    var col = document.createElement("div");
-    col.classList.add("col-md-6");
-    var btnpass= document.createElement("button");
-    btnpass.classList.add("btn");
-    btnpass.classList.add("btn-danger");
-    var btntext = document.createTextNode("Change Password");
+    // var fgroup1 = document.createElement("div");
+    // fgroup1.classList.add("form-group");
+    // var col = document.createElement("div");
+    // col.classList.add("col-md-6");
+    // var btnpass= document.createElement("button");
+    // btnpass.classList.add("btn");
+    // btnpass.classList.add("btn-danger");
+    // var btntext = document.createTextNode("Change Password");
 
 
     ctnview.appendChild(div);
@@ -762,9 +762,9 @@ function loadtableuserprofile()
     fgroup1.appendChild(col1);
     col1.appendChild(p);
     col.appendChild(lbl);
-    col.appendChild(btnpass);
-    // col.appendChild(p);
-    btnpass.appendChild(btntext);
+    // col.appendChild(btnpass);
+    // // col.appendChild(p);
+    // btnpass.appendChild(btntext);
    
 
 }
