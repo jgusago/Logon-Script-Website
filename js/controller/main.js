@@ -550,7 +550,7 @@ function load_useraccount_table(parent, parentdiv)
 
         var div3 = document.createElement("div");
         div3.classList.add("panel-footer");
-        
+
         var btnadd = document.createElement("button");
         btnadd.classList.add("btn");
         btnadd.classList.add("btn-primary");
@@ -624,6 +624,146 @@ function load_useraccount_table(parent, parentdiv)
         //         $.post("user_account_fetch.php",function(data)
         //     {
         // });
+}
+
+function loadtableuserprofile()
+{
+    var ctnview = document.getElementById("contentview");
+    var div = document.createElement("div");
+    div.classList.add("panel");
+
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Profile Settings";
+
+    var div1 = document.createElement("div");
+    div1.classList.add("panel");
+    div1.classList.add("panel-default");
+
+    var panelbody = document.createElement("div");
+    panelbody.classList.add("panel");
+    panelbody.classList.add("panel-body");
+
+    var divtab = document.createElement("div");
+    divtab.classList.add("tab-content");
+    var h3= document.createElement("h3");
+    h3.innerHTML = "Personal Information"
+
+    var div2 = document.createElement("div");
+    div2.style.clear = "both";
+    var br = document.createElement("br");
+
+    var fset = document.createElement("fieldset");
+
+    var fgroup = document.createElement("div");
+    fgroup.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var lbl = document.createElement("label");
+    lbl.classList.add("control-label");
+    lbl.innerHTML = "ID Number";
+
+    var fgroup1 = document.createElement("div");
+    fgroup1.classList.add("form-group");
+    var col1 = document.createElement("div");
+    col1.classList.add("col-md-6");
+    var p = document.createElement("p");
+    p.innerHTML = "1040359";
+
+    var fgroup = document.createElement("div");
+    fgroup.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var lbl = document.createElement("label");
+    lbl.classList.add("control-label");
+    lbl.innerHTML = "Name";
+
+    var fgroup1 = document.createElement("div");
+    fgroup1.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var p = document.createElement("p");
+    p.innerHTML = "Camille Kate";
+
+    var fgroup = document.createElement("div");
+    fgroup.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var lbl = document.createElement("label");
+    lbl.classList.add("control-label");
+    lbl.innerHTML = "Department";
+
+    var fgroup1 = document.createElement("div");
+    fgroup1.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var p = document.createElement("p");
+    p.innerHTML = "Marvin(IT)";
+
+    var fgroup = document.createElement("div");
+    fgroup.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var lbl = document.createElement("label");
+    lbl.classList.add("control-label");
+    lbl.innerHTML = "Job Position";
+
+    var fgroup1 = document.createElement("div");
+    fgroup1.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var p = document.createElement("p");
+    p.innerHTML = "OM-Audit";
+
+    var fgroup = document.createElement("div");
+    fgroup.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var lbl = document.createElement("label");
+    lbl.classList.add("control-label");
+    lbl.innerHTML = "Role";
+
+    var fgroup1 = document.createElement("div");
+    fgroup1.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var p = document.createElement("p");
+    p.innerHTML = "Staff";
+
+    var fgroup = document.createElement("div");
+    fgroup.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var lbl = document.createElement("label");
+    lbl.classList.add("control-label");
+    lbl.innerHTML = "Password";
+
+    var fgroup1 = document.createElement("div");
+    fgroup1.classList.add("form-group");
+    var col = document.createElement("div");
+    col.classList.add("col-md-6");
+    var btnpass= document.createElement("button");
+    btnpass.classList.add("btn");
+    btnpass.classList.add("btn-danger");
+    var btntext = document.createTextNode("Change Password");
+
+
+    ctnview.appendChild(div);
+
+    div.appendChild(div1);
+    div1.appendChild(panelbody);
+    panelbody.appendChild(divtab);
+    divtab.appendChild(h3);
+    panelbody.appendChild(div2);
+    panelbody.appendChild(br);
+    panelbody.appendChild(fset);
+    fset.appendChild(fgroup);
+    fgroup.appendChild(col);
+    col.appendChild(lbl);
+    col.appendChild(btnpass);
+    col.appendChild(p);
+    btnpass.appendChild(btntext);
+   
+
 }
 
 //Load Branch View Content
@@ -936,64 +1076,6 @@ function loadtableinactive(ithead, itfoot, tdata){
     });
 
 }
-
-
-function loadtableuserprofile()
-{
-    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-    document.getElementById("dtitle2").innerHTML = "Profile Settings";
-    // document.getElementById("contentview").reomove();
-
-    var newdivv  = document.createElement("div");
-    newdivv.classList.add("panel");
-    newdivv.classList.add("row-eq-height");
-    newdivv.classList.add("col-xs-4");
-    newdivv.classList.add("col-lg-12");
-    newdivv.setAttribute("id", "panelid2");
-
-    newdivv.style.width = "inherit";
-    newdivv.style.height = "auto";
-    newdivv.style.background = "#c9cac9";
-    newdivv.style.color = "white";
-    newdivv.innerHTML = "Hello";
-    newdivv.style.margin = "margin: initial";
-
-    // var div = document.createElement("div");
-    // div.style.width = "100px";
-    // div.style.height = "100px";
-    // div.style.background = "red";
-    // div.style.color = "white";
-    // div.innerHTML = "Hello";
-
-    document.getElementById("contentview").appendChild(newdivv);
-}
-
-function loadreports()
-{
-    document.getElementById("dtitle").innerHTML = "Reports";
-    // document.getElementById("dtitle2").innerHTML = "Account Management";
-}
-
-// document.body.onload = loadtableuseraccount();
-
-// function loadtableuseraccount()
-// {
-//     var newDiv = document.createElement("div");
-//     newDiv.classList("panel");
-
-//     var currentDiv = document.getElementById("contentview");
-//     document.body.insertBefore(newDiv, currentDiv);
-// }
-
-
-
-
-
-
-
-
-
-
 
 /* Settings */
 //Load Branch View Settings
