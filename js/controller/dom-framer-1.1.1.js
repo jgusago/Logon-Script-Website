@@ -63,7 +63,7 @@ function createTable(value, parent, classes, attribute){
     thead.setAttribute("role","row");
     tfoot = document.createElement("tfoot");
     tfoot.setAttribute("role","row");
-    
+
     table.appendChild(tbody);
     table.appendChild(thead);
     table.appendChild(tfoot);
@@ -118,8 +118,64 @@ function createTableContent(value, parent, classes, attribute, element, data){
 function pagination(id){
     setInterval(function(){
         $("#"+id).DataTable();
-    },50);
+    },100);
 }
 function idgenerator(){
 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
+
+//Create a list
+function createList(value, parent, listtype, length, ulclass, ulattribute){
+  var lilist = [];
+  var ul = document.createElement(listtype);
+  parent.appendChild(ul);
+  //add Classes
+  for (var i = 0; i < ulclass.length; i++){
+    ul.classList.add(ulclass[i]);
+  }
+  //add Attribute
+  for (var j = 0; j < ulattribute.length; j++){
+    var attrib = ulattribute[j].split(":");
+    ul.setAttribute(attrib[0],attrib[1]);
+  }
+  for (var k = 0; k < length; k++){
+    var li = document.createElement("li");
+    ul.appendChild(li);
+    lilist.push(li);
+  }
+
+  value.ul = ul;
+  value.li = lilist;
+
+}
+//Create OnClick link
+function createLink(value, parent, data, classes, attributes){
+
+  var link = document.createElement("a");
+  parent.appendChild(link);
+  //add text
+  var textnode = document.createTextNode(data);
+  link.appendChild(textnode);
+  //add Classs
+  for (var i = 0; i <  classes.length; i++){
+    link.classList.add(classes[i]);
+  }
+  //add attributes
+  for (var j = 0; j < attributes.length; j++){
+    var attrib = attributes[j].split(":");
+    link.setAttribute(attrib[0],attrib[1]);
+  }
+
+  value.link = link;
+}
+
+//Onclick Function creator
+function createOnClick(value, onclickfunction, list){
+
+  for (var  i = 0; i < list.length; i++){
+    newlist.push(onclickfunction+"("+list[i]+")");
+  }
+
+  value.list = newlist;
+
 }

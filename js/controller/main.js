@@ -6,7 +6,7 @@ function load(){
     var loading = document.getElementById("processingbar");
     var loadtext = document.getElementById("loadingtext");
     var wdth = 0.5;
-    
+
     /* ----- Dashboards ----- */
     //set Navbar and Hide the Divs
     load_branchviewbtn();
@@ -122,12 +122,12 @@ function load_branchviewbtn(){
 
                 bvcomlogsbtntxt = document.createTextNode("Computer Logs");
                 bvcomlogbtn.appendChild(bvcomlogsbtntxt);
-            
+
             bvclog = document.createElement("ul");
             bvclog.classList.add("sidenav-third-level");
             bvclog.classList.add("collapse");
             bvclog.setAttribute("id","rootIII");
-    
+
             bvcomlogs.appendChild(bvclog);
 
         }
@@ -255,7 +255,7 @@ function load_branchview(parent, div, grandparent)
 //Branch Computer List
 function load_branchcomputerlist(parent, div, grandparent, $parentid)
 {
-    
+
     var newdiv  = document.createElement("div");
     newdiv.classList.add("row");
     newdiv.classList.add("row-eq-height");
@@ -769,7 +769,7 @@ function loadtableuserprofile()
     // col.appendChild(btnpass);
     // // col.appendChild(p);
     // btnpass.appendChild(btntext);
-   
+
 
 }
 
@@ -865,7 +865,7 @@ function load_list(status){
     card.classList.add("mb-3");
     card.classList.add("contentdataview");
     if(status == "active"){
-    card.setAttribute("id","activelist");            
+    card.setAttribute("id","activelist");
     }
     else if(status == "inactive"){
         card.setAttribute("id","inactivelist");
@@ -1031,7 +1031,7 @@ function loadtableactive(athead, atfoot, atdata){
         }
     });
 
-    
+
 }
 //Load Monitoring: Inactivelist
 function loadtableinactive(ithead, itfoot, tdata){
@@ -1042,7 +1042,7 @@ function loadtableinactive(ithead, itfoot, tdata){
     itfrw = document.createElement("tr");
     itfoot.appendChild(itfrw);
 
-    $.post("php/functions/tbls/inactivelst/tbls.inactivelst.fetch.php",function(data){ 
+    $.post("php/functions/tbls/inactivelst/tbls.inactivelst.fetch.php",function(data){
 
         datarw = data.split("#");
         datarwlgth = datarw.length;
@@ -1106,7 +1106,7 @@ function settings_branchview(){
         cardbody.classList.add("card-body");
         card.appendChild(cardbody);
             $.post("php/functions/sttngs/settings.branch.view.php",function(data){
-                
+
                 var newtable = document.createElement("table");
                 newtable.classList.add("table");
                 newtable.classList.add("table-bordered");
@@ -1142,7 +1142,7 @@ function settings_branchview(){
                     }
 
                 }
-                
+
             });
 
         cardfoot = document.createElement("div");
@@ -1185,7 +1185,7 @@ function settings_branchview(){
 
 function accountmanagement(){
 
-    
+
 }
 
 /* --------------------------- END of LOADING FUNCTIONS -------------------------- */
@@ -1248,28 +1248,28 @@ function miniwindow_computer_details_data(tbody, host){
 
     //tree.view.datails.php
     $.post("php/functions/grph.chrt/treeview/tree.view.datails.php",{host:host},function(data){
-   
+
        data = data.split("#");
        var datal = data.length;
        var cftn = "Reference No:";
        var tr = [];
-   
+
        rowl = data[0].split("|");
        rowlength = rowl.length;
-   
+
        var multiArray = new Array(rowlength);
-   
+
        for(ma = 0; ma < datal; ma++){
            multiArray[ma] = data[ma].split("|");
        }
-   
+
        for(i = 0; i < (rowlength-1); i++){
-   
+
            tr[i] = document.createElement("tr");
            tbody.appendChild(tr[i]);
-   
+
            for (j = 0; j < datal; j++){
-   
+
                if(j != 0){
                    td = document.createElement("td");
                    tr[i].appendChild(td);
@@ -1279,16 +1279,16 @@ function miniwindow_computer_details_data(tbody, host){
                    td.setAttribute("scope","col")
                    tr[i].appendChild(td);
                }
-   
+
                tdnode = document.createTextNode(multiArray[j][i]);
                td.appendChild(tdnode);
            }
        }
    });
-   
-   
+
+
    document.getElementById("loaderdiv").style.display = "none";
-   
+
 }
 // Overlay Hide When Background is clicked
 function overlay(){
@@ -1301,7 +1301,7 @@ function overlay(){
         var ch = document.getElementById("mnch");
         var cb = document.getElementById("mncb");
         var cf = document.getElementById("mncf");
-    
+
         //Clear Previous Text
         ch.innerHTML = "";
         cb.innerHTML = "";
@@ -1317,7 +1317,7 @@ function addbranch(){
         var ch = document.getElementById("mnch");
         var cb = document.getElementById("mncb");
         var cf = document.getElementById("mncf");
-    
+
         //Clear Previous Text
         ch.innerHTML = "";
         cb.innerHTML = "";
@@ -1512,11 +1512,46 @@ function pagination(parent){
     paginationscript.setAttribute("src","js/controller/main-admin-datatables.min.js");
     bodydiv.appendChild(paginationscript);
 
-    
+
 }
 
+/* For User Accounts Export */
 
-/* 
+function fnExcelReport()
+    {
+        var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+        var textRange; var j=0;
+        tab = document.getElementById('contentview'); // id of table
+
+            for(j = 0 ; j < tab.rows.length ; j++) 
+            {     
+                tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+            }
+
+        tab_text=tab_text+"</table>";
+        tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+        tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+        tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE "); 
+
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+                    {
+                        txtArea1.document.open("txt/html","replace");
+                        txtArea1.document.write(tab_text);
+                        txtArea1.document.close();
+                        txtArea1.focus(); 
+                        sa=txtArea1.document.execCommand("SaveAs",true,"Computer List.xls");
+                    }  
+                        else                 //other browser not tested on IE 11
+                            sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+                        return (sa);
+                }
+
+/* End */
+/*
 
 
     <script src="design/datatables/jquery.dataTables.js"></script>

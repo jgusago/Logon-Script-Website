@@ -39,18 +39,18 @@
 
         <!-- Graphs and Charts -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Graphs and Charts">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCharts" data-parent="#exampleAccordion">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#DHSBRDRecords" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Reports</span>
           </a>
 
           <!-- Charts Collapse -->
-          <ul class="sidenav-second-level collapse" id="collapseCharts">
-              <li id="branchcomputerlist" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
+          <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
+              <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
               </li>
-              <li id="branchcomplogs" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
+              <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
               </li>
-              <li id="branchviewlist" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer View">
+              <li data="Branch View" id="DSHBRDRecodesBrnchvw" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer View">
               </li>
           </ul>
         </li>
@@ -63,10 +63,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="#" id="accountmngmtlst">Account Management</a>
+              <a href="#" id="DSHBRDAccountsAccMgnt" onclick="DSHBRDContent('','DSHBRDAccountsAccMgnt')" data="DSHBRDAccountsAccMgnt">Account Management</a>
             </li>
             <li>
-              <a href="#" id="profilesttingslst">Profile Settings</a>
+              <a href="#" id="profilesttingslst" onclick="fnExcelReport();">Profile Settings</a>
             </li>
           </ul>
         </li>
