@@ -31,7 +31,7 @@ function DSHBRDNavBarBtns(){
       var parentid = document.getElementsByClassName(btnclass)[i].getAttribute("id");
       linkid = idgenerator();
       var linkclasses = ["nav-link", "nav-link-collapse","collapdatased"];
-      var linkattrib = ["data-toggle:collapse","href:#"+linkid];
+      var linkattrib = ["data-toggle:collapse","href:#"+linkid,"data-parent:#"+grandparentid];
       createLink(link, parent[i], value, linkclasses, linkattrib);
 
       //create list
