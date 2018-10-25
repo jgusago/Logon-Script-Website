@@ -15,5 +15,6 @@
 			$role = $row['role'] ?: 'null';
 			
 			echo "#$userid|$name|$department|$position|$status|$role";
-		}								
+		}	
+	$db = null;							
 ?>
