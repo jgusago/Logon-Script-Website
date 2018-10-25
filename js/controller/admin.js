@@ -108,7 +108,7 @@ function load_user_accounts(parent){
     createTable(table, card.body, classes, attributes);
 
 
-    $.post("user_accounts_fetch.php", {parent:parent}, function(data){
+    $.post("user_account_fetch.php", {parent:parent}, function(data){
 
         data = data.split("#");
         datalength = data.length;
