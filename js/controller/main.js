@@ -613,6 +613,25 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.style.margin = "15px";
         btnadd.style.marginTop = "0px";
 
+
+        var card = document.createElement("div");
+        card.classList.add("card");
+        card.classList.add("mb-3");
+        card.classList.add("contentdataview");
+        // card.setAttribute("id","branchviewsettings");
+        card.setAttribute("hidden","true");
+        ctnview.appendChild(card);
+
+        cardhead = document.createElement("div");
+        cardhead.classList.add("card-header");
+        card.appendChild(cardhead);
+        cardheadtxt = document.createTextNode("Branch View Settings");
+        cardhead.appendChild(cardheadtxt);
+
+        cardbody = document.createElement("div");
+        cardbody.classList.add("card-body");
+        card.appendChild(cardbody);
+
         // load_user_account();
         // // load_useraccount_content();
 
@@ -1183,10 +1202,6 @@ function settings_branchview(){
 
 }
 
-function accountmanagement(){
-
-
-}
 
 /* --------------------------- END of LOADING FUNCTIONS -------------------------- */
 
@@ -1197,7 +1212,7 @@ function accountmanagement(){
 function dashboard_click_event(div)
 {
     document.getElementById("dtitle").innerHTML = "Reports";
-    // document.getElementById("dtitle2").innerHTML = "Profile Settings";
+    document.getElementById("dtitle2").innerHTML = "Computer List";
 
     thisdiv = document.getElementById(div);
     divclass = document.getElementsByClassName("contentdataview");
