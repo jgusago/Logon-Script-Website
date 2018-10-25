@@ -614,23 +614,23 @@ function load_useraccount_table(parent, parentdiv)
         btnadd.style.marginTop = "0px";
 
 
-        var card = document.createElement("div");
-        card.classList.add("card");
-        card.classList.add("mb-3");
-        card.classList.add("contentdataview");
-        // card.setAttribute("id","branchviewsettings");
-        card.setAttribute("hidden","true");
-        ctnview.appendChild(card);
+        // var card = document.createElement("div");
+        // card.classList.add("card");
+        // card.classList.add("mb-3");
+        // card.classList.add("contentdataview");
+        // // card.setAttribute("id","branchviewsettings");
+        // card.setAttribute("hidden","true");
+        // ctnview.appendChild(card);
 
-        cardhead = document.createElement("div");
-        cardhead.classList.add("card-header");
-        card.appendChild(cardhead);
-        cardheadtxt = document.createTextNode("Branch View Settings");
-        cardhead.appendChild(cardheadtxt);
+        // cardhead = document.createElement("div");
+        // cardhead.classList.add("card-header");
+        // card.appendChild(cardhead);
+        // cardheadtxt = document.createTextNode("Branch View Settings");
+        // cardhead.appendChild(cardheadtxt);
 
-        cardbody = document.createElement("div");
-        cardbody.classList.add("card-body");
-        card.appendChild(cardbody);
+        // cardbody = document.createElement("div");
+        // cardbody.classList.add("card-body");
+        // card.appendChild(cardbody);
 
         // load_user_account();
         // // load_useraccount_content();
