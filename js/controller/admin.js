@@ -74,7 +74,7 @@ function DSHBRDContent(parent, linkid){
 
     switch (linkdata) {
       case "DSHBRDRecordsComplist":
-        path = "php/functions/grph.chrt/complst/complist.php"
+        path = "php/functions/reports/computer.list.php"
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";

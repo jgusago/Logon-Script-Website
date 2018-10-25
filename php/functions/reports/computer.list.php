@@ -1,10 +1,11 @@
 <?php
-$parent = $_POST["parent"];
+//$parent = $_POST["parent"];
+$parent = "Marvin(IT)";
 $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-echo "Computer Name|IP Address|Status|Remarks|Agent Versions";
+echo "Computer Name|IP Address|Status|Remarks|Agent Version|Action";
 
 $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent";
 
@@ -29,11 +30,14 @@ foreach($result as $row){
     $newpdo->execute();
     $newresult = $newpdo->fetchAll();
 
-    foreach ($result as $row) {
-      $remarks =
+    foreach ($newresult as $row) {
+        $remarks = $row['remarks'] ?? '';
+        $agent_version = $row['agent_version'] ?? '';
     }
-    echo "#$hostname|$ip_address|$status||";
+    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|action";
 
 }
-
+$newpdo = null;
+$pdo = null;
+$db = null;
 ?>
