@@ -1511,42 +1511,41 @@ function pagination(parent){
 
 }
 
-/* For User Accounts */
+/* For User Accounts Export */
 
-function load_user_accounts(parent){
+function fnExcelReport()
+    {
+        var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+        var textRange; var j=0;
+        tab = document.getElementById('contentview'); // id of table
 
-    var view = document.getElementById("accountmngmtlst");
-    view.innerHTML = "";
-
-    tableid = idgenerator();
-
-    var card = {};
-    createCard(card, view, [], []);
-
-    var table = {};
-    var classes = ["table","table-bordered"];
-    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    createTable(table, card.body, classes, attributes);
-
-
-    $.post("user_account_fetch.php", {parent:parent}, function(data){
-
-        data = data.split("#");
-        datalength = data.length;
-
-        thfdata = data[0].split("|");
-        var tbheader = {}, tbfooter = {};
-        createTableContent([], table.head, [], [], "th", thfdata);
-        createTableContent([], table.foot, [], [], "th", thfdata);
-
-        for (var i = 1; i < datalength;i++){
-            newdata = data[i].split("|");
-            createTableContent([], table.body, [],[], "td", newdata);
-
+            for(j = 0 ; j < tab.rows.length ; j++) 
+            {     
+                tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
             }
-    });
-    pagination(tableid);
-}
+
+        tab_text=tab_text+"</table>";
+        tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+        tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+        tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE "); 
+
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+                    {
+                        txtArea1.document.open("txt/html","replace");
+                        txtArea1.document.write(tab_text);
+                        txtArea1.document.close();
+                        txtArea1.focus(); 
+                        sa=txtArea1.document.execCommand("SaveAs",true,"Computer List.xls");
+                    }  
+                        else                 //other browser not tested on IE 11
+                            sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+                        return (sa);
+                }
+
 /* End */
 /*
 
