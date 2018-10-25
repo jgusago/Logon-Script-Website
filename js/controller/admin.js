@@ -7,7 +7,6 @@ function load(){
 
     DSHBRDNavBarBtns();
 
-
 }
 
 /* Buttons */
@@ -25,11 +24,13 @@ function DSHBRDNavBarBtns(){
       var link = [];
       var list = [];
       var onClick = [];
+      //get parent id
+      var grandparentid = document.getElementsByClassName(btnclass)[i].parentElement.getAttribute("id");
       //create link
       var value = document.getElementsByClassName(btnclass)[i].getAttribute("data");
       var parentid = document.getElementsByClassName(btnclass)[i].getAttribute("id");
       linkid = idgenerator();
-      var linkclasses = ["nav-link", "nav-link-collapse"];
+      var linkclasses = ["nav-link", "nav-link-collapse","collapdatased"];
       var linkattrib = ["data-toggle:collapse","href:#"+linkid];
       createLink(link, parent[i], value, linkclasses, linkattrib);
 
@@ -37,11 +38,11 @@ function DSHBRDNavBarBtns(){
       var listclasses = ["sidenav-third-level", "collapse"];
       var listattrib = ["id:"+linkid,"data-parent:#DSHBRDRecords"];
       createList(list, parent[i], "ul", newdata.length, listclasses, listattrib);
-      //create Button onClick Function
       //create list value
       var ListLink = [];
       for (var j = 0; j < newdata.length; j++){
-        createLink(ListLink, list.li[j], newdata[j], [], ["data:#"+parentid,"onClick:DSHBRDContent('"+newdata[j]+"')"]);
+        var newid = idgenerator();
+        createLink(ListLink, list.li[j], newdata[j], [], ["data:"+parentid,"onClick:DSHBRDContent('"+newdata[j]+"','"+newid+"')", "id:"+newid]);
       }
     }
 
@@ -55,9 +56,10 @@ function DSHBRDNavBarBtns(){
 /* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
 /* OnClick */
 
-function DSHBRDContent(parent){
-
+function DSHBRDContent(parent, linkid){
+    var linkid = linkid;
     var view = document.getElementById("contentview");
+    var linkdata = document.getElementById(linkid).getAttribute("data");
     view.innerHTML = "";
 
     tableid = idgenerator();
@@ -70,13 +72,30 @@ function DSHBRDContent(parent){
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
+    switch (linkdata) {
+      case "DSHBRDRecordsComplist":
+        path = "php/functions/grph.chrt/complst/complist.php"
+      break;
+      case "DSHBRDRecordsComplogs":
+        path = "php/functions/reports/computer.logs.php";
+      break;
+      case "DSHBRDRecodesBrnchvw":
+        path = "";
+      break;
+      case "DSHBRDAccountsAccMgnt":
+        path = "user_account_fetch.php";
+      break;
+      default:
 
-    $.post("php/functions/reports/computer.logs.php", {parent:parent}, function(data){
+    }
 
-        data = data.split("#");//split header and data
+
+    $.post(path, {parent:parent}, function(data){
+
+        data = data.split("#");
         datalength = data.length;
 
-        thfdata = data[0].split("|");//split by value
+        thfdata = data[0].split("|");
         var tbheader = [], tbfooter = [];
         createTableContent([], table.head, [], [], "th", thfdata);
         createTableContent([], table.foot, [], [], "th", thfdata);
@@ -89,45 +108,6 @@ function DSHBRDContent(parent){
     });
     pagination(tableid);
 }
-
-/* For User Accounts */
-
-function load_user_accounts(parent){
-
-    var view = document.getElementById("accountmngmtlst");
-    view.innerHTML = "";
-
-    tableid = idgenerator();
-
-    var card = {};
-    createCard(card, view, [], []);
-
-    var table = {};
-    var classes = ["table","table-bordered"];
-    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    createTable(table, card.body, classes, attributes);
-
-
-    $.post("user_account_fetch.php", {parent:parent}, function(data){
-
-        data = data.split("#");
-        datalength = data.length;
-
-        thfdata = data[0].split("|");
-        var tbheader = {}, tbfooter = {};
-        createTableContent([], table.head, [], [], "th", thfdata);
-        createTableContent([], table.foot, [], [], "th", thfdata);
-
-        for (var i = 1; i < datalength;i++){
-            newdata = data[i].split("|");
-            createTableContent([], table.body, [],[], "td", newdata);
-
-            }
-    });
-    pagination(tableid);
-}
-/* End */
-//
 /* OnClick */
 
 /* Background */
