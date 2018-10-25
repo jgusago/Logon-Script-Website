@@ -3,7 +3,7 @@ $bld = $_POST["branch"];
 $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$query = "SELECT * 
+$query = "SELECT *
             FROM logonscript.tbl_tree
             WHERE tree_parent LIKE :bld
             ORDER BY tree_name";

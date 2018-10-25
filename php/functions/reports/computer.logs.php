@@ -24,11 +24,19 @@ foreach($result as $row){
     $connections_status = $row['connection_status'] ?: 'Not Connected';
     $branch = $row['branch'] ?: 'Scan Failed';
     $scan_time = $row['scan_time'] ?: 'null';
+    $date = $scan_time;
 
+    $date = explode(" ",$scan_time);
+
+    $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
+
+    if ($newdate = new DateTime($date[0]." ".$date[1])){
+
+    $scan_time = date_format($newdate, "M-d-Y H:i");
+    }
     echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
 }
 
-$pdo->connection = null;
-$db->connection = null;
+
 
 ?>
