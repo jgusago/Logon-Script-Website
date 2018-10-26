@@ -74,18 +74,13 @@ function DSHBRDContent(parent, linkid){
 
     switch (linkdata) {
       case "DSHBRDRecordsComplist":
-        path = "php/functions/reports/computer.list.php"
-        dshbrdfunction = DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
-        if (dshbrdfunction == true) {
-          pagination(tableid);
-        }
+        path = "php/functions/reports/computer.list.php";
+        $.(DSHBRDContentTbls(parent, path, table.head, table.foot, table.body)).finish();
+        pagination(tableid);
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
-        dshbrdfunction = DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
-        if (dshbrdfunction == true) {
-          pagination(tableid);
-        }
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
       break;
       case "DSHBRDRecodesBrnchvw":
         path = "";
@@ -116,7 +111,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody){
 
           }
   });
-  return true;
+  pagination(tableid);
 }
 
 
