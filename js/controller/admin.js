@@ -75,9 +75,13 @@ function DSHBRDContent(parent, linkid){
     switch (linkdata) {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php"
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
+        pagination(tableid);
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
+        pagination(tableid);
       break;
       case "DSHBRDRecodesBrnchvw":
         path = "";
@@ -88,26 +92,30 @@ function DSHBRDContent(parent, linkid){
       default:
 
     }
-
-
-    $.post(path, {parent:parent}, function(data){
-
-        data = data.split("#");
-        datalength = data.length;
-
-        thfdata = data[0].split("|");
-        var tbheader = [], tbfooter = [];
-        createTableContent([], table.head, [], [], "th", thfdata);
-        createTableContent([], table.foot, [], [], "th", thfdata);
-
-        for (var i = 1; i < datalength;i++){
-            newdata = data[i].split("|");
-            createTableContent([], table.body, [],[], "td", newdata);
-
-            }
-    });
-    pagination(tableid);
 }
+
+/* Table Call Path with PHP*/
+function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody){
+  $.post(path, {parent:parent}, function(data){
+
+      data = data.split("#");
+      datalength = data.length;
+
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], tablehead, [], [], "th", thfdata);
+      createTableContent([], tablefoot, [], [], "th", thfdata);
+
+      for (var i = 1; i < datalength;i++){
+          newdata = data[i].split("|");
+          createTableContent([], tablebody, [],[], "td", newdata);
+
+          }
+  });
+}
+
+
+
 /* OnClick */
 
 /* Background */
