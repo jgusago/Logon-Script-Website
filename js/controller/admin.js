@@ -75,13 +75,12 @@ function DSHBRDContent(parent, linkid){
     switch (linkdata) {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
-        pagination(tableid);
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid);
 
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid);
       break;
       case "DSHBRDRecodesBrnchvw":
         path = "";
@@ -95,7 +94,7 @@ function DSHBRDContent(parent, linkid){
 }
 
 /* Table Call Path with PHP*/
-function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody){
+function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id){
   $.post(path, {parent:parent}, function(data){
 
       data = data.split("#");
@@ -112,7 +111,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody){
 
           }
   });
-  //pagination(tableid);
+  pagination(id);
 }
 
 

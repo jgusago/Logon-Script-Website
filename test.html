@@ -31,9 +31,6 @@
         var attributes = ["width:100%","cellspacing:0","id:"+tableid];
         createTable(table, card.body, classes, attributes);
 
-
-        pagination(tableid);
-
         $.post("php/functions/reports/computer.list.php", {parent:"Marvin(IT)"}, function(data){
 
             data = data.split("#");
@@ -50,8 +47,8 @@
                 createTableContent(tbdata, table.body, [],[], "td", newdata);
 
                 }
-                pagination(tableid);
-                //sameplepagination(tableid, tableid);
+                //pagination(tableid);
+                sameplepagination(tableid, tableid);
         });
 
 
@@ -63,19 +60,21 @@
          var output = document.createElement("div");
          parent.appendChild(output);
 
-         setInterval(function(){
+         var set = setInterval(function(){
            key = document.getElementById(state);
-           if (key) {
-             pagination(id);
-             var text = document.createTextNode(key.value+" dick");
+           if (!key) {
+             var text = document.createTextNode(key+"-none ");
              output.appendChild(text);
-             var breaker = document.createElement("br");
-             output.appendChild(breaker);
            }
            else {
-             clearInterval();
+              $("#"+id).DataTable();
+              clearInterval(set);
            }
+           
+           key = document.getElementById(state);
        }, 100);
+       
+       clearInterval();
 
       }
     </script>

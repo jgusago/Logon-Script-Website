@@ -115,20 +115,19 @@ function createTableContent(value, parent, classes, attribute, element, data){
     value.tr = tr;
 }
 //Pagination Trigger
-function pagination(id){
-
-
-  setInterval(function(){
-    var set = document.getElementById(id);
-    if (set){
-      $("#"+id).DataTable();
+function pagination(id){         
+    var set = setInterval(function(){
+    key = document.getElementById(id);
+    if (!key) {
+      var text = document.createTextNode(key+"-none ");
+      //id.appendChild(text);
     }
-    else{
-      clearInterval
-  }
-
-}, 100);
-
+    else {
+       $("#"+id).DataTable();
+       clearInterval(set);
+    }
+    
+}, 500);
 }
 function idgenerator(){
 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
