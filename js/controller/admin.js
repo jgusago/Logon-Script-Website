@@ -75,10 +75,9 @@ function DSHBRDContent(parent, linkid){
     switch (linkdata) {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
-
+        pagination(tableid);
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body);
 
-        pagination(tableid);
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
@@ -114,7 +113,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody){
           }
   });
   //pagination(tableid);
-  return true;
 }
 
 

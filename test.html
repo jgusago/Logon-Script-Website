@@ -32,6 +32,7 @@
         createTable(table, card.body, classes, attributes);
 
 
+        pagination(tableid);
 
         $.post("php/functions/reports/computer.list.php", {parent:"Marvin(IT)"}, function(data){
 
