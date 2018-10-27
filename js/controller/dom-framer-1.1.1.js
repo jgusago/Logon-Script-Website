@@ -116,9 +116,10 @@ function createTableContent(value, parent, classes, attribute, element, data){
 }
 //Pagination Trigger
 function pagination(id){
-  var set = document.getElementById(id);
+
 
   setInterval(function(){
+    var set = document.getElementById(id);
     if (set){
       $("#"+id).DataTable();
     }
