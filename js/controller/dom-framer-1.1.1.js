@@ -111,8 +111,12 @@ function createTableContent(value, parent, classes, attribute, element, data){
         }
 
     }
+    randomid = idgenerator();
+    var state = document.createElement("div");
+    parent.appendChild(state);
 
     value.tr = tr;
+    value.state = randomid;
 }
 //Pagination Trigger
 function pagination(id){
