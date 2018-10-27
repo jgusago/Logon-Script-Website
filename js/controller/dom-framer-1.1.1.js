@@ -113,6 +113,7 @@ function createTableContent(value, parent, classes, attribute, element, data){
     }
     randomid = idgenerator();
     var state = document.createElement("div");
+    state.classList.add("id",randomid);
     parent.appendChild(state);
 
     value.tr = tr;

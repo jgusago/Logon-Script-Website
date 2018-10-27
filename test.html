@@ -7,11 +7,9 @@
         }
     </style>
     <script src="js/jssource/jquery/jquery-3.3.1.min.js"></script>
-    <script src="js/controller/main.js"></script>
     <script src="js/controller/dom-framer-1.1.1.js"></script>
     <link href="design/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
-    <script src="design/jquery/jquery.min.js"></script>
     <script src="design/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js/DataTables/datatables.min.js"></script>
     <script type="text/javascript" src="js/controller/dataTableController.js"></script>
@@ -35,9 +33,8 @@
         var attributes = ["width:100%","cellspacing:0","id:"+tableid];
         createTable(table, card.body, classes, attributes);
 
-        pagination(tableid);
 
-        sameplepagination(tableid);
+
         $.post("php/functions/reports/computer.list.php", {parent:"Marvin(IT)"}, function(data){
 
             data = data.split("#");
@@ -48,28 +45,42 @@
             createTableContent([], table.head, [], [], "th", thfdata);
             createTableContent([], table.foot, [], [], "th", thfdata);
 
+            var tbdata = [];
             for (var i = 1; i < datalength;i++){
                 newdata = data[i].split("|");
-                createTableContent([], table.body, [],[], "td", newdata);
+                createTableContent(tbdata, table.body, [],[], "td", newdata);
 
                 }
+
+                sameplepagination(tableid, tableid);
         });
 
 
       }
 
-      function sameplepagination(id){
+      function sameplepagination(id, state){
         var parent = document.getElementById("contentview");
         var status = document.readyState;
          var output = document.createElement("div");
          parent.appendChild(output);
 
          setInterval(function(){
-          var text = document.createTextNode(status+" ");
-         output.appendChild(text);
-         var breaker = document.createElement("br");
-         output.appendChild(breaker);
-       }, 100);
+           key = document.getElementById(state);
+           if (key) {
+             pagination(id);
+             var text = document.createTextNode(key.value+" dick");
+             output.appendChild(text);
+             var breaker = document.createElement("br");
+             output.appendChild(breaker);
+           }
+           else {
+             var text = document.createTextNode("It does not exist!!!");
+             output.appendChild(text);
+             var breaker = document.createElement("br");
+             output.appendChild(breaker);
+           }
+
+       }, 3000);
 
       }
     </script>
