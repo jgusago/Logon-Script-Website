@@ -1,6 +1,5 @@
 <?php
-//$parent = $_POST["parent"];
-$parent = "Marvin(IT)";
+$parent = $_POST["parent"];
 $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
@@ -33,11 +32,14 @@ foreach($result as $row){
     foreach ($newresult as $row) {
         $remarks = $row['remarks'] ?? '';
         $agent_version = $row['agent_version'] ?? '';
+
+
     }
     echo "#$hostname|$ip_address|$status|$remarks|$agent_version|action";
+
+
 
 }
 $newpdo = null;
 $pdo = null;
-$db = null;
 ?>
