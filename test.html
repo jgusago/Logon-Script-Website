@@ -49,8 +49,8 @@
                 createTableContent(tbdata, table.body, [],[], "td", newdata);
 
                 }
-
-                sameplepagination(tableid, tableid);
+                pagination(tableid);
+                //sameplepagination(tableid, tableid);
         });
 
 
@@ -72,12 +72,8 @@
              output.appendChild(breaker);
            }
            else {
-             var text = document.createTextNode("It does not exist!!!");
-             output.appendChild(text);
-             var breaker = document.createElement("br");
-             output.appendChild(breaker);
+             clearInterval();
            }
-
        }, 100);
 
       }

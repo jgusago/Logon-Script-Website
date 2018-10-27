@@ -111,19 +111,17 @@ function createTableContent(value, parent, classes, attribute, element, data){
         }
 
     }
-    randomid = idgenerator();
-    var state = document.createElement("div");
-    state.classList.add("id",randomid);
-    parent.appendChild(state);
 
     value.tr = tr;
-    value.state = randomid;
 }
 //Pagination Trigger
 function pagination(id){
-    setInterval(function(){
-        $("#"+id).DataTable();
-    },100);
+  var set = document.getElementById(id);
+
+  while (set){
+    $("#"+id).DataTable();
+  }
+
 }
 function idgenerator(){
 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
