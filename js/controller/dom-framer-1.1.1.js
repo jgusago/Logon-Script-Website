@@ -118,9 +118,15 @@ function createTableContent(value, parent, classes, attribute, element, data){
 function pagination(id){
   var set = document.getElementById(id);
 
-  while (set){
-    $("#"+id).DataTable();
+  setInterval(function(){
+    if (set){
+      $("#"+id).DataTable();
+    }
+    else{
+      clearInterval
   }
+
+}, 100);
 
 }
 function idgenerator(){
