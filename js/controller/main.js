@@ -29,14 +29,15 @@ function load(){
     settings_branchview();
 
     /* ----- Account Settings ----- */
-    accountmanagement();
+    // accountmanagement();
     // loadtableuseraccount();
 
     // load_useracct();
 
 
     /* ----- Loading ----- */
-    setInterval(function(){
+    setInterval(function()
+    {
         if(wdth <= 100){
         loading.style.width = wdth + "%";
         wdth = wdth+0.5;
@@ -643,6 +644,13 @@ function load_useraccount_table(parent, parentdiv)
         //         $.post("user_account_fetch.php",function(data)
         //     {
         // });
+}
+
+function load_notif()
+{
+    var ctnview = document.getElementById("contentview");
+
+    var 
 }
 
 function loadtableuserprofile()
