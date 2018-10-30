@@ -29,11 +29,13 @@ foreach($result as $row){
     $newpdo->execute();
     $newresult = $newpdo->fetchAll();
 
-    foreach ($newresult as $row) {
+    if (count($newresult) != 0){
         $remarks = $row['remarks'] ?? '';
         $agent_version = $row['agent_version'] ?? '';
-
-
+    }
+    else{ 
+          $remarks = "";
+          $agent_version = "";
     }
     echo "#$hostname|$ip_address|$status|$remarks|$agent_version|action";
 
