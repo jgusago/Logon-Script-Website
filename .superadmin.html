@@ -156,8 +156,8 @@
 
         <!-- Alerts -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label>3</label></i>
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" onclick="load_notif()" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label></label></i>
             <span class="d-lg-none">Alerts
               <span class="badge badge-pill badge-warning">6 New</span>
             </span>
@@ -188,8 +188,6 @@
             <span class="d-lg-none">User</span>
           </a>
           <div class="dropdown-menu dropdown1" aria-labelledby="settingsDropdown" id="settingsDropdown1">
-              <!-- <h6 class="dropdown-header"><i class="glyphicon glyphicon-cog"></i>Sign out</h6> -->
-              <!-- <div class="dropdown-divider"></div> -->
               <a class="dropdown-header" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
           </div>
         </li>
@@ -271,6 +269,7 @@
       </div>
     </div>
 
+    <!-- Add user modal -->
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top: -80px;">
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
@@ -345,7 +344,9 @@
        </div>
       </div>
     </div>
+    <!-- End of Add User Modal -->
 
+    <!-- Edit User Modal -->
     <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top: -80px;">
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
@@ -407,6 +408,11 @@
                 <div class="col-sm-12">
                   <input class="form-control" type="password" id="password" name="password" value="Aa123456" disabled>
                 </div>
+                <div style="text-align: -webkit-left; margin-left: 185px;">
+                   <label class="checkbox-inline">
+                     <input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password
+                    </label>
+                </div>
               </div>
               <br>
               <div class="form-group">
@@ -419,6 +425,7 @@
        </div>
       </div>
     </div>
+    <!-- End of Edit User modal -->
 
     <div id="scripts">
     <!-- Bootstrap core JavaScript-->
