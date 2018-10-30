@@ -403,80 +403,6 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 
 }
 
-
-function load_user_account(parent, div, grandparent, $parentid)
-{
-
-    var logsdiv  = document.createElement("div");
-    logsdiv.classList.add("row");
-    logsdiv.classList.add("row-eq-height");
-    logsdiv.classList.add("col-xs-4");
-    logsdiv.classList.add("col-lg-12");
-    logsdiv.setAttribute("id","branchcomputer-CLU");
-    div.appendChild(logsdiv);
-
-    //Get Data
-    $.post("php/functions/grph.chrt/treeview/count.tree.view.child.php",{branch:parent},function(data){
-
-        if (data != 0){
-
-            var datalogs = data.split("|");
-            var loop = 0;
-
-            while(datalogs[loop])
-            {
-                load_account_content(datalogs[loop],logsdiv,parent);
-                loop++;
-            }
-        }
-        //Else do nothing
-
-    });
-
-}
-
-function load_useraccount_content(parent, div, grandparent){
-
-    var cards = document.createElement("div");
-    cards.classList.add("card");
-    cards.classList.add("mb-3");
-    cards.setAttribute("id",parent+"-CLU");
-
-    if (grandparent == "root"){
-        cards.setAttribute("hidden","true");
-        cards.classList.add("contentdataview");
-    }
-    div.appendChild(cards);
-
-        //Create Card Header
-        var cardheads = document.createElement("div");
-        cardheads.classList.add("card-header");
-        cards.appendChild(cardheads);
-
-            //Header text Node
-            var textnodes = document.createTextNode(parent);
-            cardheads.appendChild(textnodes);
-
-        // Create Card Body
-        var cardsbody = document.createElement("div");
-        cardsbody.classList.add("card-body");
-        cards.appendChild(cardsbody);
-
-            load_useraccount_table(parent,cardsbody);
-
-        var cardsfooter = document.createElement('div');
-        cardsfooter.classList.add("card-footer");
-        cards.appendChild(cardsfooter);
-}
-
-function load_useraccount_table(parent, parentdiv)
-{
-    $.post("user_account_fetch.php", {parent:parent}, function(data){
-        parentdiv.innerHTML = data;
-    });
-
-}
-
 //Load Monitoring: User Accounts
  function loadtableuseraccount()
 {
@@ -812,7 +738,7 @@ function loadtableuserprofile()
 }
 
 //Load Branch View Content
-function load_branchview_content(parent, div, grandparent)\
+function load_branchview_content(parent, div, grandparent)
 {
 
     // Create for Mobile Display
