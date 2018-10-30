@@ -1,7 +1,7 @@
--
 /* ------------------------------ LOADING FUNCTIONS ------------------------------ */
 //Default Load
-function load(){
+function load()
+{
 
     var branchview = document.getElementById("contentview");
     var loading = document.getElementById("processingbar");
@@ -50,9 +50,11 @@ function load(){
 
     pagination();
 }
+
 /* Dashboard buttons */
 //Load for the Branc View Buttons
-function load_branchviewbtn(){
+function load_branchviewbtn()
+{
 
     var parent = "root";
 
@@ -818,8 +820,6 @@ function load_branchbiew_data(list, parent)
 }
 
 
-
-
 /* Tables */
 //Load Table List
 function load_list(status){
@@ -1052,7 +1052,8 @@ function loadtableinactive(ithead, itfoot, tdata){
 
 /* Settings */
 //Load Branch View Settings
-function settings_branchview(){
+function settings_branchview()
+{
     var contentview = document.getElementById("contentview");
     var card = document.createElement("div");
     card.classList.add("card");
@@ -1071,7 +1072,8 @@ function settings_branchview(){
         cardbody = document.createElement("div");
         cardbody.classList.add("card-body");
         card.appendChild(cardbody);
-            $.post("php/functions/sttngs/settings.branch.view.php",function(data){
+            $.post("php/functions/sttngs/settings.branch.view.php",function(data)
+            {
 
                 var newtable = document.createElement("table");
                 newtable.classList.add("table");
@@ -1175,7 +1177,8 @@ function dashboard_click_event(div)
 
 
 // Mini Window Show Computer Details
-function miniwindow_computer_details(host){
+function miniwindow_computer_details(host)
+{
 
     document.getElementById("overlay").style.display = "block";
     document.getElementById("loaderdiv").style.display = "block";
@@ -1209,7 +1212,8 @@ function miniwindow_computer_details(host){
     miniwindow_computer_details_data(tbody, host);
 }
 // Mini Window get Ciomputer Data
-function miniwindow_computer_details_data(tbody, host){
+function miniwindow_computer_details_data(tbody, host)
+{
 
     //tree.view.datails.php
     $.post("php/functions/grph.chrt/treeview/tree.view.datails.php",{host:host},function(data){
@@ -1255,6 +1259,7 @@ function miniwindow_computer_details_data(tbody, host){
    document.getElementById("loaderdiv").style.display = "none";
 
 }
+
 // Overlay Hide When Background is clicked
 function overlay()
 {
@@ -1275,7 +1280,8 @@ function overlay()
 
 }
 
-function addbranch(){
+function addbranch()
+{
     document.getElementById("overlay").style.display = "block";
     document.getElementById("miniwindow").style.display = "block";
 
@@ -1382,12 +1388,14 @@ function addbranch(){
             btn.appendChild(btntxt);
 }
 
-function editbranch(){
+function editbranch()
+{
     document.getElementById("overlay").style.display = "block";
     document.getElementById("miniwindow").style.display = "block";
 }
 
-function addnewchild(){
+function addnewchild()
+{
 
     var parent = document.getElementById("addparentname").value;
     var childname = document.getElementById("addchildname").value;
@@ -1465,12 +1473,14 @@ function myFuction( elem)
 
 /* ----------------------------- BACKGROUND FUNCTIONS ---------------------------- */
 // Get Current Server IP
-function serverip(){
+function serverip()
+{
     var svrip = location.hostname;
     return svrip;
 }
 
-function pagination(parent){
+function pagination(parent)
+{
 
     var bodydiv = document.getElementById("scripts");
 
@@ -1484,7 +1494,7 @@ function pagination(parent){
 /* For User Accounts Export */
 
 function fnExcelReport()
-    {
+{
         var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
         var textRange; var j=0;
         tab = document.getElementById('contentview'); // id of table
@@ -1499,22 +1509,25 @@ function fnExcelReport()
         tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
         tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
 
-            var ua = window.navigator.userAgent;
-            var msie = ua.indexOf("MSIE "); 
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE "); 
 
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
-                    {
-                        txtArea1.document.open("txt/html","replace");
-                        txtArea1.document.write(tab_text);
-                        txtArea1.document.close();
-                        txtArea1.focus(); 
-                        sa=txtArea1.document.execCommand("SaveAs",true,"Computer List.xls");
-                    }  
-                        else                 //other browser not tested on IE 11
-                            sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+        {
+            txtArea1.document.open("txt/html","replace");
+            txtArea1.document.write(tab_text);
+            txtArea1.document.close();
+            txtArea1.focus(); 
+            sa=txtArea1.document.execCommand("SaveAs",true,"Computer List.xls");
+        }  
+        else                 //other browser not tested on IE 11
+        {
+            sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+        }
+                            
 
-                        return (sa);
-                }
+        return (sa);
+}
 
 /* End */
 /*
