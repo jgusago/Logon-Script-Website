@@ -75,7 +75,7 @@ function createTable(value, parent, classes, attribute){
 
 }
 
-// Table Content
+// createTableContent(-Retun Value-,-Parent Element-,-Classes to be added-,-Attribute to be Added-,-Element-,-data to be added-)
 function createTableContent(value, parent, classes, attribute, element, data){
 
     var tr = document.createElement("tr");
@@ -94,6 +94,14 @@ function createTableContent(value, parent, classes, attribute, element, data){
         var dt = document.createElement(element);
         tr.appendChild(dt);
 
+        var newelement = data[l].split("`");
+        if (newelement.length > 1){
+          var newvalue = [];
+          neweclasses = newelement[1].split("~");
+          neweattribs = newelement[2].split("~");
+          createnewElement(newvalue, dt, newelement[0], neweclasses, neweattribs, newelement[3]);
+        }
+        else{
         var minidata = data[l].split("~");
         if (minidata.length > 1){
             for (var m = 0; m < minidata.length; m++){
@@ -102,20 +110,20 @@ function createTableContent(value, parent, classes, attribute, element, data){
                 var node = document.createTextNode(minidata[m]);
                 minitr.appendChild(node);
             }
-
         }
         else{
             var node = document.createTextNode(data[l]);
             dt.appendChild(node);
 
-        }
+        }//Closing of minidata IF function
+      }//Closing of ELement IF function
 
     }
 
     value.tr = tr;
 }
 //Pagination Trigger
-function pagination(id){         
+function pagination(id){
     var set = setInterval(function(){
     key = document.getElementById(id);
     if (!key) {
@@ -126,7 +134,7 @@ function pagination(id){
        $("#"+id).DataTable();
        clearInterval(set);
     }
-    
+
 }, 500);
 }
 function idgenerator(){
@@ -149,7 +157,7 @@ function createList(value, parent, listtype, length, ulclass, ulattribute){
   }
   for (var k = 0; k < length; k++){
     var li = document.createElement("li");
-    ul.appendChild(li);
+    ul.appendChild(li);5
     lilist.push(li);
   }
 
@@ -186,5 +194,20 @@ function createOnClick(value, onclickfunction, list){
   }
 
   value.list = newlist;
+
+}
+
+function createnewElement(value, parent, element, classes, attribute, data){
+  var newelement = document.createElement(element);
+  for (var i = 0; i < classes.length; i++){
+    newelement.classList.add(classes[i]);
+  }
+  for (var j = 0; j < attribute.length; j++){
+    attrib = attribute[j].split(":");
+    newelement.setAttribute(attrib[0],attrib[1]);
+  }
+  newnode = document.createTextNode(data);
+  newelement.appendChild(newnode);
+  parent.appendChild(newelement);
 
 }

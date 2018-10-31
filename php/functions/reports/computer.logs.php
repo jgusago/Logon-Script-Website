@@ -1,5 +1,6 @@
 <?php
-$parent = $_POST["parent"];
+//$parent = $_POST["parent"];
+$parent = "Marvin(IT)";
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
@@ -36,7 +37,6 @@ foreach($result as $row){
     }
     echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
 }
-
 
 
 ?>
