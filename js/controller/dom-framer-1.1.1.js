@@ -131,7 +131,17 @@ function pagination(id){
       //id.appendChild(text);
     }
     else {
-       $("#"+id).DataTable();
+       $("#"+id).DataTable(
+         {
+           dom: 'Bfrtip',
+       buttons: [
+           'copyHtml5',
+           'excelHtml5',
+           'csvHtml5',
+           'pdfHtml5'
+       ]
+         }
+       );
        clearInterval(set);
     }
 
@@ -213,7 +223,7 @@ function createnewElement(value, parent, element, classes, attribute, data){
   value.newelement = newelement;
 
 }
-
+// Retirn Value Array, Parent Element, Classes in Array, Attributes, element option list
 function createSelection(value, parent, classes, attribute, data){
   var selection = document.createElement("select");
   for (var i = 0; i < classes.length; i++){
@@ -221,7 +231,7 @@ function createSelection(value, parent, classes, attribute, data){
   }
   for (var j = 0; j < attribute.length; j++){
     attrib = attribute[j].split(":");
-    newelement.setAttribute(attrib[0],attrib[1]);
+    selection.setAttribute(attrib[0],attrib[1]);
   }
   for (var k = 0; k < data.length; k++){
     newdata = data[k].split(":");
@@ -231,6 +241,6 @@ function createSelection(value, parent, classes, attribute, data){
     option.appendChild(optionnode);
     selection.appendChild(option);
   }
-
+  parent.appendChild(selection);
   value.select = selection;
 }

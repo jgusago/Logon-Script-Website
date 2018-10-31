@@ -15,68 +15,17 @@
     <link href="design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="design/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script>
-      function load(){
+    function load(){
+  var ch = document.getElementById("contentview");
+  var rightdiv = [];
+  var rightsidevalue = [];
+  var select = [];
 
-        var linkid = linkid;
-        var view = document.getElementById("contentview");
-        view.innerHTML = "";
-
-        tableid = idgenerator();
-
-        var card = [];
-        createCard(card, view, [], []);
-
-        var table = [];
-        var classes = ["table","table-bordered"];
-        var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-        createTable(table, card.body, classes, attributes);
-
-        $.post("php/functions/reports/computer.list.php", {parent:"Marvin(IT)"}, function(data){
-
-            data = data.split("#");
-            datalength = data.length;
-
-            thfdata = data[0].split("|");
-            var tbheader = [], tbfooter = [];
-            createTableContent([], table.head, [], [], "th", thfdata);
-            createTableContent([], table.foot, [], [], "th", thfdata);
-
-            var tbdata = [];
-            for (var i = 1; i < datalength;i++){
-                newdata = data[i].split("|");
-                createTableContent(tbdata, table.body, [],[], "td", newdata);
-
-                }
-                //pagination(tableid);
-                sameplepagination(tableid, tableid);
-        });
-
-
-      }
-
-      function sameplepagination(id, state){
-        var parent = document.getElementById("contentview");
-        var status = document.readyState;
-         var output = document.createElement("div");
-         parent.appendChild(output);
-
-         var set = setInterval(function(){
-           key = document.getElementById(state);
-           if (!key) {
-             var text = document.createTextNode(key+"-none ");
-             output.appendChild(text);
-           }
-           else {
-              $("#"+id).DataTable();
-              clearInterval(set);
-           }
-           
-           key = document.getElementById(state);
-       }, 100);
-       
-       clearInterval();
-
-      }
+    createnewElement(rightdiv, ch, "div", ["col-sm-12","col-md-6","float-right"], ["align:right"], "");
+      createnewElement(rightsidevalue, rightdiv.newelement, "strong", ["text-right"], ["align:right"], "Remarks: ");
+      //create Select element
+      createSelection(select, ch, [], ["id:remarks"], ["Active:Active","Resigned:Resigned","Transfered:Transfered"," Old PC name:Old PC name"]);
+}
     </script>
 </head>
 <body onload = "load()">

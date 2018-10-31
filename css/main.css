@@ -69,14 +69,14 @@ body.fixed-nav {
     #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a,
     #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a {
       display: block;
-      padding: 0.5em 0; 
-    
+      padding: 0.5em 0;
+
     }
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:focus, #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a:hover,
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:focus,
-      #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:hover 
+      #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:hover
       {
-        text-decoration: none; 
+        text-decoration: none;
         background: #64c13dad;
       }
   #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a {
@@ -88,7 +88,7 @@ body.fixed-nav {
   #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link
    {
     position: relative;
-    min-width: 45px; 
+    min-width: 45px;
   }
     #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
       float: right;
@@ -123,7 +123,7 @@ body.fixed-nav {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
-      margin-top: 70px; 
+      margin-top: 70px;
       box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
     }
       #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
@@ -158,7 +158,7 @@ body.fixed-nav {
 
 @media (min-width: 992px) {
   #mainNav.fixed-top .navbar-sidenav {
-    height: calc(100vh - 112px); 
+    height: calc(100vh - 112px);
   }
   #mainNav.fixed-top .sidenav-toggler {
     position: absolute;
@@ -228,7 +228,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   background: #b7ab22f2;
 }
-.fa-fw 
+.fa-fw
 {
   width: auto;
   text-align: center;
@@ -260,31 +260,31 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   margin-top:150px;
 }
-.dropdown-menu.dropdown1.show 
+.dropdown-menu.dropdown1.show
 {
   display: block;
   width: -webkit-fill-available;
 }
-.navbar-nav .dropdown-menu.dropdown1 
+.navbar-nav .dropdown-menu.dropdown1
 {
   float: none;
 }
-.navbar-expand-lg .navbar-nav .dropdown-menu.dropdown1 
+.navbar-expand-lg .navbar-nav .dropdown-menu.dropdown1
 {
   position: absolute;
 }
-.navbar-expand-lg .navbar-nav .nav-link 
+.navbar-expand-lg .navbar-nav .nav-link
 {
   padding-right: 1rem;
   padding-left: 1rem;
 }
-.btn-warning 
+.btn-warning
 {
   color: #fff;
   background-color: #f0ad4e;
   border-color: #eea236;
 }
-.modal-footer 
+.modal-footer
 {
   display: flex;
   align-items: center;
@@ -296,9 +296,9 @@ h5
 {
   font-size: 18px;
 }
-#sidenavToggler i 
+#sidenavToggler i
 {
-  font-weight: 800; 
+  font-weight: 800;
 }
 
 .navbar-sidenav-tooltip.show {
@@ -330,9 +330,9 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   color: #868e96; }
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link:hover
    {
-    color: #adb5bd; 
+    color: #adb5bd;
     background: #64c13dad;
-  
+
   }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a,
@@ -340,14 +340,14 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   color: #868e96; }
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:focus, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:hover,
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:focus,
-  #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover 
+  #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover
   {
-    color: #adb5bd; 
+    color: #adb5bd;
     background: #64c13dad;
   }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
-  color: #adb5bd; 
+  color: #adb5bd;
 }
 
 @media (min-width: 992px) {
@@ -357,7 +357,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       color: white !important;
       background-color: #495057; }
       #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:hover {
-        color: white; 
+        color: white;
         background:#b7ab22f2;}
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
@@ -377,10 +377,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   color: rgba(0, 0, 0, 0.5); }
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:focus, #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:hover,
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:focus,
-  #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover 
+  #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover
   {
     color: rgba(0, 0, 0, 0.7);
-    background: #64c13dad; 
+    background: #64c13dad;
   }
 
 #mainNav.navbar-light .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
@@ -394,9 +394,9 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       /* background-color: #e9ecef;  */
       background:#b7ab22f2;
     }
-      #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:hover 
+      #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:hover
       {
-        color: #000; 
+        color: #000;
         background: #64c13dad;
       }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
@@ -466,7 +466,7 @@ footer.sticky-footer {
       display: none; /* Hidden by default */
       width: 100%; /* Full width (cover the whole page) */
       height: 100%; /* Full height (cover the whole page) */
-      top: 0; 
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
@@ -474,7 +474,7 @@ footer.sticky-footer {
       z-index: 2040; /* Specify a stack order in case you're using a different order for other elements */
       cursor: pointer; /* Add a pointer on hover */
   }
-.bvcard{  
+.bvcard{
   margin: 3px;
   width: 230px;
 }
@@ -490,7 +490,7 @@ footer.sticky-footer {
 }
 .card.mb-3.contentdataview
 {
-  margin-left: 40px;
+  margin-left: 25px;
   width: -webkit-fill-available;
 }
 #progressbardiv{
@@ -499,7 +499,7 @@ footer.sticky-footer {
   display: block; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
-  top: 0; 
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -515,7 +515,7 @@ footer.sticky-footer {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%) ;
-  
+
 }
 .text{
   text-align: center;
@@ -544,8 +544,8 @@ footer.sticky-footer {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%) ;
-  z-index: 3120; 
-  
+  z-index: 3120;
+
 }
 #progressbar p{
   height: 100%;
@@ -692,7 +692,7 @@ footer.sticky-footer {
   /*width: 40%; /* Full width (cover the whole page) */
   /*height: 60%; /* Full height (cover the whole page) */
   margin: 0px;
-  top: 50%;
+  top: 45%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);

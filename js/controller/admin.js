@@ -103,7 +103,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata){
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], rightdiv = [], rightsidevalue = [];
+  var value = [], divvalue = [], leftdiv = [], rightdiv = [], rightsidevalue = [], select = [], subrdiv = [], option = [];
   //whole div
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   //leftside div
@@ -112,10 +112,17 @@ function COMPLISTupdate(hostname, user, remarks, tabledata){
     createnewElement(value, leftdiv.newelement, "h4", [], [], hostname+" | "+user);
 
   //rightside DiV
-  createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
-    createnewElement(rightsidevalue, rightdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
+  createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
+    createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
+    createnewElement(rightsidevalue, subrdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
+    //create Select element
+    createSelection(select, subrdiv.newelement, [], ["id:remarks"], ["Active:Active","Resigned:Resigned","Transfered:Transfered"," Old PC name:Old PC name"]);
+    //add value
+    createnewElement(option, select.select, "option", [], ["hidden:true","selected:true","disabled:true","name:"+remarks], remarks);
 
   $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(data){
+
+    cb.innerHTML = data;
 
   });
 
