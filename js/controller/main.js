@@ -30,7 +30,6 @@ function load()
     settings_branchview();
 
     /* ----- Account Settings ----- */
-    accountmanagement();
     // loadtableuseraccount();
 
     // load_useracct();
@@ -577,21 +576,21 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 
 function load_notif()
 {
-    var ctnview = document.getElementById("contentview");  
+    var ctnview = document.getElementById("contentview");
 }
 
-function resetPass() 
+function resetPass()
 {
     var x = document.getElementById("password");
     if (x.type === "password")
     {
          x.type = "text";
-    } 
-    else 
+    }
+    else
     {
         x.type = "password";
     }
-}  
+}
 
 function loadtableuserprofile()
 {
@@ -1499,8 +1498,8 @@ function fnExcelReport()
         var textRange; var j=0;
         tab = document.getElementById('contentview'); // id of table
 
-            for(j = 0 ; j < tab.rows.length ; j++) 
-            {     
+            for(j = 0 ; j < tab.rows.length ; j++)
+            {
                 tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
             }
 
@@ -1510,21 +1509,21 @@ function fnExcelReport()
         tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
 
         var ua = window.navigator.userAgent;
-        var msie = ua.indexOf("MSIE "); 
+        var msie = ua.indexOf("MSIE ");
 
         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
         {
             txtArea1.document.open("txt/html","replace");
             txtArea1.document.write(tab_text);
             txtArea1.document.close();
-            txtArea1.focus(); 
+            txtArea1.focus();
             sa=txtArea1.document.execCommand("SaveAs",true,"Computer List.xls");
-        }  
+        }
         else                 //other browser not tested on IE 11
         {
-            sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+            sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
         }
-                            
+
 
         return (sa);
 }

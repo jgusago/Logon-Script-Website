@@ -38,7 +38,7 @@ foreach($result as $row){
           $remarks = "";
           $agent_version = "";
     }
-    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLIST(\"$hostname\")`Edit";
+    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLIST(\"$hostname\")`Update";
 
 
 
