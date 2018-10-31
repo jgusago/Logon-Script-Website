@@ -1,6 +1,6 @@
 <?php
-//$parent = $_POST["parent"];
-$parent = "Marvin(IT)";
+$parent = $_POST["parent"];
+//$parent = "Marvin(IT)";
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection

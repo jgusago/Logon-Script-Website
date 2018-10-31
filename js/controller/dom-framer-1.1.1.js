@@ -210,4 +210,27 @@ function createnewElement(value, parent, element, classes, attribute, data){
   newelement.appendChild(newnode);
   parent.appendChild(newelement);
 
+  value.newelement = newelement;
+
+}
+
+function createSelection(value, parent, classes, attribute, data){
+  var selection = document.createElement("select");
+  for (var i = 0; i < classes.length; i++){
+    selection.classList.add(classes[i]);
+  }
+  for (var j = 0; j < attribute.length; j++){
+    attrib = attribute[j].split(":");
+    newelement.setAttribute(attrib[0],attrib[1]);
+  }
+  for (var k = 0; k < data.length; k++){
+    newdata = data[k].split(":");
+    option = document.createElement("option");
+    option.setAttribute("name",newdata[0]);
+    optionnode = document.createTextNode(newdata[1]);
+    option.appendChild(optionnode);
+    selection.appendChild(option);
+  }
+
+  value.select = selection;
 }

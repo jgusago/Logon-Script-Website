@@ -93,6 +93,34 @@ function DSHBRDContent(parent, linkid){
     }
 }
 
+//computerlist Update OnClick
+
+function COMPLISTupdate(hostname, user, remarks, tabledata){
+  OVERLAYenable();
+
+  //get mini window ID;
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var value = [], divvalue = [], leftdiv = [], rightdiv = [], rightsidevalue = [];
+  //whole div
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  //leftside div
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+    //leftside contents
+    createnewElement(value, leftdiv.newelement, "h4", [], [], hostname+" | "+user);
+
+  //rightside DiV
+  createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+    createnewElement(rightsidevalue, rightdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
+
+  $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(data){
+
+  });
+
+}
+
 /* Table Call Path with PHP*/
 function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id){
   $.post(path, {parent:parent}, function(data){
@@ -123,6 +151,30 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id){
 function LNKbrdcmps(data){
     var address = document.getElementById('address');
     address.innerHTML = "";
+
+}
+
+function OVERLAYenable(){
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("miniwindow").style.display = "block";
+}
+
+function OVERLAYdisable()
+{
+
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("loaderdiv").style.display = "none";
+    document.getElementById("miniwindow").style.display = "none";
+
+        //get mini window ID;
+        var ch = document.getElementById("mnch");
+        var cb = document.getElementById("mncb");
+        var cf = document.getElementById("mncf");
+
+        //Clear Previous Text
+        ch.innerHTML = "";
+        cb.innerHTML = "";
+        cf.innerHTML = "";
 
 }
 
