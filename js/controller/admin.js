@@ -120,24 +120,34 @@ function COMPLISTupdate(hostname, user, remarks, tabledata){
     //add value
     createnewElement(option, select.select, "option", [], ["hidden:true","selected:true","disabled:true","name:"+remarks], remarks);
 
-  $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(data){
+  $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(newdata){
+
+    newdata = newdata.split("!!");
+
+    for(var d = 0; d < newdata.length; d++){
 
     var table = [];
-
+    var tableid = idgenerator();
     var classes = ["table","table-bordered"];
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, cb, classes, attributes);
-    data = data.split("#");
+    data = newdata[d].split("#");
     datalength = data.length;
 
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
 
-        newdata = data[1].split("|");
-        createTableContent([], table.body, [],[], "td", newdata);
+    for (var i = 1; i < datalength;i++){
+        contentdata = data[i].split("|");
+        createTableContent([], table.body, [],[], "td", contentdata);
 
+        }
+
+    }//newdata for close
   });
+
+  //footer
 
 }
 

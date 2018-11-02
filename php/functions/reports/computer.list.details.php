@@ -1,6 +1,6 @@
 <?php
 $hostname = $_POST["hostname"];
-//$parent = "Marvin(IT)";
+//$hostname = "AEITOM073137";
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
@@ -37,6 +37,39 @@ foreach($result as $row){
     }
     echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
 }
+
+  echo "!!Processor|Disk Serial|MAC Address|Manufacturer|Model|Status|Agent Version";
+
+  $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname";
+
+  $newpdo = $db->prepare($newquery);
+  $newpdo->bindParam(":hostname",$hostname);
+  $newpdo->execute();
+  $newresult = $newpdo->fetchAll();
+
+  if (count($newresult) != 0){
+    foreach ($newresult as $row) {
+      $processor = $row['processor'];
+      $serial = $row['hdd_Serial'];
+      $macaddress = $row['mac_Address'];
+      $manufacturer = $row['mb_manufacturer'];
+      $model = $row['mb_product'];
+      $status = $row['status'];
+      $version = $row['agent_version'];
+
+      echo "#$processor|$serial|$macaddress|$manufacturer|$model|$status|$version";
+    }
+  }
+  else{
+      $processor = "No Data Found";
+      $serial = "No Data Found";
+      $macaddress = "No Data Found";
+      $manufacturer = "No Data Found";
+      $model = "No Data Found";
+      $status = "No Data Found";
+      $version = "No Data Found";
+      echo "#$processor|$serial|$macaddress|$manufacturer|$model|$status|input`form-control`id:agentversion~type:text~placeholder:$version`$version";
+  }
 
 
 ?>
