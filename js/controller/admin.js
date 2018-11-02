@@ -122,7 +122,20 @@ function COMPLISTupdate(hostname, user, remarks, tabledata){
 
   $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(data){
 
-    cb.innerHTML = data;
+    var table = [];
+
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, cb, classes, attributes);
+    data = data.split("#");
+    datalength = data.length;
+
+    thfdata = data[0].split("|");
+    var tbheader = [], tbfooter = [];
+    createTableContent([], table.head, [], [], "th", thfdata);
+
+        newdata = data[1].split("|");
+        createTableContent([], table.body, [],[], "td", newdata);
 
   });
 

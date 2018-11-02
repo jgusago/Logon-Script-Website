@@ -133,13 +133,17 @@ function pagination(id){
     else {
        $("#"+id).DataTable(
          {
-           dom: 'Bfrtip',
-       buttons: [
-           'copyHtml5',
-           'excelHtml5',
-           'csvHtml5',
-           'pdfHtml5'
-       ]
+           dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
+                "<'row mt-2'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>"+
+                "<'row'<'col-sm-12'tr>>"+
+                "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+           "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+           buttons: [
+             'copyHtml5',
+             'excelHtml5',
+             'csvHtml5',
+             'pdfHtml5',
+     ],
          }
        );
        clearInterval(set);
