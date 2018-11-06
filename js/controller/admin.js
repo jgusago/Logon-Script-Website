@@ -95,7 +95,7 @@ function DSHBRDContent(parent, linkid){
 
 //computerlist Update OnClick
 
-function COMPLISTupdate(hostname, user, remarks, tabledata){
+function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent){
   OVERLAYenable();
 
   //get mini window ID;
@@ -116,7 +116,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata){
     createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
     createnewElement(rightsidevalue, subrdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
     //create Select element
-    createSelection(select, subrdiv.newelement, [], ["id:remarks"], ["Active:Active","Resigned:Resigned","Transfered:Transfered"," Old PC name:Old PC name"]);
+    createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","Resigned:Resigned","Transfered:Transfered"," Old PC name:Old PC name"]);
     //add value
     createnewElement(option, select.select, "option", [], ["hidden:true","selected:true","disabled:true","name:"+remarks], remarks);
 
@@ -152,7 +152,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata){
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], [], "update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+tabledata+"\",\""+grandparent+"\")"], "update" );
 }
 
 /* Table Call Path with PHP*/
@@ -210,6 +210,29 @@ function OVERLAYdisable()
         cb.innerHTML = "";
         cf.innerHTML = "";
 
+}
+function CMPLISTdtlsremarksupdate(defaultvalue, id){
+
+  var value = document.getElementById(id).value;
+  var button = document.getElementById("CMPLISTdtlsupdate");
+
+  if (value != defaultvalue){
+    button.classList.remove("disabled");
+  }
+  else {
+    button.classList.add("disabled");
+  }
+
+}
+
+function CMPLISTdtlsupdate(hostname, update, grandparent){
+
+  var remarks = document.getElementById("CMPLISTdtlsremarks").value;
+  var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
+
+  $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){});
+
+  
 }
 
 //

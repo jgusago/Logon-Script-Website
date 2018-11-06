@@ -227,7 +227,7 @@ function createnewElement(value, parent, element, classes, attribute, data){
   value.newelement = newelement;
 
 }
-// Retirn Value Array, Parent Element, Classes in Array, Attributes, element option list
+// Return Value Array, Parent Element, Classes in Array, Attributes, element option list
 function createSelection(value, parent, classes, attribute, data){
   var selection = document.createElement("select");
   for (var i = 0; i < classes.length; i++){
