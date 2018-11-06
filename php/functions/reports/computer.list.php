@@ -41,7 +41,7 @@ foreach($result as $row){
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\", \"$remarks\", \"$tabledata\")`Update";
+    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\", \"$remarks\", \"$tabledata\")`Details";
 
 
 
