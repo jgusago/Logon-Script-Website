@@ -114,9 +114,6 @@ function load_branchviewbtn()
         else
         {
 
-            bvbtntxt = document.createTextNode("Branch View");
-            bvbtn.appendChild(bvbtntxt);
-
             // Computer List
             bvcbtn = document.createElement("a");
             bvcbtn.setAttribute("id","branchcomputerbtn");
