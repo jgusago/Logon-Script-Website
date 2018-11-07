@@ -4,8 +4,10 @@ $hostname = $_POST["hostname"];
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
-echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
 
+/*
+echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
+*/
 $query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE :hostname AND user not like 'admi%' group by hostname";
 
 $pdo = $db->prepare($query);
@@ -35,10 +37,15 @@ foreach($result as $row){
 
     $scan_time = date_format($newdate, "M-d-Y H:i");
     }
-    echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
-}
+    //echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
 
-  echo "!!Processor|Disk Serial|MAC Address|Manufacturer|Model|Status|Agent Version";
+    if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
+        $currentstatus = "On-line";
+    else{
+        $currentstatus = "Off-line";
+      }
+}
+  echo "Processor|Disk Serial|MAC Address|Manufacturer|Model|Status|Agent Version";
 
   $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname";
 
@@ -57,7 +64,7 @@ foreach($result as $row){
       $status = $row['status'];
       $version = $row['agent_version'];
 
-      echo "#$processor|$serial|$macaddress|$manufacturer|$model|$status|$version";
+      //echo "#$processor|$serial|$macaddress|$manufacturer|$model|$status|input`form-control`id:agentversion~type:text~placeholder:$version~onkeypress:remarksupdate(\"$version\")`$version";
     }
   }
   else{
@@ -68,8 +75,9 @@ foreach($result as $row){
       $model = "No Data Found";
       $status = "No Data Found";
       $version = "No Data Found";
-      echo "#$processor|$serial|$macaddress|$manufacturer|$model|$status|input`form-control`id:agentversion~type:text~placeholder:$version`$version";
   }
 
+
+echo "#$processor|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeypress:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
 
 ?>
