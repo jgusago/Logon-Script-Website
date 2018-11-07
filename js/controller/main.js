@@ -14,7 +14,6 @@ function load()
 
     /* ----- Charts ----- */
     //load Branch View
-    load_branchview("root", branchview, "0");
     load_branchcomputerlist("root", branchview, "0","root");
     load_branchcomputerlogs("root", branchview, "0","root");
     // load_useraccount("root", branchview, "0","root");
@@ -114,11 +113,6 @@ function load_branchviewbtn()
         }
         else
         {
-            //Branch View
-            bvbtn = document.createElement("a");
-            bvbtn.setAttribute("id","branchviewbtn");
-            bvbtn.setAttribute("onclick","dashboard_click_event(\"brancview\")");
-            bvlist.appendChild(bvbtn);
 
             bvbtntxt = document.createTextNode("Branch View");
             bvbtn.appendChild(bvbtntxt);
