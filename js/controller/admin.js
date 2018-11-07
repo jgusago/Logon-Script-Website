@@ -75,12 +75,12 @@ function DSHBRDContent(parent, linkid){
     switch (linkdata) {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid);
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
 
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid);
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecodesBrnchvw":
         path = "";
@@ -156,7 +156,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent){
 }
 
 /* Table Call Path with PHP*/
-function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id){
+function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
   $.post(path, {parent:parent}, function(data){
 
       data = data.split("#");
@@ -231,8 +231,8 @@ function CMPLISTdtlsupdate(hostname, update, grandparent){
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
   $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){});
-
-  
+  DSHBRDContent(grandparent,"DSHBRDRecordsComplist");
+  //DSHBRDRecordsComplist
 }
 
 //
