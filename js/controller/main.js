@@ -63,31 +63,9 @@ function load_branchviewbtn()
         datalength = data.length;
         bvclist = document.getElementById("branchcomputerlist");
         bvcomlogs = document.getElementById("branchcomplogs");
-        bvlist = document.getElementById("branchviewlist");
 
         if(data[0] != 0)
         {
-            //Branch View List
-            bvbtn = document.createElement("a");
-            bvbtn.setAttribute("id","branchviewbtn");
-
-            bvbtn.classList.add("nav-link-collapse");
-            bvbtn.classList.add("collapdatased");
-
-            bvbtn.setAttribute("data-toggle","collapse");
-            bvbtn.setAttribute("href","#root");
-
-            bvlist.appendChild(bvbtn);
-
-                bvbtntxt = document.createTextNode("Branch View");
-                bvbtn.appendChild(bvbtntxt);
-
-            bvul = document.createElement("ul");
-            bvul.classList.add("sidenav-third-level");
-            bvul.classList.add("collapse");
-            bvul.setAttribute("id","root");
-
-            bvlist.appendChild(bvul);
 
             //Branch Computer List
             bvcbtn = document.createElement("a");
@@ -167,18 +145,6 @@ function load_branchviewbtn()
         }
 
         for (loop = 0 ; loop < datalength; loop++){
-            //branch View
-            bvnewli = document.createElement("li");
-            bvul.appendChild(bvnewli);
-
-            bva = document.createElement("a");
-            //bva.setAttribute("href","#"+data[loop]);
-            bva.setAttribute("onclick","dashboard_click_event(\""+data[loop]+"\")");
-            bvnewli.appendChild(bva);
-
-            anode = document.createTextNode(data[loop]);
-            bva.appendChild(anode);
-
             //Branch Computer List
             bvcnewli = document.createElement("li");
             bvcul.appendChild(bvcnewli);
