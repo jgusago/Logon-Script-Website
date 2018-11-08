@@ -86,6 +86,7 @@ function DSHBRDContent(parent, linkid){
       break;
       case "DSHBRDAccountsAccMgnt":
         path = "user_account_fetch.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       default:
 
