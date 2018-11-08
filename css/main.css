@@ -296,6 +296,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   margin: 1rem;
 }
+thead tr th
+{
+  text-align:-webkit-center;
+}
 h5
 {
   font-size: 18px;
