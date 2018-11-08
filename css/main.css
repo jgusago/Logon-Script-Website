@@ -300,6 +300,10 @@ thead tr th
 {
   text-align:-webkit-center;
 }
+tfoot tr th
+{
+  text-align:-webkit-center;
+}
 h5
 {
   font-size: 18px;

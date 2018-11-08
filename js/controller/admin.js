@@ -85,7 +85,7 @@ function DSHBRDContent(parent, linkid){
         path = "";
       break;
       case "DSHBRDAccountsAccMgnt":
-        path = "php/functions/accounts/accounts.create.php";
+        path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       default:
