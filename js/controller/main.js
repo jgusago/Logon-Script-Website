@@ -86,7 +86,11 @@ function DSHBRDContent(parent, linkid){
         path = "";
       break;
       case "DSHBRDAccountsAccMgnt":
-        path = "user_account_fetch.php";
+        path = "php/functions/accounts/accounts.view.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDProfileMngmt":
+        path = "";
       break;
       default:
 
@@ -103,79 +107,6 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent){
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-<<<<<<< HEAD
-        h3.style.padding = "10px";
-
-        divv2.style.width = "-webkit-fill-available";
-        divv2.style.margin = "15px";
-
-        tbl.style.background = "rgba(255, 255, 255, 0.42)";
-        th.style.paddingBottom = "15px";
-        th1.style.paddingBottom = "15px";
-
-        tr.style.textAlign = "-webkit-center";
-        trb.style.textAlign = "-webkit-center";
-
-        btnadd.style.margin = "15px";
-        btnadd.style.marginTop = "0px";
-
-
-        // var card = document.createElement("div");
-        // card.classList.add("card");
-        // card.classList.add("mb-3");
-        // card.classList.add("contentdataview");
-        // // card.setAttribute("id","branchviewsettings");
-        // card.setAttribute("hidden","true");
-        // ctnview.appendChild(card);
-
-        // cardhead = document.createElement("div");
-        // cardhead.classList.add("card-header");
-        // card.appendChild(cardhead);
-        // cardheadtxt = document.createTextNode("Branch View Settings");
-        // cardhead.appendChild(cardheadtxt);
-
-        // cardbody = document.createElement("div");
-        // cardbody.classList.add("card-body");
-        // card.appendChild(cardbody);
-
-        // load_user_account();
-        // // load_useraccount_content();
-
-        // var branchview = document.getElementById("contentview");
-        // var newuseraccdiv = document.createElement("div");
-        // newuseraccdiv.classList("panel");
-        // branchview.appendChild(newuseraccdiv);
-
-        //         $.post("user_account_fetch.php",function(data)
-        //     {
-        // });
-}
-
-function load_notif()
-{
-    var ctnview = document.getElementById("contentview");
-    
-}
-
-function resetPass()
-{
-    var x = document.getElementById("password");
-    if (x.type === "password")
-    {
-         x.type = "text";
-    }
-    else
-    {
-        x.type = "password";
-    }
-}
-
-function loadtableuserprofile()
-{
-    var ctnview = document.getElementById("contentview");
-    var div = document.createElement("div");
-    div.classList.add("panel");
-=======
   var value = [], divvalue = [], leftdiv = [], rightdiv = [], rightsidevalue = [], select = [], subrdiv = [], option = [];
   //whole div
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -183,7 +114,6 @@ function loadtableuserprofile()
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [], hostname+" | "+user);
->>>>>>> 4476fc492ff09e3c1fcf3b8e927f373be961b065
 
   //rightside DiV
   createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
