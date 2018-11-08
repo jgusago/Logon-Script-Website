@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Monitoring</title>
   <!-- Bootstrap core CSS-->
   <link href="design/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +19,7 @@
   <link href="design/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/main.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
 </head>
 
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="load()">
@@ -30,25 +34,24 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <!-- Dashboard -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="#" id="a-home" onclick="myFucntion(this)"id="a-home" onclick="myFucntion(this)">
+          <a class="nav-link" href=".superadmin.html" id="a-home" onclick="myFucntion(this)"id="a-home" onclick="myFucntion(this)">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
 
-
         <!-- Graphs and Charts -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Graphs and Charts">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCharts" data-parent="#exampleAccordion">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#DHSBRDRecords" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text" onclick="loadreports()">Reports</span>
+            <span class="nav-link-text">Reports</span>
           </a>
 
           <!-- Charts Collapse -->
-          <ul class="sidenav-second-level collapse" id="collapseCharts">
-              <li id="branchcomputerlist" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
+          <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
+              <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
               </li>
-              <li id="branchcomplogs" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
+              <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
               </li>
           </ul>
         </li>
@@ -57,18 +60,17 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-user"></i>
-            <span class="nav-link-text">Profile & Accounts</span>
+            <span class="nav-link-text">Profile and Accounts</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="#" onclick="loadtableuseraccount()" id="accountmngmtlst">Account Management</a>
+              <a href="#" id="DSHBRDAccountsAccMgnt" onclick="DSHBRDContent('','DSHBRDAccountsAccMgnt')" data="DSHBRDAccountsAccMgnt">Account Management</a>
             </li>
             <li>
-              <a href="#" onclick="loadtableuserprofile()" id="profilesttingslst">Profile Settings</a>
+              <a href="#" id="profilesttingslst">Profile Settings</a>
             </li>
           </ul>
         </li>
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-cog"></i>
@@ -117,14 +119,14 @@
       <ul class="navbar-nav ml-auto">
 
         <!-- Messages -->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
             <span class="d-lg-none">Messages
               <span class="badge badge-pill badge-primary">12 New</span>
             </span>
             <span class="indicator text-primary d-none d-lg-block">
-              <span class="badge badge-pill badge-primary">12</span>
+              <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="messagesDropdown">
@@ -150,10 +152,11 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
-        </li>
+        </li> -->
 
         <!-- Alerts -->
-        <li class="nav-item dropdown">
+         <!-- Alerts -->
+         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" onclick="load_notif()" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label></label></i>
             <span class="d-lg-none">Alerts
@@ -181,13 +184,13 @@
 
         <!-- Logout -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
-            <i class="fa fa-fw fa-user">Welcome: Administrator</i>
-            <span class="d-lg-none">User</span>
-          </a>
-          <div class="dropdown-menu dropdown1" aria-labelledby="settingsDropdown" id="settingsDropdown1">
-              <a class="dropdown-header" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
-          </div>
+            <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
+              <i class="fa fa-fw fa-user">Welcome: Administrator</i>
+              <span class="d-lg-none">User</span>
+            </a>
+            <div class="dropdown-menu dropdown1" aria-labelledby="settingsDropdown" id="settingsDropdown1">
+                <a class="dropdown-header" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
+            </div>
         </li>
 
       </ul>
@@ -196,7 +199,7 @@
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
+      <ol class="breadcrumb" id="address">
         <li class="breadcrumb-item">
           <a href="#" id="dtitle">Dashboard</a>
         </li>
@@ -206,10 +209,9 @@
 
     <!-- Content View -->
     <div class="container-fluid" id="contentview">
-        <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
     </div>
     <!-- Overlay -->
-    <div id="overlay" onclick="overlay();">
+    <div id="overlay" onclick="OVERLAYdisable();">
     </div>
     <div id="miniwindow">
       <div class="card">
@@ -226,15 +228,6 @@
     </div>
 
     <!-- Progress Bar-->
-    <div class="progress" id="progressbardiv">
-        <div class="hexagon"><img src="img/sky_luster.png"></div>
-        <div class="text"><p>SKYLUSTER</p></div>
-        <div id="progressbar">
-        <div id="processingbar"></div>
-    <p id="loadingtext">Loading...</p>
-    </div>
-
-    </div>
 
     <!-- Footer -->
     <footer class="sticky-footer">
@@ -260,187 +253,29 @@
           </div>
           <div class="modal-body">Are you sure you want to logout?</div>
           <div class="modal-footer">
-            <button class="btn" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-warning" href="superadmin.html">Logout</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-warning" href="login.html">Logout</a>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Add user modal -->
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top: -80px;">
-      <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <!-- <h4 class="modal-title" id="myModalLabel">User Registration</h4> -->
-          </div>
-
-          <div class="modal-body">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="userID">ID Number</label>
-                <div class="col-sm-12">
-                  <input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="ID Number" onkeypress="return isNumberKey(event)"/>
-                </div>
-                <script type="text/javascript">
-                function isNumberKey(evt)
-                {
-                  var charCode = (evt.which) ? evt.which : evt.keyCode;
-                    if (charCode > 31 && (charCode < 48 || charCode > 57))
-                    return false;
-                    return true;
-                }
-                </script>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="department">Department</label>
-                  <div class="col-sm-12">
-                    <select class="form-control" id="department" name="department" required>
-                      <option value="">--Select Department--</option>
-                    </select>
-                  </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="role">Role</label>
-                <div class="col-sm-12">
-                  <select class="form-control" id="role" name="role" required>
-                    <option value="">--Select Role--</option>
-                    <option value="ADMINISTRATOR">ADMINISTRATOR</option>
-                    <option value="STAFF">STAFF</option>
-                  </select>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="status">Status</label>
-                <div class="col-sm-12">
-                  <select class="form-control" id="status" name="status" required>
-                    <option value="">--Select Status--</option>
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
-                  </select>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="password2">Password</label>
-                <div class="col-sm-12">
-                  <input class="form-control" type="text" id="password2" name="password2" value="Aa123456" disabled>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success" style="margin: auto; margin-bottom: 10px; display: block; width: -webkit-fill-available;">Register</button>
-                </div>
-              </div>
-            </form>
-          </div>
-       </div>
-      </div>
-    </div>
-    <!-- End of Add User Modal -->
-
-    <!-- Edit User Modal -->
-    <div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top: -80px;">
-      <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          </div>
-
-          <div class="modal-body">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="userID2">ID Number</label>
-                <div class="col-sm-12">
-                  <input type="text" class="form-control" id="userid2" name="userid2" pattern="[0-9]{7}" required disabled placeholder="ID Number" onkeypress="return isNumberKey(event)"/>
-                </div>
-                <script type="text/javascript">
-                function isNumberKey(evt)
-                {
-                  var charCode = (evt.which) ? evt.which : evt.keyCode;
-                    if (charCode > 31 && (charCode < 48 || charCode > 57))
-                    return false;
-                    return true;
-                }
-                </script>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="department2">Department</label>
-                  <div class="col-sm-12">
-                    <select class="form-control" id="department2" name="department2" required>
-                      <option value="">--Select Department--</option>
-                    </select>
-                  </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="role2">Role</label>
-                <div class="col-sm-12">
-                  <select class="form-control" id="role2" name="role2" required>
-                    <option value="">--Select Role--</option>
-                    <option value="ADMINISTRATOR">ADMINISTRATOR</option>
-                    <option value="STAFF">STAFF</option>
-                  </select>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="status2">Status</label>
-                <div class="col-sm-12">
-                  <select class="form-control" id="status2" name="status2" required>
-                    <option value="">--Select Status--</option>
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
-                  </select>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <label class="col-sm-12 control-label" for="password">Password</label>
-                <div class="col-sm-12">
-                  <input class="form-control" type="password" id="password" name="password" value="Aa123456" disabled>
-                </div>
-                <div style="text-align: -webkit-left; margin-left: 185px;">
-                  <label class="checkbox-inline">
-                     <input type="checkbox" id="myCheck" onclick="resetPass()" style=" margin-left: -170px;">Reset password
-                  </label>
-                </div>
-              </div>
-              <br>
-              <div class="form-group">
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success" style="margin: auto; margin-bottom: 10px; display: block; width: -webkit-fill-available;">Update</button>
-                </div>
-              </div>
-            </form>
-          </div>
-       </div>
-      </div>
-    </div>
-    <!-- End of Edit User modal -->
-
     <div id="scripts">
     <!-- Bootstrap core JavaScript-->
     <script src="design/jquery/jquery.min.js"></script>
     <script src="design/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="design/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/jssource/jquery/jquery-3.3.1.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="design/datatables/jquery.dataTables.js"></script>
-    <script src="design/datatables/dataTables.bootstrap4.js"></script>
+    <script src="js/jssource/jquery/jquery-3.3.1.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/controller/main-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script type="text/javascript" src="js/controller/main.js" async></script>
-      <!-- Script for Charts-->
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript" src="js/controller/admin.js" async></script>
+    <script type="text/javascript" src="js/controller/dom-framer-1.1.1.js"></script>
+    <script type="text/javascript" src="js/DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="js/controller/dataTableController.js"></script>
+    <script type="text/javascript" src="js/DataTables/Buttons-1.5.4/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="js/DataTables/JSZip-2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="js/DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="js/DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
     </div>
   </div>
 </body>
