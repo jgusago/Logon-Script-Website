@@ -57,7 +57,6 @@ function DSHBRDNavBarBtns(){
 /* OnClick */
 
 function DSHBRDContent(parent, linkid){
-    var linkid = linkid;
     var view = document.getElementById("contentview");
     var linkdata = document.getElementById(linkid).getAttribute("data");
     view.innerHTML = "";
@@ -95,7 +94,7 @@ function DSHBRDContent(parent, linkid){
 
 //computerlist Update OnClick
 
-function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent){
+function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid){
   OVERLAYenable();
 
   //get mini window ID;
@@ -152,12 +151,12 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent){
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+tabledata+"\",\""+grandparent+"\")"], "update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "update" );
 }
 
 /* Table Call Path with PHP*/
 function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
-  $.post(path, {parent:parent}, function(data){
+  $.post(path, {parent:parent,linkid:linkid}, function(data){
 
       data = data.split("#");
       datalength = data.length;
@@ -225,14 +224,35 @@ function CMPLISTdtlsremarksupdate(defaultvalue, id){
 
 }
 
-function CMPLISTdtlsupdate(hostname, update, grandparent){
+function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
 
   var remarks = document.getElementById("CMPLISTdtlsremarks").value;
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
   $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){});
-  DSHBRDContent(grandparent,"DSHBRDRecordsComplist");
+  CMPLISTdtlstableupdate(grandparent,linkid);
   //DSHBRDRecordsComplist
+  //CMPLISTdtlsupdate(linkid);
+  OVERLAYdisable();
+}
+
+function CMPLISTdtlstableupdate(parent, linkid){
+    var view = document.getElementById("contentview");
+    view.innerHTML = "";
+
+    tableid = idgenerator();
+
+    var card = [];
+    createCard(card, view, [], []);
+
+    var table = [];
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
+    path = "php/functions/reports/computer.list.php";
+    setTimeout(function(){
+       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+     }, 100);
 }
 
 //

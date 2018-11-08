@@ -10,6 +10,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 //Check if already have a record
 if ($update == "true"){
+    $query = "UPDATE tbl_computer_details SET remarks=?, agent_version=? WHERE hostname=?";
+    $pdo = $db->prepare($query);
+    $pdo->execute([$remarks,$version,$hostname]);
 }
 else{
     $query2 = "INSERT INTO tbl_computer_details (hostname, processor, hdd_Serial, mac_Address, mb_manufacturer, mb_product, scan_time, ip, status, remarks, agent_version) VALUES (?, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ?, ?)";

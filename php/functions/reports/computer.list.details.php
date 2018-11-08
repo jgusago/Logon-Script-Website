@@ -78,6 +78,6 @@ foreach($result as $row){
   }
 
 
-echo "#$processor|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeypress:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
+echo "#$processor|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
 
 ?>

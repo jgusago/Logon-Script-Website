@@ -1,5 +1,7 @@
 <?php
+
 $parent = $_POST["parent"];
+$id = $_POST["linkid"];
 //$parent = "Marvin(IT)";
 $count = 0;
 
@@ -43,7 +45,7 @@ foreach($result as $row){
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\", \"$remarks\", \"$tabledata\",\"$parent\")`Details";
+    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\", \"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
 
 
 
