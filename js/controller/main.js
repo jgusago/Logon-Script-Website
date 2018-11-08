@@ -534,6 +534,7 @@ function load_branchcomputerlogs_table(parent, parentdiv)
 function load_notif()
 {
     var ctnview = document.getElementById("contentview");
+    
 }
 
 function resetPass()
