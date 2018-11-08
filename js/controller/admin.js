@@ -173,7 +173,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 
           }
   });
-  if (path == "php/functions/accounts/accounts.create.php"){
+  if (path == "php/functions/accounts/accounts.view.php"){
 
   }
   else{
