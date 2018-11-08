@@ -85,7 +85,7 @@ function DSHBRDContent(parent, linkid){
         path = "";
       break;
       case "DSHBRDAccountsAccMgnt":
-        path = "user_account_fetch.php";
+        path = "php/functions/accounts/accounts.create.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       default:
@@ -173,7 +173,12 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 
           }
   });
+  if (path == "php/functions/accounts/accounts.create.php"){
+
+  }
+  else{
   pagination(id);
+  }
 }
 
 
