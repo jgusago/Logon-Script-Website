@@ -304,6 +304,10 @@ tfoot tr th
 {
   text-align:-webkit-center;
 }
+tbody tr td
+{
+  text-align:-webkit-center;
+}
 h5
 {
   font-size: 18px;
