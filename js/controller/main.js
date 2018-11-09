@@ -96,6 +96,17 @@ function DSHBRDContent(parent, linkid){
 }
 
 
+function ACCTedit()
+{
+  OVERLAYenable();
+
+  //get mini window ID;
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+}
+
+
 
 //computerlist Update OnClick
 
