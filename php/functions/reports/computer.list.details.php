@@ -8,7 +8,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 /*
 echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
 */
-$query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE :hostname AND user not like 'admi%' group by hostname";
+$query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE :hostname AND user not like 'admi%' GROUP BY hostname";
 
 $pdo = $db->prepare($query);
 $pdo->bindParam(":hostname",$hostname);
@@ -47,7 +47,7 @@ foreach($result as $row){
 }
   echo "Processor|Disk Serial|MAC Address|Manufacturer|Model|Status|Agent Version";
 
-  $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname";
+  $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname GROUP BY hostname";
 
   $newpdo = $db->prepare($newquery);
   $newpdo->bindParam(":hostname",$hostname);

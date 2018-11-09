@@ -26,7 +26,7 @@ foreach($result as $row){
         $status = "Off-line";
       }
 
-    $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version";
+    $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version GROUP BY hostname ";
 
     $newpdo = $db->prepare($newquery);
     $newpdo->bindParam(":hostname",$hostname);
