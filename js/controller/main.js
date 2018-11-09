@@ -97,6 +97,11 @@ function DSHBRDContent(parent, linkid){
     }
 }
 
+function ACCTedit()
+{
+  OVERLAYenable();
+}
+
 //computerlist Update OnClick
 
 function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent){
