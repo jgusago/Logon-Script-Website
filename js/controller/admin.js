@@ -7,6 +7,8 @@ function load(){
 
     DSHBRDNavBarBtns();
 
+    NAVBARNotification();
+
 }
 
 /* Buttons */
@@ -259,6 +261,11 @@ function CMPLISTdtlstableupdate(parent, linkid){
     setTimeout(function(){
        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
      }, 100);
+}
+function NAVBARNotification(){
+  setInterval(function(){
+    
+  });
 }
 
 //

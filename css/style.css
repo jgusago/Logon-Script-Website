@@ -6,7 +6,7 @@
 .navs{
     width:200px;
     background: lightgrey;
-    height: 99.8vh; 
+    height: 99.8vh;
 }
 
 .logos{
@@ -35,7 +35,7 @@ h1{
     justify-content: center;
     text-align: center;
     padding:180px 0px;;
-    
+
 }
 
 .row{
@@ -51,5 +51,4 @@ h1{
     line-height: 20px;
     color: black;
     font-size: 1.3em;
-    
 }
