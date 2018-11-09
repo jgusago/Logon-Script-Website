@@ -9,7 +9,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 echo "Computer Name|IP Address|Status|Remarks|Agent Version|Action";
 
-$query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent";
+$query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
 
 $pdo = $db->prepare($query);
 $pdo->bindParam(":parent",$parent);
@@ -26,7 +26,7 @@ foreach($result as $row){
         $status = "Off-line";
       }
 
-    $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version GROUP BY hostname ";
+    $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version";
 
     $newpdo = $db->prepare($newquery);
     $newpdo->bindParam(":hostname",$hostname);
