@@ -714,3 +714,6 @@ footer.sticky-footer {
   transform: translate(-50%, -50%);
   z-index: 4380;
 }
+#NAVBARusernameID{
+  width: 150px;
+}

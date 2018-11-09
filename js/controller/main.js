@@ -810,8 +810,16 @@ function DSHBRDContent(parent, linkid){
         path = "";
       break;
       case "DSHBRDAccountsAccMgnt":
+<<<<<<< HEAD
         path = "user_account_fetch.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+=======
+        path = "php/functions/accounts/accounts.view.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDProfileMngmt":
+        path = "";
+>>>>>>> 2dc9d1784bd037a0dc8e4021fece6df6f86d28c3
       break;
       default:
 

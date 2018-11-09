@@ -19,22 +19,25 @@ function confirmlogin(){
                 notif.style.display = "block";
 
                 switch(dts[1]){
-                    case "admin":
+                    case "ADMINISTRATOR":
                         setTimeout(function(){
                             window.location.href = '.admin.html';
-                        },1500);
+                        },500);
                     break;
-                    case "superadmin":
+                    case "SUPER ADMIN":
                         setTimeout(function(){
                             window.location.href = '.superadmin.html';
-                        },1500);
+                        },500);
                     break;
-                    case "user":
+                    case "STAFF":
                         setTimeout(function(){
                             window.location.href = '.user.html';
-                        },1500);
+                        },500);
                     break;
                     default:
+                      setTimeout(function(){
+                        window.location.href = '.user.html';
+                      },500);
                 }
 
             break;
