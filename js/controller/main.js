@@ -223,7 +223,8 @@ function LNKbrdcmps(data)
 
 }
 
-function OVERLAYenable(){
+function OVERLAYenable()
+{
 document.getElementById("overlay").style.display = "block";
 document.getElementById("miniwindow").style.display = "block";
 }
@@ -296,7 +297,7 @@ setInterval(function(){
 });
 }
 
-function notif()
+function Notif()
 {
   var breadcrumb = document.getElementById("address");
   breadcrumb.innerHTML = "Notifications";
