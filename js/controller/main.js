@@ -298,6 +298,8 @@ setInterval(function(){
 
 function notif()
 {
+  var breadcrumb = document.getElementById("address");
+  breadcrumb.innerHTML = "Notifications";
   var contentview = document.getElementById("contentview");
 
   var divpanel = document.createElement("div");
