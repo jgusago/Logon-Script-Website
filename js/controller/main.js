@@ -184,31 +184,32 @@ createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-prim
 }
 
 /* Table Call Path with PHP*/
-function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
-$.post(path, {parent:parent,linkid:linkid}, function(data){
-
-    data = data.split("#");
-    datalength = data.length;
-
-    thfdata = data[0].split("|");
-    var tbheader = [], tbfooter = [];
-    createTableContent([], tablehead, [], [], "th", thfdata);
-    createTableContent([], tablefoot, [], [], "th", thfdata);
-
-    for (var i = 1; i < datalength;i++){
-        newdata = data[i].split("|");
-        createTableContent([], tablebody, [],[], "td", newdata);
-
-        }
-});
-if (path == "php/functions/accounts/accounts.view.php")
+function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid)
 {
-  DSHBRDContentTbls();
-}
-else
-{
-pagination(id);
-}
+  $.post(path, {parent:parent,linkid:linkid}, function(data){
+
+      data = data.split("#");
+      datalength = data.length;
+
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], tablehead, [], [], "th", thfdata);
+      createTableContent([], tablefoot, [], [], "th", thfdata);
+
+      for (var i = 1; i < datalength;i++){
+          newdata = data[i].split("|");
+          createTableContent([], tablebody, [],[], "td", newdata);
+
+          }
+  });
+  if (path == "php/functions/accounts/accounts.view.php")
+  {
+    
+  }
+  else
+  {
+  pagination(id);
+  }
 }
 
 /* OnClick */
@@ -273,7 +274,8 @@ CMPLISTdtlstableupdate(grandparent,linkid);
 OVERLAYdisable();
 }
 
-function CMPLISTdtlstableupdate(parent, linkid){
+function CMPLISTdtlstableupdate(parent, linkid)
+{
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
@@ -291,16 +293,19 @@ function CMPLISTdtlstableupdate(parent, linkid){
      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
    }, 100);
 }
-function NAVBARNotification(){
-setInterval(function(){
+
+function NAVBARNotification()
+{
+  SetInterval(function(){
   
 });
 }
 
 function Notif()
 {
-  var breadcrumb = document.getElementById("address");
+  var breadcrumb = document.getElementById("dtitle");
   breadcrumb.innerHTML = "Notifications";
+
   var contentview = document.getElementById("contentview");
 
   var divpanel = document.createElement("div");
