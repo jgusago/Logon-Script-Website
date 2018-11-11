@@ -333,6 +333,7 @@ function Notif()
 
   var tbody = document.createElement("tbody");
 
+  contentview.appendChild(divpanel);
   table.appendChild(tbody);
   tr.appendChild(th1);
   tr.appendChild(th);
@@ -342,7 +343,6 @@ function Notif()
   panelbody.appendChild(divtable);
   divpanel.appendChild(panelbody);
   divpanel.appendChild(panelhead);
-  contentview.appendChild(divpanel);
 }
 
 //
