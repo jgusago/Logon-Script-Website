@@ -309,13 +309,13 @@ function Notif()
   var contentview = document.getElementById("contentview");
 
   var divpanel = document.createElement("div");
-  divpanel.classList.add("panel");
+  divpanel.classList.add("card");
 
   var panelhead = document.createElement("div");
-  panelhead.classList.add("panel-heading");
+  panelhead.classList.add("card-header");
 
   var panelbody = document.createElement("div");
-  panelbody.classList.add("panel-body");
+  panelbody.classList.add("card-body");
 
   var divtable = document.createElement("div");
   divtable.classList.add("table-responsive");
