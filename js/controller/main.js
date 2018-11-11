@@ -60,7 +60,6 @@ $.post("php/functions/load/dashboard.buttons.php",{branch:"root"},function(data)
 
 function DSHBRDContent(parent, linkid)
 {
-  var breadcrumb = document.getElementById("address");
   var view = document.getElementById("contentview");
   var linkdata = document.getElementById(linkid).getAttribute("data");
   view.innerHTML = "";
@@ -92,7 +91,6 @@ function DSHBRDContent(parent, linkid)
     case "DSHBRDAccountsAccMngmt":
       path = "php/functions/accounts/accounts.view.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      breadcrumb.innerHTML = "Account Management";
     break;
     case "DSHBRDProfileMngmt":
       path = "";
@@ -104,21 +102,21 @@ function DSHBRDContent(parent, linkid)
 }
 
 
-function ACCTedit()
-{
-  OVERLAYenable();
+// function ACCTedit()
+// {
+//   OVERLAYenable();
 
-  //get mini window ID;
+//   //get mini window ID;
 
-  var miniwindow = document.getElementById("miniwindow");
-  var ch = document.getElementById("mnch");
-  var cb = document.getElementById("mncb");
-  var cf = document.getElementById("mncf");
+//   var miniwindow = document.getElementById("miniwindow");
+//   var ch = document.getElementById("mnch");
+//   var cb = document.getElementById("mncb");
+//   var cf = document.getElementById("mncf");
 
-  miniwindow.appendChild(ch);
-  miniwindow.appendChild(cb);
-  miniwindow.appendChild(cf);
-}
+//   miniwindow.appendChild(ch);
+//   miniwindow.appendChild(cb);
+//   miniwindow.appendChild(cf);
+// }
 
 
 
@@ -296,6 +294,47 @@ function NAVBARNotification(){
 setInterval(function(){
   
 });
+}
+
+notif()
+{
+  var contentview = document.getElementById("contentview");
+
+  var divpanel = document.createElement("div");
+  divpanel.classList.add("panel");
+
+  var panelhead = document.createElement("div");
+  panelhead.classList.add("panel-heading");
+
+  var panelbody = document.createElement("div");
+  panelbody.classList.add("panel-body");
+
+  var divtable = document.createElement("div");
+  divtable.classList.add("table-responsive");
+
+  var table = document.createElement("table");
+  table.classList.add("table");
+  table.classList.add("table-hover");
+
+  var thead = document.createElement("thead");
+  var tr = document.createElement("tr");
+  var th = document.createElement("th");
+  th.innerHTML = "Subject";
+  var th1 = document.createElement("th");
+  th1.innerHTML = "Details";
+
+  var tbody = document.createElement("tbody");
+
+  table.appendChild(tbody);
+  tr.appendChild(th1);
+  tr.appendChild(th);
+  thead.appendChild(tr);
+  table.appendChild(thead);
+  divtable.appendChild(table);
+  panelbody.appendChild(divtable);
+  divpanel.appendChild(panelbody);
+  divpanel.appendChild(panelhead);
+  contentview.appendChild(divpanel);
 }
 
 //
