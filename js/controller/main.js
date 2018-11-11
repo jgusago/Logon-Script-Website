@@ -86,8 +86,12 @@ function DSHBRDContent(parent, linkid){
     case "DSHBRDRecodesBrnchvw":
       path = "";
     break;
-    case "DSHBRDAccountsAccMgnt":
+    case "DSHBRDAccountsAccMngmt":
       path = "php/functions/accounts/accounts.view.php";
+      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+    break;
+    case "DSHBRDProfileMngmt":
+      path = "";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     default:
@@ -101,9 +105,15 @@ function ACCTedit()
   OVERLAYenable();
 
   //get mini window ID;
+
+  var miniwindow = document.getElementById("miniwindow");
   var ch = document.getElementById("mnch");
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
+
+  miniwindow.appendChild(ch);
+  miniwindow.appendChild(cb);
+  miniwindow.appendChild(cf);
 }
 
 
@@ -197,9 +207,8 @@ pagination(id);
 }
 }
 
-
-
 /* OnClick */
+
 
 /* Background */
 
