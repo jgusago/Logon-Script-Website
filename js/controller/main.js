@@ -296,7 +296,7 @@ setInterval(function(){
 });
 }
 
-notif()
+function notif()
 {
   var contentview = document.getElementById("contentview");
 
