@@ -58,7 +58,9 @@ $.post("php/functions/load/dashboard.buttons.php",{branch:"root"},function(data)
 /* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
 /* OnClick */
 
-function DSHBRDContent(parent, linkid){
+function DSHBRDContent(parent, linkid)
+{
+  var breadcrumb = document.getElementById("address");
   var view = document.getElementById("contentview");
   var linkdata = document.getElementById(linkid).getAttribute("data");
   view.innerHTML = "";
@@ -83,12 +85,14 @@ function DSHBRDContent(parent, linkid){
       path = "php/functions/reports/computer.logs.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
-    case "DSHBRDRecodesBrnchvw":
+    case "DSHBRDBranchView":
       path = "";
+      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDAccountsAccMngmt":
       path = "php/functions/accounts/accounts.view.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      breadcrumb.innerHTML = "Account Management";
     break;
     case "DSHBRDProfileMngmt":
       path = "";
@@ -199,10 +203,12 @@ $.post(path, {parent:parent,linkid:linkid}, function(data){
 
         }
 });
-if (path == "php/functions/accounts/accounts.view.php"){
+if (path == "php/functions/accounts/accounts.view.php")
+{
 
 }
-else{
+else
+{
 pagination(id);
 }
 }
@@ -212,7 +218,8 @@ pagination(id);
 
 /* Background */
 
-function LNKbrdcmps(data){
+function LNKbrdcmps(data)
+{
   var address = document.getElementById('address');
   address.innerHTML = "";
 
