@@ -203,7 +203,7 @@ $.post(path, {parent:parent,linkid:linkid}, function(data){
 });
 if (path == "php/functions/accounts/accounts.view.php")
 {
-
+  DSHBRDContentTbls();
 }
 else
 {
