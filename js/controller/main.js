@@ -149,22 +149,21 @@ function DSHBRDContent(parent, linkid)
     }
 }
 
+function ACCTedit()
+{
+  OVERLAYenable();
 
-// function ACCTedit()
-// {
-//   OVERLAYenable();
+  //get mini window ID;
 
-//   //get mini window ID;
+  var miniwindow = document.getElementById("miniwindow");
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
 
-//   var miniwindow = document.getElementById("miniwindow");
-//   var ch = document.getElementById("mnch");
-//   var cb = document.getElementById("mncb");
-//   var cf = document.getElementById("mncf");
-
-//   miniwindow.appendChild(ch);
-//   miniwindow.appendChild(cb);
-//   miniwindow.appendChild(cf);
-// }
+  miniwindow.appendChild(ch);
+  miniwindow.appendChild(cb);
+  miniwindow.appendChild(cf);
+}
 
 
 
