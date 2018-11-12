@@ -129,6 +129,10 @@ function DSHBRDContent(parent, linkid)
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
+      case "DSHBRDRecordsHistory":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
       case "DSHBRDRecodesBrnchvw":
         path = "";
       break;
@@ -289,8 +293,8 @@ function LNKbrdcmps(data)
 
 function OVERLAYenable()
 {
-document.getElementById("overlay").style.display = "block";
-document.getElementById("miniwindow").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("miniwindow").style.display = "block";
 }
 
 function OVERLAYdisable()
