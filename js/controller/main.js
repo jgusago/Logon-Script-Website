@@ -89,11 +89,11 @@ function DSHBRDContent(parent, linkid)
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDAccountsAccMngmt":
-      path = "php/functions/accounts/accounts.view.php";
+    path = "php/functions/reports/computer.logs.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDProfileMngmt":
-      path = "";
+    path = "php/functions/accounts/accounts.view.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     default:
