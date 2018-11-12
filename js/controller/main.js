@@ -244,12 +244,13 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       createTableContent([], tablehead, [], [], "th", thfdata);
       createTableContent([], tablefoot, [], [], "th", thfdata);
 
-      for (var i = 1; i < datalength;i++){
-          newdata = data[i].split("|");
-          createTableContent([], tablebody, [],[], "td", newdata);
-
-          }
+      for (var i = 1; i < datalength;i++)
+      {
+        newdata = data[i].split("|");
+        createTableContent([], tablebody, [],[], "td", newdata);
+      }
   });
+  
   if (path == "php/functions/accounts/accounts.view.php")
   {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
