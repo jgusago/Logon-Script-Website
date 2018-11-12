@@ -105,47 +105,48 @@ $.post("php/functions/load/dashboard.buttons.php",{branch:"root"},function(data)
 
 function DSHBRDContent(parent, linkid)
 {
-  var view = document.getElementById("contentview");
-  var linkdata = document.getElementById(linkid).getAttribute("data");
-  view.innerHTML = "";
+    var view = document.getElementById("contentview");
+    var linkdata = document.getElementById(linkid).getAttribute("data");
+    view.innerHTML = "";
 
-  tableid = idgenerator();
+    tableid = idgenerator();
 
-  var card = [];
-  createCard(card, view, [], []);
+    var card = [];
+    createCard(card, view, [], []);
 
-  var table = [];
-  var classes = ["table","table-bordered"];
-  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-  createTable(table, card.body, classes, attributes);
+    var table = [];
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
 
-  switch (linkdata) {
-    case "DSHBRDRecordsComplist":
-      path = "php/functions/reports/computer.list.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+    switch (linkdata) {
+      case "DSHBRDRecordsComplist":
+        path = "php/functions/reports/computer.list.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
 
-    break;
-    case "DSHBRDRecordsComplogs":
-      path = "php/functions/reports/computer.logs.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    case "DSHBRDBranchView":
-      path = "";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    case "DSHBRDAccountsAccMngmt":
-    path = "php/functions/accounts/accounts.view.php"
-    document.getElementById("dtitle").innerHTML = "Notifications";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    case "DSHBRDProfileMngmt":
-    path = "";
-    document.getElementById("dtitle").innerHTML = "Notifications";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    default:
+      break;
+      case "DSHBRDRecordsComplogs":
+        path = "php/functions/reports/computer.logs.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDRecodesBrnchvw":
+        path = "";
+      break;
+      case "DSHBRDAccountsAccMgnt":
+        path = "php/functions/accounts/accounts.view.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDProfile":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDBranchView":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      default:
 
-  }
+    }
 }
 
 

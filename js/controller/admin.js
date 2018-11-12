@@ -58,7 +58,8 @@ function DSHBRDNavBarBtns(){
 /* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
 /* OnClick */
 
-function DSHBRDContent(parent, linkid){
+function DSHBRDContent(parent, linkid)
+{
     var view = document.getElementById("contentview");
     var linkdata = document.getElementById(linkid).getAttribute("data");
     view.innerHTML = "";
@@ -90,14 +91,21 @@ function DSHBRDContent(parent, linkid){
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
+      case "DSHBRDProfile":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
       default:
 
     }
 }
 
+
+
 //computerlist Update OnClick
 
-function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid){
+function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
+{
   OVERLAYenable();
 
   //get mini window ID;
