@@ -10,6 +10,8 @@ function load()
 
   NAVBARNotification();
 
+  Notif();
+
 }
 
 function Notif()
