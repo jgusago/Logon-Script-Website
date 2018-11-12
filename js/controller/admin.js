@@ -95,6 +95,10 @@ function DSHBRDContent(parent, linkid)
         path = "";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
+      case "DSHBRDBranchView":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
       default:
 
     }
@@ -183,11 +187,13 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 
           }
   });
-  if (path == "php/functions/accounts/accounts.view.php"){
-
+  if (path == "php/functions/accounts/accounts.view.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Notifications";
   }
-  else{
-  pagination(id);
+  else
+  {
+    pagination(id);
   }
 }
 

@@ -252,7 +252,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   });
   if (path == "php/functions/accounts/accounts.view.php")
   {
-    
+    document.getElementById("dtitle").innerHTML = "Notifications";
   }
   else
   {
