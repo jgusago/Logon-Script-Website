@@ -1,5 +1,6 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
-function load(){
+function load()
+{
   var branchview = document.getElementById("contentview");
   var loading = document.getElementById("processingbar");
 
@@ -9,6 +10,50 @@ function load(){
 
   NAVBARNotification();
 
+}
+
+function Notif()
+{
+  var breadcrumb = document.getElementById("dtitle2");
+  breadcrumb.innerHTML = "Notifications";
+
+  // var contentview = document.getElementById("contentview");
+
+  // var divpanel = document.createElement("div");
+  // divpanel.classList.add("card");
+
+  // var panelhead = document.createElement("div");
+  // panelhead.classList.add("card-header");
+
+  // var panelbody = document.createElement("div");
+  // panelbody.classList.add("card-body");
+
+  // var divtable = document.createElement("div");
+  // divtable.classList.add("table-responsive");
+
+  // var table = document.createElement("table");
+  // table.classList.add("table");
+  // table.classList.add("table-hover");
+
+  // var thead = document.createElement("thead");
+  // var tr = document.createElement("tr");
+  // var th = document.createElement("th");
+  // th.innerHTML = "Subject";
+  // var th1 = document.createElement("th");
+  // th1.innerHTML = "Details";
+
+  // var tbody = document.createElement("tbody");
+
+  // contentview.appendChild(divpanel);
+  // table.appendChild(tbody);
+  // tr.appendChild(th1);
+  // tr.appendChild(th);
+  // thead.appendChild(tr);
+  // table.appendChild(thead);
+  // divtable.appendChild(table);
+  // panelbody.appendChild(divtable);
+  // divpanel.appendChild(panelbody);
+  // divpanel.appendChild(panelhead);
 }
 
 /* Buttons */
@@ -81,7 +126,7 @@ function DSHBRDContent(parent, linkid)
 
     break;
     case "DSHBRDRecordsComplogs":
-    path = "php/functions/accounts/accounts.view.php";
+      path = "php/functions/reports/computer.logs.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDBranchView":
@@ -89,60 +134,16 @@ function DSHBRDContent(parent, linkid)
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDAccountsAccMngmt":
-    path = "php/functions/reports/computer.logs.php";
+    path = "php/functions/accounts/accounts.view.php"
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDProfileMngmt":
-    path = "php/functions/accounts/accounts.view.php";
+    path = "";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     default:
 
   }
-}
-
-function Notif()
-{
-  var breadcrumb = document.getElementById("dtitle");
-  breadcrumb.innerHTML = "Notifications";
-
-  // var contentview = document.getElementById("contentview");
-
-  // var divpanel = document.createElement("div");
-  // divpanel.classList.add("card");
-
-  // var panelhead = document.createElement("div");
-  // panelhead.classList.add("card-header");
-
-  // var panelbody = document.createElement("div");
-  // panelbody.classList.add("card-body");
-
-  // var divtable = document.createElement("div");
-  // divtable.classList.add("table-responsive");
-
-  // var table = document.createElement("table");
-  // table.classList.add("table");
-  // table.classList.add("table-hover");
-
-  // var thead = document.createElement("thead");
-  // var tr = document.createElement("tr");
-  // var th = document.createElement("th");
-  // th.innerHTML = "Subject";
-  // var th1 = document.createElement("th");
-  // th1.innerHTML = "Details";
-
-  // var tbody = document.createElement("tbody");
-
-  // contentview.appendChild(divpanel);
-  // table.appendChild(tbody);
-  // tr.appendChild(th1);
-  // tr.appendChild(th);
-  // thead.appendChild(tr);
-  // table.appendChild(thead);
-  // divtable.appendChild(table);
-  // panelbody.appendChild(divtable);
-  // divpanel.appendChild(panelbody);
-  // divpanel.appendChild(panelhead);
 }
 
 
@@ -246,14 +247,14 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 
           }
   });
-  // if (path == "php/functions/accounts/accounts.view.php")
-  // {
+  if (path == "php/functions/accounts/accounts.view.php")
+  {
     
-  // }
-  // else
-  // {
+  }
+  else
+  {
   pagination(id);
-  // }
+  }
 }
 
 /* OnClick */
