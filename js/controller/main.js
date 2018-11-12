@@ -138,7 +138,7 @@ function DSHBRDContent(parent, linkid)
       break;
       case "DSHBRDProfile":
         path = "";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+        //DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDBranchView":
         path = "";
@@ -267,10 +267,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     {
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
-    }
-    else if (path == "")
-    {
-      
     }
     pagination(id);
   }
