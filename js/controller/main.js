@@ -57,7 +57,8 @@ function Notif()
 
 /* Buttons */
 
-function DSHBRDNavBarBtns(){
+function DSHBRDNavBarBtns()
+{
 /* Get All Elements with generatebutton Class */
 var btnclass = "generatebutton";
 parent = document.getElementsByClassName(btnclass);
@@ -134,10 +135,12 @@ function DSHBRDContent(parent, linkid)
     break;
     case "DSHBRDAccountsAccMngmt":
     path = "php/functions/accounts/accounts.view.php"
+    document.getElementById("dtitle").innerHTML = "Notifications";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDProfileMngmt":
     path = "";
+    document.getElementById("dtitle").innerHTML = "Notifications";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     default:
