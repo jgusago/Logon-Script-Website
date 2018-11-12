@@ -192,18 +192,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
   }
-  if (path == "php/functions/reports/computer.logs.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Reports";
-    document.getElementById("dtitle2").innerHTML = "Computer Logs";
-    pagination(id);
-  }
-  if (path == "php/functions/reports/computer.list.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Reports";
-    document.getElementById("dtitle2").innerHTML = "Computer List";
-    pagination(id);
-  }
   else
   {
     pagination(id);
