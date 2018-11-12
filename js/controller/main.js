@@ -81,7 +81,7 @@ function DSHBRDContent(parent, linkid)
 
     break;
     case "DSHBRDRecordsComplogs":
-      path = "php/functions/reports/computer.logs.php";
+    path = "php/functions/accounts/accounts.view.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
     break;
     case "DSHBRDBranchView":
@@ -246,14 +246,14 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 
           }
   });
-  if (path == "php/functions/accounts/accounts.view.php")
-  {
+  // if (path == "php/functions/accounts/accounts.view.php")
+  // {
     
-  }
-  else
-  {
+  // }
+  // else
+  // {
   pagination(id);
-  }
+  // }
 }
 
 /* OnClick */
