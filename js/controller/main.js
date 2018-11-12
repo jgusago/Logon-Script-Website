@@ -14,8 +14,7 @@ function load()
 
 function Notif()
 {
-  var breadcrumb = document.getElementById("dtitle2");
-  breadcrumb.innerHTML = "Notifications";
+  document.getElementById("dtitle").innerHTML = "Notifications";
 
   // var contentview = document.getElementById("contentview");
 
