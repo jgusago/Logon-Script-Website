@@ -10,8 +10,6 @@ function load()
 
   NAVBARNotification();
 
-  Notif();
-
 }
 
 function Notif()
@@ -269,6 +267,10 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     {
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
+    }
+    else if (path == "")
+    {
+      
     }
     pagination(id);
   }
