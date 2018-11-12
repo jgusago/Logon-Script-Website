@@ -189,7 +189,13 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   });
   if (path == "php/functions/accounts/accounts.view.php")
   {
-    document.getElementById("dtitle").innerHTML = "Notifications";
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Account Management";
+  }
+  if (path == "php/functions/reports/computer.logs.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Reports";
+    document.getElementById("dtitle2").innerHTML = "Computer Logs";
   }
   else
   {
