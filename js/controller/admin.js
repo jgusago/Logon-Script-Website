@@ -194,6 +194,11 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   }
   else
   {
+    if(path == "php/functions/reports/computer.list.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer List";
+    }
     pagination(id);
   }
 }
