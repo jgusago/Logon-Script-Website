@@ -15,7 +15,7 @@
 			$status = $row['status'] ?: 'null';
 			$role = $row['role'] ?: 'null';
 
-			echo "#$userid|$name|$department|$position|$status|$role|button`btn~btn-primary`onclick:Notif()`Edit";
+			echo "#$userid|$name|$department|$position|$status|$role|button`btn~btn-primary`onClick::COMPLISTupdate(\"$hostname\", \"$user\", \"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Edit";
 		}
 	$db = null;
 ?>
