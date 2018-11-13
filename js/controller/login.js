@@ -1,3 +1,6 @@
+function load(){
+  SESSIONConfirm();
+}
 function confirmlogin(){
 
     var username = document.getElementById("username").value;
@@ -75,4 +78,34 @@ function confirmlogin(){
         return false;
 }
 
+}
+function SESSIONConfirm(){
+    $.post("php/functions/session/session.confirm.php",function(data){
+
+      data = data.split(";");
+      var thissite = window.location.hostname;
+
+      if(data[0] == "Active"){
+        //redirect
+        switch (data[1]) {
+          case "SUPER ADMIN":
+            window.location.assign(thissite+"/.superadmin.html");
+            break;
+          case "ADMINISTRATOR":
+            window.location.assign(thissite+"/.admin.html");
+            break;
+          case "STAFF":
+            window.location.assign(thissite+"/.user.html");
+            break;
+          default:
+          window.location.assign(thissite);
+        }
+        //riderect
+      }
+      else{
+        // do nothing
+      }
+
+
+    });
 }
