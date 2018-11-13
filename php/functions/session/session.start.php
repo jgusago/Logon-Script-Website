@@ -35,7 +35,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
             echo "success:superadmin";
           }
           else{
-            echo "success:staff";
+            echo "success:user";
           }
           //ROLE
       }
