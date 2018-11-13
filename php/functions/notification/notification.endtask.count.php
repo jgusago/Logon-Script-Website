@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Manila');
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $role = $_SESSION["role"];
 $department = $_SESSION["department"];

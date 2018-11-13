@@ -302,20 +302,19 @@ function CMPLISTdtlstableupdate(parent, linkid){
      }, 100);
 }
 function NAVBARNotification(){
-  setInterval(function(){
+  setTimeout(function(){
     content = document.getElementById("NAVBARNotifContent");
-    content.innerHTML = "";
-    $.post("/php/functions/notification/notification.endtask.count.php",function(data){
+    $.post("php/functions/notification/notification.endtask.count.php",function(data){
       var notif = document.createElement("div");
       data = data.split("`");
       if(data[0] == "success"){
-      div.innerHTML = data;
-      content.appendChild(div);
+      notif.innerHTML = data[1];
+      content.appendChild(notif);
       }
-
+    
     });
 
-  });
+  }, 1000);
 }
 
 function SESSIONConfirm(){
