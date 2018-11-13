@@ -231,7 +231,12 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 .fa-fw
 {
   width: auto;
-  text-align: center;
+  /* text-align: center; */
+}
+#faUser
+{
+  text-indent:10px;
+  width: auto;
 }
 .nav-link a:focus
 {
@@ -702,7 +707,8 @@ footer.sticky-footer {
   transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 }
 
-#miniwindow{
+#miniwindow
+{
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   /*width: 40%; /* Full width (cover the whole page) */
@@ -714,6 +720,4 @@ footer.sticky-footer {
   transform: translate(-50%, -50%);
   z-index: 4380;
 }
-#NAVBARusernameID{
-  width: 150px;
-}
+
