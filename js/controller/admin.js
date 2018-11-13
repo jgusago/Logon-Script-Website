@@ -325,20 +325,26 @@ function NAVBARNotification(){
 
 function getNotification(){
   content = document.getElementById("NAVBARNotifContent");
+  content.innerHTML = "";
     $.post("php/functions/notification/notification.endtask.count.php",function(data){
       var notif = document.createElement("div");
       data = data.split("`");
-      if(data[0] != "0"){
+      if(data[0] !== '0'){
         for(var i = 0; i < data.length; i++){
           var newdiv = document.createElement("div");
           newdiv.innerHTML = data[i];
-          if(i != 0){
+          if(i !== 0){
             breaker = document.createElement("div");
             breaker.classList.add("dropdown-divider");
+            content.appendChild(breaker);
           }
-          content.appendChild(breaker);
           content.appendChild(newdiv);
         }
+      }
+      else{
+        var newdiv = document.createElement("div");
+        newdiv.innerHTML = data[1];
+        content.appendChild(newdiv);
       }
     
     });
