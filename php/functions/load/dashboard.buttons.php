@@ -5,13 +5,13 @@ $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT *
-            FROM logonscript.tbl_department ORDER BY sub_department";
+            FROM logonscript.tbl_department 
 
-            /*WHERE tree_parent LIKE :bld
-            ORDER BY tree_name";*/
+            WHERE branch_name LIKE :bld
+            ORDER BY sub_department";
 
 $stmt = $db->prepare($query);
-//$stmt->bindParam(":bld",$bld);
+$stmt->bindParam(":bld",$bld);
 $stmt->execute();
 $result = $stmt->fetchAll();
 
