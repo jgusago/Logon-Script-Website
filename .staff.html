@@ -34,7 +34,7 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <!-- Dashboard -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href=".superadmin.html" id="a-home" onclick="myFucntion(this)">
+          <a class="nav-link" href=".superadmin.html" id="a-home" onclick="myFucntion(this)"id="a-home" onclick="myFucntion(this)">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -47,20 +47,28 @@
             <span class="nav-link-text">Reports</span>
           </a>
 
-          <!-- Charts Collapse -->
-          <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
-              <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables"></li>
-              <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs"></li>
-          </ul>
+          <!-- Graphs and Charts -->
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Graphs and Charts">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#DHSBRDRecords" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Reports</span>
+            </a>
+      
+            <!-- Charts Collapse -->
+            <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
+                <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables"></li>
+                <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs"></li>
+            </ul>
         </li>
         <!-- End of Charts and Graphs -->
-
+      
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile Settings">
             <a class="nav-link" href="#" id="a-profile" onclick="myFucntion(this)">
-                <i class="fa fa-fw fa-user">Profile Settings</span>
+                    <i class="fa fa-fw fa-user"></i>
+                    <span class="nav-link-text">Profile Settings</span>
             </a>
         </li>
-        
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-cog"></i>
