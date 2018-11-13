@@ -301,7 +301,7 @@ function NAVBARNotification(){
 
 function SESSIONConfirm(){
 
-  $.post("php/functions/session/session.start.php",function(data){
+  $.post("php/functions/session/session.confirm.php",function(data){
 
     data = data.split(";");
     var name = document.getElementById("NAVBARusernameID");
@@ -324,7 +324,6 @@ function SESSIONConfirm(){
       }
       //riderect
       //assign name
-      name = innerHTML(data[3]);
     }
     else{
 
