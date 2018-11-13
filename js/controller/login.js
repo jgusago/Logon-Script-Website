@@ -78,7 +78,7 @@ function confirmlogin(){
         return false;
 }
 
-}
+
 function SESSIONConfirm(){
     $.post("php/functions/session/session.confirm.php",function(data){
 
