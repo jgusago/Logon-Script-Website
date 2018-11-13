@@ -1,5 +1,6 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
-function load(){
+function load()
+{
   var branchview = document.getElementById("contentview");
   var loading = document.getElementById("processingbar");
 
@@ -11,9 +12,53 @@ function load(){
 
 }
 
+function Notif()
+{
+  document.getElementById("dtitle").innerHTML = "Notifications";
+
+  // var contentview = document.getElementById("contentview");
+
+  // var divpanel = document.createElement("div");
+  // divpanel.classList.add("card");
+
+  // var panelhead = document.createElement("div");
+  // panelhead.classList.add("card-header");
+
+  // var panelbody = document.createElement("div");
+  // panelbody.classList.add("card-body");
+
+  // var divtable = document.createElement("div");
+  // divtable.classList.add("table-responsive");
+
+  // var table = document.createElement("table");
+  // table.classList.add("table");
+  // table.classList.add("table-hover");
+
+  // var thead = document.createElement("thead");
+  // var tr = document.createElement("tr");
+  // var th = document.createElement("th");
+  // th.innerHTML = "Subject";
+  // var th1 = document.createElement("th");
+  // th1.innerHTML = "Details";
+
+  // var tbody = document.createElement("tbody");
+
+  // contentview.appendChild(divpanel);
+  // table.appendChild(tbody);
+  // tr.appendChild(th1);
+  // tr.appendChild(th);
+  // thead.appendChild(tr);
+  // table.appendChild(thead);
+  // divtable.appendChild(table);
+  // panelbody.appendChild(divtable);
+  // divpanel.appendChild(panelbody);
+  // divpanel.appendChild(panelhead);
+}
+
 /* Buttons */
 
-function DSHBRDNavBarBtns(){
+function DSHBRDNavBarBtns()
+{
 /* Get All Elements with generatebutton Class */
 var btnclass = "generatebutton";
 parent = document.getElementsByClassName(btnclass);
@@ -58,52 +103,70 @@ $.post("php/functions/load/dashboard.buttons.php",{branch:"root"},function(data)
 /* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
 /* OnClick */
 
-function DSHBRDContent(parent, linkid){
-  var view = document.getElementById("contentview");
-  var linkdata = document.getElementById(linkid).getAttribute("data");
-  view.innerHTML = "";
+function DSHBRDContent(parent, linkid)
+{
+    var view = document.getElementById("contentview");
+    var linkdata = document.getElementById(linkid).getAttribute("data");
+    view.innerHTML = "";
 
-  tableid = idgenerator();
+    tableid = idgenerator();
 
-  var card = [];
-  createCard(card, view, [], []);
+    var card = [];
+    createCard(card, view, [], []);
 
-  var table = [];
-  var classes = ["table","table-bordered"];
-  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-  createTable(table, card.body, classes, attributes);
+    var table = [];
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
 
-  switch (linkdata) {
-    case "DSHBRDRecordsComplist":
-      path = "php/functions/reports/computer.list.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+    switch (linkdata) {
+      case "DSHBRDRecordsComplist":
+        path = "php/functions/reports/computer.list.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
 
-    break;
-    case "DSHBRDRecordsComplogs":
-      path = "php/functions/reports/computer.logs.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    case "DSHBRDRecodesBrnchvw":
-      path = "";
-    break;
-    case "DSHBRDAccountsAccMgnt":
-      path = "php/functions/accounts/accounts.view.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    default:
+      break;
+      case "DSHBRDRecordsComplogs":
+        path = "php/functions/reports/computer.logs.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDRecordsHistory":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDRecodesBrnchvw":
+        path = "";
+      break;
+      case "DSHBRDAccountsAccMgnt":
+        path = "php/functions/accounts/accounts.view.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDProfile":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDBranchView":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      default:
 
-  }
+    }
 }
-
 
 function ACCTedit()
 {
   OVERLAYenable();
 
   //get mini window ID;
+
+  var miniwindow = document.getElementById("miniwindow");
   var ch = document.getElementById("mnch");
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
+
+  miniwindow.appendChild(ch);
+  miniwindow.appendChild(cb);
+  miniwindow.appendChild(cf);
 }
 
 
@@ -172,46 +235,66 @@ createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-prim
 }
 
 /* Table Call Path with PHP*/
-function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
-$.post(path, {parent:parent,linkid:linkid}, function(data){
+function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid)
+{
+  $.post(path, {parent:parent,linkid:linkid}, function(data){
 
-    data = data.split("#");
-    datalength = data.length;
+      data = data.split("#");
+      datalength = data.length;
 
-    thfdata = data[0].split("|");
-    var tbheader = [], tbfooter = [];
-    createTableContent([], tablehead, [], [], "th", thfdata);
-    createTableContent([], tablefoot, [], [], "th", thfdata);
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], tablehead, [], [], "th", thfdata);
+      createTableContent([], tablefoot, [], [], "th", thfdata);
 
-    for (var i = 1; i < datalength;i++){
+      for (var i = 1; i < datalength;i++)
+      {
         newdata = data[i].split("|");
         createTableContent([], tablebody, [],[], "td", newdata);
+      }
+  });
 
-        }
-});
-if (path == "php/functions/accounts/accounts.view.php"){
+  if (path == "php/functions/accounts/accounts.view.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Account Management";
+  }
+  if (path=="")
+  {
 
+  }
+  else
+  {
+    if(path == "php/functions/reports/computer.list.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer List";
+    }
+    else if(path == "php/functions/reports/computer.logs.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer Logs";
+    }
+    pagination(id);
+  }
 }
-else{
-pagination(id);
-}
-}
-
-
 
 /* OnClick */
 
+
 /* Background */
 
-function LNKbrdcmps(data){
+function LNKbrdcmps(data)
+{
   var address = document.getElementById('address');
   address.innerHTML = "";
 
 }
 
-function OVERLAYenable(){
-document.getElementById("overlay").style.display = "block";
-document.getElementById("miniwindow").style.display = "block";
+function OVERLAYenable()
+{
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("miniwindow").style.display = "block";
 }
 
 function OVERLAYdisable()
@@ -258,7 +341,8 @@ CMPLISTdtlstableupdate(grandparent,linkid);
 OVERLAYdisable();
 }
 
-function CMPLISTdtlstableupdate(parent, linkid){
+function CMPLISTdtlstableupdate(parent, linkid)
+{
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
@@ -276,8 +360,10 @@ function CMPLISTdtlstableupdate(parent, linkid){
      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
    }, 100);
 }
-function NAVBARNotification(){
-setInterval(function(){
+
+function NAVBARNotification()
+{
+  SetInterval(function(){
   
 });
 }

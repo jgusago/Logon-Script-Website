@@ -58,7 +58,8 @@ function DSHBRDNavBarBtns(){
 /* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
 /* OnClick */
 
-function DSHBRDContent(parent, linkid){
+function DSHBRDContent(parent, linkid)
+{
     var view = document.getElementById("contentview");
     var linkdata = document.getElementById(linkid).getAttribute("data");
     view.innerHTML = "";
@@ -83,6 +84,10 @@ function DSHBRDContent(parent, linkid){
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
+      case "DSHBRDRecordsHistory":
+      path = "";
+      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+    break;
       case "DSHBRDRecodesBrnchvw":
         path = "";
       break;
@@ -90,14 +95,25 @@ function DSHBRDContent(parent, linkid){
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
+      case "DSHBRDProfile":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDBranchView":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
       default:
 
     }
 }
 
+
+
 //computerlist Update OnClick
 
-function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid){
+function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
+{
   OVERLAYenable();
 
   //get mini window ID;
@@ -175,11 +191,24 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 
           }
   });
-  if (path == "php/functions/accounts/accounts.view.php"){
-
+  if (path == "php/functions/accounts/accounts.view.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Account Management";
   }
-  else{
-  pagination(id);
+  else
+  {
+    if(path == "php/functions/reports/computer.list.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer List";
+    }
+    else if(path == "php/functions/reports/computer.logs.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer Logs";
+    }
+    pagination(id);
   }
 }
 
