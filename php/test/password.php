@@ -2,7 +2,7 @@
 
 $password = "Agsmc999";
 
-$ecpassword = password_hash($password, PASSWORD_DEFAULT);;
+$ecpassword = md5(sha1($password));
 
 echo $ecpassword;
 ?>

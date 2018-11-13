@@ -20,7 +20,6 @@ function confirmlogin(){
                 type.innerHTML = "Success";
                 message.innerHTML = "Please wait a moment while you are loging in";
                 notif.style.display = "block";
-                LOGINSessionStart(username, password);
                 switch(dts[1]){
                     case "admin":
                         setTimeout(function(){
@@ -34,15 +33,14 @@ function confirmlogin(){
                     break;
                     case "user":
                         setTimeout(function(){
-                            window.location.href = '.user.html';
+                            window.location.href = '.staff.html';
                         },500);
                     break;
                     default:
                       setTimeout(function(){
-                        window.location.href = '.user.html';
+                        window.location.href = '.staff.html';
                       },500);
-                }
-
+                    }
             break;
             case "failed":
                 notif.classList.remove("alert-success");
@@ -83,27 +81,25 @@ function SESSIONConfirm(){
     $.post("php/functions/session/session.confirm.php",function(data){
 
       data = data.split(";");
-      var thissite = window.location.hostname;
 
       if(data[0] == "Active"){
         //redirect
         switch (data[1]) {
           case "SUPER ADMIN":
-            window.location.assign(thissite+"/.superadmin.html");
+            window.location.assign("/.superadmin.html");
             break;
           case "ADMINISTRATOR":
-            window.location.assign(thissite+"/.admin.html");
+            window.location.assign("/.admin.html");
             break;
           case "STAFF":
-            window.location.assign(thissite+"/.user.html");
+            window.location.assign("/.user.html");
             break;
           default:
-          window.location.assign(thissite);
+          window.location.assign("/index.html");
         }
         //riderect
       }
       else{
-        // do nothing
       }
 
 
