@@ -303,6 +303,17 @@ function CMPLISTdtlstableupdate(parent, linkid){
 }
 function NAVBARNotification(){
   setInterval(function(){
+    content = document.getElementById("NAVBARNotifContent");
+    content.innerHTML = "";
+    $.post("/php/functions/notification/notification.endtask.count.php",function(data){
+      var notif = document.createElement("div");
+      data = data.split("`");
+      if(data[0] == "success"){
+      div.innerHTML = data;
+      content.appendChild(div);
+      }
+
+    });
 
   });
 }
