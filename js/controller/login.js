@@ -106,3 +106,32 @@ function SESSIONConfirm(){
 
     });
 }
+
+function SESSIONConfirm(){
+    $.post("php/functions/session/session.confirm.php",function(data){
+  
+      data = data.split(";");
+      var name = document.getElementById("NAVBARusernameID");
+      if(data[0] == "Active"){
+        //redirect
+        switch (data[1]) {
+          case "SUPER ADMIN":
+            window.location.assign("/.superadmin.html");
+            break;
+          case "ADMINISTRATOR":
+            break;
+          case "STAFF":
+            break;
+          default:
+          window.location.assign("/index.html");
+        }
+        //riderect
+      }
+      else{
+        window.location.assign("/index.html");
+      }
+  
+      var nametext = document.createTextNode(data[3]);
+      name.appendChild(nametext); 
+    });
+  }
