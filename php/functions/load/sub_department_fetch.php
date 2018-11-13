@@ -1,14 +1,16 @@
 <?php
-
+session_start();
+$department = $_SESSION["department"];
 $bld = $_POST["branch"];
 $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$query = "SELECT *
-            FROM logonscript.tbl_tree
 
-            WHERE tree_parent LIKE :bld
-            ORDER BY tree_name";
+$query = "SELECT *
+            FROM logonscript.tbl_department
+
+            WHERE branch_name LIKE :bld
+            ORDER BY sub_department";
 
 $stmt = $db->prepare($query);
 $stmt->bindParam(":bld",$bld);
@@ -17,7 +19,7 @@ $result = $stmt->fetchAll();
 
 foreach($result as $row){
 
-    $treename = $row['tree_name'];
+    $treename = $row['sub_department'];
 
     if($count>0)
     {
