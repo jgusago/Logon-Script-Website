@@ -6,7 +6,7 @@ function confirmlogin(){
     var type = document.getElementById("login-alert-type");
     var message = document.getElementById("login-alert-message");
 
-    $.post("php/functions/login/login_confirm.php",{username:username,password:password},function(data){
+    $.post("php/functions/session/session.start.php",{username:username,password:password},function(data){
 
         var dts = data.split(":");
 
@@ -17,19 +17,19 @@ function confirmlogin(){
                 type.innerHTML = "Success";
                 message.innerHTML = "Please wait a moment while you are loging in";
                 notif.style.display = "block";
-
+                LOGINSessionStart(username, password);
                 switch(dts[1]){
-                    case "ADMINISTRATOR":
+                    case "admin":
                         setTimeout(function(){
                             window.location.href = '.admin.html';
                         },500);
                     break;
-                    case "SUPER ADMIN":
+                    case "superadmin":
                         setTimeout(function(){
                             window.location.href = '.superadmin.html';
                         },500);
                     break;
-                    case "STAFF":
+                    case "user":
                         setTimeout(function(){
                             window.location.href = '.user.html';
                         },500);
@@ -73,4 +73,6 @@ function confirmlogin(){
         });
 
         return false;
+}
+
 }
