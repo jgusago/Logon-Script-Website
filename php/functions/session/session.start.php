@@ -1,8 +1,6 @@
 <?php
-//$username = $_POST["username"];
-//$password = $_POST["password"];
-$username = "1020304";
-$password = "Agsmc999";
+$username = $_POST["username"];
+$password = $_POST["password"];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE :hostname AND user not like 'admi%'";
@@ -18,6 +16,7 @@ if (count($row) > 0) {
     $role = $row[0]['role'];
     $name = $row[0]['name'];
     $department = $row[0]['department'];
+        //if 12
         if($status == 'Inactive'){
             echo "failed:inactive";
         }
@@ -28,6 +27,7 @@ if (count($row) > 0) {
             $_SESSION["status"] = $status;
             $_SESSION["name"] = $name;
             $_SESSION["department"] = $department;
+            //if -----
               if($role == "ADMINISTRATOR"){
                   echo "success:admin";
                 }
@@ -36,11 +36,13 @@ if (count($row) > 0) {
                 }
               else{
                 echo "success:user";
-              }//end if($role == "ADMINISTRATOR")
+              }
+              //if -----
         }
         else {
         echo "failed:password";
         }
+        //if 12
 }
 else{
 echo "failed:user";
