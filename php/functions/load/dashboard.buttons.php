@@ -5,18 +5,19 @@ $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT *
-            FROM logonscript.tbl_tree
-            WHERE tree_parent LIKE :bld
-            ORDER BY tree_name";
+            FROM logonscript.tbl_department ORDER BY sub_department";
+
+            /*WHERE tree_parent LIKE :bld
+            ORDER BY tree_name";*/
 
 $stmt = $db->prepare($query);
-$stmt->bindParam(":bld",$bld);
+//$stmt->bindParam(":bld",$bld);
 $stmt->execute();
 $result = $stmt->fetchAll();
 
 foreach($result as $row){
 
-    $treename = $row['tree_name'];
+    $treename = $row['sub_department'];
 
     if($count>0)
     {
