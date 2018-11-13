@@ -93,6 +93,7 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+        createnewElement([], card.head, "button", [],[],"Add");
       break;
       case "DSHBRDProfile":
         path = "";
@@ -105,6 +106,11 @@ function DSHBRDContent(parent, linkid)
       default:
 
     }
+    setTimeout(function(){
+    var copy = document.getElementsByClassName("buttons-copy");
+    copy[0].classList.remove("btn-secondary");
+    copy[0].classList.add("btn-danger");
+    }, 500)
 }
 
 

@@ -100,6 +100,7 @@ function SESSIONConfirm(){
         //riderect
       }
       else{
+        //window.location.assign("/index.html");
       }
 
 

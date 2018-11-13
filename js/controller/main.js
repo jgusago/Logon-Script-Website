@@ -1,6 +1,7 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load()
 {
+    SESSIONConfirm();
   var branchview = document.getElementById("contentview");
   var loading = document.getElementById("processingbar");
 
@@ -375,29 +376,31 @@ function SESSIONConfirm()
 
     data = data.split(";");
     var name = document.getElementById("NAVBARusernameID");
-    var thissite = window.location.hostname;
 
     if(data[0] == "Active"){
       //redirect
       switch (data[1]) {
         case "SUPER ADMIN":
-          window.location.assign(thissite+"/.superadmin.html");
+          window.location.assign("/.superadmin.html");
           break;
         case "ADMINISTRATOR":
-          window.location.assign(thissite+"/.admin.html");
+          window.location.assign("/.admin.html");
           break;
         case "STAFF":
-          window.location.assign(thissite+"/.user.html");
+          window.location.assign("/.user.html");
           break;
         default:
-        window.location.assign(thissite);
+        window.location.assign("/index.html");
       }
       //riderect
       //assign name
     }
     else{
-
+        window.location.assign("/index.html");
     }
+    
+    var nametext = document.createTextNode(data[3]);
+    name.appendChild(nametext); 
 
   });
 }

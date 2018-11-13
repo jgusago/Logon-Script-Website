@@ -7,7 +7,7 @@ $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-echo "Computer Name|IP Address|Status|Remarks|Agent Version|Action";
+echo "Computer Name|User|IP Address|Status|Remarks|Agent Version|Action";
 
 $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
 
@@ -45,7 +45,7 @@ foreach($result as $row){
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\", \"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
+    echo "#$hostname|$user|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\", \"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
 
 
 
