@@ -141,7 +141,7 @@ function pagination(id){
            buttons: [
              'copyHtml5',
              'excelHtml5',
-             'csvHtml5',
+            //  'csvHtml5',
              'pdfHtml5',
      ],
          }
@@ -151,6 +151,7 @@ function pagination(id){
 
 }, 500);
 }
+
 function idgenerator(){
 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
