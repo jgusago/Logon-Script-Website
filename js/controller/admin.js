@@ -317,19 +317,37 @@ function CMPLISTdtlstableupdate(parent, linkid){
      }, 100);
 }
 function NAVBARNotification(){
-  setTimeout(function(){
-    content = document.getElementById("NAVBARNotifContent");
+  getNotification();
+  setInterval(function(){
+    getNotification();
+  }, 30000);
+}
+
+function getNotification(){
+  content = document.getElementById("NAVBARNotifContent");
+  content.innerHTML = "";
     $.post("php/functions/notification/notification.endtask.count.php",function(data){
       var notif = document.createElement("div");
       data = data.split("`");
-      if(data[0] == "success"){
-      notif.innerHTML = data[1];
-      content.appendChild(notif);
+      if(data[0] !== '0'){
+        for(var i = 0; i < data.length; i++){
+          var newdiv = document.createElement("div");
+          newdiv.innerHTML = data[i];
+          if(i !== 0){
+            breaker = document.createElement("div");
+            breaker.classList.add("dropdown-divider");
+            content.appendChild(breaker);
+          }
+          content.appendChild(newdiv);
+        }
+      }
+      else{
+        var newdiv = document.createElement("div");
+        newdiv.innerHTML = data[1];
+        content.appendChild(newdiv);
       }
     
     });
-
-  }, 1000);
 }
 
 function SESSIONConfirm(){
