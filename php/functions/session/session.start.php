@@ -60,4 +60,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 else{
   echo "failed:unkown";
 }
+
+$stmt = null;
 ?>
