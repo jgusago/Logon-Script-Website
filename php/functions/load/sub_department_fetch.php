@@ -7,10 +7,10 @@ $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $query = "SELECT *
-            FROM logonscript.tbl_department
+            FROM logonscript.tbl_tree
 
-            WHERE branch_name LIKE :bld
-            ORDER BY sub_department";
+            WHERE tree_name LIKE :bld
+            ORDER BY tree_filter";
 
 $stmt = $db->prepare($query);
 $stmt->bindParam(":bld",$bld);
@@ -19,7 +19,7 @@ $result = $stmt->fetchAll();
 
 foreach($result as $row){
 
-    $treename = $row['sub_department'];
+    $treename = $row['tree_filter'];
 
     if($count>0)
     {
