@@ -13,7 +13,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
 
     if (count($row) > 0) {
-<<<<<<< HEAD
         $hashed_password = $row[0]['password'];
         $status = $row[0]['status'];
         $role = $row[0]['role'];
@@ -23,7 +22,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
             elseif(($status == 'Active') && (password_verify($password, $hashed_password))) {
                 $_SESSION["userid"] = $row[0]['userid'];
                 if($role == "ADMINISTRATOR"){
-=======
         $hashed_password = $row[0]['password']; 
         $status = $row[0]['status']; 
         $role = $row[0]['role']; 
@@ -35,7 +33,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
                 $_SESSION["userid"] = $row[0]['userid']; 
                 if($role == "ADMINISTRATOR")
                 {
->>>>>>> 058cb56353adb087e9eb35d3d21a1e485cf45997
                     echo "success:admin";
                 }
                 else if($role == "SUPER ADMIN")
@@ -50,13 +47,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
             else {
             echo "failed:password";
             }
+        }
     }
     else{
-<<<<<<< HEAD
-    echo "failed:user";
-=======
     echo "failed:staff"; 
->>>>>>> 058cb56353adb087e9eb35d3d21a1e485cf45997
     }
 }
 else{
