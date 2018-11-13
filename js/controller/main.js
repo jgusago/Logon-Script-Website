@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load()
 {
-    SESSIONConfirm();
+  SESSIONConfirm();
   var branchview = document.getElementById("contentview");
   var loading = document.getElementById("processingbar");
 
@@ -13,48 +13,6 @@ function load()
 
 }
 
-function Notif()
-{
-  document.getElementById("dtitle").innerHTML = "Notifications";
-
-  // var contentview = document.getElementById("contentview");
-
-  // var divpanel = document.createElement("div");
-  // divpanel.classList.add("card");
-
-  // var panelhead = document.createElement("div");
-  // panelhead.classList.add("card-header");
-
-  // var panelbody = document.createElement("div");
-  // panelbody.classList.add("card-body");
-
-  // var divtable = document.createElement("div");
-  // divtable.classList.add("table-responsive");
-
-  // var table = document.createElement("table");
-  // table.classList.add("table");
-  // table.classList.add("table-hover");
-
-  // var thead = document.createElement("thead");
-  // var tr = document.createElement("tr");
-  // var th = document.createElement("th");
-  // th.innerHTML = "Subject";
-  // var th1 = document.createElement("th");
-  // th1.innerHTML = "Details";
-
-  // var tbody = document.createElement("tbody");
-
-  // contentview.appendChild(divpanel);
-  // table.appendChild(tbody);
-  // tr.appendChild(th1);
-  // tr.appendChild(th);
-  // thead.appendChild(tr);
-  // table.appendChild(thead);
-  // divtable.appendChild(table);
-  // panelbody.appendChild(divtable);
-  // divpanel.appendChild(panelbody);
-  // divpanel.appendChild(panelhead);
-}
 
 /* Buttons */
 
@@ -153,24 +111,6 @@ function DSHBRDContent(parent, linkid)
 
     }
 }
-
-function ACCTedit()
-{
-  OVERLAYenable();
-
-  //get mini window ID;
-
-  var miniwindow = document.getElementById("miniwindow");
-  var ch = document.getElementById("mnch");
-  var cb = document.getElementById("mncb");
-  var cf = document.getElementById("mncf");
-
-  miniwindow.appendChild(ch);
-  miniwindow.appendChild(cb);
-  miniwindow.appendChild(cf);
-}
-
-
 
 //computerlist Update OnClick
 
