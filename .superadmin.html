@@ -49,9 +49,12 @@
 
           <!-- Charts Collapse -->
           <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
-              <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables"></li>
-              <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs"></li>
-              <li data="History" id="DSHBRDRecordshistory" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="History"></li>
+              <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
+              </li>
+              <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
+              </li>
+              <li data="History" id="DSHBRDRecordsHistory" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer History">
+              </li>
           </ul>
         </li>
         <!-- End of Charts and Graphs -->
@@ -66,7 +69,7 @@
               <a href="#" id="DSHBRDAccountsAccMgnt" onclick="DSHBRDContent('','DSHBRDAccountsAccMgnt')" data="DSHBRDAccountsAccMgnt">Account Management</a>
             </li>
             <li>
-              <a href="#" id="DSHBRDProfileMngmt"  onclick="DSHBRDContent('','DSHBRDProgileMngmt')" data="DSHBRDProfileMngmt">Profile Settings</a>
+              <a href="#"  id="DSHBRDProfile" onclick="DSHBRDContent('','DSHBRDProfile')" data="DSHBRDProfile">Profile Settings</a>
             </li>
           </ul>
         </li>
@@ -77,10 +80,17 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#" onclick="dashboard_click_event('branchviewsettings')">Branch View Settings</a>
+              <a href="#" id="DSHBRDBranchView" onclick="DSHBRDContent('','DSHBRDBranchView')" data="DSHBRDBranchView">Branch View Settings</a>
             </li>
           </ul>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Link</span>
+          </a>
+        </li>
+      </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
@@ -91,7 +101,8 @@
       <ul class="navbar-nav ml-auto">
 
         <!-- Messages -->
-        <!-- <li class="nav-item dropdown">
+        <!--
+         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
             <span class="d-lg-none">Messages
@@ -124,9 +135,9 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
-        </li> -->
+        </li>
+        -->
 
-        <!-- Alerts -->
          <!-- Alerts -->
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" onclick="load_notif()" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -135,7 +146,7 @@
               <span class="badge badge-pill badge-warning">6 New</span>
             </span>
             <span class="indicator text-warning d-none d-lg-block">
-                <span class="badge badge-pill badge-danger">6</span>
+                <span class="badge badge-pill badge-danger" id="sel">6</span>
             </span>
           </a>
           <div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
@@ -150,7 +161,7 @@
               <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#" onclick="notif()">View all alerts</a>
+            <a class="dropdown-item small" href="#">View all alerts</a>
           </div>
         </li>
 
@@ -228,7 +239,7 @@
           <div class="modal-body">Are you sure you want to logout?</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-warning" href="login.html">Logout</a>
+            <a class="btn btn-warning" href="#" onclick="logout()">Logout</a>
           </div>
         </div>
       </div>
