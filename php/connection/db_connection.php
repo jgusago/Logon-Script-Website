@@ -1,5 +1,5 @@
 <?php
-$db = new PDO('mysql:host=127.0.0.1;port=3306;dbname=logonscript', 'root', '');
+$db = new PDO('mysql:host=172.16.31.39;port=3306;dbname=logonscript', 'administrator', 'Agsmc999');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 

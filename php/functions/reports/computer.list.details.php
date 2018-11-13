@@ -56,6 +56,29 @@ foreach($result as $row){
 
   if (count($newresult) != 0){
     foreach ($newresult as $row) {
+
+      if(empty($row['processor'])){
+        $row['processor'] = "";
+      }
+      if(empty($row['hdd_Serial'])){
+        $row['hdd_Serial'] = "";
+      }
+      if(empty($row['mac_Address'])){
+        $row['mac_Address'] = "";
+      }
+      if(empty($row['mb_manufacturer'])){
+        $row['mb_manufacturer'] = "";
+      }
+      if(empty($row['mb_product'])){
+        $row['mb_product'] = "";
+      }
+      if(empty($row['status'])){
+        $row['status'] = "";
+      }
+      if(empty($row['agent_version'])){
+        $row['agent_version'] = "";
+      }
+
       $processor = $row['processor'];
       $serial = $row['hdd_Serial'];
       $macaddress = $row['mac_Address'];
@@ -63,6 +86,7 @@ foreach($result as $row){
       $model = $row['mb_product'];
       $status = $row['status'];
       $version = $row['agent_version'];
+
 
       //echo "#$processor|$serial|$macaddress|$manufacturer|$model|$status|input`form-control`id:agentversion~type:text~placeholder:$version~onkeypress:remarksupdate(\"$version\")`$version";
     }
