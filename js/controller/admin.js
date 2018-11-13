@@ -93,7 +93,7 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        createnewElement([], card.head, "button", [],[],"Add");
+        createnewElement([], card.head, "button", ["btn-default"],[],"Add");
       break;
       case "DSHBRDProfile":
         path = "";
@@ -106,10 +106,25 @@ function DSHBRDContent(parent, linkid)
       default:
 
     }
-    setTimeout(function(){
-    var copy = document.getElementsByClassName("buttons-copy");
-    copy[0].classList.remove("btn-secondary");
-    copy[0].classList.add("btn-danger");
+    
+    setTimeout(function()
+    {
+      var copy = document.getElementsByClassName("buttons-copy");
+      copy[0].classList.remove("btn-secondary");
+      copy[0].classList.add("btn-default");
+
+      var excel = document.getElementsByClassName("buttons-excel");
+      excel[0].classList.remove("btn-secondary");
+      excel[0].classList.add("btn-success");
+
+      var csv = document.getElementsByClassName("buttons-csv");
+      csv[0].classList.remove("btn-secondary");
+      csv[0].classList.add("btn-success");
+
+      var pdf = document.getElementsByClassName("buttons-pdf");
+      pdf[0].classList.remove("btn-secondary");
+      pdf[0].classList.add("btn-danger");
+
     }, 500)
 }
 
