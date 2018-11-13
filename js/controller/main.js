@@ -368,6 +368,40 @@ function NAVBARNotification()
 });
 }
 
+function SESSIONConfirm()
+{
+
+  $.post("php/functions/session/session.confirm.php",function(data){
+
+    data = data.split(";");
+    var name = document.getElementById("NAVBARusernameID");
+    var thissite = window.location.hostname;
+
+    if(data[0] == "Active"){
+      //redirect
+      switch (data[1]) {
+        case "SUPER ADMIN":
+          window.location.assign(thissite+"/.superadmin.html");
+          break;
+        case "ADMINISTRATOR":
+          window.location.assign(thissite+"/.admin.html");
+          break;
+        case "STAFF":
+          window.location.assign(thissite+"/.user.html");
+          break;
+        default:
+        window.location.assign(thissite);
+      }
+      //riderect
+      //assign name
+    }
+    else{
+
+    }
+
+  });
+}
+
 //
 
 /* Background */
