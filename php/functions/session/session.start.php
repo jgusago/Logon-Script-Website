@@ -1,12 +1,7 @@
 <?php
-  //$username = $_POST["username"];
-  //$password = $_POST["password"];
+  $username = $_POST["username"];
+  $password = $_POST["password"];
 
-  $username = "1020304";
-  $password = "Agsmc999";
-
-  $_POST["username"] = "1020304";
-  $_POST["password"] = "Agsmc999"; 
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
   $password = md5(sha1($password));
