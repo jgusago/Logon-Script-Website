@@ -55,8 +55,8 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 }
 
 else{
-
-    
+    echo "0`<a class='dropdown-item' href='#'>
+    <div class='dropdown-message small'>There are no notification</div></a>";
 }
 $pdo = null;
 

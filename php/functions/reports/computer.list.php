@@ -1,6 +1,4 @@
 <?php
-
-
 //$parent = "Marvin(IT)";
 $count = 0;
 session_start();
@@ -12,16 +10,22 @@ if ($_SESSION['role'] !== "STAFF"){
     $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
 }
 else{
+    $id = $_POST["linkid"];
+    $department = $_SESSION['department'];
     $sql2 = "SELECT * FROM logonscript.tbl_tree where tree_name like '$department'";
       
 		foreach ($db->query($sql2) as $row) {
-            $tree_filter = $row['tree_filter'];
+            if(isset($row['tree_filter'])){
+                $tree_filter = $row['tree_filter'];
+            }
+            else{
+                $tree_filter = "notacceptabvle";
+            }
+            
         }    
-        $query = "SELECT hostname, ip, status, remarks, agent_version from tbl_computer_details WHERE hostname like '%$tree_filter%'";
+        $query = "SELECT * from logonscript.tbl_log WHERE hostname like '%$tree_filter%'";
 }
 echo "Computer Name|IP Address|Status|Remarks|Agent Version|Action";
-
-
 
 $pdo = $db->prepare($query);
 $pdo->bindParam(":parent",$parent);
