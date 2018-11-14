@@ -237,6 +237,189 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   }
 }
 
+function DSHBRDContentBranchSettings(){
+    
+  var contentview = document.getElementById("contentview");
+    
+  contentview.innerHTML = "";
+  var card = document.createElement("div");
+    
+  card.classList.add("card");
+    
+  card.classList.add("mb-3");
+    
+  card.classList.add("contentdataview");
+    
+  card.setAttribute("id","branchviewsettings");
+    
+  contentview.appendChild(card);
+
+        
+    cardhead = document.createElement("div");
+        
+  cardhead.classList.add("card-header");
+        
+  card.appendChild(cardhead);
+            
+  cardheadtxt = document.createTextNode("Branch View Settings");
+            
+  cardhead.appendChild(cardheadtxt);
+
+        
+  cardbody = document.createElement("div");
+        
+  cardbody.classList.add("card-body");
+        
+  card.appendChild(cardbody);
+       
+     
+$.post("php/functions/sttngs/settings.branch.view.php",function(data)
+            
+{
+
+                
+  var newtable = document.createElement("table");
+               
+  newtable.classList.add("table");
+                
+  newtable.classList.add("table-bordered");
+                
+  cardbody.appendChild(newtable);
+
+                
+  data = data.split("||");
+                
+  datalength = data.length;
+
+                
+for(var arraccount = 0; arraccount < datalength; arraccount++)
+{
+
+                    
+  var currentdata = data[arraccount].split(";");
+                    
+if (currentdata[2] == "tr")
+{
+                        
+  var newtr = document.createElement("tr");
+  
+  newtable.appendChild(newtr);
+
+                        
+  var newtd = document.createElement("td");
+                 
+  if(currentdata[1] > 1)
+  {
+                            
+    newtd.setAttribute("rowspan",currentdata[1]);
+                        
+  }
+                        
+  newtr.appendChild(newtd);
+                        
+  var  newdatatext = document.createTextNode(currentdata[0]);
+                        
+  newtd.appendChild(newdatatext);
+
+                    
+}
+                    
+else
+{
+                        
+  var newtd = document.createElement("td");
+                        
+  if(currentdata[1] > 1)
+  {
+                            
+    newtd.setAttribute("rowspan",currentdata[1]);
+                       
+   }
+                        
+  newtr.appendChild(newtd);
+                        
+  var  newdatatext = document.createTextNode(currentdata[0]);
+                        
+  newtd.appendChild(newdatatext);
+                    
+}
+
+                
+}
+
+            
+});
+
+        
+cardfoot = document.createElement("div");
+        
+cardfoot.classList.add("card-footer");
+        
+card.appendChild(cardfoot);
+
+        
+var toolbar = document.createElement("div");
+        
+toolbar.classList.add("btn-toolbar");
+        
+toolbar.classList.add("mb-3");
+        
+toolbar.setAttribute("role","toolbar");
+        
+cardfoot.appendChild(toolbar);
+
+        
+var inputgroup = document.createElement("div");
+        
+inputgroup.classList.add("btn-group");
+        
+inputgroup.classList.add("mr-2");
+        
+toolbar.appendChild(inputgroup);
+
+        
+var btnadd = document.createElement("input");
+       
+btnadd.setAttribute("type","button");
+        
+btnadd.setAttribute("onclick","addbranch();");
+        
+btnadd.classList.add("btn");
+        
+btnadd.classList.add("btn-primary")
+        
+btnadd.value = "Add Another Branch";
+        
+inputgroup.appendChild(btnadd);
+
+        
+var inputgroupII = document.createElement("div");
+        
+inputgroupII.classList.add("btn-group");
+        
+inputgroupII.classList.add("mr-2");
+        
+toolbar.appendChild(inputgroupII);
+
+       
+var btnadd = document.createElement("input");
+        
+btnadd.setAttribute("type","button");
+        
+btnadd.setAttribute("onclick","editbranch();");
+        
+btnadd.classList.add("btn");
+        
+btnadd.classList.add("btn-primary")
+        
+btnadd.value = "Edit a Branch";
+        
+inputgroupII.appendChild(btnadd);
+
+}
+/*End of Branch View*/
+
+
 function logout(){
   $.post("php/functions/session/session.destroy.php",function(data){});
   window.location.assign("/index.html");
