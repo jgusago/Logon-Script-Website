@@ -149,15 +149,14 @@
         </li>
         -->
 
-         <!-- Alerts -->
-         <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label></label></i>
               <span class="d-lg-none">Alerts
-                <span class="badge badge-pill badge-warning">6 New</span>
+                <span class="badge badge-pill badge-warning" id="NOTIFmbcount"></span>
               </span>
               <span class="indicator text-warning d-none d-lg-block">
-                  <span class="badge badge-pill badge-danger" id="sel">6</span>
+                  <span class="badge badge-pill badge-danger"><strong id="NOTIFdtcount"></strong></span>
               </span>
             </a>
             <div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
@@ -168,19 +167,19 @@
               <a class="dropdown-item small" href="#">View all alerts</a>
             </div>
           </li>
-
-        <!-- Logout -->
-        <li class="nav-item dropdown" style="padding-right: 90px;">
-            <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
-              <i id="faUser" class="fa fa-fw fa-user">Welcome:
-                <label id="NAVBARusernameID"></label>
-              </i>
-              <span class="d-lg-none"></span>
-            </a>
-            <div class="dropdown-menu dropdown1" aria-labelledby="settingsDropdown" id="settingsDropdown1">
-                <a class="dropdown-header" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
-            </div>
-        </li>
+  
+          <!-- Logout -->
+          <li class="nav-item dropdown" style="padding-right: 90px;">
+              <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
+                <i id="faUser" class="fa fa-fw fa-user">Welcome:
+                  <label id="NAVBARusernameID"></label>
+                </i>
+                <span class="d-lg-none"></span>
+              </a>
+              <div class="dropdown-menu dropdown1" aria-labelledby="settingsDropdown" id="settingsDropdown1">
+                  <a class="dropdown-header" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
+              </div>
+          </li>
 
       </ul>
     </div>
