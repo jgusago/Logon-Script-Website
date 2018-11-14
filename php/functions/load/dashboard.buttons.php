@@ -3,7 +3,7 @@ $count = 0;
 
 session_start();
 
-if($_SESSION['department'] !== "STAFF"){
+if($_SESSION['role'] == "ADMINISTRATOR" or $_SESSION['role'] == "SUPER ADMIN"){
     $bld = $_POST["branch"];
 }
 else{
@@ -12,7 +12,6 @@ else{
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT *
             FROM logonscript.tbl_tree
-
             WHERE tree_parent LIKE :bld
             ORDER BY tree_name";
 
@@ -40,7 +39,7 @@ if ($count>0){
     echo $output;
 }
 else{
-    echo $count;
+    echo $bld;
 }
 
 $stmt = null;
