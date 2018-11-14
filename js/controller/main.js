@@ -370,7 +370,141 @@ function NAVBARNotification()
   }, 30000);
 }
 
-function getNotification(){
+function DSHBRDContentBranchSettings(){
+    
+  var contentview = document.getElementById("contentview");
+    
+  contentview.innerHTML = "";
+  var card = document.createElement("div");
+    
+  card.classList.add("card");
+    
+  card.classList.add("mb-3");
+    
+  card.classList.add("contentdataview");
+    
+  card.setAttribute("id","branchviewsettings");
+    
+  contentview.appendChild(card);
+
+        
+    cardhead = document.createElement("div");
+        
+  cardhead.classList.add("card-header");
+        
+  card.appendChild(cardhead);
+            
+  cardheadtxt = document.createTextNode("Branch View Settings");
+            
+  cardhead.appendChild(cardheadtxt);
+
+        
+  cardbody = document.createElement("div");
+        
+  cardbody.classList.add("card-body");
+        
+  card.appendChild(cardbody);
+       
+     
+$.post("php/functions/sttngs/settings.branch.view.php",function(data)
+            
+{
+
+                
+  var newtable = document.createElement("table");
+               
+  newtable.classList.add("table");
+                
+  newtable.classList.add("table-bordered");
+                
+  cardbody.appendChild(newtable);
+
+                
+  data = data.split("||");
+                
+  datalength = data.length;
+
+                
+for(var arraccount = 0; arraccount < datalength; arraccount++)
+{
+
+                    
+  var currentdata = data[arraccount].split(";");
+                    
+if (currentdata[2] == "tr")
+{
+                        
+  var newtr = document.createElement("tr");
+  
+  newtable.appendChild(newtr);
+
+                        
+  var newtd = document.createElement("td");
+                 
+  if(currentdata[1] > 1)
+  {
+                            
+    newtd.setAttribute("rowspan",currentdata[1]);
+                        
+  }
+                        
+  newtr.appendChild(newtd);
+                        
+  var  newdatatext = document.createTextNode(currentdata[0]);
+                        
+  newtd.appendChild(newdatatext);
+
+                    
+}
+                    
+else
+{
+                        
+  var newtd = document.createElement("td");
+                        
+  if(currentdata[1] > 1)
+  {
+                            
+    newtd.setAttribute("rowspan",currentdata[1]);
+                       
+   }
+                        
+  newtr.appendChild(newtd);
+                        
+  var  newdatatext = document.createTextNode(currentdata[0]);
+                        
+  newtd.appendChild(newdatatext);
+                    
+}
+
+                
+}
+
+            
+});
+
+cardfoot = document.createElement("div");
+cardfoot.classList.add("card-footer");
+card.appendChild(cardfoot);
+
+var toolbar = [];
+createnewElement(toolbar,cardfoot,"div",["btn-toolbar","mr-3"],[],"");
+        
+var ig = [];
+createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
+        
+var ig2 = [];
+createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+       
+createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
+
+
+}
+
+
+function getNotification()
+{
   content = document.getElementById("NAVBARNotifContent");
   mbcount = document.getElementById("NOTIFmbcount");
   dtcount = document.getElementById("NOTIFdtcount");
