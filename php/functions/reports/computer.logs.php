@@ -1,9 +1,24 @@
 <?php
-$parent = $_POST["parent"];
+//$parent = $_POST["parent"];
 //$parent = "Marvin(IT)";
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
+
+if ($_SESSION['role'] !== "STAFF"){
+    $parent = $_POST["parent"];
+    $id = $_POST["linkid"];
+    $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
+}
+else{
+    $sql2 = "SELECT * FROM logonscript.tbl_tree where tree_name like '$department'";
+      
+		foreach ($db->query($sql2) as $row) {
+            $tree_filter = $row['tree_filter'];
+        }    
+        $query = "SELECT hostname, ip, status, remarks, agent_version from tbl_computer_details WHERE hostname like '%$tree_filter%'";
+}
+
 echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
 
 $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent AND user not like 'admi%' group by hostname";
