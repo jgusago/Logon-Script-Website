@@ -9,11 +9,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT *
             FROM logonscript.tbl_tree
 
-            WHERE tree_name LIKE :bld
+            WHERE tree_name='$department'
             ORDER BY tree_filter";
 
 $stmt = $db->prepare($query);
-$stmt->bindParam(":bld",$bld);
+$stmt->bindParam("tree_name",$bld);
 $stmt->execute();
 $result = $stmt->fetchAll();
 
