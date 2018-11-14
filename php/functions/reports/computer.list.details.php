@@ -16,7 +16,6 @@ $pdo->execute();
 $result = $pdo->fetchAll();
 foreach($result as $row){
     $hostname = $row['hostname'] ?: 'null';
-    $user = $row['user'] ?: 'null';
     $domain_name = $row['domain_name'] ?: 'null';
     $ip_address = $row['ip_address'] ?: 'null';
     $ip_date_modefied = $row['ip_date_modified'] ?: 'null';
