@@ -103,8 +103,6 @@ function DSHBRDContent(parent, linkid)
     
 }
 
-<<<<<<< HEAD
-=======
 /* Table Call Path with PHP*/
 function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
   $.post(path, {parent:parent,linkid:linkid}, function(data){
@@ -143,7 +141,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     pagination(id);
   }
 }
->>>>>>> dbec441b97a4515ed99b07e9c3b52b23aa73b0fa
 
 function SESSIONConfirm()
 {
