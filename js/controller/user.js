@@ -73,15 +73,15 @@ function DSHBRDContent(parent, linkid)
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      case "DSHBRDDepartmentCompList":
-        path = "php/functions/load/comp_list_fetch.php";
+      case "DSHBRDSubDepartmentCompList":
+        path = "php/functions/reports/user.computer.list.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDBranchView":
         path = "php/functions/sttngs/branch.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      default:path = "php/functions/load/comp_list_fetch.php";
+      default:path = "php/functions/report/user.computer.list.php";
       DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
 
     }

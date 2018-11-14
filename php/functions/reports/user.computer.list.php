@@ -11,7 +11,7 @@
 
 		echo "Hostname|User|IP|Status|Remarks|Agent Version";
 
-		$sql = "SELECT logonscript.tbl_computer_details.hostname As hostname, logonscript.tbl_log.user AS user, logonscript.tbl_computer_details.ip AS IP, logonscript.tbl_computer_details.status AS status, logonscript.tbl_computer_details.remarks, logonscript.tbl_computer_details.agent_version as agent_version
+		$sql = "SELECT logonscript.tbl_computer_details.hostname As hostname, logonscript.tbl_log.user AS user, logonscript.tbl_computer_details.ip AS ip, logonscript.tbl_computer_details.status AS status, logonscript.tbl_computer_details.remarks, logonscript.tbl_computer_details.agent_version as agent_version
         FROM logonscript.tbl_computer_details 
         INNER JOIN logonscript.tbl_log ON logonscript.tbl_log.hostname = tbl_computer_details.hostname
         WHERE tbl_computer_details.hostname like '%$tree_filter%' group by tbl_computer_details.hostname";
@@ -24,7 +24,7 @@
             $remarks = $row['remarks'] ?: 'null';
             $agent_version = $row['agent_version'] ?: 'null';
        
-            echo "#$hostname|$useer|$ip|$Status|$remarks|$agent_version";
+            echo "#$hostname|$user|$ip|$Status|$remarks|$agent_version";
 
 		}
 	?>

@@ -350,12 +350,8 @@ else
                         
   newtd.appendChild(newdatatext);
                     
-}
-
-                
-}
-
-            
+    }
+  }          
 });
 
 cardfoot = document.createElement("div");
