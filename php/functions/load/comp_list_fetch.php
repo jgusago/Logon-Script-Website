@@ -10,7 +10,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 			echo "$tree_filter";
         }
         
-        $tree_filter = $_SESSION["tree_filter"];
 
 		echo "Comp ID|Hostname|Processor|HDD Serial|Mac Address|MB manufacturer|MB Product|Scan Time|IP|Status|Remarks|Agent Version|Branch";
 
