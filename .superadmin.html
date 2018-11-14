@@ -47,8 +47,8 @@
             <span class="nav-link-text">Reports</span>
           </a>
 
-          <!-- Charts Collapse -->
-          <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
+           <!-- Charts Collapse -->
+           <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
               <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
               </li>
               <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
@@ -61,10 +61,10 @@
 
                 <ul class="sidenav-second-level collapse" id="collapseHistory">
                   <li>
-                      <a href="#" id="DSHBRDEditHistory" onclick="DSHBRDContent('', 'DSHBRDEditHistory')" data="DSHBRDEditHistory">Edit History</a>
+                      <a href="#" id="DSHBRDEditHistory" onclick="DSHBRDContent('DSHBRDEditHistory', 'DSHBRDEditHistory')" data="DSHBRDEditHistory">Edit History</a>
                   </li>
                   <li>
-                      <a href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('', 'DSHBRDLogsHistory')" data="DSHBRDLogsHistory">Computer Logs History</a>
+                      <a href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('DSHBRDLogsHistory', 'DSHBRDLogsHistory')" data="DSHBRDLogsHistory">Computer Logs History</a>
                   </li>
                 </ul>
               </li>
@@ -88,7 +88,7 @@
           </ul>
         </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View">
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View">
             <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">
               <i class="fa fa-fw fa-cog"></i>
               <span class="nav-link-text">Branch View Settings</span>
@@ -149,37 +149,38 @@
         </li>
         -->
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label></label></i>
-              <span class="d-lg-none">Alerts
-                <span class="badge badge-pill badge-warning" id="NOTIFmbcount"></span>
-              </span>
-              <span class="indicator text-warning d-none d-lg-block">
-                  <span class="badge badge-pill badge-danger"><strong id="NOTIFdtcount"></strong></span>
-              </span>
+         <!-- Alerts -->
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label></label></i>
+            <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning" id="NOTIFmbcount"></span>
+            </span>
+            <span class="indicator text-warning d-none d-lg-block">
+                <span class="badge badge-pill badge-danger"><strong id="NOTIFdtcount"></strong></span>
+            </span>
+          </a>
+          <div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <div id="NAVBARNotifContent"></div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all alerts</a>
+          </div>
+        </li>
+
+        <!-- Logout -->
+        <li class="nav-item dropdown" style="padding-right: 90px;">
+            <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
+              <i id="faUser" class="fa fa-fw fa-user">Welcome:
+                <label id="NAVBARusernameID"></label>
+              </i>
+              <span class="d-lg-none"></span>
             </a>
-            <div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
-              <h6 class="dropdown-header">New Alerts:</h6>
-              <div class="dropdown-divider"></div>
-              <div id="NAVBARNotifContent"></div>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item small" href="#">View all alerts</a>
+            <div class="dropdown-menu dropdown1" aria-labelledby="settingsDropdown" id="settingsDropdown1">
+                <a class="dropdown-header" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
             </div>
-          </li>
-  
-          <!-- Logout -->
-          <li class="nav-item dropdown" style="padding-right: 90px;">
-              <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
-                <i id="faUser" class="fa fa-fw fa-user">Welcome:
-                  <label id="NAVBARusernameID"></label>
-                </i>
-                <span class="d-lg-none"></span>
-              </a>
-              <div class="dropdown-menu dropdown1" aria-labelledby="settingsDropdown" id="settingsDropdown1">
-                  <a class="dropdown-header" href="#exampleModal" data-toggle="modal"><i class="fa fa-fw fa-sign-out-alt"></i> Sign out</a></li>
-              </div>
-          </li>
+        </li>
 
       </ul>
     </div>
@@ -215,8 +216,23 @@
         </div>
     </div>
 
+    <!-- Progress Bar-->
+
+    <!-- Footer -->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
     <!-- Add user Modal -->
-     <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true">
+    <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true">
         <div class="modal-dialog modal-md" role="document">
           <div class="modal-content" >
             <div class="modal-header text center">
@@ -242,9 +258,9 @@
                   <label class="control-label">Role</label>
                   <select id="role" class="form-control " required> 
                     <option value="">--Select Role--</option>
-                    <option value="SUPER ADMIN">Super Admin</option>
-                    <option value="ADMINISTRATOR">Administrator</option>
-                    <option value="STAFF">Staff</option>
+                    <option value="">Super Admin</option>
+                    <option value="">Administrator</option>
+                    <option value="">Staff</option>
                   </select>
               </div>
               <div class="md-form mb-3">
@@ -268,20 +284,6 @@
     </div>
     <!-- End of Add user Modal -->
 
-    <!-- Progress Bar-->
-
-    <!-- Footer -->
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
-        </div>
-      </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
