@@ -19,7 +19,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     }
     if ($count != 0){
     $notif1 = "<a class='dropdown-item' href='#' onClick='NOTIFnotconnected'><span class='text-danger'><strong>Disconnected iMonitor</strong></span><span class='small float-right text-muted'>$time</span>
-    <div class='dropdown-message small'>There are $count that is not updated or not connected to the server</div></a>
+    <div class='dropdown-message small'>There are $count computers detected! Install imonitor agent!</div></a>
     ";
     }
 
@@ -39,7 +39,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 
     if ($count2 != 0){
         $notif2 = "`<a class='dropdown-item' href='#' onClick='NOTIFimonitorupdate'><span class='text-warning'><strong>Agent Need Update</strong></span><span class='small float-right text-muted'>$time</span>
-        <div class='dropdown-message small'>There are $count2 computers that need to be confirmed</div></a>
+        <div class='dropdown-message small'>There are $count2 computers detected! Update imonitor agent to higher version. </div></a>
         ";
         }
 
