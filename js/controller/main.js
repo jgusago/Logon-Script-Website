@@ -142,7 +142,7 @@ function ACCTedit()
   // var cb = document.getElementById("mncb");
   // var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], rightdiv = [], subrdiv = [], rightsidevalue = [];
+  var value = [], divvalue = [], leftdiv = [], rightdiv = [], subrdiv = [], rightsidevalue = [], span = [];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
