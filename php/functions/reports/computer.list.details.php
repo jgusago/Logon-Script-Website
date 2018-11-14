@@ -61,10 +61,10 @@ foreach($result as $row){
         $row['processor'] = "";
       }
       if(empty($row['hdd_Serial'])){
-        $row['hdd_Serial'] = "";
+        $row['HDD_Serial'] = "";
       }
       if(empty($row['mac_Address'])){
-        $row['mac_Address'] = "";
+        $row['MAC_Address'] = "";
       }
       if(empty($row['mb_manufacturer'])){
         $row['mb_manufacturer'] = "";

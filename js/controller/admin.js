@@ -343,71 +343,22 @@ else
             
 });
 
-        
 cardfoot = document.createElement("div");
-        
 cardfoot.classList.add("card-footer");
-        
 card.appendChild(cardfoot);
 
+var toolbar = [];
+createnewElement(toolbar,cardfoot,"div",["btn-toolbar","mr-3"],[],"");
         
-var toolbar = document.createElement("div");
+var ig = [];
+createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
         
-toolbar.classList.add("btn-toolbar");
-        
-toolbar.classList.add("mb-3");
-        
-toolbar.setAttribute("role","toolbar");
-        
-cardfoot.appendChild(toolbar);
-
-        
-var inputgroup = document.createElement("div");
-        
-inputgroup.classList.add("btn-group");
-        
-inputgroup.classList.add("mr-2");
-        
-toolbar.appendChild(inputgroup);
-
-        
-var btnadd = document.createElement("input");
+var ig2 = [];
+createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
        
-btnadd.setAttribute("type","button");
-        
-btnadd.setAttribute("onclick","addbranch();");
-        
-btnadd.classList.add("btn");
-        
-btnadd.classList.add("btn-primary")
-        
-btnadd.value = "Add Another Branch";
-        
-inputgroup.appendChild(btnadd);
+createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
 
-        
-var inputgroupII = document.createElement("div");
-        
-inputgroupII.classList.add("btn-group");
-        
-inputgroupII.classList.add("mr-2");
-        
-toolbar.appendChild(inputgroupII);
-
-       
-var btnadd = document.createElement("input");
-        
-btnadd.setAttribute("type","button");
-        
-btnadd.setAttribute("onclick","editbranch();");
-        
-btnadd.classList.add("btn");
-        
-btnadd.classList.add("btn-primary")
-        
-btnadd.value = "Edit a Branch";
-        
-inputgroupII.appendChild(btnadd);
 
 }
 /*End of Branch View*/
