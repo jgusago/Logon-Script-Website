@@ -1,25 +1,28 @@
 <?php 
-error_reporting(0);
 session_start();
+$department = $_SESSION["department"];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-		echo "ID|User ID|Name|Department|Position|Status|Role";
+		echo "Comp ID|Hostname|Processor|HDD Serial|Mac Address|MB manufacturer|MB Product|Scan Time|IP|Status|Remarks|Agent Version|Branch";
 
-		$sql = "SELECT user,hostname, ip_address,iMonitor_Status,connection_status from tbl_log WHERE user != 'Administrator'";
+		$sql = "SELECT compID,hostname, processor,HDD_Serial,MAC_Address, mb_manufacturer, mb_product, Scan_Time, ip, status, remarks, agent_version, branch from tbl_computer_details WHERE branch='$department'";
 		foreach ($db->query($sql) as $row) {
 	
-			$id = $row['id'] ?: 'null';
+			$compID = $row['compID'] ?: 'null';
 			$hostname = $row['hostname'] ?: 'null';
-			$ip_address = $row['ip_address'] ?: 'null';
-			$iMonitor_Status = $row['iMonitor_Status'] ?: 'null';
-            $connection_status = $row['connection_status'] ?: 'null';
-            
-			    if($row['iMonitor_Status'] == 'Running' AND $row['connection_status'] == 'ESTABLISHED')
-                    echo 'Active';
-                else
-                    echo "Inactive";
-
-			echo "#$id|$hostname|$ip_address|$iMonitor_Status|$connection_status";
+			$processor = $row['processor'] ?: 'null';
+            $HDD_Serial = $row['HDD_Serial'] ?: 'null';
+            $MAC_Address = $row['MAC_Address'] ?: 'null';
+            $mb_manufacturer = $row['mb_manufacturer'] ?: 'null';
+            $mb_product = $row['mb_product'] ?: 'null';
+            $Scan_Time = $row['Scan_Time'] ?: 'null';
+            $ip = $row['ip'] ?: 'null';
+            $Status = $row['status'] ?: 'null';
+            $remarks = $row['remarks'] ?: 'null';
+            $agent_version = $row['agent_version'] ?: 'null';
+            $branch = $row['branch'] ?: 'null';
+       
+			echo "#$compID|$hostname|$processor|$HDD_Serial|$MAC_Address|$mb_manufacturer|$mb_product|$Scan_Time|$ip|$Status|$remarks|$agent_version|$branch";
 
 		}
 	?>
