@@ -13,7 +13,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 		echo "Comp ID|Hostname|Processor|HDD Serial|Mac Address|MB manufacturer|MB Product|Scan Time|IP|Status|Remarks|Agent Version|Branch";
 
-		$sql = "SELECT * from tbl_computer_details WHERE hostname like '%$department%'";
+		$sql = "SELECT * from tbl_computer_details WHERE hostname like '%$tree_filter%'";
 		foreach ($db->query($sql) as $row) {
 	
 			$compID = $row['compID'] ?: 'null';
