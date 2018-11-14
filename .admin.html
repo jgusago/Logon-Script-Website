@@ -222,26 +222,26 @@
           <div class="modal-content" >
             <div class="modal-header text center">
                 <h4 class="modal-title" id="myModalLabel">User Registration</h4>
-                <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="padding:15px;">&times;</span></button>
             </div>
             <div class="modal-body mx-6">
               <div class="md-form mb-3">
                   <label data-error="Please enter employee id" data-success="right">User ID</label>
-                <input type="text" id="userid" class="form-control validate">
+                <input type="text" id="userid" class="form-control validate" required>
               </div> 
               <div class="md-form mb-3">
                   <label data-error="Required" data-success="right">Name</label>
-                  <input type="text" id="username" class="form-control validate">
+                  <input type="text" id="username" class="form-control validate" required>
               </div> 
               <div class="md-form mb-3">
                   <label data-error="Select department" data-success="right">Department</label>
-                  <select id="department" class="form-control validate">
+                  <select id="department" class="form-control validate" required>
                     <option value="">--Select Department--</option>
                   </select>
               </div> 
               <div class="md-form mb-3">
                   <label data-error="Select role" data-success="">Role</label>
-                  <select id="role" class="form-control validate">
+                  <select id="role" class="form-control validate" required> 
                     <option value="">--Select Role--</option>
                     <option value="">Administrator</option>
                     <option value="">Staff</option>
@@ -249,7 +249,7 @@
               </div>
               <div class="md-form mb-3">
                   <label data-error="Select status" data-success="">Status</label>
-                  <select id="status" class="form-control validate">
+                  <select id="status" class="form-control validate" required>
                     <option value="">--Select Status--</option>
                     <option value="">Active</option>
                     <option value="">Inactive</option>
