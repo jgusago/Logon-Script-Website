@@ -11,7 +11,7 @@ function DSHBRDNavBarBtnsSub(){
   var btnclass = "generatebutton";
   parent = document.getElementsByClassName(btnclass);
 
-  $.post("php/functions/load/sub_department_fetch.php",{branch:"root"},function(data){
+  $.post("php/functions/load/department_fetch.php",{branch:"root"},function(data){
 
     newdata = data.split("|");
 
