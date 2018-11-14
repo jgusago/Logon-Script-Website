@@ -39,7 +39,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 
     if ($count2 != 0){
         $notif2 = "`<a class='dropdown-item' href='#'><span class='text-warning'><strong>Agent Need Update</strong></span><span class='small float-right text-muted'>$time</span>
-        <div class='dropdown-message small'>There are $count2 computers that need to be confirmed</div></a>
+        <div class='dropdown-message small'>$version!! There are $count2 computers that need to be confirmed</div></a>
         ";
         }
 
