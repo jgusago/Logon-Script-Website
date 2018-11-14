@@ -151,7 +151,8 @@ function ACCTedit()
 
   createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button"], "");
-  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "&times;");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  span.newelement.innerHTML = "&times;";
 
 }
 
