@@ -107,10 +107,10 @@ function DSHBRDContent(parent, linkid)
         path = "php/functions/accounts/profile.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      case "DSHBRDBranchView":
-        path = "php/functions/sttngs/settings.branch.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
+      // case "DSHBRDBranchView":
+      //   path = "php/functions/sttngs/settings.branch.view.php";
+      //   DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      // break;
       default:
 
     }
@@ -151,11 +151,6 @@ function ACCTedit()
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
-
-
-  var 
-
-
 
 }
 
