@@ -316,7 +316,9 @@ function CMPLISTdtlstableupdate(parent, linkid){
        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
      }, 100);
 }
-function NAVBARNotification(){
+
+function NAVBARNotification()
+{
   getNotification();
   setInterval(function(){
     getNotification();
