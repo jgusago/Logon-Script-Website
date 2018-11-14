@@ -13,7 +13,7 @@ $time = date("h:i a");
 
 if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 
-    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED'";
+    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running'";
     foreach ($db->query($query) as $row){
         $count++;
     }
@@ -23,20 +23,20 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     ";
     }
 
-    $query2 = "SELECT MAX(agent_version) AS maxversion FROM logonscript.tbl_computer_details WHERE remarks LIKE 'Active'";
+    $query2 = "SELECT MAX(agent_version) AS maxversion FROM logonscript.tbl_computer_details WHERE remarks NOT LIKE 'Active'";
     foreach ($db->query($query2) as $row){
     $version = $row['maxversion'];
     }
-    $version = "9.17";
-    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE agent_version like ':version' AND remarks Like 'Active' or remarks LIKE '' or remarks = null";
-    $pdo = $db -> prepare($query3);
+    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE agent_version not like ':version'";
+    $pdo = $db->prepare($query3);
     $pdo->bindParam(":version",$version);
     $pdo->execute();
     $result = $pdo->fetchAll();
 
     foreach ($result as $row) {
-        $count++;
+        $count2++;
     }
+
     if ($count2 != 0){
         $notif2 = "`<a class='dropdown-item' href='#'><span class='text-warning'><strong>Agent Need Update</strong></span><span class='small float-right text-muted'>$time</span>
         <div class='dropdown-message small'>There are $count2 computers that need to be confirmed</div></a>
@@ -48,7 +48,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
         echo "0`<a class='dropdown-item' href='#'>
         <div class='dropdown-message small'>There are no notification</div></a>";
     }
-    elseif($count !== 0 || $count2 !== 0){
+    elseif($count !== 0 or $count2 !== 0){
         echo $notif1.$notif2;
     }
 
