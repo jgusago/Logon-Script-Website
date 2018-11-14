@@ -84,17 +84,38 @@ function DSHBRDContent(parent, linkid)
       default:
 
     }
+
+    setTimeout(function()
+    {
+      var copy = document.getElementsByClassName("buttons-copy");
+      copy[0].classList.remove("btn-secondary");
+      copy[0].classList.add("btn-default");
+
+      var excel = document.getElementsByClassName("buttons-excel");
+      excel[0].classList.remove("btn-secondary");
+      excel[0].classList.add("btn-success");
+
+      var pdf = document.getElementsByClassName("buttons-pdf");
+      pdf[0].classList.remove("btn-secondary");
+      pdf[0].classList.add("btn-danger");
+
+    }, 500)
     
 }
+
+
 function SESSIONConfirm()
 {
-    $.post("php/functions/session/session.confirm.php",function(data){
+    $.post("php/functions/session/session.confirm.php",function(data)
+    {
   
       data = data.split(";");
       var name = document.getElementById("NAVBARusernameID");
-      if(data[0] == "Active"){
+      if(data[0] == "Active")
+      {
         //redirect
-        switch (data[1]) {
+        switch (data[1])
+         {
           case "SUPER ADMIN":
             window.location.assign("/.superadmin.html");
             break;
@@ -107,7 +128,8 @@ function SESSIONConfirm()
         }
         //riderect
       }
-      else{
+      else
+      {
         window.location.assign("/index.html");
       }
   

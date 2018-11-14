@@ -217,15 +217,14 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       }
   });
 
-  if (path == "php/functions/tbls/branch.view.php")
+  if (path == "php/functions/accounts/accounts.view.php")
   {
-    document.getElementById("dtitle").innerHTML = "Branch View Settings";
-    document.getElementById("dtitle2").remove();
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Account Management";
 
-    if(path == "php/functions/accounts/accounts.view.php")
+    if(path == "php/functions/tbls/branch.view.php")
     {
-      document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-      document.getElementById("dtitle2").innerHTML = "Account Management";
+      document.getElementById("dtitle").innerHTML = "Branch View Settings";
     }
   }
   else
