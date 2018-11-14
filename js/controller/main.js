@@ -150,7 +150,7 @@ function ACCTedit()
   createnewElement(rightdiv, divvalue.newelement, "button", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
 
   createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
-  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button"], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
