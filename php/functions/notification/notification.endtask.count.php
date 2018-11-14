@@ -23,7 +23,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     ";
     }
 
-    $query2 = "SELECT MAX(agent_version) AS maxversion FROM logonscript.tbl_computer_details WHERE agent_version not like ''and agent_version not like null and remarks not like 'Resigned'";
+    $query2 = "SELECT coalesce(MAX(agent_version), 0) AS maxversion FROM logonscript.tbl_computer_details WHERE remarks not like 'Resigned'";
     foreach ($db->query($query2) as $row){
     $version = $row['maxversion'];
     }
