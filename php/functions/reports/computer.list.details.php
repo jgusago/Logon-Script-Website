@@ -59,10 +59,10 @@ foreach($result as $row){
       if(empty($row['processor'])){
         $row['processor'] = "";
       }
-      if(empty($row['hdd_Serial'])){
+      if(empty($row['HDD_Serial'])){
         $row['HDD_Serial'] = "";
       }
-      if(empty($row['mac_Address'])){
+      if(empty($row['MAC_Address'])){
         $row['MAC_Address'] = "";
       }
       if(empty($row['mb_manufacturer'])){
@@ -79,8 +79,8 @@ foreach($result as $row){
       }
 
       $processor = $row['processor'];
-      $serial = $row['hdd_Serial'];
-      $macaddress = $row['mac_Address'];
+      $serial = $row['HDD_Serial'];
+      $macaddress = $row['MAC_Address'];
       $manufacturer = $row['mb_manufacturer'];
       $model = $row['mb_product'];
       $status = $row['status'];
