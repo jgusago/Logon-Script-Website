@@ -234,12 +234,12 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer List";
     }
-    else if(path == "php/functions/reports/computer.logs.php")
+    if(path == "php/functions/reports/computer.logs.php")
     {
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
     }
-    else if(path == "php/functions/reports/history.logs.php")
+    if(path == "php/functions/reports/history.logs.php")
     {
       document.getElementById("dtitle").innerHTML = "History";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
