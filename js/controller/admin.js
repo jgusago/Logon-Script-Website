@@ -228,7 +228,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     }
     else if(path == "php/functions/reports/computer.logs.history.php")
     {
-      document.getElementById("dtitle").innerHTML = "REports";
+      document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs History";
     }
     else if(path == "php/functions/reports/computer.edit.history.php")
@@ -239,7 +239,9 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     pagination(id);
   }
 }
-function DSHBRDContentBranchSettings(){
+
+function DSHBRDContentBranchSettings()
+{
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
   var card = document.createElement("div");
