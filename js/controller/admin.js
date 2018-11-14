@@ -117,15 +117,16 @@ function DSHBRDContent(parent, linkid)
       excel[0].classList.remove("btn-secondary");
       excel[0].classList.add("btn-success");
 
-      // var csv = document.getElementsByClassName("buttons-csv");
-      // csv[0].classList.remove("btn-secondary");
-      // csv[0].classList.add("btn-success");
-
       var pdf = document.getElementsByClassName("buttons-pdf");
       pdf[0].classList.remove("btn-secondary");
       pdf[0].classList.add("btn-danger");
 
     }, 500)
+}
+
+function ACCTedit()
+{
+  document.getElementById("AddUser").showModal();
 }
 
 
