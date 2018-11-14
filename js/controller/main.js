@@ -372,6 +372,15 @@ function getNotification(){
         mbcount.innerHTML = data.length+" new";
         dtcount.innerHTML = data.length+" new";
 
+      }
+      else{
+        var newdiv = document.createElement("div");
+        newdiv.innerHTML = data[1];
+        content.appendChild(newdiv);
+      }
+    
+    });
+}
  
 
 function SESSIONConfirm()
