@@ -1,17 +1,15 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
-function load()
-{
+function load(){
   SESSIONConfirm();
+
   var branchview = document.getElementById("contentview");
   var loading = document.getElementById("processingbar");
-
-  var wdth = 0;
 
   DSHBRDNavBarBtns();
 
   NAVBARNotification();
-
 }
+
 
 
 /* Buttons */
