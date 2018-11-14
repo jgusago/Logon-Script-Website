@@ -6,7 +6,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
 
 /*
-echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
+echo "Computer Name|User ID|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
 */
 $query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE :hostname AND user not like 'admi%' GROUP BY hostname";
 
