@@ -78,7 +78,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDBranchView":
-        path = "php/functions/sstngs/branch.view.php";
+        path = "php/functions/sttngs/branch.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       //default:path = "php/functions/load/comp_list_fetch.php";
@@ -126,6 +126,11 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
+  }
+  else if(path =="php/functions/sttngs/branch.view.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Branch View Settings";
+    // document.getElementById("dtitle2").innerHTML = "Account Management";
   }
   else
   {
