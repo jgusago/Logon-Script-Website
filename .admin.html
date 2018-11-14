@@ -216,6 +216,56 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+
+    <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content" >
+            <div class="modal-header text center">
+                <h4 class="modal-title" id="myModalLabel">User Registration</h4>
+                <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <input type="text" id="userid" class="form-control validate">
+                <label data-error="Please enter employee id" data-success="right">User ID</label>
+              </div> 
+              <div class="md-form mb-5">
+                  <input type="text" id="username" class="form-control validate">
+                  <label data-error="Required" data-success="right">Name</label>
+              </div> 
+              <div class="md-form mb-5">
+                  <select id="department" class="form-control validate">
+                    <option value="">--Select Department--</option>
+                  </select>
+                  <label data-error="Select department" data-success="right">Department</label>
+              </div> 
+              <div class="md-form mb-5">
+                  <select id="role" class="form-control validate">
+                    <option value="">--Select Role--</option>
+                    <option value="">Administrator</option>
+                    <option value="">Staff</option>
+                  </select>
+                  <label data-error="Select role" data-success="">Role</label>
+              </div>
+              <div class="md-form mb-5">
+                  <select id="role" class="form-control validate">
+                    <option value="">--Select Status--</option>
+                    <option value="">Active</option>
+                    <option value="">Inactive</option>
+                  </select>
+                  <label data-error="Select status" data-success="">Status</label>
+              </div>
+              <div class="md-form mb-5">
+                  <input type="text" value="Aa123456" id="userid" class="form-control" disabled>
+                </div> 
+            </div>
+            <div class="modal-footer d-flexjustify-content-center">
+              <input type="submit" clas="btn btn-primary">Register
+            </div>
+          </div>
+        </div>
+    </div>
+
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
