@@ -434,7 +434,6 @@ function SESSIONConfirm()
       //redirect
       switch (data[1]) {
         case "SUPER ADMIN":
-          window.location.assign("/.superadmin.html");
           break;
         case "ADMINISTRATOR":
           window.location.assign("/.admin.html");
