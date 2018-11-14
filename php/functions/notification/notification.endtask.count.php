@@ -48,6 +48,9 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
         echo "0`<a class='dropdown-item' href='#'>
         <div class='dropdown-message small'>There are no notification</div></a>";
     }
+    elseif($count !== 0 || $count2 !== 0){
+        echo $notif1.$notif2;
+    }
 
 }
 
