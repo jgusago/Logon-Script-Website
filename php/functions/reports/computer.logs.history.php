@@ -2,11 +2,13 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 session_start();
-echo "Hostname|ID|User|Missing Services|Branch|Scan Time";
-if($_SESSION['role'] != "STAFF"){
+echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time";
+if($_SESSION['role'] != "STAFF")
+{
     $query = "SELECT * FROM logonscript.tbl_log_history";
 
-	foreach ($db->query($query) as $row) {
+    foreach ($db->query($query) as $row) 
+    {
 
         $id = $row['userid'];
         $ip = $row['ip_address'];
@@ -22,7 +24,8 @@ if($_SESSION['role'] != "STAFF"){
 
     }
 }
-else{
+else
+{
     $dept = $_SESSION['department'];
     $query2 = "SELECT * FROM logonscript.tbl_log_history where branch like '$dept'";
     foreach ($db->query($query2) as $row) {

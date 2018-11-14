@@ -261,7 +261,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
     }
-    else if(path == "php/functions/reports/history.logs.php")
+    else if(path == "php/functions/reports/computer.logs.history.php")
     {
       document.getElementById("dtitle").innerHTML = "History";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
