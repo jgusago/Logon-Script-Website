@@ -1,12 +1,13 @@
 <?php 
-$parent = $_POST['parent'];
+//$parent = $_POST['parent'];
+$hostname = $_POST['hostname'];
 session_start();
 $department = $_SESSION["department"];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 		echo "Comp ID|Hostname|Processor|HDD Serial|Mac Address|MB manufacturer|MB Product|Scan Time|IP|Status|Remarks|Agent Version|Branch";
 
-		$sql = "SELECT * from tbl_computer_details WHERE hostname like '%$parent%'";
+		$sql = "SELECT * from tbl_computer_details WHERE hostname like '%$hostname%'";
 		foreach ($db->query($sql) as $row) {
 	
 			$compID = $row['compID'] ?: 'null';
