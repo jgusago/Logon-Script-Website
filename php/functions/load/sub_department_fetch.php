@@ -13,7 +13,7 @@ $query = "SELECT *
             ORDER BY tree_filter";
 
 $stmt = $db->prepare($query);
-$stmt->bindParam(":bld",$bld);
+//$stmt->bindParam(":bld",$bld);
 $stmt->execute();
 $result = $stmt->fetchAll();
 
