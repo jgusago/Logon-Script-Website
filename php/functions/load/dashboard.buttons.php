@@ -1,8 +1,14 @@
 <?php
-
-$bld = $_POST["branch"];
 $count = 0;
 
+session_start();
+
+if($_SESSION['department'] !== "STAFF"){
+    $bld = $_POST["branch"];
+}
+else{
+    $bld = $_SESSION['department'];
+}
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT *
             FROM logonscript.tbl_tree
