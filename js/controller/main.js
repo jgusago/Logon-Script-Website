@@ -92,17 +92,21 @@ function DSHBRDContent(parent, linkid)
         path = "";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      case "DSHBRDRecodesBrnchvw":
-        path = "";
+      case "DSHBRDEditHistory":
+        path = "php/functions/reports/history.edit.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDLogsHistory":
+        path = "php/functions/reports/history.logs.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        createnewElement([], card.head, "button", ["btn","btn-default"],["data-target:#AddUser", "href:#AddUser"],"Add User");
-        // "data-toggle:modal", 
+        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
       case "DSHBRDProfile":
-        path = "";
+        path = "php/functions/accounts/profile.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDBranchView":
@@ -123,41 +127,11 @@ function DSHBRDContent(parent, linkid)
       excel[0].classList.remove("btn-secondary");
       excel[0].classList.add("btn-success");
 
-      // var csv = document.getElementsByClassName("buttons-csv");
-      // csv[0].classList.remove("btn-secondary");
-      // csv[0].classList.add("btn-success");
-
       var pdf = document.getElementsByClassName("buttons-pdf");
       pdf[0].classList.remove("btn-secondary");
       pdf[0].classList.add("btn-danger");
 
     }, 500)
-}
-
-function AddUser()
-{
-  var modal = document.getElementById("AddUser");
-  var btn = documnt.getElementById("btnAddUser");
-
-  var span = document.getElementsByClassName("close")[0];
-
-  btn.onClick = function()
-  {
-    modal.style.display ="none";
-  }
-
-  span.onClick = function()
-  {
-    modal.style.display ="none";
-  }
-
-  window.onclick = function(event)
-  {
-    if(event.target == "modal")
-    {
-      modal.style.display = "none";
-    }
-  }
 }
 
 //computerlist Update OnClick

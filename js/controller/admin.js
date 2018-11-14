@@ -93,7 +93,7 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "onclick:AddUser()"],"Add User");
+        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
       case "DSHBRDProfile":
         path = "";
@@ -117,15 +117,16 @@ function DSHBRDContent(parent, linkid)
       excel[0].classList.remove("btn-secondary");
       excel[0].classList.add("btn-success");
 
-      // var csv = document.getElementsByClassName("buttons-csv");
-      // csv[0].classList.remove("btn-secondary");
-      // csv[0].classList.add("btn-success");
-
       var pdf = document.getElementsByClassName("buttons-pdf");
       pdf[0].classList.remove("btn-secondary");
       pdf[0].classList.add("btn-danger");
 
     }, 500)
+}
+
+function ACCTedit()
+{
+  document.getElementById("AddUser").showModal();
 }
 
 

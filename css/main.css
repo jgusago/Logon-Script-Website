@@ -263,7 +263,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 .modal-content
 {
-  margin-top:150px;
+  margin-top:110px;
 }
 .dropdown-menu.dropdown1.show
 {
@@ -289,13 +289,25 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   background-color: #f0ad4e;
   border-color: #eea236;
 }
+#btnRegister
+{
+  width: -webkit-fill-available;
+}
+#myModalLabel
+{
+  padding:10px;
+}
 .modal-footer
 {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 10px;
+  justify-content: center;
+  padding: 15px;
   border-top: 1px solid #e9ecef;
+}
+.modal-body
+{
+  padding:25px;
 }
 .breadcrumb
 {
