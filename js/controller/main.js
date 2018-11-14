@@ -339,12 +339,22 @@ function NAVBARNotification()
   }, 30000);
 }
 
-function getNotification()
+function NAVBARNotification()
 {
+  getNotification();
+  setInterval(function(){
+    getNotification();
+  }, 30000);
+}
+
+function getNotification(){
   content = document.getElementById("NAVBARNotifContent");
+  mbcount = document.getElementById("NOTIFmbcount");
+  dtcount = document.getElementById("NOTIFdtcount");
+  mbcount.innerHTML = "";
+  dtcount.innerHTML = "";
   content.innerHTML = "";
-    $.post("php/functions/notification/notification.endtask.count.php",function(data)
-    {
+    $.post("php/functions/notification/notification.endtask.count.php",function(data){
       var notif = document.createElement("div");
       data = data.split("`");
       if(data[0] !== '0'){
@@ -358,15 +368,11 @@ function getNotification()
           }
           content.appendChild(newdiv);
         }
-      }
-      else{
-        var newdiv = document.createElement("div");
-        newdiv.innerHTML = data[1];
-        content.appendChild(newdiv);
-      }
-    
-    });
-}
+
+        mbcount.innerHTML = data.length+" new";
+        dtcount.innerHTML = data.length+" new";
+
+ 
 
 function SESSIONConfirm()
 {
