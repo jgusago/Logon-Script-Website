@@ -327,19 +327,12 @@ else
                         
   var newtd = document.createElement("td");
                         
-  if(currentdata[1] > 1)
-  {
-                            
-    newtd.setAttribute("rowspan",currentdata[1]);
-                       
-   }
-                        
-  newtr.appendChild(newtd);
-                        
-  var  newdatatext = document.createTextNode(currentdata[0]);
-                        
-  newtd.appendChild(newdatatext);
-                    
+      if(currentdata[1] > 1){       
+      newtd.setAttribute("rowspan",currentdata[1]);
+      }                  
+    newtr.appendChild(newtd);
+    var  newdatatext = document.createTextNode(currentdata[0]);
+    newtd.appendChild(newdatatext);            
     }
   }          
 });
