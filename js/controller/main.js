@@ -142,7 +142,7 @@ function ACCTedit()
   // var cb = document.getElementById("mncb");
   // var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], rightdiv = [], subrdiv = [], rightsidevalue = [], span = [];
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -153,6 +153,11 @@ function ACCTedit()
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
+
+
+  var 
+
+
 
 }
 
@@ -244,11 +249,11 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
-
-    // if(path == "php/functions/tbls/branch.view.php")
-    // {
-    //   document.getElementById("dtitle").innerHTML = "Branch View Settings";
-    // }
+  }
+  else if(path == "php/functions/sttngs/branch.view.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Branch View Settings";
+    document.getElementById("dtitle2").remove();
   }
   else
   {
