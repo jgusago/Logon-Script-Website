@@ -100,7 +100,6 @@ function SESSIONConfirm(){
           case "ADMINISTRATOR":
             break;
           case "STAFF":
-            window.location.assign("/.user.html");
             break;
           default:
           window.location.assign("/index.html");
