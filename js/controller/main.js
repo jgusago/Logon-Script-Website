@@ -147,7 +147,7 @@ function ACCTedit()
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Registration" );
-  createnewElement(rightdiv, divvalue.newelement, "button", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
+  // createnewElement(rightdiv, divvalue.newelement, "button", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
 
   createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
