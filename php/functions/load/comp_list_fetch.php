@@ -3,7 +3,7 @@ session_start();
 $department = $_SESSION["department"];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-        $sql = "SELECT tree_filter from tree_name WHERE tree_filter like '%$department%'";
+        $sql = "SELECT tree_filter from tbl_tree WHERE tree_filter like '%$department%'";
       
 		foreach ($db->query($sql) as $row) {
             $tree_filter = $row['tree_filter'];
