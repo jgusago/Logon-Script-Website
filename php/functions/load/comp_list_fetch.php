@@ -3,13 +3,11 @@ session_start();
 $department = $_SESSION["department"];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-        $sql = "SELECT tree_filter from tbl_tree WHERE tree_filter like '%$department%'";
+        $sql2 = "SELECT * FROM logonscript.tbl_tree where tree_name like '$department'";
       
-		foreach ($db->query($sql) as $row) {
+		foreach ($db->query($sql2) as $row) {
             $tree_filter = $row['tree_filter'];
-			echo "$tree_filter";
-        }
-        
+        }    
 
 		echo "Comp ID|Hostname|Processor|HDD Serial|Mac Address|MB manufacturer|MB Product|Scan Time|IP|Status|Remarks|Agent Version|Branch";
 

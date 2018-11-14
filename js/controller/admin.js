@@ -126,7 +126,7 @@ function DSHBRDContent(parent, linkid)
 
 function ACCTedit()
 {
-  document.getElementById("AddUser").showModal();
+  var adduser = document.getElementById("AddUser").showModal();
 }
 
 
