@@ -136,56 +136,24 @@ function DSHBRDContent(parent, linkid)
 
 function ACCTedit()
 {
-  
-  var divmodal = document.createElement("div");
-  divmodal.classList.add("modal");
-  divmodal.classList.add("fade");
-  divmodal.setAttribute("id", "EditUser");
-  divmodal.setAttribute("tabindex", "-1");
-  divmodal.setAttribute("role", "dialog");
-  divmodal.setAttribute("aria-labelledby", "myModalLabel");
-  divmodal.setAttribute("arial-hidden", "true");
+  OVERLAYenable();
 
-  var divmodaldg = documnet.createElement("div");
-  divmodaldg.classList.add("modal-dialog");
-  divmodaldg.classList.add("modal-md");
-  divmodaldg.setAttribute("role", "document");
+  var ch = document.getElementById("mnch");
+  // var cb = document.getElementById("mncb");
+  // var cf = document.getElementById("mncf");
 
-  divmodal.appendChild(divmodaldg);
- 
-  var divmodalcnt = document.createElement("div");
-  divmodalcnt.classList.add("modal-content");
+  var value = [], divvalue = [], rightdiv = [], subrdiv = [], rightsidevalue = [];
 
-  divmodaldg.appendChild(divmodalcnt);
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+  createnewElement(value, leftdiv.newelement, "h4", ["modal-title"], ["id:myModalLabel"],"Edit User Registration" );
+  createnewElement(rightdiv, divvalue.newelement, "button", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
 
-  var divmodalheader = document.createElement("div");
-  divmodalheader.classList.add("modal-header");
-  divmodalheader.classList.add("text");
-  divmodalheader.classList.add("center");
-
-  divmodalcnt.appendChild(divmodalheader);
-
-  var h4 = document.createElement("h4");
-  h4.classList.add("modal-title");
-  h4.setAttribute("id", "myModalLabel");
-  h4.innerHTML = "Edit User Information";
-  var btnclose = document.createElement("button");
-  btnclose.setAttribute("type", "button");
-  btnclose.setAttribute("data-dismiss", "modal");
-  btnclose.setAttribute("aria-label", "Clsoe");
-  btnclose.classList.add("btn");
-  btnclose.classList.add("btn-default");
+  createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "&times;");
 
 }
-
-
-
-
-
-
-
-
-
 
 
 //computerlist Update OnClick
