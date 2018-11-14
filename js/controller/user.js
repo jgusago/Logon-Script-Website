@@ -81,7 +81,8 @@ function DSHBRDContent(parent, linkid)
         path = "";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      default:
+      default:path = "php/functions/load/comp_list_fetch.php";
+      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
 
     }
     
