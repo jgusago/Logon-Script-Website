@@ -73,8 +73,8 @@ function DSHBRDContent(parent, linkid)
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      case "DSHBRDProfile":
-        path = "";
+      case "DSHBRDDepartmentCompList":
+        path = "php/functions/load/comp_list_fetch.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDBranchView":
