@@ -217,15 +217,16 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       }
   });
 
-  if (path == "php/functions/accounts/accounts.view.php")
+  if (path == "php/functions/tbls/branch.view.php")
   {
     document.getElementById("dtitle").innerHTML = "Branch View Settings";
     document.getElementById("dtitle2").remove();
-  }
-  if (path=="php/functions/tbls/branch.view.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-    document.getElementById("dtitle2").innerHTML = "Account Management";
+
+    if(path == "php/functions/accounts/accounts.view.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+      document.getElementById("dtitle2").innerHTML = "Account Management";
+    }
   }
   else
   {
@@ -339,10 +340,12 @@ function NAVBARNotification()
   }, 30000);
 }
 
-function getNotification(){
+function getNotification()
+{
   content = document.getElementById("NAVBARNotifContent");
   content.innerHTML = "";
-    $.post("php/functions/notification/notification.endtask.count.php",function(data){
+    $.post("php/functions/notification/notification.endtask.count.php",function(data)
+    {
       var notif = document.createElement("div");
       data = data.split("`");
       if(data[0] !== '0'){
