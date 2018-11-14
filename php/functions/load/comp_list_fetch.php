@@ -3,6 +3,15 @@ session_start();
 $department = $_SESSION["department"];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
+        $sql = "SELECT tree_filter from tree_name WHERE tree_filter like '%$department%'";
+      
+		foreach ($db->query($sql) as $row) {
+            $tree_filter = $row['tree_filter'];
+			echo "$tree_filter";
+        }
+        
+        $tree_filter = $_SESSION["tree_filter"];
+
 		echo "Comp ID|Hostname|Processor|HDD Serial|Mac Address|MB manufacturer|MB Product|Scan Time|IP|Status|Remarks|Agent Version|Branch";
 
 		$sql = "SELECT * from tbl_computer_details WHERE hostname like '%$department%'";
