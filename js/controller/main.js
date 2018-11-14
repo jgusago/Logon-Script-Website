@@ -250,11 +250,11 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
   }
-  else if(path == "php/functions/sttngs/branch.view.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Branch View Settings";
-    document.getElementById("dtitle2").remove();
-  }
+  // else if(path == "php/functions/sttngs/branch.view.php")
+  // {
+  //   document.getElementById("dtitle").innerHTML = "Branch View Settings";
+  //   document.getElementById("dtitle2").remove();
+  // }
   else
   {
     if(path == "php/functions/reports/computer.list.php")
