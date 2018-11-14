@@ -93,7 +93,7 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser", "onclick:AddUser()"],"Add User");
+        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
       case "DSHBRDProfile":
         path = "";
