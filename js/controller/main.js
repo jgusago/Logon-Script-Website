@@ -100,7 +100,6 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-target:#AddUser", "href:#AddUser"],"Add User");
         // "data-toggle:modal", 
-        // <a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
       break;
       case "DSHBRDProfile":
         path = "";
