@@ -19,7 +19,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     }
     if ($count != 0){
     $notif1 = "<a class='dropdown-item' href='#' onClick='NOTIFnotconnected'><span class='text-danger'><strong>Disconnected iMonitor</strong></span><span class='small float-right text-muted'>$time</span>
-    <div class='dropdown-message small'>There are $count computers detected! Install imonitor agent!</div></a>
+    <div class='dropdown-message small'>There are $count computers detected! Install imonitor agent.</div></a>
     ";
     }
 
@@ -39,14 +39,14 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 
     if ($count2 != 0){
         $notif2 = "`<a class='dropdown-item' href='#' onClick='NOTIFimonitorupdate'><span class='text-warning'><strong>Agent Need Update</strong></span><span class='small float-right text-muted'>$time</span>
-        <div class='dropdown-message small'>There are $count2 computers detected! Update imonitor agent to higher version. </div></a>
+        <div class='dropdown-message small'>There are $count2 computers detected! Update imonitor agent. </div></a>
         ";
         }
 
     //notif number
     if($count == 0 && $count2 == 0){
         echo "0`<a class='dropdown-item' href='#'>
-        <div class='dropdown-message small'>There are no notification</div></a>";
+        <div class='dropdown-message small'>No notification</div></a>";
     }
     elseif($count !== 0 or $count2 !== 0){
         echo $notif1.$notif2;
@@ -56,7 +56,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 
 else{
     echo "0`<a class='dropdown-item' href='#'>
-    <div class='dropdown-message small'>There are no notification</div></a>";
+    <div class='dropdown-message small'>No notification</div></a>";
 }
 $pdo = null;
 
