@@ -128,13 +128,6 @@ function DSHBRDContent(parent, linkid)
     }, 500)
 }
 
-function ACCTedit()
-{
-  var adduser = document.getElementById("AddUser").showModal();
-}
-
-
-
 //computerlist Update OnClick
 
 function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
