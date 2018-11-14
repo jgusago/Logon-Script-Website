@@ -92,9 +92,6 @@ function DSHBRDContent(parent, linkid)
         path = "";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      case "DSHBRDRecodesBrnchvw":
-        path = "";
-      break;
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
@@ -121,10 +118,6 @@ function DSHBRDContent(parent, linkid)
       var excel = document.getElementsByClassName("buttons-excel");
       excel[0].classList.remove("btn-secondary");
       excel[0].classList.add("btn-success");
-
-      // var csv = document.getElementsByClassName("buttons-csv");
-      // csv[0].classList.remove("btn-secondary");
-      // csv[0].classList.add("btn-success");
 
       var pdf = document.getElementsByClassName("buttons-pdf");
       pdf[0].classList.remove("btn-secondary");
