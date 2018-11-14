@@ -24,7 +24,7 @@
             $remarks = $row['remarks'] ?: 'null';
             $agent_version = $row['agent_version'] ?: 'null';
        
-            echo "#$hostname|$useer|$ip|$Status|$remarks|$agent_version";
+            echo "#$hostname|$user|$ip|$Status|$remarks|$agent_version";
 
 		}
 	?>
