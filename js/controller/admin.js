@@ -93,7 +93,7 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "onclick:AddUser()"],"Add User");
+        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
       case "DSHBRDProfile":
         path = "";
@@ -127,33 +127,6 @@ function DSHBRDContent(parent, linkid)
 
     }, 500)
 }
-
-function AddUser()
-{
-  var modal = document.getElementById("AddUser");
-  var btn = documnt.getElementById("btnAddUser");
-
-  var span = document.getElementsByClassName("close")[0];
-
-  btn.onClick = function()
-  {
-    modal.style.display ="none";
-  }
-
-  span.onClick = function()
-  {
-    modal.style.display ="none";
-  }
-
-  window.onclick = function(event)
-  {
-    if(event.target == "modal")
-    {
-      modal.style.display = "none";
-    }
-  }
-}
-
 
 //computerlist Update OnClick
 
