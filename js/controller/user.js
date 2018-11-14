@@ -11,7 +11,7 @@ function DSHBRDNavBarBtnsSub(){
   var btnclass = "generatebutton";
   parent = document.getElementsByClassName(btnclass);
 
-  $.post("php/functions/load/department_fetch.php",{branch:"root"},function(data){
+  $.post("php/functions/load/sub_department_fetch.php",{branch:"root"},function(data){
 
     newdata = data.split("|");
 
@@ -86,6 +86,46 @@ function DSHBRDContent(parent, linkid)
     }
     
 }
+
+/* Table Call Path with PHP*/
+function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
+  $.post(path, {parent:parent,linkid:linkid}, function(data){
+
+      data = data.split("#");
+      datalength = data.length;
+
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], tablehead, [], [], "th", thfdata);
+      createTableContent([], tablefoot, [], [], "th", thfdata);
+
+      for (var i = 1; i < datalength;i++){
+          newdata = data[i].split("|");
+          createTableContent([], tablebody, [],[], "td", newdata);
+
+          }
+  });
+  if (path == "php/functions/accounts/accounts.view.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Account Management";
+  }
+  else
+  {
+    if(path == "php/functions/reports/computer.list.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer List";
+    }
+    else if(path == "php/functions/reports/computer.logs.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer Logs";
+    }
+    pagination(id);
+  }
+}
+
 function SESSIONConfirm()
 {
     $.post("php/functions/session/session.confirm.php",function(data){
