@@ -239,11 +239,11 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
     }
-    // if(path == "php/functions/reports/history.logs.php")
-    // {
-    //   document.getElementById("dtitle").innerHTML = "History";
-    //   document.getElementById("dtitle2").innerHTML = "Computer Logs";
-    // }
+    else if(path == "php/functions/reports/history.logs.php")
+    {
+      document.getElementById("dtitle").innerHTML = "History";
+      document.getElementById("dtitle2").innerHTML = "Computer Logs";
+    }
 
     pagination(id);
   }
@@ -334,7 +334,8 @@ function CMPLISTdtlstableupdate(parent, linkid)
 function NAVBARNotification()
 {
   getNotification();
-  setInterval(function(){
+  setInterval(function()
+  {
     getNotification();
   }, 30000);
 }
@@ -354,14 +355,18 @@ function getNotification(){
   mbcount.innerHTML = "";
   dtcount.innerHTML = "";
   content.innerHTML = "";
-    $.post("php/functions/notification/notification.endtask.count.php",function(data){
+    $.post("php/functions/notification/notification.endtask.count.php",function(data)
+    {
       var notif = document.createElement("div");
       data = data.split("`");
-      if(data[0] !== '0'){
-        for(var i = 0; i < data.length; i++){
+      if(data[0] !== '0')
+      {
+        for(var i = 0; i < data.length; i++)
+        {
           var newdiv = document.createElement("div");
           newdiv.innerHTML = data[i];
-          if(i !== 0){
+          if(i !== 0)
+          {
             breaker = document.createElement("div");
             breaker.classList.add("dropdown-divider");
             content.appendChild(breaker);
@@ -373,7 +378,8 @@ function getNotification(){
         dtcount.innerHTML = data.length+" new";
 
       }
-      else{
+      else
+      {
         var newdiv = document.createElement("div");
         newdiv.innerHTML = data[1];
         content.appendChild(newdiv);
