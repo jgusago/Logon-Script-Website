@@ -1,13 +1,14 @@
 <?php
 
-$parent = $_POST["parent"];
-$id = $_POST["linkid"];
+
 //$parent = "Marvin(IT)";
 $count = 0;
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 if ($_SESSION['role'] !== "STAFF"){
+    $parent = $_POST["parent"];
+    $id = $_POST["linkid"];
     $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
 }
 else{
