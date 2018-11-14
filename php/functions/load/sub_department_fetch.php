@@ -1,7 +1,7 @@
 <?php
 session_start();
 $department = $_SESSION["department"];
-$bld = $_POST["branch"];
+//$bld = $_POST["branch"];
 $count = 0;
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
