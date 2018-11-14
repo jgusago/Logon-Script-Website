@@ -110,7 +110,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDBranchView":
-        path = "";
+        path = "php/functions/tbls/branch.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       default:
@@ -219,12 +219,13 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 
   if (path == "php/functions/accounts/accounts.view.php")
   {
+    document.getElementById("dtitle").innerHTML = "Branch View Settings";
+    document.getElementById("dtitle2").remove();
+  }
+  if (path=="php/functions/tbls/branch.view.php")
+  {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
-  }
-  if (path=="")
-  {
-
   }
   else
   {
@@ -238,6 +239,12 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs";
     }
+    else if(path == "php/functions/reports/history.logs.php")
+    {
+      document.getElementById("dtitle").innerHTML = "History";
+      document.getElementById("dtitle2").innerHTML = "Computer Logs";
+    }
+
     pagination(id);
   }
 }
