@@ -328,6 +328,10 @@ function NAVBARNotification()
 
 function getNotification(){
   content = document.getElementById("NAVBARNotifContent");
+  mbcount = document.getElementById("NOTIFmbcount");
+  dtcount = document.getElementById("NOTIFdtcount");
+  mbcount.innerHTML = "";
+  dtcount.innerHTML = "";
   content.innerHTML = "";
     $.post("php/functions/notification/notification.endtask.count.php",function(data){
       var notif = document.createElement("div");
@@ -343,6 +347,10 @@ function getNotification(){
           }
           content.appendChild(newdiv);
         }
+
+        mbcount.innerHTML = data.length+" new";
+        dtcount.innerHTML = data.length+" new";
+
       }
       else{
         var newdiv = document.createElement("div");
