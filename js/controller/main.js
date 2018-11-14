@@ -93,7 +93,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDEditHistory":
-        path = "php/functions/reports/history.edit.php";
+        path = "php/functions/reports/computer.edit.history.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDLogsHistory":
@@ -263,8 +263,13 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     }
     else if(path == "php/functions/reports/computer.logs.history.php")
     {
-      document.getElementById("dtitle").innerHTML = "History";
-      document.getElementById("dtitle2").innerHTML = "Computer Logs";
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer Logs History";
+    }
+    else if(path == "php/functions/reports/computer.edit.history.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Edit History";
     }
 
     pagination(id);
