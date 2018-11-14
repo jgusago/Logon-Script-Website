@@ -55,7 +55,8 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 }
 
 else{
-    //do nothing
+
+    
 }
 $pdo = null;
 
