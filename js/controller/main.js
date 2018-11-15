@@ -477,14 +477,12 @@ function CMPLISTdtlstableupdate(parent, linkid)
 function NAVBARNotification()
 {
   getNotification();
-  setInterval(function()
-  {
+  setInterval(function(){
     getNotification();
   }, 30000);
 }
 
-function getNotification()
-{
+function getNotification(){
   content = document.getElementById("NAVBARNotifContent");
   mbcount = document.getElementById("NOTIFmbcount");
   dtcount = document.getElementById("NOTIFdtcount");
@@ -527,8 +525,7 @@ function getNotification()
     });
 }
 
-function NOTIFnotconnected()
-{    
+function NOTIFnotconnected(){    
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
@@ -538,7 +535,7 @@ function NOTIFnotconnected()
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-hover"];
+  var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
@@ -559,8 +556,7 @@ function NOTIFnotconnected()
   });
 }
 
-function NOTIFimonitorupdate()
-{
+function NOTIFimonitorupdate(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
@@ -570,7 +566,7 @@ function NOTIFimonitorupdate()
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-hover"];
+  var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
@@ -601,7 +597,7 @@ function NOTIFallshow(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-hover"];
+  var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.showall.php",function(data){
@@ -621,6 +617,7 @@ function NOTIFallshow(){
 
   });
 }
+
 function logout(){
   $.post("php/functions/session/session.destroy.php",function(data){});
   window.location.assign("/index.html");
