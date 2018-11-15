@@ -440,6 +440,11 @@ function getNotification(){
     });
 }
 
+function NOTIFnotconnected(){
+  content = document.getElementById("contentview");
+  $.post("");
+}
+
 function SESSIONConfirm(){
   $.post("php/functions/session/session.confirm.php",function(data){
 
