@@ -440,9 +440,36 @@ function getNotification(){
     });
 }
 
-function NOTIFnotconnected(){
-  content = document.getElementById("contentview");
-  $.post("");
+function NOTIFnotconnected(){    
+  var view = document.getElementById("contentview");
+  view.innerHTML = "";
+
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
+
+    data = data.split("#");
+    datalength = data.length;
+
+    thfdata = data[0].split("|");
+    var tbheader = [], tbfooter = [];
+    createTableContent([], table.head, [], [], "th", thfdata);
+    createTableContent([], table.foot, [], [], "th", thfdata);
+
+    for (var i = 1; i < datalength;i++){
+        newdata = data[i].split("|");
+        createTableContent([], table.body, [],[], "td", newdata);
+
+        }
+
+  });
 }
 
 function SESSIONConfirm(){
