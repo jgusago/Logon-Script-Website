@@ -18,16 +18,26 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
         $count++;
     }
     if ($count != 0){
-    $notif1 = "<a class='dropdown-item' href='#' onClick='NOTIFnotconnected'><span class='text-danger'><strong>Disconnected iMonitor</strong></span><span class='small float-right text-muted'>$time</span>
-    <div class='dropdown-message small'>There are $count that is not updated or not connected to the server</div></a>
-    ";
+    $notif1 = "NOTIFnotconnected|text-danger|Disconnected iMonitor|$time|There are $count computers detected! Install imonitor agent.";
+    
     }
 
-    $query2 = "SELECT coalesce(MAX(agent_version), 0) AS maxversion FROM logonscript.tbl_computer_details WHERE remarks not like 'Resigned'";
-    foreach ($db->query($query2) as $row){
-    $version = $row['maxversion'];
+$query =  "SELECT * FROM logonscript.tbl_agent_version WHERE type like 'valid'";
+$count = 0;
+$newquery = "";
+foreach ($db->query($query) as $row){
+    $version = $row['version'];
+    if ($count !== 0){
+        $newquery = $newquery." and agent_version != $version";
     }
-    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE agent_version != :version";
+    else{
+        $newquery = "agent_version != $version";
+    }
+    $count++;
+}
+
+    
+    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery";
     $pdo = $db->prepare($query3);
     $pdo->bindParam(":version",$version);
     $pdo->execute();
@@ -38,15 +48,17 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     }
 
     if ($count2 != 0){
-        $notif2 = "`<a class='dropdown-item' href='#' onClick='NOTIFimonitorupdate'><span class='text-warning'><strong>Agent Need Update</strong></span><span class='small float-right text-muted'>$time</span>
-        <div class='dropdown-message small'>There are $count2 computers that need to be confirmed</div></a>
-        ";
+        $notif2 = "`";
+        if($notif1 != 0){
+            $notif2 =  "`";
+        }
+        $notif2 = $notif2."NOTIFimonitorupdate|text-warning|Agent Need Update|$time|There are $count2 computers detected! Update imonitor agent";
         }
 
     //notif number
     if($count == 0 && $count2 == 0){
         echo "0`<a class='dropdown-item' href='#'>
-        <div class='dropdown-message small'>There are no notification</div></a>";
+        <div class='dropdown-message small'>No notification</div></a>";
     }
     elseif($count !== 0 or $count2 !== 0){
         echo $notif1.$notif2;
@@ -55,9 +67,8 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 }
 
 else{
-
-    
-    
+    echo "0`<a class='dropdown-item' href='#'>
+    <div class='dropdown-message small'>No notification</div></a>";
 }
 $pdo = null;
 
