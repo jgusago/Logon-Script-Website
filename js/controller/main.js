@@ -511,7 +511,7 @@ function NOTIFnotconnected(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
@@ -542,7 +542,7 @@ function NOTIFimonitorupdate(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
@@ -573,7 +573,7 @@ function NOTIFallshow(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.showall.php",function(data){
