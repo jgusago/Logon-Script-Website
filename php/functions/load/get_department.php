@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$branch_name=$_GET['branch_name'];
+//$branch_name=$_GET['branch_name'];
 
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
