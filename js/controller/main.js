@@ -217,6 +217,24 @@ function addbranch()
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
+  createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label, divbody.newelement, "label", [],[],"Branch Name");
+  createnewElement(inputbranch, divbody.newelement, "input", ["form-control"], ["type:text", "id:branch", "required"], "");
+
+  createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label1, divbody1.newelement, "label", [],[],"Department");
+  createnewElement(inputdept, divbody1.newelement, "input", ["form-control"], ["type:text", "id:dept", "required"], "");
+
+  createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label2, divbody2.newelement, "label", [],[],"Sub Department");
+  createnewElement(inputsubdept, divbody2.newelement, "input", ["form-control"], ["type:text", "id:subdept", "required"], "");
+ 
+  createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label3, divbody3.newelement, "label", [],[],"VLANS");
+  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
+
+  
+
 }
 // End of Add Branch Modal
 
