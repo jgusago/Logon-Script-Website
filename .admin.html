@@ -241,7 +241,8 @@
     </a>
 
     <!-- Add user Modal -->
-    <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true">
+    <form action="php/connection/user_account_submit.php" method="POST">
+      <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true">
         <div class="modal-dialog modal-md" role="document">
           <div class="modal-content" >
             <div class="modal-header text center">
@@ -259,13 +260,14 @@
               </div> 
               <div class="md-form mb-3">
                   <label class="control-label">Department</label>
-                  <select id="department" class="form-control " required>
+                  <select class="form-control " id="department" name="department" required>
                     <option value="">--Select Department--</option>
+                    <option value="">B2B</option>
                   </select>
               </div> 
               <div class="md-form mb-3">
                   <label class="control-label">Role</label>
-                  <select id="role" class="form-control " required> 
+                  <select class="form-control " id="role" name="role" required> 
                     <option value="">--Select Role--</option>
                     <option value="">Administrator</option>
                     <option value="">Staff</option>
@@ -273,7 +275,7 @@
               </div>
               <div class="md-form mb-3">
                   <label class="control-label">Status</label>
-                  <select id="status" class="form-control" required>
+                  <select class="form-control" id="status" name="status" required>
                     <option value="">--Select Status--</option>
                     <option value="">Active</option>
                     <option value="">Inactive</option>
@@ -281,7 +283,7 @@
               </div>
               <div class="md-form mb-3">
                   <label class="control-label">Password</label>
-                  <input type="password" id="password" class="form-control" required>
+                  <input class="form-control" type="password" id="password" name="password">
               </div> 
             </div>
             <div class="modal-footer d-flexjustify-content-center">
@@ -289,6 +291,7 @@
             </div>
           </div>
         </div>
+      </form>
     </div>
     <!-- End of Add user Modal -->
 
