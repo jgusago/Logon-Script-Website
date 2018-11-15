@@ -12,7 +12,7 @@ if(!isset($error)){
         $row_count = $stmt->rowCount();
         
         if ($row_count > 0){
-            echo "<script>alert('User ID is already exist!'); window.location='admin.html'</script>";
+            echo "<script>alert('User ID is already exist!'); window.location='.admin.html'</script>";
         }
 else
     {
@@ -23,7 +23,7 @@ else
              
         VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
         ($db->query($sql));
-        echo "<script>alert('User Account Save Successfully!'); window.location='admin.html'</script>";
+        echo "<script>alert('User Account Save Successfully!'); window.location='.admin.html'</script>";
     }
 }
 ?>
