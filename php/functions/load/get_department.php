@@ -12,6 +12,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     $stmt->execute();
 
 	while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo '<option>'.$row['branch_name'].'</option>'; 
+        //echo '<option>'.$row['branch_name'].'</option>'; 
+        echo json_encode($sql);
     }            						
 ?>
