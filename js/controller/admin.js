@@ -470,7 +470,7 @@ function SESSIONConfirm(){
   });
 }
 
-/*Number Only*/
+/*Numbers Only*/
 function isNumberKey(evt)
 {
   var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -478,6 +478,20 @@ function isNumberKey(evt)
     return false;
     return true;
 }
+
+/*Letters Only*/
+function LettersrOnly(txt, e) 
+		{
+      var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+      var code;
+          if (window.event)
+						  code = e.keyCode;
+					else
+              code = e.which;
+      var char = keychar = String.fromCharCode(code);
+          if (arr.indexOf(char) == -1)
+          return false;
+    }
 //
 
 /* Background */
