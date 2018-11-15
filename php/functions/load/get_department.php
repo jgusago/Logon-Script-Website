@@ -7,11 +7,11 @@ $branch_name=$_GET['branch_name'];
 //session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   
-    $sql = "select sub_department from tbl_department WHERE branch_name='$branch_name' ORDER BY sub_department";
+    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
     $stmt = $db->prepare($sql);
     $stmt->execute();
 
 	while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo '<option>'.$row['sub_department'].'</option>'; 
+        echo '<option>'.$row['branch_name'].'</option>'; 
     }            						
 ?>
