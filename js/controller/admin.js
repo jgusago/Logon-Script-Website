@@ -185,7 +185,7 @@ function ACCTedit()
 
   createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "disabled", "");
+  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
@@ -215,7 +215,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
     createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
     createnewElement(rightsidevalue, subrdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
     //create Select element
-    createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","On Leave:On Leave", "Vacant:Vacant", "Resigned:Resigned", "Transferred:Transferred", "Old PC name:Old PC name"]);
+    createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","Resigned:Resigned","Transfered:Transferred"," Old PC name:Old PC name","On Leave:On Leave"]);
     //add value
     createnewElement(option, select.select, "option", [], ["hidden:true","selected:true","disabled:true","name:"+remarks], remarks);
 
@@ -477,7 +477,7 @@ function getNotification(){
           newdata = data[i].split("|");
           var newdiv = document.createElement("div");
           var a = [], span =[], strong = [], span2=[], div=[];
-          createnewElement(a, newdiv, "a",["dropdown-item"],["onClick:"+newdata[0], "href:#"],"");
+          createnewElement(a, newdiv, "a",["dropdown-item"],["onClick:"+newdata[0]+"()", "href:#"],"");
           createnewElement(span, a.newelement, "span", [newdata[1]], [], "");
           createnewElement(strong, span.newelement, "Strong", [], [], newdata[2]);
           createnewElement(span2, a.newelement,"span", ["small","float-right","text-muted"],[],newdata[3]);
@@ -507,9 +507,33 @@ function getNotification(){
 
 function NOTIFnotconnected(){    
   var view = document.getElementById("contentview");
-  view.innerHTML = "asdasdas";
+  view.innerHTML = "";
 
+  tableid = idgenerator();
 
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
+    data = data.split("#");
+    datalength = data.length;
+
+    thfdata = data[0].split("|");
+    var tbheader = [], tbfooter = [];
+    createTableContent([], table.head, [], [], "th", thfdata);
+    createTableContent([], table.foot, [], [], "th", thfdata);
+
+    for (var i = 1; i < datalength;i++){
+        newdata = data[i].split("|");
+        createTableContent([], table.body, [],[], "td", newdata);
+
+        }
+
+  });
 }
 
 function SESSIONConfirm(){

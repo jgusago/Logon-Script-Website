@@ -26,6 +26,8 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     foreach ($db->query($query2) as $row){
     $version = $row['maxversion'];
     }
+
+    
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE agent_version != :version";
     $pdo = $db->prepare($query3);
     $pdo->bindParam(":version",$version);
