@@ -23,7 +23,7 @@ else
              
         VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["position"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
         ($db->query($sql));
-        echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
+        echo "<script>alert('User Account Save Successfully!'); window.location='../../admin.html'</script>";
     }
 }
 ?>
