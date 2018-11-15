@@ -7,11 +7,12 @@ $count = 0;
 $newquery = "";
 foreach ($db->query($query) as $row){
     $version = $row['version'];
+    $version2[$count] = $row['version'];
     if ($count !== 0){
         $newquery = $newquery." and agent_version != $version";
     }
     else{
-        $newquery = "agent_version != $version";
+        $newquery = "tbl_computer_details.agent_version != $version";
     }
     $count++;
 }
@@ -20,7 +21,7 @@ foreach ($db->query($query) as $row){
 
 session_start();
 if($_SESSION['role'] != 'STAFF'){
-    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%'";
+    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' and (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running') )";
 }
 else{
     $dept = $_SESSION('department');
@@ -35,7 +36,7 @@ else{
         }
     }
 
-    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' AND hostname LIKE '%$filter%'";
+    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' AND (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running') AND hostname LIKE '%$filter%'";
 }
 
 
@@ -79,8 +80,18 @@ foreach ($result as $row) {
         else{
             $style2 = "bg-danger";
         }
+        for($i = 0; $i < count($version2); $i++){
+            if($version2[$i] == $aversion){
+                $vstyle = "bg-success";
+                $i = count($version2);
+            }
+            else{
+                $vstyle = "bg-warning";
+            }
+        }
+
     }
-    echo "#$hostname|$user|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
+    echo "#$hostname|$user|$ip_address|div`$vstyle`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
 }
 
 ?>

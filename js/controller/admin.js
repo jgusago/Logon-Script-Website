@@ -518,7 +518,7 @@ function NOTIFnotconnected(){
   var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
-  $.post("php/functions/notification/notification.showall.php",function(data){
+  $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
     data = data.split("#");
     datalength = data.length;
 
@@ -580,7 +580,7 @@ function NOTIFallshow(){
   var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
-  $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
+  $.post("php/functions/notification/notification.showall.php",function(data){
     data = data.split("#");
     datalength = data.length;
 
