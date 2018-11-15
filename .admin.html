@@ -20,6 +20,9 @@
   <!-- Custom styles for this template-->
   <link href="css/main.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
 </head>
 
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="load()">
@@ -264,7 +267,13 @@
                     <option value="">--Select Department--</option>
                   </select>
 
-								</script>
+							<!-- FOR DEPARTMENT -->
+              <script type="text/javascript">
+                $("#userid").change(function() {
+                  $("#department").load("get_department.php?branch_name=" + $("#department").val());
+                });
+              </script>
+              <!-- END -->
 
               </div> 
               <div class="md-form mb-3">
