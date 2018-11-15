@@ -137,6 +137,7 @@ function DSHBRDContent(parent, linkid)
     }, 500)
 }
 
+// Modal for Edit User
 function ACCTedit()
 {
   OVERLAYenable();
@@ -148,16 +149,17 @@ function ACCTedit()
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = []
   divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [], divfooter = [], button =[];
 
+  // Modal Header
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Registration" );
-  // createnewElement(rightdiv, divvalue.newelement, "button", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
+  // Modal Body
   createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],[],"User ID");
   createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "required"], "");
@@ -190,10 +192,33 @@ function ACCTedit()
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
   createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required", "disabled"], "");
 
+
+  // Modal Footer
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
+// End of Edit Modal
 
+// Modal for Add Branch
+function addbranch()
+{
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var div = [], leftdiv = [], rightdiv =[], rightsidevalue =[], span = [] ;
+
+  createnewElement(div, ch, "div", ["row"], [], "");
+  createnewElement(leftdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(rightdiv, div.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(rightsidevalue, rightdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  span.newelement.innerHTML = "&times;";
+
+}
+// End of Add Branch Modal
 
 //computerlist Update OnClick
 
