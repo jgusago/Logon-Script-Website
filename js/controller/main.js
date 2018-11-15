@@ -146,8 +146,15 @@ function ACCTedit()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = []
-  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [], divfooter = [], button =[];
+  var value = [], divvalue = [], leftdiv = [], 
+  subrdiv = [], rightsidevalue = [], span = [], 
+  divbody = [], label = [], inputuid = [], 
+  divbody1 = [], inputname = [], label1 = [], 
+  divbody2= [], label2 = [], select = [], option = []
+  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = 
+  [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = 
+  [], divbody5=[], label5 = [], inputpwd = [], divfooter = [], button =[]
+  divbody7 = [], checkbox = [], label7 =[], inputcb =[];
 
   // Modal Header
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -190,7 +197,12 @@ function ACCTedit()
 
   createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required", "disabled"], "");
+  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
+
+  createnewElement(divbody7, cb, "div",["md-form", "mb-3"], [], "");
+  createnewElement(checkbox, divbody5.newelement, "checkbox", [],[],"");
+  createnewElement(label7, divbody5.newelement, "label", [], [], "");
+  createnewElement(inputcb, label7.newelement, [],["type:checkbox", "onclick:resetPass()"],"Reset Password");
 
 
   // Modal Footer
@@ -198,6 +210,19 @@ function ACCTedit()
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
 // End of Edit Modal
+
+function resetPass()
+{
+    var x = document.getElementById("password");
+		if (x.type === "password")
+		{
+			x.type = "text";
+		} 
+		else 
+		{
+			x.type = "password";
+		}
+}
 
 // Modal for Add Branch
 function addbranch()
@@ -239,7 +264,7 @@ function addbranch()
   createnewElement(inputvlan, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
 
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label4, divbody4.newelement, "label", [],[],"Imonitor Server IP");
+  createnewElement(label4, divbody4.newelement, "l", [],[],"Imonitor Server IP");
   createnewElement(inputsip, divbody4.newelement, "input", ["form-control"], ["name:serverip", "id:serverip", "required"], "");
 
   
