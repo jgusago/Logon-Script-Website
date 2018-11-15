@@ -154,7 +154,7 @@ function ACCTedit(userid, name, department, position, status, role)
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [], userid+" | "+name);
    
-  $.post("php/functions/accounts/accounts_view.php",{userid:userid, name:name},function(newdata){
+  $.post("php/functions/accounts/accounts_view.php",{userid:userid, name:name, department:department},function(newdata){
   
     newdata = newdata.split("!!");
   
