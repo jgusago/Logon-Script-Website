@@ -200,7 +200,7 @@ function ACCTedit(userid, name, department, position, status, role)
 
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
-  createnewElement(select, divbody2.newelement, "input", ["form-control"], ["type:text", "name:department", "id:department", "required"], "");
+  createnewElement(select, divbody2.newelement, "input", ["form-control"], ["type:text", "name:department", "id:department", "required", "value:"+department], "");
   // createnewElement(option, select.newelement, "option", [],[],"" );
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
