@@ -36,7 +36,6 @@ foreach($result as $row){
     $count++;
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
-    
     $user = $row['user'];
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $status = "On-line";

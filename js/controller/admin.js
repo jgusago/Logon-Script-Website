@@ -466,12 +466,10 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
   $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
-
-    
-  var view = document.getElementById("contentview");
-  view.innerHTML = data;
+  //var view = document.getElementById("contentview");
+  //view.innerHTML = data;
   });
-  //CMPLISTdtlstableupdate(grandparent,linkid);
+  CMPLISTdtlstableupdate(grandparent,linkid);
   //DSHBRDRecordsComplist
   //CMPLISTdtlsupdate(linkid);
   OVERLAYdisable();
