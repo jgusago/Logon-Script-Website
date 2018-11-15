@@ -241,7 +241,7 @@ function createSelection(value, parent, classes, attribute, data){
   for (var k = 0; k < data.length; k++){
     newdata = data[k].split(":");
     option = document.createElement("option");
-    option.setAttribute("name",newdata[0]);
+    option.setAttribute("value",newdata[0]);
     optionnode = document.createTextNode(newdata[1]);
     option.appendChild(optionnode);
     selection.appendChild(option);
