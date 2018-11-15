@@ -22,13 +22,22 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     
     }
 
-    $query2 = "SELECT coalesce(MAX(agent_version), 0) AS maxversion FROM logonscript.tbl_computer_details WHERE remarks not like 'Resigned'";
-    foreach ($db->query($query2) as $row){
-    $version = $row['maxversion'];
+$query =  "SELECT * FROM logonscript.tbl_agent_version WHERE type like 'valid'";
+$count = 0;
+$newquery = "";
+foreach ($db->query($query) as $row){
+    $version = $row['version'];
+    if ($count !== 0){
+        $newquery = $newquery." and agent_version != $version";
     }
+    else{
+        $newquery = "agent_version != $version";
+    }
+    $count++;
+}
 
     
-    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE agent_version != :version";
+    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery";
     $pdo = $db->prepare($query3);
     $pdo->bindParam(":version",$version);
     $pdo->execute();

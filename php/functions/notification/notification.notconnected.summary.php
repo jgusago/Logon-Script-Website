@@ -22,17 +22,12 @@ else{
     $sql = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE '%$filter%' AND connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running'";
 }
 
-echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
+echo "Computer Name|User|IP Address|iMonitor Status|Server Status|Branch|Scan Time";
 foreach ($db->query($sql) as $row){
     $hostname = $row['hostname'] ?: 'null';
     $user = $row['user'] ?: 'null';
-    $domain_name = $row['domain_name'] ?: 'null';
     $ip_address = $row['ip_address'] ?: 'null';
-    $ip_date_modefied = $row['ip_date_modified'] ?: 'null';
     $iMonitor_Status = $row['iMonitor_Status'] ?: 'Not Found';
-    $services = $row['services'] ?: 'All Running';
-    $sysSetting_File = $row['sysSetting_File'] ?: 'Not Found';
-    $serverIP = $row['serverIP'] ?: 'Not Found';
     $connections_status = $row['connection_status'] ?: 'Not Connected';
     $branch = $row['branch'] ?: 'Scan Failed';
     $scan_time = $row['scan_time'] ?: 'null';
@@ -46,7 +41,21 @@ foreach ($db->query($sql) as $row){
 
     $scan_time = date_format($newdate, "M-d-Y H:i");
     }
-    echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
+    if($connections_status == "ESTABLISHED"){
+        $style = "bg-success";
+    }
+    else{
+        $style = "bg-danger";
+    }
+    if($iMonitor_Status != "End Task"){
+        $style2 ="bg-success";
+    }
+    else{
+        $style2 = "bg-danger";
+    }
+
+
+    echo "#$hostname|$user|$ip_address|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
 
 }
 
