@@ -6,7 +6,7 @@ $newquery = "";
 foreach ($db->query($query) as $row){
     $version = $row['version'];
     if ($count !== 0){
-        $newquery = $newquery." or agent_version != $version";
+        $newquery = $newquery." and agent_version != $version";
     }
     else{
         $newquery = "agent_version != $version";
