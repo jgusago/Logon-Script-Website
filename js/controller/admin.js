@@ -193,7 +193,7 @@ function ACCTedit()
 
 //computerlist Update OnClick
 
-function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
+function COMPLISTupdate(hostname, remarks, value,  branch, linkid)
 {
   OVERLAYenable();
 
@@ -251,7 +251,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+grandparent+"\",\""+linkid+"\")"], "update" );
 }
 
 /* Table Call Path with PHP*/
