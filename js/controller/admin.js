@@ -474,8 +474,12 @@ function getNotification(){
       data = data.split("`");
       if(data[0] !== '0'){
         for(var i = 0; i < data.length; i++){
+
+          
           var newdiv = document.createElement("div");
           newdiv.innerHTML = data[i];
+
+
           if(i !== 0){
             breaker = document.createElement("div");
             breaker.classList.add("dropdown-divider");
@@ -511,7 +515,6 @@ function NOTIFnotconnected(){
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
-
     data = data.split("#");
     datalength = data.length;
 
