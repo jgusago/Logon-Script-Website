@@ -502,7 +502,8 @@ function getNotification()
     });
 }
 
-function NOTIFnotconnected(){    
+function NOTIFnotconnected()
+{    
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
@@ -533,7 +534,8 @@ function NOTIFnotconnected(){
   });
 }
 
-function NOTIFimonitorupdate(){
+function NOTIFimonitorupdate()
+{
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
