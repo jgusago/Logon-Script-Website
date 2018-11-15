@@ -238,7 +238,8 @@ function addbranch()
   divbody1 =[], label1 =[],inputdept = [];
   divbody2 =[], label2 =[],inputsubdept = [], 
   divbody3=[], label3 =[], inputvlan=[],
-  divbody4=[], label4=[], inputsip=[] ;
+  divbody4=[], label4=[], inputsip=[] 
+  divfooter =[], button = [];
 
   createnewElement(div, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -266,6 +267,9 @@ function addbranch()
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "l", [],[],"Imonitor Server IP");
   createnewElement(inputsip, divbody4.newelement, "input", ["form-control"], ["name:serverip", "id:serverip", "required"], "");
+
+  createnewElement(divfooter, cf, "div", [], [], "");
+  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-primary"], ["value:Add Branch Info", "type:submit", "id:btnAdd", "name: btnAdd"], "");
 
   
 
@@ -482,7 +486,8 @@ function NAVBARNotification()
   }, 30000);
 }
 
-function getNotification(){
+function getNotification()
+{
   content = document.getElementById("NAVBARNotifContent");
   mbcount = document.getElementById("NOTIFmbcount");
   dtcount = document.getElementById("NOTIFdtcount");
@@ -525,7 +530,8 @@ function getNotification(){
     });
 }
 
-function NOTIFnotconnected(){    
+function NOTIFnotconnected()
+{    
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
