@@ -208,7 +208,9 @@ function addbranch()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var div = [], leftdiv = [], rightdiv =[], rightsidevalue =[], span = [] ;
+  var div = [], leftdiv = [], rightdiv =[], rightsidevalue =[], span = [], 
+  divbody =[], label = [], inputbranch= [];
+  // divbody1 =[], label1 =[],inputdept = [], divbody2 =[], label2 = [], inputsubdept = [], divbody3=[], label3 =[], inputvlan=[] ;
 
   createnewElement(div, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -221,17 +223,17 @@ function addbranch()
   createnewElement(label, divbody.newelement, "label", [],[],"Branch Name");
   createnewElement(inputbranch, divbody.newelement, "input", ["form-control"], ["type:text", "id:branch", "required"], "");
 
-  createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label1, divbody1.newelement, "label", [],[],"Department");
-  createnewElement(inputdept, divbody1.newelement, "input", ["form-control"], ["type:text", "id:dept", "required"], "");
+  // createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
+  // createnewElement(label1, divbody1.newelement, "label", [],[],"Department");
+  // createnewElement(inputdept, divbody1.newelement, "input", ["form-control"], ["type:text", "id:dept", "required"], "");
 
-  createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label2, divbody2.newelement, "label", [],[],"Sub Department");
-  createnewElement(inputsubdept, divbody2.newelement, "input", ["form-control"], ["type:text", "id:subdept", "required"], "");
+  // createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
+  // createnewElement(label2, divbody2.newelement, "label", [],[],"Sub Department");
+  // createnewElement(inputsubdept, divbody2.newelement, "input", ["form-control"], ["type:text", "id:subdept", "required"], "");
  
-  createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label3, divbody3.newelement, "label", [],[],"VLANS");
-  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
+  // createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
+  // createnewElement(label3, divbody3.newelement, "label", [],[],"VLANS");
+  // createnewElement(inputvlan, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
 
   
 
