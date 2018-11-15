@@ -1,5 +1,4 @@
 <?php
-error_reporting(0);
 
 session_start();
 
@@ -13,22 +12,18 @@ if(!isset($error)){
         $row_count = $stmt->rowCount();
         
         if ($row_count > 0){
-            echo "<script>alert('Username exist!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
+            echo "<script>alert('User ID is already exist!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
         }
 else
     {
-        $hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
- 
+        //$hashed_password = password_hash($_POST["password2"],PASSWORD_DEFAULT);
+        $password = md5(sha1($password));
+
         $sql = "INSERT INTO tbl_user (userid, name, department, position, role, status, password)
              
-        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["position"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$hashed_password')";
+        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["position"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
         ($db->query($sql));
         echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";
     }
 }
-        /*$sql = "INSERT INTO tbl_user (userid, name, department, position, role, password)
-         
-        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["position"]."', '".$_POST["role"]."', '".$_POST["password2"]=md5($_POST['password'])."')";
-        ($db->query($sql));
-        echo "<script>alert('User Account Save Successfully!'); window.location='../../iMonitor_Website/admin_users.php'</script>";*/
 ?>
