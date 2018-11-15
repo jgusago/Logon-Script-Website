@@ -1,10 +1,9 @@
 <?php
 
-error_reporting(0);
-
+session_start();
 $branch_name=$_GET['branch_name'];
 
-//session_start();
+
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   
     $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
@@ -12,7 +11,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     $stmt->execute();
 
 	while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-        //echo '<option>'.$row['branch_name'].'</option>'; 
-        echo json_encode($sql);
+        echo '<option>'.$row['branch_name'].'</option>';
     }            						
 ?>
