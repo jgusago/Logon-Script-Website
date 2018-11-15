@@ -145,7 +145,8 @@ function ACCTedit()
    var cb = document.getElementById("mncb");
   // var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [];
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = []
+  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], divbody5=[], label5 = [], inputpwd =[];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -165,6 +166,27 @@ function ACCTedit()
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
   createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:username", "required"], "");
 
+  createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
+  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "id:department", "required"], "--Select Department--");
+  createnewElement(option, select.newelement, "option", [],[],"" );
+
+  createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
+  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required"], "--Select Role--");
+  createnewElement(option1, select1.newelement, "option", [],["value:SUPER ADMIN"],"Super admin" );
+  createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
+  createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
+
+  createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label4, divbody4.newelement, "label", [],[],"Role");
+  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required"], "--Select Status--");
+  createnewElement(options1, select2.newelement, "option", [],["value:Active"],"Active" );
+  createnewElement(options2, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
+
+  createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
+  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
 
 }
