@@ -158,7 +158,7 @@ function ACCTedit()
 
   createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],[],"User ID");
-  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "required"], "");
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "disabled:true"], "");
 
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
