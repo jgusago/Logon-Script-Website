@@ -265,6 +265,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   width: -webkit-fill-available;
 }
+#btnAdd
+{
+  width: -webkit-fill-available;
+}
 .modal-content
 {
   margin-top:80px;

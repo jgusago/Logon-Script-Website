@@ -233,7 +233,7 @@ function addbranch()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var div = [], leftdiv = [], rightdiv =[], rightsidevalue =[], span = [], 
+  var div = [], leftdiv = [], value =[], rightdiv =[], rightsidevalue =[], span = [], 
   divbody =[], label = [], inputbranch= []
   divbody1 =[], label1 =[],inputdept = [];
   divbody2 =[], label2 =[],inputsubdept = [], 
@@ -243,6 +243,7 @@ function addbranch()
 
   createnewElement(div, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"Add Branch Details" );
   createnewElement(rightdiv, div.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, rightdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
