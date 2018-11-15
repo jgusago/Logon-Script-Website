@@ -659,6 +659,59 @@ function LettersrOnly(e)
           return false;
     }
 
+//User Account Update OnClick
+
+function USERACCOUNTupdate(userid, name, tabledata, grandparent, linkid)
+{
+OVERLAYenable();
+
+//get mini window ID;
+var ch = document.getElementById("mnch");
+var cb = document.getElementById("mncb");
+var cf = document.getElementById("mncf");
+
+var value = [], divvalue = [], leftdiv = [], rightdiv = [], rightsidevalue = [], select = [], subrdiv = [], option = [];
+//whole div
+createnewElement(divvalue, ch, "div", ["row"], [], "");
+//leftside div
+createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+  //leftside contents
+  createnewElement(value, leftdiv.newelement, "h4", [], [], userid+" | "+name);
+ 
+$.post("php/functions/accounts/get_user_profile.php",{userid:userid},function(newdata){
+
+  newdata = newdata.split("!!");
+
+  for(var d = 0; d < newdata.length; d++){
+
+  var table = [];
+  var tableid = idgenerator();
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, cb, classes, attributes);
+  data = newdata[d].split("#");
+  datalength = data.length;
+
+  thfdata = data[0].split("|");
+  var tbheader = [], tbfooter = [];
+  createTableContent([], table.head, [], [], "th", thfdata);
+
+  for (var i = 1; i < datalength;i++){
+      contentdata = data[i].split("|");
+      createTableContent([], table.body, [],[], "td", contentdata);
+
+      }
+
+  }//newdata for close
+});
+
+//footer
+var updatebutton = [], footerdiv = [];
+var footerclass = ["d-flex","flex-row-reverse"];
+createnewElement(footerdiv, cf, "div", footerclass, [], "" );
+createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
+createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:USERACCOUNTupdate","onclick:USERACCOUNTupdate(\""+userid+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "Save" );
+}
 //
 
 /* Background */
