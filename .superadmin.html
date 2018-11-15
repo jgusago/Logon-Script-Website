@@ -175,7 +175,7 @@
             <div class="dropdown-divider"></div>
             <div id="NAVBARNotifContent"></div>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all alerts</a>
+            <a class="dropdown-item small" href="#" onclick="NOTIFallshow()">View all notification</a>
           </div>
         </li>
 
@@ -242,7 +242,7 @@
     </a>
 
     <!-- Add user Modal -->
-    <form action="php/connection/user_account_submit.php" method="POST">
+    <form action="php/connection/user_account_submit2.php" method="POST">
       <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true">
         <div class="modal-dialog modal-md" role="document">
           <div class="modal-content" >
@@ -270,6 +270,7 @@
                   <label class="control-label">Role</label>
                   <select class="form-control " id="role" name="role" required> 
                     <option value="">--Select Role--</option>
+                    <option value="SUPER ADMIN">Super admin</option>
                     <option value="ADMINISTRATOR">Administrator</option>
                     <option value="STAFF">Staff</option>
                   </select>
