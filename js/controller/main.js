@@ -145,7 +145,7 @@ function ACCTedit()
   // var cb = document.getElementById("mncb");
   // var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [];
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -156,6 +156,16 @@ function ACCTedit()
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
+
+  createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label, divbody.newelement, "label", [],[],"User ID");
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "required"], "");
+
+  createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
+  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:username", "required"], "");
+
+
 
 }
 
