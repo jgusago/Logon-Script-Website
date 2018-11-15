@@ -480,7 +480,7 @@ function isNumberKey(evt)
 }
 
 /*Letters Only*/
-function LettersrOnly(txt, e) 
+function LettersrOnly(e) 
 		{
       var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
       var code;
