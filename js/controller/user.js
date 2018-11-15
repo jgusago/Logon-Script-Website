@@ -152,7 +152,7 @@ createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6","
   createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
   //create Select element
-  createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","Resigned:Resigned","Transfered:Transferred"," Old PC name:Old PC name","On Leave:On Leave"]);
+  createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","On Leave:On Leave", "Vacant:Vacant", "Resigned:Resigned","Transferred:Transferred","Old PC name:Old PC name"]);
   //add value
   createnewElement(option, select.select, "option", [], ["hidden:true","selected:true","disabled:true","name:"+remarks], remarks);
 
