@@ -1,5 +1,7 @@
 <?php
+
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+
 $query =  "SELECT * FROM logonscript.tbl_agent_version WHERE type like 'valid'";
 $count = 0;
 $newquery = "";
@@ -13,9 +15,12 @@ foreach ($db->query($query) as $row){
     }
     $count++;
 }
+
+//--------------------------------------------------------------------------------------------------------------------------------//
+
 session_start();
 if($_SESSION['role'] != 'STAFF'){
-    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery";
+    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%'";
 }
 else{
     $dept = $_SESSION('department');
@@ -28,12 +33,11 @@ else{
         else{
             $filter = "123123123123";
         }
-        
-
     }
 
-    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery AND hostname LIKE '%$filter%'";
+    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' AND hostname LIKE '%$filter%'";
 }
+
 
 echo "Computer Name|User|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time";
 
@@ -78,4 +82,5 @@ foreach ($result as $row) {
     }
     echo "#$hostname|$user|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
 }
+
 ?>
