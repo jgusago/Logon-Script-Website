@@ -472,17 +472,16 @@ function getNotification(){
     $.post("php/functions/notification/notification.endtask.count.php",function(data){
       var notif = document.createElement("div");
       data = data.split("`");
-      if(data[0] !== '0'){
+      if(data[0] != '0'){
         for(var i = 0; i < data.length; i++){
-          newdata = data[0].split("|");
+          newdata = data[i].split("|");
           var newdiv = document.createElement("div");
           var a = [], span =[], strong = [], span2=[], div=[];
-          createnewElement(a, newdiv, ["dropdown-item"],["onClick:"+newdata[0], "href:#"],"a","");
-          createnewElement(span, a.newelement, [newdata[1]], [], span, "");
-          createnewElement(strong, span.newelement, [], [], "Strong", newdata[2]);
-          createnewElement(span2, a.newelement, ["small","float-right","text-muted"],[],"span",newdata[3]);
-          createnewElement(div, a.newelement,["dropdown-message","small"],[],)
-          newdiv.innerHTML = data[i];
+          createnewElement(a, newdiv, "a",["dropdown-item"],["onClick:"+newdata[0], "href:#"],"");
+          createnewElement(span, a.newelement, "span", [newdata[1]], [], "");
+          createnewElement(strong, span.newelement, "Strong", [], [], newdata[2]);
+          createnewElement(span2, a.newelement,"span", ["small","float-right","text-muted"],[],newdata[3]);
+          createnewElement(div, a.newelement,"div",["dropdown-message","small"],[],newdata[4]);
 
 
           if(i !== 0){
@@ -508,33 +507,9 @@ function getNotification(){
 
 function NOTIFnotconnected(){    
   var view = document.getElementById("contentview");
-  view.innerHTML = "";
+  view.innerHTML = "asdasdas";
 
-  tableid = idgenerator();
 
-  var card = [];
-  createCard(card, view, [], []);
-
-  var table = [];
-  var classes = ["table","table-bordered"];
-  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-  createTable(table, card.body, classes, attributes);
-  $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
-    data = data.split("#");
-    datalength = data.length;
-
-    thfdata = data[0].split("|");
-    var tbheader = [], tbfooter = [];
-    createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
-
-    for (var i = 1; i < datalength;i++){
-        newdata = data[i].split("|");
-        createTableContent([], table.body, [],[], "td", newdata);
-
-        }
-
-  });
 }
 
 function SESSIONConfirm(){
