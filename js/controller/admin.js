@@ -696,6 +696,7 @@ function LettersrOnly(e)
           if (arr.indexOf(char) == -1)
           return false;
     }
+
 //
 
 /* Background */
