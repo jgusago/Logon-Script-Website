@@ -136,7 +136,7 @@ function DSHBRDContent(parent, linkid)
 
 //User Account Update OnClick
 
-function ACCTedit(userid, name, department, status, role)
+function ACCTedit(userid, name, department, position, status, role)
 {
   OVERLAYenable();
 
@@ -154,7 +154,7 @@ function ACCTedit(userid, name, department, status, role)
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [], userid+" | "+name);
    
-  $.post("php/functions/accounts/get_user_profile.php",{userid:userid},function(newdata){
+  $.post("php/functions/accounts/accounts_view.php",{userid:userid, name:name},function(newdata){
   
     newdata = newdata.split("!!");
   
@@ -196,7 +196,7 @@ function ACCTedit(userid, name, department, status, role)
 
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
-  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:username", "required"], "");
+  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:name", "required"], "");
 
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
@@ -211,7 +211,7 @@ function ACCTedit(userid, name, department, status, role)
   createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label4, divbody4.newelement, "label", [],[],"Role");
+  createnewElement(label4, divbody4.newelement, "label", [],[],"Status");
   createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required"], "");
   createnewElement(options1, select1.newelement, "option", [],["value:"],"" );
   createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
