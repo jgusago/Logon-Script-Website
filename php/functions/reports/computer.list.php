@@ -36,6 +36,8 @@ foreach($result as $row){
     $count++;
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
+    
+    $user = $row['user'];
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $status = "On-line";
     else{
@@ -61,7 +63,7 @@ foreach($result as $row){
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
+    echo "#$hostname|$ip_address|$status|$remarks|$agent_version|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
 
 
 
