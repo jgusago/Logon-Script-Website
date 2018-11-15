@@ -15,11 +15,7 @@
 			$status = $row['status'] ?: 'null';
 			$role = $row['role'] ?: 'null';
 
-<<<<<<< HEAD
-			echo "#$userid|$name|$department|$position|$status|$role|button`btn~btn-primary`onclick:ACCTedit('$userid','$name','$department','$position','$status','$role')`Edit";
-=======
 			echo "#$userid|$name|$department|$position|$status|$role|button`btn~btn-primary`onclick:ACCTedit(\"$userid\", \"$name\",\"$department\", \"$status\",\"$role\")`Edit";
->>>>>>> 60b6fcfe02ba2a69008523ce988c847bb7d7bcf5
 		}
 	$db = null;
 ?>
