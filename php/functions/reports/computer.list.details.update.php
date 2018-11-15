@@ -10,15 +10,17 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 //Check if already have a record
 if ($update == "true"){
-    $query = "UPDATE tbl_computer_details SET remarks=?, agent_version=? WHERE hostname=?";
+    $query = "UPDATE logonscript.tbl_computer_details SET `remarks`=:remarks, `agent_version`=:versions WHERE (`hostname` = :hostname)";
     $pdo = $db->prepare($query);
-    $pdo->execute([$remarks,$version,$hostname]);
+    $pdo->execute(['remarks'=>$remarks,'versions'=>$version,'hostname'=>$hostname]);
 }
 else{
     $query2 = "INSERT INTO tbl_computer_details (hostname, processor, hdd_Serial, mac_Address, mb_manufacturer, mb_product, scan_time, ip, status, remarks, agent_version) VALUES (?, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ?, ?)";
     $pdo2 = $db->prepare($query2);
     $pdo2->execute([$hostname, $remarks, $version]);
 }
+
+echo "ll $update";
 $pdo = null;
 $pdo2 = null;
 ?>
