@@ -431,13 +431,16 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
 
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){});
+  $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
+
+    
+  var view = document.getElementById("contentview");
+  view.innerHTML = data;
+  });
   //CMPLISTdtlstableupdate(grandparent,linkid);
   //DSHBRDRecordsComplist
   //CMPLISTdtlsupdate(linkid);
   OVERLAYdisable();
-  var view = document.getElementById("contentview");
-    view.innerHTML = remarks;
 }
 
 function CMPLISTdtlstableupdate(parent, linkid){
