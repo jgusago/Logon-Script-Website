@@ -13,12 +13,30 @@ foreach ($db->query($query) as $row){
     }
     $count++;
 }
+session_start();
+if($_SESSION['role'] != 'STAFF'){
+    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery";
+}
+else{
+    $dept = $_SESSION('department');
+    $sql = "SELECT * FROM tbl_tree where tbl_name LIKE '$dept'";
+    foreach($db->query($sql) as $row){
+        
+        if(isset($row['filter'])){
+            $filter = $row['filter'];
+        }
+        else{
+            $filter = "123123123123";
+        }
+        
 
+    }
 
-echo $count." ".$version." ".$newquery;
+    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery AND hostname LIKE '%$filter%'";
+}
 
+echo "Computer Name|User|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time";
 
-$query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery";
 $pdo = $db->prepare($query3);
 $pdo->bindParam(":version",$version);
 $pdo->execute();
@@ -27,6 +45,37 @@ $result = $pdo->fetchAll();
 foreach ($result as $row) {
     $hostname = $row['hostname'];
     $aversion = $row['agent_version'];
-    echo "<br>$hostname $aversion";
+    $newsql = "SELECT * FROM logonscript.tbl_log WHERE hostname like '$hostname' and user not like 'admin%'";
+    foreach($db->query($newsql) as $row){
+        $user = $row['user'] ?: 'null';
+        $ip_address = $row['ip_address'] ?: 'null';
+        $iMonitor_Status = $row['iMonitor_Status'] ?: 'Not Found';
+        $connections_status = $row['connection_status'] ?: 'Not Connected';
+        $branch = $row['branch'] ?: 'Scan Failed';
+        $scan_time = $row['scan_time'] ?: 'null';
+        $date = $scan_time;
+
+        $date = explode(" ",$scan_time);
+
+        $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
+
+        if ($newdate = new DateTime($date[0]." ".$date[1])){
+
+        $scan_time = date_format($newdate, "M-d-Y H:i");
+        }
+        if($connections_status == "ESTABLISHED"){
+            $style = "bg-success";
+        }
+        else{
+            $style = "bg-danger";
+        }
+        if($iMonitor_Status != "End Task"){
+            $style2 ="bg-success";
+        }
+        else{
+            $style2 = "bg-danger";
+        }
+    }
+    echo "#$hostname|$user|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
 }
 ?>
