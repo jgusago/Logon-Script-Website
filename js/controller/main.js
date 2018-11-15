@@ -76,7 +76,8 @@ function DSHBRDContent(parent, linkid)
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
-    switch (linkdata) {
+    switch (linkdata) 
+    {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
@@ -112,7 +113,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDAgentVersion":
-        path = "";
+        path = "php/functions/sttngs/settings.agent.version.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       default:
@@ -246,17 +247,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
-
-  //   if(path == "php/functions/sttngs/branch.view.php")
-  //   {
-  //     document.getElementById("dtitle").innerHTML = "Branch View Settings";
-  //     document.getElementById("dtitle2").remove();
-  //   }
-  // }
-  // if(path == "php/functions/accounts/profile.view.php")
-  // {
-  //   document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-  //   document.getElementById("dtitle2").innerHTML = "Profile Settings";
   }
   else
   {
