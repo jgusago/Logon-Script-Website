@@ -158,7 +158,7 @@ function ACCTedit()
 
   createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],[],"User ID");
-  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "required"], "");
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "disabled:true"], "");
 
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
@@ -191,9 +191,52 @@ function ACCTedit()
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
 
+function addbranch()
+{
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var div = [], leftdiv = [], rightdiv =[], rightsidevalue =[], span = [], 
+  divbody =[], label = [], inputbranch= []
+  divbody1 =[], label1 =[],inputdept = [];
+  divbody2 =[], label2 =[],inputsubdept = [], 
+  divbody3=[], label3 =[], inputvlan=[] ;
+
+  createnewElement(div, ch, "div", ["row"], [], "");
+  createnewElement(leftdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(rightdiv, div.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(rightsidevalue, rightdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  span.newelement.innerHTML = "&times;";
+
+  createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label, divbody.newelement, "label", [],[],"Branch Name");
+  createnewElement(inputbranch, divbody.newelement, "input", ["form-control"], ["type:text", "id:branch", "required"], "");
+
+  createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label1, divbody1.newelement, "label", [],[],"Department");
+  createnewElement(inputdept, divbody1.newelement, "input", ["form-control"], ["type:text", "id:dept", "required"], "");
+
+  createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label2, divbody2.newelement, "label", [],[],"Sub Department");
+  createnewElement(inputsubdept, divbody2.newelement, "input", ["form-control"], ["type:text", "id:subdept", "required"], "");
+ 
+  createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label3, divbody3.newelement, "label", [],[],"VLANS");
+  createnewElement(inputvlan, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
+
+  createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label3, divbody3.newelement, "label", [],[],"VLANS");
+  createnewElement(inputvlan, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
+
+}
+
 //computerlist Update OnClick
 
-function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
+function COMPLISTupdate(hostname, remarks, value,  branch, linkid)
 {
   OVERLAYenable();
 
@@ -251,7 +294,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+grandparent+"\",\""+linkid+"\")"], "update" );
 }
 
 /* Table Call Path with PHP*/
@@ -409,6 +452,7 @@ function OVERLAYdisable()
         cf.innerHTML = "";
 
 }
+
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
 
   var value = document.getElementById(id).value;
@@ -435,7 +479,8 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
   OVERLAYdisable();
 }
 
-function CMPLISTdtlstableupdate(parent, linkid){
+function CMPLISTdtlstableupdate(parent, linkid)
+{
     var view = document.getElementById("contentview");
     view.innerHTML = "";
 
@@ -462,7 +507,8 @@ function NAVBARNotification()
   }, 30000);
 }
 
-function getNotification(){
+function getNotification()
+{
   content = document.getElementById("NAVBARNotifContent");
   mbcount = document.getElementById("NOTIFmbcount");
   dtcount = document.getElementById("NOTIFdtcount");
@@ -518,7 +564,7 @@ function NOTIFnotconnected(){
   var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
-  $.post("php/functions/notification/notification.showall.php",function(data){
+  $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
     data = data.split("#");
     datalength = data.length;
 
@@ -580,7 +626,7 @@ function NOTIFallshow(){
   var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
-  $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
+  $.post("php/functions/notification/notification.showall.php",function(data){
     data = data.split("#");
     datalength = data.length;
 

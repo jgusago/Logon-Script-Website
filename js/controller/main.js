@@ -146,8 +146,15 @@ function ACCTedit()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = []
-  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [], divfooter = [], button =[];
+  var value = [], divvalue = [], leftdiv = [], 
+  subrdiv = [], rightsidevalue = [], span = [], 
+  divbody = [], label = [], inputuid = [], 
+  divbody1 = [], inputname = [], label1 = [], 
+  divbody2= [], label2 = [], select = [], option = []
+  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = 
+  [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = 
+  [], divbody5=[], label5 = [], inputpwd = [], divfooter = [], button =[]
+  divbody7 = [], checkbox = [], label7 =[], inputcb =[];
 
   // Modal Header
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -162,7 +169,7 @@ function ACCTedit()
   // Modal Body
   createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],[],"User ID");
-  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "required"], "");
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "disabled:true"], "");
 
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
@@ -182,7 +189,7 @@ function ACCTedit()
   createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label4, divbody4.newelement, "label", [],[],"Role");
+  createnewElement(label4, divbody4.newelement, "label", [],[],"Status");
   createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required"], "");
   createnewElement(options1, select1.newelement, "option", [],["value:"],"" );
   createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
@@ -190,7 +197,12 @@ function ACCTedit()
 
   createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required", "disabled"], "");
+  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
+
+  createnewElement(divbody7, cb, "div",["md-form", "mb-3"], [], "");
+  createnewElement(checkbox, divbody5.newelement, "checkbox", [],[],"");
+  createnewElement(label7, divbody5.newelement, "label", [], [], "");
+  createnewElement(inputcb, label7.newelement, [],["type:checkbox", "onclick:resetPass()"],"Reset Password");
 
 
   // Modal Footer
@@ -198,6 +210,19 @@ function ACCTedit()
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
 // End of Edit Modal
+
+function resetPass()
+{
+    var x = document.getElementById("password");
+		if (x.type === "password")
+		{
+			x.type = "text";
+		} 
+		else 
+		{
+			x.type = "password";
+		}
+}
 
 // Modal for Add Branch
 function addbranch()
@@ -211,7 +236,9 @@ function addbranch()
   var div = [], leftdiv = [], rightdiv =[], rightsidevalue =[], span = [], 
   divbody =[], label = [], inputbranch= []
   divbody1 =[], label1 =[],inputdept = [];
-  // divbody1 =[], label1 =[],inputdept = [], divbody2 =[], label2 = [], inputsubdept = [], divbody3=[], label3 =[], inputvlan=[] ;
+  divbody2 =[], label2 =[],inputsubdept = [], 
+  divbody3=[], label3 =[], inputvlan=[],
+  divbody4=[], label4=[], inputsip=[] ;
 
   createnewElement(div, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -228,13 +255,17 @@ function addbranch()
   createnewElement(label1, divbody1.newelement, "label", [],[],"Department");
   createnewElement(inputdept, divbody1.newelement, "input", ["form-control"], ["type:text", "id:dept", "required"], "");
 
-  // createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
-  // createnewElement(label2, divbody2.newelement, "label", [],[],"Sub Department");
-  // createnewElement(inputsubdept, divbody2.newelement, "input", ["form-control"], ["type:text", "id:subdept", "required"], "");
+  createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label2, divbody2.newelement, "label", [],[],"Sub Department");
+  createnewElement(inputsubdept, divbody2.newelement, "input", ["form-control"], ["type:text", "id:subdept", "required"], "");
  
-  // createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
-  // createnewElement(label3, divbody3.newelement, "label", [],[],"VLANS");
-  // createnewElement(inputvlan, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
+  createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label3, divbody3.newelement, "label", [],[],"VLANS");
+  createnewElement(inputvlan, divbody3.newelement, "input", ["form-control"], ["name:vlans", "id:vlans", "required"], "");
+
+  createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label4, divbody4.newelement, "l", [],[],"Imonitor Server IP");
+  createnewElement(inputsip, divbody4.newelement, "input", ["form-control"], ["name:serverip", "id:serverip", "required"], "");
 
   
 
@@ -452,15 +483,6 @@ function NAVBARNotification()
   }, 30000);
 }
 
-function NAVBARNotification()
-{
-  getNotification();
-  setInterval(function(){
-    getNotification();
-  }, 30000);
-}
-
-
 function getNotification()
 {
   content = document.getElementById("NAVBARNotifContent");
@@ -469,18 +491,22 @@ function getNotification()
   mbcount.innerHTML = "";
   dtcount.innerHTML = "";
   content.innerHTML = "";
-    $.post("php/functions/notification/notification.endtask.count.php",function(data)
-    {
+    $.post("php/functions/notification/notification.endtask.count.php",function(data){
       var notif = document.createElement("div");
       data = data.split("`");
-      if(data[0] !== '0')
-      {
-        for(var i = 0; i < data.length; i++)
-        {
+      if(data[0] != '0'){
+        for(var i = 0; i < data.length; i++){
+          newdata = data[i].split("|");
           var newdiv = document.createElement("div");
-          newdiv.innerHTML = data[i];
-          if(i !== 0)
-          {
+          var a = [], span =[], strong = [], span2=[], div=[];
+          createnewElement(a, newdiv, "a",["dropdown-item"],["onClick:"+newdata[0]+"()", "href:#"],"");
+          createnewElement(span, a.newelement, "span", [newdata[1]], [], "");
+          createnewElement(strong, span.newelement, "Strong", [], [], newdata[2]);
+          createnewElement(span2, a.newelement,"span", ["small","float-right","text-muted"],[],newdata[3]);
+          createnewElement(div, a.newelement,"div",["dropdown-message","small"],[],newdata[4]);
+
+
+          if(i !== 0){
             breaker = document.createElement("div");
             breaker.classList.add("dropdown-divider");
             content.appendChild(breaker);
@@ -492,8 +518,7 @@ function getNotification()
         dtcount.innerHTML = data.length+" new";
 
       }
-      else
-      {
+      else{
         var newdiv = document.createElement("div");
         newdiv.innerHTML = data[1];
         content.appendChild(newdiv);
@@ -502,6 +527,100 @@ function getNotification()
     });
 }
 
+function NOTIFnotconnected()
+{    
+  var view = document.getElementById("contentview");
+  view.innerHTML = "";
+
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-hover"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
+    data = data.split("#");
+    datalength = data.length;
+
+    thfdata = data[0].split("|");
+    var tbheader = [], tbfooter = [];
+    createTableContent([], table.head, [], [], "th", thfdata);
+    createTableContent([], table.foot, [], [], "th", thfdata);
+
+    for (var i = 1; i < datalength;i++){
+        newdata = data[i].split("|");
+        createTableContent([], table.body, [],[], "td", newdata);
+
+        }
+
+  });
+}
+
+function NOTIFimonitorupdate()
+{
+  var view = document.getElementById("contentview");
+  view.innerHTML = "";
+
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-hover"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
+    data = data.split("#");
+    datalength = data.length;
+
+    thfdata = data[0].split("|");
+    var tbheader = [], tbfooter = [];
+    createTableContent([], table.head, [], [], "th", thfdata);
+    createTableContent([], table.foot, [], [], "th", thfdata);
+
+    for (var i = 1; i < datalength;i++){
+        newdata = data[i].split("|");
+        createTableContent([], table.body, [],[], "td", newdata);
+
+        }
+
+  });
+}
+
+function NOTIFallshow(){
+  var view = document.getElementById("contentview");
+  view.innerHTML = "";
+
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-hover"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  $.post("php/functions/notification/notification.showall.php",function(data){
+    data = data.split("#");
+    datalength = data.length;
+
+    thfdata = data[0].split("|");
+    var tbheader = [], tbfooter = [];
+    createTableContent([], table.head, [], [], "th", thfdata);
+    createTableContent([], table.foot, [], [], "th", thfdata);
+
+    for (var i = 1; i < datalength;i++){
+        newdata = data[i].split("|");
+        createTableContent([], table.body, [],[], "td", newdata);
+
+        }
+
+  });
+}
 function logout(){
   $.post("php/functions/session/session.destroy.php",function(data){});
   window.location.assign("/index.html");
@@ -612,6 +731,29 @@ createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:butt
  }
 
 }
+
+/*Numbers Only*/
+function isNumberKey(evt)
+{
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+    return false;
+    return true;
+}
+
+/*Letters Only*/
+function LettersrOnly(e) 
+		{
+      var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+      var code;
+          if (window.event)
+						  code = e.keyCode;
+					else
+              code = e.which;
+      var char = keychar = String.fromCharCode(code);
+          if (arr.indexOf(char) == -1)
+          return false;
+    }
 //
 
 /* Background */
