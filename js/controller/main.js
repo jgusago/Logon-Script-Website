@@ -111,6 +111,10 @@ function DSHBRDContent(parent, linkid)
         path = "php/functions/sttngs/settings.branch.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
+      case "DSHBRDAgentVersion":
+        path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
       default:
 
     }
@@ -243,16 +247,16 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
 
-    if(path == "php/functions/sttngs/branch.view.php")
-    {
-      document.getElementById("dtitle").innerHTML = "Branch View Settings";
-      document.getElementById("dtitle2").remove();
-    }
-  }
-  if(path == "php/functions/accounts/profile.view.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-    document.getElementById("dtitle2").innerHTML = "Profile Settings";
+  //   if(path == "php/functions/sttngs/branch.view.php")
+  //   {
+  //     document.getElementById("dtitle").innerHTML = "Branch View Settings";
+  //     document.getElementById("dtitle2").remove();
+  //   }
+  // }
+  // if(path == "php/functions/accounts/profile.view.php")
+  // {
+  //   document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+  //   document.getElementById("dtitle2").innerHTML = "Profile Settings";
   }
   else
   {

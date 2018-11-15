@@ -88,11 +88,20 @@
           </ul>
         </li>
 
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View">
-            <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">
-              <i class="fa fa-fw fa-cog"></i>
-              <span class="nav-link-text">Branch View Settings</span>
-            </a>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"  href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">Settings</span>
+          </a>
+
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View">
+              <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">Branch View</a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View">
+              <a class="nav-link" href="#" id="DSHBRDAgentVersion" onclick="DSHBRDContent('','DSHBRDAgentVersion')" data="DSHBRDAgentVersion">Agent Version</a>
+            </li>
+          </ul>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">

@@ -73,7 +73,8 @@ function DSHBRDContent(parent, linkid)
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
-    switch (linkdata) {
+    switch (linkdata) 
+    {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
@@ -84,11 +85,16 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsHistory":
-      path = "";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-      case "DSHBRDRecodesBrnchvw":
         path = "";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDEditHistory":
+        path = "php/functions/reports/computer.edit.history.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDLogsHistory":
+        path = "php/functions/reports/computer.logs.history.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
@@ -96,15 +102,15 @@ function DSHBRDContent(parent, linkid)
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
       case "DSHBRDProfile":
-        path = "";
+        path = "php/functions/accounts/profile.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDBranchView":
-        path = "";
+        path = "php/functions/sttngs/settings.branch.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      case "DSHBRDLogsHistory":
-        path = "php/functions/reports/computer.logs.history.php";
+      case "DSHBRDAgentVersion":
+        path = "";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       default:
