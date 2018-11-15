@@ -417,9 +417,14 @@ function getNotification(){
       data = data.split("`");
       if(data[0] !== '0'){
         for(var i = 0; i < data.length; i++){
-
-          
+          newdata = data[0].split("|");
           var newdiv = document.createElement("div");
+          var a = [], span =[], strong = [], span2=[], div=[];
+          createnewElement(a, newdiv, ["dropdown-item"],["onClick:"+newdata[0], "href:#"],"a","");
+          createnewElement(span, a.newelement, [newdata[1]], [], span, "");
+          createnewElement(strong, span.newelement, [], [], "Strong", newdata[2]);
+          createnewElement(span2, a.newelement, ["small","float-right","text-muted"],[],"span",newdata[3]);
+          createnewElement(div, a.newelement,["dropdown-message","small"],[],)
           newdiv.innerHTML = data[i];
 
 
