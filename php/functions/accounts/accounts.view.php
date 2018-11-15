@@ -3,7 +3,12 @@
 
 	echo "User ID|Name|Department|Position|Status|Role|Option";
 
-	$sql = "SELECT userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
+	if ($_SESSION['role'] !== "ADMINISTRATOR") {
+
+		$sql = "SELECT userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
+
+	else
+		$sql = "SELECT userid, name, department, position, status, role FROM tbl_user";
 
 		foreach ($db->query($sql) as $row) 
 		{
@@ -17,5 +22,6 @@
 
 			echo "#$userid|$name|$department|$position|$status|$role|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$department\",\"$status\",\"$role\")`Edit";
 		}
+	}
 	$db = null;
 ?>
