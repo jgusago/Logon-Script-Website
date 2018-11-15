@@ -731,6 +731,29 @@ createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:butt
  }
 
 }
+
+/*Numbers Only*/
+function isNumberKey(evt)
+{
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+    return false;
+    return true;
+}
+
+/*Letters Only*/
+function LettersrOnly(e) 
+		{
+      var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+      var code;
+          if (window.event)
+						  code = e.keyCode;
+					else
+              code = e.which;
+      var char = keychar = String.fromCharCode(code);
+          if (arr.indexOf(char) == -1)
+          return false;
+    }
 //
 
 /* Background */
