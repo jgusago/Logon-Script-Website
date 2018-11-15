@@ -248,11 +248,11 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       document.getElementById("dtitle").innerHTML = "Branch View Settings";
       document.getElementById("dtitle2").remove();
     }
-    else if(path == "php/functions/accounts/profile.view.php")
-    {
-      document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-      document.getElementById("dtitle2").innerHTML = "Profile Settings";
-    }
+  }
+  if(path == "php/functions/accounts/profile.view.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Profile Settings";
   }
   else
   {
