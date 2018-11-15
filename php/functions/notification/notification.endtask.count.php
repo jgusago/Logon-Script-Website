@@ -18,9 +18,8 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
         $count++;
     }
     if ($count != 0){
-    $notif1 = "<a class='dropdown-item' href='#' onClick='NOTIFnotconnected'><span class='text-danger'><strong>Disconnected iMonitor</strong></span><span class='small float-right text-muted'>$time</span>
-    <div class='dropdown-message small'>There are $count computers detected! Install imonitor agent.</div></a>
-    ";
+    $notif1 = "NOTIFnotconnected|text-danger|Disconnected iMonitor|$time|There are $count computers detected! Install imonitor agent.";
+    
     }
 
     $query2 = "SELECT coalesce(MAX(agent_version), 0) AS maxversion FROM logonscript.tbl_computer_details WHERE remarks not like 'Resigned'";
@@ -38,6 +37,11 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
     }
 
     if ($count2 != 0){
+        $notif2 = "";
+        if($notif1 != 0){
+            $notif2 =  "`";
+        }
+        $notif2 = $notif2."NOTIFimonitorupdate|text-warning|Agent Need Update|$time|There are $count2 computers detected! Update imonitor agent";
         $notif2 = "`<a class='dropdown-item' href='#' onClick='NOTIFimonitorupdate'><span class='text-warning'><strong>Agent Need Update</strong></span><span class='small float-right text-muted'>$time</span>
         <div class='dropdown-message small'>There are $count2 computers detected! Update imonitor agent. </div></a>
         ";
