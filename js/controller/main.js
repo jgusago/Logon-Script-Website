@@ -600,13 +600,14 @@ function NOTIFallshow(){
 
   tableid = idgenerator();
 
-  var card = [];
-  createCard(card, view, [], []);
+  // var card = [];
+  // createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-  createTable(table, card.body, classes, attributes);
+  // createTable(table, card.body, classes, attributes);
+  createTable(table, classes, attributes);
   $.post("php/functions/notification/notification.showall.php",function(data){
     data = data.split("#");
     datalength = data.length;
