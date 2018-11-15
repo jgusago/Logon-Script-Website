@@ -248,6 +248,11 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
   }
+  if (path == "php/functions/sttngs/settings.agent.version.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Settings";
+    document.getElementById("dtitle2").innerHTML = "Agent Version";
+  }
   else
   {
     if(path == "php/functions/reports/computer.list.php")
@@ -518,6 +523,13 @@ createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:butt
 var ig2 = [];
 createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
+
+ if (path == "php/functions/sttngs/settings.branch.view.php")
+ {
+  document.getElementById("dtitle").innerHTML = "Settings";
+  document.getElementById("dtitle2").innerHTML = "Branch View";
+ }
+
 }
 //
 
