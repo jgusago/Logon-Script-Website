@@ -191,7 +191,7 @@ function ACCTedit()
   createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
   createnewElement(divfooter, cf, "div", [], [], "");
-  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Register", "type:submit", "id:btnRegsiter", "name: btnRegister"], "");
+  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
 
 
