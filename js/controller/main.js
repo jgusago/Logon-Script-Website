@@ -142,9 +142,9 @@ function ACCTedit()
 {
   OVERLAYenabled();
 
-  var ch = document.getElementById("mnch");
-  var cb = document.getElementById("mncb");
-  var cf = document.getElementById("mncf");
+  var ch = document.getElementById("ch");
+  var cb = document.getElementById("cb");
+  var cf = document.getElementById("cf");
 
   var value = [], divvalue = [], leftdiv = [], 
   subrdiv = [], rightsidevalue = [], span = [], 
