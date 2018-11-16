@@ -154,8 +154,8 @@ function ACCTedit()
   divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], 
   divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], 
   divbody5=[], label5 = [], inputpwd = [], 
-  // divfooter = [], button = [];
-   divbody7 = [], checkbox = [], label7 =[], inputcb =[];
+  divbody7 = [], checkbox = [], label7 =[], inputcb =[]
+  divfooter = [], button = [];
 
   // Modal Header
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -200,8 +200,7 @@ function ACCTedit()
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
   createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
-  createnewElement(divbody7, cb, "div",["md-form", "mb-3"], [], "");
-  createnewElement(checkbox, divbody7.newelement, "checkbox", [], [],"");
+  createnewElement(divbody7, cb, "div",["md-form", "mb-3", "checkbox"], [], "");
   createnewElement(label7, divbody7.newelement, "label", [], [], "");
   createnewElement(inputcb, label7.newelement, [],["type:checkbox", "onclick:resetPass()"],"Reset Password");
 
