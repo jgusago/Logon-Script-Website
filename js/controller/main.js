@@ -140,11 +140,11 @@ function DSHBRDContent(parent, linkid)
 // Modal for Edit User
 function ACCTedit()
 {
-  OVERLAYenabled();
+  OVERLAYenable();
 
-  var ch = document.getElementById("ch");
-  var cb = document.getElementById("cb");
-  var cf = document.getElementById("cf");
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
 
   var value = [], divvalue = [], leftdiv = [], 
   subrdiv = [], rightsidevalue = [], span = [], 
@@ -163,7 +163,7 @@ function ACCTedit()
   createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Registration" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
-  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisabled()"], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
@@ -425,30 +425,6 @@ function OVERLAYdisable()
       var ch = document.getElementById("mnch");
       var cb = document.getElementById("mncb");
       var cf = document.getElementById("mncf");
-
-      //Clear Previous Text
-      ch.innerHTML = "";
-      cb.innerHTML = "";
-      cf.innerHTML = "";
-}
-
-function OVERLAYenabled()
-{
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("miniwindows").style.display = "block";
-}
-
-function OVERLAYdisabled()
-{
-
-  document.getElementById("overlays").style.display = "none";
-  document.getElementById("loaderdiv").style.display = "none";
-  document.getElementById("miniwindows").style.display = "none";
-
-      //get mini window ID;
-      var ch = document.getElementById("ch");
-      var cb = document.getElementById("cb");
-      var cf = document.getElementById("cf");
 
       //Clear Previous Text
       ch.innerHTML = "";
