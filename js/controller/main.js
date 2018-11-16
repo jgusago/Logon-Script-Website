@@ -140,7 +140,7 @@ function DSHBRDContent(parent, linkid)
 // Modal for Edit User
 function ACCTedit()
 {
-  OVERLAYenable();
+  OVERLAYenabled();
 
   var ch = document.getElementById("mnch");
   var cb = document.getElementById("mncb");
@@ -163,7 +163,7 @@ function ACCTedit()
   createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Registration" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
-  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisabled()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
@@ -228,9 +228,9 @@ function addbranch()
 {
   OVERLAYenable();
 
-  var ch = document.getElementById("mnch");
-  var cb = document.getElementById("mncb");
-  var cf = document.getElementById("mncf");
+  var ch = document.getElementById("ch");
+  var cb = document.getElementById("cb");
+  var cf = document.getElementById("cf");
 
   var div = [], leftdiv = [], value =[], rightdiv =[], rightsidevalue =[], span = [], 
   divbody =[], label = [], inputbranch= []
@@ -430,8 +430,32 @@ function OVERLAYdisable()
       ch.innerHTML = "";
       cb.innerHTML = "";
       cf.innerHTML = "";
-
 }
+
+function OVERLAYenabled()
+{
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("miniwindows").style.display = "block";
+}
+
+function OVERLAYdisabled()
+{
+
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("loaderdiv").style.display = "none";
+  document.getElementById("miniwindows").style.display = "none";
+
+      //get mini window ID;
+      var ch = document.getElementById("ch");
+      var cb = document.getElementById("cb");
+      var cf = document.getElementById("cf");
+
+      //Clear Previous Text
+      ch.innerHTML = "";
+      cb.innerHTML = "";
+      cf.innerHTML = "";
+}
+
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
 
 var value = document.getElementById(id).value;
