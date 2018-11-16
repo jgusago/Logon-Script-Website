@@ -22,10 +22,9 @@ else{
     $sql = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE '%$filter%' AND connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running' group by hostname";
 }
 
-echo "Computer Name|User|IP Address|iMonitor Status|Server Status|Branch|Scan Time";
+echo "Computer Name|IP Address|iMonitor Status|Server Status|Branch|Scan Time";
 foreach ($db->query($sql) as $row){
     $hostname = $row['hostname'] ?: 'null';
-    $user = $row['user'] ?: 'null';
     $ip_address = $row['ip_address'] ?: 'null';
     $iMonitor_Status = $row['iMonitor_Status'] ?: 'Not Found';
     $connections_status = $row['connection_status'] ?: 'Not Connected';
@@ -52,10 +51,11 @@ foreach ($db->query($sql) as $row){
     }
     else{
         $style2 = "bg-danger";
+        
     }
 
 
-    echo "#$hostname|$user|$ip_address|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
+    echo "#$hostname|$ip_address|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
 
 }
 

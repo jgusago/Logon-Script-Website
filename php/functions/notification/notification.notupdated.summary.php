@@ -35,7 +35,7 @@ else{
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery AND hostname LIKE '%$filter%' group by hostname";
 }
 
-echo "Computer Name|User|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time";
+echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time";
 
 $pdo = $db->prepare($query3);
 $pdo->bindParam(":version",$version);
@@ -47,7 +47,6 @@ foreach ($result as $row) {
     $aversion = $row['agent_version'];
     $newsql = "SELECT * FROM logonscript.tbl_log WHERE hostname like '$hostname' and user not like 'admin%' group by hostname";
     foreach($db->query($newsql) as $row){
-        $user = $row['user'] ?: 'null';
         $ip_address = $row['ip_address'] ?: 'null';
         $iMonitor_Status = $row['iMonitor_Status'] ?: 'Not Found';
         $connections_status = $row['connection_status'] ?: 'Not Connected';
@@ -76,6 +75,6 @@ foreach ($result as $row) {
             $style2 = "bg-danger";
         }
     }
-    echo "#$hostname|$user|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
+    echo "#$hostname|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
 }
 ?>
