@@ -172,7 +172,7 @@ function createList(value, parent, listtype, length, ulclass, ulattribute){
   }
   for (var k = 0; k < length; k++){
     var li = document.createElement("li");
-    ul.appendChild(li);5
+    ul.appendChild(li);
     lilist.push(li);
   }
 

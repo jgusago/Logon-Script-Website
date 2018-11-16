@@ -36,6 +36,7 @@ function getchild($parent){
     $treeresult = $pdo2->fetchAll();
 foreach($treeresult as $row){
     $name = $row['tree_name'];
+    $number = $row['tree_level'];
     $childcount = colcount($name,0);
     $trtd = colbreaker($parent,$name,0);
     if($parent == "root" && $countroom == 0){
@@ -44,7 +45,7 @@ foreach($treeresult as $row){
     else{
         echo "||";
     }
-    echo "$name;$childcount;$trtd";
+    echo "$name;$childcount;$trtd;$number";
     getchild($name);
     $countroom++;
 }

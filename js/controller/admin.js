@@ -6,8 +6,8 @@ function load(){
     var loading = document.getElementById("processingbar");
 
     DSHBRDNavBarBtns();
-
     NAVBARNotification();
+    Departmentlist();
 }
 
 /* Buttons */
@@ -344,63 +344,59 @@ function DSHBRDContentBranchSettings()
 {
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
-  var card = document.createElement("div");
-  card.classList.add("card");
-  card.classList.add("mb-3");
-  card.classList.add("contentdataview");
-  card.setAttribute("id","branchviewsettings");
-  contentview.appendChild(card);
-    cardhead = document.createElement("div");
-  cardhead.classList.add("card-header");
-  card.appendChild(cardhead);
-  cardheadtxt = document.createTextNode("Branch View Settings");
-  cardhead.appendChild(cardheadtxt);
-  cardbody = document.createElement("div");
-  cardbody.classList.add("card-body");
-  card.appendChild(cardbody);
-$.post("php/functions/sttngs/settings.branch.view.php",function(data){
-  var newtable = document.createElement("table");
-  newtable.classList.add("table");
-  newtable.classList.add("table-bordered");
-  cardbody.appendChild(newtable);
-  data = data.split("||");
-  datalength = data.length;
-for(var arraccount = 0; arraccount < datalength; arraccount++){            
-    var currentdata = data[arraccount].split(";");
-    if (currentdata[2] == "tr"){
-      var newtr = document.createElement("tr");
-      newtable.appendChild(newtr);    
-      var newtd = document.createElement("td");         
-      if(currentdata[1] > 1){
-        newtd.setAttribute("rowspan",currentdata[1]);
-      }      
-      newtr.appendChild(newtd);
-      var  newdatatext = document.createTextNode(currentdata[0]);                    
-      newtd.appendChild(newdatatext);                
-    }                
-    else{    
-      var newtd = document.createElement("td");
-      if(currentdata[1] > 1){       
-        newtd.setAttribute("rowspan",currentdata[1]);
-      }                  
-      newtr.appendChild(newtd);
-      var  newdatatext = document.createTextNode(currentdata[0]);
-      newtd.appendChild(newdatatext);            
-    }
-  }          
-});
+  tableid = idgenerator();
+  var card = [];
+  createCard(card, contentview, [], []);
+  createnewElement([],card.head,"div",[],[],"Branch Setting");
 
-cardfoot = document.createElement("div");
-cardfoot.classList.add("card-footer");
-card.appendChild(cardfoot);
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  $.post("php/functions/sttngs/settings.branch.view.php",function(data){
+    data = data.split("||");
+    for(var arraccount = 0; arraccount < data.length; arraccount++){ 
+      var currentdata = data[arraccount].split(";");
+
+      if (currentdata[2] == "tr"){
+        var tr = [];
+        createnewElement(tr,table.body,"tr",[],[],"");
+      }
+      var td = [], link = [], i = [], newdata = [];
+      createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
+      createnewElement(newdata, td.newelement, "span",["label", "label-default"],[],currentdata[0]);
+      createLink(link, td.newelement, "", [], ["role:button", "href:#"]);
+      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
+    }
+  });
+
 var toolbar = [];
-createnewElement(toolbar,cardfoot,"div",["btn-toolbar","mr-3"],[],"");
+createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
 var ig = [];
 createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
 var ig2 = [];
 createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
+}
+
+function addbranch(){
+
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  /* ---------- HEADER ---------- 
+  var hspan = [], hstrong = [];
+  createnewElement(hspan, ch, "span", [], [], "");
+  createnewElement(hstrong, hspan.newelement, "strong", [], [], "Add Branch");
+*/
+  var rightsidevalue = [], span = [];
+  createnewElement(rightsidevalue, ch, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-edit"], [], "");
+
 }
 /*End of Branch View*/
 /*End of Branch View*/
@@ -639,6 +635,18 @@ function NOTIFallshow(){
         }
 
   });
+}
+
+function Departmentlist(){
+  var select = document.getElementById("department");
+  $.post("php/functions/load/add.user.list.php",function(data){
+    data = data.split("|");
+    for (var i = 0; i < data.length; i++){
+      var option = [];
+      createnewElement(option, select, "option", [], ["value:"+data[i]],data[i]);
+    }
+  });
+
 }
 
 function SESSIONConfirm(){
