@@ -153,8 +153,8 @@ function ACCTedit()
   divbody2= [], label2 = [], select = [], option = []
   divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], 
   divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], 
-  divbody5=[], label5 = [], inputpwd = [], divfooter = [], button = [],
-  divbody7 = [], checkbox = [], label7 =[], inputcb =[];
+  divbody5=[], label5 = [], inputpwd = [], divfooter = [], button = [];
+  // divbody7 = [], checkbox = [], label7 =[], inputcb =[];
 
   // Modal Header
   createnewElement(divvalue, ch, "div", ["row"], [], "");
