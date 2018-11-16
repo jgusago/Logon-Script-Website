@@ -9,7 +9,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 if ($_SESSION['role'] !== "STAFF"){
     $parent = $_POST["parent"];
     $id = $_POST["linkid"];
-    $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
+    $query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE branch LIKE :parent AND user not like '%admin%' GROUP BY hostname";
 }
 else{
     $id = $_POST["linkid"];
@@ -26,7 +26,7 @@ else{
             
         }    
         
-    $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent AND hostname like '%$tree_filter%' group by hostname";
+    $query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE branch LIKE :parent AND hostname like '%$tree_filter%' AND user not like '%admin%' group by hostname";
 }
 
 echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
@@ -39,7 +39,7 @@ $pdo->execute();
 $result = $pdo->fetchAll();
 foreach($result as $row){
     $hostname = $row['hostname'] ?: 'null';
-    $user = $row['user'] ?: 'null';
+    $user = $row['user2'] ?: 'null';
     $domain_name = $row['domain_name'] ?: 'null';
     $ip_address = $row['ip_address'] ?: 'null';
     $ip_date_modefied = $row['ip_date_modified'] ?: 'null';
