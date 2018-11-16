@@ -4,7 +4,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 session_start();
 if ($_SESSION['role'] != "STAFF"){
-    $sql = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running'";
+    $sql = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running' group by hostname";
 }
 else{
     $dept = $_SESSION['department'];
@@ -19,7 +19,7 @@ else{
         $filter = "123123123123";
     }
 
-    $sql = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE '%$filter%' AND connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running'";
+    $sql = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE '%$filter%' AND connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running' group by hostname";
 }
 
 echo "Computer Name|User|IP Address|iMonitor Status|Server Status|Branch|Scan Time";

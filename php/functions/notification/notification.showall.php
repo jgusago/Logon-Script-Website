@@ -21,7 +21,7 @@ foreach ($db->query($query) as $row){
 
 session_start();
 if($_SESSION['role'] != 'STAFF'){
-    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' and (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running') )";
+    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' and (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running')) group by tbl_log.hostname";
 }
 else{
     $dept = $_SESSION('department');
@@ -36,7 +36,7 @@ else{
         }
     }
 
-    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' AND (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running') AND hostname LIKE '%$filter%'";
+    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' AND (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running') AND hostname LIKE '%$filter%' group by tbl_log.hostname";
 }
 
 
