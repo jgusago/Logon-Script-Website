@@ -202,7 +202,8 @@ function ACCTedit()
 
   createnewElement(divbody7, cb, "div",["md-form", "mb-3", "checkbox"], [], "");
   createnewElement(label7, divbody7.newelement, "label", [], [], "");
-  createnewElement(inputcb, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()"],"Reset Password");
+  createnewElement(inputcb, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()"],"");
+  inputcb.innerHTML = "Reset Password";
 
   // Modal Footer
   createnewElement(divfooters, cf, "div", [], [], "");
