@@ -202,12 +202,11 @@ function ACCTedit()
 
   createnewElement(divbody7, cb, "div",["md-form", "mb-3", "checkbox"], [], "");
   createnewElement(label7, divbody7.newelement, "label", [], [], "");
-  createnewElement(inputcb, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()"],"");
-  inputcb.innerHTML = "Reset Password";
+  createnewElement(inputcb, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()"],"Reset password");
 
   // Modal Footer
   createnewElement(divfooters, cf, "div", [], [], "");
-  createnewElement(buttons, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name:btnUpdate"], "");
+  createnewElement(buttons, divfooters.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name:btnUpdate"], "");
 }
 // End of Edit Modal
 
