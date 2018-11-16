@@ -441,7 +441,7 @@ function OVERLAYenabled()
 function OVERLAYdisabled()
 {
 
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById("overlays").style.display = "none";
   document.getElementById("loaderdiv").style.display = "none";
   document.getElementById("miniwindows").style.display = "none";
 
