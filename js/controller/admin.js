@@ -311,6 +311,9 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
   }
+  else if(path == "php/functions/accounts/accounts.view.php"){
+
+  }
   else
   {
     if(path == "php/functions/reports/computer.list.php")

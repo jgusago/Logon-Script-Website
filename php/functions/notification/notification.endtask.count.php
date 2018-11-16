@@ -13,7 +13,7 @@ $time = date("h:i a");
 
 if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
 
-    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running'";
+    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running' group by hostname";
     foreach ($db->query($query) as $row){
         $count++;
     }
@@ -37,7 +37,7 @@ foreach ($db->query($query) as $row){
 }
 
     
-    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery";
+    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery group by hostname";
     $pdo = $db->prepare($query3);
     $pdo->bindParam(":version",$version);
     $pdo->execute();
