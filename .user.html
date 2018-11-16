@@ -34,7 +34,7 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <!-- Dashboard -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href=".admin.html" id="a-home" onclick="myFucntion(this)"id="a-home" onclick="myFucntion(this)">
+          <a class="nav-link" href=".admin.html" id="a-home" onclick="myFucntion(this)">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -53,39 +53,16 @@
               </li>
               <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
               </li>
-              <!-- History -->
-              <li data="History" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="Branch Computer History">
-                
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseHistory" data-parent="#DHSBRDRecords">History</a>
-                <!-- <span class="nav-link-text">History</span> -->
-
-                <ul class="sidenav-second-level collapse" id="collapseHistory">
-                  <li>
-                      <a href="#" id="DSHBRDEditHistory" onclick="DSHBRDContent('DSHBRDEditHistory', 'DSHBRDEditHistory')" data="DSHBRDEditHistory">Edit History</a>
-                  </li>
-                  <li>
-                      <a href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('DSHBRDLogsHistory', 'DSHBRDLogsHistory')" data="DSHBRDLogsHistory">Computer Logs History</a>
-                  </li>
-                </ul>
-              </li>
               <!-- close -->
           </ul>
         </li>
         <!-- End of Charts and Graphs -->
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile Settings">
+          <a class="nav-link" href="#" id="DSHBRDProfile" onclick="DSHBRDContent('','DSHBRDProfile')" data="DSHBRDProfile">
             <i class="fa fa-fw fa-user"></i>
-            <span class="nav-link-text">Profile and Accounts</span>
+            <span class="nav-link-text">Profile Settings</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-            <li>
-              <a href="#" id="DSHBRDAccountsAccMgnt" onclick="DSHBRDContent('','DSHBRDAccountsAccMgnt')" data="DSHBRDAccountsAccMgnt">Account Management</a>
-            </li>
-            <li>
-              <a href="#"  id="DSHBRDProfile" onclick="DSHBRDContent('','DSHBRDProfile')" data="DSHBRDProfile">Profile Settings</a>
-            </li>
-          </ul>
         </li>
 
          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View">
