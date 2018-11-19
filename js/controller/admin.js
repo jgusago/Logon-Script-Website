@@ -152,7 +152,7 @@ function ACCTedit(userid, name, department, position, status, role)
   //leftside div
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
     //leftside contents
-    createnewElement(value, leftdiv.newelement, "h4", [], [], userid+" | "+name);
+    createnewElement(value, leftdiv.newelement, "h4", [], [],"");
    
   $.post("php/functions/accounts/accounts_view.php",{userid:userid, name:name, department:department},function(newdata){
   
@@ -182,8 +182,7 @@ function ACCTedit(userid, name, department, position, status, role)
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Registration" );
-  // createnewElement(rightdiv, divvalue.newelement, "button", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
