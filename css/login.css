@@ -55,7 +55,8 @@
         width: 100%;
 }
 .login-card-body{
-        background-color: rgba(255, 255, 255, 0.3);
+        /* background-color: rgba(255, 255, 255, 0.3); */
+        background-image: url("img/try2.jpg");
         height: 30%;
         width: 35%;
         top: 45%;
