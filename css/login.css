@@ -1,5 +1,6 @@
 .login-background{
-        background: linear-gradient(#1E6598, #B6CE49) no-repeat center center fixed; 
+        /* background: linear-gradient(#1E6598, #B6CE49) no-repeat center center fixed;  */
+        background-image: url("img/try2.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -42,7 +43,8 @@
         text-align: center;
         top: 80%;
 }
-.login-background-text-content{
+.login-background-text-content
+{
         font-size: 5vw;
         color: rgb(255, 255, 255);
         -webkit-text-fill-color: white; /* Will override color (regardless of order) */
@@ -54,9 +56,9 @@
         height: 100%;
         width: 100%;
 }
-.login-card-body{
-        /* background-color: rgba(255, 255, 255, 0.3); */
-        background-image: url("img/try2.jpg");
+.login-card-body
+{
+        background-color: rgba(255, 255, 255, 0.3);
         height: 30%;
         width: 35%;
         top: 45%;
@@ -68,7 +70,8 @@
         min-height: 250px;
         padding: 50px;
 }
-.login-form{
+.login-form
+{
         position: fixed;
         width: 60%;
         margin: auto;
@@ -77,13 +80,12 @@
         transform: translate(-50%);
         padding-top: 20px;
 }
-.login-container{
+.login-container
+{
         width: 100%;
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 25px;
-
-        
+        margin-bottom: 25px;  
 }
 .login-icon{
         position: fixed;
