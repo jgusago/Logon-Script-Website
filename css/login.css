@@ -1,6 +1,5 @@
 .login-background{
-        /* background: linear-gradient(#1E6598, #B6CE49) no-repeat center center fixed;  */
-        background-image: url("img/try2.jpg");
+        background: linear-gradient(#1E6598, #B6CE49) no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
