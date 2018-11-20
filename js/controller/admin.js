@@ -374,7 +374,7 @@ function addbranch(){
 */
   var rightsidevalue = [], span = [];
   createnewElement(rightsidevalue, ch, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
-  createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-edit"], [], "");
+  createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
 }
 /*End of Branch View*/
