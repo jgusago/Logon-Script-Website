@@ -457,7 +457,7 @@ function UserAccountupdate(userid, update, grandparent, linkid){
 
   //var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password,update:update},function(data){
+  $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password},function(data){
   //var view = document.getElementById("contentview");
   //view.innerHTML = data;
   });
