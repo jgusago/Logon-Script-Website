@@ -14,11 +14,18 @@ foreach ($db->query($query) as $row){
     $count++;
 }
 session_start();
-if($_SESSION['role'] == 'STAFF'){
+if($_SESSION['role'] != 'STAFF'){
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery group by hostname";
 
 
 }
+
+elseif($_SESSION['role'] == 'STAFF'){
+    $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery group by hostname";
+
+
+}
+
 else{
     $dept = $_SESSION('department');
     $sql = "SELECT * FROM tbl_tree where tbl_name LIKE '$dept'";
