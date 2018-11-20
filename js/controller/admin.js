@@ -157,7 +157,7 @@ function ACCTedit(userid, name, department, position, role, status)
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User" );
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
@@ -536,7 +536,7 @@ function NOTIFnotconnected(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
@@ -570,7 +570,7 @@ function NOTIFimonitorupdate(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
@@ -603,7 +603,7 @@ function NOTIFallshow(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.showall.php",function(data){
