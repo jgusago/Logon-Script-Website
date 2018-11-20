@@ -104,18 +104,6 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
-      case "DSHBRDProfile":
-        path = "php/functions/accounts/profile.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDBranchView":
-        path = "php/functions/sttngs/settings.branch.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDAgentVersion":
-        path = "php/functions/sttngs/settings.agent.version.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
       default:
 
     }
