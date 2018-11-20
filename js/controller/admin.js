@@ -461,7 +461,7 @@ function UserAccountupdate(userid, update, grandparent, linkid){
   $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password},function(data){
   
   });
-  UserAccountupdate(grandparent,linkid);
+  UserAccounttableupdate(grandparent,linkid);
  
   OVERLAYdisable();
 }

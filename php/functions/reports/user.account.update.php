@@ -38,12 +38,7 @@ if ($update == "true"){
     if($position !== ""){
         $query = "UPDATE logonscript.tbl_user SET `position`=:position WHERE (`userid` = :userid)";
         $pdo = $db->prepare($query);
-        $pdo->bindParam(":name",$name);
-        $pdo->bindParam(":department",$department);
         $pdo->bindParam(":position",$position);
-        $pdo->bindParam(":role",$role);
-        $pdo->bindParam(":status",$status);
-        $pdo->bindParam(":password",$password);
         $pdo->execute();
     }
 }
