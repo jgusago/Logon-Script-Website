@@ -639,7 +639,7 @@ function Departmentlist(){
       var select2 = document.getElementById("department2");
       for (var j = 0; j < data.length; j++){
         var option2 = [];
-        createnewElement(option2, select, "option", [], ["value:"+data[j]],data[j]);
+        createnewElement(option2, select2, "option", [], ["value:"+data[j]],data[j]);
       }
     }
 
