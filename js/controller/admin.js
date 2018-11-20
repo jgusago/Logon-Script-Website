@@ -168,22 +168,27 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
-  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+role], "");
+  createnewElement(label3, divbody3.newelement, "label", [],[],"Position");
+  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:position", "id:postion", "required:true", "value:"+position], "");
+  createnewElement(option1, select1.newelement, "option", [],["value:"+position,"hidden:true","selected:selected"], position);
+
+  createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label4, divbody4.newelement, "label", [],[],"Role");
+  createnewElement(select1, divbody4.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+role], "");
   createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
   // createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   // createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
-  createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label4, divbody4.newelement, "label", [],[],"Status");
-  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required:true", "value:"+status], "");
+  createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label5, divbody5.newelement, "label", [],[],"Status");
+  createnewElement(select2, divbody5.newelement, "select", ["form-control"], ["name:status", "id:status", "required:true", "value:"+status], "");
   createnewElement(options1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
   // createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
   // createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
 
-  createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required:true"], "");
+  createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label6, divbody6.newelement, "label", [],[],"Password");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:password", "required:true"], "");
 
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "");
