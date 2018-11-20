@@ -450,7 +450,7 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
 /*User Account Update*/
 
 function UserAccountupdate(userid, update, grandparent, linkid){
-
+  document.getElementById("userid").value = userid;
   //var e = document.getElementById("CMPLISTdtlsremarks");
   //var i = e.selectedIndex;
   //var remarks = e.options[i].text;
