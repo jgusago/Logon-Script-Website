@@ -178,7 +178,6 @@ function ACCTedit(userid, name, department, position, role, status)
   Departmentlist();
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
 
-
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
   createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required", "value:"+role], "");
@@ -627,17 +626,24 @@ function NOTIFallshow(){
 
 function Departmentlist(){
   var select = document.getElementById("department");
-  var select2 = document.getElementById("department2");
   select.innerHTML = "";
-  select2.innerHTML = "";
+
+
   $.post("php/functions/load/add.user.list.php",function(data){
     data = data.split("|");
     for (var i = 0; i < data.length; i++){
       var option = [];
-      var option2 = [];
       createnewElement(option, select, "option", [], ["value:"+data[i]],data[i]);
-      createnewElement(option2, select2, "option", [], ["value:"+data[i]],data[i]);
     }
+    if($("#department2".length)){
+      var select2 = document.getElementById("department2");
+      for (var j = 0; j < data.length; j++){
+        var option2 = [];
+        createnewElement(option2, select, "option", [], ["value:"+data[j]],data[j]);
+      }
+    }
+
+
   });
 
 }
