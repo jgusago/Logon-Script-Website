@@ -406,7 +406,7 @@ function getNotification()
   mbcount.innerHTML = "";
   dtcount.innerHTML = "";
   content.innerHTML = "";
-    $.post("php/functions/notification/notification.endtask.count.php",function(data){
+    $.post("php/functions/notification/notification.endtask.userdept.count.php",function(data){
       var notif = document.createElement("div");
       data = data.split("`");
       if(data[0] != '0'){
