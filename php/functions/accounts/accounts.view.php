@@ -11,7 +11,7 @@ session_start();
 		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role='ADMINISTRATOR'";
 	}
 	else
-		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user";
+		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'ADMINISTRATOR'";
 
 		foreach ($db->query($sql) as $row) 
 		{
@@ -23,7 +23,7 @@ session_start();
 			$role = $row['role'] ?: 'null';
 			$status = $row['status'] ?: 'null';
 
-			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit";
+			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
 		}
 	
 	$db = null;
