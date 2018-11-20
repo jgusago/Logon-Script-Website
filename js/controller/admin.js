@@ -169,17 +169,17 @@ function ACCTedit(userid, name, department, position, role, status)
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
-  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required", "value:"+role], "");
-  createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
-  // createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
-  // createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
+  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required", "value:"+status], "");
+  createnewElement(option1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
+  createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
+  createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "label", [],[],"Status");
-  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required", "value:"+status], "");
-  createnewElement(options1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
-  createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
-  createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
+  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required", "value:"+role], "");
+  createnewElement(options1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
+  // createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
+  // createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
 
   createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
