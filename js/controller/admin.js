@@ -101,18 +101,6 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
-      case "DSHBRDProfile":
-        path = "php/functions/accounts/profile.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDBranchView":
-        path = "php/functions/sttngs/settings.branch.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDAgentVersion":
-        path = "";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
       default:
 
     }
@@ -154,35 +142,10 @@ function ACCTedit(userid, name, department, position, role, status)
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [],"");
    
-  $.post("php/functions/accounts/accounts_view.php",{userid:userid, name:name, department:department},function(newdata){
-  
-    newdata = newdata.split("!!");
-  
-    for(var d = 0; d < newdata.length; d++){
-  
-    var table = [];
-    var tableid = idgenerator();
-    var classes = ["table","table-bordered"];
-    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    createTable(table, cb, classes, attributes);
-    data = newdata[d].split("#");
-    datalength = data.length;
-  
-    thfdata = data[0].split("|");
-    var tbheader = [], tbfooter = [];
-    createTableContent([], table.head, [], [], "th", thfdata);
-  
-    for (var i = 1; i < datalength;i++){
-        contentdata = data[i].split("|");
-        createTableContent([], table.body, [],[], "td", contentdata);
-  
-        }
-    }
-  });
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User" );
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
@@ -200,9 +163,8 @@ function ACCTedit(userid, name, department, position, role, status)
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
   createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "id:department2"], "");
-  createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
   Departmentlist();
-
+  createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
@@ -345,6 +307,10 @@ function DSHBRDContentBranchSettings()
 {
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Settings";
+  document.getElementById("dtitle2").innerHTML = "Branch View";
+
   tableid = idgenerator();
   var card = [];
   createCard(card, contentview, [], []);
@@ -376,9 +342,9 @@ createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
 var ig = [];
 createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
-var ig2 = [];
-createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
+// var ig2 = [];
+// createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+// createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
 }
 
 function addbranch(){
@@ -396,7 +362,7 @@ function addbranch(){
 */
   var rightsidevalue = [], span = [];
   createnewElement(rightsidevalue, ch, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
-  createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-edit"], [], "");
+  createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
 }
 /*End of Branch View*/
@@ -578,7 +544,7 @@ function NOTIFnotconnected(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
@@ -612,7 +578,7 @@ function NOTIFimonitorupdate(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
@@ -645,7 +611,7 @@ function NOTIFallshow(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.showall.php",function(data){
@@ -668,17 +634,23 @@ function NOTIFallshow(){
 
 function Departmentlist(){
   var select = document.getElementById("department");
-  var select2 = document.getElementById("department2");
   select.innerHTML = "";
-  select2.innerHTML = "";
+
+
   $.post("php/functions/load/add.user.list.php",function(data){
     data = data.split("|");
     for (var i = 0; i < data.length; i++){
       var option = [];
-      var option2 = [];
       createnewElement(option, select, "option", [], ["value:"+data[i]],data[i]);
-      createnewElement(option2, select2, "option", [], ["value:"+data[i]],data[i]);
     }
+    if($("#department2".length)){
+      var select2 = document.getElementById("department2");
+      for (var j = 0; j < data.length; j++){
+        var option2 = [];
+        createnewElement(option2, select2, "option", [], ["value:"+data[j]],data[j]);
+      }
+    }
+
   });
 
 }

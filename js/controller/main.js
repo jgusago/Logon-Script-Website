@@ -104,18 +104,6 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
-      case "DSHBRDProfile":
-        path = "php/functions/accounts/profile.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDBranchView":
-        path = "php/functions/sttngs/settings.branch.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDAgentVersion":
-        path = "php/functions/sttngs/settings.agent.version.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
       default:
 
     }
@@ -138,7 +126,7 @@ function DSHBRDContent(parent, linkid)
 }
 
 // Modal for Edit User
-function ACCTedit()
+function ACCTedit(userid, name, department, position, role, status)
 {
   OVERLAYenable();
 
@@ -146,53 +134,52 @@ function ACCTedit()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], 
-  subrdiv = [], rightsidevalue = [], span = [], 
-  divbody = [], label = [], inputuid = [], 
-  divbody1 = [], inputname = [], label1 = [], 
-  divbody2= [], label2 = [], select = [], option = []
-  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], 
-  divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], 
-  divbody5=[], label5 = [], inputpwd = [], 
-  divbody7 = [], checkbox = [], label7 =[], inputcb = [],
-  divfooters = [], buttons = [];
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = []
+  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [], divfooter = [], button =[];
 
-  // Modal Header
+  //whole div
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  //leftside div
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+    //leftside contents
+    createnewElement(value, leftdiv.newelement, "h4", [], [],"");
+   
+
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Registration" );
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
-  // Modal Body
   createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],[],"User ID");
-  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "disabled:true"], "");
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "disabled:true", "value:"+userid], "");
 
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
-  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:username", "required"], "");
+  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:name", "required", "value:"+name], "");
 
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
-  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "id:department", "required"], "");
-  createnewElement(option, select.newelement, "option", [],[],"" );
+  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "id:department2"], "");
+  Departmentlist();
+  createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
-  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required"], "");
-  createnewElement(option1, select1.newelement, "option", [],["value:"],"" );
-  createnewElement(option1, select1.newelement, "option", [],["value:SUPER ADMIN"],"Super admin" );
+  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required", "value:"+role], "");
+  createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
+  createnewElement(option2, select1.newelement, "option", [],["value:SUPER ADMIN"],"Super Admin" );
   createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "label", [],[],"Status");
-  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required"], "");
-  createnewElement(options1, select1.newelement, "option", [],["value:"],"" );
+  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required", "value:"+status], "");
+  createnewElement(options1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
   createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
   createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
 
@@ -200,13 +187,8 @@ function ACCTedit()
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
   createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
-  createnewElement(divbody7, cb, "div",["md-form", "mb-3", "checkbox"], [], "");
-  createnewElement(label7, divbody7.newelement, "label", [], [], "");
-  createnewElement(inputcb, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()"],"Reset password");
-
-  // Modal Footer
-  createnewElement(divfooters, cf, "div", [], [], "");
-  createnewElement(buttons, divfooters.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name:btnUpdate"], "");
+  createnewElement(divfooter, cf, "div", [], [], "");
+  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
 // End of Edit Modal
 
@@ -554,7 +536,7 @@ function NOTIFnotconnected()
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -588,7 +570,7 @@ function NOTIFimonitorupdate(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -621,7 +603,7 @@ function NOTIFallshow(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -677,69 +659,44 @@ function DSHBRDContentBranchSettings()
 {
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
-  var card = document.createElement("div");
-  card.classList.add("card");
-  card.classList.add("mb-3");
-  card.classList.add("contentdataview");
-  card.setAttribute("id","branchviewsettings");
-  contentview.appendChild(card);
-    cardhead = document.createElement("div");
-  cardhead.classList.add("card-header");
-  card.appendChild(cardhead);
-  cardheadtxt = document.createTextNode("Branch View Settings");
-  cardhead.appendChild(cardheadtxt);
-  cardbody = document.createElement("div");
-  cardbody.classList.add("card-body");
-  card.appendChild(cardbody);
-$.post("php/functions/sttngs/settings.branch.view.php",function(data){
-  var newtable = document.createElement("table");
-  newtable.classList.add("table");
-  newtable.classList.add("table-bordered");
-  cardbody.appendChild(newtable);
-  data = data.split("||");
-  datalength = data.length;
-for(var arraccount = 0; arraccount < datalength; arraccount++){            
-    var currentdata = data[arraccount].split(";");
-    if (currentdata[2] == "tr"){
-      var newtr = document.createElement("tr");
-      newtable.appendChild(newtr);    
-      var newtd = document.createElement("td");         
-      if(currentdata[1] > 1){
-        newtd.setAttribute("rowspan",currentdata[1]);
-      }      
-      newtr.appendChild(newtd);
-      var  newdatatext = document.createTextNode(currentdata[0]);                    
-      newtd.appendChild(newdatatext);                
-    }                
-    else{    
-      var newtd = document.createElement("td");
-      if(currentdata[1] > 1){       
-        newtd.setAttribute("rowspan",currentdata[1]);
-      }                  
-      newtr.appendChild(newtd);
-      var  newdatatext = document.createTextNode(currentdata[0]);
-      newtd.appendChild(newdatatext);            
-    }
-  }          
-});
 
-cardfoot = document.createElement("div");
-cardfoot.classList.add("card-footer");
-card.appendChild(cardfoot);
+  document.getElementById("dtitle").innerHTML = "Settings";
+  document.getElementById("dtitle2").innerHTML = "Branch View";
+
+  tableid = idgenerator();
+  var card = [];
+  createCard(card, contentview, [], []);
+  createnewElement([],card.head,"div",[],[],"Branch Setting");
+
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  $.post("php/functions/sttngs/settings.branch.view.php",function(data){
+    data = data.split("||");
+    for(var arraccount = 0; arraccount < data.length; arraccount++){ 
+      var currentdata = data[arraccount].split(";");
+
+      if (currentdata[2] == "tr"){
+        var tr = [];
+        createnewElement(tr,table.body,"tr",[],[],"");
+      }
+      var td = [], link = [], i = [], newdata = [];
+      createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
+      createnewElement(newdata, td.newelement, "span",["label", "label-default"],[],currentdata[0]);
+      createLink(link, td.newelement, "", [], ["role:button", "href:#"]);
+      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
+    }
+  });
+
 var toolbar = [];
-createnewElement(toolbar,cardfoot,"div",["btn-toolbar","mr-3"],[],"");
+createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
 var ig = [];
 createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
-var ig2 = [];
-createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
-
- if (path == "php/functions/sttngs/settings.branch.view.php")
- {
-  document.getElementById("dtitle").innerHTML = "Settings";
-  document.getElementById("dtitle2").innerHTML = "Branch View";
- }
+// var ig2 = [];
+// createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+// createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
 
 }
 
