@@ -361,11 +361,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
   }
-  if (path == "php/functions/sttngs/settings.agent.version.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Settings";
-    document.getElementById("dtitle2").innerHTML = "Agent Version";
-  }
   else
   {
     if(path == "php/functions/reports/computer.list.php")
