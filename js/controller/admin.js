@@ -169,8 +169,8 @@ function ACCTedit(userid, name, department, position, role, status, tabledata)
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
-  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+status], "");
-  createnewElement(option1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
+  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+role], "");
+  createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
   // createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   // createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
