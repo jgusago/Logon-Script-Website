@@ -643,7 +643,6 @@ function Departmentlist(){
       }
     }
 
-
   });
 
 }
