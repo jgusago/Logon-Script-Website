@@ -214,7 +214,7 @@ function ACCTedit(userid, name, department, position, role, status)
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "label", [],[],"Status");
   createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required", "value:"+status], "");
-  createnewElement(options1, select1.newelement, "option", [],["value:"],"" );
+  createnewElement(options1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
   createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
   createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
 
@@ -558,7 +558,7 @@ function NOTIFnotconnected(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-hover"];
+  var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
@@ -592,7 +592,7 @@ function NOTIFimonitorupdate(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-hover"];
+  var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
@@ -625,7 +625,7 @@ function NOTIFallshow(){
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-hover"];
+  var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.showall.php",function(data){
