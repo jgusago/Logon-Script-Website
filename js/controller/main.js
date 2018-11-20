@@ -554,7 +554,7 @@ function NOTIFnotconnected()
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -588,7 +588,7 @@ function NOTIFimonitorupdate(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -621,7 +621,7 @@ function NOTIFallshow(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
