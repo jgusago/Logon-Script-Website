@@ -220,8 +220,6 @@ function ACCTedit(userid, name, department, position, role, status)
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
   createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
-  createnewElement(option, select.select, "option", [], ["hidden:true","selected:selected","value:"+department], department);
-
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
@@ -252,7 +250,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
     //create Select element
     createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","Resigned:Resigned","Transfered:Transferred"," Old PC name:Old PC name","On Leave:On Leave"]);
     //add value
-    createnewElement(option, select.select, "option", [], ["hidden:true","selected:selected","value:"+remarks], remarks);
+    //createnewElement(option, select.select, "option", [], ["hidden:true","selected:selected","value:"+remarks], remarks);
 
   $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(newdata){
 
