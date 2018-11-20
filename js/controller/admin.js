@@ -154,31 +154,6 @@ function ACCTedit(userid, name, department, position, role, status)
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [],"");
    
-  $.post("php/functions/accounts/accounts_view.php",{userid:userid, name:name, department:department},function(newdata){
-  
-    newdata = newdata.split("!!");
-  
-    for(var d = 0; d < newdata.length; d++){
-  
-    var table = [];
-    var tableid = idgenerator();
-    var classes = ["table","table-bordered"];
-    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    createTable(table, cb, classes, attributes);
-    data = newdata[d].split("#");
-    datalength = data.length;
-  
-    thfdata = data[0].split("|");
-    var tbheader = [], tbfooter = [];
-    createTableContent([], table.head, [], [], "th", thfdata);
-  
-    for (var i = 1; i < datalength;i++){
-        contentdata = data[i].split("|");
-        createTableContent([], table.body, [],[], "td", contentdata);
-  
-        }
-    }
-  });
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -200,8 +175,8 @@ function ACCTedit(userid, name, department, position, role, status)
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
   createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "id:department2"], "");
-  createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
   Departmentlist();
+  createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
 
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
