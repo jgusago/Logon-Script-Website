@@ -186,7 +186,7 @@ function ACCTedit(userid, name, department, position, role, status)
   createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
   createnewElement(divfooter, cf, "div", [], [], "");
-  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate", "id:UserAccountupdate","onclick:UserAccountupdate(\""+userid+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "");
+  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "");
 }
 
 //computerlist Update OnClick
@@ -453,7 +453,7 @@ function UserAccountupdate(userid, update, grandparent, linkid){
 
   //var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:Status,password:password,update:update},function(data){
+  $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password,update:update},function(data){
   //var view = document.getElementById("contentview");
   //view.innerHTML = data;
   });
