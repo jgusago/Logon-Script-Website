@@ -169,15 +169,15 @@ function ACCTedit(userid, name, department, position, role, status, tabledata)
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
-  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+status], "");
-  createnewElement(option1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
+  createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+role], "");
+  createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
   // createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   // createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "label", [],[],"Status");
-  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required:true", "value:"+role], "");
-  createnewElement(options1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
+  createnewElement(select2, divbody4.newelement, "select", ["form-control"], ["name:status", "id:status", "required:true", "value:"+status], "");
+  createnewElement(options1, select1.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
   // createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
   // createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
 
