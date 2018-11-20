@@ -446,6 +446,9 @@ function NOTIFnotconnected(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
+  document.getElementById("dtitle").innerHTML = "Notifications";
+  document.getElementById("dtitle2").innerHTML = "Disconnected Imonitor Agent";
+  
   tableid = idgenerator();
 
   var card = [];
@@ -462,7 +465,7 @@ function NOTIFnotconnected(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -476,6 +479,9 @@ function NOTIFnotconnected(){
 function NOTIFimonitorupdate(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Notifications";
+  document.getElementById("dtitle2").innerHTML = "Old Agent Version";
 
   tableid = idgenerator();
 
@@ -493,7 +499,7 @@ function NOTIFimonitorupdate(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -504,9 +510,12 @@ function NOTIFimonitorupdate(){
   });
 }
 
-function NOTIFallshow(){
+function NOTIFallshow()
+{
   var view = document.getElementById("contentview");
   view.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Notifications";
 
   tableid = idgenerator();
 
@@ -524,7 +533,7 @@ function NOTIFallshow(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
