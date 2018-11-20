@@ -199,8 +199,8 @@ function ACCTedit(userid, name, department, position, role, status)
 
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
-  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "id:department", "required", "value:"+department], "");
-  createnewElement(option, select.newelement, "option", [],[],"" );
+  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "id:department", "required", "value:"+department], "department");
+  createnewElement(option, select.newelement, "option", [],["value:"+department],"" );
 
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
@@ -248,7 +248,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
     createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
     createnewElement(rightsidevalue, subrdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
     //create Select element
-    //createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","Resigned:Resigned","Transfered:Transferred"," Old PC name:Old PC name","On Leave:On Leave"]);
+    createSelection(select, subrdiv.newelement, [], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+remarks+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","Resigned:Resigned","Transfered:Transferred"," Old PC name:Old PC name","On Leave:On Leave"]);
     //add value
     createnewElement(option, select.select, "option", [], ["hidden:true","selected:selected","value:"+remarks], remarks);
 
