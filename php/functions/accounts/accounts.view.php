@@ -11,7 +11,7 @@ session_start();
 		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role='ADMINISTRATOR'";
 	}
 	else
-		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'ADMINISTRATOR'";
+		$sql2 = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'ADMINISTRATOR'";
 
 		foreach ($db->query($sql) as $row) 
 		{
