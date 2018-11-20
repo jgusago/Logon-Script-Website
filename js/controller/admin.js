@@ -354,9 +354,9 @@ createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
 var ig = [];
 createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
-var ig2 = [];
-createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
+// var ig2 = [];
+// createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+// createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
 }
 
 function addbranch(){
