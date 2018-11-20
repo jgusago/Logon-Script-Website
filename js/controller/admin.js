@@ -367,13 +367,14 @@ function addbranch(){
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  /* ---------- HEADER ---------- 
-  var hspan = [], hstrong = [];
-  createnewElement(hspan, ch, "span", [], [], "");
-  createnewElement(hstrong, hspan.newelement, "strong", [], [], "Add Branch");
-*/
-  var rightsidevalue = [], span = [];
-  createnewElement(rightsidevalue, ch, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
+  var headercontainer = [], headerrow = [], headerdiv1 = [], headerdiv2 = [];
+  createnewElement(headercontainer,ch, "div", ["container"], [], "");
+
+  createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
+  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-12","col-md-6"],[],"Add Branch/Deparetment");
+  var rightsidevalue = [], span = [], headerdiv2 = [];
+  createnewElement(headerdiv2, ch, "div", ["col-sm-12","col-md-6"],[],"");
+  createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
 }
