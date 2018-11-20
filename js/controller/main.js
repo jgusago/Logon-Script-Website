@@ -104,18 +104,6 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
-      case "DSHBRDProfile":
-        path = "php/functions/accounts/profile.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDBranchView":
-        path = "php/functions/sttngs/settings.branch.view.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDAgentVersion":
-        path = "php/functions/sttngs/settings.agent.version.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
       default:
 
     }
@@ -215,6 +203,21 @@ function resetPass()
 		{
 			x.type = "password";
 		}
+}
+
+function DSHBRDProfile()
+{
+  document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+  document.getElementById("dtitle2").innerHTML = "Profile Settings";
+
+  var ctnview = document.getElementById("contentview");
+
+  var div = [], divpanel = [], panelheader = [], panelbody = [] ;
+
+  createnewElement(div, ctnview, "div", ["row"], [], "");
+  createnewElement(divpanel, div, "div", ["panel", "panel-default"], [], "");
+  createnewElement(panelheader, divpanel, "div", ["panel-heading"], [], "User Information");
+  createnewElement(panelbody, divpanel, "div", ["panel-body"], [], "Try lang");
 }
 
 // Modal for Add Branch
