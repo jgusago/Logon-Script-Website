@@ -677,6 +677,10 @@ function DSHBRDContentBranchSettings()
 {
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Settings";
+  document.getElementById("dtitle2").innerHTML = "Branch View";
+
   var card = document.createElement("div");
   card.classList.add("card");
   card.classList.add("mb-3");
@@ -731,15 +735,9 @@ createnewElement(toolbar,cardfoot,"div",["btn-toolbar","mr-3"],[],"");
 var ig = [];
 createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
-var ig2 = [];
-createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
-
- if (path == "php/functions/sttngs/settings.branch.view.php")
- {
-  document.getElementById("dtitle").innerHTML = "Settings";
-  document.getElementById("dtitle2").innerHTML = "Branch View";
- }
+// var ig2 = [];
+// createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+// createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
 
 }
 

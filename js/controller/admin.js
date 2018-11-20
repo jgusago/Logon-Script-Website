@@ -345,6 +345,10 @@ function DSHBRDContentBranchSettings()
 {
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Settings";
+  document.getElementById("dtitle2").innerHTML = "Branch View";
+
   tableid = idgenerator();
   var card = [];
   createCard(card, contentview, [], []);
