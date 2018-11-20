@@ -220,6 +220,8 @@ function ACCTedit(userid, name, department, position, role, status)
   createnewElement(label5, divbody5.newelement, "label", [],[],"Password");
   createnewElement(inputpwd, divbody5.newelement, "input", ["form-control"], ["type:password", "id:password", "required"], "");
 
+  createnewElement(option, select.select, "option", [], ["hidden:true","selected:selected","value:"+department], department);
+
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "id:btnUpdate", "name: btnUpdate"], "");
 }
