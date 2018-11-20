@@ -136,7 +136,7 @@ function DSHBRDContent(parent, linkid)
 
 //User Account Update OnClick
 
-function ACCTedit(userid, name, department, position, status, role)
+function ACCTedit(userid, name, department, position, role, status)
 {
   OVERLAYenable();
 
