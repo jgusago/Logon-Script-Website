@@ -20,6 +20,7 @@ if($_SESSION['role'] != 'STAFF'){
 
 }
 
+/*FOR STAFF*/
 elseif($_SESSION['role'] == 'STAFF'){
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery group by hostname";
 

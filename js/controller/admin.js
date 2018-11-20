@@ -207,7 +207,7 @@ function ACCTedit(userid, name, department, position, role, status)
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Role");
   createnewElement(select1, divbody3.newelement, "select", ["form-control"], ["name:role", "id:role", "required", "value:"+role], "");
-  createnewElement(option1, select1.newelement, "option", [],["value:"],"" );
+  createnewElement(option1, select1.newelement, "option", [],["value:"+role], role);
   createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
 
@@ -549,6 +549,9 @@ function NOTIFnotconnected(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
+  document.getElementById("dtitle").innerHTML = "Notifications";
+  document.getElementById("dtitle2").innerHTML = "Disconnected Imonitor Agent";
+
   tableid = idgenerator();
 
   var card = [];
@@ -565,7 +568,7 @@ function NOTIFnotconnected(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -579,6 +582,9 @@ function NOTIFnotconnected(){
 function NOTIFimonitorupdate(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Notifications";
+  document.getElementById("dtitle2").innerHTML = "Old Agent Version";
 
   tableid = idgenerator();
 
@@ -596,7 +602,7 @@ function NOTIFimonitorupdate(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");
@@ -610,6 +616,8 @@ function NOTIFimonitorupdate(){
 function NOTIFallshow(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Notifications";
 
   tableid = idgenerator();
 
@@ -627,7 +635,7 @@ function NOTIFallshow(){
     thfdata = data[0].split("|");
     var tbheader = [], tbfooter = [];
     createTableContent([], table.head, [], [], "th", thfdata);
-    createTableContent([], table.foot, [], [], "th", thfdata);
+    // createTableContent([], table.foot, [], [], "th", thfdata);
 
     for (var i = 1; i < datalength;i++){
         newdata = data[i].split("|");

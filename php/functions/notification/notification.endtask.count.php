@@ -66,7 +66,7 @@ foreach ($db->query($query) as $row){
 
 }
 
-/*STAFF*/
+/*FOR STAFF*/
 
 elseif ($role == "STAFF"){
 
