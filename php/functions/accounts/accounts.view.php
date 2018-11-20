@@ -8,7 +8,7 @@ session_start();
 	if ($_SESSION['role'] == "ADMINISTRATOR") 
 	{
 
-		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'SUPER ADMIN'";
+		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role='ADMINISTRATOR'";
 	}
 	else
 		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user";
