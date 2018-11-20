@@ -23,6 +23,11 @@ session_start();
 if($_SESSION['role'] != 'STAFF'){
     $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' and (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running')) group by tbl_log.hostname";
 }
+
+elseif($_SESSION['role'] == 'STAFF'){
+    $query3 = "SELECT * from logonscript.tbl_log inner join logonscript.tbl_computer_details on tbl_log.hostname=tbl_computer_details.hostname where tbl_log.user not like 'admin%' and (($newquery) or (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running')) group by tbl_log.hostname";
+}
+
 else{
     $dept = $_SESSION('department');
     $sql = "SELECT * FROM tbl_tree where tbl_name LIKE '$dept'";
