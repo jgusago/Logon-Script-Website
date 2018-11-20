@@ -535,13 +535,16 @@ function NOTIFnotconnected()
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
+  document.getElementById("dtitle").innerHTML = "Notifications";
+  document.getElementById("dtitle2").innerHTML = "Disconnected Imonitor Agent";
+
   tableid = idgenerator();
 
   var card = [];
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notconnected.summary.php",function(data){
@@ -566,13 +569,16 @@ function NOTIFimonitorupdate(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
+  document.getElementById("dtitle").innerHTML = "Notifications";
+  document.getElementById("dtitle2").innerHTML = "Old Agent Version";
+
   tableid = idgenerator();
 
   var card = [];
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.notupdated.summary.php",function(data){
@@ -597,13 +603,15 @@ function NOTIFallshow(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
+  document.getElementById("dtitle").innerHTML = "Notifications";
+
   tableid = idgenerator();
 
   var card = [];
   createCard(card, view, [], []);
 
   var table = [];
-  var classes = ["table","table-bordered"];
+  var classes = ["table","table-hover"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/notification/notification.showall.php",function(data){
