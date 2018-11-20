@@ -23,7 +23,7 @@ session_start();
 			$status = $row['role'] ?: 'null';
 			$role = $row['status'] ?: 'null';
 
-			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$role\",\"$status\")`Edit";
+			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit";
 		}
 	
 	$db = null;
