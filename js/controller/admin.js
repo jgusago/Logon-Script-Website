@@ -450,20 +450,19 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
 /*User Account Update*/
 
 function UserAccountupdate(userid, update, grandparent, linkid){
-  document.getElementById("UserAccountupdate");
-  //var e = document.getElementById("CMPLISTdtlsremarks");
-  //var i = e.selectedIndex;
-  //var remarks = e.options[i].text;
-
-  //var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
+  userid=document.getElementById("userid").value;
+  name=document.getElementById("name").value;
+  department=document.getElementById("department").value;
+  position=document.getElementById("position").value;
+  role=document.getElementById("role").value;
+  status=document.getElementById("status").value;
+  password=document.getElementById("password").value;
 
   $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password},function(data){
-  //var view = document.getElementById("contentview");
-  //view.innerHTML = data;
+  
   });
   UserAccountupdate(grandparent,linkid);
-  //DSHBRDRecordsComplist
-  //CMPLISTdtlsupdate(linkid);
+ 
   OVERLAYdisable();
 }
 
