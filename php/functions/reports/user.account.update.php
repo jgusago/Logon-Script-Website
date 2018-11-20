@@ -25,7 +25,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 if ($update == "true"){
     if($olduserid == $userid){
 
-        $query = "UPDATE logonscript.tbl_user SET `name`=:name, `department`=:department, `position`=:position, `role`=:role, `status`=:status, `password`=:password WHERE (`hostname` = :hostname)";
+        $query = "UPDATE logonscript.tbl_user SET `name`=:name, `department`=:department, `position`=:position, `role`=:role, `status`=:status, `password`=:password WHERE (`userid` = :userid)";
         $pdo = $db->prepare($query);
         $pdo->bindParam(":name",$name);
         $pdo->bindParam(":department",$department);
