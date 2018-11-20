@@ -20,8 +20,8 @@ session_start();
 			$name = $row['name'] ?: 'null';
 			$department = $row['department'] ?: 'null';
 			$position = $row['position'] ?: 'null';
-			$status = $row['role'] ?: 'null';
-			$role = $row['status'] ?: 'null';
+			$role = $row['role'] ?: 'null';
+			$status = $row['status'] ?: 'null';
 
 			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit";
 		}
