@@ -205,6 +205,21 @@ function resetPass()
 		}
 }
 
+function DSHBRDProfile()
+{
+  document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+  document.getElementById("dtitle2").innerHTML = "Profile Settings";
+
+  var ctnview = document.getElementById("contentview");
+
+  var div = [], divpanel = [], panelheader = [], panelbody = [] ;
+
+  createnewElement(div, ctnview, "div", ["row"], [], "");
+  createnewElement(divpanel, div, "div", ["panel", "panel-default"], [], "");
+  createnewElement(panelheader, divpanel, "div", ["panel-heading"], [], "User Information");
+  createnewElement(panelbody, divpanel, "div", ["panel-body"], [], "Try lang");
+}
+
 // Modal for Add Branch
 function addbranch()
 {
