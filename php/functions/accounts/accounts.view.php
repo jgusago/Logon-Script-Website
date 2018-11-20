@@ -8,10 +8,10 @@ session_start();
 	if ($_SESSION['role'] == "ADMINISTRATOR") 
 	{
 
-		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role='ADMINISTRATOR'";
+		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'SUPER ADMIN'";
 	}
 	else
-		$sql2 = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'ADMINISTRATOR'";
+		$sql2 = "SELECT userid, name, department, position, role, status FROM tbl_user";
 
 		foreach ($db->query($sql) as $row) 
 		{
