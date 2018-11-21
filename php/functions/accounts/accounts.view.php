@@ -24,7 +24,8 @@ session_start();
 		}
 	}
 	else
-		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user";
+	{
+		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'SUPER ADMIN'";
 
 		foreach ($db->query($sql1) as $row) 
 		{
@@ -38,6 +39,7 @@ session_start();
 
 			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
 		}
+	}
 	
 	$db = null;
 ?>

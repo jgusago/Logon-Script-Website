@@ -5,7 +5,8 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 ?>
 <?php
 	$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'SUPER ADMIN'";
-		foreach ($db->query($sql) as $row) {
+		foreach ($db->query($sql) as $row) 
+		{
 			//$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
 			//$stmt->execute();
 			//for($i=0; $row = $stmt->fetch(); $i++){
