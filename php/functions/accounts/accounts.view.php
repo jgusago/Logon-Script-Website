@@ -21,6 +21,7 @@ session_start();
 			$status = $row['status'] ?: 'null';
 
 			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
+		}
 	}
 	else
 		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user";
