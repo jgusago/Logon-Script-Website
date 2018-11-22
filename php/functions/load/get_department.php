@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 //$branch_name=$_GET['branch_name'];
 
 

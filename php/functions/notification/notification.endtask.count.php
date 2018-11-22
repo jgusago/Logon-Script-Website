@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 $role = $_SESSION["role"];
 $department = $_SESSION["department"];
 
