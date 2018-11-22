@@ -27,7 +27,7 @@ else{
         }    
         $query = "SELECT * from logonscript.tbl_log WHERE hostname like '%$tree_filter%'";
 }
-echo "Computer Name|User|Employee ID|IP Address|Services Status|Server Status|Remarks|Agent Version|Scan Time|Confirm Date|Last Confirm DateAction";
+echo "Computer Name|User|Employee ID|IP Address|Services Status|Server Status|Remarks|Agent Version|Scan Time|Confirm Date|Last Confirm Date|Action";
 
 $pdo = $db->prepare($query);
 $pdo->bindParam(":parent",$parent);
