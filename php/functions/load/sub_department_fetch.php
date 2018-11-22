@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 $department = $_SESSION["department"];
 //$bld = $_POST["branch"];
 $count = 0;

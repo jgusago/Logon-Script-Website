@@ -1,6 +1,6 @@
 <?php 
 error_reporting(0);
-// session_start();
+session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 		echo "ID|User ID|Name|Department|Position|Status|Role";
