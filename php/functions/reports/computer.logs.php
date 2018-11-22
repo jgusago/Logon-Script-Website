@@ -37,7 +37,8 @@ $pdo = $db->prepare($query);
 $pdo->bindParam(":parent",$parent);
 $pdo->execute();
 $result = $pdo->fetchAll();
-foreach($result as $row){
+foreach($result as $row)
+{
     $hostname = $row['hostname'] ?: 'null';
     $user = $row['user2'] ?: 'null';
     $domain_name = $row['domain_name'] ?: 'null';
@@ -53,12 +54,15 @@ foreach($result as $row){
     $date = $scan_time;
 
     $date = explode(" ",$scan_time);
+    $date1 = explode(" ",$ip_date_modefied);
 
     $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
+    $date1[0] = preg_replace("/[^a-zA-Z]/", "", $dat1e[0]);
 
-    if ($newdate = new DateTime($date[0]." ".$date[1])){
-
-    $scan_time = date_format($newdate, "M-d-Y H:i");
+    if ($newdate = new DateTime($date[0]." ".$date[1]) || $newdate1 = new DateTime($date1[0]." ".$date1[1]))
+    {
+        $scan_time = date_format($newdate, "M-d-Y H:i");
+        $ip_date_modefied = date_format($newdate1, "M-d-Y H:i");
     }
     echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
 }
