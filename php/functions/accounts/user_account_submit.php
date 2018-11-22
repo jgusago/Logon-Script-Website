@@ -25,9 +25,9 @@ else
         VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
         ($db->query($sql));
 
-        $sql2 = "INSERT INTO tbl_history (history_id, transact_name, transact_details, user_id)
+        $sql2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-        VALUES ('$AddUser', '".$_POST["name"]."', '$userid')";
+        VALUES ('$AddUser', '".$_POST["name"]."', '".$_POST["role"]."', '$userid')";
         ($db->query($sql2));
 
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
