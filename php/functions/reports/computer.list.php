@@ -27,7 +27,7 @@ else{
         }    
         $query = "SELECT * from logonscript.tbl_log WHERE hostname like '%$tree_filter%'";
 }
-echo "Computer Name|User|Employee ID|IP Address|Services Status|Server Status|Remarks|Agent Version|Scan Time| Confirm Date|Action";
+echo "Computer Name|User|Employee ID|IP Address|Services Status|Server Status|Remarks|Agent Version|Scan Time|Confirm Date|Last Confirm DateAction";
 
 $pdo = $db->prepare($query);
 $pdo->bindParam(":parent",$parent);
@@ -81,7 +81,7 @@ foreach($result as $row)
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname||$user|$ip_address|$status|$status1|$remarks|$agent_version|$scan_time||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
+    echo "#$hostname||$user|$ip_address|$status|$status1|$remarks|$agent_version|$scan_time|||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
 
 
 
