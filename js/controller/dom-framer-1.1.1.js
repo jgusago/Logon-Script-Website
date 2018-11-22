@@ -134,7 +134,7 @@ function pagination(id){
        $("#"+id).DataTable(
          {
            dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
-                "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'l>>"+
+                "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'f>>"+
                 "<'row'<'col-sm-12'tr>>"+
                 "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
