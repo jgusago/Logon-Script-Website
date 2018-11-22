@@ -3,7 +3,7 @@
 
 $id = $_POST["linkid"];
 $count = 0;
-session_start();
+// session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 if ($_SESSION['role'] !== "STAFF")

@@ -1,7 +1,7 @@
 <?php
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-session_start();
+// session_start();
 echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time";
 if($_SESSION['role'] != "STAFF")
 {
