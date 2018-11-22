@@ -59,9 +59,12 @@ foreach($result as $row)
     $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
     $date1[0] = preg_replace("/[^a-zA-Z]/", "", $date1[0]);
 
-    if ($newdate = new DateTime($date[0]." ".$date[1]) || $newdate1 = new DateTime($date1[0]." ".$date1[1]))
+    if ($newdate = new DateTime($date[0]." ".$date[1]))
     {
         $scan_time = date_format($newdate, "M-d-Y H:i");
+    }
+    if($newdate1 = new DateTime($date1[0]." ".$date1[1]))
+    {
         $ip_date_modefied = date_format($newdate1, "M-d-Y H:i");
     }
     echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
