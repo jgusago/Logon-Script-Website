@@ -32,15 +32,20 @@ $pdo = $db->prepare($query);
 $pdo->bindParam(":parent",$parent);
 $pdo->execute();
 $result = $pdo->fetchAll();
-foreach($result as $row){
+foreach($result as $row)
+{
     $count++;
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
     $user = $row['user'];
+    $scan_time = $row['scan_time']
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
-        $status = "On-line";
-    else{
-        $status = "Off-line";
+        $status = "Running";
+        $status1 = "Found"
+    else
+    {
+        $status = "End Task";
+        $status1 = "Not Found"
       }
 
     $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version";
@@ -62,7 +67,7 @@ foreach($result as $row){
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname||$user|$ip_address|$status||$remarks|$agent_version|||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
+    echo "#$hostname||$user|$ip_address|$status|$status1|$remarks|$agent_version|$scan_time||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
 
 
 
