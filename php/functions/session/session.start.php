@@ -21,7 +21,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     $department = $row[0]['department'];
       //check status
       if($status == 'Active' && ($password == $hashed_password)){
-        // session_start();
+        session_start();
         $_SESSION["userid"] = $row[0]['userid'];
         $_SESSION["role"] = $role;
         $_SESSION["status"] = $status;
@@ -45,7 +45,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
       else{
         echo "failed:password";
       }
-      //check status  
+      //check status
 
   }//second if
   else{

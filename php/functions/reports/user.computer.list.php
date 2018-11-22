@@ -1,5 +1,5 @@
 <?php 
-    // session_start();
+    session_start();
     $department = $_SESSION["department"];
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 

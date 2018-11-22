@@ -19,10 +19,8 @@ $oldremarks = $row['remarks'];
 
 
 //Check if already have a record
-if ($update == "true")
-{
-    if($oldremarks !== $remarks)
-    {
+if ($update == "true"){
+    if($oldremarks !== $remarks){
 
         $query = "UPDATE logonscript.tbl_computer_details SET `remarks`=:remarks WHERE (`hostname` = :hostname)";
         $pdo = $db->prepare($query);
@@ -30,18 +28,15 @@ if ($update == "true")
         $pdo->bindParam(":hostname",$hostname);
         $pdo->execute();
     }
-    if($version !== "")
-    {
+    if($version !== ""){
         $query = "UPDATE logonscript.tbl_computer_details SET `agent_version`=:versions WHERE (`hostname` = :hostname)";
         $pdo = $db->prepare($query);
         $pdo->bindParam(":versions",$version);
         $pdo->bindParam(":hostname",$hostname);
         $pdo->execute();
     }
-
 }
-else
-{
+else{
     $query2 = "INSERT INTO tbl_computer_details (hostname, processor, hdd_Serial, mac_Address, mb_manufacturer, mb_product, scan_time, ip, status, remarks, agent_version) VALUES (?, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ?, ?)";
     $pdo2 = $db->prepare($query2);
     $pdo2->execute([$hostname, $remarks, $version]);
