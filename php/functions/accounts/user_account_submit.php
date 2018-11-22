@@ -23,6 +23,12 @@ else
              
         VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
         ($db->query($sql));
+
+        //$sql2 = "INSERT INTO tbl_history (history_id, transact_name, transact_details, user_id)
+             
+        //VALUES ('".$_POST["A"]."', '".$_POST["name"]."', '".$_POST["NAVBARusernameID"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
+        //($db->query($sql2));
+
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
     }
 }
