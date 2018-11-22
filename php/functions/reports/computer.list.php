@@ -41,11 +41,11 @@ foreach($result as $row)
     $scan_time = $row['scan_time'];
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $status = "Running";
-        $status1 = "Found"
+        $status1 = "Found";
     else
     {
         $status = "End Task";
-        $status1 = "Not Found"
+        $status1 = "Not Found";
       }
 
     $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version";
