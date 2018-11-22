@@ -40,6 +40,17 @@ foreach($result as $row)
     $ip_address = $row['ip_address'];
     $user = $row['user'];
     $scan_time = $row['scan_time'];
+    $date = $scan_time;
+
+    $date = explode(" ",$scan_time);
+
+    $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
+
+    if ($newdate = new DateTime($date[0]." ".$date[1]))
+    {
+        $scan_time = date_format($newdate, "M-d-Y H:i");
+    }
+
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
     {
         $status = "Running";
@@ -50,16 +61,6 @@ foreach($result as $row)
         $status = "End Task";
         $status1 = "Not Found";
     }
-
-    $date = $scan_time;
-
-    $date = explode(" ",$scan_time);
-
-    $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
-
-    if ($newdate = new DateTime($date[0]." ".$date[1])){
-
-    $scan_time = date_format($newdate, "M-d-Y H:i");
 
     $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version";
 
