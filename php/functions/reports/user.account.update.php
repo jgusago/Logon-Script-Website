@@ -9,6 +9,11 @@ $password = $_POST['password'];
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
+$sql = "SELECT userid FROM logonscript.tbl_user WHERE userid like '$userid'";
+foreach ($db->query($sql) as $row){
+$olduserid = $row['userid'];
+}
+
 //Check if already have a record
 if ($update == "true"){
     if($olduserid == $userid){
