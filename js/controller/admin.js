@@ -467,6 +467,27 @@ function UserAccountupdate(userid, update, grandparent, linkid){
   OVERLAYdisable();
 }
 
+/*User Account View*/
+
+function UserAccounttableupdate(parent, linkid){
+  var view = document.getElementById("contentview");
+  view.innerHTML = "";
+
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  path = "php/functions/accounts/accounts.view.php";
+  setTimeout(function(){
+     DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+   }, 100);
+}
+
 function CMPLISTdtlstableupdate(parent, linkid){
     var view = document.getElementById("contentview");
     view.innerHTML = "";
