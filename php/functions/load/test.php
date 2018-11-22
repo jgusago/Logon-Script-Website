@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+session_start();
 $department = $_POST['department'];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
