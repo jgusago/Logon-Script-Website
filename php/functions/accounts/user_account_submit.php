@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+session_start();
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
@@ -27,7 +27,7 @@ else
 
         $sql2 = "INSERT INTO tbl_history (history_id, transact_name, transact_details, user_id)
              
-        VALUES ('$AddUser', '".$_POST["name"]."', '$userid')"
+        VALUES ('".$_POST["$AddUser"]."', '".$_POST["name"]."', '".$_POST["$userid"]."')";
         ($db->query($sql2));
 
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
