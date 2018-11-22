@@ -6,7 +6,8 @@ $count = 0;
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-if ($_SESSION['role'] !== "STAFF"){
+if ($_SESSION['role'] !== "STAFF")
+{
     $parent = $_POST["parent"];
     $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
 }
@@ -40,13 +41,15 @@ foreach($result as $row)
     $user = $row['user'];
     $scan_time = $row['scan_time'];
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
+    {
         $status = "Running";
         $status1 = "Found";
+    }
     else
     {
         $status = "End Task";
         $status1 = "Not Found";
-      }
+    }
 
     $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname ORDER BY tbl_computer_details.agent_version";
 
