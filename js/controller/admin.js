@@ -371,18 +371,41 @@ function addbranch(){
   createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
-  var form = [], formrow = [], label = [], col1 = [], col2 = [], col3 = [], col4 = [], select1 = [], select2 = [], select3 = [], select4 = [], option1 = [], option2 = [], option3 = [], option4 = [];
+  var form = [], formrow = [], label = [], col = [], col1 = [], col2 = [], col3 = [], col4 = [], select1 = [], select2 = [], select3 = [], select4 = [], option1 = [], option2 = [], option3 = [], option4 = [];
   //createform
   createnewElement(form, cb, "form", [], [], "");
   //create form-row
   createnewElement(formrow, form.newelement, "div", ["form-row"],[],"");
+  //sub col
+  createnewElement(col, formrow.newelement, "div", ["col-md-12","mb3"],[],"");
   //label
-  createnewElement(label, formrow.newelement, "lable",[],[],"Add Branch/Department/Sub-Department");
+  createnewElement(label, col.newelement, "label",[],[],"Add Branch/Department/Sub-Department");
   //first col
-  createElement(col1, formrow.newelement, "div", ["col-md-3","mb3"],[],[],"");
+  createnewElement(col1, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
     //Select
-    createnewElement(select1, col1.newelement, "select", [], [], "");
+    createnewElement(select1, col1.newelement, "select", ["form-control"], [], "");
     createnewElement(option1, select1.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+
+  //second
+  createnewElement(col2, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
+    //Select
+    createnewElement(select2, col2.newelement, "select", ["form-control"], [], "");
+    select2.newelement.disabled = true;
+    createnewElement(option2, select2.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+
+  //first col
+  createnewElement(col3, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
+    //Select
+    createnewElement(select3, col3.newelement, "select", ["form-control"], [], "");
+    select3.newelement.disabled = true;
+    createnewElement(option3, select3.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+
+  //second
+  createnewElement(col4, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
+    //Select
+    createnewElement(select4, col4.newelement, "select", ["form-control"], [], "");
+    select4.newelement.disabled = true;
+    createnewElement(option4, select4.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
 
 
 
