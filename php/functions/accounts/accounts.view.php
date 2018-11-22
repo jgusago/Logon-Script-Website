@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 	echo "User ID|Name|Department|Position|Role|Status|Option";
@@ -25,7 +25,7 @@ session_start();
 	}
 	else
 	{
-		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user";
+		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user ";
 
 		foreach ($db->query($sql1) as $row) 
 		{

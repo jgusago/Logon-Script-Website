@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-session_start();
+// session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 /*$un=$_POST['userid'];
