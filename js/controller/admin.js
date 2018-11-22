@@ -373,7 +373,7 @@ function addbranch(){
 
   var form = [], formrow = [], label = [], col1 = [], col2 = [], col3 = [], col4 = [], select1 = [], select2 = [], select3 = [], select4 = [], option1 = [], option2 = [], option3 = [], option4 = [];
   //createform
-  createnewElement(form, db, "form", [], [], "");
+  createnewElement(form, cb, "form", [], [], "");
   //create form-row
   createnewElement(formrow, form.newelement, "div", ["form-row"],[],"");
   //label
