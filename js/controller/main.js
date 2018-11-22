@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load(){
-  SESSIONConfirm();
+   SESSIONConfirm();
 
   var branchview = document.getElementById("contentview");
   var loading = document.getElementById("processingbar");

@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 if (isset($_SESSION["userid"])){
   $id = $_SESSION["userid"];
   $role = $_SESSION["role"];

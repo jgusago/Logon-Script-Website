@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load(){
     SESSIONConfirm();
-  
+
     var branchview = document.getElementById("contentview");
     var loading = document.getElementById("processingbar");
 
@@ -73,7 +73,7 @@ function DSHBRDContent(parent, linkid)
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
-    switch (linkdata) 
+    switch (linkdata)
     {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
@@ -104,7 +104,7 @@ function DSHBRDContent(parent, linkid)
       default:
 
     }
-    
+
     setTimeout(function()
     {
       var copy = document.getElementsByClassName("buttons-copy");
@@ -133,7 +133,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   var cf = document.getElementById("mncf");
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = [],
-  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [], 
+  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [],
   divfooter = [], button = [], divbody6 =[], label6 =[];
 
   //whole div
@@ -142,7 +142,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [],"");
-   
+
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
@@ -327,7 +327,7 @@ function DSHBRDContentBranchSettings()
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/sttngs/settings.branch.view.php",function(data){
     data = data.split("||");
-    for(var arraccount = 0; arraccount < data.length; arraccount++){ 
+    for(var arraccount = 0; arraccount < data.length; arraccount++){
       var currentdata = data[arraccount].split(";");
 
       if (currentdata[2] == "tr"){
@@ -370,6 +370,21 @@ function addbranch(){
   createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
   createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
+
+  var form = [], formrow = [], label = [], col1 = [], col2 = [], col3 = [], col4 = [], select1 = [], select2 = [], select3 = [], select4 = [], option1 = [], option2 = [], option3 = [], option4 = [];
+  //createform
+  createnewElement(form, cb, "form", [], [], "");
+  //create form-row
+  createnewElement(formrow, form.newelement, "div", ["form-row"],[],"");
+  //label
+  createnewElement(label, formrow.newelement, "lable",[],[],"Add Branch/Department/Sub-Department");
+  //first col
+  createElement(col1, formrow.newelement, "div", ["col-md-3","mb3"],[],[],"");
+    //Select
+    createnewElement(select1, col1.newelement, "select", [], [], "");
+    createnewElement(option1, select1.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+
+
 
 }
 /*End of Branch View*/
@@ -460,10 +475,10 @@ function UserAccountupdate(userid, update, grandparent, linkid){
   password=document.getElementById("password").value;
 
   $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password},function(data){
-  
+
   });
   UserAccounttableupdate(grandparent,linkid);
- 
+
   OVERLAYdisable();
 }
 
@@ -554,11 +569,11 @@ function getNotification(){
         newdiv.innerHTML = data[1];
         content.appendChild(newdiv);
       }
-    
+
     });
 }
 
-function NOTIFnotconnected(){    
+function NOTIFnotconnected(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
@@ -708,7 +723,7 @@ function SESSIONConfirm(){
     }
 
     var nametext = document.createTextNode(data[3]);
-    name.appendChild(nametext); 
+    name.appendChild(nametext);
   });
 }
 
@@ -722,7 +737,7 @@ function isNumberKey(evt)
 }
 
 /*Letters Only*/
-function LettersrOnly(e) 
+function LettersrOnly(e)
 		{
       var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
       var code;
