@@ -364,9 +364,10 @@ function addbranch(){
   createnewElement(headercontainer,ch, "div", ["container"], [], "");
 
   createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
-  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-12","col-md-6"],[],"Add Branch/Deparetment");
+  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Branch/Department");
+  headerdiv1.newelement.style.width = "600px";
   var rightsidevalue = [], span = [], headerdiv2 = [];
-  createnewElement(headerdiv2, ch, "div", ["col-sm-12","col-md-6"],[],"");
+  createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
   createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
@@ -464,6 +465,27 @@ function UserAccountupdate(userid, update, grandparent, linkid){
   UserAccounttableupdate(grandparent,linkid);
  
   OVERLAYdisable();
+}
+
+/*User Account View*/
+
+function UserAccounttableupdate(parent, linkid){
+  var view = document.getElementById("contentview");
+  view.innerHTML = "";
+
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+  path = "php/functions/accounts/accounts.view.php";
+  setTimeout(function(){
+     DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+   }, 100);
 }
 
 function CMPLISTdtlstableupdate(parent, linkid){
