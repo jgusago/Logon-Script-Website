@@ -38,7 +38,7 @@ foreach($result as $row)
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
     $user = $row['user'];
-    $scan_time = $row['scan_time']
+    $scan_time = $row['scan_time'];
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $status = "Running";
         $status1 = "Found"
