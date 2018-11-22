@@ -27,7 +27,7 @@ else
 
         $sql2 = "INSERT INTO tbl_history (history_id, transact_name, transact_details, user_id)
              
-        VALUES ('".$_POST["$AddUser"]."', '".$_POST["name"]."', '".$_POST["$userid"]."')";
+        VALUES ('$AddUser', '".$_POST["name"]."', '$userid')"
         ($db->query($sql2));
 
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
