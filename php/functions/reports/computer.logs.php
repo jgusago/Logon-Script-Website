@@ -57,7 +57,7 @@ foreach($result as $row)
     $date1 = explode(" ",$ip_date_modefied);
 
     $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
-    $date1[0] = preg_replace("/[^a-zA-Z]/", "", $dat1e[0]);
+    $date1[0] = preg_replace("/[^a-zA-Z]/", "", $date1[0]);
 
     if ($newdate = new DateTime($date[0]." ".$date[1]) || $newdate1 = new DateTime($date1[0]." ".$date1[1]))
     {
