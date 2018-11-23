@@ -72,7 +72,7 @@ foreach ($db->query($query) as $row){
 
 elseif ($role == "STAFF"){
 
-    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running' group by hostname";
+    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'Running' group by hostname";
     foreach ($db->query($query) as $row){
         $count++;
     }
