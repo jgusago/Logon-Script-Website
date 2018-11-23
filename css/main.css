@@ -261,6 +261,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
 }
+li a.active
+{
+  background: #8dc85e;
+}
 #UserAccountupdate
 {
   width: -webkit-fill-available;
