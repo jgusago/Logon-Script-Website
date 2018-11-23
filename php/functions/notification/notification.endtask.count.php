@@ -23,8 +23,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN")
     $notif1 = "NOTIFnotconnected|text-danger|Disconnected iMonitor|$time|There are $count computers detected! Install imonitor agent.";
     }
     else{
-        echo "0`<a class='dropdown-item' href='#'>
-        <div class='dropdown-message small'>No notification</div></a>";
+        $notif1 = "WALANG NOTIF";
     }
 
 $query =  "SELECT * FROM logonscript.tbl_agent_version WHERE type like 'valid'";
