@@ -11,13 +11,15 @@ $notif1 = "";
 $notif2 = "";
 $time = date("h:i a");
 
-if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN"){
+if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN")
+{
 
-    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running' group by hostname";
+    $query = "SELECT * FROM logonscript.tbl_log WHERE connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'Running' group by hostname";
     foreach ($db->query($query) as $row){
         $count++;
     }
-    if ($count != 0){
+    if ($count != 0)
+    {
     $notif1 = "NOTIFnotconnected|text-danger|Disconnected iMonitor|$time|There are $count computers detected! Install imonitor agent.";
     
     }
@@ -109,7 +111,7 @@ foreach ($db->query($query) as $row){
         if($notif1 != 0){
             $notif2 =  "`";
         }
-        $notif2 = $notif2."NOTIFimonitorupdate|text-warning|Agent Need Update|$time|There are $count2 computers detected! Update imonitor agent";
+        $notif2 = $notif2."NOTIFimonitorupdate|text-warning|Agent Needs To Update|$time|There are $count2 computers detected! Update imonitor agent";
         }
 
     //notif number
