@@ -25,7 +25,7 @@ session_start();
 	}
 	else
 	{
-		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user ";
+		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user";
 
 		foreach ($db->query($sql1) as $row) 
 		{
