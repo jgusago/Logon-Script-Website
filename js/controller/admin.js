@@ -148,6 +148,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
    
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
+  divvalue.newelement.style.width = "600px"; 
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
 
@@ -156,44 +157,45 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
-  createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
+  //userid
+  createnewElement(divbody, cb, "form", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],[],"User ID");
-  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "disabled:true", "value:"+userid], "");
-
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:useridupdate", "disabled:true", "value:"+userid], "");
+  //name
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
-  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:name", "required:true", "value:"+name], "");
-
+  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:nameupdate", "required:true", "value:"+name], "");
+  //department
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
-  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:department2"], "");
+  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
   Departmentlist();
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
-
+  //positioin
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Position");
-  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:position", "id:postion", "disabled:true", "value:"+position], "");
-
+  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:position", "id:positionupdate", "disabled:true", "value:"+position], "");
+  //role
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "label", [],[],"Role");
-  createnewElement(select1, divbody4.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+role], "");
+  createnewElement(select1, divbody4.newelement, "select", ["form-control"], ["name:role", "id:roleupdate", "required:true", "value:"+role], "");
   createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
   createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
-
+  //status
   createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label5, divbody5.newelement, "label", [],[],"Status");
-  createnewElement(select2, divbody5.newelement, "select", ["form-control"], ["name:status", "id:status", "required:true", "value:"+status], "");
+  createnewElement(select2, divbody5.newelement, "select", ["form-control"], ["name:status", "id:statusupdate", "required:true", "value:"+status], "");
   createnewElement(options1, select2.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
   createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
   createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
-
+  //password
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:password", "required:true"], "");
-
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "required:true"], "");
+  //update button
   createnewElement(divfooter, cf, "div", [], [], "");
-  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name: btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "");
+  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
 }
 
 //computerlist Update OnClick
@@ -369,7 +371,7 @@ function addbranch(){
   createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
   createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-12","col-md-6"],[],"Add Branch/Deparetment");
   var rightsidevalue = [], span = [], headerdiv2 = [];
-  createnewElement(headerdiv2, ch, "div", ["col-sm-12","col-md-6"],[],"");
+  createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-12","col-md-6"],[],"");
   createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
@@ -490,7 +492,14 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
 
 /*User Account Update*/
 
-function UserAccountupdate(userid, update, grandparent, linkid){
+function UserAccountupdate(userid){
+
+  name = document.getElementById("nameupdate").value;
+  department = document.getElementById("departmentupdate").value;
+  position = document.getElementById("positionupdate").value;
+  role = document.getElementById("roleupdate").value;
+  status = document.getElementById("statusupdate").value;
+  password = document.getElementById("passwordupdate").value;
 
   //var e = document.getElementById("CMPLISTdtlsremarks");
   //var i = e.selectedIndex;
@@ -498,14 +507,20 @@ function UserAccountupdate(userid, update, grandparent, linkid){
 
   //var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/reports/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password,update:update},function(data){
-  //var view = document.getElementById("contentview");
-  //view.innerHTML = data;
+  $.post("php/functions/accounts/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password,userid:userid},function(data){
+    if(data == true){
+    DSHBRDContent('','DSHBRDAccountsAccMgnt')
+    OVERLAYdisable();
+    }
+    else{
+      var body = document.getElementById("mncb");
+      var footer = document.getElementById("mncf");
+      body.innerHTML = "Error have been acquired!!<br>"+data;
+      footer.innerHTML = "<button onclick='OVERLAYdisable'>Close</button>";
+    }
   });
-  UserAccountupdate(grandparent,linkid);
   //DSHBRDRecordsComplist
   //CMPLISTdtlsupdate(linkid);
-  OVERLAYdisable();
 }
 
 function CMPLISTdtlstableupdate(parent, linkid){
@@ -691,7 +706,7 @@ function Departmentlist(){
       createnewElement(option, select, "option", [], ["value:"+data[i]],data[i]);
     }
     if($("#department2".length)){
-      var select2 = document.getElementById("department2");
+      var select2 = document.getElementById("departmentupdate");
       for (var j = 0; j < data.length; j++){
         var option2 = [];
         createnewElement(option2, select2, "option", [], ["value:"+data[j]],data[j]);
