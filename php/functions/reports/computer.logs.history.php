@@ -46,8 +46,16 @@ else
         $branch = $row['branch'];
         $time = $row['scan_time'];
         $query4 = "SELECT hostname from logonscript.tbl_log WHERE ip_address LIKE '$ip'";
-        foreach ($db->query($query4) as $row) {
+        foreach ($db->query($query4) as $row) 
+        {
             $hostname = $row['hostname'];
+
+            $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
+    
+            if ($newdate = new DateTime($date[0]." ".$date[1]))
+            {
+                $time = date_format($newdate, "M-d-Y H:i");
+            }
         }
 
         echo "#$hostname|$id|$ip|$services|$branch|$time";
