@@ -44,7 +44,7 @@ foreach($result as $row){
         $currentstatus = "Off-line";
       }
 }
-  echo "Processor|Disk Serial|MAC Address|Manufacturer|Model|Status|Agent Version";
+  echo "Processor|Operating System|System Type|Disk Serial|MAC Address|Manufacturer|Motherboard Product|Status|Agent Version";
 
   $newquery = "SELECT * FROM logonscript.tbl_computer_details WHERE hostname LIKE :hostname GROUP BY hostname";
 
@@ -71,11 +71,21 @@ foreach($result as $row){
       if(empty($row['mb_product'])){
         $row['mb_product'] = "";
       }
-      if(empty($row['status'])){
+      if(empty($row['status']))
+      {
         $row['status'] = "";
       }
-      if(empty($row['agent_version'])){
+      if(empty($row['agent_version']))
+      {
         $row['agent_version'] = "";
+      }
+      if(empty($row['OS']))
+      {
+        $row['OS'] = "";
+      }
+      if(empty($row['System_type']))
+      {
+        $row['System_type'] = "";
       }
 
       $processor = $row['processor'];
@@ -85,6 +95,8 @@ foreach($result as $row){
       $model = $row['mb_product'];
       $status = $row['status'];
       $version = $row['agent_version'];
+      $OS = $row['OS'];
+      $system_type = $row['System_type'];
 
 
       //echo "#$processor|$serial|$macaddress|$manufacturer|$model|$status|input`form-control`id:agentversion~type:text~placeholder:$version~onkeypress:remarksupdate(\"$version\")`$version";
@@ -98,9 +110,11 @@ foreach($result as $row){
       $model = "No Data Found";
       $status = "No Data Found";
       $version = "No Data Found";
+      $OS = "No Data Found";
+      $system_type = "No Data Found";
   }
 
 
-echo "#$processor|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
+echo "#$processor|$OS|$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
 
 ?>
