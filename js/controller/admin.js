@@ -508,7 +508,7 @@ function UserAccountupdate(userid){
   //var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
   $.post("php/functions/accounts/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password,userid:userid},function(data){
-    if(data == true){
+    if(data == "true"){
     DSHBRDContent('','DSHBRDAccountsAccMgnt')
     OVERLAYdisable();
     }
