@@ -11,23 +11,27 @@ if ($_SESSION['role'] !== "STAFF")
     $parent = $_POST["parent"];
     $query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent GROUP BY hostname";
 }
-else{
+else
+{
     $id = $_POST["linkid"];
     $department = $_SESSION['department'];
     $sql2 = "SELECT * FROM logonscript.tbl_tree where tree_name like '$department'";
       
-		foreach ($db->query($sql2) as $row) {
-            if(isset($row['tree_filter'])){
+        foreach ($db->query($sql2) as $row) 
+        {
+            if(isset($row['tree_filter']))
+            {
                 $tree_filter = $row['tree_filter'];
             }
-            else{
-                $tree_filter = "notacceptabvle";
+            else
+            {
+                $tree_filter = "notacceptable";
             }
             
         }    
         $query = "SELECT * from logonscript.tbl_log WHERE hostname like '%$tree_filter%'";
 }
-echo "Computer Name|User|Employee ID|IP Address|Services Status|Server Status|Remarks|Agent Version|Scan Time|Previous Date Checked|Date Checked|Action";
+echo "Computer Name|User|IP Address|Services & Server Status|Remarks|Agent Version|Previous Date Checked|Date Checked|Action";
 
 $pdo = $db->prepare($query);
 $pdo->bindParam(":parent",$parent);
@@ -39,17 +43,17 @@ foreach($result as $row)
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
     $user = $row['user'];
-    $scan_time = $row['scan_time'];
-    $date = $scan_time;
+    // $scan_time = $row['scan_time'];
+    // $date = $scan_time;
 
-    $date = explode(" ",$scan_time);
+    // $date = explode(" ",$scan_time);
 
-    $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
+    // $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
 
-    if ($newdate = new DateTime($date[0]." ".$date[1]))
-    {
-        $scan_time = date_format($newdate, "M-d-Y H:i");
-    }
+    // if ($newdate = new DateTime($date[0]." ".$date[1]))
+    // {
+    //     $scan_time = date_format($newdate, "M-d-Y H:i");
+    // }
 
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
     {
@@ -81,7 +85,7 @@ foreach($result as $row)
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname||$user|$ip_address|$status|$status1|$remarks|$agent_version|$scan_time|||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
+    echo "#$hostname|User: ~Employee ID: $user|$ip_address|iMonitor Services: $status~Connection Status: $status1|$remarks|$agent_version|||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
 
 
 
