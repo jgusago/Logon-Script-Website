@@ -198,7 +198,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
 }
 
-function AgentUpdate()
+function AgentUpdate(hostname)
 {
   OVERLAYenable();
 
