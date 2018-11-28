@@ -7,7 +7,7 @@ function load(){
 
     DSHBRDNavBarBtns();
     NAVBARNotification();
-    Departmentlist();
+    Departmentlist("department");
 }
 
 /* Buttons */
@@ -169,7 +169,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
   createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
-  Departmentlist();
+  Departmentlist("departmentupdate");
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
   //positioin
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
@@ -421,39 +421,53 @@ function adddepartment(){
 
 
     //form
-    var form = [], fg = [], lbl = [], ip = [];
+    var form = [], fg = [], lbl = [], ip = [], dvd = [];
     createnewElement(form, cb, "form", [] ,[], "");
 
     var fg4 =[], label2 = [], select =[], option = [];
     createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
-    createnewElement(label2, fg4.newelement, "label", [],[],"Department");
-    createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
-    Departmentlist();
-    createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
+    createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch");
+    var branchid = idgenerator();
+    createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath("+branchid+")"], "");
+    Departmentlist(branchid);
+    createnewElement(option, select.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Department");
+    createnewElement(dvd,  fg4.newelement, "div", ["dropdown-divider"],[],"");
 
-
+    //Path
+    var fg5 = [], lbl5 = [], slt2 = [], optn2 = [];
+    createnewElement(fg5, form.newelement, "div", ["form-group"], [], "");
+    createnewElement(lbl5, fg5.newelement, "label", [],[],"Select Path");
+    createnewElement(slt2, fg5.newelement, "select", ["form-control"], ["name:path", "required:true", "id:122348323945"], "");
+    createnewElement(optn2, slt2.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Path");
+    createnewElement(dvd,  fg5.newelement, "div", ["dropdown-divider"],[],"");
     //1st row
-      createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
-        var lblid = idgenerator();
-        createnewElement(lbl, fg.newelement, "label", [], ["for:"+lblid], "Department Name:");
-        createnewElement(ip, fg.newelement, "input", ["form-control"], ["id:"+lblid,"placeholder:Department Name","required:true"], "");
+    createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
+      var lblid = idgenerator();
+      createnewElement(lbl, fg.newelement, "label", [], ["for:"+lblid], "Department Name:");
+      createnewElement(ip, fg.newelement, "input", ["form-control"], ["id:"+lblid,"placeholder:Department Name","required:true"], "");
     var form2 = [], fg2 = [], lbl2 = [], ip2 = [];
     //1st row
-    createnewElement([],form.newelement,"br",[],[],"");
-      createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
-        var lblid2 = idgenerator();
-        createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Department Filter:");
-        createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Department Filter","required:true"], "");
+    createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
+    createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
+    var lblid2 = idgenerator();
+    createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Department Filter:");
+    createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Department Filter","required:true"], "");
 
   //footer
-    var button = [], fg3 = [], dvd = [];
+    var button = [], fg3 = [];
     createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
     createnewElement(fg3, form.newelement,"div", ["form-group"], [],"");
     createnewElement(button, fg3.newelement, "button", ["btn","btn-primary"],["type:submit"],"Add Department");
 
-
 }
 /*End of Branch View*/
+
+function BRNCHVWupdatepath(branchid){
+
+  var branch = document.getElementById(branchid).value;
+  
+
+}
 
 
 function logout(){
@@ -730,8 +744,8 @@ function NOTIFallshow(){
   });
 }
 
-function Departmentlist(){
-  var select = document.getElementById("department");
+function Departmentlist(ID){
+  var select = document.getElementById(ID);
   select.innerHTML = "";
 
 
@@ -740,13 +754,6 @@ function Departmentlist(){
     for (var i = 0; i < data.length; i++){
       var option = [];
       createnewElement(option, select, "option", [], ["value:"+data[i]],data[i]);
-    }
-    if($("#department2".length)){
-      var select2 = document.getElementById("departmentupdate");
-      for (var j = 0; j < data.length; j++){
-        var option2 = [];
-        createnewElement(option2, select2, "option", [], ["value:"+data[j]],data[j]);
-      }
     }
 
   });
