@@ -85,7 +85,7 @@ foreach($result as $row)
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname|User: ~Employee ID: $user|$ip_address|iMonitor Services: $status~Connection Status: $status1|$remarks|$agent_version|||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
+    echo "#$hostname|$user|$ip_address|iMonitor Services: $status~Connection Status: $status1|$remarks|$agent_version|||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parent\",\"$id\")`Details";
 
 
 
