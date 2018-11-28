@@ -198,6 +198,33 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
 }
 
+function AgentUpdate()
+{
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var divvalue = [], leftdiv = [], value = [], subrdiv =[], rightsidevalue =[], span =[];
+
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  //leftside div
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+    //leftside contents
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"");
+
+
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  divvalue.newelement.style.width = "600px";
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
+
+  createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  span.newelement.innerHTML = "&times;";
+
+}
+
 //computerlist Update OnClick
 
 function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
