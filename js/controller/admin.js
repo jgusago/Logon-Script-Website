@@ -209,7 +209,7 @@ function AgentUpdate(hostname)
   var divvalue = [], leftdiv = [], value = [], subrdiv =[], rightsidevalue =[], span =[];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
-  divvalue.newelement.style.width = "600px";
+  // divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"" );
 
@@ -249,8 +249,26 @@ function AgentUpdate(hostname)
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:AgentUpdate","onclick:AgentUpdate()"], "Update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated(\""+hostname+"\")"], "Update" );
 
+}
+
+function AgentUpdated(hostname, update, grandparent, linkid){
+
+  var e = document.getElementById("CMPLISTdtlsremarks");
+  var i = e.selectedIndex;
+  var remarks = e.options[i].text;
+
+  var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
+
+  $.post("php/functions/notification/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
+  //var view = document.getElementById("contentview");
+  //view.innerHTML = data;
+  });
+  CMPLISTdtlstableupdate(grandparent,linkid);
+  //DSHBRDRecordsComplist
+  //CMPLISTdtlsupdate(linkid);
+  OVERLAYdisable();
 }
 
 //computerlist Update OnClick
@@ -575,6 +593,7 @@ function OVERLAYdisable()
         cf.innerHTML = "";
 
 }
+
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
 
   var value = document.getElementById(id).value;
@@ -597,7 +616,7 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
 
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
+  $.post("php/functions/notification/notification.agent.updated.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
   //var view = document.getElementById("contentview");
   //view.innerHTML = data;
   });
