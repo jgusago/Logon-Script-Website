@@ -210,7 +210,7 @@ function AgentUpdate(hostname)
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   //leftside div
-  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-12"], [], "");
     //leftside contents
   createnewElement(value, leftdiv.newelement, "h4", [], [],"");
 
