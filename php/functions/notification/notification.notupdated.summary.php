@@ -85,6 +85,6 @@ foreach ($result as $row) {
             $style2 = "bg-danger";
         }
     }
-    echo "#$hostname|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time|button`btn~btn-primary`onClick:AgentUpdate()`Edit";
+    echo "#$hostname|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time|button`btn~btn-primary`onClick:AgentUpdate(\"$hostname\")`Edit";
 }
 ?>
