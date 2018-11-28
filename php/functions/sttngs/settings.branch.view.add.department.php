@@ -11,4 +11,7 @@ $query = "UPDATE logonscript.tbl_user SET `name`='$name' WHERE (`userid` = '$use
 $db->query($query);
 $namestat = true;
 
+$path = $path.split("/");
+
+echo $length = $path.length - 1;
 ?>
