@@ -1,8 +1,8 @@
 <?php
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$branch = "6789(MK)";
-//$branch = $_POST['branch'];
+//$branch = "6789(MK)";
+$branch = $_POST['branch'];
 echo $branch."<br>";
 $query = "SELECT * FROM logonscript.tbl_tree WHERE tree_parent LIKE '$branch'";
 foreach ($db->query($query) as $row) {
@@ -20,9 +20,12 @@ function children($branch, $path){
   $query = "SELECT * FROM logonscript.tbl_tree WHERE tree_parent LIKE '$branch'";
   foreach ($db->query($query) as $row) {
     $tree_name = $row['tree_name'];
+    $tree_level = $row['tree_level'];
     echo $newpath = $path."/".$tree_name;
     echo "<br>";
+    if($tree_level < 3){
     children($tree_name, $newpath);
+    }
   }
 }
 
