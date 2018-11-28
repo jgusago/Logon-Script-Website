@@ -209,13 +209,6 @@ function AgentUpdate(hostname)
   var divvalue = [], leftdiv = [], value = [], subrdiv =[], rightsidevalue =[], span =[];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
-  //leftside div
-  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-12"], [], "");
-    //leftside contents
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"");
-
-
-  createnewElement(divvalue, ch, "div", ["row"], [], "");
   divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"" );
@@ -225,7 +218,7 @@ function AgentUpdate(hostname)
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
-  $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(newdata){
+  $.post("php/functions/notification/notification.agent.update.php",{hostname:hostname},function(newdata){
 
     newdata = newdata.split("!!");
 
