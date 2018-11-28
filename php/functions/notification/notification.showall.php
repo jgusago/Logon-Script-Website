@@ -45,7 +45,7 @@ else{
 }
 
 
-echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time|Option";
+echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time";
 
 $pdo = $db->prepare($query3);
 $pdo->bindParam(":version",$version);

@@ -45,7 +45,7 @@ else{
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery AND hostname LIKE '%$filter%' group by hostname";
 }
 
-echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time";
+echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time|Option";
 
 $pdo = $db->prepare($query3);
 $pdo->bindParam(":version",$version);
