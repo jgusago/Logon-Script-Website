@@ -446,7 +446,7 @@ function addbranch(){
     createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
       var lblid2 = idgenerator();
       createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Branch Branch Filter:");
-      createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Branch Filter","required:true","hidden:true"], "");
+      createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Branch Filter","required:true"], "");
 
 //footer
   var button = [], fg3 = [], dvd = [];
@@ -483,7 +483,8 @@ function adddepartment(){
     createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
     createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch");
     var branchid = idgenerator();
-    createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath("+branchid+")"], "");
+    var pathid = idgenerator();
+    createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
     Departmentlist(branchid);
     createnewElement(option, select.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Department");
     createnewElement(dvd,  fg4.newelement, "div", ["dropdown-divider"],[],"");
@@ -492,8 +493,7 @@ function adddepartment(){
     var fg5 = [], lbl5 = [], slt2 = [], optn2 = [];
     createnewElement(fg5, form.newelement, "div", ["form-group"], [], "");
     createnewElement(lbl5, fg5.newelement, "label", [],[],"Select Path");
-    createnewElement(slt2, fg5.newelement, "select", ["form-control"], ["name:path", "required:true", "id:122348323945"], "");
-    createnewElement(optn2, slt2.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Path");
+    createnewElement(slt2, fg5.newelement, "select", ["form-control"], ["name:path", "required:true", "id:"+pathid], "");
     createnewElement(dvd,  fg5.newelement, "div", ["dropdown-divider"],[],"");
     //1st row
     createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
@@ -517,11 +517,20 @@ function adddepartment(){
 }
 /*End of Branch View*/
 
-function BRNCHVWupdatepath(branchid){
+function BRNCHVWupdatepath(branchid, pathid){
 
   var branch = document.getElementById(branchid).value;
+  var path = document.getElementById(pathid);
+  path.innerHTML = "";
 
   $.post("php/functions/sttngs/settings.branch.view.path.selection.php",{branch:branch},function(data){
+    data = data.split("<br>");
+    path.innerHTML = data;
+    for(var a = 0; a < data.length-1; a++){
+      var option = [];
+      createnewElement(option, path, "option", [], ["value:"+data[a]],data[a]);
+    }
+
 
   });
 
