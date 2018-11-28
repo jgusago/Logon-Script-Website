@@ -198,7 +198,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
 }
 
-function AgentUpdate(hostname)
+function AgentUpdate(hostname,tabledata,grandparent,linkid)
 {
   OVERLAYenable();
 
@@ -249,7 +249,7 @@ function AgentUpdate(hostname)
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","enabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated(\""+hostname+"\")"], "Update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","enabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated(\""+hostname+"\,\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\)"], "Update" );
 
 }
 
