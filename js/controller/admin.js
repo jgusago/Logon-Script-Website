@@ -225,7 +225,7 @@ function AgentUpdate()
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
-  $.post("",{hostname:hostname},function(newdata){
+  $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(newdata){
 
     newdata = newdata.split("!!");
 
