@@ -453,7 +453,7 @@ function addbranch(){
     createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
       var lblid2 = idgenerator();
       createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Branch Branch Filter:");
-      createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Branch Filter","required:true"], "");
+      createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Branch Filter","required:true","hidden:true"], "");
 
 //footer
   var button = [], fg3 = [], dvd = [];
@@ -527,7 +527,10 @@ function adddepartment(){
 function BRNCHVWupdatepath(branchid){
 
   var branch = document.getElementById(branchid).value;
-  
+
+  $.post("php/functions/sttngs/settings.branch.view.path.selection.php",{branch:branch},function(data){
+
+  });
 
 }
 
