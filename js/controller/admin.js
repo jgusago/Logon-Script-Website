@@ -560,9 +560,9 @@ function BRNCHVWadddepartment(branchid, pathid, deptid, filterid){
   var path = document.getElementById(pathid).value;
   var dept = document.getElementById(deptid).value;
   var filter = document.getElementById(filterid).value;
-  $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},fucntion(data){
+  $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},function(data){
 
-    
+
 
   });
 
