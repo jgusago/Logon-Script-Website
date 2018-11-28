@@ -209,7 +209,7 @@ function AgentUpdate(hostname)
   var divvalue = [], leftdiv = [], value = [], subrdiv =[], rightsidevalue =[], span =[];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
-  divvalue.newelement.style.width = "600px";
+  // divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"" );
 
