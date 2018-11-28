@@ -45,7 +45,7 @@ else{
 }
 
 
-echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time";
+echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time|Option";
 
 $pdo = $db->prepare($query3);
 $pdo->bindParam(":version",$version);
@@ -95,7 +95,7 @@ foreach ($result as $row) {
         }
 
     }
-    echo "#$hostname|$ip_address|div`$vstyle`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time";
+    echo "#$hostname|$ip_address|div`$vstyle`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time|button`btn~btn-primary`onClick:AgentUpdate()";
 }
 
 ?>
