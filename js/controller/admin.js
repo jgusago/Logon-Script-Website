@@ -249,7 +249,7 @@ function AgentUpdate(hostname)
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated()"], "Update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","enabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated()"], "Update" );
 
 }
 
