@@ -198,7 +198,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
 }
 
-function AgentUpdate(hostname)
+function AgentUpdate()
 {
   OVERLAYenable();
 
@@ -210,7 +210,7 @@ function AgentUpdate(hostname)
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   //leftside div
-  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-12"], [], "");
     //leftside contents
   createnewElement(value, leftdiv.newelement, "h4", [], [],"");
 
@@ -225,7 +225,7 @@ function AgentUpdate(hostname)
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
-  $.post("php/functions/reports/computer.list.details.php",{hostname:hostname},function(newdata){
+  $.post("",{hostname:hostname},function(newdata){
 
     newdata = newdata.split("!!");
 
