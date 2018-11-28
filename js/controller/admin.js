@@ -496,12 +496,14 @@ function adddepartment(){
     //form
     var form = [], fg = [], lbl = [], ip = [], dvd = [];
     createnewElement(form, cb, "form", [] ,[], "");
-
-    var fg4 =[], label2 = [], select =[], option = [];
-    createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
-    createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch");
     var branchid = idgenerator();
     var pathid = idgenerator();
+    var lblid = idgenerator();
+    var lblid2 = idgenerator();
+
+    var fg4 =[], label2 = [], select =[], option = [];
+    createnewElement(fg4, form.newelement, "div", ["form-group"], ["onsubmit:return BRNCHVWadddepartment(\""+branchid+"\",\""+pathid+"\",\""+lblid+"\",\""+lblid2+"\")"], "");
+    createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch");
     createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
     Departmentlist(branchid);
     createnewElement(option, select.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Department");
@@ -515,14 +517,12 @@ function adddepartment(){
     createnewElement(dvd,  fg5.newelement, "div", ["dropdown-divider"],[],"");
     //1st row
     createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
-      var lblid = idgenerator();
       createnewElement(lbl, fg.newelement, "label", [], ["for:"+lblid], "Department Name:");
       createnewElement(ip, fg.newelement, "input", ["form-control"], ["id:"+lblid,"placeholder:Department Name","required:true"], "");
     var form2 = [], fg2 = [], lbl2 = [], ip2 = [];
     //1st row
     createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
     createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
-    var lblid2 = idgenerator();
     createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Department Filter:");
     createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Department Filter","required:true"], "");
 
@@ -549,6 +549,20 @@ function BRNCHVWupdatepath(branchid, pathid){
       createnewElement(option, path, "option", [], ["value:"+data[a]],data[a]);
     }
 
+
+  });
+
+}
+
+function BRNCHVWadddepartment(branchid, pathid, deptid, filterid){
+
+  var branch = document.getElementById(branchid).value;
+  var path = document.getElementById(pathid).value;
+  var dept = document.getElementById(deptid).value;
+  var filter = document.getElementById(filterid).value;
+  $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},fucntion(data){
+
+    
 
   });
 
