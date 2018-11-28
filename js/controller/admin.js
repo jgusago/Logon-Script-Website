@@ -400,6 +400,59 @@ function addbranch(){
   createnewElement(button, fg3.newelement, "button", ["btn","btn-primary"],["type:submit"],"Add Branch");
 }
 /*End of Branch View*/
+
+function adddepartment(){
+    OVERLAYenable();
+
+    var ch = document.getElementById("mnch");
+    var cb = document.getElementById("mncb");
+    var cf = document.getElementById("mncf");
+
+    var headercontainer = [], headerrow = [], headerdiv1 = [], headerdiv2 = [];
+    createnewElement(headercontainer,ch, "div", ["container"], [], "");
+
+    createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
+    createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Deparetment");
+    var rightsidevalue = [], span = [], headerdiv2 = [];
+    createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
+    createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
+    createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
+
+
+
+    //form
+    var form = [], fg = [], lbl = [], ip = [];
+    createnewElement(form, cb, "form", [] ,[], "");
+
+    var fg4 =[], label2 = [], select =[], option = [];
+    createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
+    createnewElement(label2, fg4.newelement, "label", [],[],"Department");
+    createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
+    Departmentlist();
+    createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
+
+
+    //1st row
+      createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
+        var lblid = idgenerator();
+        createnewElement(lbl, fg.newelement, "label", [], ["for:"+lblid], "Department Name:");
+        createnewElement(ip, fg.newelement, "input", ["form-control"], ["id:"+lblid,"placeholder:Department Name","required:true"], "");
+    var form2 = [], fg2 = [], lbl2 = [], ip2 = [];
+    //1st row
+    createnewElement([],form.newelement,"br",[],[],"");
+      createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
+        var lblid2 = idgenerator();
+        createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Department Filter:");
+        createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Department Filter","required:true"], "");
+
+  //footer
+    var button = [], fg3 = [], dvd = [];
+    createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
+    createnewElement(fg3, form.newelement,"div", ["form-group"], [],"");
+    createnewElement(button, fg3.newelement, "button", ["btn","btn-primary"],["type:submit"],"Add Department");
+
+
+}
 /*End of Branch View*/
 
 
