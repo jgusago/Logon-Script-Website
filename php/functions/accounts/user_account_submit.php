@@ -18,9 +18,8 @@ if(!isset($error)){
         }
 else
     {
-        //$hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
-        $hashed_password = md5(sha1($_POST['password']));
-        //$encrypt_password = md5(sha1($password));
+        $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+        //$hashed_password = md5(sha1($_POST['password']));
 
         $sql = "INSERT INTO tbl_user (userid, name, department, role, status, password)
              
