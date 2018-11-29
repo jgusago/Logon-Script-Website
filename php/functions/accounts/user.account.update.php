@@ -9,7 +9,7 @@ $role = $_POST['role'];
 $status = $_POST['status'];
 $password = $_POST['password'];
 
-$AddUser = "Edit User";
+$EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
@@ -31,7 +31,7 @@ if($oldname !== $name && $name !== ""){
     $namestat = true;
 
     $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
-    VALUES ('$AddUser', 'Name:".$_POST["name"].", NOW(), '$userid2')";
+    VALUES ('$EditUser', 'Name:".$_POST["name"]."', NOW(), '$userid2')";
     ($db->query($sql));
 }
 if($olddepartment !== $department && $department !== ""){
