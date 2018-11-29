@@ -19,7 +19,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     $department = $row[0]['department'];
       //check status
 
-      if(($status == 'Active') && (md5(sha1($encrypt_password)))) {
+      if(($status == 'Active') && (md5(sha1($password)) == $encrypt_password)) {
         //if(($status == 'Active') && (password_verify($password, $hashed_password))) {
         session_start();
         $_SESSION["userid"] = $row[0]['userid'];
