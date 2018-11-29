@@ -550,8 +550,6 @@ function BRNCHVWupdatepath(branchid, pathid){
       var option = [];
       createnewElement(option, path, "option", [], ["value:"+data[a]],data[a]);
     }
-
-
   });
 
 }
