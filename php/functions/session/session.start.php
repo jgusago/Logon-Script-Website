@@ -44,7 +44,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         echo "failed:inactive";
       }
       else{
-        //echo "failed:password";
+        echo "failed:password";
       }
       //check status
 
