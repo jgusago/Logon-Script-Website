@@ -1,13 +1,13 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load(){
     SESSIONConfirm();
-  
+
     var branchview = document.getElementById("contentview");
     var loading = document.getElementById("processingbar");
 
     DSHBRDNavBarBtns();
     NAVBARNotification();
-    Departmentlist();
+    Departmentlist("department");
 }
 
 /* Buttons */
@@ -73,7 +73,7 @@ function DSHBRDContent(parent, linkid)
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
-    switch (linkdata) 
+    switch (linkdata)
     {
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
@@ -107,7 +107,7 @@ function DSHBRDContent(parent, linkid)
       default:
 
     }
-    
+
     setTimeout(function()
     {
       var copy = document.getElementsByClassName("buttons-copy");
@@ -136,7 +136,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   var cf = document.getElementById("mncf");
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = [],
-  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [], 
+  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [],
   divfooter = [], button = [], divbody6 =[], label6 =[];
 
   //whole div
@@ -145,10 +145,10 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [],"");
-   
+
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
-  divvalue.newelement.style.width = "600px"; 
+  divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
 
@@ -169,7 +169,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
   createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
-  Departmentlist();
+  Departmentlist("departmentupdate");
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
   //positioin
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
@@ -196,6 +196,79 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
+}
+
+function AgentUpdate(hostname,tabledata,grandparent,linkid)
+{
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var divvalue = [], leftdiv = [], value = [], subrdiv =[], rightsidevalue =[], span =[];
+
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  // divvalue.newelement.style.width = "600px";
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"" );
+
+  createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  span.newelement.innerHTML = "&times;";
+
+  $.post("php/functions/notification/notification.agent.update.php",{hostname:hostname},function(newdata){
+
+    newdata = newdata.split("!!");
+
+    for(var d = 0; d < newdata.length; d++){
+
+    var table = [];
+    var tableid = idgenerator();
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, cb, classes, attributes);
+    data = newdata[d].split("#");
+    datalength = data.length;
+
+    thfdata = data[0].split("|");
+    var tbheader = [], tbfooter = [];
+    createTableContent([], table.head, [], [], "th", thfdata);
+
+    for (var i = 1; i < datalength;i++){
+        contentdata = data[i].split("|");
+        createTableContent([], table.body, [],[], "td", contentdata);
+
+        }
+
+    }//newdata for close
+  });
+
+  var updatebutton = [], footerdiv = [];
+  var footerclass = ["d-flex","flex-row-reverse"];
+  createnewElement(footerdiv, cf, "div", footerclass, [], "" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","enabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated(\""+hostname+"\,\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\)"], "Update" );
+
+}
+
+function AgentUpdated(hostname, update, grandparent, linkid){
+
+  var e = document.getElementById("CMPLISTdtlsremarks");
+  var i = e.selectedIndex;
+  var remarks = e.options[i].text;
+
+  var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
+
+  $.post("php/functions/notification/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
+  //var view = document.getElementById("contentview");
+  //view.innerHTML = data;
+  });
+  CMPLISTdtlstableupdate(grandparent,linkid);
+  //DSHBRDRecordsComplist
+  //CMPLISTdtlsupdate(linkid);
+  OVERLAYdisable();
 }
 
 //computerlist Update OnClick
@@ -332,7 +405,7 @@ function DSHBRDContentBranchSettings()
   createTable(table, card.body, classes, attributes);
   $.post("php/functions/sttngs/settings.branch.view.php",function(data){
     data = data.split("||");
-    for(var arraccount = 0; arraccount < data.length; arraccount++){ 
+    for(var arraccount = 0; arraccount < data.length; arraccount++){
       var currentdata = data[arraccount].split(";");
 
       if (currentdata[2] == "tr"){
@@ -340,10 +413,10 @@ function DSHBRDContentBranchSettings()
         createnewElement(tr,table.body,"tr",[],[],"");
       }
       var td = [], link = [], i = [], newdata = [];
-      createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
-      createnewElement(newdata, td.newelement, "span",["label", "label-default"],[],currentdata[0]);
+      createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],currentdata[0]);
+      createnewElement(newdata, td.newelement, "i",["label", "label-default"],[],"");
       createLink(link, td.newelement, "", [], ["role:button", "href:#"]);
-      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
+      createnewElement(i, link.link, "span", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
     }
   });
 
@@ -352,6 +425,7 @@ createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
 var ig = [];
 createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
+createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:adddepartment()"], "Add Department");
 // var ig2 = [];
 // createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 // createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
@@ -369,61 +443,143 @@ function addbranch(){
   createnewElement(headercontainer,ch, "div", ["container"], [], "");
 
   createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
-  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-12","col-md-6"],[],"Add Branch/Deparetment");
+  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Branch/Deparetment");
   var rightsidevalue = [], span = [], headerdiv2 = [];
-  createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-12","col-md-6"],[],"");
+  createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
   createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
-  var form = [], formrow = [], label = [], col = [], col1 = [], col2 = [], col3 = [], col4 = [], select1 = [], select2 = [], select3 = [], select4 = [], option1 = [], option2 = [], option3 = [], option4 = [];
-  //createform
-  createnewElement(form, cb, "form", [], [], "");
-  //create form-row
-  createnewElement(formrow, form.newelement, "div", ["form-row"],[],"");
-  //sub col
-  createnewElement(col, formrow.newelement, "div", ["col-md-12","mb3"],[],"");
-  //label
-  createnewElement(label, col.newelement, "label",[],[],"Add Branch/Department/Sub-Department");
-  //first col
-  createnewElement(col1, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
-    //Select
-    createnewElement(select1, col1.newelement, "select", ["form-control"], [], "");
-    createnewElement(option1, select1.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+  //body
+  //form
+  var form = [], fg = [], lbl = [], ip = [];
+  createnewElement(form, cb, "form", [] ,[], "");
+  //1st row
+    createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
+      var lblid = idgenerator();
+      createnewElement(lbl, fg.newelement, "label", [], ["for:"+lblid], "Branch Name:");
+      createnewElement(ip, fg.newelement, "input", ["form-control"], ["id:"+lblid,"placeholder:Branch Name","required:true"], "");
+  var form2 = [], fg2 = [], lbl2 = [], ip2 = [];
+  //1st row
+  createnewElement([],form.newelement,"br",[],[],"");
+    createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
+      var lblid2 = idgenerator();
+      createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Branch Branch Filter:");
+      createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Branch Filter","required:true"], "");
 
-  //second
-  createnewElement(col2, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
-    //Select
-    createnewElement(select2, col2.newelement, "select", ["form-control"], [], "");
-    select2.newelement.disabled = true;
-    createnewElement(option2, select2.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+//footer
+  var button = [], fg3 = [], dvd = [];
+  createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
+  createnewElement(fg3, form.newelement,"div", ["form-group"], [],"");
+  createnewElement(button, fg3.newelement, "button", ["btn","btn-primary"],["type:submit"],"Add Branch");
+}
+/*End of Branch View*/
 
-  //first col
-  createnewElement(col3, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
-    //Select
-    createnewElement(select3, col3.newelement, "select", ["form-control"], [], "");
-    select3.newelement.disabled = true;
-    createnewElement(option3, select3.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+function adddepartment(){
+    OVERLAYenable();
 
-  //second
-  createnewElement(col4, formrow.newelement, "div", ["col-md-3","mb3","form-group"],[],[],"");
-    //Select
-    createnewElement(select4, col4.newelement, "select", ["form-control"], [], "");
-    select4.newelement.disabled = true;
-    createnewElement(option4, select4.newelement, "option", [], ["selected:selected","hidden:true"],"Add Here");
+    var ch = document.getElementById("mnch");
+    var cb = document.getElementById("mncb");
+    var cf = document.getElementById("mncf");
+
+    var headercontainer = [], headerrow = [], headerdiv1 = [], headerdiv2 = [];
+    createnewElement(headercontainer,ch, "div", ["container"], [], "");
+
+    createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
+    createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Deparetment");
+    var rightsidevalue = [], span = [], headerdiv2 = [];
+    createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
+    createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
+    createnewElement(span, rightsidevalue.newelement, "i", ["fa","fa-lg","fa-fw","fa-times"], [], "");
 
 
+
+    //form
+    var form = [], fg = [], lbl = [], ip = [], dvd = [];
+    var branchid = idgenerator();
+    var pathid = idgenerator();
+    var lblid = idgenerator();
+    var lblid2 = idgenerator();
+    //form
+    createnewElement(form, cb, "form", [] ,["onsubmit:return BRNCHVWadddepartment(\""+branchid+"\",\""+pathid+"\",\""+lblid+"\",\""+lblid2+"\")"], "");
+
+    var fg4 =[], label2 = [], select =[], option = [];
+    createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
+    createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch");
+    createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
+    Departmentlist(branchid);
+    createnewElement(option, select.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Department");
+    createnewElement(dvd,  fg4.newelement, "div", ["dropdown-divider"],[],"");
+
+    //Path
+    var fg5 = [], lbl5 = [], slt2 = [], optn2 = [];
+    createnewElement(fg5, form.newelement, "div", ["form-group"], [], "");
+    createnewElement(lbl5, fg5.newelement, "label", [],[],"Select Path");
+    createnewElement(slt2, fg5.newelement, "select", ["form-control"], ["name:path", "required:true", "id:"+pathid], "");
+    createnewElement(dvd,  fg5.newelement, "div", ["dropdown-divider"],[],"");
+    //1st row
+    createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
+      createnewElement(lbl, fg.newelement, "label", [], ["for:"+lblid], "Department Name:");
+      createnewElement(ip, fg.newelement, "input", ["form-control"], ["id:"+lblid,"placeholder:Department Name","required:true"], "");
+    var form2 = [], fg2 = [], lbl2 = [], ip2 = [];
+    //1st row
+    createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
+    createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
+    createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Department Filter:");
+    createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Department Filter","required:true"], "");
+
+  //footer
+    var button = [], fg3 = [];
+    createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
+    createnewElement(fg3, form.newelement,"div", ["form-group"], [],"");
+    createnewElement(button, fg3.newelement, "button", ["btn","btn-primary"],["type:submit"],"Add Department");
 
 }
 /*End of Branch View*/
-/*End of Branch View*/
+
+function BRNCHVWupdatepath(branchid, pathid){
+
+  var branch = document.getElementById(branchid).value;
+  var path = document.getElementById(pathid);
+  path.innerHTML = "";
+
+  $.post("php/functions/sttngs/settings.branch.view.path.selection.php",{branch:branch},function(data){
+    data = data.split("<br>");
+    path.innerHTML = data;
+    for(var a = 0; a < data.length-1; a++){
+      var option = [];
+      createnewElement(option, path, "option", [], ["value:"+data[a]],data[a]);
+    }
+
+
+  });
+
+}
+
+function BRNCHVWadddepartment(branchid, pathid, deptid, filterid){
+
+  var branch = document.getElementById(branchid).value;
+  var path = document.getElementById(pathid).value;
+  var dept = document.getElementById(deptid).value;
+  var filter = document.getElementById(filterid).value;
+  $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},function(data){
+    if(data=="true"){
+    DSHBRDContentBranchSettings('','DSHBRDBranchView');
+    }
+    else{
+      
+    }
+    OVERLAYdisable();
+    return false;
+  });
+
+  return false;
+}
 
 
 function logout(){
   $.post("php/functions/session/session.destroy.php",function(data){});
   window.location.assign("/index.html");
 }
-
-
 
 /* OnClick */
 
@@ -458,6 +614,7 @@ function OVERLAYdisable()
         cf.innerHTML = "";
 
 }
+
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
 
   var value = document.getElementById(id).value;
@@ -480,7 +637,7 @@ function CMPLISTdtlsupdate(hostname, update, grandparent, linkid){
 
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
+  $.post("php/functions/notification/notification.agent.updated.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
   //var view = document.getElementById("contentview");
   //view.innerHTML = data;
   });
@@ -589,11 +746,11 @@ function getNotification(){
         newdiv.innerHTML = data[1];
         content.appendChild(newdiv);
       }
-    
+
     });
 }
 
-function NOTIFnotconnected(){    
+function NOTIFnotconnected(){
   var view = document.getElementById("contentview");
   view.innerHTML = "";
 
@@ -694,8 +851,8 @@ function NOTIFallshow(){
   });
 }
 
-function Departmentlist(){
-  var select = document.getElementById("department");
+function Departmentlist(ID){
+  var select = document.getElementById(ID);
   select.innerHTML = "";
 
 
@@ -704,13 +861,6 @@ function Departmentlist(){
     for (var i = 0; i < data.length; i++){
       var option = [];
       createnewElement(option, select, "option", [], ["value:"+data[i]],data[i]);
-    }
-    if($("#department2".length)){
-      var select2 = document.getElementById("departmentupdate");
-      for (var j = 0; j < data.length; j++){
-        var option2 = [];
-        createnewElement(option2, select2, "option", [], ["value:"+data[j]],data[j]);
-      }
     }
 
   });
@@ -743,7 +893,7 @@ function SESSIONConfirm(){
     }
 
     var nametext = document.createTextNode(data[3]);
-    name.appendChild(nametext); 
+    name.appendChild(nametext);
   });
 }
 
@@ -757,7 +907,7 @@ function isNumberKey(evt)
 }
 
 /*Letters Only*/
-function LettersrOnly(e) 
+function LettersrOnly(e)
 		{
       var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
       var code;

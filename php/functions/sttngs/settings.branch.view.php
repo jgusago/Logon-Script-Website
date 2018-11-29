@@ -12,7 +12,7 @@ $result = $pdo->fetchAll();
 $arrcount = 0;
 
 foreach($result as $row){
-    $tree[$arrcount] = $row[$arrcount];     
+    $tree[$arrcount] = $row[$arrcount];
 
 }
 
@@ -86,11 +86,12 @@ function colbreaker($parent,$name){
     $count = 0;
     $countII = 0;
     foreach($brkresult as $row){
-        $brkcurrentrow[$count] = $row['tree_name'];  
+        $brkcurrentrow[$count] = $row['tree_name'];
         $count++;
     }
 
     for($countII=0;$brkcurrentrow[$countII] != $name; $countII++){
+    $countII;
     }
 
     if($countII > 0 || $parent == 'root'){
