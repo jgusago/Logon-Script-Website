@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(-1);
 session_start();
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
