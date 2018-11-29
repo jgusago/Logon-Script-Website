@@ -24,7 +24,7 @@ else
 
         $sql = "INSERT INTO tbl_user (userid, name, department, role, status, password)
              
-        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$hashed_password')";
+        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
         ($db->query($sql));
 
         $sql2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
