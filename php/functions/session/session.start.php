@@ -1,7 +1,7 @@
 <?php
   $username = $_POST["username"];
   $password = $_POST["password"];
-  $enc = md5(sha1($password));
+  //$enc = md5(sha1($password));
   
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
@@ -20,8 +20,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     $department = $row[0]['department'];
       //check status
 
-      if($encrypt_password == $enc && $status == "Active") {
-        //if(($status == 'Active') && (password_verify($password, $hashed_password))) {
+      //if($encrypt_password == $enc && $status == "Active") {
+        if(($status == 'Active') && (password_verify($password, $hashed_password))) {
         session_start();
         $_SESSION["userid"] = $row[0]['userid'];
         $_SESSION["role"] = $role;
