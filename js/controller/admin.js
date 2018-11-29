@@ -495,14 +495,15 @@ function adddepartment(){
 
     //form
     var form = [], fg = [], lbl = [], ip = [], dvd = [];
-    createnewElement(form, cb, "form", [] ,[], "");
     var branchid = idgenerator();
     var pathid = idgenerator();
     var lblid = idgenerator();
     var lblid2 = idgenerator();
+    //form
+    createnewElement(form, cb, "form", [] ,["onsubmit:return BRNCHVWadddepartment(\""+branchid+"\",\""+pathid+"\",\""+lblid+"\",\""+lblid2+"\")"], "");
 
     var fg4 =[], label2 = [], select =[], option = [];
-    createnewElement(fg4, form.newelement, "div", ["form-group"], ["onsubmit:return BRNCHVWadddepartment(\""+branchid+"\",\""+pathid+"\",\""+lblid+"\",\""+lblid2+"\")"], "");
+    createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
     createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch");
     createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
     Departmentlist(branchid);
@@ -561,11 +562,17 @@ function BRNCHVWadddepartment(branchid, pathid, deptid, filterid){
   var dept = document.getElementById(deptid).value;
   var filter = document.getElementById(filterid).value;
   $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},function(data){
-
-
-
+    if(data=="true"){
+    DSHBRDContentBranchSettings('','DSHBRDBranchView');
+    }
+    else{
+      
+    }
+    OVERLAYdisable();
+    return false;
   });
 
+  return false;
 }
 
 
