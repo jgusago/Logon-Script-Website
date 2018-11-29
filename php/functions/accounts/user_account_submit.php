@@ -18,22 +18,21 @@ if(!isset($error)){
         }
 else
     {
-        //$hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
-        $pass = $_POST['password'];
-        $encrypt_password = md5(sha1($pass));
+        $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+        
+        //$encrypt_password = md5(sha1($password));
 
         $sql = "INSERT INTO tbl_user (userid, name, department, role, status, password)
              
-        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$encrypt_password')";
+        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$hashed_password')";
         ($db->query($sql));
 
         $sql2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
         VALUES ('$AddUser', 'UserID:".$_POST["userid"].",Name:".$_POST["name"].",Department:".$_POST["department"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
         ($db->query($sql2));
-
         
-        echo "<script>alert('User Account -".$encrypt_password." -Save Successfully!'); window.location='../../../.admin.html'</script>";
+        echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
 
         //if(!$sql)
         //{
