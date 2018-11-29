@@ -20,11 +20,11 @@ else
     {
         //$hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
         
-        $password = md5(sha1($password));
+        //$password = md5(sha1($password));
 
         $sql = "INSERT INTO tbl_user (userid, name, department, role, status, password)
              
-        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$password')";
+        VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', 'md5(sha1($password))')";
         ($db->query($sql));
 
         $sql2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
