@@ -4,7 +4,7 @@
 
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
-  $password = md5(sha1($password));
+  //$password = md5(sha1($password));
 
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
@@ -21,7 +21,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     $department = $row[0]['department'];
       //check status
 
-      if($status == 'Active' && ($password == $hashed_password)){
+      //if($status == 'Active' && ($password == $hashed_password)){
+        if(($status == 'Active') && (password_verify($password, $hashed_password))) {
         session_start();
         $_SESSION["userid"] = $row[0]['userid'];
         $_SESSION["role"] = $role;
