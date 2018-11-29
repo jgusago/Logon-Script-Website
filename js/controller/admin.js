@@ -563,10 +563,10 @@ function BRNCHVWadddepartment(branchid, pathid, deptid, filterid){
   $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},function(data){
     if(data=="true"){
       DSHBRDContentBranchSettings('','DSHBRDBranchView');
-      ALERTsuccess(data);
+      ALERTcall("success","Success!! Data have been added");
     }
     else{
-      ALERTsuccess(data);
+      ALERTcall("danger",data);
     }
     OVERLAYdisable();
     return false;
@@ -620,13 +620,13 @@ function ALERTshow(){
 function ALERThide(){
   document.getElementById("alertwindow").style.display = "none";
 }
-function ALERTsuccess(data){
+function ALERTcall(value,data){
 
   ALERTshow();
 
   var alertwindow = document.getElementById("alertwindow");
   var div = [], content = [], buttondiv = [], button = [], span = [], i = [];
-  createnewElement(div, alertwindow, "div", ["alert","alert-success","alert-dismissible","fade","show"],["role:alert"],"");
+  createnewElement(div, alertwindow, "div", ["alert","alert-"+value,"alert-dismissible","fade","show"],["role:alert"],"");
   createnewElement(content, div.newelement,"div",[],[],"");
   content.newelement.innerHTML = data;
   content.newelement.style.padding = "0px 50px 0px 0px";
@@ -639,7 +639,6 @@ function ALERTsuccess(data){
     alertwindow.removeChild(div.newelement);
     ALERThide();
   }, 3000);
-
 
 }
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
