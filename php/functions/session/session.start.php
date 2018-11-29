@@ -4,9 +4,6 @@
 
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
-  $password = $_POST["password"];
-  $encrypt_password = md5(sha1($password));
-
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
   $stmt = $db->prepare("SELECT * FROM logonscript.tbl_user WHERE userid like :userid");
