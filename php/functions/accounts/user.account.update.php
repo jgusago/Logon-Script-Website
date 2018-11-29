@@ -24,6 +24,13 @@ if($oldname !== $name && $name !== ""){
     $query = "UPDATE logonscript.tbl_user SET `name`='$name' WHERE (`userid` = '$userid')";
     $db->query($query);
     $namestat = true;
+
+    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+             
+    VALUES ('$AddUser', 'Name:".$_POST["name"].", NOW(), '$userid2')";
+    ($db->query($sql2));
+
+    echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
 }
 if($olddepartment !== $department && $department !== ""){
     $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
@@ -62,4 +69,8 @@ else{
     echo "flase";
 }
 
+//$sql2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+             
+//VALUES ('$AddUser', 'UserID:".$_POST["userid"].",Name:".$_POST["name"].",Department:".$_POST["department"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
+//($db->query($sql2));
 ?>
