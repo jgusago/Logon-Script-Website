@@ -4,7 +4,8 @@
 
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
-  $password = md5(sha1($password));
+  $password = $_POST["password"];
+  $encrypt_password = md5(sha1($password));
 
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
@@ -14,7 +15,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
   $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   if (count($row) > 0) {
-    $hashed_password = $row[0]['password'];
+    //$hashed_password = $row[0]['password'];
     $status = $row[0]['status'];
     $role = $row[0]['role'];
     $name = $row[0]['name'];
@@ -22,7 +23,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
       //check status
 
       //if($status == 'Active' && ($password == $hashed_password)){
-        if($status == 'Active' && md5(sha1($password))) {
+        if($status == 'Active' && ($password == $encrypt_password)) {
         session_start();
         $_SESSION["userid"] = $row[0]['userid'];
         $_SESSION["role"] = $role;
