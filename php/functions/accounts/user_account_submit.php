@@ -6,6 +6,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $userid = $_POST['userid'];
 $AddUser = "Add User";
+$date = date('Y-m-d');
 
 if(!isset($error)){ 
         $stmt = $db->prepare("SELECT userid FROM tbl_user WHERE userid = :userid");
@@ -27,7 +28,7 @@ else
 
         $sql2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-        VALUES ('$AddUser', '".$_POST["name"]."', '".$_POST["role"]."', '$userid')";
+        VALUES ('$AddUser', '".$_POST["name"]."', '".$_POST["$date"]."', '$userid')";
         ($db->query($sql2));
 
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
