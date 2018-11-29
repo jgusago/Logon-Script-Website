@@ -23,7 +23,7 @@ if ($role == "ADMINISTRATOR" || $role == "SUPER ADMIN")
     $notif1 = "NOTIFnotconnected|text-danger|Disconnected iMonitor|$time|There are $count computers detected! Install imonitor agent.";
     }
     else{
-        $notif1 = "WALANG NOTIF";
+        $notif1 = "0";
     }
 
 $query =  "SELECT * FROM logonscript.tbl_agent_version WHERE type like 'valid'";
@@ -40,7 +40,7 @@ foreach ($db->query($query) as $row){
     $count++;
 }
 
-    
+
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery group by hostname";
     $pdo = $db->prepare($query3);
     $pdo->bindParam(":version",$version);
@@ -80,7 +80,7 @@ elseif ($role == "STAFF"){
     }
     if ($count != 0){
     $notif1 = "NOTIFnotconnected|text-danger|Disconnected iMonitor|$time|There are $count computers detected! Install imonitor agent.";
-    
+
     }
 
 $query =  "SELECT * FROM logonscript.tbl_agent_version WHERE type like 'valid'";
@@ -97,7 +97,7 @@ foreach ($db->query($query) as $row){
     $count++;
 }
 
-    
+
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery group by hostname";
     $pdo = $db->prepare($query3);
     $pdo->bindParam(":version",$version);
