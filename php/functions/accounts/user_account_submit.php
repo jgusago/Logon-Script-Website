@@ -33,10 +33,10 @@ else
 
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
 
-        if(!$sql)
-        {
-            echo dump();
-        }
+        //if(!$sql)
+        //{
+            //echo dump();
+        //}
     }
 }
 ?>
