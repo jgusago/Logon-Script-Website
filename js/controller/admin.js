@@ -631,14 +631,14 @@ function ALERTsuccess(data){
   content.newelement.innerHTML = data;
   content.newelement.style.padding = "0px 50px 0px 0px";
   createnewElement(buttondiv, div.newelement, "div", [], [], "");
-  createnewElement(button,buttondiv.newelement,"button",["close"],["type:button","data-dismiss:alert","aria-label:Close"],"");
+  createnewElement(button, buttondiv.newelement,"button",["close"],["type:button","data-dismiss:alert","aria-label:Close"],"");
   createnewElement(span, button.newelement,"span",[],["aria-hidden:true"],"");
   createnewElement(i, span.newelement, "i", ["fa","fa-times"],["aria-hidden:true"],"");
 
-  /*setTimeout(funtion(){
+  setTimeout(function(){
     alertwindow.removeChild(div.newelement);
     ALERThide();
-  }, 3000);*/
+  }, 3000);
 
 
 }
