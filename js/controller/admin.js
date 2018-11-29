@@ -8,6 +8,7 @@ function load(){
     DSHBRDNavBarBtns();
     NAVBARNotification();
     Departmentlist("department");
+    ALERTshow();
 }
 
 /* Buttons */
@@ -563,10 +564,11 @@ function BRNCHVWadddepartment(branchid, pathid, deptid, filterid){
   var filter = document.getElementById(filterid).value;
   $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},function(data){
     if(data=="true"){
-    DSHBRDContentBranchSettings('','DSHBRDBranchView');
+      DSHBRDContentBranchSettings('','DSHBRDBranchView');
+      ALERTsuccess(data);
     }
     else{
-      
+      ALERTsuccess(data);
     }
     OVERLAYdisable();
     return false;
@@ -614,7 +616,34 @@ function OVERLAYdisable()
         cf.innerHTML = "";
 
 }
+function ALERTshow(){
+  document.getElementById("alertwindow").style.display = "block";
+}
+function ALERThide(){
+  document.getElementById("alertwindow").style.display = "none";
+}
+function ALERTsuccess(data){
 
+  ALERTshow();
+
+  var alertwindow = document.getElementById("alertwindow");
+  var div = [], content = [], buttondiv = [], button = [], span = [], i = [];
+  createnewElement(div, alertwindow, "div", ["alert","alert-success","alert-dismissible","fade","show"],["role:alert"],"");
+  createnewElement(content, div.newelement,"div",[],[],"");
+  content.newelement.innerHTML = data;
+  content.newelement.style.padding = "0px 50px 0px 0px";
+  createnewElement(buttondiv, div.newelement, "div", [], [], "");
+  createnewElement(button,buttondiv.newelement,"button",["close"],["type:button","data-dismiss:alert","aria-label:Close"],"");
+  createnewElement(span, button.newelement,"span",[],["aria-hidden:true"],"");
+  createnewElement(i, span.newelement, "i", ["fa","fa-times"],["aria-hidden:true"],"");
+
+  /*setTimeout(funtion(){
+    alertwindow.removeChild(div.newelement);
+    ALERThide();
+  }, 3000);*/
+
+
+}
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
 
   var value = document.getElementById(id).value;
