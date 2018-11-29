@@ -6,7 +6,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $userid = $_POST['userid'];
 $AddUser = "Add User";
-$date = date('Y-m-d');
+$date = date('m/d/Y');
 
 if(!isset($error)){ 
         $stmt = $db->prepare("SELECT userid FROM tbl_user WHERE userid = :userid");
