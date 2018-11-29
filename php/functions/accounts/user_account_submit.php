@@ -31,6 +31,11 @@ else
         ($db->query($sql2));
 
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
+
+        if(!$sql)
+        {
+            echo dump();
+        }
     }
 }
 ?>
