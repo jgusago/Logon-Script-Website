@@ -11,8 +11,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
   $stmt->execute();
   $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  $encrypt_password = md5(sha1($password));
-
   if (count($row) > 0) {
     $encrypt_password = $row[0]['password'];
     $status = $row[0]['status'];
@@ -21,8 +19,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     $department = $row[0]['department'];
       //check status
 
-      if($status == 'Active' && md5(sha1($password))){
-      //if($status == 'Active' && ($password == $encrypt_password)){
+      if($status == 'Active' && ($password == $encrypt_password)){
         //if(($status == 'Active') && (password_verify($password, $hashed_password))) {
         session_start();
         $_SESSION["userid"] = $row[0]['userid'];
