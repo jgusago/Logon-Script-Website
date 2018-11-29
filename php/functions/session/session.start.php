@@ -15,7 +15,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
   $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   if (count($row) > 0) {
-    $password = $row[0]['password'];
+    $encrypt_password = $row[0]['password'];
     $status = $row[0]['status'];
     $role = $row[0]['role'];
     $name = $row[0]['name'];
