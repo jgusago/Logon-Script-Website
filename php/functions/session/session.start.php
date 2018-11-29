@@ -22,7 +22,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
       //check status
 
       //if($status == 'Active' && ($password == $hashed_password)){
-        if(($status == 'Active') && (password_verify($password, $hashed_password))) {
+        if(($status == 'Active') && (password_verify($password=$hashed_password))) {
         session_start();
         $_SESSION["userid"] = $row[0]['userid'];
         $_SESSION["role"] = $role;
