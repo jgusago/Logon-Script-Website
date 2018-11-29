@@ -7,7 +7,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $userid = $_POST['userid'];
 $AddUser = "Add User";
 $userid2 = $_SESSION["userid"];
-
+$passwword = "Aa123456";
 if(!isset($error)){ 
         $stmt = $db->prepare("SELECT userid FROM tbl_user WHERE userid = :userid");
         $stmt->execute(array($userid));
@@ -18,7 +18,7 @@ if(!isset($error)){
         }
 else
     {
-        $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+        $hashed_password = password_hash($passwword,PASSWORD_DEFAULT);
         //$hashed_password = md5(sha1($_POST['password']));
 
         $sql = "INSERT INTO tbl_user (userid, name, department, role, status, password)
