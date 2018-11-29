@@ -18,8 +18,8 @@ if(!isset($error)){
         }
 else
     {
-        $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
-        
+        //$hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+        $hashed_password = md5(sha1($_POST['password']));
         //$encrypt_password = md5(sha1($password));
 
         $sql = "INSERT INTO tbl_user (userid, name, department, role, status, password)
@@ -31,7 +31,7 @@ else
              
         VALUES ('$AddUser', 'UserID:".$_POST["userid"].",Name:".$_POST["name"].",Department:".$_POST["department"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
         ($db->query($sql2));
-        
+
         echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
 
         //if(!$sql)
