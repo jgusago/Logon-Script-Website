@@ -38,21 +38,37 @@ if($olddepartment !== $department && $department !== ""){
     $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
     $db->query($query);
     $namestat = true;
+
+    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
+    VALUES ('$EditUser', 'Department:".$_POST["department"]."', NOW(), '$userid2')";
+    ($db->query($sql));
 }
 if($oldposition !== $position && $position !== ""){
     $query = "UPDATE logonscript.tbl_user SET `position`='$position' WHERE (`userid` = '$userid')";
     $db->query($query);
     $namestat = true;
+
+    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
+    VALUES ('$EditUser', 'Position:".$_POST["position"]."', NOW(), '$userid2')";
+    ($db->query($sql));
 }
 if($oldrole !== $role && $role !== ""){
     $query = "UPDATE logonscript.tbl_user SET `role`='$role' WHERE (`userid` = '$userid')";
     $db->query($query);
     $namestat = true;
+
+    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
+    VALUES ('$EditUser', 'Role:".$_POST["role"]."', NOW(), '$userid2')";
+    ($db->query($sql));
 }
 if($oldstatus !== $status && $status !== ""){
     $query = "UPDATE logonscript.tbl_user SET `status`='$status' WHERE (`userid` = '$userid')";
     $db->query($query);
     $namestat = true;
+
+    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
+    VALUES ('$EditUser', 'Status:".$_POST["status"]."', NOW(), '$userid2')";
+    ($db->query($sql));
 }
 
 if ($password !== ""){
