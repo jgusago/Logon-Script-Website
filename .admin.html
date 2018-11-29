@@ -22,7 +22,7 @@
   <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="load()">
@@ -58,7 +58,7 @@
               </li>
               <!-- History -->
               <li data="History" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="Branch Computer History">
-                
+
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseHistory" data-parent="#DHSBRDRecords">History</a>
                 <!-- <span class="nav-link-text">History</span> -->
 
@@ -94,7 +94,7 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View Settings">
           <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">
             <i class="fa fa-fw fa-cog"></i>
-            <span class="nav-link-text">Branch View Settings</span>  
+            <span class="nav-link-text">Branch View Settings</span>
           </a>
         </li>
 
@@ -212,6 +212,7 @@
     <!-- Content View -->
     <div class="container-fluid" id="contentview">
     </div>
+
     <!-- Overlay -->
     <div id="overlay" onclick="OVERLAYdisable();">
     </div>
@@ -227,6 +228,8 @@
         <div class="lds-css ng-scope">
             <div style="width:100%;height:100%" class="lds-wedges"><div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div></div>
         </div>
+    </div>
+    <div id="alertwindow">
     </div>
 
     <!-- Progress Bar-->
@@ -257,11 +260,11 @@
               <div class="md-form mb-3">
                   <label class="control-label">User ID</label>
                 <input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="ID Number" onkeypress="return isNumberKey(event)" maxlength="7"/>
-              </div> 
+              </div>
               <div class="md-form mb-3">
                   <label class="control-label">Name</label>
                   <input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(event)" maxlength="30"/>
-              </div> 
+              </div>
               <div class="md-form mb-3">
                   <label class="control-label">Department</label>
                   <select class="form-control " id="department" name="department" required>
@@ -276,10 +279,10 @@
               </script>
               <!-- END -->
 
-              </div> 
+              </div>
               <div class="md-form mb-3">
                   <label class="control-label">Role</label>
-                  <select class="form-control " id="role" name="role" required> 
+                  <select class="form-control " id="role" name="role" required>
                     <option value="">--Select Role--</option>
                     <option value="ADMINISTRATOR">Administrator</option>
                     <option value="STAFF">Staff</option>
@@ -296,7 +299,7 @@
               <div class="md-form mb-3">
                   <label class="control-label">Password</label>
                   <input class="form-control" value="Aa123456" type="text" id="password" name="password" maxlength="16" disabled>
-              </div> 
+              </div>
             </div>
             <div class="modal-footer d-flexjustify-content-center">
               <input type="submit" class="btn btn-primary" value="Register" id="btnRegister" name="btnRegister">

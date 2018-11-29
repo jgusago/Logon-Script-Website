@@ -747,3 +747,17 @@ footer.sticky-footer {
   transform: translate(-50%, -50%);
   z-index: 4380;
 }
+
+#alertwindow
+{
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  /*width: 40%; /* Full width (cover the whole page) */
+  /*height: 60%; /* Full height (cover the whole page) */
+  margin: 0px;
+  top: 13%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-20%, -50%);
+  z-index: 4500;
+}

@@ -7,9 +7,15 @@ $path = $_POST['path'];
 $dept = $_POST['dept'];
 $filter = $_POST['filter'];
 
+if ($branch == $path){
+$length = 2;
+$parent = $branch;
+}
+else{
 $path = explode("/",$path);
 $length = sizeof($path)+1;
 $parent = $path[$length-2];
+}
 $existing = false;
 $sql = "SELECT * FROM logonscript.tbl_tree WHERE tree_name LIKE '$dept' AND tree_parent LIKE '$parent'";
 foreach ($db->query($sql) as $row) {
