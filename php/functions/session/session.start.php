@@ -4,7 +4,7 @@
   $enc = md5(sha1($password));
   echo $enc;
 if (isset($_POST["username"]) && isset($_POST["password"])){
-
+  echo "test:".$enc;
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
   $stmt = $db->prepare("SELECT * FROM logonscript.tbl_user WHERE userid like :userid");
