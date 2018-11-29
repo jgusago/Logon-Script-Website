@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $userid = $_POST['userid'];
 $name = $_POST['name'];
 $department = $_POST['department'];
@@ -28,12 +30,9 @@ if($oldname !== $name && $name !== ""){
     $db->query($query);
     $namestat = true;
 
-    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-             
+    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
     VALUES ('$AddUser', 'Name:".$_POST["name"].", NOW(), '$userid2')";
     ($db->query($sql));
-
-    echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
 }
 if($olddepartment !== $department && $department !== ""){
     $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
