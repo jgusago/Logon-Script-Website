@@ -32,8 +32,8 @@ else
         VALUES ('$AddUser', 'UserID:".$_POST["userid"].",Name:".$_POST["name"].",Department:".$_POST["department"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
         ($db->query($sql2));
 
-        echo "$encrypt_password";
-        echo "<script>alert('User Account Save Successfully!'); window.location='../../../.admin.html'</script>";
+        
+        echo "<script>alert('User Account -".$encrypt_password." -Save Successfully!'); window.location='../../../.admin.html'</script>";
 
         //if(!$sql)
         //{
