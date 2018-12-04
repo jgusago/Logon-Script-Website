@@ -15,9 +15,32 @@ function load(){
 
 function DSHBRDNavBarBtns(){
   /* Get All Elements with generatebutton Class */
-  var btnclass = "generatebutton";
-  parent = document.getElementsByClassName(btnclass);
+    complistul = document.getElementById("COMPLISTlist");
+    complogsul = document.getElementById("COMPLOGSlist");
 
+
+    $.post("php/functions/load/dashboard.buttons.php",function(data){
+      cldata = data.split("|");
+      for(var  i = 0; i < cldata.length; i++){
+        var li = [], a = [];
+        var id = idgenerator();
+        createnewElement(li, complistul, "li", ["nav-item"], ["data-toggle:tooltip","data-placement:right"], "");
+        createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplist","id:"+id],cldata[i]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplist",
+        DSHBRDNavBarBtnslvl2(li.newelement, a.newelement, cldata[i], "COMPLISTlist");
+      }
+    });//end of $.POST
+
+    $.post("php/functions/load/dashboard.buttons.php",function(data){
+      cldata = data.split("|");
+      for(var  i = 0; i < cldata.length; i++){
+        var li = [], a = [];
+        var id = idgenerator();
+        createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
+        createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],cldata[i]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
+      }
+    });//end of $.POST
+
+/*
   $.post("php/functions/load/dashboard.buttons.php",{branch:"root"},function(data){
 
     newdata = data.split("|");
@@ -49,7 +72,34 @@ function DSHBRDNavBarBtns(){
     }
 
   });
+*/
+}
+function DSHBRDNavBarBtnslvl2(listparent, linkparent, dataparent, parentulid){
+  $.post("php/functions/load/dashboard.buttons.child.php",{parent:dataparent},function(data){
+    var childdata = data.split("|");
+    if(childdata.length > 0 && data != "false"){
+      var ulid = idgenerator();
+      var ul = [];
+      linkparent.classList.add("nav-link");
+      linkparent.classList.add("nav-link-collapse");
+      linkparent.classList.add("collapdatased");
+      linkparent.classList.add("collapsed");
+      linkparent.setAttribute("data-toggle","collapse");
+      linkparent.setAttribute("data-parent","#"+parentulid);
+      linkparent.setAttribute("aria-expanded",false);
+      linkparent.setAttribute("href","#"+ulid);
+      createnewElement(ul, listparent, "ul", ["sidenav-third-level","collapse"], ["data-parent:#"+parentulid, "id:"+ulid ,"data-toggle:collapse"], "");
 
+      for(var i = 0; childdata.length > i; i++){
+        var li = [], a = [];
+        var linkid = idgenerator();
+        createnewElement(li, ul.newelement, "li",[],[],"");
+        createnewElement(a, li.newelement,"a", [], ["id:"+linkid, "data:"+dataparent] , childdata[i]);
+        li.newelement.style.padding = "0px 0px 0px 20px";
+        DSHBRDNavBarBtnslvl2(li.newelement, a.newelement, childdata[i], linkid);
+      }
+    }
+  });
 }
 
 /* Buttons */
