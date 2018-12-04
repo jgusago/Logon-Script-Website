@@ -68,8 +68,8 @@ foreach ($result as $row) {
 
         $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
 
-        if ($newdate = new DateTime($date[0]." ".$date[1])){
-
+        if ($newdate = new DateTime($date[0]." ".$date[1]))
+        {
         $scan_time = date_format($newdate, "M-d-Y H:i");
         }
         if($connections_status == "ESTABLISHED"){
