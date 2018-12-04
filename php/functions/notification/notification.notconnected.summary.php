@@ -40,8 +40,8 @@ foreach ($db->query($sql) as $row){
 
     if ($newdate = new DateTime($date[0]." ".$date[1])){
 
-    $scan_time = date_format($newdate, "M-d-Y H:i");
-    }
+        $scan_time = date_format($newdate, "M-d-Y H:i");
+        }
     if($connections_status == "ESTABLISHED"){
         $style = "bg-success";
     }
