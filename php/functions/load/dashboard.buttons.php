@@ -23,24 +23,26 @@ $result = $stmt->fetchAll();
 foreach($result as $row){
 
     $treename = $row['tree_name'];
+    $treeid = $row['tree_id'];
 
     if($count>0)
     {
-        $output = $output.'|'.$treename;
+        $output = $output.'|'.$treename."`".$treeid;
     }
     else{
-    $output = $treename;
+    $output = $treename."`".$treeid;
     }
     $count++;
 
 }
 
 if ($count>0){
-    echo $output;
+    echo "$output";
 }
 else{
-    echo $bld;
+  echo $bld;
 }
+
 
 $stmt = null;
 $db = null;
