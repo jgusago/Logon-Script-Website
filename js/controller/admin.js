@@ -97,7 +97,7 @@ function DSHBRDContentCompList(parent, linkid){
   createTable(table, card.body, classes, attributes);
 
   path = "php/functions/reports/computer.list.php";
-  DSHBRDContent(parent, path, table.head, table.foot, table.body, tableid, linkid);
+  DSHBRDTblsCntnt(parent, path, table.head, table.foot, table.body, tableid, linkid);
   }
 }
 
@@ -107,6 +107,32 @@ function DSHBRDContentCompList(parent, linkid){
 
 /* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
 /* OnClick */
+
+function DSHBRDTblsCntnt(parent, path, tablehead, tablefoot, tablebody, id, linkid){
+  $.post(path, {parent:parent,linkid:linkid}, function(data){
+
+      data = data.split("#");
+      datalength = data.length;
+
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], tablehead, [], [], "th", thfdata);
+      createTableContent([], tablefoot, [], [], "th", thfdata);
+
+      for (var i = 1; i < datalength;i++){
+          newdata = data[i].split("|");
+          createTableContent([], tablebody, [],[], "td", newdata);
+
+          }
+  });
+
+    if(path == "php/functions/reports/computer.list.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer List";
+    }
+    pagination(id);
+  }
 
 function DSHBRDContent(parent, linkid)
 {
