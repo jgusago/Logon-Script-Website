@@ -135,7 +135,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   var cf = document.getElementById("mncf");
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = [],
-  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [], 
+  divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [],
   divfooter = [], button = [], divbody6 =[], label6 =[];
 
   //whole div
@@ -144,9 +144,10 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
     //leftside contents
     createnewElement(value, leftdiv.newelement, "h4", [], [],"");
-   
+
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
+  divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
 
@@ -155,44 +156,45 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
-  createnewElement(divbody, cb, "div", ["md-form", "mb-3"], [], "");
+  //userid
+  createnewElement(divbody, cb, "form", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],[],"User ID");
-  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:userid", "disabled:true", "value:"+userid], "");
-
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:useridupdate", "disabled:true", "value:"+userid], "");
+  //name
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],[],"Name");
-  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:name", "required:true", "value:"+name], "");
-
+  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:nameupdate", "required:true", "value:"+name], "");
+  //department
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],[],"Department");
-  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:department2"], "");
-  Departmentlist();
+  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
+  Departmentlist("departmentupdate");
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
-
+  //positioin
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Position");
-  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:position", "id:postion", "disabled:true", "value:"+position], "");
-
+  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:position", "id:positionupdate", "disabled:true", "value:"+position], "");
+  //role
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "label", [],[],"Role");
-  createnewElement(select1, divbody4.newelement, "select", ["form-control"], ["name:role", "id:role", "required:true", "value:"+role], "");
+  createnewElement(select1, divbody4.newelement, "select", ["form-control"], ["name:role", "id:roleupdate", "required:true", "value:"+role], "");
   createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
   createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
-
+  //status
   createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label5, divbody5.newelement, "label", [],[],"Status");
-  createnewElement(select2, divbody5.newelement, "select", ["form-control"], ["name:status", "id:status", "required:true", "value:"+status], "");
+  createnewElement(select2, divbody5.newelement, "select", ["form-control"], ["name:status", "id:statusupdate", "required:true", "value:"+status], "");
   createnewElement(options1, select2.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
   createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
   createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
-
+  //password
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:password", "required:true"], "");
-
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "required:true"], "");
+  //update button
   createnewElement(divfooter, cf, "div", [], [], "");
-  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name: btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\",\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\")"], "");
+  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
 }
 // End of Edit Modal
 
