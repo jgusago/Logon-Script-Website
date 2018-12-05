@@ -1,14 +1,8 @@
 <?php
+
+$bld = $_POST['parent'];
 $count = 0;
 
-session_start();
-
-if($_SESSION['role'] == "ADMINISTRATOR" or $_SESSION['role'] == "SUPER ADMIN"){
-    $bld = "root";
-}
-else{
-    $bld = $_SESSION['department'];
-}
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT *
             FROM logonscript.tbl_tree
@@ -39,10 +33,6 @@ if ($count>0){
     echo $output;
 }
 else{
-    echo $bld;
+  echo "false";
 }
-
-$stmt = null;
-$db = null;
-
 ?>
