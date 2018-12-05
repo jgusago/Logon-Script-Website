@@ -97,7 +97,7 @@ function DSHBRDContentCompList(parent, linkid){
   createTable(table, card.body, classes, attributes);
 
   path = "php/functions/reports/computer.list.php";
-  DSHBRDTblsCntnt(parent, path, table.head, table.foot, table.body, tableid, linkid);
+  DSHBRDContent(parent, path, table.head, table.foot, table.body, tableid, linkid);
   }
 }
 
