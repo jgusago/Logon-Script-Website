@@ -1,81 +1,33 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load(){
     SESSIONConfirm();
-
-    var branchview = document.getElementById("contentview");
-    var loading = document.getElementById("processingbar");
-
-    DSHBRDNavBarBtns();
+    DSHBRDbtnsCompList();
+    DSHBRDbtnsCompLogs();
     NAVBARNotification();
     Departmentlist("department");
     ALERTshow();
 }
 
 /* Buttons */
-
-function DSHBRDNavBarBtns(){
-  /* Get All Elements with generatebutton Class */
+function DSHBRDbtnsCompList(){
     complistul = document.getElementById("COMPLISTlist");
-    complogsul = document.getElementById("COMPLOGSlist");
-
 
     $.post("php/functions/load/dashboard.buttons.php",function(data){
       cldata = data.split("|");
       for(var  i = 0; i < cldata.length; i++){
+        child = cldata[i].split("`");
         var li = [], a = [];
         var id = idgenerator();
         createnewElement(li, complistul, "li", ["nav-item"], ["data-toggle:tooltip","data-placement:right"], "");
-        createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplist","id:"+id],cldata[i]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplist",
-        DSHBRDNavBarBtnslvl2(li.newelement, a.newelement, cldata[i], "COMPLISTlist");
+        createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContentCompList(\""+child[1]+"\",\""+id+"\")","id:"+id],child[0]);
+
+        DSHBRDbtnsCompListChld(li.newelement, a.newelement, child[1], "COMPLISTlist");
       }
-    });//end of $.POST
-
-    $.post("php/functions/load/dashboard.buttons.php",function(data){
-      cldata = data.split("|");
-      for(var  i = 0; i < cldata.length; i++){
-        var li = [], a = [];
-        var id = idgenerator();
-        createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
-        createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],cldata[i]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
-      }
-    });//end of $.POST
-
-/*
-  $.post("php/functions/load/dashboard.buttons.php",{branch:"root"},function(data){
-
-    newdata = data.split("|");
-
-    for (var i = 0; i < parent.length; i++){
-      var link = [];
-      var list = [];
-      var onClick = [];
-      //get parent id
-      var grandparentid = document.getElementsByClassName(btnclass)[i].parentElement.getAttribute("id");
-      //create link
-      var value = document.getElementsByClassName(btnclass)[i].getAttribute("data");
-      var parentid = document.getElementsByClassName(btnclass)[i].getAttribute("id");
-      linkid = idgenerator();
-      var linkclasses = ["nav-link", "nav-link-collapse","collapdatased"];
-      var linkattrib = ["data-toggle:collapse","href:#"+linkid,"data-parent:#"+grandparentid];
-      createLink(link, parent[i], value, linkclasses, linkattrib);
-
-      //create list
-      var listclasses = ["sidenav-third-level", "collapse"];
-      var listattrib = ["id:"+linkid,"data-parent:#DSHBRDRecords"];
-      createList(list, parent[i], "ul", newdata.length, listclasses, listattrib);
-      //create list value
-      var ListLink = [];
-      for (var j = 0; j < newdata.length; j++){
-        var newid = idgenerator();
-        createLink(ListLink, list.li[j], newdata[j], [], ["data:"+parentid,"onClick:DSHBRDContent('"+newdata[j]+"','"+newid+"')", "id:"+newid]);
-      }
-    }
-
-  });
-*/
+    });
 }
-function DSHBRDNavBarBtnslvl2(listparent, linkparent, dataparent, parentulid){
-  $.post("php/functions/load/dashboard.buttons.child.php",{parent:dataparent},function(data){
+
+function DSHBRDbtnsCompListChld(listparent, linkparent, dataparent, parentulid){
+  $.post("php/functions/load/dashboard.buttons.child.php",{parentid:dataparent},function(data){
     var childdata = data.split("|");
     if(childdata.length > 0 && data != "false"){
       var ulid = idgenerator();
@@ -88,19 +40,67 @@ function DSHBRDNavBarBtnslvl2(listparent, linkparent, dataparent, parentulid){
       linkparent.setAttribute("data-parent","#"+parentulid);
       linkparent.setAttribute("aria-expanded",false);
       linkparent.setAttribute("href","#"+ulid);
-      createnewElement(ul, listparent, "ul", ["sidenav-third-level","collapse"], ["data-parent:#"+parentulid, "id:"+ulid ,"data-toggle:collapse"], "");
+      createnewElement(ul, listparent, "ul", ["sidenav-third-level","collapse"], ["data-parent:#"+parentulid, "id:"+ulid ,"data-toggle:collapse","data:"+data], "");
 
       for(var i = 0; childdata.length > i; i++){
+
+        child = childdata[i].split("`");
         var li = [], a = [];
         var linkid = idgenerator();
         createnewElement(li, ul.newelement, "li",[],[],"");
-        createnewElement(a, li.newelement,"a", [], ["id:"+linkid, "data:"+dataparent] , childdata[i]);
+        createnewElement(a, li.newelement,"a", [], ["onClick:DSHBRDContentCompList(\""+child[1]+"\",\""+linkid+"\")","id:"+linkid, "data:"+dataparent] , child[0]);
         li.newelement.style.padding = "0px 0px 0px 20px";
-        DSHBRDNavBarBtnslvl2(li.newelement, a.newelement, childdata[i], linkid);
+        DSHBRDbtnsCompListChld(li.newelement, a.newelement, child[1], linkid);
       }
     }
   });
 }
+
+//COMPLOGS Buttons
+function DSHBRDbtnsCompLogs(){
+complogsul = document.getElementById("COMPLOGSlist");
+
+$.post("php/functions/load/dashboard.buttons.php",function(data){
+  cldata = data.split("|");
+  for(var  i = 0; i < cldata.length; i++){
+    var li = [], a = [];
+    var id = idgenerator();
+    createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
+    createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],cldata[i]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
+  }
+});
+}
+
+function DSHBRDContentCompList(parent, linkid){
+
+  var view = document.getElementById("contentview");
+  var linkdata = document.getElementById(linkid).getAttribute("data");
+  //view.innerHTML = "";
+  var existing = "", target = "nen";
+  existing = document.getElementById("ContentCardHead");
+  if(existing){
+    target = existing.getAttribute("target");
+  }
+
+  if(target != linkid){
+  view.innerHTML = "";
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+  card.head.setAttribute("target",linkid);
+  card.head.setAttribute("id","ContentCardHead");
+  card.head.innerHTML = "Computer List";
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+
+  path = "php/functions/reports/computer.list.php";
+  DSHBRDTblsCntnt(parent, path, table.head, table.foot, table.body, tableid, linkid);
+  }
+}
+
 
 /* Buttons */
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
