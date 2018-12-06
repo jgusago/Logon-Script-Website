@@ -9,6 +9,7 @@ $role = $_POST['role'];
 $status = $_POST['status'];
 $password = $_POST['password'];
 
+$userid = $_SESSION["userid"];
 $EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
 
