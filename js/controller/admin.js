@@ -205,14 +205,9 @@ function DSHBRDContent(parent, linkid)
 Profile()
 {
   var contentview = document.getElementById("contentview");
-  contentview.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Profile & Account Settings";
   document.getElementById("dtitle2").innerHTML = "Profile Settings";
-
-  var card = [];
-  createCard(card, contentview, [], []);
-  createnewElement([],card.head,"div",[],[],"");
 }
 
 //User Account Update OnClick
