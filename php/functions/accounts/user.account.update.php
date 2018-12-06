@@ -107,7 +107,7 @@ if($status != $row['status'])
     
 $sqlqurey2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-VALUES ('$EditUser', '$queryvar', NOW(), '$userid2')";
+VALUES ('$EditUser', 'Name:".$_POST["name"].",Department:".$_POST["department"].",Position:".$_POST["position"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
 ($db->query($sqlqurey2));
 }
 ?>
