@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+$userid = $row['userid'];
+$name = $row['name'];
+$department = $row['department'];
+$position = $row['position'];
+$role = $row['role'];
+$status = $row['status'];
+$password = $row['password'];
+
 $EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
 
