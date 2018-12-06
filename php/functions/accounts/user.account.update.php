@@ -95,13 +95,13 @@ while ($row = $sqlqurey->fetch()) {
 
 if($oldname !== $row['name'])
     $sqlqurey += $row['name'];
-if($olddepartment !== $row['department'])
+if($department !== $row['department'])
     $sqlqurey += $row['department'];
-if($oldposition !== $row['position'])
+if($position !== $row['position'])
     $sqlqurey += $row['position'];
-if($oldrole !== $row['role'])
+if($role !== $row['role'])
     $sqlqurey += $row['role'];
-if($oldstatus !== $row['status'])
+if($status !== $row['status'])
     $sqlqurey += $row['status'];
     
     
