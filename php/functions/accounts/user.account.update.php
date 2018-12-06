@@ -25,70 +25,105 @@ foreach ($db->query($oldvalue) as $row) {
     $oldpassword = $row['password'];
 }
 
-if($oldname !== $name && $name !== ""){
-    $query = "UPDATE logonscript.tbl_user SET `name`='$name' WHERE (`userid` = '$userid')";
-    $db->query($query);
-    $namestat = true;
+// if($oldname !== $name && $name !== ""){
+//     $query = "UPDATE logonscript.tbl_user SET `name`='$name' WHERE (`userid` = '$userid')";
+//     $db->query($query);
+//     $namestat = true;
 
-    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
-    VALUES ('$EditUser', 'Name:".$_POST["name"]."', NOW(), '$userid2')";
-    ($db->query($sql));
-}
-if($olddepartment !== $department && $department !== ""){
-    $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
-    $db->query($query);
-    $namestat = true;
+// }
+// if($olddepartment !== $department && $department !== ""){
+//     $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
+//     $db->query($query);
+//     $namestat = true;
+// }
+// if($oldposition !== $position && $position !== ""){
+//     $query = "UPDATE logonscript.tbl_user SET `position`='$position' WHERE (`userid` = '$userid')";
+//     $db->query($query);
+//     $namestat = true;
 
-    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
-    VALUES ('$EditUser', 'Department:".$_POST["department"]."', NOW(), '$userid2')";
-    ($db->query($sql));
-}
-if($oldposition !== $position && $position !== ""){
-    $query = "UPDATE logonscript.tbl_user SET `position`='$position' WHERE (`userid` = '$userid')";
-    $db->query($query);
-    $namestat = true;
+//     $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
+//     VALUES ('$EditUser', 'Position:".$_POST["position"]."', NOW(), '$userid2')";
+//     ($db->query($sql));
+// }
+// if($oldrole !== $role && $role !== ""){
+//     $query = "UPDATE logonscript.tbl_user SET `role`='$role' WHERE (`userid` = '$userid')";
+//     $db->query($query);
+//     $namestat = true;
+ 
+// }
+// if($oldstatus !== $status && $status !== ""){
+//     $query = "UPDATE logonscript.tbl_user SET `status`='$status' WHERE (`userid` = '$userid')";
+//     $db->query($query);
+//     $namestat = true;
+// }
 
-    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
-    VALUES ('$EditUser', 'Position:".$_POST["position"]."', NOW(), '$userid2')";
-    ($db->query($sql));
-}
-if($oldrole !== $role && $role !== ""){
-    $query = "UPDATE logonscript.tbl_user SET `role`='$role' WHERE (`userid` = '$userid')";
-    $db->query($query);
-    $namestat = true;
+// if ($password !== ""){
+//     $password = md5(sha1($password)); 
+//     if($oldpassword !== $password){
+//         $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
+//         $db->query($query);
+//         $namestat = true;
+//     }
+// }
 
-    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
-    VALUES ('$EditUser', 'Role:".$_POST["role"]."', NOW(), '$userid2')";
-    ($db->query($sql));
-}
-if($oldstatus !== $status && $status !== ""){
-    $query = "UPDATE logonscript.tbl_user SET `status`='$status' WHERE (`userid` = '$userid')";
-    $db->query($query);
-    $namestat = true;
+// if($namestat == true){
+//     echo "true";
+//}
+//else{
+    //echo "flase";
+//}
 
-    $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
-    VALUES ('$EditUser', 'Status:".$_POST["status"]."', NOW(), '$userid2')";
-    ($db->query($sql));
-}
-
-if ($password !== ""){
-    $password = md5(sha1($password)); 
-    if($oldpassword !== $password){
-        $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
-        $db->query($query);
-        $namestat = true;
-    }
-}
-
-if($namestat == true){
-    echo "true";
-}
-else{
-    echo "flase";
+$query = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user");
+$query->execute();
+$query->setFetchMode(PDO::FETCH_ASSOC);
+while ($row = $query->fetch()) {
+    
+    $userid = "";
+    $name = "";
+    $department = "";
+    $position = "";
+    $role = "";
+    $status = "";
 }
 
-//$sql2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+//$query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
+//$query2->execute();
+//$query2->setFetchMode(PDO::FETCH_ASSOC);
+//while ($row = $query2->fetch()) {
+    
+    //$userid = $row['userid'];
+    //$name = $row['name'];
+    //$department = $row['department'];
+    //$position = $row['position'];
+    //$role = $row['role'];
+    //$status = $row['status'];
+//}
+
+$updateVar = "UPDATE logonscript.tbl_user SET `userid`='$userid',`name`='$name',`department`='$department',`position`='$position', `role`='$role',`role`='$role',`status`='$status' WHERE (`userid` = '$userid')";
+    $db->query($updateVar);
+    
+$query3 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
+$query3->execute();
+$query3->setFetchMode(PDO::FETCH_ASSOC);
+while ($row = $query3->fetch()) {
+      
+if($name != $row['name'])
+    $updateVar += $row['name'];
+if($name != $row['name'])
+    $updateVar += $row['name'];
+if($department != $row['department'])
+    $updateVar += $row['department'];
+if($position != $row['position'])
+    $updateVar += $row['position'];
+if($role != $row['role'])
+    $updateVar += $row['role'];
+if($status != $row['status'])
+    $updateVar += $row['status'];
+    
+    
+$sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-//VALUES ('$AddUser', 'UserID:".$_POST["userid"].",Name:".$_POST["name"].",Department:".$_POST["department"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
-//($db->query($sql2));
+VALUES ('$AddUser', '$updateVar', NOW(), '$userid2')";
+($db->query($sqlqurey));
+}
 ?>
