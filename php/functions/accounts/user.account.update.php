@@ -74,12 +74,11 @@ else{
     echo "flase";
 }
     
-$query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
-$query2->execute();
-$query2->setFetchMode(PDO::FETCH_ASSOC);
-while ($row = $query2->fetch()) {
+$queryvar = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
+$queryvar->execute();
+$queryvar->setFetchMode(PDO::FETCH_ASSOC);
+while ($row = $queryvar->fetch()) {
     
-    $userid = $row['userid'];
     $name = $row['name'];
     $department = $row['department'];
     $position = $row['position'];
@@ -108,7 +107,7 @@ if($status != $row['status'])
     
 $sqlqurey2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-VALUES ('$EditUser', '$sqlqurey', NOW(), '$userid2')";
+VALUES ('$EditUser', '$queryvar', NOW(), '$userid2')";
 ($db->query($sqlqurey2));
 }
 ?>
