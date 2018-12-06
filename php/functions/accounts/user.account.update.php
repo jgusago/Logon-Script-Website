@@ -73,50 +73,43 @@ else{
     echo "flase";
 }
 
-$userid = "";
-$name = "";
-$department = "";
-$position = "";
-$role = "";
-$status = "";
-$password = "";
 
-$sqlquery = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
-$sqlquery->execute();
-$sqlquery->setFetchMode(PDO::FETCH_ASSOC);
-while ($row = $sqlquery->fetch()) {
+// $sqlquery = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
+// $sqlquery->execute();
+// $sqlquery->setFetchMode(PDO::FETCH_ASSOC);
+// while ($row = $sqlquery->fetch()) {
     
-    $userid = $row['userid'];
-    $name = $row['name'];
-    $department = $row['department'];
-    $position = $row['position'];
-    $role = $row['role'];
-    $status = $row['status'];
-}
+//     $userid = $row['userid'];
+//     $name = $row['name'];
+//     $department = $row['department'];
+//     $position = $row['position'];
+//     $role = $row['role'];
+//     $status = $row['status'];
+// }
 
     
-$query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
-$query2->execute();
-$query2->setFetchMode(PDO::FETCH_ASSOC);
-while ($row = $query2->fetch()) {
+// $query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
+// $query2->execute();
+// $query2->setFetchMode(PDO::FETCH_ASSOC);
+// while ($row = $query2->fetch()) {
       
-if($name != $row['name'])
-    $sqlquery += $row['name'];
-if($name != $row['name'])
-    $sqlquery += $row['name'];
-if($department != $row['department'])
-    $sqlquery += $row['department'];
-if($position != $row['position'])
-    $sqlquery += $row['position'];
-if($role != $row['role'])
-    $sqlquery += $row['role'];
-if($status != $row['status'])
-    $sqlquery += $row['status'];
+// if($name != $row['name'])
+//     $sqlquery += $row['name'];
+// if($name != $row['name'])
+//     $sqlquery += $row['name'];
+// if($department != $row['department'])
+//     $sqlquery += $row['department'];
+// if($position != $row['position'])
+//     $sqlquery += $row['position'];
+// if($role != $row['role'])
+//     $sqlquery += $row['role'];
+// if($status != $row['status'])
+//     $sqlquery += $row['status'];
     
     
-$sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+// $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-VALUES ('$EditUser', '$sqlquery', NOW(), '$userid2')";
-($db->query($sqlqurey));
-}
+// VALUES ('$EditUser', '$sqlquery', NOW(), '$userid2')";
+// ($db->query($sqlqurey));
+// }
 ?>
