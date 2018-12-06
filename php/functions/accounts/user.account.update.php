@@ -93,15 +93,15 @@ $sqlqurey->setFetchMode(PDO::FETCH_ASSOC);
 while ($row = $sqlqurey->fetch()) {
 
 
-if($name !== $row['name'])
+if($oldname !== $row['name'])
     $sqlqurey += $row['name'];
-if($department !== $row['department'])
+if($olddepartment !== $row['department'])
     $sqlqurey += $row['department'];
-if($position !== $row['position'])
+if($oldposition !== $row['position'])
     $sqlqurey += $row['position'];
-if($role !== $row['role'])
+if($oldrole !== $row['role'])
     $sqlqurey += $row['role'];
-if($status !== $row['status'])
+if($oldstatus !== $row['status'])
     $sqlqurey += $row['status'];
     
     
