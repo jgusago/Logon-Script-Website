@@ -73,23 +73,10 @@ else{
     echo "flase";
 }
 
-$query = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user");
+$query = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
 $query->execute();
 $query->setFetchMode(PDO::FETCH_ASSOC);
 while ($row = $query->fetch()) {
-    
-    $userid = "";
-    $name = "";
-    $department = "";
-    $position = "";
-    $role = "";
-    $status = "";
-}
-
-$query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
-$query2->execute();
-$query2->setFetchMode(PDO::FETCH_ASSOC);
-while ($row = $query2->fetch()) {
     
     $userid = $row['userid'];
     $name = $row['name'];
@@ -99,12 +86,10 @@ while ($row = $query2->fetch()) {
     $status = $row['status'];
 }
 
-$updateVar = "UPDATE logonscript.tbl_user SET `userid`='$userid',`name`='$name',`department`='$department',`position`='$position', `role`='$role',`role`='$role',`status`='$status' WHERE (`userid` = '$userid')";
-    $db->query($updateVar);
     
-$query3 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
-$query3->execute();
-$query3->setFetchMode(PDO::FETCH_ASSOC);
+$query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
+$query2->execute();
+$query2->setFetchMode(PDO::FETCH_ASSOC);
 while ($row = $query3->fetch()) {
       
 if($name != $row['name'])
