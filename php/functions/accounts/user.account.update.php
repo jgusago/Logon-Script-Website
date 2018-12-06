@@ -90,7 +90,7 @@ while ($row = $query->fetch()) {
 $query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
 $query2->execute();
 $query2->setFetchMode(PDO::FETCH_ASSOC);
-while ($row = $query3->fetch()) {
+while ($row = $query2->fetch()) {
       
 if($name != $row['name'])
     $updateVar += $row['name'];
