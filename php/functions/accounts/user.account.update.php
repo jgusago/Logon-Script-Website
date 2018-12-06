@@ -1,14 +1,6 @@
 <?php
 session_start();
 
-$userid = "";
-$name = "";
-$department = "";
-$position = "";
-$role = "";
-$status = "";
-$password = "";
-
 $EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
 
@@ -73,12 +65,13 @@ else{
     echo "flase";
 }
 
-$userid = $row['userid'];
-    $name = $row['name'];
-    $department = $row['department'];
-    $position = $row['position'];
-    $role = $row['role'];
-    $status = $row['status'];
+$userid = "";
+$name = "";
+$department = "";
+$position = "";
+$role = "";
+$status = "";
+$password = "";
 
 $sqlquery = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
 $sqlquery->execute();
