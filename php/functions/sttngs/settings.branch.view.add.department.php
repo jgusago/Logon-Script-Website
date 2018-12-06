@@ -32,7 +32,7 @@ echo "true";
 
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-VALUES ('$AddDepartment', 'Department:".$_POST["tree_name"].",Filter Department:".$_POST["tree_filter"]."', NOW(), '$userid2')";
+VALUES ('$AddDepartment', 'Department:".$dept.",Filter Department:".$filter."', NOW(), '$userid2')";
 ($db->query($sqlqurey));
 
 }
