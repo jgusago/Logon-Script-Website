@@ -202,6 +202,19 @@ function DSHBRDContent(parent, linkid)
     }, 500)
 }
 
+Profile()
+{
+  var contentview = document.getElementById("contentview");
+  contentview.innerHTML = "";
+
+  document.getElementById("dtitle").innerHTML = "Profile & Account Settings";
+  document.getElementById("dtitle2").innerHTML = "Profile Settings";
+
+  var card = [];
+  createCard(card, contentview, [], []);
+  createnewElement([],card.head,"div",[],[],"");
+}
+
 //User Account Update OnClick
 
 function ACCTedit(userid, name, department, position, role, status, tabledata, grandparent, linkid)
