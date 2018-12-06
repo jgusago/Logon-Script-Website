@@ -74,13 +74,6 @@ else{
     echo "flase";
 }
     
-    $userid = "";
-    $name = "";
-    $department = "";
-    $position = "";
-    $role = "";
-    $status = "";
-
 $query2 = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
 $query2->execute();
 $query2->setFetchMode(PDO::FETCH_ASSOC);
@@ -100,7 +93,7 @@ $sqlqurey->execute();
 $sqlqurey->setFetchMode(PDO::FETCH_ASSOC);
 while ($row = $sqlqurey->fetch()) {
 
-    
+
 if($name != $row['name'])
     $sqlqurey += $row['name'];
 if($department != $row['department'])
