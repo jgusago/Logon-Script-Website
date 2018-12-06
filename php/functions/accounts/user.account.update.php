@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-$userid = $_POST['userid'];
-$name = $_POST['name'];
-$department = $_POST['department'];
-$position = $_POST['position'];
-$role = $_POST['role'];
-$status = $_POST['status'];
-$password = $_POST['password'];
+$userid = "";
+$name = "";
+$department = "";
+$position = "";
+$role = "";
+$status = "";
+$password = "";
 
 $EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
@@ -73,6 +73,13 @@ else{
     echo "flase";
 }
 
+$userid = $row['userid'];
+    $name = $row['name'];
+    $department = $row['department'];
+    $position = $row['position'];
+    $role = $row['role'];
+    $status = $row['status'];
+
 $sqlquery = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
 $sqlquery->execute();
 $sqlquery->setFetchMode(PDO::FETCH_ASSOC);
@@ -93,17 +100,17 @@ $query2->setFetchMode(PDO::FETCH_ASSOC);
 while ($row = $query2->fetch()) {
       
 if($name != $row['name'])
-    $updateVar += $row['name'];
+    $sqlquery += $row['name'];
 if($name != $row['name'])
-    $updateVar += $row['name'];
+    $sqlquery += $row['name'];
 if($department != $row['department'])
-    $updateVar += $row['department'];
+    $sqlquery += $row['department'];
 if($position != $row['position'])
-    $updateVar += $row['position'];
+    $sqlquery += $row['position'];
 if($role != $row['role'])
-    $updateVar += $row['role'];
+    $sqlquery += $row['role'];
 if($status != $row['status'])
-    $updateVar += $row['status'];
+    $sqlquery += $row['status'];
     
     
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
