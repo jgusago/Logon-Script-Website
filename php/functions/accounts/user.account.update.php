@@ -64,8 +64,8 @@ if($oldname !== $name && $name !== ""){
      $namestat = true;
  }
 
- if ($oldpassword !== password_hash($password, PASSWORD_DEFAULT)){
-     $password = password_hash($password, PASSWORD_DEFAULT); 
+ if ($oldpassword !== md5(sha1($password))){
+     //$password = password_hash($password, PASSWORD_DEFAULT); 
          $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
          $db->query($query);
          $namestat = true;
