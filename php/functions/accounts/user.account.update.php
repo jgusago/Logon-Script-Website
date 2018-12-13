@@ -14,6 +14,12 @@ $EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+$oldname = "";
+    $olddepartment = "";
+    $oldposition = "";
+    $oldrole = "";
+    $oldstatus = "";
+    $oldpassword = "";
 
 //Get Old Value
 $oldvalue = "SELECT * FROM logonscript.tbl_user WHERE userid = '$userid'";
