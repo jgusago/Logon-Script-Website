@@ -92,16 +92,16 @@ while ($row = $queryvar->fetch()) {
     $role = $row['role'];
     $status = $row['status'];
 
-if($name != $row['name'])
-    $edit = "1";
-if($department != $row['department'])
-     $edit = "2";
-if($position != $row['position'])
-    $edit =  $row['position'];
-if($role != $row['role'])
-    $edit .=  $row['role'];
-if($status != $row['status'])
-    $edit .=  $row['status'];
+if($name != $oldname)
+    $edit .= $name;
+if($department != $olddepartment)
+     $edit .= $department;
+if($position != $oldposition)
+    $edit .= $position;
+if($role != $oldrole)
+    $edit .=  $role;
+if($status != $oldstatus)
+    $edit .=  $status;
 }
 
     
