@@ -73,7 +73,8 @@ if($oldname !== $name && $name !== ""){
 else{
     echo "flase";
 }
-    
+
+$edit = "";
 $queryvar = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
 $queryvar->execute();
 $queryvar->setFetchMode(PDO::FETCH_ASSOC);
@@ -87,27 +88,22 @@ while ($row = $queryvar->fetch()) {
 }
 
     
-$sqlqurey = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
-$sqlqurey->execute();
-$sqlqurey->setFetchMode(PDO::FETCH_ASSOC);
-while ($row = $sqlqurey->fetch()) {
-
-
-if($name !== $row['name'])
-    $sqlqurey += $row['name'];
-if($department !== $row['department'])
-    $sqlqurey += $row['department'];
-if($position !== $row['position'])
-    $sqlqurey += $row['position'];
-if($role !== $row['role'])
-    $sqlqurey += $row['role'];
-if($status !== $row['status'])
-    $sqlqurey += $row['status'];
+if($name != $row['name'])
+    $edit += $row['name'];
+if($department != $row['department'])
+     $edit += $row['department'];
+if($position != $row['position'])
+    $edit += $row['position'];
+if($role != $row['role'])
+    $edit += $row['role'];
+if($status != $row['status'])
+    $edit += $row['status'];
     
-$sqlqurey2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+$sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
-VALUES ('$EditUser', 'Name:".$_POST["name"].",Department:".$_POST["department"].",Position:".$_POST["position"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
-($db->query($sqlqurey2));
+VALUES ('$EditUser', '$edit', NOW(), '$userid2')";
+//VALUES ('$EditUser', 'Name:".$_POST["name"].",Department:".$_POST["department"].",Position:".$_POST["position"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
+($db->query($sqlqurey));
 }
 
 ?>
