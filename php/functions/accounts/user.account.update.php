@@ -70,7 +70,7 @@ if($oldname !== $name && $name !== ""){
      if($oldpassword !== $password){
          $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
          $db->query($query);
-         $namestat = true;
+         //$namestat = true;
      }
  }
 
