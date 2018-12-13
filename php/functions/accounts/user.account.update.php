@@ -74,12 +74,12 @@ if($oldname !== $name && $name !== ""){
      }
  }
 
- if($namestat == true){
-     echo "true";
-}
-else{
-    echo "flase";
-}
+//  if($namestat == true){
+//      echo "true";
+// }
+// else{
+//     echo "flase";
+// }
 
 $edit = "";
 $queryvar = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
