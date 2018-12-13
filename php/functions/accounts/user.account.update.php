@@ -64,22 +64,20 @@ if($oldname !== $name && $name !== ""){
      $namestat = true;
  }
 
- if ($oldpassword !== $password){
      //$password = md5(sha1($password)); 
      $hashed_password = password_hash($_POST["password"],PASSWORD_DEFAULT);
      if($oldpassword !== $password){
          $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
          $db->query($query);
-         //$namestat = true;
+         $namestat = true;
      }
- }
 
-//  if($namestat == true){
-//      echo "true";
-// }
-// else{
-//     echo "flase";
-// }
+ if($namestat == true){
+     echo "true";
+}
+else{
+    echo "flase";
+}
 
 $edit = "";
 $queryvar = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
