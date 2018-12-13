@@ -95,15 +95,15 @@ while ($row = $queryvar->fetch()) {
 
     
 if($name != $row['name'])
-    $edit = $edit "+" $row['name'];
+    $edit = $edit "." $row['name'];
 if($department != $row['department'])
-     $edit = $edit "+" $row['department'];
+     $edit = $edit "." $row['department'];
 if($position != $row['position'])
-    $edit = $edit "+" $row['position'];
+    $edit = $edit "." $row['position'];
 if($role != $row['role'])
-    $edit = $edit "+" $row['role'];
+    $edit = $edit "." $row['role'];
 if($status != $row['status'])
-    $edit = $edit "+" $row['status'];
+    $edit = $edit "." $row['status'];
     
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
              
