@@ -13,7 +13,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
 
     if (count($row) > 0) {
-        $enc = $row[0]['password']; 
+        $hashed_password = $row[0]['password']; 
         $status = $row[0]['status']; 
         $role = $row[0]['role']; 
             if($status == 'Inactive')
@@ -21,7 +21,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
                 echo "failed:inactive";
             }
             //elseif(($status == 'Active') && (password_verify($password, $hashed_password))) {
-                elseif($status == 'Active' && $enc == $password) { 
+                elseif(($status == 'Active') && (md5(shas1($password, $hashed_password)))) { 
                 $_SESSION["userid"] = $row[0]['userid']; 
                 if($role == "ADMINISTRATOR")
                 {
@@ -37,10 +37,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
                 }
             }
             else {
-            echo "failed:password".$password;
+            echo "failed:password";
             }
-
-           
     }
     else{
     echo "failed:staff"; 
