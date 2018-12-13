@@ -35,18 +35,18 @@ foreach ($db->query($oldvalue) as $row) {
 if($oldname !== $name && $name !== ""){
      $query = "UPDATE logonscript.tbl_user SET `name`='$name' WHERE (`userid` = '$userid')";
      $db->query($query);
-     $namestat = true;
+     // = true;
 
  }
  if($olddepartment !== $department && $department !== ""){
      $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
      $db->query($query);
-     $namestat = true;
+     // = true;
  }
  if($oldposition !== $position && $position !== ""){
      $query = "UPDATE logonscript.tbl_user SET `position`='$position' WHERE (`userid` = '$userid')";
      $db->query($query);
-     $namestat = true;
+     // = true;
 
      $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
      VALUES ('$EditUser', 'Position:".$_POST["position"]."', NOW(), '$userid2')";
@@ -55,13 +55,13 @@ if($oldname !== $name && $name !== ""){
  if($oldrole !== $role && $role !== ""){
      $query = "UPDATE logonscript.tbl_user SET `role`='$role' WHERE (`userid` = '$userid')";
      $db->query($query);
-     $namestat = true;
+     // = true;
  
  }
  if($oldstatus !== $status && $status !== ""){
      $query = "UPDATE logonscript.tbl_user SET `status`='$status' WHERE (`userid` = '$userid')";
      $db->query($query);
-     $namestat = true;
+     //$namestat = true;
  }
 
      //$password = md5(sha1($password)); 
@@ -69,15 +69,15 @@ if($oldname !== $name && $name !== ""){
      if($oldpassword !== $password){
          $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
          $db->query($query);
-         $namestat = true;
+         // = true;
      }
 
- if($namestat == true){
-     echo "true";
-}
-else{
-    echo "flase";
-}
+//  if(// == true){
+//      echo "true";
+// }
+// else{
+//     echo "flase";
+// }
 
 $edit = "";
 $queryvar = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
