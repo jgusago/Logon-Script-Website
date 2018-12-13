@@ -38,9 +38,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
             }
             else {
             echo "failed:password";
+            echo $password;
             }
 
-            echo $password;
+           
     }
     else{
     echo "failed:staff"; 
