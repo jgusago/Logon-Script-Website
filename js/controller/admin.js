@@ -65,8 +65,9 @@ $.post("php/functions/load/dashboard.buttons.php",function(data){
   for(var  i = 0; i < cldata.length; i++){
     var li = [], a = [];
     var id = idgenerator();
+    var newdata32 = cldata[i].split("`");
     createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
-    createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],cldata[i]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
+    createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+newdata32[1]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],newdata32[0]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
   }
 });
 }
