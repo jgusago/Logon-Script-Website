@@ -1,33 +1,24 @@
 <?php
-$parent = $_POST["parent"];
-//$parent = "Marvin(IT)";
+$id = $_POST["parent"];
 $count = 0;
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
 
-if ($_SESSION['role'] !== "STAFF"){
-    $parent = $_POST["parent"];
-    $id = $_POST["linkid"];
-    $query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE branch LIKE :parent AND user not like '%admin%' GROUP BY hostname";
-}
-else{
-    $id = $_POST["linkid"];
-    $department = $_SESSION['department'];
-    $sql2 = "SELECT * FROM logonscript.tbl_tree where tree_name like '$department'";
-      
-		foreach ($db->query($sql2) as $row) {
+    $sql2 = "SELECT * FROM logonscript.tbl_tree where tree_id like '$id'";
+
+    foreach ($db->query($sql2) as $row) {
             if(isset($row['tree_filter'])){
                 $tree_filter = $row['tree_filter'];
             }
             else{
                 $tree_filter = "notacceptabvle";
             }
-            
-        }    
-        
-    $query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE branch LIKE :parent AND hostname like '%$tree_filter%' AND user not like '%admin%' group by hostname";
-}
+
+        }
+
+$query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE hostname like '$tree_filter%' AND user not like '%admin%' group by hostname";
+
 
 echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
 
