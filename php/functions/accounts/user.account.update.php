@@ -95,9 +95,9 @@ while ($row = $queryvar->fetch()) {
 
     
 if($name != $row['name'])
-    $edit = $edit . $row['name'];
+    $edit = "1";
 if($department != $row['department'])
-     $edit = $edit . $row['department'];
+     $edit = "2";
 if($position != $row['position'])
     $edit = $edit . $row['position'];
 if($role != $row['role'])
