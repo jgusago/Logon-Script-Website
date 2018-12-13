@@ -93,15 +93,15 @@ while ($row = $queryvar->fetch()) {
     $status = $row['status'];
 
 if($name != $oldname)
-    $edit .= $name;
+    $edit .= "Name:".$name.",";
 if($department != $olddepartment)
-     $edit .= $department;
+     $edit .= "Department:".$department.",";
 if($position != $oldposition)
-    $edit .= $position;
+    $edit .= "Position:".$position.",";
 if($role != $oldrole)
-    $edit .=  $role;
+    $edit .=  "Role:".$role.",";
 if($status != $oldstatus)
-    $edit .=  $status;
+    $edit .=  "Status:".$status.",";
 }
 
     
