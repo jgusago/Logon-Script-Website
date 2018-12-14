@@ -50,29 +50,25 @@ foreach ($db->query($query) as $row){
 
     if ($count2 != 0){
         $notif2 = "";
-        if($notif1 != 0){
-            $notif2 =  "`";
-        }
-        $notif2 = $notif2."NOTIFimonitorupdate|text-warning|Agent Need Update|$time|There are $count2 computers detected! Update imonitor agent";
+        $notif2 = "NOTIFimonitorupdate|text-warning|Agent Need Update|$time|There are $count2 computers detected! Update imonitor agent";
         }
     else{
       $notif2 = 0;
     }
-        $add = '';
-        if($notif1 !== 0 && $notif2 !== 0){
-          echo "#`<a class='dropdown-item' href='#'>
+          $result = "#`<a class='dropdown-item' href='#'>
           <div class='dropdown-message small'>No notification</div></a>";
+
+        if($notif1 !== 0){
+          $notif1 = $notif1."`";
         }
-        else{
-          if($notif1 !== 0){
-            echo $notif1;
-            $add = "`";
-          }
-          if ($notif2 !== 0) {
-            echo $add.$notif2;
-            $add = "`";
-          }
+        else {
+          $notif1 = "";
         }
+        if($notif2 !== 0){
+          $result = $notif1.$notif2;
+        }
+
+echo $result;
 
     //notif number
     // if($count == 0 && $count2 == 0){
