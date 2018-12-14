@@ -15,7 +15,7 @@ foreach ($db->query($getparent) as $row){
 
 $query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE '$parent%' GROUP BY hostname";
 
-echo "Computer Name|User|IP Address|Services & Server Status|Remarks|Agent Version|Previous Date Checked|Date Checked|Action";
+echo "Computer Name|User|IP Address|Services & Server Status|Remarks|Agent Version|Date Checked|Action";
 
 
 foreach($db->query($query) as $row)
@@ -55,7 +55,7 @@ foreach($db->query($query) as $row)
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname|$user|$ip_address|iMonitor Services: $status~Connection Status: $status1|$remarks|$agent_version|||button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parentid\",\"$id\")`Details";
+    echo "#$hostname|$user|$ip_address|iMonitor Services: $status~Connection Status: $status1|$remarks|$agent_version|Previous Checked: ~Current Checked: |button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parentid\",\"$id\")`Details";
 
 
 
