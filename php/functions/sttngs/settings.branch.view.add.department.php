@@ -11,9 +11,13 @@ $filter = $_POST['filter'];
 $AddDepartment = "Add Department";
 $userid2 = $_SESSION['userid'];
 
-if ($branch == $path){
+if ($branch == $path && $path !== "root"){
 $length = 2;
 $parent = $branch;
+}
+else if($path == "root"){
+  $length = 1;
+  $parent = $branch;
 }
 else{
 $path = explode("/",$path);
@@ -31,7 +35,7 @@ $db->query($query);
 echo "true";
 
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-             
+
 VALUES ('$AddDepartment', 'Department:".$dept.",Filter Department:".$filter."', NOW(), '$userid2')";
 ($db->query($sqlqurey));
 

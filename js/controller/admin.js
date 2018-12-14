@@ -203,7 +203,7 @@ function DSHBRDContent(parent, linkid)
     }, 500)
 }
 
-Profile()
+function Profile()
 {
   var contentview = document.getElementById("contentview");
 
@@ -593,14 +593,14 @@ function adddepartment(){
     createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
     Departmentlist(branchid);
     createnewElement(option, select.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Department");
-    createnewElement(option, select.newelement, "option", [],["value:root"], "Add Department");
+    createnewElement(option, select.newelement, "option", [],["value:root"], "New Branch");
     createnewElement(dvd,  fg4.newelement, "div", ["dropdown-divider"],[],"");
 
     //Path
     var fg5 = [], lbl5 = [], slt2 = [], optn2 = [];
     createnewElement(fg5, form.newelement, "div", ["form-group"], [], "");
     createnewElement(lbl5, fg5.newelement, "label", [],[],"Select Path");
-    createnewElement(slt2, fg5.newelement, "select", ["form-control"], ["name:path", "required:true", "id:"+pathid], "");
+    createnewElement(slt2, fg5.newelement, "select", ["form-control"], ["name:path", "required:true", "id:"+pathid, "disabled:true"], "");
     createnewElement(dvd,  fg5.newelement, "div", ["dropdown-divider"],[],"");
     //1st row
     createnewElement(fg, form.newelement, "div", ["form-group"],[],"");
@@ -627,7 +627,12 @@ function BRNCHVWupdatepath(branchid, pathid){
   var branch = document.getElementById(branchid).value;
   var path = document.getElementById(pathid);
   path.innerHTML = "";
-
+if (branch == "root"){
+  var option = [];
+  createnewElement(option, path, "option", [], ["value:root"],"root");
+  path.setAttribute("disabled","true");
+}
+else{
   $.post("php/functions/sttngs/settings.branch.view.path.selection.php",{branch:branch},function(data){
     data = data.split("<br>");
     path.innerHTML = data;
@@ -636,6 +641,8 @@ function BRNCHVWupdatepath(branchid, pathid){
       createnewElement(option, path, "option", [], ["value:"+data[a]],data[a]);
     }
   });
+  path.removeAttribute('disabled');
+}
 
 }
 
