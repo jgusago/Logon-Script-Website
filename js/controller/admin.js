@@ -162,8 +162,6 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        // var reports = document.getElementById("Reports");
-        // reports.classList.add("active");
       break;
       case "DSHBRDRecordsHistory":
         path = "";
@@ -197,14 +195,6 @@ function DSHBRDContent(parent, linkid)
       pdf[0].classList.add("btn-danger");
 
     }, 500)
-}
-
-function Profile()
-{
-  var contentview = document.getElementById("contentview");
-
-  document.getElementById("dtitle").innerHTML = "Profile & Account Settings";
-  document.getElementById("dtitle2").innerHTML = "Profile Settings";
 }
 
 //User Account Update OnClick
@@ -466,6 +456,12 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     }
     pagination(id);
   }
+}
+
+function DSHBRDLogsHistory()
+{
+  document.getElementById("dtitle").innerHTML = "Reports";
+  document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
 }
 
 function DSHBRDContentBranchSettings()
