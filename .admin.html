@@ -61,23 +61,20 @@
               <!-- Computer Logs -->
               <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
                 <a class="nav-link nav-link-collapse collapdatased collapsed" data-toggle="collapse" href="#COMPLOGSlist" data-parent="#DHSBRDRecords" aria-expanded="false">Computer Logs</a>
-                  <ul class="sidenav-third-level collapse" id="COMPLOGSlist" data-parent="#DSHBRDRecords" style="">
+                  <ul class="sidenav-third-level collapse" id="COMPLOGSlist" data-parent="#DSHBRDRecords" >
                   </ul>
               </li>
               <!-- History -->
               <li data="History" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="Branch Computer History">
-
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseHistory" data-parent="#DHSBRDRecords">History</a>
-                <!-- <span class="nav-link-text">History</span> -->
-
-                <ul class="sidenav-second-level collapse" id="collapseHistory">
-                  <li>
-                      <a href="#" id="DSHBRDEditHistory" onclick="DSHBRDContent('DSHBRDEditHistory', 'DSHBRDEditHistory')" data="DSHBRDEditHistory">Edit History</a>
-                  </li>
-                  <li>
-                      <a href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('DSHBRDLogsHistory', 'DSHBRDLogsHistory')" data="DSHBRDLogsHistory">Computer Logs History</a>
-                  </li>
-                </ul>
+                <a class="nav-lind" href="#" onclick="">
+                  <span class="nav-link-text">History</span>
+                </a>
+              </li>
+              <!-- Computer logs history -->
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="LogsHistory">
+                <a class="nav-link" href="#"onclick="myFucntion(this)"id="logsHistory">
+                  <span class="nav-link-text">Computer Logs History</span>
+                </a>
               </li>
               <!-- close -->
           </ul>
@@ -146,7 +143,7 @@
       <ul class="navbar-nav ml-auto">
 
         <!-- Messages -->
-        <!--
+        
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
@@ -181,7 +178,7 @@
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
-        -->
+       
 
          <!-- Alerts -->
          <li class="nav-item dropdown">
