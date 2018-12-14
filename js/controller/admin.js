@@ -395,7 +395,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
   });
 
   //footer
-  var updatebutton = [], footerdiv = [];
+  var updatebutton = [], footerdiv = [], checkedbutton = [];
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
