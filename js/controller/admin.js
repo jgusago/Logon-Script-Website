@@ -162,15 +162,9 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        // var reports = document.getElementById("Reports");
-        // reports.classList.add("active");
       break;
       case "DSHBRDRecordsHistory":
         path = "";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
-      case "DSHBRDEditHistory":
-        path = "php/functions/reports/computer.edit.history.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDLogsHistory":
@@ -203,16 +197,7 @@ function DSHBRDContent(parent, linkid)
     }, 500)
 }
 
-function Profile()
-{
-  var contentview = document.getElementById("contentview");
-
-  document.getElementById("dtitle").innerHTML = "Profile & Account Settings";
-  document.getElementById("dtitle2").innerHTML = "Profile Settings";
-}
-
 //User Account Update OnClick
-
 function ACCTedit(userid, name, department, position, role, status, tabledata, grandparent, linkid)
 {
   OVERLAYenable();
@@ -257,7 +242,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
   Departmentlist("departmentupdate");
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
-  //positioin
+  //position
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],[],"Position");
   createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:position", "id:positionupdate", "disabled:true", "value:"+position], "");
@@ -295,7 +280,6 @@ function AgentUpdate(hostname,tabledata,grandparent,linkid)
   var divvalue = [], leftdiv = [], value = [], subrdiv =[], rightsidevalue =[], span =[];
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
-  // divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
   createnewElement(value, leftdiv.newelement, "h4", [], [],"" );
 
@@ -336,7 +320,6 @@ function AgentUpdate(hostname,tabledata,grandparent,linkid)
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","enabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated(\""+hostname+"\,\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\)"], "Update" );
-
 }
 
 function AgentUpdated(hostname, update, grandparent, linkid){
@@ -358,7 +341,6 @@ function AgentUpdated(hostname, update, grandparent, linkid){
 }
 
 //computerlist Update OnClick
-
 function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
 {
   OVERLAYenable();
@@ -463,13 +445,14 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs History";
     }
-    else if(path == "php/functions/reports/computer.edit.history.php")
-    {
-      document.getElementById("dtitle").innerHTML = "Reports";
-      document.getElementById("dtitle2").innerHTML = "Edit History";
-    }
     pagination(id);
   }
+}
+
+function DSHBRDLogsHistory()
+{
+  document.getElementById("dtitle").innerHTML = "Reports";
+  document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
 }
 
 function DSHBRDContentBranchSettings()
@@ -622,42 +605,48 @@ function adddepartment(){
 }
 /*End of Branch View*/
 
-function BRNCHVWupdatepath(branchid, pathid){
+function BRNCHVWupdatepath(branchid, pathid)
+{
 
   var branch = document.getElementById(branchid).value;
   var path = document.getElementById(pathid);
   path.innerHTML = "";
-if (branch == "root"){
-  var option = [];
-  createnewElement(option, path, "option", [], ["value:root"],"root");
-  path.setAttribute("disabled","true");
-}
-else{
-  $.post("php/functions/sttngs/settings.branch.view.path.selection.php",{branch:branch},function(data){
-    data = data.split("<br>");
-    path.innerHTML = data;
-    for(var a = 0; a < data.length-1; a++){
-      var option = [];
-      createnewElement(option, path, "option", [], ["value:"+data[a]],data[a]);
-    }
-  });
-  path.removeAttribute('disabled');
-}
+  if (branch == "root")
+  {
+    var option = [];
+    createnewElement(option, path, "option", [], ["value:root"],"root");
+    path.setAttribute("disabled","true");
+  }
+  else
+  {
+    $.post("php/functions/sttngs/settings.branch.view.path.selection.php",{branch:branch},function(data){
+      data = data.split("<br>");
+      path.innerHTML = data;
+      for(var a = 0; a < data.length-1; a++){
+        var option = [];
+        createnewElement(option, path, "option", [], ["value:"+data[a]],data[a]);
+      }
+    });
+    path.removeAttribute('disabled');
+  }
 
 }
 
-function BRNCHVWadddepartment(branchid, pathid, deptid, filterid){
+function BRNCHVWadddepartment(branchid, pathid, deptid, filterid)
+{
 
   var branch = document.getElementById(branchid).value;
   var path = document.getElementById(pathid).value;
   var dept = document.getElementById(deptid).value;
   var filter = document.getElementById(filterid).value;
   $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},function(data){
-    if(data=="true"){
+    if(data=="true")
+    {
       DSHBRDContentBranchSettings('','DSHBRDBranchView');
       ALERTcall("success","Success!! Data have been added");
     }
-    else{
+    else
+    {
       ALERTcall("danger",data);
     }
     OVERLAYdisable();

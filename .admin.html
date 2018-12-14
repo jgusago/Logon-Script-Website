@@ -55,29 +55,26 @@
              <!-- Computer List -->
               <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
                   <a class="nav-link nav-link-collapse collapdatased collapsed" data-toggle="collapse" href="#COMPLISTlist" data-parent="#DHSBRDRecords" aria-expanded="false">Computer List</a>
-                  <ul class="sidenav-third-level collapse" id="COMPLISTlist" data-parent="#DSHBRDRecords" style="">
+                  <ul class="sidenav-third-level collapse" id="COMPLISTlist" data-parent="#DSHBRDRecords" >
                   </ul>
               </li>
               <!-- Computer Logs -->
               <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
                 <a class="nav-link nav-link-collapse collapdatased collapsed" data-toggle="collapse" href="#COMPLOGSlist" data-parent="#DHSBRDRecords" aria-expanded="false">Computer Logs</a>
-                  <ul class="sidenav-third-level collapse" id="COMPLOGSlist" data-parent="#DSHBRDRecords" style="">
+                  <ul class="sidenav-third-level collapse" id="COMPLOGSlist" data-parent="#DSHBRDRecords" >
                   </ul>
               </li>
               <!-- History -->
-              <li data="History" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="Branch Computer History">
-
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseHistory" data-parent="#DHSBRDRecords">History</a>
-                <!-- <span class="nav-link-text">History</span> -->
-
-                <ul class="sidenav-second-level collapse" id="collapseHistory">
-                  <li>
-                      <a href="#" id="DSHBRDEditHistory" onclick="DSHBRDContent('DSHBRDEditHistory', 'DSHBRDEditHistory')" data="DSHBRDEditHistory">Edit History</a>
-                  </li>
-                  <li>
-                      <a href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('DSHBRDLogsHistory', 'DSHBRDLogsHistory')" data="DSHBRDLogsHistory">Computer Logs History</a>
-                  </li>
-                </ul>
+              <li data="History" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="History">
+                <a class="nav-lind" href="#" onclick="" data="DSHBRDHistory">
+                  <span class="nav-link-text">History</span>
+                </a>
+              </li>
+              <!-- Computer logs history -->
+              <li class="nav-item" id="DSHBRDLogsHistory" data-toggle="tooltip" data-placement="right" title="LogsHistory">
+                <a class="nav-link" href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('','DSHBRDLogsHistory')" data="DSHBRDLogsHistory">
+                  <span class="nav-link-text">Computer Logs History</span>
+                </a>
               </li>
               <!-- close -->
           </ul>
@@ -111,9 +108,6 @@
             <li>
               <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">Branch View Settings</a>
             <li>
-                <a href="#"  id="DSHBRDContentImportXL" onclick="" data="">Import Employee List</a>
-            </li>
-            <li>
               <a href="#"  id="DSHBRDContentAgentVersion" onclick="" data="">Agent Version</a>
             </li>
           </ul>
@@ -146,7 +140,7 @@
       <ul class="navbar-nav ml-auto">
 
         <!-- Messages -->
-        <!--
+        
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
@@ -181,7 +175,7 @@
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
-        -->
+       
 
          <!-- Alerts -->
          <li class="nav-item dropdown">
@@ -204,7 +198,7 @@
         </li>
 
         <!-- Logout -->
-        <li class="nav-item dropdown" style="padding-right: 90px;">
+        <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
               <i id="faUser" class="fa fa-fw fa-user">Welcome:
                 <label id="NAVBARusernameID"></label>
