@@ -510,8 +510,7 @@ var toolbar = [];
 createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
 var ig = [];
 createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addbranch()"], "Add Branch");
-createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:adddepartment()"], "Add Department");
+createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:adddepartment()"], "Add Department or Branch");
 // var ig2 = [];
 // createnewElement(ig2,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
 // createnewElement([], ig2.newelement,"button", ["btn","btn-primary"], ["type:button","onclick:editbranch()"],"Update a Branch");
@@ -571,7 +570,7 @@ function adddepartment(){
     createnewElement(headercontainer,ch, "div", ["container"], [], "");
 
     createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
-    createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Deparetment");
+    createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Department");
     var rightsidevalue = [], span = [], headerdiv2 = [];
     createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
     createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
@@ -590,10 +589,11 @@ function adddepartment(){
 
     var fg4 =[], label2 = [], select =[], option = [];
     createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
-    createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch");
+    createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch or Add Department");
     createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
     Departmentlist(branchid);
     createnewElement(option, select.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Department");
+    createnewElement(option, select.newelement, "option", [],["value:root"], "Add Department");
     createnewElement(dvd,  fg4.newelement, "div", ["dropdown-divider"],[],"");
 
     //Path
