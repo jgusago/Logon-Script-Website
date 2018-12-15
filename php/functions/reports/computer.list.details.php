@@ -36,7 +36,6 @@ foreach($result as $row){
 
     $scan_time = date_format($newdate, "M-d-Y H:i");
     }
-    //echo "#$hostname|$user|$domain_name|$ip_address~$ip_date_modefied|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$branch|$scan_time";
 
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $currentstatus = "On-line";
