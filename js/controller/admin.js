@@ -1068,16 +1068,13 @@ function EmployeeList(){
 }
 
 function importemployee(){
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  ch.innerHTML = "Import List From Excel file"
+
   
 }
-//
-
-/* Background */
-/* -------------------------------------------------------------------------- Events ---------------------------------------------------------------------------------- */
-/*
-Functions Abbriviations
-DSHBRD - dashboard
-LNK - link
-CNTVW - Contentview
-
-*/
