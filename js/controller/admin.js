@@ -176,10 +176,6 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
       break;
-      case "DSHBRDProfile":
-        path = "php/functions/employee/employee.list.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
       default:
 
     }
@@ -1034,13 +1030,13 @@ function LettersrOnly(e)
           return false;
 }
 
-function DSHBRDProfile()
+function Profile()
 {
     var contentview = document.getElementById("contentview");
     contentview.innerHTML = "";
 
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
-    document.getElementById("dtitle2").innerHTML = "Employee List";
+    document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
     var card = [];
@@ -1052,7 +1048,7 @@ function DSHBRDProfile()
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
-    $.post("php/functions/employee/employee.list.php",function(data){
+    $.post("php/functions/accounts/accounts.view.php",function(data){
       data = data.split("#");
       datalength = data.length;
 
