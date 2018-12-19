@@ -1030,7 +1030,7 @@ function LettersrOnly(e)
           return false;
 }
 
-function Profile()
+function Profiles()
 {
     var contentview = document.getElementById("contentview");
     contentview.innerHTML = "";
@@ -1048,7 +1048,8 @@ function Profile()
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
-    $.post("php/functions/accounts/accounts.view.php",function(data){
+    $.post("php/functions/accounts/accounts.view.php",function(data)
+    {
       data = data.split("#");
       datalength = data.length;
 
