@@ -1048,7 +1048,7 @@ function Profiles()
     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
     createTable(table, card.body, classes, attributes);
 
-    $.post("php/functions/accounts/accounts.view.php",function(data)
+    $.post("php/functions/employee/employee.list.php",function(data)
     {
       data = data.split("#");
       datalength = data.length;
@@ -1061,7 +1061,6 @@ function Profiles()
       for (var i = 1; i < datalength;i++){
           newdata = data[i].split("|");
           createTableContent([], table.body, [],[], "td", newdata);
-          pagination(tableid);
       }
     });
 
