@@ -1040,10 +1040,12 @@ function Profiles()
 
     tableid = idgenerator();
     var card = [], label = [];
+    
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],[],"Profile Settings");
 
-    createnewElement(label, card.body,"label", [""], [""], "User ID:");
+    createnewElement([], card.body,"label", [""], [""], "User ID:");
+    createnewElement(label, card.body, "h4",[],[], "User ID:" )
 
     // var table = [];
     // var classes = ["table","table-bordered"];
