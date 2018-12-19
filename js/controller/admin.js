@@ -1039,30 +1039,32 @@ function Profiles()
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
-    var card = [];
+    var card = [], label = [];
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],[],"Profile Settings");
 
-    var table = [];
-    var classes = ["table","table-bordered"];
-    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    createTable(table, card.body, classes, attributes);
+    createnewElement(label, card.body,"label", [""], [""], "User ID:");
 
-    $.post("php/functions/employee/employee.list.php",function(data)
-    {
-      data = data.split("#");
-      datalength = data.length;
+    // var table = [];
+    // var classes = ["table","table-bordered"];
+    // var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    // createTable(table, card.body, classes, attributes);
 
-      thfdata = data[0].split("|");
-      var tbheader = [], tbfooter = [];
-      createTableContent([], table.head, [], [], "th", thfdata);
-      createTableContent([], table.foot, [], [], "th", thfdata);
+    // $.post("php/functions/employee/employee.list.php",function(data)
+    // {
+    //   data = data.split("#");
+    //   datalength = data.length;
 
-      for (var i = 1; i < datalength;i++){
-          newdata = data[i].split("|");
-          createTableContent([], table.body, [],[], "td", newdata);
-      }
-    });
+    //   thfdata = data[0].split("|");
+    //   var tbheader = [], tbfooter = [];
+    //   createTableContent([], table.head, [], [], "th", thfdata);
+    //   createTableContent([], table.foot, [], [], "th", thfdata);
+
+    //   for (var i = 1; i < datalength;i++){
+    //       newdata = data[i].split("|");
+    //       createTableContent([], table.body, [],[], "td", newdata);
+    //   }
+    // });
 
     var button = [];
     createnewElement(button, card.foot, "button", ["btn","btn-success"],["type:button"],"Update Profile");
