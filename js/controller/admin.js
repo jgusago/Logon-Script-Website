@@ -171,6 +171,10 @@ function DSHBRDContent(parent, linkid)
         path = "php/functions/reports/computer.logs.history.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
+      case "DSHBRDProfile":
+        path = "php/functions/employee/employee.list.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
