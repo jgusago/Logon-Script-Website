@@ -56,6 +56,10 @@ if (isset($_POST["import"]))
                 }
 
                 if (!empty($id) || !empty($name)) {
+
+                    if{
+                      $query2 = "";
+                    }
                     $query = "INSERT INTO tbl_employee(emp_id, emp_name, emp_login, emp_login2, dept, sub_dept) VALUES ($id,'$name','$login','$login2','$dept','$sub')";
 
                     if (mysqli_query($conn, $query)) {
