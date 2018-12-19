@@ -1042,7 +1042,7 @@ function Profiles()
     var card = [], h6 = [], div1 = [], h61 = [], div2 = [], h62 = [], div3 = [], h63 = [];
 
     createCard(card, contentview, [], []);
-    createnewElement([],card.head,"div",[],[],"Profile Settings");
+    createnewElement([],card.head,"div",[],[],"PROFILE INFORMATION");
 
     createnewElement([], card.body,"div", [], [], "");
     createnewElement(h6, card.body,"label", [],[],"USER ID:");
