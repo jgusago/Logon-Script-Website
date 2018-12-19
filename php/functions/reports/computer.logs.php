@@ -1,6 +1,5 @@
 <?php
-// $id = $_POST["parent"];
-$id = 1;
+$id = $_POST["parent"];
 $count = 0;
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
