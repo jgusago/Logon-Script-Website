@@ -38,12 +38,14 @@ if($oldname !== $name && $name !== ""){
      $namestat = true;
 
  }
- if($olddepartment !== $department && $department !== ""){
+ if($olddepartment !== $department && $department !== "")
+ {
      $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
      $db->query($query);
      $namestat = true;
  }
- if($oldposition !== $position && $position !== ""){
+ if($oldposition !== $position && $position !== "")
+ {
      $query = "UPDATE logonscript.tbl_user SET `position`='$position' WHERE (`userid` = '$userid')";
      $db->query($query);
      $namestat = true;
@@ -52,30 +54,35 @@ if($oldname !== $name && $name !== ""){
      VALUES ('$EditUser', 'Position:".$_POST["position"]."', NOW(), '$userid2')";
      ($db->query($sql));
  }
- if($oldrole !== $role && $role !== ""){
+ if($oldrole !== $role && $role !== "")
+ {
      $query = "UPDATE logonscript.tbl_user SET `role`='$role' WHERE (`userid` = '$userid')";
      $db->query($query);
      $namestat = true;
  
  }
- if($oldstatus !== $status && $status !== ""){
+ if($oldstatus !== $status && $status !== "")
+ {
      $query = "UPDATE logonscript.tbl_user SET `status`='$status' WHERE (`userid` = '$userid')";
      $db->query($query);
      $namestat = true;
  }
 
- if ($oldpassword !== md5(sha1($password))){
+ if ($oldpassword !== md5(sha1($password)))
+ {
         $password =  md5(sha1($password)); 
          $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
          $db->query($query);
          $namestat = true;
  }
 
- if($namestat == true){
+ if($namestat == true)
+ {
      echo "true";
 }
-else{
-    echo "flase";
+else
+{
+    echo "false";
 }
 
 $edit = "";

@@ -359,7 +359,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
     createnewElement(value, leftdiv.newelement, "h4", [], [], hostname+" | "+user);
 
   //rightside DiV
-  createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
+    createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
     createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
     createnewElement(rightsidevalue, subrdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
     //create Select element
@@ -426,8 +426,10 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
   }
-  else if(path == "php/functions/accounts/accounts.view.php"){
-
+  else if(path == "php/functions/employee/employee.list.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Profile Settings";
   }
   else
   {
@@ -1016,7 +1018,7 @@ function isNumberKey(evt)
 
 /*Letters Only*/
 function LettersrOnly(e)
-		{
+{
       var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
       var code;
           if (window.event)
@@ -1026,8 +1028,49 @@ function LettersrOnly(e)
       var char = keychar = String.fromCharCode(code);
           if (arr.indexOf(char) == -1)
           return false;
-    }
+}
 
+function Profiles()
+{
+    var contentview = document.getElementById("contentview");
+    contentview.innerHTML = "";
+
+    document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+    document.getElementById("dtitle2").innerHTML = "Profile Settings";
+
+    tableid = idgenerator();
+    var card = [], label = [];
+    
+    createCard(card, contentview, [], []);
+    createnewElement([],card.head,"div",[],[],"Profile Settings");
+
+    createnewElement([], card.body,"label", [""], [""], "User ID:");
+    createnewElement(label, card.body, "h4",[],[], "User ID:" )
+
+    // var table = [];
+    // var classes = ["table","table-bordered"];
+    // var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    // createTable(table, card.body, classes, attributes);
+
+    // $.post("php/functions/employee/employee.list.php",function(data)
+    // {
+    //   data = data.split("#");
+    //   datalength = data.length;
+
+    //   thfdata = data[0].split("|");
+    //   var tbheader = [], tbfooter = [];
+    //   createTableContent([], table.head, [], [], "th", thfdata);
+    //   createTableContent([], table.foot, [], [], "th", thfdata);
+
+    //   for (var i = 1; i < datalength;i++){
+    //       newdata = data[i].split("|");
+    //       createTableContent([], table.body, [],[], "td", newdata);
+    //   }
+    // });
+
+    var button = [];
+    createnewElement(button, card.foot, "button", ["btn","btn-success"],["type:button"],"Update Profile");
+}
 
 function EmployeeList(){
     var contentview = document.getElementById("contentview");
@@ -1068,7 +1111,8 @@ function EmployeeList(){
       createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button","onclick:importemployee()"],"Import List");
 }
 
-function importemployee(){
+function importemployee()
+{
   OVERLAYenable();
 
   var ch = document.getElementById("mnch");
