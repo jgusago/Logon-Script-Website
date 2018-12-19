@@ -1064,7 +1064,7 @@ function DSHBRDProfile()
       for (var i = 1; i < datalength;i++){
           newdata = data[i].split("|");
           createTableContent([], table.body, [],[], "td", newdata);
-
+          pagination(tableid);
       }
     });
 
