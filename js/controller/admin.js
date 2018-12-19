@@ -1039,16 +1039,33 @@ function Profiles()
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
-    var card = [], h6 = [], h61 = [], h62 = [], h63 = [];
+    var card = [], h6 = [], h6a =[],
+    div1 = [], h61 = [], h6b = [],
+    div2 = [], h62 = [], h6c = [],
+    div3 = [], h63 = [], h6d = [], 
+    div4 = [], h64 = [], h6e = []
+    div5 = [], button = [];
 
     createCard(card, contentview, [], []);
-    createnewElement([],card.head,"div",[],[],"Profile Settings");
+    createnewElement([],card.head,"div",[],[],"PROFILE INFORMATION");
 
     createnewElement([], card.body,"div", [], [], "");
     createnewElement(h6, card.body,"label", [],[],"USER ID:");
+    createnewElement(h6a, card.body,"label", [],[],"1040359");
+    createnewElement(div1, card.body,"div", [], [], "");
     createnewElement(h61, card.body,"label", [],[],"USERNAME:");
+    createnewElement(h6b, card.body,"label", [],[],"Camille Kate");
+    createnewElement(div2, card.body,"div", [], [], "");
     createnewElement(h62, card.body,"label", [],[],"DEPARTMENT :");
+    createnewElement(h6c, card.body,"label", [],[],"MARVIN(IT)");
+    createnewElement(div3, card.body,"div", [], [], "");
     createnewElement(h63, card.body,"label", [],[],"POSITION:");
+    createnewElement(h6d, card.body,"label", [],[],"IT Staff");
+    createnewElement(div4, card.body,"div", [], [], "");
+    createnewElement(h64, card.body,"label", [],[],"ROLE:");
+    createnewElement(h6e, card.body,"label", [],[],"Administrator");
+    createnewElement(div5, card.body,"div", [], [], "");
+    createnewElement(button, card.body,"button", ["btn", "btn-default"],[],"Change Password");
 
     // createnewElement(h6, card.body, "h6",[],[], "USER ID:" );
     // createnewElement(h61, card.body, "h6",[],[], "USERNAME:" );
