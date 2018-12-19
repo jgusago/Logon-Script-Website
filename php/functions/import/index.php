@@ -1,7 +1,7 @@
 <?php
-$conn = mysqli_connect("localhost","root","","logonscript");
-require_once('vendor/php-excel-reader/excel_reader2.php');
-require_once('vendor/SpreadsheetReader.php');
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/import/vendor/php-excel-reader/excel_reader2.php";
+require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/import/vendor/SpreadsheetReader.php";
 
 if (isset($_POST["import"]))
 {
@@ -10,8 +10,8 @@ if (isset($_POST["import"]))
   $allowedFileType = ['application/vnd.ms-excel','text/xls','text/xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
 
   if(in_array($_FILES["file"]["type"],$allowedFileType)){
-
-        $targetPath = 'uploads/'.$_FILES['file']['name'];
+        $today = date("Ymdhis");
+        $targetPath = '\\\\172.16.60.202/uploads/'.$_FILES['file']['name'];
         move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
 
         $Reader = new SpreadsheetReader($targetPath);
@@ -55,16 +55,15 @@ if (isset($_POST["import"]))
                     $sub = mysqli_real_escape_string($conn,$Row[5]);
                 }
 
-                if (!empty($name) || !empty($description)) {
-                    $query = "insert into tbl_employee(emp_id, emp_name, emp_login, emp_login2, dept, sub_dept) values ('".$id."','".$name."','".$login."','".$login2."','".$dept."','".$sub."')";
-                    $result = mysqli_query($conn, $query);
+                if (!empty($id) || !empty($name)) {
+                    $query = "INSERT INTO tbl_employee(emp_id, emp_name, emp_login, emp_login2, dept, sub_dept) VALUES ($id,'$name','$login','$login2','$dept','$sub')";
 
-                    if (! empty($result)) {
+                    if (mysqli_query($conn, $query)) {
                         $type = "success";
                         $message = "Excel Data Imported into the Database";
                     } else {
                         $type = "error";
-                        $message = "Problem in Importing Excel Data";
+                        $message = "Error: " . $query . "" . mysqli_error($conn);
                     }
                 }
              }
@@ -85,7 +84,7 @@ if (isset($_POST["import"]))
 <style>
 body {
 	font-family: Arial;
-	width: 550px;
+	width: 400px;
 }
 
 .outer-container {
@@ -150,7 +149,7 @@ div#response.display-block {
 </head>
 
 <body>
-    <h2>Import Excel File into MySQL Database using PHP</h2>
+    <h2>Import Excel File for Employee list</h2>
 
     <div class="outer-container">
         <form action="" method="post"
@@ -171,7 +170,7 @@ div#response.display-block {
 
 
 <?php
-    $sqlSelect = "SELECT * FROM tbl_employee";
+    $sqlSelect = "SELECT * FROM logonscript.tbl_employee";
     $result = mysqli_query($conn, $sqlSelect);
 
 if (mysqli_num_rows($result) > 0)
@@ -209,6 +208,8 @@ if (mysqli_num_rows($result) > 0)
     </table>
 <?php
 }
+
+mysqli_close($conn);
 ?>
 
 </body>
