@@ -1039,14 +1039,15 @@ function Profiles()
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
-    var card = [], h6 = [], h61 = [];
+    var card = [];
 
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],[],"Profile Settings");
 
-    createnewElement([], card.body,"div", [], [], "");
-    createnewElement(h6, card.body, "h6",[],[], "USER ID:" );
-    createnewElement(h61, card.body, "h6",[],[], "USERNAME:" );
+    createnewElement([], card.body,"div", [], [], "Body");
+
+    // createnewElement(h6, card.body, "h6",[],[], "USER ID:" );
+    // createnewElement(h61, card.body, "h6",[],[], "USERNAME:" );
 
     // var table = [];
     // var classes = ["table","table-bordered"];
