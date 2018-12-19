@@ -1053,19 +1053,19 @@ function Profiles()
     createnewElement(h6, card.body,"h6", [],[],"USER ID:");
     createnewElement(h6a, card.body,"h6", [],[],"1040359");
     createnewElement(div1, card.body,"div", [], [], "");
-    createnewElement(h61, card.body,"h6", [],[],"USERNAME:");
-    createnewElement(h6b, card.body,"h6", [],[],"Camille Kate");
+    createnewElement(h61, div1,"h6", [],[],"USERNAME:");
+    createnewElement(h6b, div1,"h6", [],[],"Camille Kate");
     createnewElement(div2, card.body,"div", [], [], "");
-    createnewElement(h62, card.body,"h6", [],[],"DEPARTMENT :");
-    createnewElement(h6c, card.body,"h6", [],[],"MARVIN(IT)");
+    createnewElement(h62, div2,"h6", [],[],"DEPARTMENT :");
+    createnewElement(h6c, div2,"h6", [],[],"MARVIN(IT)");
     createnewElement(div3, card.body,"div", [], [], "");
-    createnewElement(h63, card.body,"h6", [],[],"POSITION:");
-    createnewElement(h6d, card.body,"h6", [],[],"IT Staff");
+    createnewElement(h63, div3,"h6", [],[],"POSITION:");
+    createnewElement(h6d, div3,"h6", [],[],"IT Staff");
     createnewElement(div4, card.body,"div", [], [], "");
-    createnewElement(h64, card.body,"h6", [],[],"ROLE:");
-    createnewElement(h6e, card.body,"h6", [],[],"Administrator");
+    createnewElement(h64, div4,"h6", [],[],"ROLE:");
+    createnewElement(h6e, div4,"h6", [],[],"Administrator");
     createnewElement(div5, card.body,"div", [], [], "");
-    createnewElement(button, card.body,"button", ["btn", "btn-default"],[],"Change Password");
+    createnewElement(button, div5,"button", ["btn", "btn-default"],[],"Change Password");
 
     // createnewElement(h6, card.body, "h6",[],[], "USER ID:" );
     // createnewElement(h61, card.body, "h6",[],[], "USERNAME:" );
