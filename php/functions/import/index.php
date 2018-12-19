@@ -3,6 +3,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/import/vendor/php-excel-reader/excel_reader2.php";
 require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/import/vendor/SpreadsheetReader.php";
 
+$error = 0;
+$success = 0;
+
 if (isset($_POST["import"]))
 {
 
@@ -57,17 +60,14 @@ if (isset($_POST["import"]))
 
                 if (!empty($id) || !empty($name)) {
 
-                    if{
-                      $query2 = "";
-                    }
                     $query = "INSERT INTO tbl_employee(emp_id, emp_name, emp_login, emp_login2, dept, sub_dept) VALUES ($id,'$name','$login','$login2','$dept','$sub')";
 
                     if (mysqli_query($conn, $query)) {
-                        $type = "success";
+                        $success++;
                         $message = "Excel Data Imported into the Database";
                     } else {
-                        $type = "error";
-                        $message = "Error: " . $query . "" . mysqli_error($conn);
+                        $error++;
+                        $errormessage = "Error: " . $query . "" . mysqli_error($conn);
                     }
                 }
              }
@@ -170,7 +170,8 @@ div#response.display-block {
         </form>
 
     </div>
-    <div id="response" class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>"><?php if(!empty($message)) { echo $message; } ?></div>
+    <div id="response" class="<?php if($success > 0) { echo "success" . " display-block"; } ?>"><?php if($success > 0) { echo "There are $success data that have been imported"; } ?></div>
+    <div id="response" class="<?php if($error > 0) { echo "error" . " display-block"; } ?>"><?php if($error > 0) { echo "There are $error data that CANNOT be imported due to some problems"; } ?></div>
 
 
 <?php
