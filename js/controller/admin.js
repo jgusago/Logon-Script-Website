@@ -171,14 +171,14 @@ function DSHBRDContent(parent, linkid)
         path = "php/functions/reports/computer.logs.history.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
-      case "DSHBRDProfile":
-        path = "php/functions/employee/employee.list.php";
-        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      break;
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
         createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
+      break;
+      case "DSHBRDProfile":
+        path = "php/functions/employee/employee.list.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       default:
 
@@ -363,7 +363,7 @@ function COMPLISTupdate(hostname, user, remarks, tabledata, grandparent, linkid)
     createnewElement(value, leftdiv.newelement, "h4", [], [], hostname+" | "+user);
 
   //rightside DiV
-  createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
+    createnewElement(rightdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6","d-flex","flex-row-reverse"], [], "");
     createnewElement(subrdiv, rightdiv.newelement, "div", [], [], "");
     createnewElement(rightsidevalue, subrdiv.newelement, "strong", ["text-right"], [], "Remarks: ");
     //create Select element
@@ -430,8 +430,10 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Account Management";
   }
-  else if(path == "php/functions/accounts/accounts.view.php"){
-
+  else if(path == "php/functions/employee/employee.list.php")
+  {
+    document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+    document.getElementById("dtitle2").innerHTML = "Profile Settings";
   }
   else
   {
@@ -1032,7 +1034,7 @@ function LettersrOnly(e)
           return false;
 }
 
-function Profile()
+function DSHBRDProfile()
 {
     var contentview = document.getElementById("contentview");
     contentview.innerHTML = "";
