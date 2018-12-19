@@ -1121,10 +1121,8 @@ function importemployee()
   var cf = document.getElementById("mncf");
 
   ch.innerHTML = "Import List From Excel file"
-  var form = [], input1 = [], input2 = [];
-  createnewElement(form, cb, "form",[],["action:upload.php", "method:post","enctype:multipart/form-data"],"");
-  createnewElement([], form.newelement,"H5",[],[],"Select File to Upload");
-  createnewElement(input1, form.newelement, "input", [], ["type:file" ,"name:file" ,"id:file" ,"accept:.xls,.xlsx"], "Upload File");
-  createnewElement(input2, form.newelement, "input", ["btn","btn-primary"], ["type:submit"], "Upload");
+  var iframe = [], input1 = [], input2 = [];
+
+  createnewElement(iframe, cb, "iframe",[],["src:php/functions/import/index.php","width:500px", "height:250px"],"");
 
 }
