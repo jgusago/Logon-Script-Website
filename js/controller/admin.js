@@ -1016,7 +1016,7 @@ function isNumberKey(evt)
 
 /*Letters Only*/
 function LettersrOnly(e)
-		{
+{
       var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
       var code;
           if (window.event)
@@ -1026,8 +1026,45 @@ function LettersrOnly(e)
       var char = keychar = String.fromCharCode(code);
           if (arr.indexOf(char) == -1)
           return false;
-    }
+}
 
+function Profile()
+{
+    var contentview = document.getElementById("contentview");
+    contentview.innerHTML = "";
+
+    document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+    document.getElementById("dtitle2").innerHTML = "Employee List";
+
+    tableid = idgenerator();
+    var card = [];
+    createCard(card, contentview, [], []);
+    createnewElement([],card.head,"div",[],[],"Profile Settings");
+
+    var table = [];
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
+
+    $.post("php/functions/employee/employee.list.php",function(data){
+      data = data.split("#");
+      datalength = data.length;
+
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], table.head, [], [], "th", thfdata);
+      createTableContent([], table.foot, [], [], "th", thfdata);
+
+      for (var i = 1; i < datalength;i++){
+          newdata = data[i].split("|");
+          createTableContent([], table.body, [],[], "td", newdata);
+
+      }
+    });
+
+    var button = [];
+    createnewElement(button, card.foot, "button", ["btn","btn-success"],["type:button"],"Update Profile");
+}
 
 function EmployeeList(){
     var contentview = document.getElementById("contentview");
@@ -1068,7 +1105,8 @@ function EmployeeList(){
       createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button","onclick:importemployee()"],"Import List");
 }
 
-function importemployee(){
+function importemployee()
+{
   OVERLAYenable();
 
   var ch = document.getElementById("mnch");
