@@ -20,7 +20,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE hostname like '$tree_filter%' AND user not like '%admin%' group by hostname";
 
 
-echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Scan Time<br>";
+echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Scan Time";
 
 //$query = "SELECT * FROM logonscript.tbl_log WHERE branch LIKE :parent AND user not like 'admi%' group by hostname";
 
@@ -63,7 +63,7 @@ foreach($result as $row)
     // }
 
 
-    echo "#$hostname|$user|$domain_name|$ip_address|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$scan_time<br>";
+    echo "#$hostname|$user|$domain_name|$ip_address|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$scan_time";
 }
 
 
