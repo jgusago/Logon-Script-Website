@@ -14,7 +14,7 @@ if (isset($_POST["import"]))
 
   if(in_array($_FILES["file"]["type"],$allowedFileType)){
         $today = date("Ymdhis");
-        $targetPath = '\\\\172.16.60.202/uploads/'.$_FILES['file']['name'];
+        $targetPath = 'uploads/'.$_FILES['file']['name'];
         move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
 
         $Reader = new SpreadsheetReader($targetPath);
