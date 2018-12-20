@@ -10,10 +10,10 @@ foreach ($db->query($sql) as $row) {
   $name = $row['emp_name'];
   $login = $row['emp_login'];
   $login2 = $row['emp_login2'];
-  $dept = $row['dept'];
+  // $dept = $row['dept'];
   $subdept = $row['sub_dept'];
 
-  echo "#$id|$name|$login|$login2||$subdept";
+  echo "#$id|$name|$login|$login2|$subdept";
 }
 
 ?>
