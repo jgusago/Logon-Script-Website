@@ -37,6 +37,8 @@ function getchild($parent){
 foreach($treeresult as $row){
     $name = $row['tree_name'];
     $number = $row['tree_level'];
+    $id = $row['tree_id'];
+    $filter = $row['tree_filter'];
     $childcount = colcount($name,0);
     $trtd = colbreaker($parent,$name,0);
     if($parent == "root" && $countroom == 0){
