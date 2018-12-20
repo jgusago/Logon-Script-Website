@@ -1051,7 +1051,9 @@ function Profiles()
     divv =[], divvv = []
     divs = [], divsUid = [], divslbl = [], divsUids = [], hrUid =[],
 
-    divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [];
+    divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [],
+    divs3 = [], divsDept =[], divslbl3 = [], divsDepts = [], hrDept = [],
+    divs4 = [], divsPosition =[], divslbl4 = [], divsPositions = [], hrPosition = [];
 
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],["id:chLabel"],"PROFILE INFORMATION");
@@ -1066,16 +1068,35 @@ function Profiles()
     createnewElement(divvv, divv.newelement, "div", ["tab-pane", "fade", "show", "active"], ["id:basicInfo", "role:tabpanel", "aria-labelledby:basicInfo-tab"], "");
     
     createnewElement(divs, divvv.newelement, "div", ["row"], [], "");
-    createnewElement(divsUid, divs.newelement, "div", ["col-sm-4", "col-md-2", "col-5"], [], "");
+    createnewElement(divsUid, divs.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl, divsUid.newelement, "label", [], ["id:lblEid"], "Employee Id: ");
     createnewElement(divsUids, divs.newelement, "div", ["col-md-8", "col-6"], [], "1040359")
     createnewElement(hrUid, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs2, divvv.newelement, "div", ["row"], [], "");
-    createnewElement(divsUname, divs2.newelement, "div", ["col-sm-4", "col-md-2", "col-5"], [], "");
+    createnewElement(divsUname, divs2.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl2, divsUname.newelement, "label", [], ["id:lblEid"], "Name: ");
     createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], [], "Camille Kate")
     createnewElement(hrUname, divvv.newelement, "hr", [], ["id:hr"], "");
+
+    createnewElement(divs2, divvv.newelement, "div", ["row"], [], "");
+    createnewElement(divsUname, divs2.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl2, divsUname.newelement, "label", [], ["id:lblEid"], "Name: ");
+    createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], [], "Camille Kate")
+    createnewElement(hrUname, divvv.newelement, "hr", [], ["id:hr"], "");
+
+    createnewElement(divs3, divvv.newelement, "div", ["row"], [], "");
+    createnewElement(divsDept, divs3.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl3, divsDept.newelement, "label", [], ["id:lblEid"], "Department: ");
+    createnewElement(divsDepts, divs3.newelement, "div", ["col-md-8", "col-6"], [], "Marvin(IT)")
+    createnewElement(hrDept, divvv.newelement, "hr", [], ["id:hr"], "");
+
+    createnewElement(divs4, divvv.newelement, "div", ["row"], [], "");
+    createnewElement(divsPosition, divs4.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl4, divsUname.newelement, "label", [], ["id:lblEid"], "Position: ");
+    createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "IT Staff")
+    createnewElement(hrPosition, divvv.newelement, "hr", [], ["id:hr"], "");
+
 
 
     // createnewElement(h6, card.body,"h6", [],[],"USER ID:");
