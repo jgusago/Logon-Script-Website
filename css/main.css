@@ -478,6 +478,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   color: #cb1616c9;
 }
+#hr
+{
+  margin-top: -5px;
+}
 #btnAddDept
 {
   margin-right: 5px;

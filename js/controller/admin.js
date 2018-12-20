@@ -1066,16 +1066,16 @@ function Profiles()
     createnewElement(divvv, divv.newelement, "div", ["tab-pane", "fade", "show", "active"], ["id:basicInfo", "role:tabpanel", "aria-labelledby:basicInfo-tab"], "");
     
     createnewElement(divs, divvv.newelement, "div", ["row"], [], "");
-    createnewElement(divsUid, divs.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl, divsUid.newelement, "label", [], ["id:lblEid"], "EMPLOYEE ID: ");
+    createnewElement(divsUid, divs.newelement, "div", ["col-sm-4", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl, divsUid.newelement, "label", [], ["id:lblEid"], "Employee Id: ");
     createnewElement(divsUids, divs.newelement, "div", ["col-md-8", "col-6"], [], "1040359")
-    createnewElement(hrUid, divvv.newelement, "hr", [], [], "");
+    createnewElement(hrUid, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs2, divvv.newelement, "div", ["row"], [], "");
-    createnewElement(divsUname, divs2.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl2, divsUname.newelement, "label", [], ["id:lblEid"], "NAME: ");
+    createnewElement(divsUname, divs2.newelement, "div", ["col-sm-4", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl2, divsUname.newelement, "label", [], ["id:lblEid"], "Name: ");
     createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], [], "Camille Kate")
-    createnewElement(hrUname, divvv.newelement, "hr", [], [], "");
+    createnewElement(hrUname, divvv.newelement, "hr", [], ["id:hr"], "");
 
 
     // createnewElement(h6, card.body,"h6", [],[],"USER ID:");
