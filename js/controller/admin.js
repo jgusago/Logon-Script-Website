@@ -1057,10 +1057,12 @@ function Profiles()
 
     divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [],
     divs3 = [], divsDept =[], divslbl3 = [], divsDepts = [], hrDept = [],
-    divs4 = [], divsPosition =[], divslbl4 = [], divsPositions = [], hrPosition = [];
+    divs4 = [], divsPosition =[], divslbl4 = [], divsPositions = [], inputPosition =[],  hrPosition = [],
+    divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
+    divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
 
     createCard(card, contentview, [], []);
-    createnewElement([],card.head,"div",[],["id:chLabel"],"PROFILE INFORMATION");
+    createnewElement([],card.head,"div",[],["id:chLabel"],"ACCOUNT INFORMATION");
 
     createnewElement(cbd, card.body,"div", ["row"], [], "");
     createnewElement(div, cbd.newelement, "div", ["col-12"],[],"");
@@ -1092,8 +1094,20 @@ function Profiles()
     createnewElement(divs4, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsPosition, divs4.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl4, divsPosition.newelement, "label", [], ["id:lblEid"], "Position: ");
-    createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "IT Staff")
+    createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "")
+    createnewElement(inputPosition, divsPosition.newelement, "input", ["form-control"], ["id:lblEid", "type:text"], "");
     createnewElement(hrPosition, divvv.newelement, "hr", [], ["id:hr"], "");
+
+    createnewElement(divs5, divvv.newelement, "div", ["row"], [], "");
+    createnewElement(divsRole, divs5.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl5, divsRole.newelement, "label", [], ["id:lblEid"], "Role: ");
+    createnewElement(divsRoles, divs5.newelement, "div", ["col-md-8", "col-6"], [], "Administrator")
+    createnewElement(hrRole, divvv.newelement, "hr", [], ["id:hr"], "");
+
+    createnewElement(divs6, divvv.newelement, "div", ["row"], [], "");
+    createnewElement(divsPass, divs6.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblEid"], "Change Password");
+    createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
 
 
