@@ -484,11 +484,14 @@ function DSHBRDContentBranchSettings()
         var tr = [];
         createnewElement(tr,table.body,"tr",[],[],"");
       }
-      var td = [], link = [], i = [], newdata = [];
-      createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],currentdata[0]);
-      createnewElement(newdata, td.newelement, "i",["label", "label-default"],[],"");
-      createLink(link, td.newelement, "", [], ["role:button", "href:#"]);
-      createnewElement(i, link.link, "span", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
+      var td = [], link = [], i = [], newdata = [], label = [], link2 = [], i2=[];
+      var id = idgenerator();
+      createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
+      createnewElement(label, td.newelement, "h5", [], ["id:"+id, "data:"+currentdata[0]], currentdata[0])
+      createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWedit(\""+id+"\")"]);
+      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
+      createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWdelete(\""+id+"\")"]);
+      createnewElement(i2, link2.link, "i", ["fa","fas","fa-fw","fa-lg","fa-trash"],[],"");
     }
   });
 
@@ -1042,7 +1045,7 @@ function Profiles()
     var card = [], h6 = [], h6a =[],
     div1 = [], h61 = [], h6b = [],
     div2 = [], h62 = [], h6c = [],
-    div3 = [], h63 = [], h6d = [], 
+    div3 = [], h63 = [], h6d = [],
     div4 = [], h64 = [], h6e = []
     div5 = [], button = [];
 
@@ -1147,4 +1150,23 @@ function importemployee()
 
   createnewElement(iframe, cb, "iframe",[],["src:php/functions/import/index.php","width:500px", "height:250px"],"");
 
+}
+
+function BRNCHVWedit(id){
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+  var value = document.getElementById(id).getAttribute("data");
+
+  ch.innerHTML = "Edit Current Data";
+  cb.innerHTML = id+" "+value;
+  $.post("php/functions/sttngs/settings.branch.view.edit.php",{value:value},function(data){
+
+    
+  });
+}
+function BRNCHVWdelete(id){
+  OVERLAYenable();
 }
