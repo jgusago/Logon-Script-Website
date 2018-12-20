@@ -1046,7 +1046,10 @@ function Profiles()
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
-    var card = [], cbd = [], div =[], ul =[], li =[], a =[], divv =[];
+    var card = [], cbd = [], div =[], ul =[], li =[], a =[], 
+    
+    divv =[], divvv = []
+    divs = [], divsUid = [], divslbl = [], divsUids = [];
 
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],["id:chLabel"],"PROFILE INFORMATION");
@@ -1058,6 +1061,13 @@ function Profiles()
     createnewElement(a, li.newelement, "a", ["nav-link", "active"], ["id:basicInfo-tab", "data-toggle:tab", "href:#basicInfo", "role:tab", "aria-controls:basicInfo", "aria-selected:true"], "Basic Info");
 
     createnewElement(divv, div.newelement, "div", ["tab-content", "ml-1"], ["id:myTabContent"], "");
+    createnewElement(divvv, divv.newelement, "div", ["tab-pane", "fade", "show", "active"], ["id:basicInfo", "role:tabpanel", "aria-labelledby:basicInfo-tab"], "");
+    
+    createnewElement(divs, divvv.newelement, "div", ["row"], [], "");
+    createnewElement(divsUid, divs.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    createnewElement(divslbl, divsUid.newelement, "label", [], [], "User Id: ");
+    createnewElement(divsUids, divs.newelement, "div", ["col-md-8", "col-6"], [], "1040359")
+
 
     // createnewElement(h6, card.body,"h6", [],[],"USER ID:");
     // createnewElement(h6a, card.body,"h6", [],[],"1040359");
