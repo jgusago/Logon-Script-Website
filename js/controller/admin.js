@@ -174,7 +174,7 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDAccountsAccMgnt":
         path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
+        createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser", "id:btnAddUser"],"Add User");
       break;
       default:
 
@@ -1124,7 +1124,7 @@ function EmployeeList(){
     tableid = idgenerator();
     var card = [];
     createCard(card, contentview, [], []);
-    createnewElement([],card.head,"div",[],[],"Employee List");
+    createnewElement([],card.head,"div",[],["id:ContentCardHead"],"Employee List");
 
     var table = [];
     var classes = ["table","table-bordered"];

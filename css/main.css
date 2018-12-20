@@ -476,6 +476,19 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-family: fantasy;
   letter-spacing: 5px;
+  color: #cb1616c9;
+}
+#btnAddDept
+{
+  margin-right: 5px;
+}
+#btnAddEmp
+{
+  margin-right: 5px;
+}
+#btnAddUser
+{
+  border: 1px solid #5192a6d9;
 }
 #lblEid
 {
