@@ -324,6 +324,7 @@ li a.active
 .breadcrumb
 {
   margin: 1rem;
+  background-color: #92bd0d26;
 }
 thead tr th
 {
@@ -469,9 +470,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #chLabel
 {
-  font-family: Cambria;
+  /* font-family: Cambria; */
   letter-spacing: 5px;
   font-weight: bold;
+  color:#ffffff;
 }
 #lblPositions
 {
@@ -498,7 +500,8 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-size: 18px;
   letter-spacing: 2px;
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
+  color:#ba792d;
 }
 #btnAddDept
 {
@@ -518,6 +521,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-size: 16px;
   letter-spacing: 2px;
   font-weight: 550;
+  color: #444242;
 }
 #lblEids
 {
@@ -525,9 +529,25 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
 }
+#dtitle
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+#dtitle2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
 .card-header
 {
-  background: #b8d68c6b;
+  background: #b8d68ce6;
+}
+.card-footer
+{
+  background: #b8d68ce6;
+}
+.card-body
+{
+  background: #b0db1f1a;
 }
 
 .card-body-icon {
