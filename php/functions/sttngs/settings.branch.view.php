@@ -47,7 +47,7 @@ foreach($treeresult as $row){
     else{
         echo "||";
     }
-    echo "$name;$childcount;$trtd;$number";
+    echo "$name;$childcount;$trtd;$number;$id;$filter";
     getchild($name);
     $countroom++;
 }
