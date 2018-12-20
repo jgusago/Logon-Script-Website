@@ -506,8 +506,16 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #lblEid
 {
-  font-family: monospace;
+  font-family: Cambria;
   font-size: 18px;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+}
+#lblEids
+{
+  font-size: 18px;
+  font-variant: small-caps;
+  font-family: serif;
   letter-spacing: 2px;
 }
 
