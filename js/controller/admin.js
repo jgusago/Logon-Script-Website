@@ -209,7 +209,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = [],
   divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [],
   divfooter = [], button = [], divbody6 =[], label6 =[]
-  
+
   divbody7 = [], label7 = [], resetpwd = [];
 
   //whole div
@@ -494,7 +494,7 @@ function DSHBRDContentBranchSettings()
       var td = [], link = [], i = [], newdata = [], label = [], link2 = [], i2=[];
       var id = idgenerator();
       createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
-      createnewElement(label, td.newelement, "h5", [], ["id:"+id, "data:"+currentdata[0]], currentdata[0])
+      createnewElement(label, td.newelement, "h5", [], ["id:"+id, "tree_id:"+currentdata[4], "tree_filter:"+currentdata[5], "tree_name:"+currentdata[0]], currentdata[0])
       createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWedit(\""+id+"\")"]);
       createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
       createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWdelete(\""+id+"\")"]);
@@ -1050,8 +1050,8 @@ function Profiles()
 
     tableid = idgenerator();
 
-    var card = [], cbd = [], div =[], ul =[], li =[], a =[], 
-    
+    var card = [], cbd = [], div =[], ul =[], li =[], a =[],
+
     divv =[], divvv = []
     divs = [], divsUid = [], divslbl = [], divsUids = [], hrUid =[],
 
@@ -1070,7 +1070,7 @@ function Profiles()
 
     createnewElement(divv, div.newelement, "div", ["tab-content", "ml-1"], ["id:myTabContent"], "");
     createnewElement(divvv, divv.newelement, "div", ["tab-pane", "fade", "show", "active"], ["id:basicInfo", "role:tabpanel", "aria-labelledby:basicInfo-tab"], "");
-    
+
     createnewElement(divs, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsUid, divs.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl, divsUid.newelement, "label", [], ["id:lblEid"], "Employee Id: ");
@@ -1202,14 +1202,35 @@ function BRNCHVWedit(id){
   var ch = document.getElementById("mnch");
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
-  var value = document.getElementById(id).getAttribute("data");
+  var tree_id = document.getElementById(id).getAttribute("tree_id");
+  var tree_filter = document.getElementById(id).getAttribute("tree_filter");
+  var tree_name = document.getElementById(id).getAttribute("tree_name");
 
   ch.innerHTML = "Edit Current Data";
-  cb.innerHTML = id+" "+value;
-  $.post("php/functions/sttngs/settings.branch.view.edit.php",{value:value},function(data){
 
-    
-  });
+  var form = [], formgroup = [], namelbl = [], nameval = [], formgroup2 = [], namelbl2 = [], nameval2 = [], brk = [], btn = [];
+  //form
+  createnewElement(form, cb, "form", [], ["onsubmit:return branchedit()"], "");
+  //formgroup
+  createnewElement(formgroup, form.newelement,"div",["form-group"],[],"");
+  //treename
+  createnewElement(namelbl, formgroup.newelement, "label", [], ["for:tree_name"], "Change Tree Name");
+  createnewElement(nameval, formgroup.newelement, "input", ["form-control"], ["placeholder:"+tree_name,"data:"+tree_name, "id:tree_name"], "");
+  createnewElement(brk, form.newelement, "br", [], [],"");
+  //formgroup
+  createnewElement(formgroup2, form.newelement,"div",["form-group"],[],"");
+  //treename
+  createnewElement(namelbl2, formgroup2.newelement, "label", [], ["for:tree_filter"], "Change Tree Filter");
+  createnewElement(nameval2, formgroup2.newelement, "input", ["form-control"], ["placeholder:"+tree_filter,"data:"+tree_filter, "id:tree_filter"], "");
+
+  createnewElement(brk, form.newelement, "br", [], [], "");
+  createnewElement(btn, form.newelement, "button", ["btn","btn-primary","btn-block"], ["type:submit", "disabled:true"], "Edit")
+
+  createnewElement(brk, form.newelement, "br", [], [], "");
+  // $.post("php/functions/sttngs/settings.branch.view.edit.php",{value:value},function(data){
+  //
+  //
+  // });
 }
 function BRNCHVWdelete(id){
   OVERLAYenable();
