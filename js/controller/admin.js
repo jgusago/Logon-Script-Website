@@ -1049,7 +1049,7 @@ function Profiles()
     var card = [], cbd = [], div =[], ul =[], li =[], a =[], 
     
     divv =[], divvv = []
-    divs = [], divsUid = [], divslbl = [], divsUids = [],
+    divs = [], divsUid = [], divslbl = [], divsUids = [], hrUid =[],
 
     divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [];
 
