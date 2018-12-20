@@ -473,10 +473,6 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   font-weight: bold;
 }
-#chLabels
-{
-  background:#95db3147;
-}
 #lblPositions
 {
   width: 300px;
@@ -528,6 +524,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-size: 18px;
   font-family: serif;
   letter-spacing: 2px;
+}
+.card-header
+{
+  background:#95db3147;
 }
 
 .card-body-icon {
