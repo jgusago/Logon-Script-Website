@@ -13,7 +13,7 @@ foreach ($db->query($sql) as $row) {
   $dept = $row['dept'];
   $subdept = $row['sub_dept'];
 
-  echo "#$id|$name|$login|$login2|$subdept";
+  echo "$name|$login|$login2|$subdept";
 }
 
 ?>
