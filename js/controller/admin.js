@@ -1083,12 +1083,6 @@ function Profiles()
     createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], [], "Camille Kate")
     createnewElement(hrUname, divvv.newelement, "hr", [], ["id:hr"], "");
 
-    createnewElement(divs2, divvv.newelement, "div", ["row"], [], "");
-    createnewElement(divsUname, divs2.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl2, divsUname.newelement, "label", [], ["id:lblEid"], "Name: ");
-    createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], [], "Camille Kate")
-    createnewElement(hrUname, divvv.newelement, "hr", [], ["id:hr"], "");
-
     createnewElement(divs3, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsDept, divs3.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl3, divsDept.newelement, "label", [], ["id:lblEid"], "Department: ");
