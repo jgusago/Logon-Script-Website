@@ -469,8 +469,19 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #chLabel
 {
-  font-family: fantasy;
+  font-family: Cambria;
   letter-spacing: 5px;
+  font-weight: bold;
+}
+#lblPositions
+{
+  width: 300px;
+}
+#lblpass
+{
+  font-family: monospace;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 #ContentCardHead
 {
@@ -480,7 +491,13 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #hr
 {
-  margin-top: -5px;
+  margin-top: 10px;
+}
+#basicInfo-tab
+{
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: unset;
 }
 #btnAddDept
 {
@@ -496,9 +513,21 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #lblEid
 {
-  font-family: monospace;
-  font-size: 18px;
+  font-family: Cambria;
+  font-size: 16px;
   letter-spacing: 2px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+#lblEids
+{
+  font-size: 18px;
+  font-family: serif;
+  letter-spacing: 2px;
+}
+.card-header
+{
+  background:#95db3147;
 }
 
 .card-body-icon {
