@@ -485,9 +485,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #ContentCardHead
 {
-  font-family: fantasy;
   letter-spacing: 5px;
   color: #cb1616c9;
+  font-family: Cambria;
+  font-weight: bold;
 }
 #hr
 {
@@ -527,7 +528,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 .card-header
 {
-  background:#95db3147;
+  background: #b8d68c6b;
 }
 
 .card-body-icon {
