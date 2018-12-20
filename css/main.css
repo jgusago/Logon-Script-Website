@@ -77,7 +77,7 @@ body.fixed-nav {
       #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level > li > a:hover
       {
         text-decoration: none;
-        background: #64c13dad;
+        background: #2f5109ad;
       }
   #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level > li > a {
     padding-left: 1em; }
@@ -245,7 +245,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 .nav-link.text-center
 {
-  background-color: #113b65;
+  background-color: #2f5109ad;
 }
 .form-group
 {
@@ -380,7 +380,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link:hover
    {
     color: #adb5bd;
-    background: #64c13dad;
+    background: #2f5109ad;
 
   }
 
@@ -392,7 +392,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover
   {
     color: #adb5bd;
-    background: #64c13dad;
+    background: #2f5109ad;
   }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
@@ -418,7 +418,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
   color: rgba(0, 0, 0, 0.5); }
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item > .nav-link:hover {
-    background: #64c13dad;
+    background: #2f5109ad;
     color: rgba(0, 0, 0, 0.7); }
 
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a,
@@ -429,7 +429,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover
   {
     color: rgba(0, 0, 0, 0.7);
-    background: #64c13dad;
+    background: #2f5109ad;
   }
 
 #mainNav.navbar-light .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
@@ -446,7 +446,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:hover
       {
         color: #000;
-        background: #64c13dad;
+        background: #2f5109ad;
       }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
@@ -454,7 +454,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 
 .navbar-nav .navbar-sidenav li a:hover
 {
-  background: #64c13dad;
+  background: #2f5109ad;
 }
 .nav-item dropdown
 {
@@ -584,7 +584,7 @@ footer.sticky-footer {
   bottom: 0;
   width: 100%;
   height: 56px;
-  background-color: #113b65;
+  background-color: #2f5109ad;
   color: white;
   line-height: 55px; }
   @media (min-width: 992px) {
