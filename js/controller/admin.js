@@ -1052,12 +1052,12 @@ function Profiles()
     createnewElement([],card.head,"div",[],[],"PROFILE INFORMATION");
 
     createnewElement([], card.body,"div", ["row"], [], "");
-    createnewElement(div, card.body.newelement, "div", ["col-12"],[],"");
+    createnewElement(div, body.newelement, "div", ["col-12"],[],"");
     createnewElement(ul, div.newelement, "ul", ["nav", "nav-tabs", "mb-4"],["id:myTab", "role:tablist"],"");
     createnewElement(li, ul.newelement, "li", ["nav-item"], [], "");
     createnewElement(a, li.newelement, "a", ["nav-link", "active"], ["id:basicInfo-tab", "data-toggle:tab", "href:#basicInfo", "role:tab", "aria-controls:basicInfo", "aria-selected:true"], "Basic Info");
 
-    createnewElement(divv, div, "div", ["tab-content", "ml-1"], ["id:myTabContent"], "");
+    createnewElement(divv, div.newelement, "div", ["tab-content", "ml-1"], ["id:myTabContent"], "");
 
     // createnewElement(h6, card.body,"h6", [],[],"USER ID:");
     // createnewElement(h6a, card.body,"h6", [],[],"1040359");
