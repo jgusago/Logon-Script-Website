@@ -467,6 +467,11 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   margin-top: -20px;
 }
+#chLabel
+{
+  font-family: fantasy;
+  letter-spacing: 5px;
+}
 
 .card-body-icon {
   position: absolute;

@@ -1049,7 +1049,7 @@ function Profiles()
     var card = [], div =[], ul =[], li =[], a =[], divv =[];
 
     createCard(card, contentview, [], []);
-    createnewElement([],card.head,"div",[],[],"PROFILE INFORMATION");
+    createnewElement([],card.head,"div",[],["id:chLabel"],"PROFILE INFORMATION");
 
     createnewElement([], card.body,"div", ["row"], [], "");
     createnewElement(div, body.newelement, "div", ["col-12"],[],"");
