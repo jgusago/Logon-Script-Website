@@ -1065,7 +1065,7 @@ function Profiles()
     
     createnewElement(divs, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsUid, divs.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl, divsUid.newelement, "label", [], [], "User Id: ");
+    createnewElement(divslbl, divsUid.newelement, "label", [], ["id:lblEid"], "EMPLOYEE ID: ");
     createnewElement(divsUids, divs.newelement, "div", ["col-md-8", "col-6"], [], "1040359")
 
 

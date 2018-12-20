@@ -472,6 +472,17 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-family: fantasy;
   letter-spacing: 5px;
 }
+#ContentCardHead
+{
+  font-family: fantasy;
+  letter-spacing: 5px;
+}
+#lblEid
+{
+  font-family: monospace;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
 
 .card-body-icon {
   position: absolute;
