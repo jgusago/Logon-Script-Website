@@ -479,16 +479,16 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #lblpass
 {
-  font-family: monospace;
-  font-size: 13px;
+  /* font-family: monospace; */
+  font-size: 15px;
   letter-spacing: 2px;
 }
 #ContentCardHead
 {
   letter-spacing: 5px;
   color: #cb1616c9;
-  font-family: Cambria;
   font-weight: bold;
+  font-family: Cambria;
 }
 #hr
 {
@@ -498,7 +498,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-size: 18px;
   letter-spacing: 2px;
-  font-family: unset;
+  font-family: Arial;
 }
 #btnAddDept
 {
@@ -518,12 +518,12 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-size: 16px;
   letter-spacing: 2px;
   font-variant: small-caps;
-  font-weight: bold;
+  font-weight: 550;
 }
 #lblEids
 {
   font-size: 18px;
-  font-family: serif;
+  font-family: Arial;
   letter-spacing: 2px;
 }
 .card-header
