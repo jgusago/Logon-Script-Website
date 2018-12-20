@@ -208,7 +208,9 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = [],
   divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [],
-  divfooter = [], button = [], divbody6 =[], label6 =[];
+  divfooter = [], button = [], divbody6 =[], label6 =[]
+  
+  divbody7 = [], label7 = [], resetpwd = [];
 
   //whole div
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -263,7 +265,12 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   //password
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "required:true"], "");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true"], "");
+
+  createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label7, divbody7.newelement, "label", [],[],"");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "Reset password");
+ 
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
