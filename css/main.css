@@ -469,9 +469,13 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #chLabel
 {
-  font-family: fantasy;
+  font-family: Cambria;
   letter-spacing: 5px;
   font-weight: bold;
+}
+#chLabels
+{
+  background:#95db3147;
 }
 #lblPositions
 {
