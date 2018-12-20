@@ -343,9 +343,6 @@ h5
 {
   font-size: 18px;
 }
-
-
-
 #sidenavToggler i
 {
   font-weight: 800;
@@ -414,8 +411,8 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       background: #343a40; } }
 
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
-  /* color: rgba(0, 0, 0, 0.5);  */
-  color:#ffffff;
+  color: rgba(0, 0, 0, 0.5); 
+  /* color:#ffffff; */
 }
 
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
@@ -428,7 +425,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a,
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgb(255, 246, 246); }
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:focus, #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:hover,
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:focus,
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover
@@ -448,7 +445,6 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a {
       color: #000 !important;
       /* background-color: #e9ecef;  */
-      background:#b7ab22f2;
     }
       #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a:hover
       {
@@ -457,7 +453,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
-      background: #f8f9fa; } }
+      /* background: #f8f9fa;  */
+      background: #2f5109ad;
+    } 
+  }
 
 .navbar-nav .navbar-sidenav li a:hover
 {
