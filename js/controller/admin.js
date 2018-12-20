@@ -1106,7 +1106,7 @@ function Profiles()
 
     createnewElement(divs6, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsPass, divs6.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblEid"], "Change Password");
+    createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblpass"], "Change Password");
     createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
 
