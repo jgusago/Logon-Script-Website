@@ -338,6 +338,7 @@ tfoot tr th
 tbody tr td
 {
   text-align:-webkit-center;
+  vertical-align: middle;
 }
 h5
 {
@@ -498,9 +499,8 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 #ContentCardHead
 {
   letter-spacing: 5px;
-  color: #cb1616c9;
   font-weight: bold;
-  font-family: Cambria;
+  font-family: Arial;
 }
 #hr
 {
@@ -563,7 +563,14 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   background: #b0db1f1a;
 }
-
+tr
+{
+  font-size: 15px;
+}
+td
+{
+  vertical-align: middle;
+}
 .card-body-icon {
   position: absolute;
   z-index: 0;
