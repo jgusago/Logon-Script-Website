@@ -471,6 +471,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-family: fantasy;
   letter-spacing: 5px;
+  font-weight: bold;
 }
 #lblPositions
 {
@@ -496,7 +497,6 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-size: 18px;
   letter-spacing: 2px;
-  font-variant: small-caps;
   font-family: unset;
 }
 #btnAddDept
@@ -514,14 +514,14 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 #lblEid
 {
   font-family: Cambria;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 2px;
   font-variant: small-caps;
+  font-weight: bold;
 }
 #lblEids
 {
   font-size: 18px;
-  font-variant: small-caps;
   font-family: serif;
   letter-spacing: 2px;
 }
