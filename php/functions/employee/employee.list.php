@@ -3,7 +3,7 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $sql = "SELECT * FROM logonscript.tbl_employee";
-echo "Employee ID|Name|Login|Second Login|Department|Sub Department";
+echo "Employee ID|Name|Login ID|Second Login|Department|Sub Department";
 foreach ($db->query($sql) as $row) {
 
   $id = $row['emp_id'];

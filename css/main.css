@@ -463,6 +463,43 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   margin: 20px;
 }
+#mncf
+{
+  margin-top: -20px;
+}
+#chLabel
+{
+  font-family: fantasy;
+  letter-spacing: 5px;
+}
+#ContentCardHead
+{
+  font-family: fantasy;
+  letter-spacing: 5px;
+  color: #cb1616c9;
+}
+#hr
+{
+  margin-top: -5px;
+}
+#btnAddDept
+{
+  margin-right: 5px;
+}
+#btnAddEmp
+{
+  margin-right: 5px;
+}
+#btnAddUser
+{
+  border: 1px solid #5192a6d9;
+}
+#lblEid
+{
+  font-family: monospace;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
 
 .card-body-icon {
   position: absolute;
