@@ -4,9 +4,9 @@ $value = "OM";
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-$query = "SELECT * FROM logonscript.tbl_tree WHERE tree_name == $value";
+$query = "SELECT * FROM logonscript.tbl_tree WHERE tree_name like '$value'";
 
-$foreach($db->query($query) as $row){
+foreach($db->query($query) as $row){
 
   $name = $row['tree_name'];
   $filter = $row['tree_filter'];
