@@ -472,6 +472,12 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-family: fantasy;
   letter-spacing: 5px;
 }
+#lblpass
+{
+  font-family: monospace;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
 #ContentCardHead
 {
   font-family: fantasy;
@@ -480,7 +486,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #hr
 {
-  margin-top: -5px;
+  margin-top: 10px;
 }
 #btnAddDept
 {
