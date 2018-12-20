@@ -1136,7 +1136,6 @@ function EmployeeList(){
       datalength = data.length;
 
       thfdata = data[0].split("|");
-      var tbheader = [], tbfooter = [];
       createTableContent([], table.head, [], [], "th", thfdata);
       createTableContent([], table.foot, [], [], "th", thfdata);
 
@@ -1148,8 +1147,9 @@ function EmployeeList(){
 
       pagination(tableid);
     });
-      var button = [];
-      createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button"],"Add Department");
+      var button = [], buttons = [];
+      // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
+      createnewElement(buttons, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp"],"Add Employee");
       createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button","onclick:importemployee()"],"Import List");
 }
 
