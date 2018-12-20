@@ -492,6 +492,13 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   margin-top: 10px;
 }
+#basicInfo-tab
+{
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+  font-family: unset;
+}
 #btnAddDept
 {
   margin-right: 5px;
