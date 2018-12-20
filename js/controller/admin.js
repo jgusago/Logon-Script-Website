@@ -208,7 +208,9 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [], divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = [],
   divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [],
-  divfooter = [], button = [], divbody6 =[], label6 =[];
+  divfooter = [], button = [], divbody6 =[], label6 =[]
+  
+  divbody7 = [], label7 = [], resetpwd = [];
 
   //whole div
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -263,7 +265,12 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   //password
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],[],"Password");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "required:true"], "");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true"], "");
+
+  createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label7, divbody7.newelement, "label", [],[],"");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "Reset password");
+ 
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-success"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -1039,33 +1046,35 @@ function Profiles()
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
-    var card = [], h6 = [], h6a =[],
-    div1 = [], h61 = [], h6b = [],
-    div2 = [], h62 = [], h6c = [],
-    div3 = [], h63 = [], h6d = [], 
-    div4 = [], h64 = [], h6e = []
-    div5 = [], button = [];
+    var card = [], div =[], ul =[], li =[], a =[], divv =[];
 
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],[],"PROFILE INFORMATION");
 
-    createnewElement([], card.body,"div", [], [], "");
-    createnewElement(h6, card.body,"h6", [],[],"USER ID:");
-    createnewElement(h6a, card.body,"h6", [],[],"1040359");
-    createnewElement(div1, card.body,"div", [], [], "");
-    createnewElement(h61, card.body,"h6", [],[],"USERNAME:");
-    createnewElement(h6b, card.body,"h6", [],[],"Camille Kate");
-    createnewElement(div2, card.body,"div", [], [], "");
-    createnewElement(h62, card.body,"h6", [],[],"DEPARTMENT :");
-    createnewElement(h6c, card.body,"h6", [],[],"MARVIN(IT)");
-    createnewElement(div3, card.body,"div", [], [], "");
-    createnewElement(h63, card.body,"h6", [],[],"POSITION:");
-    createnewElement(h6d, card.body,"h6", [],[],"IT Staff");
-    createnewElement(div4, card.body,"div", [], [], "");
-    createnewElement(h64, card.body,"h6", [],[],"ROLE:");
-    createnewElement(h6e, card.body,"h6", [],[],"Administrator");
-    createnewElement(div5, card.body,"div", [], [], "");
-    createnewElement(button, card.body,"button", ["btn", "btn-default"],[],"Change Password");
+    createnewElement([], card.body,"div", ["row"], [], "");
+    createnewElement(div, card.body, "div", ["col-12"],[],"");
+    createnewElement(ul, div, "ul", ["nav", "nav-tabs", "mb-4"],["id:myTab", "role:tablist"],"");
+    createnewElement(li, ul, "li", ["nav-item"], [], "");
+    createnewElement(a, li, "a", ["nav-link", "active"], ["id:basicInfo-tab", "data-toggle:tab", "href:#basicInfo", "role:tab", "aria-controls:basicInfo", "aria-selected:true"], "Basic Info");
+
+    createnewElement(divv, div, "div", ["tab-content", "ml-1"], ["id:myTabContent"], "");
+
+    // createnewElement(h6, card.body,"h6", [],[],"USER ID:");
+    // createnewElement(h6a, card.body,"h6", [],[],"1040359");
+    // createnewElement(div1, card.body,"div", [], [], "");
+    // createnewElement(h61, div1,"h6", [],[],"USERNAME:");
+    // createnewElement(h6b, div1,"h6", [],[],"Camille Kate");
+    // createnewElement(div2, card.body,"div", [], [], "");
+    // createnewElement(h62, div2,"h6", [],[],"DEPARTMENT :");
+    // createnewElement(h6c, div2,"h6", [],[],"MARVIN(IT)");
+    // createnewElement(div3, card.body,"div", [], [], "");
+    // createnewElement(h63, div3,"h6", [],[],"POSITION:");
+    // createnewElement(h6d, div3,"h6", [],[],"IT Staff");
+    // createnewElement(div4, card.body,"div", [], [], "");
+    // createnewElement(h64, div4,"h6", [],[],"ROLE:");
+    // createnewElement(h6e, div4,"h6", [],[],"Administrator");
+    // createnewElement(div5, card.body,"div", [], [], "");
+    // createnewElement(button, div5,"button", ["btn", "btn-default"],[],"Change Password");
 
     // createnewElement(h6, card.body, "h6",[],[], "USER ID:" );
     // createnewElement(h61, card.body, "h6",[],[], "USERNAME:" );
