@@ -1046,13 +1046,13 @@ function Profiles()
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
-    var card = [], div =[], ul =[], li =[], a =[], divv =[];
+    var card = [], cbd = [], div =[], ul =[], li =[], a =[], divv =[];
 
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],["id:chLabel"],"PROFILE INFORMATION");
 
-    createnewElement([], card.body,"div", ["row"], [], "");
-    createnewElement(div, body.newelement, "div", ["col-12"],[],"");
+    createnewElement(cbd, card.body,"div", ["row"], [], "");
+    createnewElement(div, cbd.newelement, "div", ["col-12"],[],"");
     createnewElement(ul, div.newelement, "ul", ["nav", "nav-tabs", "mb-4"],["id:myTab", "role:tablist"],"");
     createnewElement(li, ul.newelement, "li", ["nav-item"], [], "");
     createnewElement(a, li.newelement, "a", ["nav-link", "active"], ["id:basicInfo-tab", "data-toggle:tab", "href:#basicInfo", "role:tab", "aria-controls:basicInfo", "aria-selected:true"], "Basic Info");
