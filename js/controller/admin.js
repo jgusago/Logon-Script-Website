@@ -1095,7 +1095,7 @@ function Profiles()
     createnewElement(divsPosition, divs4.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl4, divsPosition.newelement, "label", [], ["id:lblEid"], "Position: ");
     createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "")
-    createnewElement(inputPosition, divsPosition.newelement, "input", ["form-control"], ["id:lblEid", "type:text"], "");
+    createnewElement(inputPosition, divsPositions.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
     createnewElement(hrPosition, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs5, divvv.newelement, "div", ["row"], [], "");
