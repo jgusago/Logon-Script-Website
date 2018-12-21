@@ -13,14 +13,14 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
 
     if (count($row) > 0) {
-        $password = $row[0]['password']; 
+        $hashed_password = $row[0]['password']; 
         $status = $row[0]['status']; 
         $role = $row[0]['role']; 
             if($status == 'Inactive')
             {
                 echo "failed:inactive";
             }
-            elseif($status == 'Active' && $password) {
+            elseif($status == 'Active' && password_verify($password, $hashed_password)) {
                 $_SESSION["userid"] = $row[0]['userid']; 
                 if($role == "ADMINISTRATOR")
                 {
