@@ -2,7 +2,7 @@
 if (isset($_POST["userid"]) && isset($_POST["password"])){
 
     $userid = $_POST["userid"];
-    $password=md5(sha1($_POST['password2']));
+    $password=md5(sha1($_POST['password']));
     //$password = $_POST['password'];
 
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
