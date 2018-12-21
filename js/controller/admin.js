@@ -217,11 +217,11 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h5", [], ["editHeader"],"Edit User Information" );
+  createnewElement(value, leftdiv.newelement, "h5", [], ["id:editHeader"],"Edit User Information" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
-  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
   //userid
@@ -1125,7 +1125,7 @@ function ChangePass()
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
-  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
 
@@ -1144,7 +1144,7 @@ function EmployeeList(){
     tableid = idgenerator();
     var card = [];
     createCard(card, contentview, [], []);
-    createnewElement([],card.head,"div",[],["id:ContentCardHead"],"Employee List");
+    createnewElement([],card.head,"div",[],["id:ContentCardHead"],"");
 
     var table = [];
     var classes = ["table","table-bordered"];
