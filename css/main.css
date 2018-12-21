@@ -550,15 +550,11 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 .card-header
 {
-  background: #b8d68ce6;
+  background-color: #2f5109ad;
 }
 .card-footer
 {
-  background: #b8d68ce6;
-}
-.card-body
-{
-  background: #b0db1f1a;
+  background-color: #2f5109ad;
 }
 #exampleAccordion
 {
