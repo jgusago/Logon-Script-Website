@@ -213,17 +213,11 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   divbody7 = [], label7 = [], resetpwd = [];
 
   //whole div
-  createnewElement(divvalue, ch, "div", ["row"], [], "");
-  //leftside div
-  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
-  //leftside contents
-  createnewElement(value, leftdiv.newelement, "h5", [], ["editHeader"],"");
-
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"Edit User Information" );
+  createnewElement(value, leftdiv.newelement, "h5", [], ["editHeader"],"Edit User Information" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
