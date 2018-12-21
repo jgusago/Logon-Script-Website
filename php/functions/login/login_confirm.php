@@ -1,13 +1,13 @@
 <?php
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
-    $username = $_POST["username"];
+    $userid = $_POST["userid"];
     $password = $_POST['password'];
 
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
     $stmt = $db->prepare("SELECT * FROM tbl_user WHERE userid=:userid LIMIT 1");
-    $stmt->bindValue(':userid', $username, PDO::PARAM_STR);
+    $stmt->bindValue(':userid', $userid, PDO::PARAM_STR);
     $stmt->execute();
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
