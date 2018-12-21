@@ -13,7 +13,7 @@ if (isset($_POST["userid"]) && isset($_POST["password"])){
 
 
     if (count($row) > 0) {
-        $hashed_password = $row[0]['password']; 
+        $userid = $row[0]['userid']; 
         $status = $row[0]['status']; 
         $role = $row[0]['role']; 
             if($status == 'Inactive')
