@@ -476,7 +476,7 @@ function DSHBRDContentBranchSettings()
   tableid = idgenerator();
   var card = [];
   createCard(card, contentview, [], []);
-  createnewElement([],card.head,"div",[],[],"Branch Setting");
+  createnewElement([],card.head,"div",[],[],"");
 
   var table = [];
   var classes = ["table","table-bordered"];
@@ -1110,7 +1110,7 @@ function Profiles()
     createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
     var button = [];
-    createnewElement(button, card.foot, "button", ["btn","btn-success"],["type:button"],"Update Profile");
+    createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button"],"Update Profile");
 }
 
 function EmployeeList(){
