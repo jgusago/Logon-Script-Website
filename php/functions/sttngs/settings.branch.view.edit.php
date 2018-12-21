@@ -1,4 +1,5 @@
 <?php
+session_start();
 $newname = $_POST['newname'];
 $newfilter = $_POST['newfilter'];
 $id = $_POST['id'];
