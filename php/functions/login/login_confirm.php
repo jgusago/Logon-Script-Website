@@ -2,8 +2,7 @@
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
     $username = $_POST["username"];
-    $password = $_POST["paasword"];
-    //$password = md5(sha1($_POST['password']));
+    $hashed_password = md5(sha1($_POST['password']));
 
     require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
@@ -21,8 +20,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
             {
                 echo "failed:inactive";
             }
-            //elseif(($status == 'Active') && (password_verify($password, $hashed_password))) {
-                elseif($status == 'Active' && $password == md5(sha1($password))) { 
+            elseif(($status == 'Active') && (password_verify($password, $hashed_password))) {
                 $_SESSION["userid"] = $row[0]['userid']; 
                 if($role == "ADMINISTRATOR")
                 {
