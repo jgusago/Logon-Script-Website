@@ -1122,24 +1122,12 @@ function ChangePass()
   var cf = document.getElementById("mncf");
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = []; 
-  // divbody = [], label = [], inputuid = [], divbody1 = [], inputname = [], label1 = [], divbody2= [], label2 = [], select = [], option = [],
-  // divbody3 = [], label3 = [], select1 = [], option1= [], option2 = [], option3 = [], divbody4 = [], label4 = [], select2 =[], options1 = [], options2=[], options3 = [], divbody5=[], label5 = [], inputpwd = [],
-  // divfooter = [], button = [], divbody6 =[], label6 =[]
-
-  // divbody7 = [], label7 = [], resetpwd = [];
-
-  //whole div
-  createnewElement(divvalue, ch, "div", ["row"], [], "");
-  //leftside div
-  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
-  //leftside contents
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"");
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"Change Password" );
+  createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Change Password" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
