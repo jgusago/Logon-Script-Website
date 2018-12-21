@@ -1192,28 +1192,67 @@ function BRNCHVWedit(id){
 
   var form = [], formgroup = [], namelbl = [], nameval = [], formgroup2 = [], namelbl2 = [], nameval2 = [], brk = [], btn = [];
   //form
-  createnewElement(form, cb, "form", [], ["onsubmit:return branchedit()"], "");
+  createnewElement(form, cb, "form", [], ["onsubmit:return branchedit(\""+tree_id+"\",\""+tree_name+"\",\""+tree_filter+"\",\""+id+"\")"], "");
   //formgroup
   createnewElement(formgroup, form.newelement,"div",["form-group"],[],"");
   //treename
   createnewElement(namelbl, formgroup.newelement, "label", [], ["for:tree_name"], "Change Tree Name");
-  createnewElement(nameval, formgroup.newelement, "input", ["form-control"], ["placeholder:"+tree_name,"data:"+tree_name, "id:tree_name"], "");
+  createnewElement(nameval, formgroup.newelement, "input", ["form-control"], ["value:"+tree_name,"data:"+tree_name, "id:tree_name", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\")"], "");
   createnewElement(brk, form.newelement, "br", [], [],"");
   //formgroup
   createnewElement(formgroup2, form.newelement,"div",["form-group"],[],"");
   //treename
   createnewElement(namelbl2, formgroup2.newelement, "label", [], ["for:tree_filter"], "Change Tree Filter");
-  createnewElement(nameval2, formgroup2.newelement, "input", ["form-control"], ["placeholder:"+tree_filter,"data:"+tree_filter, "id:tree_filter"], "");
+  createnewElement(nameval2, formgroup2.newelement, "input", ["form-control"], ["value:"+tree_filter,"data:"+tree_filter, "id:tree_filter", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\")"], "");
 
   createnewElement(brk, form.newelement, "br", [], [], "");
-  createnewElement(btn, form.newelement, "button", ["btn","btn-primary","btn-block"], ["type:submit", "disabled:true"], "Edit")
+  createnewElement(btn, form.newelement, "button", ["btn","btn-primary","btn-block"], ["type:submit","id:editsubmit","disabled:true"], "Edit");
 
   createnewElement(brk, form.newelement, "br", [], [], "");
-  // $.post("php/functions/sttngs/settings.branch.view.edit.php",{value:value},function(data){
-  //
-  //
-  // });
+
 }
+function branchedit(id, name, filter, h5id){
+
+  newname = document.getElementById("tree_name").value;
+  newfilter = document.getElementById("tree_filter").value;
+  newtd = document.getElementById(h5id);
+  $.post("php/functions/sttngs/settings.branch.view.edit.php",{newname:newname,newfilter:newfilter,id:id},function(data){
+    if (data == "true"){
+      ALERTcall("success","Data have beed updated");
+      newtd.removeAttribute("tree_name");
+      newtd.removeAttribute("tree_filter");
+      newtd.setAttribute("tree_name",newname);
+      newtd.setAttribute("tree_filter", newfilter);
+      newtd.innerHTML = newname;
+      var link = [], i =[], link2 = [], i2 = [];
+      createLink(link, newtd  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWedit(\""+h5id+"\")"]);
+      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
+      createLink(link2, newtd  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWdelete(\""+h5id+"\")"]);
+      createnewElement(i2, link2.link, "i", ["fa","fas","fa-fw","fa-lg","fa-trash"],[],"");
+      OVERLAYdisable();
+    }
+    else{
+      ALERTcall("danger", "Update Failed Error: "+data);
+      OVERLAYdisable();
+    }
+  });
+  return false;
+}
+
+function BRNCHVWeditconfirm(name,filter){
+
+  newname = document.getElementById("tree_name").value;
+  newfilter = document.getElementById("tree_filter").value;
+  editsubmit = document.getElementById("editsubmit");
+
+  if(newname !== name || newfilter !== filter){
+    editsubmit.removeAttribute('disabled');
+  }
+  else{
+    editsubmit.setAttribute("disabled","true");
+  }
+}
+
 function BRNCHVWdelete(id){
   OVERLAYenable();
 }

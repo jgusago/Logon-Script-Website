@@ -1,17 +1,22 @@
 <?php
-// $value = $_POST['value'];
-$value = "OM";
+$newname = $_POST['newname'];
+$newfilter = $_POST['newfilter'];
+$id = $_POST['id'];
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-$query = "SELECT * FROM logonscript.tbl_tree WHERE tree_name like '$value'";
-
-foreach($db->query($query) as $row){
-
-  $name = $row['tree_name'];
-  $filter = $row['tree_filter'];
-
+$query1 = "SELECT * FROM logonscript.tbl_tree WHERE tree_id = $id";
+foreach ($db->query($sql) as $row) {
+  
 }
-echo "$filter";
+
+$query = "UPDATE logonscript.tbl_tree SET tree_name = '$newname', tree_filter = '$newfilter' WHERE tree_id = $id";
+
+  if ($db->query($query)) {
+    echo "true";
+  }
+  else{
+    echo "false";
+  }
 
 ?>
