@@ -240,6 +240,15 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   text-indent:5px;
   width: auto;
 }
+.fa-times
+{
+  color:white;
+}#modalheader
+{
+  color: white;
+  padding-top:20px;
+  font-weight:500;
+}
 .nav-link a:focus
 {
   color: black;
@@ -484,7 +493,6 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   /* font-family: Cambria; */
   letter-spacing: 5px;
-  font-weight: bold;
   color:#ffffff;
 }
 #lblPositions

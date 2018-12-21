@@ -524,7 +524,7 @@ function addbranch(){
   createnewElement(headercontainer,ch, "div", ["container"], [], "");
 
   createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
-  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Branch/Deparetment");
+  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],["id:modalheader"],"Add Branch/Department");
   var rightsidevalue = [], span = [], headerdiv2 = [];
   createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
   createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
@@ -1111,6 +1111,17 @@ function Profiles()
 
     var button = [];
     createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button"],"Update Profile");
+}
+
+function ChangePass()
+{
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  
 }
 
 function EmployeeList(){
