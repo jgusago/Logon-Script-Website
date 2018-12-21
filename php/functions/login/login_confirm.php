@@ -14,14 +14,14 @@ if (isset($_POST["userid"]) && isset($_POST["password"])){
 
 
     if (count($row) > 0) {
-        $hashed_password = $row[0]['password']; 
+        $password = $row[0]['password']; 
         $status = $row[0]['status']; 
         $role = $row[0]['role']; 
             if($status == 'Inactive')
             {
                 echo "failed:inactive";
             }
-            elseif($status == 'Active' && $password == md5(sha1($hashed_password))) {
+            elseif($status == 'Active' && $password == md5(sha1($password))) {
                 $_SESSION["userid"] = $row[0]['userid']; 
                 if($role == "ADMINISTRATOR")
                 {
