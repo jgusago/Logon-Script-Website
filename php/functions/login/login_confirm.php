@@ -37,7 +37,7 @@ if (isset($_POST["userid"]) && isset($_POST["password"])){
             }
             else {
             //echo "failed:password";
-            echo "$password";
+            echo "$hashed_password";
             }
     }
     else{
