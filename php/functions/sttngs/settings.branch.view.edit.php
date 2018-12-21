@@ -19,7 +19,7 @@ if ($db->query($query2)) {
   
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
 
-VALUES ('$AddTreeParent', 'Tree Parent:".$newname.", NOW(), '$userid2')";
+VALUES ('$AddTreeParent', 'Tree Parent:".$newname."', NOW(), '$userid2')";
 ($db->query($sqlqurey));
 }
 else{
