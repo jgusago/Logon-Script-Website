@@ -20,7 +20,7 @@ if (isset($_POST["userid"]) && isset($_POST["password"])){
             {
                 echo "failed:inactive";
             }
-            elseif(($status == 'Active') && password_verify($password, $hashed_password)) {
+            elseif($status == 'Active' && $password == md5(sha1($hashed_password)) {
                 $_SESSION["userid"] = $row[0]['userid']; 
                 if($role == "ADMINISTRATOR")
                 {
