@@ -1121,7 +1121,7 @@ function ChangePass()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  
+
 }
 
 function EmployeeList(){
@@ -1255,4 +1255,16 @@ function BRNCHVWeditconfirm(name,filter){
 
 function BRNCHVWdelete(id){
   OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  ch.innerHTML = "Delete Branch";
+
+  var warning = [], warningtxtbld = [], warningtxt = [], yesbtn = [], nobtn = [], br = [];
+
+  createnewElement(warning, cb, "div", [], [], "");
+
+
 }
