@@ -8,7 +8,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
   $stmt = $db->prepare("SELECT * FROM logonscript.tbl_user WHERE userid like :userid");
-  $stmt->bindValue(':userid', $username);
+  $stmt->bindValue(':username', $username);
   $stmt->execute();
   $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
