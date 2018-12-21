@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
 function load(){
-    // SESSIONConfirm();
+    //SESSIONConfirm();
     DSHBRDbtnsCompList();
     DSHBRDbtnsCompLogs();
     NAVBARNotification();
