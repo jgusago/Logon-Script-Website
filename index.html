@@ -34,11 +34,11 @@
                     <form onsubmit="return confirmlogin()" id="login-form">
                         <div class="input-container login-container">
                             <i class="fa fa-user icon login-icon"></i>
-                            <input class="input-field login-input-field" id="username" type="text" placeholder="Username" required>
+                            <input class="input-field login-input-field" id="username" type="text" placeholder="Username" name="userid" required>
                         </div>
                         <div class="input-container login-container">
                             <i class="fa fa-lock icon login-icon"></i>
-                            <input class="input-field login-input-field" id="password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces" required>
+                            <input class="input-field login-input-field" id="password" type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces" required>
                         </div>
                         <div class="input-container login-container">
                             <button class="btn btn-primary login-button" type="submit">Submit</button>
