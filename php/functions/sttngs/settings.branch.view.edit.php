@@ -30,10 +30,10 @@ else{
 $query = "UPDATE logonscript.tbl_tree SET tree_name = '$newname', tree_filter = '$newfilter' WHERE tree_id = $id";
 
   if ($db->query($query)) {
-    $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+    $sqlqurey2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
 
     VALUES ('$AddTreeName', 'Tree Name:".$newname."', NOW(), '$userid2')";
-    ($db->query($sqlqurey));
+    ($db->query($sqlqurey2));
     echo "true";
   }
   else{
