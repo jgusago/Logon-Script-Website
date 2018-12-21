@@ -337,6 +337,10 @@ li a.active
 {
   padding:25px;
 }
+.nav-link
+{
+  font-size:15px;
+}
 .breadcrumb
 {
   margin: 1rem;
