@@ -359,6 +359,11 @@ tfoot tr th
 {
   text-align:-webkit-center;
 }
+#mnch
+{
+  color: white;
+  font-weight: 500;
+}
 tbody tr td
 {
   text-align:-webkit-center;
