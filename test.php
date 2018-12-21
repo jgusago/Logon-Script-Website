@@ -9,9 +9,10 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <form action="submit">
+    <form action="php/connection/functions/login/login_confirm.php">
         <input type="text" name="userid" placeholder="USER ID">
         <input type="text" name="password" placeholder="Password">
+        <button type="submit">Submit</button><br>
     </form>
 </body>
-</html>>
+</html>
