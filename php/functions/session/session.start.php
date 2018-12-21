@@ -1,14 +1,14 @@
 <?php
-  $username = $_POST["username"];
+  $userid = $_POST["userid"];
   $password = $_POST["password"];
   //$enc = md5(sha1($password));
   
-if (isset($_POST["username"]) && isset($_POST["password"])){
+if (isset($_POST["userid"]) && isset($_POST["password"])){
 
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
   $stmt = $db->prepare("SELECT * FROM logonscript.tbl_user WHERE userid like :userid");
-  $stmt->bindValue(':userid', $username);
+  $stmt->bindValue(':userid', $userid);
   $stmt->execute();
   $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
