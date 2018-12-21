@@ -1121,6 +1121,9 @@ function ChangePass()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
+<<<<<<< HEAD
+
+=======
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = []; 
 
 
@@ -1138,6 +1141,7 @@ function ChangePass()
 
 
   
+>>>>>>> 979a01205cf9e58bb5d2834f72cdfe91d9f09817
 }
 
 function EmployeeList(){
@@ -1272,4 +1276,16 @@ function BRNCHVWeditconfirm(name,filter){
 
 function BRNCHVWdelete(id){
   OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  ch.innerHTML = "Delete Branch";
+
+  var warning = [], warningtxtbld = [], warningtxt = [], yesbtn = [], nobtn = [], br = [];
+
+  createnewElement(warning, cb, "div", [], [], "");
+
+
 }
