@@ -216,8 +216,8 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   //leftside div
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-6"], [], "");
-    //leftside contents
-    createnewElement(value, leftdiv.newelement, "h4", [], [],"");
+  //leftside contents
+  createnewElement(value, leftdiv.newelement, "h4", [], [],"");
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -1121,6 +1121,22 @@ function ChangePass()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = []; 
+
+
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  divvalue.newelement.style.width = "600px";
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Change Password" );
+
+  createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
+  span.newelement.innerHTML = "&times;";
+
+
+
+
   
 }
 
@@ -1211,6 +1227,7 @@ function BRNCHVWedit(id){
   createnewElement(brk, form.newelement, "br", [], [], "");
 
 }
+
 function branchedit(id, name, filter, h5id){
 
   newname = document.getElementById("tree_name").value;
@@ -1255,4 +1272,16 @@ function BRNCHVWeditconfirm(name,filter){
 
 function BRNCHVWdelete(id){
   OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  ch.innerHTML = "Delete Branch";
+
+  var warning = [], warningtxtbld = [], warningtxt = [], yesbtn = [], nobtn = [], br = [];
+
+  createnewElement(warning, cb, "div", [], [], "");
+
+
 }
