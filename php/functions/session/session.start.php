@@ -1,5 +1,5 @@
 <?php
-  $userid = $_POST["userid"];
+  $username = $_POST["username"];
   $password = $_POST["password"];
   //$enc = md5(sha1($password));
   
