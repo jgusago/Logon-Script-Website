@@ -91,7 +91,7 @@ function DSHBRDContentCompList(parent, linkid){
   createCard(card, view, [], []);
   card.head.setAttribute("target",linkid);
   card.head.setAttribute("id","ContentCardHead");
-  card.head.innerHTML = "Computer List";
+  // card.head.innerHTML = "Computer List";
   var table = [];
   var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
@@ -476,7 +476,7 @@ function DSHBRDContentBranchSettings()
   tableid = idgenerator();
   var card = [];
   createCard(card, contentview, [], []);
-  createnewElement([],card.head,"div",[],[],"Branch Setting");
+  createnewElement([],card.head,"div",[],[],"");
 
   var table = [];
   var classes = ["table","table-bordered"];
@@ -524,7 +524,7 @@ function addbranch(){
   createnewElement(headercontainer,ch, "div", ["container"], [], "");
 
   createnewElement(headerrow, headercontainer.newelement ,"div",["row"],[],"");
-  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],[],"Add Branch/Deparetment");
+  createnewElement(headerdiv1, headerrow.newelement,"div",["col-sm-10","col-md-10"],["id:modalheader"],"Add Branch/Department");
   var rightsidevalue = [], span = [], headerdiv2 = [];
   createnewElement(headerdiv2, headerrow.newelement, "div", ["col-sm-2","col-md-2"],[],"");
   createnewElement(rightsidevalue, headerdiv2.newelement, "a", ["nav-link"], ["aria-expanded:false","href:#", "onclick:OVERLAYdisable()"], "");
@@ -1106,54 +1106,22 @@ function Profiles()
 
     createnewElement(divs6, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsPass, divs6.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblpass"], "Change Password");
+    createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblpass", "onclick:ChangePass()"], "Change Password");
     createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
-
-
-    // createnewElement(h6, card.body,"h6", [],[],"USER ID:");
-    // createnewElement(h6a, card.body,"h6", [],[],"1040359");
-    // createnewElement(div1, card.body,"div", [], [], "");
-    // createnewElement(h61, div1,"h6", [],[],"USERNAME:");
-    // createnewElement(h6b, div1,"h6", [],[],"Camille Kate");
-    // createnewElement(div2, card.body,"div", [], [], "");
-    // createnewElement(h62, div2,"h6", [],[],"DEPARTMENT :");
-    // createnewElement(h6c, div2,"h6", [],[],"MARVIN(IT)");
-    // createnewElement(div3, card.body,"div", [], [], "");
-    // createnewElement(h63, div3,"h6", [],[],"POSITION:");
-    // createnewElement(h6d, div3,"h6", [],[],"IT Staff");
-    // createnewElement(div4, card.body,"div", [], [], "");
-    // createnewElement(h64, div4,"h6", [],[],"ROLE:");
-    // createnewElement(h6e, div4,"h6", [],[],"Administrator");
-    // createnewElement(div5, card.body,"div", [], [], "");
-    // createnewElement(button, div5,"button", ["btn", "btn-default"],[],"Change Password");
-
-    // createnewElement(h6, card.body, "h6",[],[], "USER ID:" );
-    // createnewElement(h61, card.body, "h6",[],[], "USERNAME:" );
-
-    // var table = [];
-    // var classes = ["table","table-bordered"];
-    // var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    // createTable(table, card.body, classes, attributes);
-
-    // $.post("php/functions/employee/employee.list.php",function(data)
-    // {
-    //   data = data.split("#");
-    //   datalength = data.length;
-
-    //   thfdata = data[0].split("|");
-    //   var tbheader = [], tbfooter = [];
-    //   createTableContent([], table.head, [], [], "th", thfdata);
-    //   createTableContent([], table.foot, [], [], "th", thfdata);
-
-    //   for (var i = 1; i < datalength;i++){
-    //       newdata = data[i].split("|");
-    //       createTableContent([], table.body, [],[], "td", newdata);
-    //   }
-    // });
-
     var button = [];
-    createnewElement(button, card.foot, "button", ["btn","btn-success"],["type:button"],"Update Profile");
+    createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button"],"Update Profile");
+}
+
+function ChangePass()
+{
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  
 }
 
 function EmployeeList(){
