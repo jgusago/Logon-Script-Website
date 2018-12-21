@@ -243,7 +243,12 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 .fa-times
 {
   color:white;
-}#modalheader
+}
+#PassLbl
+{
+  color:white;
+}
+#modalheader
 {
   color: white;
   padding-top:20px;
@@ -853,7 +858,8 @@ footer.sticky-footer {
   /*width: 40%; /* Full width (cover the whole page) */
   /*height: 60%; /* Full height (cover the whole page) */
   margin: 0px;
-  top: 50%;
+  /* top: 50%; */
+  top: 30%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
