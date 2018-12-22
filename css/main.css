@@ -110,9 +110,16 @@ body.fixed-nav {
     text-overflow: ellipsis; }
 
 @media (min-width: 992px) {
-  #mainNav .navbar-brand {
+  #mainNav .navbar-brand 
+  {
+    letter-spacing: 2px;
     color: rgb(255, 255, 255);
-    width: 250px; }
+    width: 250px;
+    font-weight: 500;
+    font-family: Cambria;
+    font-size: 30px;
+}
+  }
   #mainNav .navbar-collapse {
     overflow: visible;
     max-height: none; }
@@ -337,6 +344,10 @@ li a.active
 {
   padding:25px;
 }
+.nav-link
+{
+  font-size:15px;
+}
 .breadcrumb
 {
   margin: 1rem;
@@ -349,6 +360,11 @@ thead tr th
 tfoot tr th
 {
   text-align:-webkit-center;
+}
+#mnch
+{
+  color: white;
+  font-weight: 500;
 }
 tbody tr td
 {
@@ -538,6 +554,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 #btnAddUser
 {
   border: 1px solid #5192a6d9;
+  font-size: 15px;
 }
 #lblEid
 {
@@ -546,6 +563,18 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 2px;
   font-weight: 550;
   color: #444242;
+}
+#editLbl
+{
+  font-weight: 500;
+}
+#editHeader
+{
+  color:white;
+}
+#span
+{
+  color:white;
 }
 #lblEids
 {
@@ -564,6 +593,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 .card-header
 {
   background-color: #2f5109ad;
+  padding: .50rem 1.25rem;
 }
 .card-footer
 {
@@ -577,7 +607,7 @@ tr
 {
   font-size: 15px;
 }
-td
+table td
 {
   vertical-align: middle;
 }
@@ -859,7 +889,7 @@ footer.sticky-footer {
   /*height: 60%; /* Full height (cover the whole page) */
   margin: 0px;
   /* top: 50%; */
-  top: 30%;
+  top: 48%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
