@@ -1121,7 +1121,7 @@ function ChangePass()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = []; 
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [];
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -1137,7 +1137,7 @@ function ChangePass()
 
 
 
-  
+
 }
 
 function EmployeeList(){
@@ -1281,7 +1281,9 @@ function BRNCHVWdelete(id){
 
   var warning = [], warningtxtbld = [], warningtxt = [], yesbtn = [], nobtn = [], br = [];
 
-  createnewElement(warning, cb, "div", [], [], "");
+  createnewElement(warning, cb, "div", ["alert","alert-danger"], [], "");
+  createnewElement(warningtxtbld, warning.newelement, "h5", [], [], "Please be reminded!!");
+  createnewElement(warningtxt, warning.newelement, "p", [], [], "The sub department under this branch/department will also be deleted. Do you wish to continue?");
 
-
+  
 }
