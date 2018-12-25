@@ -468,6 +468,7 @@ function Dashboard()
 
   var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [], divDate =[], divCol = [], divdates = [], small = [],
   divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
+  divColcard2 = [], divcard2 = [], divcardBody2 = [], divItems2 = [], divIcon2 = [], divml2 = [], divText2 = [], divcount2 = [],
   txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
   txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
   txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
@@ -481,15 +482,16 @@ function Dashboard()
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
 
   createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
-  createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
+  createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
 
   createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
   createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
   createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
 
+  // Cards
   createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-2"], ["id:dshbrdCards"], "");
+  createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
   createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
@@ -498,6 +500,17 @@ function Dashboard()
   createnewElement(divText, divml.newelement, "div", ["text-muted"], [], "End Task Units");
   createnewElement(divcount, divml.newelement, "div", [], ["id:dshbrdCounts"], "6");
 
+  createnewElement(divColcard2, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
+  createnewElement(divcard2, divColcard2.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody2, divcard2.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems2, divcardBody2.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon2, divItems2.newelement, "div", ["lnr", "lnr-cart", "display-4", "text-success"], [], "");
+  createnewElement(divml2, divItems2.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText2, divml2.newelement, "div", ["text-muted"], [], "Old Agent Verison");
+  createnewElement(divcount2, divml2.newelement, "div", [], ["id:dshbrdCounts"], "143");
+
+
+  // Progress bar
   createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
   createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
@@ -533,7 +546,7 @@ function Dashboard()
   createnewElement(divProgress5, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept6"], "0%");
 
-
+  // Pie Chart
   createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], ["id:colPieChart"], "");
   createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
   createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
