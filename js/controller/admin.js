@@ -535,7 +535,7 @@ function PieChart()
       {
         labels:["Marvin(IT)", "Marvin(MAIN)", "Pacifica(QY)", "Pacifica(LH)", "6789(L8)", "Pacifica(AE)"],
         datasets: [{backgroundColor: ["#2ecc71", "#e74c3c", "#34495e", "#e74c3c","#34495e"],
-        data:[]
+        data:[32,70,3,0,3,0]
         }]
       }
     });
