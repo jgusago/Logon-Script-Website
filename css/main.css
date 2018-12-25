@@ -283,6 +283,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
+    background-color: #2f5109ad; 
 }
 li a.active
 {
@@ -339,6 +340,7 @@ li a.active
   justify-content: center;
   padding: 15px;
   border-top: 1px solid #e9ecef;
+  background-color: #2f5109ad;
 }
 .modal-body
 {
