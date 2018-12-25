@@ -466,7 +466,7 @@ function Dashboard()
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
 
-  var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [],
+  var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [], divDate =[], divCol = [], divdates = [], small = [],
   txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
   txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
   txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
@@ -481,6 +481,12 @@ function Dashboard()
 
   createnewElement(divfluid, contentview, "div", ["container-fluid"], ["id:dshbrdFluid"], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
+
+  createnewElement(divDate, divclass.newelement, "div", [], [], "");
+  createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
+  createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
+  createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
+
   createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-8"], [], "");
   createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
