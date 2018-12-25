@@ -467,7 +467,9 @@ function Dashboard()
 
   var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [],
   txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
-  txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[];
+  txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
+  txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
+  txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[];
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
