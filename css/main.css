@@ -529,6 +529,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   padding:20px;
 }
+#dshbrdLbl
+{
+  font-weight: 500;
+}
 #dept1
 {
   width:40%;

@@ -469,7 +469,9 @@ function Dashboard()
   txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
   txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
   txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
-  txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[];
+  txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
+  txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
+  txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[];
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
@@ -478,28 +480,38 @@ function Dashboard()
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
   createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-5"], [], "");
-  createnewElement(h4, divcol.newelement, "h4", [], ["id:dshbrdLbl"], "Logonscript Installation Success Rate");
+  createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
   createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
 
-  createnewElement(txtdept, divcol.newelement, "label", [], [], "Marvin(IT)");
+  createnewElement(txtdept, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Marvin(IT)");
   createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
   createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
 
-  createnewElement(txtdept1, divcol.newelement, "label", [], [], "Marvin(MAIN)");
+  createnewElement(txtdept1, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Marvin(MAIN)");
   createnewElement(spanCount1, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
   createnewElement(divProgress1, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
 
-  createnewElement(txtdept2, divcol.newelement, "label", [], [], "Pacifica(QY)");
+  createnewElement(txtdept2, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(QY)");
   createnewElement(spanCount2, divcol.newelement, "span", ["pull-right", "strong"], [], "3");
   createnewElement(divProgress2, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar2, divProgress2.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:3", "aria-valuemin:0", "ariavaluemax:100", "id:dept3"], "1%");
 
-  createnewElement(txtdept3, divcol.newelement, "label", [], [], "Pacifica(LH)");
+  createnewElement(txtdept3, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(LH)");
   createnewElement(spanCount3, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
   createnewElement(divProgress3, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar3, divProgress3.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept4"], "0%");
+
+  createnewElement(txtdept4, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(QY)");
+  createnewElement(spanCount4, divcol.newelement, "span", ["pull-right", "strong"], [], "3");
+  createnewElement(divProgress4, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar4, divProgress4.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:3", "aria-valuemin:0", "ariavaluemax:100", "id:dept3"], "1%");
+
+  createnewElement(txtdept5, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(LH)");
+  createnewElement(spanCount5, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
+  createnewElement(divProgress5, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept4"], "0%");
 }
 
 function DSHBRDContentBranchSettings()
