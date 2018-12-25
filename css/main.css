@@ -531,9 +531,9 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   float: right;
 }
-.panel-header-title
+.card-header-title
 {
-  color:white;
+  color:black;
 }
 .card-header .with-elements
 {

@@ -580,10 +580,10 @@ function Dashboard()
   // Edit History
   createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
-  createnewElement(divColcard5, divcol3.newelement,"div", ["panel", "mb-4"], ["id:dshbrdEdit"], "");
-  createnewElement(editH5, divColcard5.newelement, "h5", ["panel-header", "with-elements"], [], "");
-  createnewElement(divcolHeader, editH5.newelement, "div", ["panel-header-title"], [], "Last Edit History");
-  createnewElement(divcolHeader1, editH5.newelement, "div", ["panel-header-elements", "ml-auto"], [], "");
+  createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
+  createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
+  createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
+  createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
   createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
 
   createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
@@ -1285,21 +1285,21 @@ function ChangePass()
   createnewElement(divcol, divbody.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblCurPass, divcol.newelement, "label", [], ["id:lblEid"], "Current Password");
   createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:8"], "onkeyup:ShowPass()");
+  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "onkeyup:ShowPass()");
   createnewElement(spanCurPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
   
   createnewElement(divbody2, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblNewPass, divcol2.newelement, "label", [], ["id:lblEid"], "New Password");
   createnewElement(divcols2, divbody2.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPass", "type:text", "maxlength:8"], "");
+  createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "");
   createnewElement(spanNewPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
 
   createnewElement(divbody3, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "Confirm New Password");
   createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPass", "type:text", "maxlength:8"], "");
+  createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "");
   createnewElement(spanConfirmPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
 
   createnewElement(divbody4, cb, "div", ["row"], ["id:changeRow"], "");
