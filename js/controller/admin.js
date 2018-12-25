@@ -520,7 +520,7 @@ function Dashboard()
   createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
   createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
 
-  createnewElement(div, divcol.newelement, "div", [], [], "");
+  createnewElement(div, divcol2.newelement, "div", [], [], "");
   createnewElement(canvas, div.newelement, "canvas", [], ["height:100", "id:pieChart"], "");
 
 }
