@@ -1116,7 +1116,7 @@ function ChangePass()
   var cf = document.getElementById("mncf");
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [],
-  divbody = [], divcol = [] , lblCurPass = [], divcol1 = [], inputCurPass =[],
+  divbody = [], divcol = [] , lblCurPass = [], divcol1 = [], inputCurPass =[], spanCurPass = [],
   divbody2 = [], divcol2 = [], lblNewPass = [], divcols2 = [], inputNewPass = [],
   divbody3 = [], divcol3 = [], lblConfirmPass = [], divcols3 = [], inputConfirmPass = [];
 
@@ -1135,7 +1135,8 @@ function ChangePass()
   createnewElement(divcol, divbody.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblCurPass, divcol.newelement, "label", [], ["id:lblEid"], "Current Password");
   createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
+  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPositions", "type:password"], "");
+  createnewElement(spanCurPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], [], "");
   
   createnewElement(divbody2, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
