@@ -529,6 +529,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   padding-top:20px;
 }
+#dshbrdCards
+{
+  margin-left:-20px;
+}
 #dshbrdLbl
 {
   font-weight: 500;

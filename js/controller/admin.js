@@ -489,7 +489,7 @@ function Dashboard()
   createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
 
   createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divColcard, divrow1.newelement, "div", ["col-sm6", "col-xl-3"], [], "");
+  createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-2"], ["id:dshbrdCards"], "");
   createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
@@ -498,11 +498,8 @@ function Dashboard()
   createnewElement(divText, divml.newelement, "div", ["text-muted", "small"], [], "End Task Units");
   createnewElement(divcount, divml.newelement, "div", ["text-large"], [], "6");
 
-
-  
-
   createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
-  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-8"], [], "");
+  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
   createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
   createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
 
@@ -536,7 +533,8 @@ function Dashboard()
   createnewElement(divProgress5, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept6"], "0%");
 
-  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-4"], ["id:colPieChart"], "");
+
+  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], ["id:colPieChart"], "");
   createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
   createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
 
