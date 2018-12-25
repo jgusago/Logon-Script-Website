@@ -484,22 +484,22 @@ function Dashboard()
   createnewElement(txtdept, divcol.newelement, "label", [], [], "Marvin(IT)");
   createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
   createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
+  createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
 
   createnewElement(txtdept1, divcol.newelement, "label", [], [], "Marvin(MAIN)");
   createnewElement(spanCount1, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
   createnewElement(divProgress1, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
+  createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
 
-  createnewElement(txtdept2, divcol.newelement, "label", [], [], "Marvin(IT)");
-  createnewElement(spanCount2, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
+  createnewElement(txtdept2, divcol.newelement, "label", [], [], "Pacifica(QY)");
+  createnewElement(spanCount2, divcol.newelement, "span", ["pull-right", "strong"], [], "3");
   createnewElement(divProgress2, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar2, divProgress2.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
+  createnewElement(divProgbar2, divProgress2.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:3", "aria-valuemin:0", "ariavaluemax:100", "id:dept3"], "1%");
 
-  createnewElement(txtdept3, divcol.newelement, "label", [], [], "Marvin(MAIN)");
-  createnewElement(spanCount3, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
+  createnewElement(txtdept3, divcol.newelement, "label", [], [], "Pacifica(LH)");
+  createnewElement(spanCount3, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
   createnewElement(divProgress3, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar3, divProgress3.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
+  createnewElement(divProgbar3, divProgress3.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept4"], "0%");
 }
 
 function DSHBRDContentBranchSettings()

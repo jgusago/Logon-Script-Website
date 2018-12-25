@@ -537,6 +537,14 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   width:70%;
 }
+#dept3
+{
+  width:5%;
+}
+#dept4
+{
+  width:0%;
+}
 #lblPositions
 {
   width: 300px;
