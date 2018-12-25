@@ -1157,7 +1157,7 @@ function ChangePass()
   createnewElement(divcol4, divbody4.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblButton, divcol4.newelement, "label", [], ["id:lblEid"], "");
   createnewElement(divcols4, divbody4.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-primary"], [], "Update Password");
+  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-warning"], ["id:lblPass"], "Update Password");
 
 }
 
