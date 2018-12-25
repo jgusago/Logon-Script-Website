@@ -469,6 +469,8 @@ function Dashboard()
   var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [], divDate =[], divCol = [], divdates = [], small = [],
   divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
   divColcard2 = [], divcard2 = [], divcardBody2 = [], divItems2 = [], divIcon2 = [], divml2 = [], divText2 = [], divcount2 = [],
+  divColcard3 = [], divcard3 = [], divcardBody3 = [], divItems3 = [], divIcon3 = [], divml3 = [], divText3 = [], divcount3 = [],
+  divColcard4 = [], divcard4 = [], divcardBody4 = [], divItems4 = [], divIcon4 = [], divml4 = [], divText4 = [], divcount4 = [],
   txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
   txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
   txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
@@ -495,7 +497,7 @@ function Dashboard()
   createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon, divItems.newelement, "div", ["fa", "fa-desktop", "display-4", "text-success", "aria-hidden:true"], [], "");
+  createnewElement(divIcon, divItems.newelement, "div", ["fa", "fa-exclamation", "display-4", "text-danger", "aria-hidden:true"], [], "");
   createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
   createnewElement(divText, divml.newelement, "div", ["text-muted"], [], "End Task Units");
   createnewElement(divcount, divml.newelement, "div", [], ["id:dshbrdCounts"], "6");
@@ -504,10 +506,28 @@ function Dashboard()
   createnewElement(divcard2, divColcard2.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody2, divcard2.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems2, divcardBody2.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon2, divItems2.newelement, "div", ["fa", "fa-desktop", "display-4", "text-success", "aria-hidden:true"], [], "");
+  createnewElement(divIcon2, divItems2.newelement, "div", ["fa", "fa-desktop", "display-4", "text-warning", "aria-hidden:true"], [], "");
   createnewElement(divml2, divItems2.newelement, "div", ["ml-3"], [], "");
   createnewElement(divText2, divml2.newelement, "div", ["text-muted"], [], "Old Agent Verison");
   createnewElement(divcount2, divml2.newelement, "div", [], ["id:dshbrdCounts"], "143");
+
+  createnewElement(divColcard3, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
+  createnewElement(divcard3, divColcard3.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody3, divcard3.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems3, divcardBody3.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon3, divItems3.newelement, "div", ["fa", "fa-download", "display-4", "text-primary", "aria-hidden:true"], [], "");
+  createnewElement(divml3, divItems3.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText3, divml3.newelement, "div", ["text-muted"], [], "Logonscript ");
+  createnewElement(divcount3, divml3.newelement, "div", [], ["id:dshbrdCounts"], "6");
+
+  createnewElement(divColcard4, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
+  createnewElement(divcard4, divColcard4.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody4, divcard4.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems4, divcardBody4.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon4, divItems4.newelement, "div", ["fa", "fa-users", "display-4", "text-default", "aria-hidden:true"], [], "");
+  createnewElement(divml4, divItems4.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText4, divml4.newelement, "div", ["text-muted"], [], "Users");
+  createnewElement(divcount4, divml4.newelement, "div", [], ["id:dshbrdCounts"], "13");
 
 
   // Progress bar
