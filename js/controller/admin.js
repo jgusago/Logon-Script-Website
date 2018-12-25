@@ -1104,7 +1104,7 @@ function Profiles()
     createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
     var button = [];
-    createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button"],"Update Profile");
+    createnewElement(button, card.foot, "button", ["btn","btn-default"],[],"Update Profile");
 }
 
 function ChangePass()
@@ -1157,7 +1157,7 @@ function ChangePass()
   createnewElement(divcol4, divbody4.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblButton, divcol4.newelement, "label", [], ["id:lblEid"], "");
   createnewElement(divcols4, divbody4.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(btnUpdatePass, divcols4.newelement, "input", ["btn", "btn-primary"], ["id:lblPass"], "Update Password");
+  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-primary"], [], "Update Password");
 
 }
 
