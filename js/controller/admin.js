@@ -7,6 +7,7 @@ function load(){
     Departmentlist("department");
     ALERTshow();
     Dashboard();
+    PieChart();
 }
 
 /* Buttons */
@@ -481,7 +482,7 @@ function Dashboard()
   createnewElement(divfluid, contentview, "div", ["container-fluid"], ["id:dshbrdFluid"], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
   createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
+  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-8"], [], "");
   createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
   createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
 
@@ -515,10 +516,29 @@ function Dashboard()
   createnewElement(divProgress5, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept6"], "0%");
 
-  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], [], "");
+  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-4"], ["id:colPieChart"], "");
   createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
   createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
 
+  createnewElement(div, divcol.newelement, "div", [], [], "");
+  createnewElement(canvas, div.newelement, "canvas", [], ["height:100", "id:pieChart"], "");
+
+}
+
+function PieChart()
+{
+  var ctx = document.getElementById("pieChart").getContext('2d');
+  var pieChart = new Chart(ctx ,
+    {
+      type: 'pie',
+      data:
+      {
+        labels:["Marvin(IT)", "Marvin(MAIN)", "Pacifica(QY)", "Pacifica(LH)", "6789(L8)", "Pacifica(AE)"],
+        datasets: [{backgroundColor: ["#2ecc71", "#e74c3c", "#34495e", "#e74c3c","#34495e"],
+        data:[]
+        }]
+      }
+    });
 }
 
 function DSHBRDContentBranchSettings()

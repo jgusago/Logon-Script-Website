@@ -537,6 +537,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   margin-bottom: 10px;
 }
+#colPieChart
+{
+  padding-left: 80px;
+}
 #dept1
 {
   width:40%;
