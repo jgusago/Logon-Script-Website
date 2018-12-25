@@ -482,7 +482,7 @@ function Dashboard()
   createnewElement(divfluid, contentview, "div", ["container-fluid"], ["id:dshbrdFluid"], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
 
-  createnewElement(divDate, divclass.newelement, "div", [], [], "");
+  createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
   createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
   createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
