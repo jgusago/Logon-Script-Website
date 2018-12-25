@@ -518,7 +518,7 @@ function Dashboard()
   createnewElement(divIcon3, divItems3.newelement, "div", ["fa", "fa-desktop", "display-4", "text-primary", "aria-hidden:true"], [], "");
   createnewElement(divml3, divItems3.newelement, "div", ["ml-3"], [], "");
   createnewElement(divText3, divml3.newelement, "div", ["text-muted"], [], "Logonscript ");
-  createnewElement(divcount3, divml3.newelement, "div", [], ["id:dshbrdCounts"], "6");
+  createnewElement(divcount3, divml3.newelement, "div", [], ["id:dshbrdCounts"], "217");
 
   createnewElement(divColcard4, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
   createnewElement(divcard4, divColcard4.newelement, "div", ["card", "mb-4"], [], "");
