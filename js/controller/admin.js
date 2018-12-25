@@ -1115,7 +1115,10 @@ function ChangePass()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [];
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [],
+  divbody = [], divcol = [] , lblCurPass = [], divcol1 = [], inputCurPass =[],
+  divbody2 = [], divcol2 = [], lblNewPass = [], divcols2 = [], inputNewPass = [],
+  divbody3 = [], divcol3 = [], lblConfirmPass = [], divcols3 = [], inputConfirmPass = [];
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -1127,6 +1130,24 @@ function ChangePass()
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
+
+  createnewElement(divbody, cb, "div", ["row"], [], "");
+  createnewElement(divcol, divbody.newelement, "div", ["col-sm-3" ,"col-md-2", "col-5"], [], "");
+  createnewElement(lblCurPass, divcol.newelement, "label", [], [], "Current Password");
+  createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
+  
+  createnewElement(divbody2, cb, "div", ["row"], [], "");
+  createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-3" ,"col-md-2", "col-5"], [], "");
+  createnewElement(lblNewPass, divcol2.newelement, "label", [], [], "New Password");
+  createnewElement(divcols2, divbody2.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
+
+  createnewElement(divbody3, cb, "div", ["row"], [], "");
+  createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-3" ,"col-md-2", "col-5"], [], "");
+  createnewElement(lblConfirmPass, divcol3.newelement, "label", [], [], "New Password");
+  createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
 
 
 
