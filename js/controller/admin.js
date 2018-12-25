@@ -1150,10 +1150,6 @@ function ChangePass()
   createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
 
-
-
-
-
 }
 
 function EmployeeList(){
@@ -1303,3 +1299,26 @@ function BRNCHVWdelete(id){
 
   
 }
+
+$("#lblPositions").on("keyup", function()
+{
+  if($(this).val())
+  {
+    $(".glyphicon-eye-open").show();
+  }
+  else
+  {
+    $(".glyphicon-eye-open").hide();
+  }
+});
+
+$(".glyphicon-eye-open").mousedown(function()
+{
+  $("#lblPositions").attr('type','text');
+}).mouseup(function()
+{
+$("#lblPositions").attr('type','password');
+}).mouseout(function()
+{
+$("#lblPositions").attr('type','password');
+});

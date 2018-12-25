@@ -255,6 +255,14 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   color:white;
 }
+.glyphicon-eye-open
+{
+  display:none;
+  right: 15px;
+  position: absolute;
+  top: 12px;
+  cursor:pointer;
+}
 #changeRow
 {
   margin-bottom: 10px;
