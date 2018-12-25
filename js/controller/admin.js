@@ -6,6 +6,7 @@ function load(){
     NAVBARNotification();
     Departmentlist("department");
     ALERTshow();
+    Dashboard();
 }
 
 /* Buttons */
