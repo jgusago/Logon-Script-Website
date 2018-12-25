@@ -522,10 +522,13 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 #chLabel
 {
-  /* font-family: Cambria; */
   letter-spacing: 5px;
   color:#ffffff;
 }
+/* #dshbrdLbl
+{
+
+} */
 #dept1
 {
   width:40%;

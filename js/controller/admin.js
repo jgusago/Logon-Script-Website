@@ -465,7 +465,7 @@ function Dashboard()
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
 
-  var divfluid = [], divclass = [], divrow = [], divcol = [], h5 = [],
+  var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [],
   txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
   txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[];
 
@@ -476,7 +476,8 @@ function Dashboard()
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
   createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-5"], [], "");
-  createnewElement(h5, divcol.newelement, "h5", [], [], "Logonscript");
+  createnewElement(h4, divcol.newelement, "h4", [], ["id:dshbrdLbl"], "Logonscript Installation Success Rate");
+  createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
 
   createnewElement(txtdept, divcol.newelement, "label", [], [], "Marvin(IT)");
   createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
