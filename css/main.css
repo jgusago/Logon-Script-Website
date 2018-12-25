@@ -537,6 +537,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-weight: 600;
 }
+#dshbrdIcons
+{
+  font-size:20px;
+}
 #dshbrdLbl
 {
   font-weight: 500;
