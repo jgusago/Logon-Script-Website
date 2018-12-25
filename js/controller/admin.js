@@ -1117,8 +1117,9 @@ function ChangePass()
 
   var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [],
   divbody = [], divcol = [] , lblCurPass = [], divcol1 = [], inputCurPass =[], spanCurPass = [],
-  divbody2 = [], divcol2 = [], lblNewPass = [], divcols2 = [], inputNewPass = [],
-  divbody3 = [], divcol3 = [], lblConfirmPass = [], divcols3 = [], inputConfirmPass = [];
+  divbody2 = [], divcol2 = [], lblNewPass = [], divcols2 = [], inputNewPass = [], spanNewPass = [],
+  divbody3 = [], divcol3 = [], lblConfirmPass = [], divcols3 = [], inputConfirmPass = [], spanConfirmPass = [],
+  divbody4 = [], divcol4 = [], lblButton = [], divcols4 = [], btnUpdatePass = [];
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -1143,12 +1144,20 @@ function ChangePass()
   createnewElement(lblNewPass, divcol2.newelement, "label", [], ["id:lblEid"], "New Password");
   createnewElement(divcols2, divbody2.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPass", "type:text", "maxlength:8"], "");
+  createnewElement(spanNewPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
 
   createnewElement(divbody3, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "New Password");
   createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPass", "type:text", "maxlength:8"], "");
+  createnewElement(spanConfirmPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
+
+  createnewElement(divbody4, cb, "div", ["row"], ["id:changeRow"], "");
+  createnewElement(divcol4, divbody4.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
+  createnewElement(lblButton, divcol4.newelement, "label", [], ["id:lblEid"], "");
+  createnewElement(divcols4, divbody4.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(btnUpdatePass, divcols4.newelement, "input", ["btn", "btn-primary"], ["id:lblPass"], "Update Password");
 
 }
 
@@ -1299,21 +1308,3 @@ function BRNCHVWdelete(id)
   createnewElement(warningtxt, warning.newelement, "p", [], [], "The sub department under this branch/department will also be deleted. Do you wish to continue?");
 }
 
-function ShowPass()
-{
-
-  var value = document.getElementById(lblPass).value;
-  var button = document.getElementById(glyphicon);
-
-  if (value != null)
-  {
-    button.classList.remove("show");
-    value.attr('type', password);
-  }
-  else 
-  {
-    button.classList.add("show");
-    value.attr('type', text);
-  }
-
-}
