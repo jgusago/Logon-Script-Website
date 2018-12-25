@@ -525,10 +525,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   color:#ffffff;
 }
-/* #dshbrdLbl
+#dshbrdFluid
 {
-
-} */
+  padding:20px;
+}
 #dept1
 {
   width:40%;

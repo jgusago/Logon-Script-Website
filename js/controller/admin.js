@@ -472,7 +472,7 @@ function Dashboard()
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
 
-  createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
+  createnewElement(divfluid, contentview, "div", ["container-fluid"], ["id:dshbrdFluid"], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
   createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-5"], [], "");
@@ -482,12 +482,22 @@ function Dashboard()
   createnewElement(txtdept, divcol.newelement, "label", [], [], "Marvin(IT)");
   createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
   createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "progress-bar-success"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
+  createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
 
   createnewElement(txtdept1, divcol.newelement, "label", [], [], "Marvin(MAIN)");
   createnewElement(spanCount1, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
   createnewElement(divProgress1, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "progress-bar-warning"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
+  createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
+
+  createnewElement(txtdept2, divcol.newelement, "label", [], [], "Marvin(IT)");
+  createnewElement(spanCount2, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
+  createnewElement(divProgress2, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar2, divProgress2.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
+
+  createnewElement(txtdept3, divcol.newelement, "label", [], [], "Marvin(MAIN)");
+  createnewElement(spanCount3, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
+  createnewElement(divProgress3, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar3, divProgress3.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
 }
 
 function DSHBRDContentBranchSettings()
