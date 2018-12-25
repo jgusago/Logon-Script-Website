@@ -474,7 +474,7 @@ function Dashboard()
   txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
   txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[]
   
-  divcol2 = [], h4pie = [], hrDshbrd1 =[];
+  divcol2 = [], h4pie = [], hrDshbrd1 =[], div = [], canvas = [];
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
