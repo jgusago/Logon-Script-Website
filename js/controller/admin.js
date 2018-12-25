@@ -479,7 +479,7 @@ function Dashboard()
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
 
-  createnewElement(divfluid, contentview, "div", ["container-fluid"], ["id:dshbrdFluid"], "");
+  createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
 
   createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
@@ -487,7 +487,7 @@ function Dashboard()
   createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
   createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
 
-  createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
+  createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-8"], [], "");
   createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
   createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
