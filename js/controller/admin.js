@@ -1131,21 +1131,21 @@ function ChangePass()
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
-  createnewElement(divbody, cb, "div", ["row"], [], "");
+  createnewElement(divbody, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol, divbody.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblCurPass, divcol.newelement, "label", [], [], "Current Password");
+  createnewElement(lblCurPass, divcol.newelement, "label", [], ["id:lblEid"], "Current Password");
   createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
   
-  createnewElement(divbody2, cb, "div", ["row"], [], "");
+  createnewElement(divbody2, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblNewPass, divcol2.newelement, "label", [], [], "New Password");
+  createnewElement(lblNewPass, divcol2.newelement, "label", [], ["id:lblEid"], "New Password");
   createnewElement(divcols2, divbody2.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
 
-  createnewElement(divbody3, cb, "div", ["row"], [], "");
+  createnewElement(divbody3, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblConfirmPass, divcol3.newelement, "label", [], [], "New Password");
+  createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "New Password");
   createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
 

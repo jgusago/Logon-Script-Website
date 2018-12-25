@@ -255,6 +255,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   color:white;
 }
+#changeRow
+{
+  margin-bottom: 10px;
+}
 #modalheader
 {
   color: white;
