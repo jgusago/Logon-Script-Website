@@ -535,6 +535,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   float: right;
 }
+.card-header .with-elements
+{
+  background: transparent;
+}
 #chLabel
 {
   letter-spacing: 5px;
