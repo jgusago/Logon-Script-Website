@@ -1135,20 +1135,20 @@ function ChangePass()
   createnewElement(divcol, divbody.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblCurPass, divcol.newelement, "label", [], ["id:lblEid"], "Current Password");
   createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPositions", "type:password"], "");
-  createnewElement(spanCurPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], [], "");
+  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:8"], "onkeyup:ShowPass()");
+  createnewElement(spanCurPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
   
   createnewElement(divbody2, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblNewPass, divcol2.newelement, "label", [], ["id:lblEid"], "New Password");
   createnewElement(divcols2, divbody2.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
+  createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPass", "type:text", "maxlength:8"], "");
 
   createnewElement(divbody3, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "New Password");
   createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
+  createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPass", "type:text", "maxlength:8"], "");
 
 }
 
@@ -1282,7 +1282,8 @@ function BRNCHVWeditconfirm(name,filter){
   }
 }
 
-function BRNCHVWdelete(id){
+function BRNCHVWdelete(id)
+{
   OVERLAYenable();
 
   var ch = document.getElementById("mnch");
@@ -1296,29 +1297,23 @@ function BRNCHVWdelete(id){
   createnewElement(warning, cb, "div", ["alert","alert-danger"], [], "");
   createnewElement(warningtxtbld, warning.newelement, "h5", [], [], "Please be reminded!!");
   createnewElement(warningtxt, warning.newelement, "p", [], [], "The sub department under this branch/department will also be deleted. Do you wish to continue?");
-
-  
 }
 
-$("#lblPositions").on("keyup", function()
+function ShowPass()
 {
-  if($(this).val())
-  {
-    $(".glyphicon-eye-open").show();
-  }
-  else
-  {
-    $(".glyphicon-eye-open").hide();
-  }
-});
 
-$(".glyphicon-eye-open").mousedown(function()
-{
-  $("#lblPositions").attr('type','text');
-}).mouseup(function()
-{
-$("#lblPositions").attr('type','password');
-}).mouseout(function()
-{
-$("#lblPositions").attr('type','password');
-});
+  var value = document.getElementById(lblPass).value;
+  var button = document.getElementById(glyphicon);
+
+  if (value != null)
+  {
+    button.classList.remove("show");
+    value.attr('type', password);
+  }
+  else 
+  {
+    button.classList.add("show");
+    value.attr('type', text);
+  }
+
+}
