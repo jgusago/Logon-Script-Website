@@ -661,6 +661,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
 }
+#exampleModalLabel
+{
+  color:white;
+}
 #dtitle
 {
   font-family: Arial, Helvetica, sans-serif;
