@@ -497,7 +497,7 @@ function Dashboard()
   createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon, divItems.newelement, "div", ["fa", "fa-exclamation", "display-4", "text-danger", "aria-hidden:true", "id:dshbrdIcons"], [], "");
+  createnewElement(divIcon, divItems.newelement, "div", ["fa", "fa-exclamation", "display-4", "text-danger", "aria-hidden:true"], [], "");
   createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
   createnewElement(divText, divml.newelement, "div", ["text-muted"], [], "End Task Units");
   createnewElement(divcount, divml.newelement, "div", [], ["id:dshbrdCounts"], "6");
@@ -506,7 +506,7 @@ function Dashboard()
   createnewElement(divcard2, divColcard2.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody2, divcard2.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems2, divcardBody2.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon2, divItems2.newelement, "div", ["fa", "fa-upload", "display-4", "text-warning", "aria-hidden:true", "id:dshbrdIcons"], [], "");
+  createnewElement(divIcon2, divItems2.newelement, "div", ["fa", "fa-upload", "display-4", "text-warning", "aria-hidden:true"], [], "");
   createnewElement(divml2, divItems2.newelement, "div", ["ml-3"], [], "");
   createnewElement(divText2, divml2.newelement, "div", ["text-muted"], [], "Old Agent Verison");
   createnewElement(divcount2, divml2.newelement, "div", [], ["id:dshbrdCounts"], "143");
@@ -515,7 +515,7 @@ function Dashboard()
   createnewElement(divcard3, divColcard3.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody3, divcard3.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems3, divcardBody3.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon3, divItems3.newelement, "div", ["fa", "fa-desktop", "display-4", "text-primary", "aria-hidden:true", "id:dshbrdIcons"], [], "");
+  createnewElement(divIcon3, divItems3.newelement, "div", ["fa", "fa-desktop", "display-4", "text-primary", "aria-hidden:true"], [], "");
   createnewElement(divml3, divItems3.newelement, "div", ["ml-3"], [], "");
   createnewElement(divText3, divml3.newelement, "div", ["text-muted"], [], "Logonscript ");
   createnewElement(divcount3, divml3.newelement, "div", [], ["id:dshbrdCounts"], "217");
@@ -524,7 +524,7 @@ function Dashboard()
   createnewElement(divcard4, divColcard4.newelement, "div", ["card", "mb-4"], [], "");
   createnewElement(divcardBody4, divcard4.newelement, "div", ["card-body"], [], "");
   createnewElement(divItems4, divcardBody4.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon4, divItems4.newelement, "div", ["fa", "fa-users", "display-4", "text-default", "aria-hidden:true", "id:dshbrdIcons"], [], "");
+  createnewElement(divIcon4, divItems4.newelement, "div", ["fa", "fa-users", "display-4", "text-default", "aria-hidden:true"], [], "");
   createnewElement(divml4, divItems4.newelement, "div", ["ml-3"], [], "");
   createnewElement(divText4, divml4.newelement, "div", ["text-muted"], [], "Users");
   createnewElement(divcount4, divml4.newelement, "div", [], ["id:dshbrdCounts"], "13");

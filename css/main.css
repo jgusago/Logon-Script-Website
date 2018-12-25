@@ -537,7 +537,19 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-weight: 600;
 }
-#dshbrdIcons
+.fa-upload
+{
+  font-size:20px;
+}
+.fa-users
+{
+  font-size:20px;
+}
+.fa-desktop
+{
+  font-size:20px;
+}
+.fa-exclamation
 {
   font-size:20px;
 }
