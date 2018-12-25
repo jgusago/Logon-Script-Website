@@ -467,6 +467,7 @@ function Dashboard()
   contentview.innerHTML = "";
 
   var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [], divDate =[], divCol = [], divdates = [], small = [],
+  divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
   txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
   txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
   txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
@@ -486,6 +487,19 @@ function Dashboard()
   createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
   createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
   createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
+
+  createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
+  createnewElement(divColcard, divrow1.newelement, "div", ["col-sm6", "col-xl-3"], [], "");
+  createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon, divItems.newelement, "div", ["lnr", "lnr-cart", "display-4", "text-success"], [], "");
+  createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText, divml.newelement, "div", ["text-muted", "small"], [], "End Task Units");
+  createnewElement(divcount, divml.newelement, "div", ["text-large"], [], "6");
+
+
+  
 
   createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-8"], [], "");
