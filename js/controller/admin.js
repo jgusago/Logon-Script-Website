@@ -579,8 +579,8 @@ function Dashboard()
 
   // Edit History
   createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-12"], [], "");
-  createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], [], "");
+  createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
+  createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
   createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
   createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
   createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
