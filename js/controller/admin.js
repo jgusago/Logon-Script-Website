@@ -584,7 +584,7 @@ function Dashboard()
   createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
   createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
   createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
-  createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button"], "Show more");
+  createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
 
   createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
   createnewElement(tbl, divTable.newelement, "table", ["table", "card-table"], [], "");
