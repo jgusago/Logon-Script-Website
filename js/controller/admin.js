@@ -1148,7 +1148,7 @@ function ChangePass()
 
   createnewElement(divbody3, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "New Password");
+  createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "Confirm New Password");
   createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPass", "type:text", "maxlength:8"], "");
   createnewElement(spanConfirmPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
