@@ -471,7 +471,9 @@ function Dashboard()
   txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
   txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
   txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
-  txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[];
+  txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[]
+  
+  divcol2 = [], h4pie = [], hrDshbrd1 =[];
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
@@ -479,7 +481,7 @@ function Dashboard()
   createnewElement(divfluid, contentview, "div", ["container-fluid"], ["id:dshbrdFluid"], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
   createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-5"], [], "");
+  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
   createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
   createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
 
@@ -512,6 +514,11 @@ function Dashboard()
   createnewElement(spanCount5, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
   createnewElement(divProgress5, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept6"], "0%");
+
+  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], [], "");
+  createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
+  createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
+
 }
 
 function DSHBRDContentBranchSettings()
