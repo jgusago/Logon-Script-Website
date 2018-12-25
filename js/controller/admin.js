@@ -459,6 +459,23 @@ function DSHBRDLogsHistory()
   document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
 }
 
+function Dashboard()
+{
+  var contentview = document.getElementById("contentview");
+  contentview.innerHTML = "";
+
+  var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [];
+
+  document.getElementById("dtitle").innerHTML = "Dashboard";
+  document.getElementById("dtitle2").innerHTML = "My Dashboard";
+
+  createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
+  createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-9"], [], "");
+  createnewElement(divrow, divclass.newelement, "div", ["row"], [], "");
+  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-5"], [], "");
+  createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript");
+}
+
 function DSHBRDContentBranchSettings()
 {
   var contentview = document.getElementById("contentview");
