@@ -526,6 +526,14 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   color:#ffffff;
 }
+#dept1
+{
+  width:40%;
+}
+#dept2
+{
+  width:70%;
+}
 #lblPositions
 {
   width: 300px;
