@@ -485,7 +485,8 @@ function Dashboard()
 
   createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
-
+  
+  // Date
   createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
   createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
@@ -573,6 +574,21 @@ function Dashboard()
 
   createnewElement(div, divcol2.newelement, "div", [], [], "");
   createnewElement(canvas, div.newelement, "canvas", [], ["height:100", "id:pieChart"], "");
+
+  var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
+
+  // Edit History
+  createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
+  createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-12"], [], "");
+  createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], [], "");
+  createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
+  createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
+  createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
+  createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button"], "Show more");
+
+  createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
+  createnewElement(tbl, divTable.newelement, "table", ["table", "card-table"], [], "");
+  createnewElement(tblHeader, tbl.newelement, "thead", [], [], "");
 
 }
 
