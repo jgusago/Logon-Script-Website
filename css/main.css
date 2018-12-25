@@ -523,10 +523,6 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   margin: 20px;
 }
-.card-header.title
-{
-  color:white;
-}
 #mncf
 {
   margin-top: -20px;
@@ -534,6 +530,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 #btnShowMore
 {
   float: right;
+}
+.panel-header-title
+{
+  color:white;
 }
 .card-header .with-elements
 {

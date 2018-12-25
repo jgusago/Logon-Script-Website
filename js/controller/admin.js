@@ -580,10 +580,10 @@ function Dashboard()
   // Edit History
   createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
-  createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
-  createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
-  createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
-  createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
+  createnewElement(divColcard5, divcol3.newelement,"div", ["panel", "mb-4"], ["id:dshbrdEdit"], "");
+  createnewElement(editH5, divColcard5.newelement, "h5", ["panel-header", "with-elements"], [], "");
+  createnewElement(divcolHeader, editH5.newelement, "div", ["panel-header-title"], [], "Last Edit History");
+  createnewElement(divcolHeader1, editH5.newelement, "div", ["panel-header-elements", "ml-auto"], [], "");
   createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
 
   createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
