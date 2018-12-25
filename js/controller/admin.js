@@ -478,14 +478,14 @@ function Dashboard()
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-5"], [], "");
   createnewElement(h5, divcol.newelement, "h5", [], [], "Logonscript");
 
-  createnewElement(txtdept, divrow.newelement, "label", [], [], "Marvin(IT)");
-  createnewElement(spanCount, divrow.newelement, "span", ["pull-right", "strong"], [], "62");
-  createnewElement(divProgress, divrow.newelement, "div", ["progress"], [], "");
+  createnewElement(txtdept, divcol.newelement, "label", [], [], "Marvin(IT)");
+  createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
+  createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "progress-bar-success"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
 
   createnewElement(txtdept1, divrow.newelement, "label", [], [], "Marvin(MAIN)");
-  createnewElement(spanCount1, divrow.newelement, "span", ["pull-right", "strong"], [], "157");
-  createnewElement(divProgress1, divrow.newelement, "div", ["progress"], [], "");
+  createnewElement(spanCount1, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
+  createnewElement(divProgress1, divcol.newelement, "div", ["progress"], [], "");
   createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "progress-bar-warning"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
 }
 
