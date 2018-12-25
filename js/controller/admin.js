@@ -495,8 +495,8 @@ function Dashboard()
   createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
   createnewElement(divIcon, divItems.newelement, "div", ["lnr", "lnr-cart", "display-4", "text-success"], [], "");
   createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
-  createnewElement(divText, divml.newelement, "div", ["text-muted", "small"], [], "End Task Units");
-  createnewElement(divcount, divml.newelement, "div", ["text-large"], [], "6");
+  createnewElement(divText, divml.newelement, "div", ["text-muted"], [], "End Task Units");
+  createnewElement(divcount, divml.newelement, "div", [], ["id:dshbrdCounts"], "6");
 
   createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
   createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
