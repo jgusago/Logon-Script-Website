@@ -110,7 +110,7 @@ body.fixed-nav {
     text-overflow: ellipsis; }
 
 @media (min-width: 992px) {
-  #mainNav .navbar-brand 
+  #mainNav .navbar-brand
   {
     letter-spacing: 2px;
     color: rgb(255, 255, 255);
@@ -297,7 +297,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
-    background-color: #2f5109ad; 
+    background-color: #2f5109ad;
 }
 #UserAccountupdate
 {
@@ -460,7 +460,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       background: #343a40; } }
 
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
-  color: rgba(0, 0, 0, 0.5); 
+  color: rgba(0, 0, 0, 0.5);
   /* color:#ffffff; */
 }
 
@@ -506,8 +506,8 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
-      background: #f8f9fa; 
-    } 
+      background: #f8f9fa;
+    }
   }
 
 .navbar-nav .navbar-sidenav li a:hover
@@ -1021,10 +1021,7 @@ footer.sticky-footer {
   transform: translate(-20%, -50%);
   z-index: 4500;
 }
-<<<<<<< HEAD
 
 .alert-content{
 
 }
-=======
->>>>>>> parent of dd75155... 123
