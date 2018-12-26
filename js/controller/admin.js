@@ -1277,7 +1277,7 @@ function Profiles()
   span.newelement.innerHTML = "&times;";
 
 
-  var form = [], fg = [], col = [], label = [], input = [], br = [];
+  var form = [], fg = [], col = [], label = [], input = [], br = [], select = [], option = [];
 
   createnewElement(form, cb, "form", [], [], "");
   createnewElement(fg, form.newelement, "div", ["form-group"], ["onsubmit:return addemployeesubmit()"] , "");
@@ -1299,7 +1299,10 @@ function Profiles()
   createnewElement(fg, form.newelement, "div", ["form-row"], [] , "");
   createnewElement(col, fg.newelement, "div", ['col'], [], "");
   createnewElement(label, col.newelement, "label", [], ["for:insertemployeedept"], "Department");
-  createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeedept","required:true"], "");
+
+  createnewElement(select, col.newelement, "select", ["form-control"], ["name:department", "required:true", "id:insertemployeedept"], "");
+  Departmentlist("insertemployeedept");
+
   createnewElement(col, fg.newelement, "div", ['col'], [], "");
   createnewElement(label, col.newelement, "label", [], ["for:insertemployeesubdept"], "Sub Department");
   createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeesubdept"], "");
@@ -1546,7 +1549,7 @@ function addemployeesubmit(){
   dept = document.getElementById("insertemployeedept").value;
   subdept = document.getElementById("insertemployeesubdept").value;
 
-  $.post("",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
+  $.post("php/functions/employee/employee.add.php",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
 
   });
 
