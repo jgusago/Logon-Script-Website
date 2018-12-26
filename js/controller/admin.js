@@ -1497,7 +1497,17 @@ function branchdelete(id){
     if (data == "success"){
       ALERTcall("success","Successfully Deleted");
       OVERLAYdisable();
+      DSHBRDContentBranchSettings('','DSHBRDBranchView');
     }
 
   });
+}
+
+function openaddemployee(){
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
 }
