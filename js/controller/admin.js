@@ -267,7 +267,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
   createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "");
   var txt = documnent.getElementById("resetPass");
-  txt.innerHTML = "Reset password";
+  txt.newelement.innerHTML = "Reset password";
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -1256,6 +1256,27 @@ function Profiles()
     createnewElement(button, card.foot, "button", ["btn","btn-default"],[],"Update Profile");
 }
 
+ function AddEmployee()
+ {
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [];
+
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  divvalue.newelement.style.width = "600px";
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Change Password" );
+
+  createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  span.newelement.innerHTML = "&times;";
+ }
+
 function ChangePass()
 {
   OVERLAYenable();
@@ -1345,7 +1366,7 @@ function EmployeeList(){
     });
       var button = [], buttons = [];
       // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
-      createnewElement(buttons, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp","onClick:openaddemployee()"],"Add Employee");
+      createnewElement(buttons, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
       createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button","onclick:importemployee()"],"Import List");
 }
 
