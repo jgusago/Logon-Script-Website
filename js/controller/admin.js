@@ -1345,7 +1345,7 @@ function EmployeeList(){
     });
       var button = [], buttons = [];
       // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
-      createnewElement(buttons, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp"],"Add Employee");
+      createnewElement(buttons, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp","onClick:openaddemployee()"],"Add Employee");
       createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button","onclick:importemployee()"],"Import List");
 }
 
@@ -1476,7 +1476,17 @@ function branchdelete(id){
     if (data == "success"){
       ALERTcall("success","Successfully Deleted");
       OVERLAYdisable();
+      DSHBRDContentBranchSettings('','DSHBRDBranchView');
     }
 
   });
+}
+
+function openaddemployee(){
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
 }
