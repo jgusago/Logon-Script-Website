@@ -580,10 +580,20 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   margin-bottom: 10px;
 }
-/* #colPieChart
+#colPieChart
 {
-  padding-left: 80px;
-} */
+  height: 250px;
+  padding:0px;
+  position: relative;
+}
+.flot-base
+{
+  direction: ltr;
+  position: absolute;
+  width: 1589px;
+  height: 250px;
+
+}
 #dept1
 {
   width:40%;
