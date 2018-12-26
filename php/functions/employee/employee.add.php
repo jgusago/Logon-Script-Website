@@ -22,8 +22,12 @@ if ($count == 0){
 
 $insert = "INSERT INTO logonscript.tbl_employee (emp_id, emp_name, emp_login, emp_login2, dept, sub_dept) VALUES ('$id', '$name', '$l1', '$l2', '$dept', '$subdept')"
 
-$db->query($query);
+if($db->query($query)){
 echo "true";
+}
+else{
+  echo "Your Employee ID, or Login have been already used, please try again";
+}
 
 }
 else{

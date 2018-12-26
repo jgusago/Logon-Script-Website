@@ -1,6 +1,6 @@
 <?php
 $dbname = "logonscript";
-$hostip = "172.16.60.202";
+$hostip = "172.16.31.39";
 $user = "administrator";
 $password = "Agsmc999";
 
@@ -13,4 +13,4 @@ $conn = mysqli_connect($hostip, $user, $password, $dbname);
 if(!$conn){
   trigger_error("NO CONNECTION");
 }
-?>
+    ?>

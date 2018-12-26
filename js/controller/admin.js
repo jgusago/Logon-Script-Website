@@ -5,7 +5,6 @@ function load(){
     DSHBRDbtnsCompLogs();
     NAVBARNotification();
     Departmentlist("department");
-    ALERTcall("success","asdasdhkasljdiosahdkasdgbsahdashgdkbasgdkjsabvdiuasdkhgvsaidhasibhdoasnbdusahdiohsauidyhjkashbduioashgdg");
     Dashboard();
     PieChart();
 }
@@ -1563,9 +1562,6 @@ function addemployeesubmit(){
     }
 
   });
-
-  ALERTcall("success","id:"+id+"<br>name:"+name+"<br>l1:"+l1+"<br>l2:"+l2+"<br>depr:"+dept+"<br>subdept:"+subdept);
-
   return false;
 
 }
