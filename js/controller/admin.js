@@ -732,8 +732,7 @@ function adddepartment(){
     createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch or Add Department");
     createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
     Departmentlist(branchid);
-    createnewElement(option, select.newelement, "option", [],["value:Select Department","hidden:true","selected:selected"], "Select Department");
-    createnewElement(option, select.newelement, "option", [],["value:root"], "New Branch");
+    createnewElement(option, select.newelement, "option", [],["value:root","selected:selected"], "New Branch");
     createnewElement(dvd,  fg4.newelement, "div", ["dropdown-divider"],[],"");
 
     //Path
@@ -1457,4 +1456,27 @@ function BRNCHVWdelete(id)
   createnewElement(warningtxtbld, warning.newelement, "h5", [], [], "Please be reminded!!");
   createnewElement(warningtxt, warning.newelement, "p", [], [], "The sub department under this branch/department will also be deleted. Do you wish to continue?");
 
+  var divp = [], divrw = [], divl = [], divr = [], cancel = [], deletebtn = [];
+
+  createnewElement(divp, cf, "div", ["container"], [], "");
+  createnewElement(divrw, divp.newelement, "div", ["row"], [],"");
+
+  createnewElement(divl, divrw.newelement, "div", ["col-sm"], [], "");
+    createnewElement(deletebtn, divl.newelement, "button", ["btn","btn-danger", "btn-block"], ["onClick:branchdelete(\""+id+"\")"], "delete");
+
+  createnewElement(divr, divrw.newelement, "div", ["col-sm"], [], "");
+    createnewElement(cancel, divr.newelement, "button", ["btn","btn-secondary", "btn-block"], ["onClick:OVERLAYdisable()"], "cancel");
+}
+
+function branchdelete(id){
+
+  var tree_id = document.getElementById(id).getAttribute("tree_id");
+
+  $.post("php/functions/sttngs/settings.branch.view.delete.php",{tree_id:tree_id},function(data){
+    if (data == "success"){
+      ALERTcall("success","Successfully Deleted");
+      OVERLAYdisable();
+    }
+
+  });
 }
