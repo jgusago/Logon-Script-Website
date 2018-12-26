@@ -1279,5 +1279,23 @@ function BRNCHVWdelete(id){
   createnewElement(warningtxtbld, warning.newelement, "h5", [], [], "Please be reminded!!");
   createnewElement(warningtxt, warning.newelement, "p", [], [], "The sub department under this branch/department will also be deleted. Do you wish to continue?");
 
-  
+  var divp = [], divrw = [], divl = [], divr = [], cancel = [], deletebtn = [];
+
+  createnewElement(divp, cf, "div", ["container"], [], "");
+  createnewElement(divrw, divp.newelement, "div", ["row"], [],"");
+
+  createnewElement(divl, divrw.newelement, "div", ["col-sm"], [], "");
+    createnewElement(deletebtn, divl.newelement, "button", ["btn","btn-danger", "btn-block"], ["onClick:branchdelete(\""+id+"\")"], "delete");
+
+  createnewElement(divr, divrw.newelement, "div", ["col-sm"], [], "");
+    createnewElement(cancel, divr.newelement, "button", ["btn","btn-secondary", "btn-block"], ["onClick:OVERLAYdisable()"], "cancel");
+}
+
+function branchdelete(id){
+
+  var tree_id = document.getElementByID(id).getAttribute("tree_id");
+
+  $.post("",{tree_id:tree_id},function(data){
+
+  });
 }
