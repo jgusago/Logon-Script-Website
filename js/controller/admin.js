@@ -1269,12 +1269,46 @@ function Profiles()
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   divvalue.newelement.style.width = "600px";
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Change Password" );
+  createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Add New Employee" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
+
+
+  var form = [], fg = [], col = [], label = [], input = [], br = [];
+
+  createnewElement(form, cb, "form", [], [], "");
+  createnewElement(fg, form.newelement, "div", ["form-group"], ["onsubmit:return addemployeesubmit()"] , "");
+  createnewElement(label, fg.newelement, "label", [], ["for:insertemployeeid"], "Employee ID");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["type:Numbers","id:insertemployeeid","required:true"], "");
+
+  createnewElement(fg, form.newelement, "div", ["form-group"], [] , "");
+  createnewElement(label, fg.newelement, "label", [], ["for:insertemployeel2"], "Employee Name");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["type:text","id:insertemployeename","required:true"], "");
+
+  createnewElement(fg, form.newelement, "div", ["form-row"], [] , "");
+  createnewElement(col, fg.newelement, "div", ['col'], [], "");
+  createnewElement(label, col.newelement, "label", [], ["for:insertemployeel1"], "Employee Login");
+  createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeel1","required:true"], "");
+  createnewElement(col, fg.newelement, "div", ['col'], [], "");
+  createnewElement(label, col.newelement, "label", [], ["for:insertemployeel2"], "Employee Second Login");
+  createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeel2"], "");
+
+  createnewElement(fg, form.newelement, "div", ["form-row"], [] , "");
+  createnewElement(col, fg.newelement, "div", ['col'], [], "");
+  createnewElement(label, col.newelement, "label", [], ["for:insertemployeedept"], "Department");
+  createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeedept","required:true"], "");
+  createnewElement(col, fg.newelement, "div", ['col'], [], "");
+  createnewElement(label, col.newelement, "label", [], ["for:insertemployeesubdept"], "Sub Department");
+  createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeesubdept"], "");
+
+  createnewElement(br, form.newelement, "br", [], [], "");
+  createnewElement(fg, form.newelement, "div", ["form-group"], [] , "");
+  createnewElement(input, fg.newelement, "button", ["form-control", "btn", "btn-primary"], ["type:submit","id:insertemployeesubmit"], "Submit");
+
+  createnewElement(br, form.newelement, "br", [], [], "");
  }
 
 function ChangePass()
@@ -1503,11 +1537,17 @@ function branchdelete(id){
   });
 }
 
-function openaddemployee(){
-  OVERLAYenable();
+function addemployeesubmit(){
 
-  var ch = document.getElementById("mnch");
-  var cb = document.getElementById("mncb");
-  var cf = document.getElementById("mncf");
+  id = document.getElementById("insertemployeeid").value;
+  name = document.getElementById("insertemployeename").value;
+  l1 = document.getElementById("insertemployeel1").value;
+  l2 = document.getElementById("insertemployeel2").value;
+  dept = document.getElementById("insertemployeedept").value;
+  subdept = document.getElementById("insertemployeesubdept").value;
+
+  $.post("",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
+
+  });
 
 }
