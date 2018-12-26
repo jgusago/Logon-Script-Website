@@ -1309,7 +1309,7 @@ function Profiles()
 
   createnewElement(br, form.newelement, "br", [], [], "");
   createnewElement(fg, form.newelement, "div", ["form-group"], [] , "");
-  createnewElement(input, fg.newelement, "button", ["form-control", "btn", "btn-primary"], ["type:submit","id:insertemployeesubmit"], "Submit");
+  createnewElement(input, fg.newelement, "button", ["form-control", "btn", "btn-primary"], ["type:submit"], "Submit");
 
   createnewElement(br, form.newelement, "br", [], [], "");
  }
@@ -1542,15 +1542,26 @@ function branchdelete(id){
 
 function addemployeesubmit(){
 
-  id = document.getElementById("insertemployeeid").value;
-  name = document.getElementById("insertemployeename").value;
-  l1 = document.getElementById("insertemployeel1").value;
-  l2 = document.getElementById("insertemployeel2").value;
-  dept = document.getElementById("insertemployeedept").value;
-  subdept = document.getElementById("insertemployeesubdept").value;
 
-  $.post("php/functions/employee/employee.add.php",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
 
-  });
+  var cb = document.getElementById("mncb");
+  //
+  // id = document.getElementById("insertemployeeid").value;
+  // name = document.getElementById("insertemployeename").value;
+  // l1 = document.getElementById("insertemployeel1").value;
+  // l2 = document.getElementById("insertemployeel2").value;
+  // dept = document.getElementById("insertemployeedept").value;
+  // subdept = document.getElementById("insertemployeesubdept").value;
+
+  // $.post("php/functions/employee/employee.add.php",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
+  //
+  //
+  // });
+  //
+  // cb.innerHTML = "id:"+id+"<br>name:"+name+"<br>l1:"+l1+"<br>l2:"+l2+"<br>depr:"+dept+"<br>subdept:"+subdept;
+
+  cb.innerHTML = "wew";
+
+  return false;
 
 }
