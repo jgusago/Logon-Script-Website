@@ -34,11 +34,13 @@ foreach ($db->query($sql) as $row) {
   $existing = true;
 }
 if($existing == false){
-  $query = "INSERT INTO logonscript.tbl_tree (tree_name, tree_level, tree_parent, tree_filter) VALUES ('$dept', $length, '$parent', '$filter')";
+$query = "INSERT INTO logonscript.tbl_tree (tree_name, tree_level, tree_parent, tree_filter) VALUES ('$dept', $length, '$parent', '$filter')";
 $db->query($query);
 echo "true";
 
-$sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id) VALUES ('$AddDepartment', 'Department:".$dept.",Filter Department:".$filter."', NOW(), '$userid2')";
+$sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+
+VALUES ('$AddDepartment', 'Department:".$dept.",Filter Department:".$filter."', NOW(), '$userid2')";
 ($db->query($sqlqurey));
 
 }

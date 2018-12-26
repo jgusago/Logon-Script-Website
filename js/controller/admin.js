@@ -5,7 +5,7 @@ function load(){
     DSHBRDbtnsCompLogs();
     NAVBARNotification();
     Departmentlist("department");
-    ALERTcall("success","asdasdhkasljdiosahdkasdgbsahdashgdkbasgdkjsabvdiuasdkhgvsaidhasibhdoasnbdusahdiohsauidyhjkashbduioashgdg");
+    ALERTshow();
     Dashboard();
     PieChart();
 }
@@ -863,7 +863,7 @@ function ALERTcall(value,data){
 
   var alertwindow = document.getElementById("alertwindow");
   var div = [], content = [], buttondiv = [], button = [], span = [], i = [];
-  createnewElement(div, alertwindow, "div", ["alert","alert-"+value,"alert-dismissible","fade","show","alert-content"],["role:alert"],"");
+  createnewElement(div, alertwindow, "div", ["alert","alert-"+value,"alert-dismissible","fade","show"],["role:alert"],"");
   createnewElement(content, div.newelement,"div",[],[],"");
   content.newelement.innerHTML = data;
   content.newelement.style.padding = "0px 50px 0px 0px";
@@ -872,10 +872,10 @@ function ALERTcall(value,data){
   createnewElement(span, button.newelement,"span",[],["aria-hidden:true"],"");
   createnewElement(i, span.newelement, "i", ["fa","fa-times"],["aria-hidden:true"],"");
 
-    // setTimeout(function(){
-    //   alertwindow.removeChild(div.newelement);
-    //   ALERThide();
-    // }, 3000);
+  setTimeout(function(){
+    alertwindow.removeChild(div.newelement);
+    ALERThide();
+  }, 3000);
 
 }
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
@@ -1279,8 +1279,8 @@ function Profiles()
 
   var form = [], fg = [], col = [], label = [], input = [], br = [], select = [], option = [];
 
-  createnewElement(form, cb, "form", [], ["onsubmit:return addemployeesubmit()"], "");
-  createnewElement(fg, form.newelement, "div", ["form-group"], [] , "");
+  createnewElement(form, cb, "form", [], [], "");
+  createnewElement(fg, form.newelement, "div", ["form-group"], ["onsubmit:return addemployeesubmit()"] , "");
   createnewElement(label, fg.newelement, "label", [], ["for:insertemployeeid"], "Employee ID");
   createnewElement(input, fg.newelement, "input", ["form-control"], ["type:Numbers","id:insertemployeeid","required:true"], "");
 
@@ -1542,29 +1542,25 @@ function branchdelete(id){
 
 function addemployeesubmit(){
 
+
+
   var cb = document.getElementById("mncb");
+  //
+  // id = document.getElementById("insertemployeeid").value;
+  // name = document.getElementById("insertemployeename").value;
+  // l1 = document.getElementById("insertemployeel1").value;
+  // l2 = document.getElementById("insertemployeel2").value;
+  // dept = document.getElementById("insertemployeedept").value;
+  // subdept = document.getElementById("insertemployeesubdept").value;
 
-  id = document.getElementById("insertemployeeid").value;
-  name = document.getElementById("insertemployeename").value;
-  l1 = document.getElementById("insertemployeel1").value;
-  l2 = document.getElementById("insertemployeel2").value;
-  dept = document.getElementById("insertemployeedept").value;
-  subdept = document.getElementById("insertemployeesubdept").value;
+  // $.post("php/functions/employee/employee.add.php",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
+  //
+  //
+  // });
+  //
+  // cb.innerHTML = "id:"+id+"<br>name:"+name+"<br>l1:"+l1+"<br>l2:"+l2+"<br>depr:"+dept+"<br>subdept:"+subdept;
 
-  $.post("php/functions/employee/employee.add.php",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
-
-    if(data == "true"){
-      ALERTcall("success","Employee have been registered!!");
-      EmployeeList();
-      OVERLAYdisable();
-    }
-    else{
-      ALERTcall("danger",data);
-    }
-
-  });
-
-  ALERTcall("success","id:"+id+"<br>name:"+name+"<br>l1:"+l1+"<br>l2:"+l2+"<br>depr:"+dept+"<br>subdept:"+subdept);
+  cb.innerHTML = "wew";
 
   return false;
 
