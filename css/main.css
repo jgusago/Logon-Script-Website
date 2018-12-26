@@ -228,7 +228,9 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 
 .content-wrapper {
   overflow-x: hidden;
-  background: white; }
+  background: #f0eeee52;
+  /* white;  */
+}
   @media (min-width: 992px) {
     .content-wrapper {
       margin-left: 250px; } }
@@ -254,6 +256,18 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 #PassLbl
 {
   color:white;
+}
+.glyphicon-eye-open
+{
+  display:none;
+  right: 15px;
+  position: absolute;
+  top: 12px;
+  cursor:pointer;
+}
+#changeRow
+{
+  margin-bottom: 10px;
 }
 #modalheader
 {
@@ -283,10 +297,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
-}
-li a.active
-{
-  background: #8dc85e;
+    background-color: #2f5109ad; 
 }
 #UserAccountupdate
 {
@@ -332,6 +343,11 @@ li a.active
 {
   padding:10px;
 }
+#dshbrdEdit
+{
+  background-color: transparent;
+  border-bottom: 1px solid rgba(24,28,33,0.06);
+}
 .modal-footer
 {
   display: flex;
@@ -339,6 +355,7 @@ li a.active
   justify-content: center;
   padding: 15px;
   border-top: 1px solid #e9ecef;
+  background-color: #2f5109ad;
 }
 .modal-body
 {
@@ -510,13 +527,92 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   margin-top: -20px;
 }
+#resetpw
+{
+  margin-top:-10px;
+}
+#btnShowMore
+{
+  float: right;
+}
+.card-header-title
+{
+  color:black;
+}
 #chLabel
 {
-  /* font-family: Cambria; */
   letter-spacing: 5px;
   color:#ffffff;
 }
+#dshbrdFluid
+{
+  padding-top:20px;
+}
+#dshbrdCards
+{
+  margin-left:-20px;
+}
+#dshbrdCounts
+{
+  font-weight: 600;
+}
+.fa-upload
+{
+  font-size:20px;
+}
+.fa-users
+{
+  font-size:20px;
+}
+.fa-desktop
+{
+  font-size:20px;
+}
+.fa-exclamation
+{
+  font-size:20px;
+}
+#dshbrdLbl
+{
+  font-weight: 500;
+}
+.progress
+{
+  margin-bottom: 10px;
+}
+/* #colPieChart
+{
+  padding-left: 80px;
+} */
+#dept1
+{
+  width:40%;
+}
+#dept2
+{
+  width:70%;
+}
+#dept3
+{
+  width:5%;
+}
+#dept4
+{
+  width:0%;
+}
+#dept5
+{
+  width:5%;
+}
+#dept6
+{
+  width:0%;
+}
 #lblPositions
+{
+  width: 300px;
+}
+#lblPass
 {
   width: 300px;
 }
@@ -582,6 +678,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
 }
+#exampleModalLabel
+{
+  color:white;
+}
 #dtitle
 {
   font-family: Arial, Helvetica, sans-serif;
@@ -589,6 +689,8 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 #dtitle2
 {
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: #5e5f61;
 }
 .card-header
 {

@@ -6,6 +6,8 @@ function load(){
     NAVBARNotification();
     Departmentlist("department");
     ALERTshow();
+    Dashboard();
+    PieChart();
 }
 
 /* Buttons */
@@ -261,10 +263,11 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true"], "");
 
-  createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
-  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "Reset password");
-  resetpwd.innerHTML = "Reset passsword";
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "");
+  var txt = documnent.getElementById("resetPass");
+  txt.innerHTML = "Reset password";
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -457,6 +460,153 @@ function DSHBRDLogsHistory()
 {
   document.getElementById("dtitle").innerHTML = "Reports";
   document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
+}
+
+function Dashboard()
+{
+  var contentview = document.getElementById("contentview");
+  contentview.innerHTML = "";
+
+  var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [], divDate =[], divCol = [], divdates = [], small = [],
+  divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
+  divColcard2 = [], divcard2 = [], divcardBody2 = [], divItems2 = [], divIcon2 = [], divml2 = [], divText2 = [], divcount2 = [],
+  divColcard3 = [], divcard3 = [], divcardBody3 = [], divItems3 = [], divIcon3 = [], divml3 = [], divText3 = [], divcount3 = [],
+  divColcard4 = [], divcard4 = [], divcardBody4 = [], divItems4 = [], divIcon4 = [], divml4 = [], divText4 = [], divcount4 = [],
+  txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
+  txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
+  txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
+  txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
+  txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
+  txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[]
+  
+  divcol2 = [], h4pie = [], hrDshbrd1 =[], div = [], canvas = [];
+
+  document.getElementById("dtitle").innerHTML = "Dashboard";
+  document.getElementById("dtitle2").innerHTML = "My Dashboard";
+
+  createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
+  createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
+  
+  // Date
+  createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
+  createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
+  createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
+  createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
+
+  // Cards
+  createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
+  createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
+  createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon, divItems.newelement, "div", ["fa", "fa-exclamation", "display-4", "text-danger", "aria-hidden:true"], [], "");
+  createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText, divml.newelement, "div", ["text-muted"], [], "End Task Units");
+  createnewElement(divcount, divml.newelement, "div", [], ["id:dshbrdCounts"], "6");
+
+  createnewElement(divColcard2, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
+  createnewElement(divcard2, divColcard2.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody2, divcard2.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems2, divcardBody2.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon2, divItems2.newelement, "div", ["fa", "fa-upload", "display-4", "text-warning", "aria-hidden:true"], [], "");
+  createnewElement(divml2, divItems2.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText2, divml2.newelement, "div", ["text-muted"], [], "Old Agent Verison");
+  createnewElement(divcount2, divml2.newelement, "div", [], ["id:dshbrdCounts"], "143");
+
+  createnewElement(divColcard3, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
+  createnewElement(divcard3, divColcard3.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody3, divcard3.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems3, divcardBody3.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon3, divItems3.newelement, "div", ["fa", "fa-desktop", "display-4", "text-primary", "aria-hidden:true"], [], "");
+  createnewElement(divml3, divItems3.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText3, divml3.newelement, "div", ["text-muted"], [], "Logonscript ");
+  createnewElement(divcount3, divml3.newelement, "div", [], ["id:dshbrdCounts"], "217");
+
+  createnewElement(divColcard4, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
+  createnewElement(divcard4, divColcard4.newelement, "div", ["card", "mb-4"], [], "");
+  createnewElement(divcardBody4, divcard4.newelement, "div", ["card-body"], [], "");
+  createnewElement(divItems4, divcardBody4.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  createnewElement(divIcon4, divItems4.newelement, "div", ["fa", "fa-users", "display-4", "text-default", "aria-hidden:true"], [], "");
+  createnewElement(divml4, divItems4.newelement, "div", ["ml-3"], [], "");
+  createnewElement(divText4, divml4.newelement, "div", ["text-muted"], [], "Users");
+  createnewElement(divcount4, divml4.newelement, "div", [], ["id:dshbrdCounts"], "13");
+
+
+  // Progress bar
+  createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
+  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
+  createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
+  createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
+
+  createnewElement(txtdept, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Marvin(IT)");
+  createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
+  createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
+
+  createnewElement(txtdept1, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Marvin(MAIN)");
+  createnewElement(spanCount1, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
+  createnewElement(divProgress1, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
+
+  createnewElement(txtdept2, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(QY)");
+  createnewElement(spanCount2, divcol.newelement, "span", ["pull-right", "strong"], [], "3");
+  createnewElement(divProgress2, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar2, divProgress2.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:3", "aria-valuemin:0", "ariavaluemax:100", "id:dept3"], "1%");
+
+  createnewElement(txtdept3, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(LH)");
+  createnewElement(spanCount3, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
+  createnewElement(divProgress3, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar3, divProgress3.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept4"], "0%");
+
+  createnewElement(txtdept4, divcol.newelement, "label", [], ["id:dshbrdLbl"], "6789(AE)");
+  createnewElement(spanCount4, divcol.newelement, "span", ["pull-right", "strong"], [], "3");
+  createnewElement(divProgress4, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar4, divProgress4.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:3", "aria-valuemin:0", "ariavaluemax:100", "id:dept5"], "1%");
+
+  createnewElement(txtdept5, divcol.newelement, "label", [], ["id:dshbrdLbl"], "6789(L8)");
+  createnewElement(spanCount5, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
+  createnewElement(divProgress5, divcol.newelement, "div", ["progress"], [], "");
+  createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept6"], "0%");
+
+  // Pie Chart
+  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], ["id:colPieChart"], "");
+  createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
+  createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
+
+  createnewElement(div, divcol2.newelement, "div", [], [], "");
+  createnewElement(canvas, div.newelement, "canvas", [], ["height:100", "id:pieChart"], "");
+
+  var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
+
+  // Edit History
+  // createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
+  // createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
+  // createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
+  // createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
+  // createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
+  // createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
+  // createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
+
+  // createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
+  // createnewElement(tbl, divTable.newelement, "table", ["table", "card-table"], [], "");
+  // createnewElement(tblHeader, tbl.newelement, "thead", [], [], "");
+
+}
+
+function PieChart()
+{
+  var ctx = document.getElementById("pieChart").getContext('2d');
+  var pieChart = new Chart(ctx ,
+    {
+      type: 'pie',
+      data:
+      {
+        labels:["Marvin(IT)", "Marvin(MAIN)", "Pacifica(QY)", "Pacifica(LH)", "6789(L8)", "Pacifica(AE)"],
+        datasets: [{backgroundColor: ["#2ecc71", "#e74c3c", "#34495e", "#e74c3c","#34495e"],
+        data:[32,70,3,0,3,0]
+        }]
+      }
+    });
 }
 
 function DSHBRDContentBranchSettings()
@@ -1104,7 +1254,7 @@ function Profiles()
     createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
     var button = [];
-    createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button"],"Update Profile");
+    createnewElement(button, card.foot, "button", ["btn","btn-default"],[],"Update Profile");
 }
 
 function ChangePass()
@@ -1115,7 +1265,11 @@ function ChangePass()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [];
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [],
+  divbody = [], divcol = [] , lblCurPass = [], divcol1 = [], inputCurPass =[], spanCurPass = [],
+  divbody2 = [], divcol2 = [], lblNewPass = [], divcols2 = [], inputNewPass = [], spanNewPass = [],
+  divbody3 = [], divcol3 = [], lblConfirmPass = [], divcols3 = [], inputConfirmPass = [], spanConfirmPass = [],
+  divbody4 = [], divcol4 = [], lblButton = [], divcols4 = [], btnUpdatePass = [];
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -1128,9 +1282,32 @@ function ChangePass()
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
+  createnewElement(divbody, cb, "div", ["row"], ["id:changeRow"], "");
+  createnewElement(divcol, divbody.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
+  createnewElement(lblCurPass, divcol.newelement, "label", [], ["id:lblEid"], "Current Password");
+  createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "onkeyup:ShowPass()");
+  createnewElement(spanCurPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
+  
+  createnewElement(divbody2, cb, "div", ["row"], ["id:changeRow"], "");
+  createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
+  createnewElement(lblNewPass, divcol2.newelement, "label", [], ["id:lblEid"], "New Password");
+  createnewElement(divcols2, divbody2.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "");
+  createnewElement(spanNewPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
 
+  createnewElement(divbody3, cb, "div", ["row"], ["id:changeRow"], "");
+  createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
+  createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "Confirm New Password");
+  createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "");
+  createnewElement(spanConfirmPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
 
-
+  createnewElement(divbody4, cb, "div", ["row"], ["id:changeRow"], "");
+  createnewElement(divcol4, divbody4.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
+  createnewElement(lblButton, divcol4.newelement, "label", [], ["id:lblEid"], "");
+  createnewElement(divcols4, divbody4.newelement, "div", ["col-md-8", "col-6"], [], "");
+  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-warning"], ["id:lblPass"], "Update Password");
 
 }
 
@@ -1264,7 +1441,8 @@ function BRNCHVWeditconfirm(name,filter){
   }
 }
 
-function BRNCHVWdelete(id){
+function BRNCHVWdelete(id)
+{
   OVERLAYenable();
 
   var ch = document.getElementById("mnch");
@@ -1278,6 +1456,7 @@ function BRNCHVWdelete(id){
   createnewElement(warning, cb, "div", ["alert","alert-danger"], [], "");
   createnewElement(warningtxtbld, warning.newelement, "h5", [], [], "Please be reminded!!");
   createnewElement(warningtxt, warning.newelement, "p", [], [], "The sub department under this branch/department will also be deleted. Do you wish to continue?");
+<<<<<<< HEAD
 
   var divp = [], divrw = [], divl = [], divr = [], cancel = [], deletebtn = [];
 
@@ -1298,4 +1477,7 @@ function branchdelete(id){
   $.post("",{tree_id:tree_id},function(data){
 
   });
+=======
+>>>>>>> 389cb8366fd8226d6d5fea0d5e75754ff16bdfb8
 }
+
