@@ -24,6 +24,10 @@ $path = explode("/",$path);
 $length = sizeof($path)+1;
 $parent = $path[$length-2];
 }
+if ($parent == ''){
+  $parent = 'root';
+  $length = 1;
+}
 $existing = false;
 $sql = "SELECT * FROM logonscript.tbl_tree WHERE tree_name LIKE '$dept' AND tree_parent LIKE '$parent'";
 foreach ($db->query($sql) as $row) {
