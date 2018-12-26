@@ -569,12 +569,12 @@ function Dashboard()
   createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept6"], "0%");
 
   // Pie Chart
-  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], ["id:colPieChart"], "");
+  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], [], "");
   createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
   createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
 
-  createnewElement(div, divcol2.newelement, "div", [], [], "");
-  createnewElement(canvas, div.newelement, "canvas", [], ["height:100", "id:pieChart"], "");
+  createnewElement(div, divcol2.newelement, "div", [], ["id:colPieChart"], "");
+  createnewElement(canvas, div.newelement, "canvas", ["flot-base"], ["width: 1589","height: 250", "id:pieChart"], "");
 
   var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
 
