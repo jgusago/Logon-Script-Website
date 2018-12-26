@@ -478,7 +478,7 @@ function Dashboard()
   txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
   txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
   txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[]
-  
+
   divcol2 = [], h4pie = [], hrDshbrd1 =[], div = [], canvas = [];
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
@@ -486,7 +486,7 @@ function Dashboard()
 
   createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
-  
+
   // Date
   createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
   createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
@@ -1288,7 +1288,7 @@ function ChangePass()
   createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
   createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "onkeyup:ShowPass()");
   createnewElement(spanCurPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
-  
+
   createnewElement(divbody2, cb, "div", ["row"], ["id:changeRow"], "");
   createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblNewPass, divcol2.newelement, "label", [], ["id:lblEid"], "New Password");
@@ -1456,28 +1456,5 @@ function BRNCHVWdelete(id)
   createnewElement(warning, cb, "div", ["alert","alert-danger"], [], "");
   createnewElement(warningtxtbld, warning.newelement, "h5", [], [], "Please be reminded!!");
   createnewElement(warningtxt, warning.newelement, "p", [], [], "The sub department under this branch/department will also be deleted. Do you wish to continue?");
-<<<<<<< HEAD
 
-  var divp = [], divrw = [], divl = [], divr = [], cancel = [], deletebtn = [];
-
-  createnewElement(divp, cf, "div", ["container"], [], "");
-  createnewElement(divrw, divp.newelement, "div", ["row"], [],"");
-
-  createnewElement(divl, divrw.newelement, "div", ["col-sm"], [], "");
-    createnewElement(deletebtn, divl.newelement, "button", ["btn","btn-danger", "btn-block"], ["onClick:branchdelete(\""+id+"\")"], "delete");
-
-  createnewElement(divr, divrw.newelement, "div", ["col-sm"], [], "");
-    createnewElement(cancel, divr.newelement, "button", ["btn","btn-secondary", "btn-block"], ["onClick:OVERLAYdisable()"], "cancel");
 }
-
-function branchdelete(id){
-
-  var tree_id = document.getElementByID(id).getAttribute("tree_id");
-
-  $.post("",{tree_id:tree_id},function(data){
-
-  });
-=======
->>>>>>> 389cb8366fd8226d6d5fea0d5e75754ff16bdfb8
-}
-
