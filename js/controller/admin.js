@@ -1258,6 +1258,8 @@ function Profiles()
 
  function AddEmployee()
  {
+  OVERLAYenable();
+  
   var ch = document.getElementById("mnch");
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
