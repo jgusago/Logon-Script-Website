@@ -260,15 +260,10 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
 
-  createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "id:passwordmirror", "hidden:true"], "");
-
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
-  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass(),passmirrorvalue()"], "");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
   resetpwd.newelement.innerHTML = "Reset password";
-
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -1587,10 +1582,6 @@ function resetPass(){
 		}
 }
 
-function passmirrorvalue(){
-  document.getElementById('passwordmirror').value = document.getElementById('passwordupdate').value;
-}
-
 function DSHBRDAgentVersion(){
 
 
@@ -1713,8 +1704,32 @@ function deleteagentversion(){
   createnewElement(span, value.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
-  $.post("php/functions/sttngs/settings.agent.version.get.php", function(data){
-    
+  var form = [], label = [], select = [], option = [], input = [];
+
+  createnewElement(form, cb, "form", [] ,["onsubmit:return deletecommitagentversion()"], "");
+    createnewElement(div, form.newelement, "div", ["form-group"], [], "");
+    createnewElement(label, div.newelement, "label", [], [], "Select the Version you want to delete");
+    createnewElement(select, div.newelement, "select", ["form-control"], ["id:deleteagentversiondata"], "");
+    createnewElement(input, div.newelement, "br", [], [], "");
+
+    createnewElement(div, form.newelement, "div", ["form-group"], [], "");
+    createnewElement(input, div.newelement, "input", ["btn","btn-primary", "btn-block"], ["type:submit"], "Submit");
+    createnewElement(input, div.newelement, "br", [], [], "");
+
+
+  $.post("php/functions/sttngs/settings.agent.version.php", function(data){
+    data = data.split("#");
+    for(var i = 1; i < data.length; i++){
+      value = data[i].split("|");
+      createnewElement(option, select.newelement, "option", [], ["value:"+value[1]], value[1]);
+    }
   });
+
+}
+
+function deletecommitagentversion(){
+
+  version = document.getElementById("deleteagentversiondata").value;
+  
 
 }
