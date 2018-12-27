@@ -260,14 +260,14 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
 
+  createnewElement(divbody8, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label8, divbody8.newelement, "label", [],["id:editLbl"],"");
+  createnewElement(inputpwd, divbody8.newelement, "input", ["form-control"], ["type:text", "id:passwormirror"], "");
+
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
   createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
   resetpwd.newelement.innerHTML = "Reset password";
-
-  createnewElement(divbody8, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label8, divbody8.newelement, "label", [],["id:editLbl"],"");
-  createnewElement(inputpwd, divbody8.newelement, "input", ["form-control"], ["type:text", "id:passwormirror"], "");
 
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
