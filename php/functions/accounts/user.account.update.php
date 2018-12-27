@@ -8,7 +8,6 @@ $position = $_POST['position'];
 $role = $_POST['role'];
 $status = $_POST['status'];
 $password = $_POST['password'];
-$password = $_POST['password2'];
 
 $userid = $_POST["userid"];
 $EditUser = "Edit User";
@@ -69,11 +68,9 @@ if($oldname !== $name && $name !== ""){
      $namestat = true;
  }
 
- //if ($oldpassword !== md5(sha1($password)))
- if ($oldpassword != $password)
+ if ($oldpassword !== md5(sha1($password)))
  {
-        //$password =  md5(sha1($password));
-         $password =  md5(sha1($_POST["password2"]));  
+         $password =  md5(sha1($password));
          $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
          $db->query($query);
          $namestat = true;
