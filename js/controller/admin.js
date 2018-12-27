@@ -1203,7 +1203,7 @@ function Profiles()
     divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
     divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
 
-    createCard(card, contentview, [], []);
+    createCard(card, contentview, [""], []);
     createnewElement([],card.head,"div",[],["id:chLabel"],"ACCOUNT INFORMATION");
 
     createnewElement(cbd, card.body,"div", ["row"], [], "");
@@ -1325,7 +1325,7 @@ function ChangePass()
   divbody = [], divcol = [] , lblCurPass = [], divcol1 = [], inputCurPass =[], spanCurPass = [],
   divbody2 = [], divcol2 = [], lblNewPass = [], divcols2 = [], inputNewPass = [], spanNewPass = [],
   divbody3 = [], divcol3 = [], lblConfirmPass = [], divcols3 = [], inputConfirmPass = [], spanConfirmPass = [],
-  divbody4 = [], divcol4 = [], lblButton = [], divcols4 = [], btnUpdatePass = [];
+  divbody4 = [], divcol4 = [], lblButton = [], divcols4 = [], btnUpdatePass = [], btnCancel = [];
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -1363,7 +1363,8 @@ function ChangePass()
   createnewElement(divcol4, divbody4.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblButton, divcol4.newelement, "label", [], ["id:lblEid"], "");
   createnewElement(divcols4, divbody4.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-warning"], ["id:lblPass"], "Update Password");
+  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-warning"], ["id:lblPass"], "Save Changes");
+  createnewElement(btnCancel, divcols4.newelement, "button", ["btn", "btn-default"], ["id:lblPass"], "Cancel");
 
 }
 
