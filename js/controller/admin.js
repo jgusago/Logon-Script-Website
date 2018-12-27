@@ -261,7 +261,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
 
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
-  createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
+  createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:false"], "");
 
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
