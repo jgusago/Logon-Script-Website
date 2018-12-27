@@ -1729,7 +1729,20 @@ function deleteagentversion(){
 
 function deletecommitagentversion(){
 
-  version = document.getElementById("deleteagentversiondata").value;
-  
+  var version = document.getElementById("deleteagentversiondata").value;
 
+  $.post("php/functions/sttngs/settings.agent.version.delete.php",{version:version},function(data){
+
+    if(data == "success"){
+      ALERTcall("success","Version have been added");
+      OVERLAYdisable();
+    }
+    else{
+      ALERTcall("danger",data);
+    }
+
+  });
+
+
+  return false;
 }
