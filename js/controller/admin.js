@@ -262,7 +262,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
 
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "id:passwordmirror"], "");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "id:passwordmirror", "hidden:true"], "");
 
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
