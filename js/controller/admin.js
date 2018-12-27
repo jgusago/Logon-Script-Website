@@ -1588,7 +1588,7 @@ function resetPass(){
 }
 
 function passmirrorvalue(){
-  
+  document.getElementById('passwordmirror').value = document.getElementById('password').value;
 }
 
 function DSHBRDAgentVersion(){
