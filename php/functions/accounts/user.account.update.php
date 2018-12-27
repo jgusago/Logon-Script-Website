@@ -8,6 +8,7 @@ $position = $_POST['position'];
 $role = $_POST['role'];
 $status = $_POST['status'];
 $password = $_POST['password'];
+$password = $_POST['password2'];
 
 $userid = $_POST["userid"];
 $EditUser = "Edit User";
