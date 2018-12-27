@@ -1,7 +1,10 @@
 <?php
+session_start();
 
 $version = $_POST['version'];
 $validation = $_POST['validation'];
+$AddVersion = "Add Version";
+$userid2 = $_SESSION['userid'];
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
@@ -14,6 +17,11 @@ foreach ($db->query($query) as $row) {
 if($count == 0){
   $query = "INSERT INTO logonscript.tbl_agent_version (type, version) VALUES ('$validation', '$version')";
   if($db->query($query)){
+
+  $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+  VALUES ('$AddVersion', 'Version:".$version.", Validation:".$validation."', NOW(), '$userid2')";
+  ($db->query($sqlqurey));
+
     echo "success";
   }
   else{

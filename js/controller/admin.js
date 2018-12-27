@@ -260,6 +260,8 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
 
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "id:password2"], "");
+
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
   createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
@@ -1582,6 +1584,11 @@ function resetPass(){
 		}
 }
 
+function mirrorFunction()
+	{
+		document.getElementById('password2').value = document.getElementById('passwordupdate').value;
+	}
+
 function DSHBRDAgentVersion(){
 
 
@@ -1676,6 +1683,7 @@ function commitaddagentversion(){
       if(data == "success"){
         ALERTcall("success","Version have been added");
         OVERLAYdisable();
+        DSHBRDAgentVersion();
       }
       else{
         ALERTcall("danger",data);
@@ -1736,6 +1744,7 @@ function deletecommitagentversion(){
     if(data == "success"){
       ALERTcall("success","Version have been added");
       OVERLAYdisable();
+      DSHBRDAgentVersion();
     }
     else{
       ALERTcall("danger",data);
