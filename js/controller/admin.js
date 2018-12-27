@@ -1203,7 +1203,7 @@ function Profiles()
     divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
     divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
 
-    createCard(card, contentview, [""], []);
+    createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],["id:chLabel"],"ACCOUNT INFORMATION");
 
     createnewElement(cbd, card.body,"div", ["row"], [], "");
