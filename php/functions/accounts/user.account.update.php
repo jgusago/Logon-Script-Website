@@ -7,7 +7,7 @@ $department = $_POST['department'];
 $position = $_POST['position'];
 $role = $_POST['role'];
 $status = $_POST['status'];
-$password = $_POST['password'];
+$password = $_POST['passwordmirror'];
 
 $userid = $_POST["userid"];
 $EditUser = "Edit User";
