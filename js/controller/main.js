@@ -1143,6 +1143,7 @@ $.post("php/functions/session/session.confirm.php",function(data){
       case "SUPER ADMIN":
         break;
       case "ADMINISTRATOR":
+        window.location.assign("/.admin.html");
         break;
       case "STAFF":
         window.location.assign("/.user.html");
