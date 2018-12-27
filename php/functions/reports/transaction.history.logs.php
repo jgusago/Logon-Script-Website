@@ -1,41 +1,43 @@
 <?php
-
-session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-	echo "Transcat Name|Transact Details|Transact Date|User";
+session_start();
+echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time";
+if($_SESSION['role'] != "ADMINISTRATOR")
+{
+    $query = "SELECT * FROM logonscript.tbl_history";
 
-	if ($_SESSION['role'] == "ADMINISTRATOR") 
-	{
+    foreach ($db->query($query) as $row) 
+    {
 
-		$sql = "SELECT transact_name, transact_details, transact_date, user_id FROM tbl_history";
+        $transact_name = $row['transact_name'];
+        $transact_details = $row['transact_details'];
+        $transact_date = $row['transact_date'];
+        $user_id = $row['user_id'];
 
-		foreach ($db->query($sql) as $row) 
-		{
+        echo "#$transact_name|$transact_details|$transact_details|$user_id";
 
-			$userid = $row['transact_name'] ?: 'null';
-			$name = $row['transact_details'] ?: 'null';
-			$department = $row['transact_date'] ?: 'null';
-			$position = $row['user_id'] ?: 'null';
+    }
+}
+else
+{
+    // $dept = $_SESSION['department'];
+    // $query2 = "SELECT * FROM logonscript.tbl_log_history where branch like '$dept'";
+    // foreach ($db->query($query2) as $row) {
 
-			echo "#$transact_name|$transact_details|$transact_date|$user_id";
-		}
-	}
-	else
-	{
-		$sqlquery = "SELECT transact_name, transact_details, transact_date, user_id FROM tbl_history";
+    //     $id = $row['userid'];
+    //     $ip = $row['ip_address'];
+    //     $services = $row['services'];
+    //     $branch = $row['branch'];
+    //     $time = $row['scan_time'];
+    //     $query4 = "SELECT hostname from logonscript.tbl_log WHERE ip_address LIKE '$ip'";
+    //     foreach ($db->query($query4) as $row) 
+    //     {
+    //         $hostname = $row['hostname'];
+    //     }
 
-		foreach ($db->query($sqlquery) as $row) 
-		{
+    //     echo "#$hostname|$id|$ip|$services|$branch|$time";
 
-			$userid = $row['transact_name'] ?: 'null';
-			$name = $row['transact_details'] ?: 'null';
-			$department = $row['transact_date'] ?: 'null';
-			$position = $row['user_id'] ?: 'null';
-
-			echo "#$transact_name|$transact_details|$transact_date|$user_id";
-		}
-	}
-	
-	$db = null;
+    // }
+}
 ?>
