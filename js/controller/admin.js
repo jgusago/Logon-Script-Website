@@ -262,7 +262,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
 
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
-  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPassword"], "");
   resetpwd.newelement.innerHTML = "Reset password";
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
@@ -1565,7 +1565,7 @@ function addemployeesubmit(){
 }
 
 function resetPass(){
-  var x = document.getElementById("myCheck");
+  var x = document.getElementById("resetPassword");
 	if (x.type === "password")
 	{
 		x.type = "text";
