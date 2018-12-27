@@ -258,12 +258,17 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   //password
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true"], "");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
+
+  createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "id:passwordmirror", "hidden:true"], "");
 
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
-  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass(),passmirrorvalue()"], "");
   resetpwd.newelement.innerHTML = "Reset password";
+
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -1561,5 +1566,155 @@ function addemployeesubmit(){
 
   });
   return false;
+
+}
+
+function resetPass(){
+  var x = document.getElementById("resetpw");
+	if (x.type === "password")
+	{
+		x.type = "text";
+										}
+	else
+  var x = document.getElementById("passwordupdate");
+	if (x.type === "password")
+	{
+		x.type = "text";
+										}
+	else
+	{
+		x.type = "password";
+		}
+}
+
+function passmirrorvalue(){
+  document.getElementById('passwordmirror').value = document.getElementById('passwordupdate').value;
+}
+
+function DSHBRDAgentVersion(){
+
+
+    var contentview = document.getElementById("contentview");
+    contentview.innerHTML = "";
+
+    document.getElementById("dtitle").innerHTML = "Settings";
+    document.getElementById("dtitle2").innerHTML = "Agent Version";
+
+    tableid = idgenerator();
+    var card = [];
+    createCard(card, contentview, [], []);
+    createnewElement([],card.head,"div",[],[],"");
+
+    card.head.innerHTML = "Agent Version";
+
+    var table = [];
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
+
+    $.post("php/functions/sttngs/settings.agent.version.php",function(data){
+
+      data = data.split("#");
+      datalength = data.length;
+
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], table.head, [], [], "th", thfdata);
+      createTableContent([], table.foot, [], [], "th", thfdata);
+
+      for (var i = 1; i < datalength;i++){
+          newdata = data[i].split("|");
+          createTableContent([], table.body, [],[], "td", newdata);
+
+          }
+
+    });
+
+  var toolbar = [];
+  createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
+  var ig = [];
+  createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+  createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addagentversion()"], "Add new Version");
+
+  createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+  createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:deleteagentversion()"], "Delete Version");
+
+}
+
+function addagentversion(){
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var div = [], subdiv = [], value = [], span = [];
+
+  createnewElement(div, ch, "div", ["row"], [], "");
+  div.newelement.style.width = "600px";
+  createnewElement(subdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, subdiv.newelement, "h5", [], ["id:editHeader"],"Add new Version" );
+
+  createnewElement(subdiv, div.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(value, subdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, value.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  span.newelement.innerHTML = "&times;";
+
+  var form = [], fg = [], lbl = [], inp = [], br = [], select = [], opt = [];
+
+  createnewElement(form, cb, "form", [], ["onsubmit:return commitaddagentversion()"], "");
+    createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+      createnewElement(lbl, fg.newelement, "label", [], ["for:agentversion"], "Agent Version");
+      createnewElement(inp, fg.newelement, "input", ["form-control"], ["id:agentversion","placeholder:X.XXX","required:true"], "");
+    createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+      createnewElement(lbl, fg.newelement, "label", [], ["for:validation"], "Validation");
+      createnewElement(select, fg.newelement, "select", ["form-control"], ["id:validation"], "");
+        createnewElement(opt, select.newelement, "option", [], ["selected:selected", "value:valid"], "valid");
+        createnewElement(opt, select.newelement, "option", [], ["value:invalid"], "invalid");
+        createnewElement(br, form.newelement, "br", [], [], "");
+    createnewElement(fg, form.newelement,"div", ["form-group"], [], "");
+      createnewElement(inp, fg.newelement, "button", ["btn","btn-primary","btn-block"], [], "Submit");
+    createnewElement(br, form.newelement, "br", [], [], "");
+
+}
+function commitaddagentversion(){
+  var version = document.getElementById("agentversion").value;
+  var validation = document.getElementById("validation").value;
+    $.post("php/functions/sttngs/settings.agent.version.add.php",{version:version,validation,validation}, function(data){
+
+      if(data == "success"){
+        ALERTcall("success","Version have been added");
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger",data);
+      }
+    });
+
+  return false;
+}
+
+function deleteagentversion(){
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var div = [], subdiv = [], value = [], span = [];
+
+  createnewElement(div, ch, "div", ["row"], [], "");
+  div.newelement.style.width = "600px";
+  createnewElement(subdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, subdiv.newelement, "h5", [], ["id:editHeader"],"Add new Version" );
+
+  createnewElement(subdiv, div.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(value, subdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, value.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  span.newelement.innerHTML = "&times;";
+
+  $.post("php/functions/sttngs/settings.agent.version.get.php", function(data){
+    
+  });
 
 }
