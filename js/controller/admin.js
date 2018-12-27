@@ -264,6 +264,11 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
   createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
   resetpwd.newelement.innerHTML = "Reset password";
+
+  createnewElement(divbody8, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label8, divbody8.newelement, "label", [],["id:editLbl"],"");
+  createnewElement(inputpwd, divbody8.newelement, "input", ["form-control"], ["type:text", "id:passwormirror"], "");
+
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
