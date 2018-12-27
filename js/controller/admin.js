@@ -1678,6 +1678,7 @@ function commitaddagentversion(){
       if(data == "success"){
         ALERTcall("success","Version have been added");
         OVERLAYdisable();
+        DSHBRDAgentVersion();
       }
       else{
         ALERTcall("danger",data);
@@ -1738,6 +1739,7 @@ function deletecommitagentversion(){
     if(data == "success"){
       ALERTcall("success","Version have been added");
       OVERLAYdisable();
+      DSHBRDAgentVersion();
     }
     else{
       ALERTcall("danger",data);
