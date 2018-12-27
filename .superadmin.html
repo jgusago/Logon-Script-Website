@@ -21,12 +21,13 @@
   <link href="css/main.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="load()">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav" style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); background:#365b0d82;">
     <img class="nav-logo" src="iMonitor_Website/icons/sky_luster.png" height="50px" width="45px" />
     <a class="navbar-brand" href="#">Monitoring</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +37,7 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <!-- Dashboard -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href=".superadmin.html" id="a-home" onclick="myFucntion(this)">
+          <a class="nav-link" href="#" id="a-home" onclick="Dashboard()">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -44,31 +45,36 @@
 
         <!-- Graphs and Charts -->
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Graphs and Charts">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#DHSBRDRecords" data-parent="#exampleAccordion">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#DHSBRDRecords" id="Reports" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Reports</span>
           </a>
 
            <!-- Charts Collapse -->
            <ul class="sidenav-second-level collapse" id="DHSBRDRecords">
-              <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
+             <!-- Computer List -->
+              <li data="Computer List" id="DSHBRDRecordsComplist" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Tables">
+                  <a class="nav-link nav-link-collapse collapdatased collapsed" data-toggle="collapse" href="#COMPLISTlist" data-parent="#DHSBRDRecords" aria-expanded="false">Computer List</a>
+                  <ul class="sidenav-third-level collapse" id="COMPLISTlist" data-parent="#DSHBRDRecords" >
+                  </ul>
               </li>
-              <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item  generatebutton" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
+              <!-- Computer Logs -->
+              <li data="Computer Logs" id="DSHBRDRecordsComplogs" class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Computer Logs">
+                <a class="nav-link nav-link-collapse collapdatased collapsed" data-toggle="collapse" href="#COMPLOGSlist" data-parent="#DHSBRDRecords" aria-expanded="false">Computer Logs</a>
+                  <ul class="sidenav-third-level collapse" id="COMPLOGSlist" data-parent="#DSHBRDRecords" >
+                  </ul>
               </li>
               <!-- History -->
-              <li data="History" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="Branch Computer History">
-                
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseHistory" data-parent="#DHSBRDRecords">History</a>
-                <!-- <span class="nav-link-text">History</span> -->
-
-                <ul class="sidenav-second-level collapse" id="collapseHistory">
-                  <li>
-                      <a href="#" id="DSHBRDEditHistory" onclick="DSHBRDContent('DSHBRDEditHistory', 'DSHBRDEditHistory')" data="DSHBRDEditHistory">Edit History</a>
-                  </li>
-                  <li>
-                      <a href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('DSHBRDLogsHistory', 'DSHBRDLogsHistory')" data="DSHBRDLogsHistory">Computer Logs History</a>
-                  </li>
-                </ul>
+              <li data="DSHBRDRecordsHistory" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="History">
+                <a class="nav-link" href="#" id="DSHBRDRecordsHistory" onclick="DSHBRDContent('','DSHBRDRecordsHistory')" data="DSHBRDRecordsHistory">
+                  <span class="nav-link-text">History</span>
+                </a>
+              </li>
+              <!-- Computer logs history -->
+              <li class="nav-item" id="DSHBRDLogsHistory" data-toggle="tooltip" data-placement="right" title="LogsHistory">
+                <a class="nav-link" href="#" id="DSHBRDLogsHistory" onclick="DSHBRDContent('','DSHBRDLogsHistory')" data="DSHBRDLogsHistory">
+                  <span class="nav-link-text">Computer Logs History</span>
+                </a>
               </li>
               <!-- close -->
           </ul>
@@ -88,26 +94,26 @@
                 <a href="#"  id="DSHBRDEmployeeList" onclick="EmployeeList()" data="DSHBRDEmployeeList">Employee List</a>
             </li>
             <li>
-              <a href="#"  id="DSHBRDProfile" onclick="DSHBRDContent('','DSHBRDProfile')" data="DSHBRDProfile">Profile Settings</a>
+              <a href="#"  id="DSHBRDProfile" onclick="Profiles()" data="DSHBRDProfile">Profile Settings</a>
             </li>
           </ul>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View Settings">
-          <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#settings" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-cog"></i>
-            <span class="nav-link-text">Branch View Settings</span>  
+            <span class="nav-link-text">Settings</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="settings">
+            <li>
+              <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">Branch View Settings</a>
+            <li>
+              <a href="#"  id="DSHBRDContentAgentVersion" onclick="DSHBRDAgentVersion()" data="">Agent Version</a>
+            </li>
+          </ul>
         </li>
 
-          <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <a class="nav-link" href=".superadmin.html" id="a-home" onclick="myFucntion(this)"id="a-home" onclick="myFucntion(this)">
-              <i class="fa fa-fw fa-dashboard"></i>
-              <span class="nav-link-text">Branch View Settings</span>
-            </a>
-          </li>
-
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
+          <!-- <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch View">
               <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">Branch View</a>
             </li>
@@ -116,7 +122,6 @@
             </li>
           </ul>
         </li> -->
-
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
           <a class="nav-link" href="#">
@@ -134,18 +139,11 @@
       </ul>
       <ul class="navbar-nav ml-auto">
 
-
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="">
-          <input type="text" class="form-control">
-        </a>
-      </li> -->
-
         <!-- Messages -->
-        <!--
+
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-envelope"></i>
+            <i class="fa fa-fw fa-envelope" style="color: white;"></i>
             <span class="d-lg-none">Messages
               <span class="badge badge-pill badge-primary">12 New</span>
             </span>
@@ -177,12 +175,11 @@
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
-        -->
 
          <!-- Alerts -->
-         <li class="nav-item dropdown">
+         <li class="nav-item dropdown" style="margin-right: 20px;">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-bell">&nbsp;&nbsp;<label></label></i>
+            <i class="fa fa-fw fa-bell" style="color: white;">&nbsp;&nbsp;<label></label></i>
             <span class="d-lg-none">Alerts
               <span class="badge badge-pill badge-warning" id="NOTIFmbcount"></span>
             </span>
@@ -199,11 +196,14 @@
           </div>
         </li>
 
+        <!-- Divider -->
+        <li class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1" style="color:white; margin-top:10px;">|</li>
+
         <!-- Logout -->
-        <li class="nav-item dropdown" style="padding-right:90px;">
+        <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
-              <i id="faUser" class="fa fa-fw fa-user">Welcome:
-                <label id="NAVBARusernameID"></label>
+              <i id="faUser" class="fa fa-fw fa-user" style="color: white;">
+                <span class="px-1 mr-lg-2 ml-2 ml-lg-0">Welcome: <label id="NAVBARusernameID"></label></span>
               </i>
               <span class="d-lg-none"></span>
             </a>
@@ -229,6 +229,7 @@
     <!-- Content View -->
     <div class="container-fluid" id="contentview">
     </div>
+
     <!-- Overlay -->
     <div id="overlay" onclick="OVERLAYdisable();">
     </div>
@@ -240,11 +241,12 @@
 
       </div>
     </div>
-
     <div id="loaderdiv">
         <div class="lds-css ng-scope">
             <div style="width:100%;height:100%" class="lds-wedges"><div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div></div>
         </div>
+    </div>
+    <div id="alertwindow">
     </div>
 
     <!-- Progress Bar-->
@@ -267,24 +269,23 @@
       <div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true">
         <div class="modal-dialog modal-md" role="document">
           <div class="modal-content" >
-            <div class="modal-header text center">
-                <h4 class="modal-title" id="myModalLabel">User Registration</h4>
-                <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="padding:15px;">&times;</span></button>
+            <div class="modal-header text center" >
+                <h5 class="modal-title" id="editHeader">User Registration</h5>
+                <button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="padding:15px; color: white;">&times;</span></button>
             </div>
             <div class="modal-body mx-6">
               <div class="md-form mb-3">
-                  <label class="control-label">User ID</label>
+                  <label class="control-label" id="editLbl">User ID</label>
                 <input type="text" class="form-control" id="userid" name="userid" pattern="[0-9]{7}" required placeholder="ID Number" onkeypress="return isNumberKey(event)" maxlength="7"/>
-              </div> 
+              </div>
               <div class="md-form mb-3">
-                  <label class="control-label">Name</label>
+                  <label class="control-label" id="editLbl">Name</label>
                   <input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(event)" maxlength="30"/>
-              </div> 
+              </div>
               <div class="md-form mb-3">
-                  <label class="control-label">Department</label>
+                  <label class="control-label" id="editLbl">Department</label>
                   <select class="form-control " id="department" name="department" required>
-                    <option value="">--Select Department--</option>
-                    <option value="B2B">B2B</option>
+                    <option value="" selected="selected" hidden="true">--Select Department--</option>
                   </select>
 
 							<!-- FOR DEPARTMENT -->
@@ -295,18 +296,17 @@
               </script>
               <!-- END -->
 
-              </div> 
+              </div>
               <div class="md-form mb-3">
-                  <label class="control-label">Role</label>
-                  <select class="form-control " id="role" name="role" required> 
+                  <label class="control-label" id="editLbl">Role</label>
+                  <select class="form-control " id="role" name="role" required>
                     <option value="">--Select Role--</option>
-                    <option value="SUPER ADMIN">Super Admin</option>
                     <option value="ADMINISTRATOR">Administrator</option>
                     <option value="STAFF">Staff</option>
                   </select>
               </div>
               <div class="md-form mb-3">
-                  <label class="control-label">Status</label>
+                  <label class="control-label" id="editLbl">Status</label>
                   <select class="form-control" id="status" name="status" required>
                     <option value="">--Select Status--</option>
                     <option value="Active">Active</option>
@@ -314,12 +314,12 @@
                   </select>
               </div>
               <div class="md-form mb-3">
-                  <label class="control-label">Password</label>
-                  <input class="form-control" type="text" id="password" value="Aa123456" name="password" maxlength="16" disabled>
-              </div> 
+                  <label class="control-label" id="editLbl">Password</label>
+                  <input class="form-control" type="password" id="password" name="password" maxlength="8">
+              </div>
             </div>
             <div class="modal-footer d-flexjustify-content-center">
-              <input type="submit" class="btn btn-primary" value="Register" id="btnRegister" name="btnRegister">
+              <input type="submit" class="btn btn-default" value="Register" id="btnRegister" name="btnRegister">
             </div>
           </div>
         </div>
@@ -334,13 +334,13 @@
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
+              <span aria-hidden="true" style="color:white;">×</span>
             </button>
           </div>
           <div class="modal-body">Are you sure you want to logout?</div>
-          <div class="modal-footer" style="justify-content: flex-end;">
+          <div class="modal-footer" style="justify-content: flex-end; padding: 6px;">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-warning" href="#" onclick="logout()">Logout</a>
+            <a class="btn btn-warning" href="index.html" onclick="logout()">Logout</a>
           </div>
         </div>
       </div>
@@ -354,7 +354,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/controller/main-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script type="text/javascript" src="js/controller/main.js" async></script>
+    <script type="text/javascript" src="js/controller/admin.js" async></script>
     <script type="text/javascript" src="js/controller/dom-framer-1.1.1.js"></script>
     <script type="text/javascript" src="js/DataTables/datatables.min.js"></script>
     <script type="text/javascript" src="js/controller/dataTableController.js"></script>
