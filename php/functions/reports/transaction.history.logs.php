@@ -23,9 +23,9 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	}
 	else
 	{
-		$sql = "SELECT transact_name, transact_details, transact_date, user_id FROM tbl_history";
+		$sqlquery = "SELECT transact_name, transact_details, transact_date, user_id FROM tbl_history";
 
-		foreach ($db->query($sql1) as $row) 
+		foreach ($db->query($sqlquery) as $row) 
 		{
 
 			$userid = $row['transact_name'] ?: 'null';
