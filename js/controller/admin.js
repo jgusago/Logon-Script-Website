@@ -1639,7 +1639,17 @@ function addagentversion(){
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  ch.innerHTML = "Add Agent Version";
+  var div = [], subdiv = [], value = [], span = [];
+
+  createnewElement(div, ch, "div", ["row"], [], "");
+  div.newelement.style.width = "600px";
+  createnewElement(subdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, subdiv.newelement, "h5", [], ["id:editHeader"],"Add new Version" );
+
+  createnewElement(subdiv, div.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(value, subdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, value.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  span.newelement.innerHTML = "&times;";
 
   var form = [], fg = [], lbl = [], inp = [], br = [], select = [], opt = [];
 
@@ -1661,14 +1671,14 @@ function addagentversion(){
 function commitaddagentversion(){
   var version = document.getElementById("agentversion").value;
   var validation = document.getElementById("validation").value;
-    $.post("php/functions/sttngs/settings.agent.version.php",{version:version,validation,validation}, function(data){
+    $.post("php/functions/sttngs/settings.agent.version.add.php",{version:version,validation,validation}, function(data){
 
       if(data == "success"){
         ALERTcall("success","Version have been added");
         OVERLAYdisable();
       }
       else{
-        ALERTcall("danger","wews");
+        ALERTcall("danger",data);
       }
     });
 
@@ -1677,5 +1687,25 @@ function commitaddagentversion(){
 
 function deleteagentversion(){
   OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var div = [], subdiv = [], value = [], span = [];
+
+  createnewElement(div, ch, "div", ["row"], [], "");
+  div.newelement.style.width = "600px";
+  createnewElement(subdiv, div.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, subdiv.newelement, "h5", [], ["id:editHeader"],"Add new Version" );
+
+  createnewElement(subdiv, div.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  createnewElement(value, subdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  createnewElement(span, value.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  span.newelement.innerHTML = "&times;";
+
+  $.post("php/functions/sttngs/settings.agent.version.get.php", function(data){
+    
+  });
 
 }
