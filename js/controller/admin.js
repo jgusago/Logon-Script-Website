@@ -1563,3 +1563,15 @@ function addemployeesubmit(){
   return false;
 
 }
+
+function resetPass(){
+  var x = document.getElementById("myCheck");
+	if (x.type === "password")
+	{
+		x.type = "text";
+										} 
+	else 
+	{
+		x.type = "password";
+		}
+}
