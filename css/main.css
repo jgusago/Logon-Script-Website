@@ -622,9 +622,9 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   width: 300px;
 }
-#lblPass
+#Pass
 {
-  width: 300px;
+  margin:10px;
 }
 #lblpass
 {
@@ -667,7 +667,6 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
-  font-weight: 550;
   color: #444242;
 }
 #editLbl

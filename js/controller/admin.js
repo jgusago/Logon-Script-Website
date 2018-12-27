@@ -157,15 +157,13 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        // var reports = document.getElementById("Reports");
-        // reports.classList.add("active");
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsHistory":
-        path = "";
+        path = "php/functions/reports/computer.logs.history.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDLogsHistory":
@@ -265,8 +263,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
   createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "onclick:resetPass()", "id:resetPass"], "");
-  var txt = documnent.getElementById("resetPass");
-  txt.newelement.innerHTML = "Reset password";
+  resetpwd.newelement.innerHTML = "Reset password";
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -1363,8 +1360,8 @@ function ChangePass()
   createnewElement(divcol4, divbody4.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblButton, divcol4.newelement, "label", [], ["id:lblEid"], "");
   createnewElement(divcols4, divbody4.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-warning"], [], "Save Changes");
-  createnewElement(btnCancel, divcols4.newelement, "button", ["btn", "btn-default"], [], "Cancel");
+  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-warning"], ["id:Pass"], "Save Changes");
+  createnewElement(btnCancel, divcols4.newelement, "button", ["btn", "btn-default"], ["id:Pass"], "Cancel");
 
 }
 
