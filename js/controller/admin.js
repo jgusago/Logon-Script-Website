@@ -1584,6 +1584,11 @@ function resetPass(){
 		}
 }
 
+function mirrorFunction()
+	{
+		document.getElementById('password2').value = document.getElementById('passwordupdate').value;
+	}
+
 function DSHBRDAgentVersion(){
 
 
