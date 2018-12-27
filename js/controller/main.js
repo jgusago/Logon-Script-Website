@@ -1,5 +1,4 @@
-/* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
-function load(){
+/* -------------------------------------------------------------------------- Loads -----------------------------------------------------------------------function load(){
   SESSIONConfirm();
   DSHBRDbtnsCompList();
   DSHBRDbtnsCompLogs();
@@ -10,6 +9,17 @@ function load(){
 }
 
 /* Buttons */
+function load()
+{
+    SESSIONConfirm();
+    DSHBRDbtnsCompList();
+    DSHBRDbtnsCompLogs();
+    NAVBARNotification();
+    Departmentlist("department");
+    Dashboard();
+    PieChart();
+}
+
 function DSHBRDbtnsCompList(){
   complistul = document.getElementById("COMPLISTlist");
 
