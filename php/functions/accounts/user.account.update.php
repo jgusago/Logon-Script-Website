@@ -69,7 +69,7 @@ if($oldname !== $name && $name !== ""){
  }
 
  //if ($oldpassword !== md5(sha1($password)))
- if ($oldpassword !== $password)
+ if ($oldpassword != $password)
  {
         //$password =  md5(sha1($password));
          $password =  md5(sha1($_POST["password2"]));  
