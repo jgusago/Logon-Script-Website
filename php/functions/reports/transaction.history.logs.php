@@ -8,7 +8,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	if ($_SESSION['role'] == "ADMINISTRATOR") 
 	{
 
-		$sql = "SELECT transact_name, transact_details, transact_date, user_id FROM tbl_history WHERE role<>'SUPER ADMIN'";
+		$sql = "SELECT transact_name, transact_details, transact_date, user_id FROM tbl_history";
 
 		foreach ($db->query($sql) as $row) 
 		{
