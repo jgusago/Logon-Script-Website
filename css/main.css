@@ -506,7 +506,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
-      background: #f8f9fa;
+      background: #f6f7ed;
     }
   }
 
