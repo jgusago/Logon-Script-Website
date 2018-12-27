@@ -266,7 +266,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
 
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
-  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass(),passmirrorvalue()"], "");
   resetpwd.newelement.innerHTML = "Reset password";
 
   //update button
