@@ -5,8 +5,8 @@ $newfilter = $_POST['newfilter'];
 $id = $_POST['id'];
 $xxx = false;
 
-$AddTreeParent = "Add Tree Parent";
-$AddTreeName = "Add Tree Name";
+$EditTreeParent = "Edit Tree Parent";
+$EditTreeName = "Edit Tree Name";
 $userid2 = $_SESSION['userid'];
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
@@ -20,7 +20,7 @@ $query2 = "UPDATE logonscript.tbl_tree SET tree_parent = '$newname' WHERE tree_p
 if ($db->query($query2)) {
   
   $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-  VALUES ('$AddTreeParent', 'Tree Parent:".$newname."', NOW(), '$userid2')";
+  VALUES ('$EditTreeParent', 'Tree Parent:".$newname.", Tree Filter:".$newfilter."', NOW(), '$userid2')";
   ($db->query($sqlqurey));
   $xxx = true;
 }
@@ -34,7 +34,7 @@ $query = "UPDATE logonscript.tbl_tree SET tree_name = '$newname', tree_filter = 
     {
       $sqlqurey2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
 
-      VALUES ('$AddTreeName', 'Tree Name:".$newname."', NOW(), '$userid2')";
+      VALUES ('$EditTreeName', 'Tree Name:".$newname.", Tree Filter:".$newfilter."', NOW(), '$userid2')";
       ($db->query($sqlqurey2));
     }
     echo "true";

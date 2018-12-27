@@ -65,8 +65,8 @@
                   </ul>
               </li>
               <!-- History -->
-              <li data="History" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="History">
-                <a class="nav-lind" href="#" onclick="" data="DSHBRDHistory">
+              <li data="DSHBRDRecordsHistory" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="History">
+                <a class="nav-link" href="#" id="DSHBRDRecordsHistory" onclick="DSHBRDContent('','DSHBRDRecordsHistory')" data="DSHBRDRecordsHistory">
                   <span class="nav-link-text">History</span>
                 </a>
               </li>
@@ -108,7 +108,7 @@
             <li>
               <a class="nav-link" href="#" id="DSHBRDBranchView" onclick="DSHBRDContentBranchSettings('','DSHBRDBranchView')" data="DSHBRDBranchView">Branch View Settings</a>
             <li>
-              <a href="#"  id="DSHBRDContentAgentVersion" onclick="" data="">Agent Version</a>
+              <a href="#"  id="DSHBRDContentAgentVersion" onclick="DSHBRDAgentVersion()" data="">Agent Version</a>
             </li>
           </ul>
         </li>
@@ -140,7 +140,7 @@
       <ul class="navbar-nav ml-auto">
 
         <!-- Messages -->
-        
+
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope" style="color: white;"></i>
@@ -175,7 +175,7 @@
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
-       
+
          <!-- Alerts -->
          <li class="nav-item dropdown" style="margin-right: 20px;">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -197,13 +197,13 @@
         </li>
 
         <!-- Divider -->
-        <li class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1" style="color:white;">|</li>
+        <li class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1" style="color:white; margin-top:10px;">|</li>
 
         <!-- Logout -->
-        <li class="nav-item dropdown" style="padding-right: 65px;">
+        <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle mr-lg-2" data-toggle="dropdown" role="button" aria-expanded="false"><!-- data-target="#exampleModal" -->
-              <i id="faUser" class="fa fa-fw fa-user" style="color: white;">Welcome:
-                <label id="NAVBARusernameID"></label>
+              <i id="faUser" class="fa fa-fw fa-user" style="color: white;">
+                <span class="px-1 mr-lg-2 ml-2 ml-lg-0">Welcome: <label id="NAVBARusernameID"></label></span>
               </i>
               <span class="d-lg-none"></span>
             </a>
