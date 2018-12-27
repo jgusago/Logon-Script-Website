@@ -157,15 +157,13 @@ function DSHBRDContent(parent, linkid)
       case "DSHBRDRecordsComplist":
         path = "php/functions/reports/computer.list.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-        // var reports = document.getElementById("Reports");
-        // reports.classList.add("active");
       break;
       case "DSHBRDRecordsComplogs":
         path = "php/functions/reports/computer.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsHistory":
-        path = "";
+        path = "php/functions/reports/computer.logs.history.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDLogsHistory":
