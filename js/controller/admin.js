@@ -163,7 +163,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsHistory":
-        path = "php/functions/reports/computer.logs.history.php";
+        path = "php/functions/accounts/accounts.view.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDLogsHistory":
@@ -452,12 +452,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     }
     pagination(id);
   }
-}
-
-function DSHBRDLogsHistory()
-{
-  document.getElementById("dtitle").innerHTML = "Reports";
-  document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
 }
 
 function Dashboard()
