@@ -871,10 +871,10 @@ function ALERTcall(value,data){
   createnewElement(span, button.newelement,"span",[],["aria-hidden:true"],"");
   createnewElement(i, span.newelement, "i", ["fa","fa-times"],["aria-hidden:true"],"");
 
-    // setTimeout(function(){
-    //   alertwindow.removeChild(div.newelement);
-    //   ALERThide();
-    // }, 3000);
+    setTimeout(function(){
+      alertwindow.removeChild(div.newelement);
+      ALERThide();
+    }, 3000);
 
 }
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
@@ -1543,16 +1543,16 @@ function addemployeesubmit(){
 
   var cb = document.getElementById("mncb");
 
-  id = document.getElementById("insertemployeeid").value;
+  empid = document.getElementById("insertemployeeid").value;
   name = document.getElementById("insertemployeename").value;
   l1 = document.getElementById("insertemployeel1").value;
   l2 = document.getElementById("insertemployeel2").value;
   dept = document.getElementById("insertemployeedept").value;
   subdept = document.getElementById("insertemployeesubdept").value;
 
-  $.post("php/functions/employee/employee.add.php",{id:id,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
+  $.post("php/functions/employee/employee.add.php",{empid:empid,name:name,l1:l1,l2:l2,dept:dept,subdept:subdept}, function(data){
 
-    if(data == "true"){
+    if(data == "success"){
       ALERTcall("success","Employee have been registered!!");
       EmployeeList();
       OVERLAYdisable();
