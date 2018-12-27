@@ -123,7 +123,7 @@ function DSHBRDTblsCntnt(parent, path, tablehead, tablefoot, tablebody, id, link
 
       for (var i = 1; i < datalength;i++){
           newdata = data[i].split("|");
-          createTableContent([], tablebody, [],[], "td", newdata);
+          createTableContent([], tablebody, [],["id:"+i], "td", newdata);
 
           }
   });
@@ -163,7 +163,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsHistory":
-        path = "php/functions/accounts/accounts.view.php";
+        path = "php/functions/reports/computer.logs.history.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDLogsHistory":
@@ -260,11 +260,9 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
 
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "hidden:true", "id:password2"], "");
-
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
-  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass(),mirrorFunction()"], "");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
   resetpwd.newelement.innerHTML = "Reset password";
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
@@ -452,6 +450,12 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     }
     pagination(id);
   }
+}
+
+function DSHBRDLogsHistory()
+{
+  document.getElementById("dtitle").innerHTML = "Reports";
+  document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
 }
 
 function Dashboard()
@@ -1577,11 +1581,6 @@ function resetPass(){
 		x.type = "password";
 		}
 }
-
-function mirrorFunction()
-	{
-		document.getElementById('password2').value = document.getElementById('passwordupdate').value;
-	}
 
 function DSHBRDAgentVersion(){
 

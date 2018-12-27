@@ -222,8 +222,7 @@ function createnewElement(value, parent, element, classes, attribute, data){
     attrib = attribute[j].split(":");
     newelement.setAttribute(attrib[0],attrib[1]);
   }
-  newnode = document.createTextNode(data);
-  newelement.appendChild(newnode);
+  newelement.innerHTML = data;
   parent.appendChild(newelement);
 
   value.newelement = newelement;

@@ -1,13 +1,15 @@
 <?php
 //$parent = "Marvin(IT)";
 
-$id = $_POST["linkid"];
+// $id = $_POST["linkid"];
+$id = 1;
 $count = 0;
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 
-$parentid = $_POST["parent"];
+// $parentid = $_POST["parent"];
+$parentid = 1;
 $getparent = "SELECT * FROM logonscript.tbl_tree WHERE tree_id = $parentid";
 foreach ($db->query($getparent) as $row){
   $parent = $row['tree_filter'];
@@ -21,6 +23,7 @@ echo "Computer Name|User|IP Address|Services & Server Status|Remarks|Agent Versi
 foreach($db->query($query) as $row)
 {
     $count++;
+    $log_no = $row['log_no'];
     $hostname = $row['hostname'];
     $ip_address = $row['ip_address'];
     $user = $row['user'];
@@ -55,7 +58,7 @@ foreach($db->query($query) as $row)
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#$hostname|$user|$ip_address|iMonitor Services: $status~Connection Status: $status1|$remarks|$agent_version|Previous Checked: ~Current Checked: |button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parentid\",\"$id\")`Details";
+    echo "#p`text-lg-left`id:$log_no-1`$hostname|p`text-lg-left`id:$log_no-2`$user|p`text-lg-left`id:$log_no-3`$ip_address|p`text-lg-left`id:$log_no-4`iMonitor Services: $status<br>Connection Status: $status1|p`text-lg-left`id:$log_no-5`$remarks|p`text-lg-left`id:$log_no-6`$agent_version|p`text-lg-left`id:$log_no-7`Previous Checked:<br>Current Checked:|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parentid\",\"$id\")`Details";
 
 
 
