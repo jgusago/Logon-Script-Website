@@ -1565,26 +1565,22 @@ function addemployeesubmit(){
 }
 
 function resetPass(){
-<<<<<<< HEAD
   var x = document.getElementById("resetpw");
 	if (x.type === "password")
 	{
 		x.type = "text";
 										}
 	else
-=======
   var x = document.getElementById("passwordupdate");
 	if (x.type === "password")
 	{
 		x.type = "text";
-										} 
-	else 
->>>>>>> 09f26aec6af14d65889702006cde8821d3431704
+										}
+	else
 	{
 		x.type = "password";
 		}
 }
-<<<<<<< HEAD
 
 function DSHBRDAgentVersion(){
 
@@ -1683,5 +1679,3 @@ function deleteagentversion(){
   OVERLAYenable();
 
 }
-=======
->>>>>>> 09f26aec6af14d65889702006cde8821d3431704
