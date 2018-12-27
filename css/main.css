@@ -282,7 +282,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 .nav-link.text-center
 {
-  background-color: #2f5109ad;
+  background:#365b0d82;
 }
 .form-group
 {
@@ -297,7 +297,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
-    background-color: #2f5109ad;
+    background:#365b0d82;
 }
 #UserAccountupdate
 {
@@ -355,7 +355,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   justify-content: center;
   padding: 15px;
   border-top: 1px solid #e9ecef;
-  background-color: #2f5109ad;
+  background:#365b0d82;
 }
 .modal-body
 {
@@ -703,12 +703,13 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 .card-header
 {
-  background-color: #2f5109ad;
+  /* background-color: #2f5109ad; */
+  background:#365b0d82;
   padding: .50rem 1.25rem;
 }
 .card-footer
 {
-  background-color: #2f5109ad;
+  background:#365b0d82;
 }
 #exampleAccordion
 {
@@ -756,7 +757,7 @@ footer.sticky-footer {
   bottom: 0;
   width: 100%;
   height: 56px;
-  background-color: #2f5109ad;
+  background:#365b0d82;
   color: white;
   line-height: 55px; }
   @media (min-width: 992px) {
