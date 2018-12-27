@@ -34,7 +34,7 @@ $query = "UPDATE logonscript.tbl_tree SET tree_name = '$newname', tree_filter = 
     {
       $sqlqurey2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
 
-      VALUES ('$EditTreeName', 'Tree Name:".$newname."', NOW(), '$userid2')";
+      VALUES ('$EditTreeName', 'Tree Name:".$newname.",Tree Filter:".$newfilter."', NOW(), '$userid2')";
       ($db->query($sqlqurey2));
     }
     echo "true";
