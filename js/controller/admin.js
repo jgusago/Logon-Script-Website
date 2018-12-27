@@ -260,10 +260,15 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
 
+  createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
+  createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "id:passwordmirror", "hidden:true"], "");
+
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
-  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
+  createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass(),passmirrorvalue()"], "");
   resetpwd.newelement.innerHTML = "Reset password";
+
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -1580,6 +1585,10 @@ function resetPass(){
 	{
 		x.type = "password";
 		}
+}
+
+function passmirrorvalue(){
+  document.getElementById('passwordmirror').value = document.getElementById('passwordupdate').value;
 }
 
 function DSHBRDAgentVersion(){
