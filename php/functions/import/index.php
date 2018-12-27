@@ -1,8 +1,12 @@
 <?php
+session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/import/vendor/php-excel-reader/excel_reader2.php";
 require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/import/vendor/SpreadsheetReader.php";
 
+$ImportExcel = "Import Excel";
+$EmployeeList = "Employee List";
+$userid2 = $_SESSION['userid'];
 $error = 0;
 $success = 0;
 
@@ -63,6 +67,11 @@ if (isset($_POST["import"]))
                     $query = "INSERT INTO tbl_employee(emp_id, emp_name, emp_login, emp_login2, dept, sub_dept) VALUES ($id,'$name','$login','$login2','$dept','$sub')";
 
                     if (mysqli_query($conn, $query)) {
+
+                        $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
+                        VALUES ('$ImportExcel', '$EmployeeList', NOW(), '$userid2')";
+                        ($db->query($sqlqurey));
+
                         $success++;
                         $message = "Excel Data Imported into the Database";
                     } else {
