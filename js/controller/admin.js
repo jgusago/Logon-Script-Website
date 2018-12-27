@@ -1565,7 +1565,7 @@ function addemployeesubmit(){
 }
 
 function resetPass(){
-  var x = document.getElementById("resetPass");
+  var x = document.getElementById("resetpw");
 	if (x.type === "password")
 	{
 		x.type = "text";
