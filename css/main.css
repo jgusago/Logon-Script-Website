@@ -701,6 +701,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-weight: 600;
   color: #5e5f61;
 }
+.bg-danger
+{
+  color:white;
+}
 .card-header
 {
   /* background-color: #2f5109ad; */
@@ -715,6 +719,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   background: #b0db1f1a;
 }
+
 tr
 {
   font-size: 15px;
