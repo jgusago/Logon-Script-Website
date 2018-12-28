@@ -369,7 +369,7 @@ function COMPLISTupdate(hostname, user, remarks, id)
 
     var newloop = newdata[0].split("|");
 
-    createnewElement(form, cb, "form", [], [], "");
+    createnewElement(form, cb, "form", [], ["onsubmit:return CMPLISTdtlsupdate(\""+hostname+"\",\""+id+"\")"], "");
 
     for(var i = 0; i < newloop.length; i++){
     createnewElement(fg, form.newelement, "div", ["form-group","row"], [], "");
@@ -922,6 +922,7 @@ function CMPLISTdtlsupdate(hostname, id){
   //DSHBRDRecordsComplist
   //CMPLISTdtlsupdate(linkid);
   //OVERLAYdisable();
+  return false;
 }
 
 /*User Account Update*/
