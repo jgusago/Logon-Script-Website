@@ -705,6 +705,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   color:white;
 }
+.bg-success
+{
+  color:white;
+}
 .card-header
 {
   /* background-color: #2f5109ad; */
