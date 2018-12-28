@@ -58,10 +58,7 @@ foreach($db->query($query) as $row)
         $agent_version = "";
         $tabledata = "false";
     }
-    echo "#p`text-lg-left`id:$log_no-1`$hostname|p`text-lg-left`id:$log_no-2`$user|p`text-lg-left`id:$log_no-3`$ip_address|p`text-lg-left`id:$log_no-4`iMonitor Services: $status<br>Connection Status: $status1|p`text-lg-left`id:$log_no-5`$remarks|p`text-lg-left`id:$log_no-6`$agent_version|p`text-lg-left`id:$log_no-7`Previous Checked:<br>Current Checked:|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$tabledata\",\"$parentid\",\"$id\")`Details";
-
-
-
+    echo "#p`text-lg-left`id:$log_no-1`$hostname|p`text-lg-left`id:$log_no-2`$user|p`text-lg-left`id:$log_no-3`$ip_address|p`text-lg-left`id:$log_no-4`iMonitor Services: $status<br>Connection Status: $status1|p`text-lg-left`id:$log_no-5`$remarks|p`text-lg-left`id:$log_no-6`$agent_version|p`text-lg-left`id:$log_no-7`Previous Checked:<br>Current Checked:|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$log_no\")`Details";
 }
 $newpdo = null;
 $pdo = null;

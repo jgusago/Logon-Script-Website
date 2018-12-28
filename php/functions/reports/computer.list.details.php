@@ -1,6 +1,6 @@
 <?php
-$hostname = $_POST["hostname"];
-//$hostname = "AEITOM073137";
+// $hostname = $_POST["hostname"];
+$hostname = "MKITOM068150";
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
@@ -114,6 +114,6 @@ foreach($result as $row){
   }
 
 
-echo "#$processor|$OS|$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
+echo "#$processor|$OS|$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control~font-weight-bold`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
 
 ?>
