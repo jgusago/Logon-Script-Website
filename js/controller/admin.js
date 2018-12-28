@@ -269,7 +269,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
 }
 
-function AgentUpdate(hostname,tabledata,grandparent,linkid)
+function AgentUpdate(hostname,id)
 {
   OVERLAYenable();
 
@@ -281,48 +281,58 @@ function AgentUpdate(hostname,tabledata,grandparent,linkid)
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
   createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
-  createnewElement(value, leftdiv.newelement, "h4", [], [],"" );
+  createnewElement(value, leftdiv.newelement, "h4", [], [],hostname );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
   createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true"], "");
   span.newelement.innerHTML = "&times;";
 
-  $.post("php/functions/notification/notification.agent.update.php",{hostname:hostname},function(newdata){
+  $.post("php/functions/notification/notification.status.php",{hostname:hostname},function(newdata){
 
-    newdata = newdata.split("!!");
+    newdata = newdata.split("#");
+    var form = [], fg = [], label = [], input = [], select = [], option = [], div = [], br = [];;
 
-    for(var d = 0; d < newdata.length; d++){
+    var newloop = newdata[0].split("|");
 
-    var table = [];
-    var tableid = idgenerator();
-    var classes = ["table","table-bordered"];
-    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    createTable(table, cb, classes, attributes);
-    data = newdata[d].split("#");
-    datalength = data.length;
+    createnewElement(form, cb, "form", [], ["onsubmit:return CMPLISTdtlsupdate(\""+hostname+"\",\""+id+"\")"], "");
 
-    thfdata = data[0].split("|");
-    var tbheader = [], tbfooter = [];
-    createTableContent([], table.head, [], [], "th", thfdata);
+    for(var i = 0; i < newloop.length; i++){
+    createnewElement(fg, form.newelement, "div", ["form-group","row"], [], "");
+      createnewElement(label, fg.newelement, "label", ["col-sm-4","col-form-label"], [], newloop[i]+":");
+      for(var j = 1; j < newdata.length-1; j++){
+        var cddata = newdata[j].split("|");
+        var newelement = cddata[i].split("`");
 
-    for (var i = 1; i < datalength;i++){
-        contentdata = data[i].split("|");
-        createTableContent([], table.body, [],[], "td", contentdata);
-
+        createnewElement(div, fg.newelement, "div", ["col-sm-8"], [], "");
+        if(newelement.length > 1){
+          var newvalue = [];
+          neweclasses = newelement[1].split("~");
+          neweattribs = newelement[2].split("~");
+          createnewElement(newvalue, div.newelement, newelement[0], neweclasses, neweattribs, newelement[3]);
         }
-
-    }//newdata for close
+        else{
+          createnewElement(input, div.newelement, "p", ["form-control","font-weight-bold"], ["type:text","value:"+cddata[i]], cddata[i]);
+        }
+      }
+    }
+    createnewElement(br, form.newelement, "br", [], [], "");
+    createnewElement(fg, form.newelement, "div", ["form-group","row"], [], "");
+      createnewElement(label, fg.newelement, "label", ["col-sm-4","col-form-label"], [], "Remarks:");
+        createnewElement(div, fg.newelement, "div", ["col-sm-8"], [], "");
+        createSelection(select, div.newelement, ["form-control","font-weight-bold"], ["id:CMPLISTdtlsremarks","onChange:CMPLISTdtlsremarksupdate(\""+newdata[newdata.length - 1]+"\",\"CMPLISTdtlsremarks\")"], ["Active:Active","Resigned:Resigned","Transfered:Transferred"," Old PC name:Old PC name","On Leave:On Leave"]);
+        createnewElement(option, select.select, "option", [], ["hidden:true","selected:selected","value:"+newdata[newdata.length-1] ], newdata[newdata.length-1]);
+        createnewElement(br, form.newelement, "br", [], [], "");
   });
 
   var updatebutton = [], footerdiv = [];
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","enabled","ml-1"], ["id:AgentUpdated","onclick:AgentUpdated(\""+hostname+"\,\""+tabledata+"\",\""+grandparent+"\",\""+linkid+"\)"], "Update" );
+  createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:AgentUpdated(\""+hostname+"\",\""+id+"\")"], "Update" );
 }
 
-function AgentUpdated(hostname, update, grandparent, linkid){
+function AgentUpdated(hostname, id){
 
   var e = document.getElementById("CMPLISTdtlsremarks");
   var i = e.selectedIndex;
@@ -330,14 +340,30 @@ function AgentUpdated(hostname, update, grandparent, linkid){
 
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/notification/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,update:update},function(data){
-  //var view = document.getElementById("contentview");
-  //view.innerHTML = data;
+  $.post("php/functions/notification/notification.agent.updated.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,id:id},function(data){
+
+
+    var cb = document.getElementById("mncb");
+    if(data == "success"){
+      var td = document.getElementById(id+"-1").parentElement;
+      var tr = td.parentElement;
+      var tb = tr.parentElement;
+      tb.removeChild(tr);
+      ALERTcall("success","Details have been updated!");
+      OVERLAYdisable();
+    }
+    else if (data == "invalid") {
+      var td = document.getElementById(id+"-3");
+      td.innerHTML = agentversion;
+      td.classList.add("bg-warning");
+      ALERTcall("warning","Details have been updated<br> But the iMonitor is still not updated");
+      OVERLAYdisable();
+    }
+    else{
+
+    }
+
   });
-  CMPLISTdtlstableupdate(grandparent,linkid);
-  //DSHBRDRecordsComplist
-  //CMPLISTdtlsupdate(linkid);
-  OVERLAYdisable();
 }
 
 //computerlist Update OnClick
@@ -884,7 +910,7 @@ function CMPLISTdtlsremarksupdate(defaultvalue, id){
   var value = document.getElementById(id).value;
   var button = document.getElementById("CMPLISTdtlsupdate");
 
-  if (value != defaultvalue){
+  if (value !== defaultvalue){
     button.classList.remove("disabled");
   }
   else {
@@ -900,8 +926,9 @@ function CMPLISTdtlsupdate(hostname, id){
   var remarks = e.options[i].text;
   var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/notification/notification.agent.updated.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,id:id},function(data){
-
+  $.post("php/functions/reports/computer.list.details.update.php",{remarks:remarks,agentversion:agentversion,hostname:hostname,id:id},function(data){
+    //php/functions/reports/computer.list.details.update.php
+    //php/functions/notification/notification.agent.updated.php
   if(data == "success"){
     newremarks = document.getElementById(id+"-5").innerHTML = remarks;
     newversion = document.getElementById(id+"-6").innerHTML = agentversion;

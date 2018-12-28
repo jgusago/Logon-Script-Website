@@ -31,14 +31,14 @@ else{
     $dept = $_SESSION('department');
     $sql = "SELECT * FROM tbl_tree where tbl_name LIKE '$dept'";
     foreach($db->query($sql) as $row){
-        
+
         if(isset($row['filter'])){
             $filter = $row['filter'];
         }
         else{
             $filter = "123123123123";
         }
-        
+
 
     }
 
@@ -57,6 +57,7 @@ foreach ($result as $row) {
     $aversion = $row['agent_version'];
     $newsql = "SELECT * FROM logonscript.tbl_log WHERE hostname like '$hostname' and user not like 'admin%' group by hostname";
     foreach($db->query($newsql) as $row){
+        $log_no = $row['log_no'];
         $ip_address = $row['ip_address'] ?: 'null';
         $iMonitor_Status = $row['iMonitor_Status'] ?: 'Not Found';
         $connections_status = $row['connection_status'] ?: 'Not Connected';
@@ -85,6 +86,6 @@ foreach ($result as $row) {
             $style2 = "bg-danger";
         }
     }
-    echo "#$hostname|$ip_address|div`bg-warning`width:100%`$aversion|div`$style`width:100%`$iMonitor_Status|div`$style`width:100%`$connections_status|$branch|$scan_time|button`btn~btn-primary`onClick:AgentUpdate(\"$hostname\")`Edit";
+    echo "#p`text-lg-left`id:$log_no-1`$hostname|p`text-lg-left`id:$log_no-2`$ip_address|div`bg-warning`width:100%~id:$log_no-3`$aversion|div`$style`width:100%~id:$log_no-4`$iMonitor_Status|div`$style`width:100%~id:$log_no-5`$connections_status|p`text-lg-left`id:$log_no-6`$branch|p`text-lg-left`id:$log_no-7`$scan_time|button`btn~btn-primary`onClick:AgentUpdate(\"$hostname\",\"$log_no\")`Edit";
 }
 ?>

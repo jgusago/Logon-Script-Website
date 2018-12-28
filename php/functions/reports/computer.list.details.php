@@ -1,6 +1,5 @@
 <?php
-// $hostname = $_POST["hostname"];
-$hostname = "MKITOM068150";
+$hostname = $_POST["hostname"];
 $count = 0;
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 //Connection
@@ -8,7 +7,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 /*
 echo "Computer Name|User ID|Domain|IP Address|Services Status|Server Status|Branch|Scan Time";
 */
-$query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE :hostname AND user not like 'admi%' GROUP BY hostname";
+$query = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE :hostname GROUP BY hostname";
 
 $pdo = $db->prepare($query);
 $pdo->bindParam(":hostname",$hostname);
@@ -114,6 +113,6 @@ foreach($result as $row){
   }
 
 
-echo "#$processor|$OS|$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control~font-weight-bold`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`$version";
+echo "#$processor|$OS|$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control~font-weight-bold`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`\"\"";
 
 ?>
