@@ -1,15 +1,13 @@
 <?php
 //$parent = "Marvin(IT)";
 
-// $id = $_POST["linkid"];
-$id = 1;
+$id = $_POST["linkid"];
 $count = 0;
 session_start();
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 
-// $parentid = $_POST["parent"];
-$parentid = 1;
+$parentid = $_POST["parent"];
 $getparent = "SELECT * FROM logonscript.tbl_tree WHERE tree_id = $parentid";
 foreach ($db->query($getparent) as $row){
   $parent = $row['tree_filter'];
