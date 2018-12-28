@@ -911,17 +911,7 @@ function CMPLISTdtlsupdate(hostname, id){
   else{
     ALERTcall("danger",data);
   }
-
-
-  var cb = document.getElementById("mncb");
-  cb.innerHTML = data;
-  //var view = document.getElementById("contentview");
-  //view.innerHTML = data;
   });
-  //CMPLISTdtlstableupdate(grandparent,linkid);
-  //DSHBRDRecordsComplist
-  //CMPLISTdtlsupdate(linkid);
-  //OVERLAYdisable();
   return false;
 }
 
