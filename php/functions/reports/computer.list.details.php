@@ -27,15 +27,6 @@ foreach($result as $row){
     $scan_time = $row['scan_time'] ?: 'null';
     $date = $scan_time;
 
-    $date = explode(" ",$scan_time);
-
-    $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
-
-    if ($newdate = new DateTime($date[0]." ".$date[1])){
-
-    $scan_time = date_format($newdate, "M-d-Y H:i");
-    }
-
     if($row['connection_status'] == "ESTABLISHED"  && $row['iMonitor_Status'] == "Running")
         $currentstatus = "On-line";
     else{
@@ -113,6 +104,6 @@ foreach($result as $row){
   }
 
 
-echo "#$processor|$OS|$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control~font-weight-bold`id:CMPLISTdtlsagentversion~type:text~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`\"\"";
+echo "#$processor|p`form-control~font-weight-bold`value:$OS`$OS|p`form-control~font-weight-bold`value:$system_type`$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control~font-weight-bold`id:CMPLISTdtlsagentversion~type:text~value:$version~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`\"$version\"";
 
 ?>
