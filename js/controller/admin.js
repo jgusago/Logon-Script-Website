@@ -430,8 +430,32 @@ function COMPLISTupdate(hostname, user, remarks, id)
   var footerclass = ["d-flex","flex-row-reverse"];
   createnewElement(footerdiv, cf, "div", footerclass, [], "" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-default","ml-1"], ["onClick:OVERLAYdisable()"], "Cancel" );
-  createnewElement(checkedbutton, footerdiv.newelement, "button", ["btn", "btn-success","disabled","ml-1"], ["id:CMPLISTdtlschecked","onclick:CMPLISTdtlschecked(\""+hostname+"\",\""+id+"\")"], "Checked" );
+  createnewElement(checkedbutton, footerdiv.newelement, "button", ["btn", "btn-success","ml-1"], ["id:CMPLISTdtlschecked","onclick:CMPLISTdtlschecked(\""+hostname+"\",\""+id+"\")"], "Checked" );
   createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-primary","disabled","ml-1"], ["id:CMPLISTdtlsupdate","onclick:CMPLISTdtlsupdate(\""+hostname+"\",\""+id+"\")"], "Update" );
+}
+
+function CMPLISTdtlschecked(hostname, id){
+
+
+  var cb = document.getElementById("mncb");
+
+  var version = document.getElementById("CMPLISTdtlsagentversion").value;
+  var remarks = document.getElementById("CMPLISTdtlsremarks").value;
+
+
+  $.post("php/functions/reports/computer.list.checked.php",{hostname:hostname,version:version,remarks:remarks},function(data){
+    data = data.split("|");
+    if(data[0] == "success"){
+      var dc = document.getElementById(id+"-7");
+      ALERTcall("success","Details have been checked");
+      OVERLAYdisable();
+      dc.innerHTML = data[1];
+    }
+    else{
+      ALERTcall("danger",data);
+    }
+  });
+
 }
 
 /* Table Call Path with PHP*/

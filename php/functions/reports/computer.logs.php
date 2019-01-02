@@ -17,7 +17,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
         }
 
-$query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE hostname like '$tree_filter%' AND user not like '%admin%' group by hostname";
+$query = "SELECT *, group_concat(user) as user2 FROM logonscript.tbl_log WHERE hostname like '$tree_filter%' group by hostname";
 
 
 echo "Computer Name|User|Domain|IP Address|Services Status|Server Status|Scan Time";
