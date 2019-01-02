@@ -103,7 +103,6 @@ foreach($result as $row){
       $system_type = "No Data Found";
   }
 
-
 echo "#$processor|p`form-control~font-weight-bold`value:$OS`$OS|p`form-control~font-weight-bold`value:$system_type`$system_type|$serial|$macaddress|$manufacturer|$model|$currentstatus|input`form-control~font-weight-bold`id:CMPLISTdtlsagentversion~type:text~value:$version~placeholder:$version~onkeyup:CMPLISTdtlsremarksupdate(\"$version\",\"CMPLISTdtlsagentversion\")`\"$version\"";
 
 ?>
