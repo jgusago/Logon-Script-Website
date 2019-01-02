@@ -74,6 +74,5 @@ foreach($db->query($query) as $row)
     }
     echo "|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$log_no\")`Details";
 }
-$newpdo = null;
-$pdo = null;
+$db = null;
 ?>

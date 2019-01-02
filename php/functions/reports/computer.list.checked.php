@@ -30,4 +30,6 @@ else{
   echo "Error have been aquired";
 }
 
+
+$db = null;
  ?>
