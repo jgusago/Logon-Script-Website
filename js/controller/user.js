@@ -7,7 +7,6 @@ function load()
     NAVBARNotification();
     Departmentlist("department");
     Dashboard();
-    PieChart();
 }
 
 /* Buttons */
@@ -1135,9 +1134,9 @@ function SESSIONConfirm(){
           window.location.assign("/.superadmin.html");
           break;
         case "ADMINISTRATOR":
+          window.location.assign("/.admin.html");
           break;
         case "STAFF":
-          window.location.assign("/.user.html");
           break;
         default:
         window.location.assign("/index.html");
