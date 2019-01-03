@@ -1602,8 +1602,8 @@ function resetPass(){
 	if (x.type === "password")
 	{
     x.type = "text";
-    x.value = "Aa123456";
-										}
+                  
+  }
 	else
   var x = document.getElementById("passwordupdate");
 	if (x.type === "password")
@@ -1612,7 +1612,7 @@ function resetPass(){
 										}
 	else
 	{
-		x.type = "password";
+		x.type = "text";
 		}
 }
 
