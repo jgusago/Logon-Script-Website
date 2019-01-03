@@ -193,7 +193,7 @@ function DSHBRDContent(parent, linkid)
       pdf[0].classList.remove("btn-secondary");
       pdf[0].classList.add("btn-danger");
 
-    }, 500)
+    }, 1000)
 }
 
 //User Account Update OnClick
@@ -469,6 +469,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       var tbheader = [], tbfooter = [];
       createTableContent([], tablehead, [], [], "th", thfdata);
       createTableContent([], tablefoot, [], [], "th", thfdata);
+      pagination(id);
 
       for (var i = 1; i < datalength;i++){
           newdata = data[i].split("|");
@@ -486,7 +487,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
   }
-  else if(path == "php/functions/accounts/accounts.view.php"){
   else
   {
     if(path == "php/functions/reports/computer.list.php")
@@ -504,7 +504,6 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
       document.getElementById("dtitle").innerHTML = "Reports";
       document.getElementById("dtitle2").innerHTML = "Computer Logs History";
     }
-    pagination(id);
   }
 }
 
