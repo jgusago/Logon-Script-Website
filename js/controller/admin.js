@@ -1663,17 +1663,6 @@ function addemployeesubmit(){
 }
 
 function resetPass(){
-  var x = document.getElementById("resetpw");
-	if (x.type === "password")
-	{
-<<<<<<< HEAD
-    x.type = "text";
-  }
-=======
-		x.type = "text";
-										}
->>>>>>> parent of e3ec3f16... Update admin.js
-	else
   var x = document.getElementById("passwordupdate");
 	if (x.type === "password")
 	{
@@ -1681,13 +1670,8 @@ function resetPass(){
   }
 	else
 	{
-<<<<<<< HEAD
-		x.type = "text";
-	}
-=======
 		x.type = "password";
-		}
->>>>>>> parent of e3ec3f16... Update admin.js
+	}
 }
 
 function DSHBRDAgentVersion(){
