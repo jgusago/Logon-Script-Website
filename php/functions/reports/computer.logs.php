@@ -44,25 +44,8 @@ foreach($result as $row)
 
     $date = date_create($scan_time);
     $scan_time = date_format($date, 'M d, Y G:i');
-    // echo "$date[0], $date[1]<br>";
-    // echo "$date1[0], $date1[1], $date1[2]<br>";
-    //
-    // echo $scan_time = date_format($date1[0]."-".$date1[1]."-".$date1[2]." ".$date[1], "M-d-Y H:i");
-    //
-    // $date[0] = preg_replace("/[^a-zA-Z]/", "", $date[0]);
-    // $date1[0] = preg_replace("/[^a-zA-Z]/", "", $date1[0]);
-    //
-    // if ($newdate = new DateTime($date[0]." ".$date[1]))
-    // {
-    //     $scan_time = date_format($newdate, "M-d-Y H:i");
-    // }
-    // if($newdate1 = new DateTime($date1[0]." ".$date1[1]))
-    // {
-    //     $ip_date_modefied = date_format($newdate1, "M-d-Y H:i");
-    // }
 
-
-    echo "#$hostname|$user|$domain_name|$ip_address|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$scan_time";
+    echo "#$hostname|$user|$domain_name|$ip_address|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|$serverIP: $connections_status|$scan_time";
 }
 
 $db = null;
