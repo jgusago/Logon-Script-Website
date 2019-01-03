@@ -20,9 +20,9 @@ session_start();
 			$role = $row['role'] ?: 'null';
 			$status = $row['status'] ?: 'null';
 
-			echo "#p`text-lg-left`id:$userid`$userid|p`text-lg-left`id:$name`$name|p`text-lg-left`id:$department`$department|";
-			echo "p`text-lg-left`id:$position`$position|p`text-lg-left`id:$role`$role|p`text-lg-left`id:$status`$status|";
-			echo "button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
+			echo "#p`text-lg-left`id:$userid-1`$userid|p`text-lg-left`id:$userid-2`$name|p`text-lg-left`id:$userid-3`$department|";
+			echo "p`text-lg-left`id:$userid-4`$position|p`text-lg-left`id:$userid-5`$role|p`text-lg-left`id:$userid-6`$status|";
+			echo "button`btn~btn-primary`id:$userid-7~onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
 		}
 	}
 	else
@@ -39,7 +39,7 @@ session_start();
 			$role = $row['role'] ?: 'null';
 			$status = $row['status'] ?: 'null';
 
-			echo "#$userid|$name|$department|$position|$role|$status|button`btn~btn-primary`onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
+			echo "#p`text-lg-left`id:$userid-1`$userid|p`text-lg-left`id:$userid-2`$name|p`text-lg-left`id:$userid-3`$department|p`text-lg-left`id:$userid-4`$position|p`text-lg-left`id:$userid-5`$role|p`text-lg-left`id:$userid-6`$status|button`btn~btn-primary`id:$userid-7~onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
 		}
 	}
 

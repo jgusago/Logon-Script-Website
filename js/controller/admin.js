@@ -226,32 +226,32 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   //userid
   createnewElement(divbody, cb, "form", ["md-form", "mb-3"], [], "");
   createnewElement(label, divbody.newelement, "label", [],["id:editLbl"],"User ID");
-  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:useridupdate", "disabled:true", "value:"+userid], "");
+  createnewElement(inputuid, divbody.newelement, "input", ["form-control"], ["type:text", "id:useridupdate", "disabled:true", "value:"+userid, "onkeyup:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
   //name
   createnewElement(divbody1, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label1, divbody1.newelement, "label", [],["id:editLbl"],"Name");
-  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:nameupdate", "required:true", "value:"+name], "");
+  createnewElement(inputname, divbody1.newelement, "input", ["form-control"], ["type:text", "id:nameupdate", "required:true", "value:"+name, "onkeyup:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
   //department
   createnewElement(divbody2, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label2, divbody2.newelement, "label", [],["id:editLbl"],"Department");
-  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate"], "");
+  createnewElement(select, divbody2.newelement, "select", ["form-control"], ["name:department", "required:true", "id:departmentupdate", "onChange:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
   Departmentlist("departmentupdate");
   createnewElement(option, select.newelement, "option", [],["value:"+department,"hidden:true","selected:selected"], department);
   //position
   createnewElement(divbody3, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label3, divbody3.newelement, "label", [],["id:editLbl"],"Position");
-  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:position", "id:positionupdate", "disabled:true", "value:"+position], "");
+  createnewElement(select1, divbody3.newelement, "input", ["form-control"], ["name:position", "id:positionupdate", "disabled:true", "value:"+position, "onkeyup:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
   //role
   createnewElement(divbody4, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label4, divbody4.newelement, "label", [],["id:editLbl"],"Role");
-  createnewElement(select1, divbody4.newelement, "select", ["form-control"], ["name:role", "id:roleupdate", "required:true", "value:"+role], "");
+  createnewElement(select1, divbody4.newelement, "select", ["form-control"], ["name:role", "id:roleupdate", "required:true", "value:"+role, "onChange:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
   createnewElement(option1, select1.newelement, "option", [],["value:"+role,"hidden:true","selected:selected"], role);
   createnewElement(option2, select1.newelement, "option", [],["value:ADMINISTRATOR"],"Administrator" );
   createnewElement(option3, select1.newelement, "option", [],["value:STAFF"],"Staff" );
   //status
   createnewElement(divbody5, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label5, divbody5.newelement, "label", [],["id:editLbl"],"Status");
-  createnewElement(select2, divbody5.newelement, "select", ["form-control"], ["name:status", "id:statusupdate", "required:true", "value:"+status], "");
+  createnewElement(select2, divbody5.newelement, "select", ["form-control"], ["name:status", "id:statusupdate", "required:true", "value:"+status, "onChange:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
   createnewElement(options1, select2.newelement, "option", [],["value:"+status,"hidden:true","selected:selected"], status);
   createnewElement(options2, select2.newelement, "option", [],["value:Active"],"Active" );
   createnewElement(options3, select2.newelement, "option", [],["value:Inactive"],"Inactive" );
@@ -266,7 +266,38 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   resetpwd.newelement.innerHTML = "Reset password";
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
-  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-default"], ["value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
+  createnewElement(button, divfooter.newelement, "input", ["btn", "btn-primary"], ["disabled:true","value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
+}
+
+function ACCeditvalidate(name, department, position, role, status){
+
+var currname, currdepartment, currposs, currrole, currstat;
+currname = document.getElementById("nameupdate").value;
+//
+var e = document.getElementById("departmentupdate");
+var i = e.selectedIndex;
+//
+currdepartment = e.options[i].text;
+//
+currposs = document.getElementById("positionupdate").value;
+e = document.getElementById("roleupdate");
+i = e.selectedIndex;
+currrole = e.options[i].text;
+//
+e = document.getElementById("statusupdate");
+i = e.selectedIndex;
+currstat = e.options[i].text;
+//
+var btn = document.getElementById("UserAccountupdate");
+//
+if(name !== currname || department !== currdepartment || position !== currposs || role !== currrole|| status !== currstat){
+  btn.removeAttribute("disabled");
+}
+else{
+  btn.setAttribute("disabled","true");
+}
+
+
 }
 
 function AgentUpdate(hostname,id)
@@ -968,7 +999,7 @@ function CMPLISTdtlsupdate(hostname, id){
 
 /*User Account Update*/
 
-function UserAccountupdate(userid){
+function UserAccountupdate(id){
 
   name = document.getElementById("nameupdate").value;
   department = document.getElementById("departmentupdate").value;
@@ -983,16 +1014,21 @@ function UserAccountupdate(userid){
 
   //var agentversion = document.getElementById("CMPLISTdtlsagentversion").value;
 
-  $.post("php/functions/accounts/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password,userid:userid},function(data){
+  $.post("php/functions/accounts/user.account.update.php",{name:name,department:department,position:position,role:role,status:status,password:password,id:id},function(data){
     if(data == "true"){
-    DSHBRDContent('','DSHBRDAccountsAccMgnt')
+    var updname = document.getElementById(id+"-2").innerHTML = name;
+    var updept = document.getElementById(id+"-3").innerHTML = department;
+    var uppos = document.getElementById(id+"-4").innerHTML = position;
+    var uprole = document.getElementById(id+"-5").innerHTML = role;
+    var upstat = document.getElementById(id+"-6").innerHTML = status;
+    var btn = document.getElementById(id+"-7");
+    btn.removeAttribute("onClick");
+    btn.setAttribute("onClick","ACCTedit(\""+id+"\",\""+name+"\",\""+department+"\",\""+position+"\",\""+role+"\",\""+status+"\")");
     OVERLAYdisable();
+    ALERTcall("success","Account have been updated");
     }
     else{
-      var body = document.getElementById("mncb");
-      var footer = document.getElementById("mncf");
-      body.innerHTML = "Error have been acquired!!<br>"+data;
-      footer.innerHTML = "<button onclick='OVERLAYdisable'>Close</button>";
+      ALERTcall("danger",data);
     }
   });
   //DSHBRDRecordsComplist

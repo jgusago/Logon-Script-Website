@@ -1,7 +1,7 @@
 <?php
 session_start();
-
-$userid = $_POST['userid'];
+//name:name,department:department,position:position,role:role,status:status,password:password,id:id
+$id = $_POST['id'];
 $name = $_POST['name'];
 $department = $_POST['department'];
 $position = $_POST['position'];
@@ -9,7 +9,6 @@ $role = $_POST['role'];
 $status = $_POST['status'];
 $password = $_POST['password'];
 
-$userid = $_POST["userid"];
 $EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
 
@@ -22,7 +21,7 @@ $oldname = "";
     $oldpassword = "";
 
 //Get Old Value
-$oldvalue = "SELECT * FROM logonscript.tbl_user WHERE userid = '$userid'";
+$oldvalue = "SELECT * FROM logonscript.tbl_user WHERE userid = '$id'";
 foreach ($db->query($oldvalue) as $row) {
     $oldname = $row['name'];
     $olddepartment = $row['department'];
@@ -33,37 +32,37 @@ foreach ($db->query($oldvalue) as $row) {
 }
 
 if($oldname !== $name && $name !== ""){
-     $query = "UPDATE logonscript.tbl_user SET `name`='$name' WHERE (`userid` = '$userid')";
+     $query = "UPDATE logonscript.tbl_user SET `name`='$name' WHERE (`userid` = '$id')";
      $db->query($query);
      $namestat = true;
 
  }
  if($olddepartment !== $department && $department !== "")
  {
-     $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$userid')";
+     $query = "UPDATE logonscript.tbl_user SET `department`='$department' WHERE (`userid` = '$id')";
      $db->query($query);
      $namestat = true;
  }
  if($oldposition !== $position && $position !== "")
  {
-     $query = "UPDATE logonscript.tbl_user SET `position`='$position' WHERE (`userid` = '$userid')";
+     $query = "UPDATE logonscript.tbl_user SET `position`='$position' WHERE (`userid` = '$id')";
      $db->query($query);
      $namestat = true;
 
-     $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)       
+     $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
      VALUES ('$EditUser', 'Position:".$_POST["position"]."', NOW(), '$userid2')";
      ($db->query($sql));
  }
  if($oldrole !== $role && $role !== "")
  {
-     $query = "UPDATE logonscript.tbl_user SET `role`='$role' WHERE (`userid` = '$userid')";
+     $query = "UPDATE logonscript.tbl_user SET `role`='$role' WHERE (`userid` = '$id')";
      $db->query($query);
      $namestat = true;
- 
+
  }
  if($oldstatus !== $status && $status !== "")
  {
-     $query = "UPDATE logonscript.tbl_user SET `status`='$status' WHERE (`userid` = '$userid')";
+     $query = "UPDATE logonscript.tbl_user SET `status`='$status' WHERE (`userid` = '$id')";
      $db->query($query);
      $namestat = true;
  }
@@ -71,7 +70,7 @@ if($oldname !== $name && $name !== ""){
  if ($oldpassword !== md5(sha1($password)))
  {
          $password =  md5(sha1($password));
-         $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$userid')";
+         $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$id')";
          $db->query($query);
          $namestat = true;
  }
@@ -86,11 +85,11 @@ else
 }
 
 $edit = "";
-$queryvar = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$userid'");
+$queryvar = $db->prepare("SELECT userid,name,department, position, role, status FROM tbl_user WHERE userid='$id'");
 $queryvar->execute();
 $queryvar->setFetchMode(PDO::FETCH_ASSOC);
 while ($row = $queryvar->fetch()) {
-    
+
     $name = $row['name'];
     $department = $row['department'];
     $position = $row['position'];
@@ -109,12 +108,11 @@ if($status != $oldstatus)
     $edit .=  "Status:".$status.",";
 }
 
-    
+
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-             
+
 VALUES ('$EditUser', '$edit', NOW(), '$userid2')";
 //VALUES ('$EditUser', 'Name:".$_POST["name"].",Department:".$_POST["department"].",Position:".$_POST["position"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
 ($db->query($sqlqurey));
 
 ?>
-
