@@ -163,7 +163,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsHistory":
-        path = "php/functions/reports/computer.logs.history.php";
+        path = "php/functions/reports/transaction.history.logs.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDLogsHistory":

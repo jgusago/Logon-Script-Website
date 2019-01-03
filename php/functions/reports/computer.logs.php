@@ -40,11 +40,10 @@ foreach($result as $row)
     $serverIP = $row['serverIP'] ?: 'Not Found';
     $connections_status = $row['connection_status'] ?: 'Not Connected';
     $branch = $row['branch'] ?: 'Scan Failed';
-    $scan_time = $row['scan_time'];
-    $date = $scan_time;
-    $date = explode(" ",$scan_time);
-    $date1 = explode("-",$date[0 ]);
-    //
+    $scan_time = $row['update_time'];
+
+    $date = date_create($scan_time);
+    $scan_time = date_format($date, 'M d, Y G:i');
     // echo "$date[0], $date[1]<br>";
     // echo "$date1[0], $date1[1], $date1[2]<br>";
     //
