@@ -66,5 +66,5 @@ foreach($result as $row)
     echo "#$hostname|$user|$domain_name|$ip_address|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|Server IP: $serverIP~Connection Status: $connections_status|$scan_time";
 }
 
-
+$db = null;
 ?>
