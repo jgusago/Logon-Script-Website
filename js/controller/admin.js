@@ -1599,10 +1599,11 @@ function addemployeesubmit(){
 
 function resetPass(){
   var x = document.getElementById("resetpw");
+  var y = document.getElementById("passwordupdate");
 	if (x.type === "password")
 	{
     x.type = "text";
-    x.value = "Aa123456";
+    y.value = "Aa123456";
 										}
 	else
   var x = document.getElementById("passwordupdate");
