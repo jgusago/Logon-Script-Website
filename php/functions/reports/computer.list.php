@@ -63,17 +63,18 @@ foreach($db->query($query) as $row)
     foreach ($db->query($query)as $row) {
       $history[$count] = "";
       $history[$count] = $row["transact_date"];
+      $datea = date_create($history[$count]);
+      $date[$count] = date_format($datea, 'M d, Y');
       $count++;
     }
     echo "#p`text-lg-left`id:$log_no-1`$hostname|p`text-lg-left`id:$log_no-2`$user|p`text-lg-left`id:$log_no-3`$ip_address|p`text-lg-left`id:$log_no-4`iMonitor Services: $status<br>Connection Status: $status1|p`text-lg-left`id:$log_no-5`$remarks|p`text-lg-left`id:$log_no-6`$agent_version|p`text-lg-left`id:$log_no-7`";
     if(isset($history[0])){
-      echo $history[0];
+      echo $date[0];
       if(isset($history[1])){
-        echo "<br>".$history[1];
+        echo "<br>".$date[1];
       }
     }
     echo "|button`btn~btn-primary`onClick:COMPLISTupdate(\"$hostname\", \"$user\",\"$remarks\", \"$log_no\")`Details";
 }
-$newpdo = null;
-$pdo = null;
+$db = null;
 ?>

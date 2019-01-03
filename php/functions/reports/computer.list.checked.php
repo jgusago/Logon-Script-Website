@@ -17,12 +17,14 @@ if($db->query($query)){
   foreach ($db->query($query)as $row) {
     $history[$count] = "";
     $history[$count] = $row["transact_date"];
+    $datea = date_create($history[$count]);
+    $date[$count] = date_format($datea, 'M d, Y');
     $count++;
   }
   if(isset($history[0])){
-    echo $history[0];
+    echo $date[0];
     if(isset($history[1])){
-      echo "<br>".$history[1];
+      echo "<br>".$date[1];
     }
   }
 }
@@ -30,4 +32,6 @@ else{
   echo "Error have been aquired";
 }
 
+
+$db = null;
  ?>
