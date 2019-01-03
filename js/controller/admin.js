@@ -1618,7 +1618,7 @@ function resetPass(){
 
 function mirrorFunction()
 	{
-		document.getElementById('password2').value = document.getElementById('passwordupdate').value;
+		document.getElementById('password2').value = "Aa123456";
 	}
 
 function DSHBRDAgentVersion(){
