@@ -261,7 +261,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "onkeyup:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
 
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "hidden:true", "id:password2"], "");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "hidden:true", "id:password2", "value:Aa123456"], "");
 
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
@@ -1600,27 +1600,26 @@ function addemployeesubmit(){
 
 function resetPass(){
   var x = document.getElementById("resetpw");
-  var y = document.getElementById("passwordupdate");
 	if (x.type === "password")
 	{
-    x.type = "text";
-    y.value = "Aa123456";
-										}
+    x.type = "text";                
+  }
 	else
   var x = document.getElementById("passwordupdate");
 	if (x.type === "password")
 	{
-		x.type = "text";
-										}
+    x.type = "text";
+    x.value = "";           
+  }
 	else
 	{
-		x.type = "password";
-		}
+		x.type = "text";
+	}
 }
 
 function mirrorFunction()
 	{
-		document.getElementById('password2').value = "Aa123456";
+		document.getElementById('passwordupdate').value = document.getElementById('password2').value;
 	}
 
 function DSHBRDAgentVersion(){
