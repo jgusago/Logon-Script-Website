@@ -258,13 +258,8 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   //password
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
-<<<<<<< HEAD
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "onkeyup:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
 
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "hidden:true", "id:password2", "value:Aa123456"], "");
-=======
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true", "value:Aa123456"], "");
->>>>>>> parent of e3ec3f16... Update admin.js
 
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
