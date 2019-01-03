@@ -115,4 +115,6 @@ VALUES ('$EditUser', '$edit', NOW(), '$userid2')";
 //VALUES ('$EditUser', 'Name:".$_POST["name"].",Department:".$_POST["department"].",Position:".$_POST["position"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
 ($db->query($sqlqurey));
 
+
+$db = null;
 ?>

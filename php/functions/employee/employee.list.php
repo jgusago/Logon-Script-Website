@@ -16,4 +16,5 @@ foreach ($db->query($sql) as $row) {
   echo "#$id|$name|$login|$login2|$dept|$subdept";
 }
 
+$db = null;
 ?>
