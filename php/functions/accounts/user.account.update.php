@@ -11,9 +11,10 @@ $password = $_POST['password'];
 
 $EditUser = "Edit User";
 $userid2 = $_SESSION["userid"];
+$namestat = "";
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$oldname = "";
+    $oldname = "";
     $olddepartment = "";
     $oldposition = "";
     $oldrole = "";
@@ -67,12 +68,13 @@ if($oldname !== $name && $name !== ""){
      $namestat = true;
  }
 
- if ($oldpassword !== md5(sha1($password)))
+$password =  md5(sha1($password));
+$namestat = $password;
+ if ($oldpassword !== $password && $password !== "")
  {
-         $password =  md5(sha1($password));
          $query = "UPDATE logonscript.tbl_user SET `password`='$password' WHERE (`userid` = '$id')";
          $db->query($query);
-         $namestat = true;
+         $namestat = true."<br>$password";
  }
 
  if($namestat == true)

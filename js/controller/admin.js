@@ -259,7 +259,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   //password
   createnewElement(divbody6, cb, "div", ["md-form", "mb-3"], [], "");
   createnewElement(label6, divbody6.newelement, "label", [],["id:editLbl"],"Password");
-  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "disabled:true"], "");
+  createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:password", "id:passwordupdate", "onkeyup:ACCeditvalidate(\""+ name+"\",\""+ department+"\",\""+ position+"\",\""+ role+"\",\""+ status+"\")"], "");
 
   createnewElement(inputpwd, divbody6.newelement, "input", ["form-control"], ["type:text", "hidden:true", "id:password2"], "");
 
@@ -293,7 +293,8 @@ currstat = e.options[i].text;
 //
 var btn = document.getElementById("UserAccountupdate");
 //
-if(name !== currname || department !== currdepartment || position !== currposs || role !== currrole|| status !== currstat){
+var password = document.getElementById("passwordupdate").value;
+if(name !== currname || department !== currdepartment || position !== currposs || role !== currrole|| status !== currstat || password !== ""){
   btn.removeAttribute("disabled");
 }
 else{
