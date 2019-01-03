@@ -1601,19 +1601,19 @@ function resetPass(){
   var x = document.getElementById("resetpw");
 	if (x.type === "password")
 	{
-    x.type = "text";
-                  
+    x.type = "text";                
   }
 	else
   var x = document.getElementById("passwordupdate");
 	if (x.type === "password")
 	{
-		x.type = "text";
-										}
+    x.type = "text";
+    x.value = "";           
+  }
 	else
 	{
 		x.type = "text";
-		}
+	}
 }
 
 function mirrorFunction()
