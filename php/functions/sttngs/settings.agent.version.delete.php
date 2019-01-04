@@ -1,6 +1,7 @@
 <?php
 
 $version = $_POST['version'];
+$userid2 = $_SESSION['userid'];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $query = "DELETE FROM logonscript.tbl_agent_version WHERE version = '$version'";
