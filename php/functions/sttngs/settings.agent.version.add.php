@@ -19,7 +19,7 @@ if($count == 0){
   if($db->query($query)){
 
   $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-  VALUES ('$AddVersion', 'Version:".$version.", Validation:".$validation."', NOW(), '$userid2')";
+  VALUES ('$AddVersion', 'Version: ".$version.", Validation: ".$validation."' , NOW() , '$userid2')";
   ($db->query($sqlqurey));
 
     echo "success";
