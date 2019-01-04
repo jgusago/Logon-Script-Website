@@ -2,7 +2,7 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 session_start();
-echo "Transact Name|Transact Details|Transact Date|User";
+echo "Transaction Name|Transaction Details|Transaction Date|User";
 
     $query = "SELECT * FROM logonscript.tbl_history";
 

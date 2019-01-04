@@ -51,7 +51,7 @@ if($oldname !== $name && $name !== ""){
      $namestat = true;
 
      $sql = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-     VALUES ('$EditUser', 'Position:".$_POST["position"]."', NOW(), '$userid2')";
+     VALUES ('$EditUser' | 'Position: | ".$_POST["position"]."' | NOW() | '$userid2')";
      ($db->query($sql));
  }
  if($oldrole !== $role && $role !== "")

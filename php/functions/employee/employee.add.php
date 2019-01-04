@@ -26,7 +26,7 @@ VALUES ('$empid', '$name', '$l1', '$l2', '$dept', '$subdept')";
 $db->query($insert);
 
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-VALUES ('$AddEmployee', 'Employee ID:".$empid.", Name:".$name.", Login1:".$l1.", Login2:".$l2.", Department:".$dept.", Sub-Department:".$subdept."', NOW(), '$userid2')";
+VALUES ('$AddEmployee' | 'Employee ID: ".$empid." | Name: ".$name." | Login1: ".$l1." |  Login2:".$l2." | Department: ".$dept." | Sub-Department: ".$subdept."', |  NOW() | '$userid2')";
 ($db->query($sqlqurey));
 
 echo "success";

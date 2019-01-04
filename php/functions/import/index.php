@@ -69,7 +69,7 @@ if (isset($_POST["import"]))
                     if (mysqli_query($conn, $query)) {
 
                         $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-                        VALUES ('$ImportExcel', '$EmployeeList', NOW(), '$userid2')";
+                        VALUES ('$ImportExcel' | '$EmployeeList' | NOW() | '$userid2')";
                         ($db->query($sqlqurey));
 
                         $success++;
