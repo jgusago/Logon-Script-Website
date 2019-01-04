@@ -2,7 +2,7 @@
   $username = $_POST["username"];
   $password = $_POST["password"];
   $enc = md5(sha1($password));
-  
+
 if (isset($_POST["username"]) && isset($_POST["password"])){
 
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
@@ -18,6 +18,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
     $role = $row[0]['role'];
     $name = $row[0]['name'];
     $department = $row[0]['department'];
+    $position = $row[0]['position'];
       //check status
 
       if($encrypt_password == $enc && $status == "Active") {
@@ -28,6 +29,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
         $_SESSION["status"] = $status;
         $_SESSION["name"] = $name;
         $_SESSION["department"] = $department;
+        $_SESSION["position"] = $position;
           //ROLE
           if($role == "ADMINISTRATOR"){
             echo "success:admin";

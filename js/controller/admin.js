@@ -1298,6 +1298,11 @@ function Profiles()
     divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
     divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
 
+    $.post("php/functions/session/session.confirm.php",function(data){
+    data = data.split(";");
+    //$status.0;".$role.1";".$department.2";".$name.3";".$id.4";".$position.5;
+
+
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],["id:chLabel"],"ACCOUNT INFORMATION");
 
@@ -1313,32 +1318,32 @@ function Profiles()
     createnewElement(divs, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsUid, divs.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl, divsUid.newelement, "label", [], ["id:lblEid"], "Employee Id: ");
-    createnewElement(divsUids, divs.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], "1040359")
+    createnewElement(divsUids, divs.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[4])
     createnewElement(hrUid, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs2, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsUname, divs2.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl2, divsUname.newelement, "label", [], ["id:lblEid"], "Name: ");
-    createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], "Camille Kate")
+    createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[3])
     createnewElement(hrUname, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs3, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsDept, divs3.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl3, divsDept.newelement, "label", [], ["id:lblEid"], "Department: ");
-    createnewElement(divsDepts, divs3.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], "Marvin(IT)")
+    createnewElement(divsDepts, divs3.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[2])
     createnewElement(hrDept, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs4, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsPosition, divs4.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl4, divsPosition.newelement, "label", [], ["id:lblEid"], "Position: ");
     createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "")
-    createnewElement(inputPosition, divsPositions.newelement, "input", ["form-control"], ["id:lblPositions", "type:text"], "");
+    createnewElement(inputPosition, divsPositions.newelement, "input", ["form-control"], ["id:lblPositions", "type:text", "onkeyup:accountpositionconfirm(\""+data[5]+"\")"], data[5]);
     createnewElement(hrPosition, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs5, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsRole, divs5.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl5, divsRole.newelement, "label", [], ["id:lblEid"], "Role: ");
-    createnewElement(divsRoles, divs5.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], "Administrator")
+    createnewElement(divsRoles, divs5.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[1])
     createnewElement(hrRole, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs6, divvv.newelement, "div", ["row"], [], "");
@@ -1347,7 +1352,22 @@ function Profiles()
     createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
     var button = [];
-    createnewElement(button, card.foot, "button", ["btn","btn-default"],[],"Update Profile");
+    createnewElement(button, card.foot, "button", ["btn","btn-default"],["id:accountinfoupdatebtn","disabled:true"],"Update Profile");
+
+        });
+}
+
+function accountpositionconfirm(data){
+
+var currentval = document.getElementById("lblPositions").value;
+var updatebtn = document.getElementById("accountinfoupdatebtn");
+if(data !== currentval && currentval !== ""){
+  updatebtn.removeAttribute("disabled");
+}
+else{
+  updatebtn.setAttribute("disabled","true");
+}
+
 }
 
  function AddEmployee()
