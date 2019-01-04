@@ -1352,9 +1352,22 @@ function Profiles()
     createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
     var button = [];
-    createnewElement(button, card.foot, "button", ["btn","btn-default"],["id:accountinfoupdatebtn","disabled:true"],"Update Profile");
+    createnewElement(button, card.foot, "button", ["btn","btn-default"],["id:accountinfoupdatebtn","disabled:true","onClick:accountinfoupdatebtn()"],"Update Profile");
 
         });
+}
+
+function accountinfoupdatebtn(){
+  var currentval = document.getElementById("lblPositions").value;
+  if(data !== currentval && currentval !== ""){
+  $.post("php/functions/profile/account.position.update.php",{currentval:currentval},function(data){
+
+    
+  });
+}
+else{
+  ALERTcall("danger","Something went wrong, please try again");
+}
 }
 
 function accountpositionconfirm(data){
