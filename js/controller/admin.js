@@ -1460,11 +1460,8 @@ function ChangePass()
   var cb = document.getElementById("mncb");
   var cf = document.getElementById("mncf");
 
-  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = [],
-  divbody = [], divcol = [] , lblCurPass = [], divcol1 = [], inputCurPass =[], spanCurPass = [],
-  divbody2 = [], divcol2 = [], lblNewPass = [], divcols2 = [], inputNewPass = [], spanNewPass = [],
-  divbody3 = [], divcol3 = [], lblConfirmPass = [], divcols3 = [], inputConfirmPass = [], spanConfirmPass = [],
-  divbody4 = [], divcol4 = [], lblButton = [], divcols4 = [], btnUpdatePass = [], btnCancel = [];
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = []
+  form = [], fg = [], label = [], input = [], btn = [], br = [];
 
 
   createnewElement(divvalue, ch, "div", ["row"], [], "");
@@ -1477,34 +1474,51 @@ function ChangePass()
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
-  createnewElement(divbody, cb, "form", ["row"], ["id:changeRow"], "");
-  createnewElement(divcol, divbody.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblCurPass, divcol.newelement, "label", [], ["id:lblEid"], "Current Password");
-  createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputCurPass, divcol1.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "onkeyup:ShowPass()");
-  createnewElement(spanCurPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
+  createnewElement(form, cb, "form", [], ["onsubmit:return AccInfChnPass();"], "");
+  createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+  createnewElement(label, fg.newelement, "label", [], ["for:AccInfCurrPAss"], "Current Password");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["id:AccInfCurrPAss","type:password","pattern:(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", "required:true", "title:\"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces\""], "");
+  //
+  createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+  createnewElement(label, fg.newelement, "label", [], ["for:AccInfNewPAss"], "New Password");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["id:AccInfNewPAss","type:password","pattern:(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", "required:true", "title:\"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces\""], "");
+  //
+  createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+  createnewElement(label, fg.newelement, "label", [], ["for:AccInfCompPAss"], "Confirm Password");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["id:AccInfCompPAss","type:password","pattern:(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", "required:true"], "");
+  //
+  createnewElement(br, form.newelement, "br", [], [], "");
+  //
+  createnewElement(fg, form.newelement, "div", ["form-row"], [],"");
+    createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
+    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-primary"], ["type:submit","value:Confirm"], "");
+    createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
+    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-primary"], ["type:button","onClick:OVERLAYdisable()","value:Cancel"], "");
+  //
+  createnewElement(br, form.newelement, "br", [], [], "");
+}
 
-  createnewElement(divbody2, cb, "div", ["row"], ["id:changeRow"], "");
-  createnewElement(divcol2, divbody2.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblNewPass, divcol2.newelement, "label", [], ["id:lblEid"], "New Password");
-  createnewElement(divcols2, divbody2.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputNewPass, divcols2.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "");
-  createnewElement(spanNewPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
+function AccInfChnPass(){
+  var password = document.getElementById("AccInfNewPAss");
+  var confirm_password = document.getElementById("AccInfCompPAss");
+  var old_password = document.getElementById("AccInfCurrPAss");
 
-  createnewElement(divbody3, cb, "div", ["row"], ["id:changeRow"], "");
-  createnewElement(divcol3, divbody3.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblConfirmPass, divcol3.newelement, "label", [], ["id:lblEid"], "Confirm New Password");
-  createnewElement(divcols3, divbody3.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(inputConfirmPass, divcols3.newelement, "input", ["form-control"], ["id:lblPass", "type:password", "maxlength:16"], "");
-  createnewElement(spanConfirmPass, divcol1.newelement, "span", ["glyphicon", "glyphicon-eye-open"], ["id:glyphicon"], "");
+  if(password.value !== confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
 
-  createnewElement(divbody4, cb, "div", ["row"], ["id:changeRow"], "");
-  createnewElement(divcol4, divbody4.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
-  createnewElement(lblButton, divcol4.newelement, "label", [], ["id:lblEid"], "");
-  createnewElement(divcols4, divbody4.newelement, "div", ["col-md-8", "col-6"], [], "");
-  createnewElement(btnUpdatePass, divcols4.newelement, "button", ["btn", "btn-warning"], ["id:Pass"], "Save Changes");
-  createnewElement(btnCancel, divcols4.newelement, "button", ["btn", "btn-default"], ["id:Pass"], "Cancel");
+    $.post("php/functions/profile/account.change.password.php",{oldpassword:old_password.value,newpassword:password.value,confpassword:confirm_password.value},function(data){
+      if(data == "success"){
+        ALERTcall("success","Password have been updated");
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger",data);
+      }
+    });
+  }
 
+return false;
 }
 
 function EmployeeList(){
