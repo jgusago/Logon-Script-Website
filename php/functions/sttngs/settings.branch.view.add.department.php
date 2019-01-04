@@ -38,7 +38,7 @@ if($existing == false){
 $db->query($query);
 echo "true";
 
-$sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id) VALUES ('$AddDepartment', 'Department:".$dept.",Filter Department:".$filter."', NOW(), '$userid2')";
+$sqlqurey = "INSERT INTO tbl_history (transact_date, transact_name, transact_details, user_id) VALUES (NOW(), '$AddDepartment', 'Department: ".$dept." / Filter Department: ".$filter."', '$userid2')";
 ($db->query($sqlqurey));
 
 }
