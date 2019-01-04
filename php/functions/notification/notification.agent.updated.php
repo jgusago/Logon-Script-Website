@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+$users = $_SESSION['name'];
+$uid = $_SESSION['userid'];
 $remarks = $_POST['remarks'];
 $version = $_POST['agentversion'];
 $hostname = $_POST['hostname'];
@@ -12,14 +16,18 @@ if($db->query($query)){
   foreach ($db->query($query) as $row) {
     $count++;
   }
-  if($count > 0){
+  if($count > 0)
+  {
+    $query2 = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id) VALUES ('Agent Update', 'Hostname: ".$hostname." / Agent Version: ".$version." / Remarks: ".$remarks."', NOW(), '$users')"
+    ($db->query($query2));
     echo "success";
   }
   else{
     echo "invalid";
   }
 }
-else{
+else
+{
   echo "Error have been aquired";
 }
 
