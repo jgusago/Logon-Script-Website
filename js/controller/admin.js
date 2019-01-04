@@ -1477,7 +1477,7 @@ function ChangePass()
   createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
-  createnewElement(divbody, cb, "div", ["row"], ["id:changeRow"], "");
+  createnewElement(divbody, cb, "form", ["row"], ["id:changeRow"], "");
   createnewElement(divcol, divbody.newelement, "div", ["col-sm-4" ,"col-md-4", "col-5"], [], "");
   createnewElement(lblCurPass, divcol.newelement, "label", [], ["id:lblEid"], "Current Password");
   createnewElement(divcol1, divbody.newelement, "div", ["col-md-8", "col-6"], [], "");
