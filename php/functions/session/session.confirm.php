@@ -6,7 +6,8 @@ if (isset($_SESSION["userid"])){
   $name = $_SESSION["name"];
   $status = $_SESSION["status"];
   $department = $_SESSION["department"];
-  echo $status.";".$role.";".$department.";".$name.";".$id;
+  $position = $_SESSION["position"];
+  echo $status.";".$role.";".$department.";".$name.";".$id.";".$position;
 
 }
 else{
