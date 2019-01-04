@@ -1337,7 +1337,7 @@ function Profiles()
     createnewElement(divsPosition, divs4.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     createnewElement(divslbl4, divsPosition.newelement, "label", [], ["id:lblEid"], "Position: ");
     createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "")
-    createnewElement(inputPosition, divsPositions.newelement, "input", ["form-control"], ["id:lblPositions", "type:text", "onkeyup:accountpositionconfirm(\""+data[5]+"\")"], data[5]);
+    createnewElement(inputPosition, divsPositions.newelement, "input", ["form-control"], ["id:lblPositions", "type:text", "onkeyup:accountpositionconfirm(\""+data[5]+"\")", "value:"+data[5]], data[5]);
     createnewElement(hrPosition, divvv.newelement, "hr", [], ["id:hr"], "");
 
     createnewElement(divs5, divvv.newelement, "div", ["row"], [], "");
@@ -1360,14 +1360,18 @@ function Profiles()
 function accountinfoupdatebtn(value){
   var currentval = document.getElementById("lblPositions").value;
   var inputpost = document.getElementById("lblPositions");
+  var btn = document.getElementById("accountinfoupdatebtn");
   if(value !== currentval && currentval !== ""){
   $.post("php/functions/profile/account.position.update.php",{currentval:currentval},function(data){
     if(data == "success"){
-      inputpost.innerHTML = currentval;
+      inputpost.removeAttribute("value");
+      inputpost.setAttribute("value",currentval);
       ALERTcall("success","Position have been updated");
       inputpost.removeAttribute("onkeyup");
-      inputpost.setAttribute("onkeyup","accountpositionconfirm("+currentval+")");
+      inputpost.setAttribute("onkeyup","accountpositionconfirm(\""+currentval+"\")");
       accountpositionconfirm(currentval);
+      btn.removeAttribute("onClick");
+      btn.setAttribute("onClick","accountinfoupdatebtn(\""+currentval+"\")");
     }
 
   });
