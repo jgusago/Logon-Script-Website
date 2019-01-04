@@ -3,7 +3,7 @@ session_start();
 
 $version = $_POST['version'];
 $userid2 = $_SESSION['userid'];
-$user = $_SESSION['name']
+$user = $_SESSION['name'];
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $query = "DELETE FROM logonscript.tbl_agent_version WHERE version = '$version'";
