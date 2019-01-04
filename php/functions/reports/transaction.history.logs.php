@@ -4,7 +4,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 session_start();
 echo "Transaction Name|Transaction Details|Transaction Date|User";
 
-    $query = "SELECT * FROM logonscript.tbl_history";
+    $query = "SELECT * FROM logonscript.tbl_history ORDER BY history_id DESC";
 
     foreach ($db->query($query) as $row) 
     {
