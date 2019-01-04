@@ -98,21 +98,21 @@ while ($row = $queryvar->fetch()) {
     $status = $row['status'];
 
 if($name != $oldname)
-    $edit .= "Name: ".$name.",";
+    $edit .= "Name: ".$name."| ";
 if($department != $olddepartment)
-     $edit .= "Department: ".$department.",";
+     $edit .= "Department: ".$department."| ";
 if($position != $oldposition)
-    $edit .= "Position: ".$position.",";
+    $edit .= "Position: ".$position."| ";
 if($role != $oldrole)
-    $edit .=  "Role: ".$role.",";
+    $edit .=  "Role: ".$role."| ";
 if($status != $oldstatus)
-    $edit .=  "Status: ".$status.",";
+    $edit .=  "Status: ".$status."| ";
 }
 
 
 $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
 
-VALUES ('$EditUser'|,  '$edit' |, NOW() |, '$userid2')";
+VALUES ('$EditUser',  '$edit' , NOW() , '$userid2')";
 //VALUES ('$EditUser', 'Name:".$_POST["name"].",Department:".$_POST["department"].",Position:".$_POST["position"].",Role:".$_POST["role"].",Status:".$_POST["status"]."', NOW(), '$userid2')";
 ($db->query($sqlqurey));
 
