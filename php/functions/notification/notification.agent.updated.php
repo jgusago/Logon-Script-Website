@@ -18,7 +18,7 @@ if($db->query($query)){
   }
   if($count > 0)
   {
-    $query2 = "INSERT INTO tbl_history (transact_date, transact_name, transact_details, user_id) VALUES (NOW(), 'Agent Update', 'Hostname: ".$hostname." / Agent Version: ".$version." / Remarks: ".$remarks."', '$uid')";
+    $query2 = "INSERT INTO tbl_history (transact_name, transact_details, user_id) VALUES ('Agent Update', 'Hostname: ".$hostname." / Agent Version: ".$version." / Remarks: ".$remarks."', '$uid')";
     ($db->query($query2));
 
     echo "success";

@@ -26,9 +26,9 @@ else
         VALUES ('".$_POST["userid"]."', '".$_POST["name"]."', '".$_POST["department"]."', '".$_POST["role"]."', '".$_POST["status"]."', '$hashed_password')";
         ($db->query($sql));
 
-        $sql2 = "INSERT INTO tbl_history (transact_date, transact_name, transact_details, user_id)
+        $sql2 = "INSERT INTO tbl_history (transact_name, transact_details, user_id)
              
-        VALUES (NOW(), '$AddUser', 'UserID: ".$_POST["userid"]." / Name: ".$_POST["name"]." / Department: ".$_POST["department"]." / Role: ".$_POST["role"]." / Status: ".$_POST["status"]."', '$userid2')";
+        VALUES ('$AddUser', 'UserID: ".$_POST["userid"]." / Name: ".$_POST["name"]." / Department: ".$_POST["department"]." / Role: ".$_POST["role"]." / Status: ".$_POST["status"]."', '$userid2')";
         ($db->query($sql2));
 
         echo "<script>alert('User Account is successfully saved!'); window.location='../../../.admin.html'</script>";
