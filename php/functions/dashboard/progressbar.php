@@ -11,6 +11,7 @@ $count = 0;
 foreach ($db->query($query) as $row) {
   $tname[$count] = $row["tree_name"];
   $tfilter[$count] = $row["tree_filter"];
+  $comp[$count] = $row["tree_computer_count"];
   $count++;
 }
 
@@ -19,7 +20,13 @@ for($i = 0; $i < $count; $i++){
   $query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE hostname LIKE '$tfilter[$i]%'";
   foreach ($db->query($query) as $row) {
     $result = $row["COUNT(*)"];
-    $percentage = ($result/$total)*100;
+    if($comp[$i] == 0){
+      $divident = 1;
+    }
+    else{
+      $divident = $comp[$i];
+    }
+    $percentage = ($result/$divident)*100;
     $whole = explode(".",$percentage);
     if($whole[0] <= 10){
       $color = "danger";
@@ -32,8 +39,9 @@ for($i = 0; $i < $count; $i++){
     }
     else{
       $color = "primary";
+      $whole[0] = 100;
     }
-    echo "$colon$tname[$i]|$result|$whole[0]|$color";
+    echo "$colon$tname[$i]|$result out of $comp[$i]|$whole[0]|$color";
     $colon = ";";
   }
 }

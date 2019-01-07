@@ -5,16 +5,16 @@ session_start();
 echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time";
 if($_SESSION['role'] != "STAFF")
 {
-    $query = "SELECT * FROM logonscript.tbl_log_history";
+    $query = "SELECT * FROM logonscript.tbl_log_history GROUP BY userid";
 
-    foreach ($db->query($query) as $row) 
+    foreach ($db->query($query) as $row)
     {
-
+        $hostname = "";
         $id = $row['userid'];
         $ip = $row['ip_address'];
         $services = $row['services'];
         $branch = $row['branch'];
-        $time = $row['scan_time'];
+        $time = $row['update'];
 
         $query3 = "SELECT hostname from logonscript.tbl_log WHERE ip_address LIKE '$ip'";
         foreach ($db->query($query3) as $row)
@@ -38,7 +38,7 @@ else
         $branch = $row['branch'];
         $time = $row['scan_time'];
         $query4 = "SELECT hostname from logonscript.tbl_log WHERE ip_address LIKE '$ip'";
-        foreach ($db->query($query4) as $row) 
+        foreach ($db->query($query4) as $row)
         {
             $hostname = $row['hostname'];
         }

@@ -20,8 +20,8 @@ foreach ($db->query($query1) as $row) {
 $query2 = "UPDATE logonscript.tbl_tree SET tree_parent = '$newname' WHERE tree_parent LIKE '$name'";
 if ($db->query($query2)) {
 
-  $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, transact_date, user_id)
-  VALUES ('$EditTreeParent', 'Tree Parent:".$newname.", Tree Filter:".$newfilter."', NOW(), '$userid2')";
+  $sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, user_id)
+  VALUES ('$EditTreeParent', 'Tree Parent:".$newname.", Tree Filter:".$newfilter.", Computer Count: ".$comp."', '$userid2')";
   ($db->query($sqlqurey));
   $xxx = true;
 }

@@ -544,6 +544,42 @@ function DSHBRDLogsHistory()
 {
   document.getElementById("dtitle").innerHTML = "Reports";
   document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
+
+  var view = document.getElementById("contentview");
+  view.innerHTML = "";
+
+  tableid = idgenerator();
+
+  var card = [];
+  createCard(card, view, [], []);
+
+  var table = [];
+  var classes = ["table","table-bordered"];
+  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  createTable(table, card.body, classes, attributes);
+
+  $.post("php/functions/reports/computer.logs.history.php",function(data){
+
+        data = data.split("#");
+        datalength = data.length;
+
+        thfdata = data[0].split("|");
+        var tbheader = [], tbfooter = [];
+        createTableContent([], table.head, [], [], "th", thfdata);
+        createTableContent([], table.foot, [], [], "th", thfdata);
+        pagination(tableid);
+
+        for (var i = 1; i < datalength;i++){
+            newdata = data[i].split("|");
+            createTableContent([], table.body, [],[], "td", newdata);
+
+            }
+  });
+
+
+
+
+
 }
 
 function Dashboard()
@@ -772,10 +808,11 @@ function adddepartment(){
     var pathid = idgenerator();
     var lblid = idgenerator();
     var lblid2 = idgenerator();
+    var lblid3 = idgenerator();
     //form
-    createnewElement(form, cb, "form", [] ,["onsubmit:return BRNCHVWadddepartment(\""+branchid+"\",\""+pathid+"\",\""+lblid+"\",\""+lblid2+"\")"], "");
+    createnewElement(form, cb, "form", [] ,["onsubmit:return BRNCHVWadddepartment(\""+branchid+"\",\""+pathid+"\",\""+lblid+"\",\""+lblid2+"\",\""+lblid3+"\")"], "");
 
-    var fg4 =[], label2 = [], select =[], option = [];
+    var fg4 =[], label2 = [], select =[], option = [], br = [];
     createnewElement(fg4, form.newelement, "div", ["form-group"], [], "");
     createnewElement(label2, fg4.newelement, "label", [],[],"Select Branch or Add Department");
     createnewElement(select, fg4.newelement, "select", ["form-control"], ["name:department", "required:true", "id:"+branchid, "onchange:BRNCHVWupdatepath(\""+branchid+"\",\""+pathid+"\")"], "");
@@ -800,11 +837,17 @@ function adddepartment(){
     createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid2], "Department Filter:");
     createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid2,"placeholder:Department Filter","required:true"], "");
 
+    createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
+    createnewElement(fg2, form.newelement, "div", ["form-group"],[],"");
+    createnewElement(lbl2, fg2.newelement, "label", [], ["for:"+lblid3], "Number of Computers");
+    createnewElement(ip2, fg2.newelement, "input", ["form-control"], ["id:"+lblid3,"placeholder:Number of Computers","required:true","type:number"], "");
   //footer
     var button = [], fg3 = [];
     createnewElement(dvd,  form.newelement, "div", ["dropdown-divider"],[],"");
     createnewElement(fg3, form.newelement,"div", ["form-group"], [],"");
     createnewElement(button, fg3.newelement, "button", ["btn","btn-primary"],["type:submit"],"Add Department");
+  //br
+    createnewElement(br, form.newelement, "br",[],[],"");
 
 }
 /*End of Branch View*/
@@ -836,14 +879,15 @@ function BRNCHVWupdatepath(branchid, pathid)
 
 }
 
-function BRNCHVWadddepartment(branchid, pathid, deptid, filterid)
+function BRNCHVWadddepartment(branchid, pathid, deptid, filterid, compid)
 {
 
   var branch = document.getElementById(branchid).value;
   var path = document.getElementById(pathid).value;
   var dept = document.getElementById(deptid).value;
   var filter = document.getElementById(filterid).value;
-  $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter},function(data){
+  var comp = document.getElementById(compid).value;
+  $.post("php/functions/sttngs/settings.branch.view.add.department.php",{branch:branch, path:path, dept:dept, filter:filter, comp:comp},function(data){
     if(data=="true")
     {
       DSHBRDContentBranchSettings('','DSHBRDBranchView');
@@ -1569,7 +1613,7 @@ function BRNCHVWedit(id){
   //formgroup
   createnewElement(formgroup2, form.newelement,"div",["form-group"],[],"");
   //count
-  createnewElement(namelbl2, formgroup2.newelement, "label", [], ["for:pc_count"], "Change No of Computers");
+  createnewElement(namelbl2, formgroup2.newelement, "label", [], ["for:pc_count"], "No of Computers");
   createnewElement(nameval2, formgroup2.newelement, "input", ["form-control"], ["required:true","type:number","value:"+comp_count,"data:"+comp_count, "id:pc_count", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\",\""+comp_count+"\")"], "");
 
   createnewElement(brk, form.newelement, "br", [], [], "");
