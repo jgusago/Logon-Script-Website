@@ -571,86 +571,50 @@ function Dashboard()
   createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
 
-  // Date
-  createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
-  createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
-  createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is Tuesday, 25 December 2018");
+  $.post("php/functions/dashboard/cards.php",function(data){
+    data = data.split(";");
+    //date
+    createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
+    createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
+    createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
+    createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is "+data[0]);
 
-  // Cards
-  createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
-  createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
-  createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
-  createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon, divItems.newelement, "div", ["fa", "fa-exclamation", "display-4", "text-danger", "aria-hidden:true"], [], "");
-  createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
-  createnewElement(divText, divml.newelement, "div", ["text-muted"], [], "End Task Units");
-  createnewElement(divcount, divml.newelement, "div", [], ["id:dshbrdCounts"], "6");
-
-  createnewElement(divColcard2, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
-  createnewElement(divcard2, divColcard2.newelement, "div", ["card", "mb-4"], [], "");
-  createnewElement(divcardBody2, divcard2.newelement, "div", ["card-body"], [], "");
-  createnewElement(divItems2, divcardBody2.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon2, divItems2.newelement, "div", ["fa", "fa-upload", "display-4", "text-warning", "aria-hidden:true"], [], "");
-  createnewElement(divml2, divItems2.newelement, "div", ["ml-3"], [], "");
-  createnewElement(divText2, divml2.newelement, "div", ["text-muted"], [], "Old Agent Verison");
-  createnewElement(divcount2, divml2.newelement, "div", [], ["id:dshbrdCounts"], "143");
-
-  createnewElement(divColcard3, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
-  createnewElement(divcard3, divColcard3.newelement, "div", ["card", "mb-4"], [], "");
-  createnewElement(divcardBody3, divcard3.newelement, "div", ["card-body"], [], "");
-  createnewElement(divItems3, divcardBody3.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon3, divItems3.newelement, "div", ["fa", "fa-desktop", "display-4", "text-primary", "aria-hidden:true"], [], "");
-  createnewElement(divml3, divItems3.newelement, "div", ["ml-3"], [], "");
-  createnewElement(divText3, divml3.newelement, "div", ["text-muted"], [], "Logonscript ");
-  createnewElement(divcount3, divml3.newelement, "div", [], ["id:dshbrdCounts"], "217");
-
-  createnewElement(divColcard4, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], ["id:dshbrdCards"], "");
-  createnewElement(divcard4, divColcard4.newelement, "div", ["card", "mb-4"], [], "");
-  createnewElement(divcardBody4, divcard4.newelement, "div", ["card-body"], [], "");
-  createnewElement(divItems4, divcardBody4.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  createnewElement(divIcon4, divItems4.newelement, "div", ["fa", "fa-users", "display-4", "text-default", "aria-hidden:true"], [], "");
-  createnewElement(divml4, divItems4.newelement, "div", ["ml-3"], [], "");
-  createnewElement(divText4, divml4.newelement, "div", ["text-muted"], [], "Users");
-  createnewElement(divcount4, divml4.newelement, "div", [], ["id:dshbrdCounts"], "13");
+    var icon = ["fa-exclamation","fa-upload","fa-desktop","fa-users"];
+    var text = ["End Task Units", "Old Ver Units", "Installed Units", "Employees"];
+    var id = ["dshbrdcountend","dshbrdcountold","dshbrdcountins","dshbrdcountemp"];
+    var text_color = ["danger","warning", "primary", "default"]
 
 
-  // Progress bar
-  createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
-  createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
-  createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
-  createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
+    createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
 
-  createnewElement(txtdept, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Marvin(IT)");
-  createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [], "62");
-  createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-warning"], ["role:progressbar", "aria-valuenow:40", "aria-valuemin:0", "ariavaluemax:100", "id:dept1"], "40%");
+    for (var i = 1; i < data.length; i++){
+      createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], [], "");
+      createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
+      createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
+      createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
+      createnewElement(divIcon, divItems.newelement, "div", ["fa", icon[i-1], "display-4", "text-"+text_color[i-1], "aria-hidden:true"], [], "");
+      createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
+      createnewElement(divText, divml.newelement, "div", ["text-muted"], [], text[i-1]);
+      createnewElement(divcount, divml.newelement, "div", [], [], data[i]);
+    }
+  });
 
-  createnewElement(txtdept1, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Marvin(MAIN)");
-  createnewElement(spanCount1, divcol.newelement, "span", ["pull-right", "strong"], [], "157");
-  createnewElement(divProgress1, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar1, divProgress1.newelement, "div", ["progress-bar", "bg-success"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept2"], "70%");
+  $.post("php/functions/dashboard/progressbar.php", function(data){
 
-  createnewElement(txtdept2, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(QY)");
-  createnewElement(spanCount2, divcol.newelement, "span", ["pull-right", "strong"], [], "3");
-  createnewElement(divProgress2, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar2, divProgress2.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:3", "aria-valuemin:0", "ariavaluemax:100", "id:dept3"], "1%");
-
-  createnewElement(txtdept3, divcol.newelement, "label", [], ["id:dshbrdLbl"], "Pacifica(LH)");
-  createnewElement(spanCount3, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
-  createnewElement(divProgress3, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar3, divProgress3.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept4"], "0%");
-
-  createnewElement(txtdept4, divcol.newelement, "label", [], ["id:dshbrdLbl"], "6789(AE)");
-  createnewElement(spanCount4, divcol.newelement, "span", ["pull-right", "strong"], [], "3");
-  createnewElement(divProgress4, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar4, divProgress4.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:3", "aria-valuemin:0", "ariavaluemax:100", "id:dept5"], "1%");
-
-  createnewElement(txtdept5, divcol.newelement, "label", [], ["id:dshbrdLbl"], "6789(L8)");
-  createnewElement(spanCount5, divcol.newelement, "span", ["pull-right", "strong"], [], "0");
-  createnewElement(divProgress5, divcol.newelement, "div", ["progress"], [], "");
-  createnewElement(divProgbar5, divProgress5.newelement, "div", ["progress-bar", "bg-danger"], ["role:progressbar", "aria-valuenow:70", "aria-valuemin:0", "ariavaluemax:100", "id:dept6"], "0%");
+    createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
+    createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
+    createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
+    createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
+    data = data.split(";");
+    for(i = 0; i < data.length; i++){
+      var mini = data[i].split("|");
+      createnewElement(txtdept, divcol.newelement, "label", [], ["id:dshbrdLbl"], mini[0]);
+      createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [],mini[1]);
+      createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
+      createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-"+mini[3]], ["role:progressbar", "aria-valuenow:"+mini[2], "aria-valuemin:0", "ariavaluemax:100", "id:progressbar"+i], mini[2]+"%");
+      divProgbar.newelement.style.width = mini[2]+"%";
+    }
+  });
 
   // Pie Chart
   createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], [], "");
@@ -663,17 +627,17 @@ function Dashboard()
   var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
 
   // Edit History
-  // createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
-  // createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
-  // createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
-  // createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
-  // createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
-  // createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
-  // createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
+  createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
+  createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
+  createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
+  createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
+  createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
+  createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
+  createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
 
-  // createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
-  // createnewElement(tbl, divTable.newelement, "table", ["table", "card-table"], [], "");
-  // createnewElement(tblHeader, tbl.newelement, "thead", [], [], "");
+  createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
+  createnewElement(tbl, divTable.newelement, "table", ["table", "card-table"], [], "");
+  createnewElement(tblHeader, tbl.newelement, "thead", [], [], "");
 
 }
 
@@ -722,7 +686,7 @@ function DSHBRDContentBranchSettings()
       var td = [], link = [], i = [], newdata = [], label = [], link2 = [], i2=[];
       var id = idgenerator();
       createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
-      createnewElement(label, td.newelement, "h5", [], ["id:"+id, "tree_id:"+currentdata[4], "tree_filter:"+currentdata[5], "tree_name:"+currentdata[0]], currentdata[0])
+      createnewElement(label, td.newelement, "h5", [], ["id:"+id, "tree_id:"+currentdata[4], "tree_filter:"+currentdata[5], "tree_name:"+currentdata[0],"computer_count:"+currentdata[6]], currentdata[0])
       createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWedit(\""+id+"\")"]);
       createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
       createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWdelete(\""+id+"\")"]);
@@ -1584,6 +1548,7 @@ function BRNCHVWedit(id){
   var tree_id = document.getElementById(id).getAttribute("tree_id");
   var tree_filter = document.getElementById(id).getAttribute("tree_filter");
   var tree_name = document.getElementById(id).getAttribute("tree_name");
+  var comp_count = document.getElementById(id).getAttribute("computer_count");
 
   ch.innerHTML = "Edit Current Data";
 
@@ -1594,13 +1559,18 @@ function BRNCHVWedit(id){
   createnewElement(formgroup, form.newelement,"div",["form-group"],[],"");
   //treename
   createnewElement(namelbl, formgroup.newelement, "label", [], ["for:tree_name"], "Change Tree Name");
-  createnewElement(nameval, formgroup.newelement, "input", ["form-control"], ["value:"+tree_name,"data:"+tree_name, "id:tree_name", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\")"], "");
+  createnewElement(nameval, formgroup.newelement, "input", ["form-control"], ["required:true","value:"+tree_name,"data:"+tree_name, "id:tree_name", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\",\""+comp_count+"\")"], "");
   createnewElement(brk, form.newelement, "br", [], [],"");
   //formgroup
   createnewElement(formgroup2, form.newelement,"div",["form-group"],[],"");
   //treename
   createnewElement(namelbl2, formgroup2.newelement, "label", [], ["for:tree_filter"], "Change Tree Filter");
-  createnewElement(nameval2, formgroup2.newelement, "input", ["form-control"], ["value:"+tree_filter,"data:"+tree_filter, "id:tree_filter", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\")"], "");
+  createnewElement(nameval2, formgroup2.newelement, "input", ["form-control"], ["required:true","value:"+tree_filter,"data:"+tree_filter, "id:tree_filter", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\",\""+comp_count+"\")"], "");
+  //formgroup
+  createnewElement(formgroup2, form.newelement,"div",["form-group"],[],"");
+  //count
+  createnewElement(namelbl2, formgroup2.newelement, "label", [], ["for:pc_count"], "Change No of Computers");
+  createnewElement(nameval2, formgroup2.newelement, "input", ["form-control"], ["required:true","type:number","value:"+comp_count,"data:"+comp_count, "id:pc_count", "onkeyup:BRNCHVWeditconfirm(\""+tree_name+"\",\""+tree_filter+"\",\""+comp_count+"\")"], "");
 
   createnewElement(brk, form.newelement, "br", [], [], "");
   createnewElement(btn, form.newelement, "button", ["btn","btn-primary","btn-block"], ["type:submit","id:editsubmit","disabled:true"], "Edit");
@@ -1613,8 +1583,9 @@ function branchedit(id, name, filter, h5id){
 
   newname = document.getElementById("tree_name").value;
   newfilter = document.getElementById("tree_filter").value;
+  newpcno = document.getElementById("pc_count").value;
   newtd = document.getElementById(h5id);
-  $.post("php/functions/sttngs/settings.branch.view.edit.php",{newname:newname,newfilter:newfilter,id:id},function(data){
+  $.post("php/functions/sttngs/settings.branch.view.edit.php",{newname:newname,newfilter:newfilter,newpcno:newpcno,id:id},function(data){
     if (data == "true"){
       ALERTcall("success","Data have beed updated");
       newtd.removeAttribute("tree_name");
@@ -1637,13 +1608,14 @@ function branchedit(id, name, filter, h5id){
   return false;
 }
 
-function BRNCHVWeditconfirm(name,filter){
+function BRNCHVWeditconfirm(name,filter,count){
 
   newname = document.getElementById("tree_name").value;
   newfilter = document.getElementById("tree_filter").value;
+  comp_count = document.getElementById("pc_count").value;
   editsubmit = document.getElementById("editsubmit");
 
-  if(newname !== name || newfilter !== filter){
+  if(newname !== name || newfilter !== filter || comp_count !== count){
     editsubmit.removeAttribute('disabled');
   }
   else{

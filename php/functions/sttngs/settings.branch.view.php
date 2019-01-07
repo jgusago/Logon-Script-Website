@@ -39,6 +39,7 @@ foreach($treeresult as $row){
     $number = $row['tree_level'];
     $id = $row['tree_id'];
     $filter = $row['tree_filter'];
+    $pc = $row['tree_computer_count'];
     $childcount = colcount($name,0);
     $trtd = colbreaker($parent,$name,0);
     if($parent == "root" && $countroom == 0){
@@ -47,7 +48,7 @@ foreach($treeresult as $row){
     else{
         echo "||";
     }
-    echo "$name;$childcount;$trtd;$number;$id;$filter";
+    echo "$name;$childcount;$trtd;$number;$id;$filter;$pc";
     getchild($name);
     $countroom++;
 }
