@@ -282,7 +282,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 .nav-link.text-center
 {
-  background:#365b0d82;
+  background: #94A880;
 }
 .form-group
 {
@@ -766,7 +766,7 @@ footer.sticky-footer {
   bottom: 0;
   width: 100%;
   height: 56px;
-  background:#365b0d82;
+  background: #94A880;
   color: white;
   line-height: 55px; }
   @media (min-width: 992px) {
