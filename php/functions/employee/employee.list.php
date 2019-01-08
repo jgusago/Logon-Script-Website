@@ -3,7 +3,7 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 $sql = "SELECT * FROM logonscript.tbl_employee";
-echo "Employee ID|Name|Login ID|Second Login|Department|Sub Department";
+echo "|Employee ID|Name|Login ID|Department|Sub Department|Action";
 foreach ($db->query($sql) as $row) {
 
   $id = $row['emp_id'];
@@ -13,7 +13,7 @@ foreach ($db->query($sql) as $row) {
   $dept = $row['dept'];
   $subdept = $row['sub_dept'];
 
-  echo "#$id|$name|$login|$login2|$dept|$subdept";
+  echo "#input`form-check-label`value:$id~type:checkbox`|$id|$name|$login~$login2|$dept|$subdept|input`btn~btn-primary`type:buttons~value:Edit`Edit";
 }
 
 $db = null;
