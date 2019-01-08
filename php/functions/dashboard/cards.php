@@ -2,22 +2,29 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $date = date("l, d F, Y");
 
-$query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE iMonitor_Status = 'End Task'";
+session_start();
+$dept = $_SESSION["department"];
+$query = "SELECT tree_filter FROM tbl_tree where tree_name LIKE '$dept'";
+foreach ($db->query($query) as $row) {
+$filter = $row["tree_filter"];
+}
+
+$query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE iMonitor_Status = 'End Task' AND hostname like '$filter%'";
 foreach ($db->query($query) as $row) {
 $endtask = $row["COUNT(*)"];
 }
 
-$query = "SELECT COUNT(*) FROM logonscript.tbl_computer_details WHERE tbl_computer_details.agent_version != ALL(SELECT version FROM tbl_agent_version WHERE type = 'valid')";
+$query = "SELECT COUNT(*) FROM logonscript.tbl_computer_details WHERE tbl_computer_details.agent_version != ALL(SELECT version FROM tbl_agent_version WHERE type = 'valid') AND hostname like '$filter%'";
 foreach ($db->query($query) as $row) {
 $oldversion = $row["COUNT(*)"];
 }
 
-$query = "SELECT COUNT(*) FROM logonscript.tbl_computer_details";
+$query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE hostname like '$filter%'";
 foreach ($db->query($query) as $row) {
 $installed = $row["COUNT(*)"];
 }
 
-$query = "SELECT COUNT(*) FROM logonscript.tbl_employee";
+$query = "SELECT COUNT(*) FROM logonscript.tbl_employee WHERE dept = '$dept'";
 foreach ($db->query($query) as $row) {
 $employee = $row["COUNT(*)"];
 }
