@@ -5,7 +5,7 @@ session_start();
 echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time";
 if($_SESSION['role'] != "STAFF")
 {
-    $query = "SELECT * FROM logonscript.tbl_log_history GROUP BY userid ORDER BY scan_date Desc";
+    $query = "SELECT * FROM logonscript.tbl_log_history GROUP BY ip_address ORDER BY scan_date Desc";
 
     foreach ($db->query($query) as $row)
     {
