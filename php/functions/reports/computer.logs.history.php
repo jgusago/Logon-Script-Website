@@ -2,10 +2,10 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 session_start();
-echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time";
+echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time|End Time";
 if($_SESSION['role'] != "STAFF")
 {
-    $query = "SELECT * FROM logonscript.tbl_log_history GROUP BY ip_address ORDER BY scan_date Desc";
+    $query = "SELECT *, MAX(scan_date), MIN(scan_date) FROM logonscript.tbl_log_history group by ip_address order by scan_date Desc";
 
     foreach ($db->query($query) as $row)
     {
@@ -14,7 +14,8 @@ if($_SESSION['role'] != "STAFF")
         $ip = $row['ip_address'];
         $services = $row['services'];
         $branch = $row['branch'];
-        $time = $row['scan_date'];
+        $maxtime = $row['MAX(scan_date)'];
+        $mintime = $row['MIN(scan_date)'];
 
         $query3 = "SELECT hostname from logonscript.tbl_log WHERE ip_address LIKE '$ip'";
         foreach ($db->query($query3) as $row)
@@ -22,7 +23,7 @@ if($_SESSION['role'] != "STAFF")
             $hostname = $row['hostname'];
         }
 
-        echo "#$hostname|$id|$ip|$services|$branch|$time";
+        echo "#$hostname|$id|$ip|$services|$branch|$maxtime|$mintime";
     }
 }
 else
