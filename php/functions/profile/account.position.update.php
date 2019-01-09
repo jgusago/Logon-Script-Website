@@ -10,7 +10,7 @@ if($post !== "null" && $post !== "" && $post !== null){
 $query = "UPDATE logonscript.tbl_user SET position = '$post' WHERE userid = '$id'";
 if($db->query($query)){
 
-$query = "INSERT INTO logonscript.tbl_history (transact_name, transact_details, transact_date, user_id) VALUES ('User Profile Update','Position: $post', NOW(), '$id')";
+$query = "INSERT INTO logonscript.tbl_history (transact_name, transact_details,  user_id) VALUES ('User Profile Update','Position: $post', '$id')";
 $db->query($query);
 
 echo "success";
