@@ -269,6 +269,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   margin-bottom: 10px;
 }
+.fa-trash
+{
+  color: red;
+}
 #modalheader
 {
   color: white;

@@ -1512,12 +1512,12 @@ function AccInfChnPass(){
   var old_password = document.getElementById("AccInfCurrPAss");
 
   if(password.value !== confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
+    confirm_password.setCustomValidity("Passwords doesn't match");
   } else {
 
     $.post("php/functions/profile/account.change.password.php",{oldpassword:old_password.value,newpassword:password.value,confpassword:confirm_password.value},function(data){
       if(data == "success"){
-        ALERTcall("success","Password have been updated");
+        ALERTcall("success","Password has been updated");
         OVERLAYdisable();
       }
       else{
@@ -1564,8 +1564,8 @@ function EmployeeList(){
     });
       var button = [], buttons = [];
       // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
-      createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
-      createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnImpEmp", "onclick:importemployee()"],"Import List");
+      createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
+      createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnImpEmp", "onclick:importemployee()"],"Import List");
       createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()"],"Delete");
 }
 
@@ -1773,7 +1773,7 @@ function DSHBRDAgentVersion(){
     createCard(card, contentview, [], []);
     createnewElement([],card.head,"div",[],[],"");
 
-    card.head.innerHTML = "Agent Version";
+    // card.head.innerHTML = "Agent Version";
 
     var table = [];
     var classes = ["table","table-bordered"];
@@ -1805,7 +1805,7 @@ function DSHBRDAgentVersion(){
   createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addagentversion()"], "Add new Version");
 
   createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-  createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:deleteagentversion()"], "Delete Version");
+  createnewElement([], ig.newelement, "button", ["btn","btn-danger"], ["type:button","onclick:deleteagentversion()"], "Delete ");
 
 }
 
