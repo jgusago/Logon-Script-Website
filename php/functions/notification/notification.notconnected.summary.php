@@ -12,7 +12,7 @@ else
     $dept = $_SESSION['department'];
     $query = "SELECT tree_filter FROM logonscript.tbl_tree WHERE tree_name LIKE '$dept'";
     foreach ($db->query($query) as $row){
-        
+
     }
     if(isset($row['tree_filter'])){
         $filter = $row['tree_filter'];
@@ -21,7 +21,7 @@ else
         $filter = "123123123123";
     }
 
-    $sql = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE '%$filter%' AND connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running' group by hostname";
+    $sql = "SELECT * FROM logonscript.tbl_log WHERE hostname LIKE '%$filter%' AND (connection_status not like 'ESTABLISHED' or iMonitor_Status not like 'running') group by hostname";
 }
 
 echo "Computer Name|IP Address|iMonitor Status|Server Status|Branch|Scan Time";
@@ -53,7 +53,7 @@ foreach ($db->query($sql) as $row){
     }
     else{
         $style2 = "bg-danger";
-        
+
     }
 
 
