@@ -1565,8 +1565,8 @@ function EmployeeList(){
       var button = [], buttons = [];
       // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
       createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
-      createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button","onclick:importemployee()"],"Import List");
-      createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()"],"Delete Employees");
+      createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnImpEmp", "onclick:importemployee()"],"Import List");
+      createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()"],"Delete");
 }
 
 function importemployee()

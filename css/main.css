@@ -284,6 +284,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   background: #94A880;
 }
+#impEmp
+{
+  margin-right:5px;
+}
 .form-group
 {
   margin-bottom:0rem;
