@@ -543,7 +543,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
 function DSHBRDLogsHistory()
 {
   document.getElementById("dtitle").innerHTML = "Reports";
-  document.getElementById("dtitle2").innerHTML = "Computer Logs History ";
+  document.getElementById("dtitle2").innerHTML = "End Task Summary ";
 
   var view = document.getElementById("contentview");
   view.innerHTML = "";
