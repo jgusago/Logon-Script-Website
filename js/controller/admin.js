@@ -1590,6 +1590,9 @@ OVERLAYenable();
 
 
 }
+function empcheck(id){
+  var checkbox = document.getElementById(id).checked;
+}
 
 function BRNCHVWedit(id){
   OVERLAYenable();

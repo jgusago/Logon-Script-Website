@@ -1,9 +1,9 @@
 <?php
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$query = "SELECT COUNT(*) FROM logonscript.tbl_log";
+$query = "SELECT COUNT(distinct hostname) FROM logonscript.tbl_log";
 $count = 0;
 foreach ($db->query($query) as $row) {
-  $total = $row["COUNT(*)"];
+  $total = $row["COUNT(distinct hostname)"];
 }
 
 $query = "SELECT * FROM logonscript.tbl_tree WHERE tree_parent = 'root' ORDER BY tree_name ASC";
@@ -17,9 +17,9 @@ foreach ($db->query($query) as $row) {
 
 $colon = "";
 for($i = 0; $i < $count; $i++){
-  $query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE hostname LIKE '$tfilter[$i]%'";
+  $query = "SELECT COUNT(distinct hostname) FROM logonscript.tbl_log WHERE hostname LIKE '$tfilter[$i]%'";
   foreach ($db->query($query) as $row) {
-    $result = $row["COUNT(*)"];
+    $result = $row["COUNT(distinct hostname)"];
     if($comp[$i] == 0){
       $divident = 1;
     }

@@ -13,7 +13,7 @@ foreach ($db->query($sql) as $row) {
   $dept = $row['dept'];
   $subdept = $row['sub_dept'];
 
-  echo "#input`form-check-label~checkemployee`value:$id~type:checkbox`|$id|$name|$login~$login2|$dept|$subdept|input`btn~btn-primary`type:button~value:Edit~onClick:editemployee()`Edit";
+  echo "#input`form-check-label~checkemployee`value:$id~type:checkbox~onchange:empcheck(\"empcheck$id\")~id:empcheck$id`|$id|$name|$login~$login2|$dept|$subdept|input`btn~btn-primary`type:button~value:Edit~onClick:editemployee()`Edit";
 }
 
 $db = null;
