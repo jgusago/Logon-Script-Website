@@ -1802,7 +1802,7 @@ function DSHBRDAgentVersion(){
   createnewElement(toolbar,card.foot,"div",["btn-toolbar","mr-3"],[],"");
   var ig = [];
   createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-  createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:addagentversion()"], "Add new Version");
+  createnewElement([], ig.newelement, "button", ["btn","btn-default"], ["type:button","onclick:addagentversion()"], "Add new Version");
 
   createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
   createnewElement([], ig.newelement, "button", ["btn","btn-danger"], ["type:button","onclick:deleteagentversion()"], "Delete ");
