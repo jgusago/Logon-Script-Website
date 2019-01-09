@@ -57,12 +57,14 @@ foreach($db->query($query) as $row)
         $tabledata = "false";
     }
 
-    $query = "SELECT transact_date FROM logonscript.tbl_history WHERE transact_name = 'Computer List Checked' and transact_details like 'hostname:$hostname%' order by transact_date desc Limit 2";
+    $query = "SELECT transact_date FROM logonscript.tbl_history WHERE transact_name = 'Computer List Checked' and transact_details like '%Hostname: $hostname%' order by transact_date desc Limit 2";
     $count = 0;
     unset($history);
     foreach ($db->query($query)as $row) {
       $history[$count] = "";
+      $newdate= "";
       $history[$count] = $row["transact_date"];
+      $newdate = $newdate." ".$row["transact_date"];
       $datea = date_create($history[$count]);
       $date[$count] = date_format($datea, 'M d, Y');
       $count++;

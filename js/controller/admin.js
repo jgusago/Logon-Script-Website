@@ -1564,8 +1564,9 @@ function EmployeeList(){
     });
       var button = [], buttons = [];
       // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
-      createnewElement(buttons, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
+      createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
       createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button","onclick:importemployee()"],"Import List");
+      createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()"],"Delete Employees");
 }
 
 function importemployee()
@@ -1580,6 +1581,13 @@ function importemployee()
   var iframe = [], input1 = [], input2 = [];
 
   createnewElement(iframe, cb, "iframe",[],["src:php/functions/import/index.php","width:500px", "height:250px"],"");
+
+}
+
+function editemployee(){
+
+OVERLAYenable();
+
 
 }
 

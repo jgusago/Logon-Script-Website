@@ -8,7 +8,9 @@ $query = "SELECT tree_filter FROM tbl_tree where tree_name LIKE '$dept'";
 foreach ($db->query($query) as $row) {
 $filter = $row["tree_filter"];
 }
-
+if(!isset($filter)){
+  $filter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+}
 $query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE iMonitor_Status = 'End Task' AND hostname like '$filter%'";
 foreach ($db->query($query) as $row) {
 $endtask = $row["COUNT(*)"];

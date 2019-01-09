@@ -12,7 +12,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 $query = "INSERT logonscript.tbl_history (transact_name, transact_details, user_id) VALUES ('Computer List Checked', 'Hostname: $hostname / Agent Version: $version / Remarks: $remarks', '$id')";
 if($db->query($query)){
   echo "success|";
-  $query = "SELECT transact_date FROM logonscript.tbl_history WHERE transact_name = 'Computer List Checked' and transact_details like '%hostname:$hostname%' order by transact_date desc Limit 2";
+  $query = "SELECT transact_date FROM logonscript.tbl_history WHERE transact_name = 'Computer List Checked' and transact_details like '%$hostname%' order by transact_date desc Limit 2";
   $count = 0;
   foreach ($db->query($query)as $row) {
     $history[$count] = "";
