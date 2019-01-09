@@ -1635,7 +1635,11 @@ function editemployee()
   createnewElement(label, col.newelement, "label", [], ["for:insertemployeesubdept"], "Sub Department");
   createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeesubdept"], "");
 
+  createnewElement(br, form.newelement, "br", [], [], "");
+  createnewElement(fg, form.newelement, "div", ["form-group"], [] , "");
+  createnewElement(input, fg.newelement, "button", ["form-control", "btn", "btn-primary"], ["type:submit"], "Update");
 
+  createnewElement(br, form.newelement, "br", [], [], "");
 
 }
 function empcheck(id){
