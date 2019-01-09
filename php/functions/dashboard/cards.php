@@ -11,19 +11,19 @@ $filter = $row["tree_filter"];
 if(!isset($filter)){
   $filter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 }
-$query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE iMonitor_Status = 'End Task' AND hostname like '$filter%'";
+$query = "SELECT COUNT(distinct hostname) FROM logonscript.tbl_log WHERE iMonitor_Status = 'End Task' AND hostname like '$filter%'";
 foreach ($db->query($query) as $row) {
-$endtask = $row["COUNT(*)"];
+$endtask = $row["COUNT(distinct hostname)"];
 }
 
-$query = "SELECT COUNT(*) FROM logonscript.tbl_computer_details WHERE tbl_computer_details.agent_version != ALL(SELECT version FROM tbl_agent_version WHERE type = 'valid') AND hostname like '$filter%'";
+$query = "SELECT COUNT(distinct hostname) FROM logonscript.tbl_computer_details WHERE tbl_computer_details.agent_version != ALL(SELECT version FROM tbl_agent_version WHERE type = 'valid') AND hostname like '$filter%'";
 foreach ($db->query($query) as $row) {
-$oldversion = $row["COUNT(*)"];
+$oldversion = $row["COUNT(distinct hostname)"];
 }
 
-$query = "SELECT COUNT(*) FROM logonscript.tbl_log WHERE hostname like '$filter%'";
+$query = "SELECT COUNT(distinct hostname) FROM logonscript.tbl_log WHERE hostname like '$filter%'";
 foreach ($db->query($query) as $row) {
-$installed = $row["COUNT(*)"];
+$installed = $row["COUNT(distinct hostname)"];
 }
 
 $query = "SELECT COUNT(*) FROM logonscript.tbl_employee WHERE dept = '$dept'";

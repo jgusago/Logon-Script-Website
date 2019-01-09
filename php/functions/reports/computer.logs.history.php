@@ -2,10 +2,10 @@
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
 session_start();
-echo "Hostname|User ID|IP Address|Missing Services|Branch|Scan Time|End Time";
+echo "Scan Time|End Time|Hostname|User ID|IP Address|Missing Services|Branch";
 if($_SESSION['role'] != "STAFF")
 {
-    $query = "SELECT *, MAX(scan_date), MIN(scan_date) FROM logonscript.tbl_log_history group by ip_address order by scan_date Desc";
+    $query = "SELECT *, MAX(scan_date), MIN(scan_date) FROM logonscript.tbl_log_history group by ip_address order by MAX(scan_date) Desc";
 
     foreach ($db->query($query) as $row)
     {
@@ -23,7 +23,7 @@ if($_SESSION['role'] != "STAFF")
             $hostname = $row['hostname'];
         }
 
-        echo "#$hostname|$id|$ip|$services|$branch|$maxtime|$mintime";
+        echo "#$mintime|$maxtime|$hostname|$id|$ip|$services|$branch";
     }
 }
 else
