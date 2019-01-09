@@ -16,7 +16,11 @@ foreach ($db->query($query) as $row) {
 if($confirm == $oldpassword){
   if($newpassword == $conpassword){
     $query = "UPDATE logonscript.tbl_user SET password = '$newpassword' WHERE userid = $id";
-    if($db->query($query)){
+    if($db->query($query))
+    {
+      $query2 = "INSERT INTO logonscript.tbl_history (transact_name, transact_details,  user_id) VALUES ('Change password','Password: ********', '$id')";
+      $db->query($query2);
+      
       echo "success";
     }
     else{
