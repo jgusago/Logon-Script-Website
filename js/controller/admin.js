@@ -513,7 +513,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
   if (path == "php/functions/accounts/accounts.view.php")
   {
     document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-    document.getElementById("dtitle2").innerHTML = "Account Management";
+    document.getElementById("dtitle2").innerHTML = "User Accounts";
   }
   else if(path == "php/functions/employee/employee.list.php")
   {
@@ -535,7 +535,7 @@ function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, li
     else if(path == "php/functions/reports/computer.logs.history.php")
     {
       document.getElementById("dtitle").innerHTML = "Reports";
-      document.getElementById("dtitle2").innerHTML = "Computer Logs History";
+      document.getElementById("dtitle2").innerHTML = "End Task Summary";
     }
   }
 }
