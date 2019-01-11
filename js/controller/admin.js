@@ -1566,7 +1566,7 @@ function EmployeeList(){
       // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
       createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
       createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnImpEmp", "onclick:importemployee()"],"Import List");
-      createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()"],"Delete");
+      createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()","disabled:true","id:deleteemployees"],"Delete");
 }
 
 function importemployee()
@@ -1697,6 +1697,9 @@ function editemployee()
 function empcheck(id){
   var checkbox = document.getElementById(id).checked;
   var tr = document.getElementById(id).parentElement.parentElement;
+  var dltbtn = document.getElementById("deleteemployees");
+  var checked = [];
+  var chklist = document.getElementsByClassName("checkemployee");
   if(checkbox == true){
     tr.style.backgroundColor = "#CECECE";
     tr.style.fontWeight = "bold";
@@ -1705,6 +1708,19 @@ function empcheck(id){
     tr.style.backgroundColor = "";
     tr.style.fontWeight = "normal";
   }
+  for(var i = 0; i < chklist.length; i++){
+    if(chklist[i].checked){
+      checked.push(chklist[i]);
+    }
+  }
+  if(checked.length > 0){
+    dltbtn.removeAttribute("disabled");
+  }
+  else{
+    dltbtn.setAttribute("disabled","true");
+  }
+
+
 
 }
 
