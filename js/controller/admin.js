@@ -1584,6 +1584,39 @@ function importemployee()
 
 }
 
+function deleteemployees() {
+
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var checked = [];
+  var checkedindex = [];
+  var checkbox  = document.getElementsByClassName("checkemployee");
+  for(var i = 0; i < checkbox.length; i++){
+    if(checkbox[i].checked){
+      checked.push(checkbox[i]);
+      checkedindex.push(i);
+    }
+  }
+
+  cb.innerHTML = "You are about to delete "+checked.length+" item(s),<br> Are you sure about this?<br>";
+
+
+  cf.innerHTML = "<input class=\"btn btn-danger\" type=\"button\" value=\"Delete\" onClick=\"deleteemployeesconfirm(["+checkedindex+"])\"></input>";
+}
+
+function deleteemployeesconfirm(data){
+  var element = [];
+  for(var i = 0; i < data.length; i++){
+    element.push(document.getElementsByClassName("checkemployee")[data[i]].id);
+  }
+
+  ALERTcall("success",element);
+}
+
 function editemployee()
 {
   OVERLAYenable();
@@ -1644,6 +1677,16 @@ function editemployee()
 }
 function empcheck(id){
   var checkbox = document.getElementById(id).checked;
+  var tr = document.getElementById(id).parentElement.parentElement;
+  if(checkbox == true){
+    tr.style.backgroundColor = "#CECECE";
+    tr.style.fontWeight = "bold";
+  }
+  else{
+    tr.style.backgroundColor = "";
+    tr.style.fontWeight = "normal";
+  }
+
 }
 
 function BRNCHVWedit(id){
