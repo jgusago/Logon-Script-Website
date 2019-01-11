@@ -1608,13 +1608,32 @@ function deleteemployees() {
   cf.innerHTML = "<input class=\"btn btn-danger\" type=\"button\" value=\"Delete\" onClick=\"deleteemployeesconfirm(["+checkedindex+"])\"></input>";
 }
 
-function deleteemployeesconfirm(data){
+function deleteemployeesconfirm(id){
   var element = [];
-  for(var i = 0; i < data.length; i++){
-    element.push(document.getElementsByClassName("checkemployee")[data[i]].id);
+  for(var i = 0; i < id.length; i++){
+    element.push(document.getElementsByClassName("checkemployee")[id[i]].id);
   }
+  $.post("php/functions/employee/employee.delete.php",{element:element},function(data){
 
-  ALERTcall("success",element);
+    if(data = "success"){
+      var tableid = $('#'+element[0]).closest('table').attr('id');
+      var table = $("#"+tableid).DataTable();
+        for(var j = 0; j < id.length; j++){
+          table
+            .row($("#"+element[j]).parents('tr'))
+            .remove()
+            .draw();
+        }
+      ALERTcall("success","Deletion have been successful!");
+      OVERLAYdisable();
+
+    }
+    else{
+      ALERTcall("danger","Error hav been encountered:<br>"+data);
+    }
+  });
+
+
 }
 
 function editemployee()
