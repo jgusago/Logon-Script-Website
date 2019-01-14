@@ -587,8 +587,8 @@ function Dashboard()
   var contentview = document.getElementById("contentview");
   contentview.innerHTML = "";
 
-  var divfluid = [], divclass = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [], divDate =[], divCol = [], divdates = [], small = [],
-  divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
+  var divfluid = [], divclass = [], divDate =[], divrow1 = [], divrow = [], divcol = [], h4 = [], hrDshbrd = [], divCol = [], divdates = [], small = [],
+  divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
   divColcard2 = [], divcard2 = [], divcardBody2 = [], divItems2 = [], divIcon2 = [], divml2 = [], divText2 = [], divcount2 = [],
   divColcard3 = [], divcard3 = [], divcardBody3 = [], divItems3 = [], divIcon3 = [], divml3 = [], divText3 = [], divcount3 = [],
   divColcard4 = [], divcard4 = [], divcardBody4 = [], divItems4 = [], divIcon4 = [], divml4 = [], divText4 = [], divcount4 = [],
