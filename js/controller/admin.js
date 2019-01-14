@@ -639,7 +639,7 @@ function Dashboard()
   $.post("php/functions/dashboard/progressbar.php", function(data){
 
     createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
-    createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
+    createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-12"], [], "");
     createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
     createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
     data = data.split(";");
