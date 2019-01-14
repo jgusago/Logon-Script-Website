@@ -16,8 +16,6 @@ foreach ($db->query($query) as $row){
 session_start();
 if($_SESSION['role'] != 'STAFF'){
     $query3 = "SELECT * FROM logonscript.tbl_computer_details WHERE $newquery group by hostname";
-
-
 }
 
 /*FOR STAFF*/
@@ -46,7 +44,6 @@ else{
 }
 
 echo "Computer Name|IP Address|Version|iMonitor Status|Server Status|Branch|Scan Time|Option";
-
 $pdo = $db->prepare($query3);
 $pdo->bindParam(":version",$version);
 $pdo->execute();
@@ -55,7 +52,7 @@ $result = $pdo->fetchAll();
 foreach ($result as $row) {
     $hostname = $row['hostname'];
     $aversion = $row['agent_version'];
-    $newsql = "SELECT * FROM logonscript.tbl_log WHERE hostname like '$hostname' and user not like 'admin%' group by hostname";
+    $newsql = "SELECT * FROM logonscript.tbl_log WHERE hostname like '$hostname' group by hostname";
     foreach($db->query($newsql) as $row){
         $log_no = $row['log_no'];
         $ip_address = $row['ip_address'] ?: 'null';
