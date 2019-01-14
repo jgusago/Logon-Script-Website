@@ -597,9 +597,9 @@ function Dashboard()
   txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
   txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
   txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
-  txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[]
+  txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[];
 
-  divcol2 = [], h4pie = [], hrDshbrd1 =[], div = [], canvas = [];
+  // divcol2 = [], h4pie = [], hrDshbrd1 =[], div = [], canvas = [];
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
@@ -623,7 +623,8 @@ function Dashboard()
 
     createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
 
-    for (var i = 1; i < data.length; i++){
+    for (var i = 1; i < data.length; i++)
+    {
       createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], [], "");
       createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
       createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
@@ -637,7 +638,7 @@ function Dashboard()
 
   $.post("php/functions/dashboard/progressbar.php", function(data){
 
-    createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
+    createnewElement(divrow, divrow1.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
     createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
     createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
     createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
@@ -660,7 +661,7 @@ function Dashboard()
   createnewElement(div, divcol2.newelement, "div", [], ["id:colPieChart"], "");
   createnewElement(canvas, div.newelement, "canvas", ["flot-base"], ["width: 1589","height: 250", "id:pieChart"], "");
 
-  var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
+  // var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
 
   // Edit History
   createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
