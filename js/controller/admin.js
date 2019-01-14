@@ -638,7 +638,7 @@ function Dashboard()
 
   $.post("php/functions/dashboard/progressbar.php", function(data){
 
-    createnewElement(divrow, divrow1.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
+    createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
     createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-6"], [], "");
     createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
     createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
