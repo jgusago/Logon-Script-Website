@@ -589,16 +589,15 @@ function Dashboard()
 
   var divfluid = [], divclass = [], divDate =[], divCol = [], divdates = [], small = [],
   divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
-  divrow = [], divcol = [], h4 = [], hrDshbrd = [], 
-  divColcard2 = [], divcard2 = [], divcardBody2 = [], divItems2 = [], divIcon2 = [], divml2 = [], divText2 = [], divcount2 = [],
-  divColcard3 = [], divcard3 = [], divcardBody3 = [], divItems3 = [], divIcon3 = [], divml3 = [], divText3 = [], divcount3 = [],
-  divColcard4 = [], divcard4 = [], divcardBody4 = [], divItems4 = [], divIcon4 = [], divml4 = [], divText4 = [], divcount4 = [],
-  txtdept = [], spanCount = [], divProgress = [], divProgbar = [],
-  txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
-  txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
-  txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
-  txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
-  txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[];
+  divrow = [], divcol = [], h4 = [], hrDshbrd = [], txtdept = [], spanCount = [], divProgress = [], divProgbar = [];
+  // divColcard2 = [], divcard2 = [], divcardBody2 = [], divItems2 = [], divIcon2 = [], divml2 = [], divText2 = [], divcount2 = [],
+  // divColcard3 = [], divcard3 = [], divcardBody3 = [], divItems3 = [], divIcon3 = [], divml3 = [], divText3 = [], divcount3 = [],
+  // divColcard4 = [], divcard4 = [], divcardBody4 = [], divItems4 = [], divIcon4 = [], divml4 = [], divText4 = [], divcount4 = [],
+  // txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
+  // txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
+  // txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
+  // txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
+  // txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[];
 
   // divcol2 = [], h4pie = [], hrDshbrd1 =[], div = [], canvas = [];
 
@@ -639,7 +638,7 @@ function Dashboard()
 
   $.post("php/functions/dashboard/progressbar.php", function(data){
 
-    createnewElement(divrow, divclass.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
+    createnewElement(divrow, divfluid.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
     createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-12"], [], "");
     createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
     createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
