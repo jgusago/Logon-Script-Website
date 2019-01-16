@@ -1438,7 +1438,7 @@ else{
   createnewElement(fg, form.newelement, "div", ["form-row"], [] , "");
   createnewElement(col, fg.newelement, "div", ['col'], [], "");
   createnewElement(label, col.newelement, "label", [], ["for:insertemployeel1"], "Employee Login");
-  createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeel1","required:true"], "");
+  createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeel1"], "");
   createnewElement(col, fg.newelement, "div", ['col'], [], "");
   createnewElement(label, col.newelement, "label", [], ["for:insertemployeel2"], "Employee Second Login");
   createnewElement(input, col.newelement, "input", ["form-control"], ["type:text","id:insertemployeel2"], "");
