@@ -26,6 +26,29 @@ if($_SESSION['role'] != "STAFF")
         echo "#$mintime|$maxtime|$hostname|$id|$ip|$services|$branch";
     }
 }
+elseif($_SESSION['role'] == "SUPER ADMIN")
+{
+    $query = "SELECT *, MAX(scan_date), MIN(scan_date) FROM logonscript.tbl_log_history group by ip_address order by MAX(scan_date) Desc";
+
+    foreach ($db->query($query) as $row)
+    {
+        $hostname = "";
+        $id = $row['userid'];
+        $ip = $row['ip_address'];
+        $services = $row['services'];
+        $branch = $row['branch'];
+        $maxtime = $row['MAX(scan_date)'];
+        $mintime = $row['MIN(scan_date)'];
+
+        $query3 = "SELECT hostname from logonscript.tbl_log WHERE ip_address LIKE '$ip'";
+        foreach ($db->query($query3) as $row)
+         {
+            $hostname = $row['hostname'];
+        }
+
+        echo "#$mintime|$maxtime|$hostname|$id|$ip|$services|$branch";
+    }
+}
 else
 {
     $dept = $_SESSION['department'];

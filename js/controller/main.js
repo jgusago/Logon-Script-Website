@@ -382,14 +382,14 @@ $.post("php/functions/notification/notification.agent.updated.php",{remarks:rema
     var tr = td.parentElement;
     var tb = tr.parentElement;
     tb.removeChild(tr);
-    ALERTcall("success","Details have been updated!");
+    ALERTcall("success","Details has been updated!");
     OVERLAYdisable();
   }
   else if (data == "invalid") {
     var td = document.getElementById(id+"-3");
     td.innerHTML = agentversion;
     td.classList.add("bg-warning");
-    ALERTcall("warning","Details have been updated<br> But the iMonitor is still not updated");
+    ALERTcall("warning","Details has been updated<br> But the iMonitor is still not updated");
     OVERLAYdisable();
   }
   else{
