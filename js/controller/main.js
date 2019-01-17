@@ -1242,9 +1242,9 @@ $.post("php/functions/session/session.confirm.php",function(data){
     //redirect
     switch (data[1]) {
       case "SUPER ADMIN":
-        window.location.assign("/.superadmin.html");
         break;
       case "ADMINISTRATOR":
+      window.location.assign("/.admin.html");
         break;
       case "STAFF":
         window.location.assign("/.user.html");
