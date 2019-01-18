@@ -1,32 +1,4 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
-function load(){
-    SESSIONConfirm();
-    DSHBRDbtnsCompList();
-    DSHBRDbtnsCompLogs();
-    NAVBARNotification();
-    Departmentlist("department");
-    Dashboard();
-    PieChart();
-}
-
-/* Buttons */
-function DSHBRDbtnsCompList(){
-    complistul = document.getElementById("COMPLISTlist");
-
-    $.post("php/functions/load/dashboard.buttons.php",function(data){
-      cldata = data.split("|");
-      for(var  i = 0; i < cldata.length; i++){
-        child = cldata[i].split("`");
-        var li = [], a = [];
-        var id = idgenerator();
-        createnewElement(li, complistul, "li", ["nav-item"], ["data-toggle:tooltip","data-placement:right"], "");
-        createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContentCompList(\""+child[1]+"\",\""+id+"\")","id:"+id],child[0]);
-
-        DSHBRDbtnsCompListChld(li.newelement, a.newelement, child[1], "COMPLISTlist");
-      }
-    });
-}
-
 function DSHBRDbtnsCompListChld(listparent, linkparent, dataparent, parentulid){
   $.post("php/functions/load/dashboard.buttons.child.php",{parentid:dataparent},function(data){
     var childdata = data.split("|");
@@ -584,7 +556,7 @@ function DSHBRDLogsHistory()
 
 function Dashboard()
 {
-  var contentview = document.getElementById("contentview");
+  var contentview = document.getElementById("ContentCardBody");
   contentview.innerHTML = "";
 
   var divfluid = [], divclass = [], divDate =[], divCol = [], divdates = [], small = [],
