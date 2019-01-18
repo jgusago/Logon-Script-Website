@@ -676,7 +676,7 @@ function DSHBRDContentBranchSettings()
 
   tableid = idgenerator();
   var card = [];
-  createCard(card, contentview, [], []);
+  // createCard(card, contentview, [], []);
   createnewElement([],card.head,"div",[],[],"");
 
   var table = [];
@@ -1502,7 +1502,8 @@ function AccInfChnPass(){
 return false;
 }
 
-function EmployeeList(){
+function EmployeeList()
+{
     var contentview = document.getElementById("ContentCardBody");
     contentview.innerHTML = "";
 
