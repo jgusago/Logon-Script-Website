@@ -45,7 +45,7 @@ foreach($result as $row)
     $date = date_create($scan_time);
     $scan_time = date_format($date, 'M d, Y G:i');
 
-    echo "#$hostname|$user|$domain_name|$ip_address|iMonitor Status: $iMonitor_Status~Missing Services: $services~Config: $sysSetting_File|$serverIP: $connections_status|$scan_time";
+    echo "#$hostname|$user|$domain_name|$ip_address|iMonitor Status: $iMonitor_Status~Config: $sysSetting_File~Missing Services: $services|$serverIP : $connections_status|$scan_time";
 }
 
 $db = null;
