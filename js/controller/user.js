@@ -11,7 +11,7 @@ function load(){
 
 function DSHBRDContent(parent, linkid)
 {
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   var linkdata = document.getElementById(linkid).getAttribute("data");
   view.innerHTML = "";
 
@@ -192,7 +192,7 @@ else
 }
 }
 function DSHBRDContentBranchSettings(){
-var contentview = document.getElementById("contentview");
+var contentview = document.getElementById("ContentCardBody");
 contentview.innerHTML = "";
 var card = document.createElement("div");
 card.classList.add("card");
@@ -323,7 +323,7 @@ OVERLAYdisable();
 }
 
 function CMPLISTdtlstableupdate(parent, linkid){
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   tableid = idgenerator();
@@ -395,7 +395,7 @@ function getNotification()
 }
 
 function NOTIFnotconnected(){    
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Notifications";
@@ -429,7 +429,7 @@ function NOTIFnotconnected(){
 }
 
 function NOTIFimonitorupdate(){
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Notifications";
@@ -464,7 +464,7 @@ function NOTIFimonitorupdate(){
 
 function NOTIFallshow()
 {
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Notifications";
