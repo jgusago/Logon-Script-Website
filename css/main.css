@@ -382,6 +382,11 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   margin: 1rem;
   background-color: #eaeaea;
 }
+thead
+{
+  background: #9f9f9f;
+  color: white;
+}
 thead tr th
 {
   text-align:-webkit-center;
