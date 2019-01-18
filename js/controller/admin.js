@@ -675,14 +675,14 @@ function DSHBRDContentBranchSettings()
   document.getElementById("dtitle2").innerHTML = "Branch View";
 
   tableid = idgenerator();
-   var card = [];
-  createCard(card, contentview, [], []);
-  createnewElement([],card.head,"div",[],[],"");
+  var card = [];
+  // createCard(card, contentview, [], []);
+  // createnewElement([],card.head,"div",[],[],"");
 
   var table = [];
   var classes = ["table","table-bordered"];
   var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-  createTable(table, card.body, classes, attributes);
+  createTable(table, contentview.newelement, classes, attributes);
   $.post("php/functions/sttngs/settings.branch.view.php",function(data){
     data = data.split("||");
     for(var arraccount = 0; arraccount < data.length; arraccount++){
