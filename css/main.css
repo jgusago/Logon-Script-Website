@@ -647,6 +647,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-family: Arial;
   background: #c3c0c082;
 }
+#ContentCardBody
+{
+  background: #c3c0c040;
+}
 #hr
 {
   margin-top: 10px;
@@ -699,6 +703,10 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 #exampleModalLabel
 {
   color:white;
+}
+#datalist
+{
+  background: #ffffffb8;
 }
 #dtitle
 {
