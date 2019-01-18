@@ -373,6 +373,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   font-size:15px;
 }
+.progress
+{
+  background: #d1d1d1;
+}
 .breadcrumb
 {
   margin: 1rem;
