@@ -645,6 +645,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   font-weight: bold;
   font-family: Arial;
+  background: #c3c0c082;
 }
 #hr
 {
@@ -720,12 +721,12 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 .card-header
 {
   /* background-color: #2f5109ad; */
-  background:#365b0d82;
+  background:#c3c0c082;
   padding: .50rem 1.25rem;
 }
 .card-footer
 {
-  background:#365b0d82;
+  background:#c3c0c082;
 }
 #exampleAccordion
 {
