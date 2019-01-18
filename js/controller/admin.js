@@ -75,7 +75,7 @@ $.post("php/functions/load/dashboard.buttons.php",function(data){
 
 function DSHBRDContentCompList(parent, linkid){
 
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   var linkdata = document.getElementById(linkid).getAttribute("data");
   //view.innerHTML = "";
   var existing = "", target = "nen";
@@ -138,7 +138,7 @@ function DSHBRDTblsCntnt(parent, path, tablehead, tablefoot, tablebody, id, link
 
 function DSHBRDContent(parent, linkid)
 {
-    var view = document.getElementById("contentview");
+    var view = document.getElementById("ContentCardBody");
     var linkdata = document.getElementById(linkid).getAttribute("data");
     view.innerHTML = "";
 
@@ -545,7 +545,7 @@ function DSHBRDLogsHistory()
   document.getElementById("dtitle").innerHTML = "Reports";
   document.getElementById("dtitle2").innerHTML = "End Task Summary ";
 
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   tableid = idgenerator();
@@ -584,7 +584,7 @@ function DSHBRDLogsHistory()
 
 function Dashboard()
 {
-  var contentview = document.getElementById("contentview");
+  var contentview = document.getElementById("ContentCardBody");
   contentview.innerHTML = "";
 
   var divfluid = [], divclass = [], divDate =[], divCol = [], divdates = [], small = [],
@@ -696,7 +696,7 @@ function PieChart()
 
 function DSHBRDContentBranchSettings()
 {
-  var contentview = document.getElementById("contentview");
+  var contentview = document.getElementById("ContentCardBody");
   contentview.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Settings";
@@ -1047,7 +1047,7 @@ function UserAccountupdate(id){
 }
 
 function CMPLISTdtlstableupdate(parent, linkid){
-    var view = document.getElementById("contentview");
+    var view = document.getElementById("ContentCardBody");
     view.innerHTML = "";
 
     tableid = idgenerator();
@@ -1117,7 +1117,7 @@ function getNotification(){
 }
 
 function NOTIFnotconnected(){
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Notifications";
@@ -1151,7 +1151,7 @@ function NOTIFnotconnected(){
 }
 
 function NOTIFimonitorupdate(){
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Notifications";
@@ -1185,7 +1185,7 @@ function NOTIFimonitorupdate(){
 }
 
 function NOTIFallshow(){
-  var view = document.getElementById("contentview");
+  var view = document.getElementById("ContentCardBody");
   view.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Notifications";
@@ -1288,7 +1288,7 @@ function LettersrOnly(e)
 
 function Profiles()
 {
-    var contentview = document.getElementById("contentview");
+    var contentview = document.getElementById("ContentCardBody");
     contentview.innerHTML = "";
 
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
@@ -1531,7 +1531,7 @@ return false;
 }
 
 function EmployeeList(){
-    var contentview = document.getElementById("contentview");
+    var contentview = document.getElementById("ContentCardBody");
     contentview.innerHTML = "";
 
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
@@ -1893,7 +1893,7 @@ function resetPass(){
 function DSHBRDAgentVersion(){
 
 
-    var contentview = document.getElementById("contentview");
+    var contentview = document.getElementById("ContentCardBody");
     contentview.innerHTML = "";
 
     document.getElementById("dtitle").innerHTML = "Settings";
