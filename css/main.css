@@ -649,7 +649,8 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   font-weight: bold;
   font-family: Arial;
-  background: #bbbbbbd9;
+  background: #9f9f9f;
+  color: white; 
 }
 #ContentCardBody
 {
@@ -738,7 +739,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 .card-footer
 {
-  background:#bbbbbbd9;
+  background:#9f9f9f;
 }
 #exampleAccordion
 {

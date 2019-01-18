@@ -9,7 +9,7 @@ function tablecheck(mod, trig){
     var table  = document.getElementById("datalist");
 
     if(table == null){
-      contentview.innerHTML = "<table id=\"datalist\" class=\"table able-bordered\" module=\""+mod+"\" trigger=\""+trig+"\" style=\"width: 100%;\"></table>";
+      contentview.innerHTML = "<table id=\"datalist\" class=\"table able-bordered table-striped\" module=\""+mod+"\" trigger=\""+trig+"\" style=\"width: 100%;\"></table>";
       table  = document.getElementById("datalist");
       return false;
     }
