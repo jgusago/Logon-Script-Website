@@ -228,7 +228,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 
 .content-wrapper {
   overflow-x: hidden;
-  background: #f0eeee52;
+  background: ##dbdcdc;
   /* white;  */
 }
   @media (min-width: 992px) {
@@ -376,7 +376,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 .breadcrumb
 {
   margin: 1rem;
-  background-color: #92bd0d26;
+  background-color: #bbbbbbd9;
 }
 thead tr th
 {
@@ -645,7 +645,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   font-weight: bold;
   font-family: Arial;
-  background: #c3c0c082;
+  background: #bbbbbbd9;
 }
 #ContentCardBody
 {
@@ -734,7 +734,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 .card-footer
 {
-  background:#c3c0c082;
+  background:#bbbbbbd9;
 }
 #exampleAccordion
 {
