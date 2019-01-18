@@ -6,7 +6,7 @@ session_start();
 $dept = $_SESSION["department"];
 $query = "SELECT tree_filter FROM tbl_tree where tree_name LIKE '$dept'";
 foreach ($db->query($query) as $row) {
-echo $filter = $row["tree_filter"];
+$filter = $row["tree_filter"];
 }
 if(!isset($filter)){
   $filter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
