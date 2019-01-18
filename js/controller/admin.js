@@ -675,8 +675,8 @@ function DSHBRDContentBranchSettings()
   document.getElementById("dtitle2").innerHTML = "Branch View";
 
   tableid = idgenerator();
-  var card = [];
-  // createCard(card, contentview, [], []);
+   var card = [];
+  createCard(card, contentview, [], []);
   createnewElement([],card.head,"div",[],[],"");
 
   var table = [];
