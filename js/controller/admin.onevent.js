@@ -1,4 +1,5 @@
 //onClick
+
 //COMPLISTtables
 function DSHBRDCompList(log_id){
 
@@ -31,15 +32,30 @@ function DSHBRDCompList(log_id){
 
         myObj = JSON.parse(this.responseText);
         for (x in myObj) {
+          var hostname = myObj[x].hostname;
+
+          if (myObj[x].date_checked != null){
+            var newdate = myObj[x].date_checked.split(",");
+            var date = "", seperator = "";
+
+            for(var i = 0; i < newdate.length; i++){
+              thisdate = myDate("mmm dd, yyyy", newdate[i]);
+              date = date+seperator+thisdate;
+              seperator = ", ";
+            }//close For loof
+          }//Close datre_Checked != null
+          else{
+            date = "";
+          }
           $('#datalist').DataTable().row.add([
-                myObj[x].hostname,
+                hostname,
                 myObj[x].user,
                 myObj[x].ip_address,
                 myObj[x].services,
                 myObj[x].remarks,
                 myObj[x].agent_version,
-                myObj[x].date_checked,
-                "<button class=\"btn btn-primary\" onClick=\"complistdetails(\""+myObj[x].hostname+"\")\">Details</button>"
+                date,
+                "<button class=\"btn btn-primary\" onClick=\"complistdetails('"+hostname+"')\">Details</button>"
               ]).draw(false);
         }//for
       }//if
@@ -52,5 +68,35 @@ function DSHBRDCompList(log_id){
   else{
   }
   var txt;
+
+}
+
+
+//computer list detalis
+function complistdetails(hostname){
+  OVERLAYenable();
+
+  //get mini window ID;
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  obj = {hostname:hostname};
+  dbParam = JSON.stringify(obj);
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+
+    if(this.readyState == 4 && this.status == 200){
+      myObj = JSON.parse(this.responseText);
+      for (x in myObj) {
+
+      }
+    }//server request close
+  };//XMLHttpRequest close
+  xmlhttp.open("POST","php/functions/reports/computer.list.details.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+
 
 }

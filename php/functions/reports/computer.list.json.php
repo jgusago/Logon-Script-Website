@@ -45,5 +45,5 @@ $result = $query->get_result();
 $outp = $result->fetch_all(MYSQLI_ASSOC);
 
 echo json_encode($outp);
-
+mysqli_close($conn);
 ?>
