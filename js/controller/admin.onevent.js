@@ -143,7 +143,7 @@ function complistdetails(hostname){
   option = newElement(remarks, "option", [], ["value=On Leave"], "On Leave");
   option = newElement(remarks, "option", [], ["value=Pulled Out"], "Pulled Out");
   option = newElement(remarks, "option", [], ["value=Renamed"], "Renamed");
-  option = newElement(remarks, "option", [], ["value=Transfered"], "Transfered");
+  option = newElement(remarks, "option", [], ["value=Transfered"], "Transferred");
   option = newElement(remarks, "option", [], ["value=Vacant"], "Vacant");
   br = newElement(form,"div",["dropdown-divider"],[],"");
 
