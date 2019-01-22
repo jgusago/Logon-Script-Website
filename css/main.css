@@ -249,6 +249,31 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   text-indent:5px;
   width: auto;
 }
+#remarks
+{
+  margin-top:5px;
+}
+#agent
+{
+  margin-top:5px;
+}
+.buttons-excel
+{
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.buttons-copy
+{
+  background-color: #a6aaae;
+  border-color: #a6aaae;
+}
+.buttons-pdf
+{
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
 .fa-times
 {
   color:white;

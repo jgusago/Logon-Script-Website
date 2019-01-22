@@ -156,7 +156,7 @@ function complistdetails(hostname){
   div = newElement(row, "div", ["col"],[],"");
   button = newElement(div, "button", ["btn","btn-block","btn-primary", "form-control"],["type=submit","id=submitbtn","disabled=true"], "Update");
   div = newElement(row, "div", ["col"],[],"");
-  button = newElement(div, "button", ["btn","btn-block","btn-primary", "form-control"],["type=button","onClick=ComputerListUpdate(false, \""+hostname+"\")"], "Checked");
+  button = newElement(div, "button", ["btn","btn-block","btn-success", "form-control"],["type=button","onClick=ComputerListUpdate(false, \""+hostname+"\")"], "Checked");
   br = newElement(form,"br",[],[],"");
 
   obj = {hostname:hostname};
