@@ -52,9 +52,9 @@ function DSHBRDCompList(log_id){
                 myObj[x].user,
                 myObj[x].ip_address,
                 myObj[x].services,
-                myObj[x].remarks,
-                myObj[x].agent_version,
-                date,
+                "<span id=\""+hostname+"_remarks\">"+myObj[x].remarks+"</span>",
+                "<span id=\""+hostname+"_agent\">"+myObj[x].agent_version+"</span>",
+                "<span id=\""+hostname+"_date\">"+date+"</span>",
                 "<button class=\"btn btn-primary\" onClick=\"complistdetails('"+hostname+"')\">Details</button>"
               ]).draw(false);
         }//for
@@ -144,7 +144,7 @@ function complistdetails(hostname){
   div = newElement(row, "div", ["col"],[],"");
   button = newElement(div, "button", ["btn","btn-block","btn-primary", "form-control"],["type=submit","id=submitbtn","disabled=true"], "Update");
   div = newElement(row, "div", ["col"],[],"");
-  button = newElement(div, "button", ["btn","btn-block","btn-primary", "form-control"],["onClick=\"ComputerListUpdate(false, \""+hostname+"\")\""], "Checked");
+  button = newElement(div, "button", ["btn","btn-block","btn-primary", "form-control"],["type=button","onClick=ComputerListUpdate(false, \""+hostname+"\")"], "Checked");
   br = newElement(form,"br",[],[],"");
 
   obj = {hostname:hostname};
@@ -186,18 +186,48 @@ function ComputerListUpdate(changed, hostname){
     var agent = document.getElementById("agent").value;
     obj = {changed:changed, remarks:remarks, agent:agent, hostname:hostname};
 
-
   dbParam = JSON.stringify(obj);
   xmlhttp = new XMLHttpRequest();
 
   xmlhttp.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
       myObj = JSON.parse(this.responseText);//get response
-        for (x in myObj) {
+        // for (x in myObj) {
+          var date = document.getElementById(hostname+"_date");
+          var currdate = date.innerText.split(", ");
+          var d = new Date();
+          newdate = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
 
+          if(currdate.length > 1){
+            var currdate = date.innerText.split(", ");
+            var lastdate = currdate[0]+", "+currdate[1];
+            var thisdate = myDate("mmm dd, yyyy", newdate);
+            newdate = thisdate+", "+lastdate;
+          }
+          else{
+            var thisdate = myDate("mmm dd, yyyy", newdate);
+            newdate = thisdate;
+          }
 
+          if(myObj.changed == true && myObj.update == true && myObj.history == true && myObj.encoded == true){
+            var tdremarks = document.getElementById(hostname+"_remarks");
+            var tdagent = document.getElementById(hostname+"_agent");
+            tdremarks.innerHTML = remarks;
+            tdagent.innerHTML = agent;
+            date.innerHTML = newdate;
+            ALERTcall("success","Data have been updated");
+            OVERLAYdisable();
+          }
+          else if(myObj.changed == false && myObj.update == false && myObj.history == true && myObj.encoded == true){
+            date.innerHTML = newdate;
+            ALERTcall("success","Data have been checked");
+            OVERLAYdisable();
+          }
+          else{
+            ALERTcall("warning","Error Aquired:"+myObj);
+          }
 
-        }//folr close
+        // }//folr close
     }//ready state and status close
   };//xmlhttp onreadystatechange close
 
