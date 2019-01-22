@@ -21,6 +21,7 @@ $obj = json_decode($_POST["x"], false);
   				(connection_status=\"UNESTABLISHED\" and iMonitor_Status=\"End Task\"),\" & \",\" but \"),
               if(iMonitor_Status=\"Running\",\"Running\",concat(\"Missing: \",services))
               ) as services,
+		      tbl_computer_details.status,
           tbl_computer_details.remarks,
           tbl_computer_details.agent_version,
           group_concat(distinctrow

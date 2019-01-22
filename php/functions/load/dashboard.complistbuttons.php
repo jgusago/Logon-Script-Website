@@ -35,7 +35,7 @@ function treelist($origin, $display, $queue, $dataparent){
   }
   $onclick = "";
   if($queue != 0){
-    $onclick = "onClick=DSHBRDCompList(\"$queue\")";
+    $onclick = "onClick=DSHBRDCompList(\"$queue\",\"$display\")";
   }
 
   //Compare the number of sub-department of the current $origin;

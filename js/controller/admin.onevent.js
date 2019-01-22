@@ -1,19 +1,26 @@
 //onClick
 
 //COMPLISTtables
-function DSHBRDCompList(log_id){
+function DSHBRDCompList(log_id, dept){
 
   var checktable = tablecheck("computer list", log_id);
-  var a = document.getElementById("ContentCardHead").innerHTML = "Computer List";
+  var a = document.getElementById("ContentCardHead").innerHTML = dept;
   var foot = document.getElementById("ContentCardFoot");
   if (checktable == false){
 
     $('#datalist').DataTable( {
+      dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
+           "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+           "<'row'<'col-sm-12'tr>>"+
+           "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      buttons: ['copyHtml5','excelHtml5','pdfHtml5','csvHtml5'],
       columns: [
             { title: "Hostname" },
             { title: "User" },
             { title: "IP Address" },
             { title: "Server & Services" },
+            { title: "Status"},
             { title: "Remarks" },
             { title: "Agent Version" },
             { title: "Date Checked" },
@@ -47,11 +54,13 @@ function DSHBRDCompList(log_id){
           else{
             date = "";
           }
+
           $('#datalist').DataTable().row.add([
                 hostname,
                 myObj[x].user,
                 myObj[x].ip_address,
                 myObj[x].services,
+                myObj[x].status,
                 "<span id=\""+hostname+"_remarks\">"+myObj[x].remarks+"</span>",
                 "<span id=\""+hostname+"_agent\">"+myObj[x].agent_version+"</span>",
                 "<span id=\""+hostname+"_date\">"+date+"</span>",
@@ -63,6 +72,8 @@ function DSHBRDCompList(log_id){
     xmlhttp.open("POST", "php/functions/reports/computer.list.json.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("x=" + dbParam);
+
+
 
   }
   else{
@@ -129,10 +140,11 @@ function complistdetails(hostname){
   label = newElement(div, "strong", [],["for=remarks"], "Remarks:");
   remarks = newElement(div, "select", ["form-control"], ["id=remarks"], "");
   option = newElement(remarks, "option", [], ["value=Active"], "Active");
-  option = newElement(remarks, "option", [], ["value=Resigned"], "Resigned");
-  option = newElement(remarks, "option", [], ["value=Transfered"], "Transfered");
-  option = newElement(remarks, "option", [], ["value=Old/Wrong PC Name"], "Old/Wrong PC Name");
   option = newElement(remarks, "option", [], ["value=On Leave"], "On Leave");
+  option = newElement(remarks, "option", [], ["value=Pulled Out"], "Pulled Out");
+  option = newElement(remarks, "option", [], ["value=Renamed"], "Renamed");
+  option = newElement(remarks, "option", [], ["value=Transfered"], "Transfered");
+  option = newElement(remarks, "option", [], ["value=Vacant"], "Vacant");
   br = newElement(form,"div",["dropdown-divider"],[],"");
 
   div = newElement(form, "div", ["form-group"],[],"");
@@ -176,6 +188,7 @@ function complistdetails(hostname){
   xmlhttp.open("POST","php/functions/reports/computer.list.details.php", true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("x=" + dbParam);
+
 }
 
 function ComputerListUpdate(changed, hostname){

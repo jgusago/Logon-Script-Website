@@ -6,7 +6,6 @@
 function tablecheck(mod, trig){
 
     var contentview = document.getElementById("ContentCardBody");
-
     //Get if Table Exist
     var table  = document.getElementById("datalist");
 
