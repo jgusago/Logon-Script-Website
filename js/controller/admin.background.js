@@ -95,3 +95,56 @@ for(var x = 0; x < format.length; x++){
 }
 return newdate;
 }
+
+//create new elements
+function newElement(parent, element, classes, attribute, data){
+  var newelement = document.createElement(element);
+
+  for (var i = 0; i < classes.length; i++){
+    newelement.classList.add(classes[i]);
+  }
+
+  for (var j = 0; j < attribute.length; j++){
+    attrib = attribute[j].split("=");
+    newelement.setAttribute(attrib[0],attrib[1]);
+  }
+
+  newelement.innerHTML = data;
+
+  parent.appendChild(newelement);
+
+  return newelement;
+
+}
+
+function onChangeCheck(id){
+  var currentElement, defaultvalue, currentvalue, tagname, index, changed = false;
+  var submitbtn = document.getElementById("submitbtn");
+  for(var x = 0; x < id.length; x++){
+    currentElement = document.getElementById(id[x]);
+    defaultvalue = currentElement.getAttribute("default");
+    tagname = currentElement.tagName;
+
+    if(tagname == "SELECT"){
+      index = currentElement.selectedIndex;
+      currentvalue = currentElement.options[index].text;
+    }
+    else{
+      currentvalue = currentElement.value;
+    }
+
+    if(currentvalue == defaultvalue && changed == false){
+      changed = false;
+    }
+    else{
+      changed = true;
+    }
+
+    if(changed == true){
+      submitbtn.removeAttribute("disabled");
+    }
+    else{
+      submitbtn.setAttribute("disabled","true");
+    }
+  }
+}

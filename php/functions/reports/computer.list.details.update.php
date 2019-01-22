@@ -1,16 +1,24 @@
 <?php
-$remarks = $_POST['remarks'];
-$version = $_POST['agentversion'];
-$hostname = $_POST['hostname'];
-$id = $_POST['id'];
+header("Content-Type: application/json; charset=UTF-8");
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-$query = "UPDATE logonscript.tbl_computer_details SET remarks = '$remarks', agent_version = '$version' WHERE hostname like '$hostname'";
-if($db->query($query)){
-  echo "success";
+$obj = json_decode($_POST["x"], false);
+
+if(($obj->changed) == true){
+  $query = $conn->prepare("
+    UPDATE logonscript.tbl_computer_details
+    SET remarks = ?, agent_version = ?
+    WHERE (hostname = ?);
+  ");
+  $query->bind_param("sis",$obj->remarks, $obj->agent, $obj->hostname);
+//   $query->execute();
+// $result = $query->get_result();
+// $outp = $result->fetch_all(MYSQLI_ASSOC);
+//
+$result = $query->execute();
 }
-else{
-  echo "Error have been aquired";
-}
-$query = null;
+
+echo json_encode($result);
+
+mysqli_close($conn);
 ?>

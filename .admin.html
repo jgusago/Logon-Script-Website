@@ -238,11 +238,20 @@
     </div>
 
     <!-- Overlay -->
-    <div id="overlay" onclick="OVERLAYdisable();">
+    <div id="overlay">
     </div>
     <div id="miniwindow">
       <div class="card">
-        <div class="card-header" id="mnch"></div>
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-11 col-md-11" id="mnch"></div>
+            <div class="d-flex d-flex-row-reverse col-md-1 col-sm-1">
+              <button class="close btn btn-default" data-dismiss="modal" aria-label="Close" type="button" onClick="OVERLAYdisable()">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="card-body" id="mncb"></div>
         <div class="card-footer small text-muted" id="mncf"></div>
 
