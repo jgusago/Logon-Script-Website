@@ -33,7 +33,13 @@ function tablecheck(mod, trig){
 
 function myDate(format, date){
 var newdate = "";
+if (date != ""){
 var date = new Date(date);
+}
+else{
+  date = new Date();
+}
+
 format = format.match(/(.)\1*/g);
 //Hour
 var h = ["12","01","02","03","04","05","06","07","08","09","10","11","12","01","02","03","04","05","06","07","08","09","10","11"];
@@ -41,7 +47,7 @@ var h_a = ["AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","PM","PM"
 //Day
 var dd = ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"];
 var ddd = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var dddd = ["Sunday","Monday","Tuesday","Webnesday","Thursday","Friday","Saturday"];
+var dddd = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 //Month
 var mmmm = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 var mmm = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];

@@ -15,5 +15,4 @@ echo json_encode($outp);
 mysqli_close($conn);
 $db = null;
 
-
 ?>

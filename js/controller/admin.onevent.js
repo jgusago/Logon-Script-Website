@@ -206,17 +206,13 @@ function ComputerListUpdate(changed, hostname){
         // for (x in myObj) {
           var date = document.getElementById(hostname+"_date");
           var currdate = date.innerText.split(", ");
-          var d = new Date();
-          newdate = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-
+          var thisdate = myDate("mmm dd, yyyy", "");
           if(currdate.length > 1){
             var currdate = date.innerText.split(", ");
             var lastdate = currdate[0]+", "+currdate[1];
-            var thisdate = myDate("mmm dd, yyyy", newdate);
             newdate = thisdate+", "+lastdate;
           }
           else{
-            var thisdate = myDate("mmm dd, yyyy", newdate);
             newdate = thisdate;
           }
 
