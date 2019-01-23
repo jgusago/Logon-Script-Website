@@ -47,6 +47,10 @@ function Dashboard(){
         var date = newElement(date_row, "small",["text-muted", "text-tiny", "mt-1", "font-weight-normal"], "", "Today is " + myDate("dddd, mmmm dd, yyyy", ""));
       var card_div = newElement(maindiv, "div", ["row"], ["id=card_div"], "");
       var prog_div = newElement(maindiv, "div", ["row"], ["id=prog_div"], "");
+        //var prog_row = newElement(prog_div, "div", ["row"],"","");
+        var prog_col = newElement(prog_div, "div", ["col", "col-md-12"], "", "");
+          var prog_txt = newElement(prog_col, "h4", "", "", "Logonscript Installation Success Rate");
+          var breaks = newElement(prog_col, "hr", "", "", "");
 
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -83,6 +87,41 @@ function Dashboard(){
             var card_name = newElement(card_text, "div", ["text-muted"], "", myObj[x].name);
             var card_disp = newElement(card_text, "div", "", "", myObj[x].count);
             break;
+          case "progressbar":
+            if(myObj[x].count >= myObj[x].display && myObj[x].display != 0){
+              var value = 100;
+              var progress = 100;
+            }
+            else if (myObj[x].display == 0 && myObj[x].count == 0) {
+              var value = 0;
+              var progress = 100;
+            }
+            else {
+              var value = (myObj[x].count/myObj[x].display)*100;
+              value = Math.trunc( value );
+              var progress = value;
+            }
+            if (value <= 100 && value > 70){
+              var prog_bg = "bg-success";
+            }
+            else if (value < 69 && value > 40) {
+              var prog_bg = "bg-warning";
+            }
+            else if(value < 39 && value > 0){
+              var prog_bg = "bg-danger";
+            }
+            else{
+              var prog_bg = "bg-secondary";
+            }
+
+
+            var prog_sept = newElement(prog_col, "div", "", "", "");
+            var prog_name = newElement(prog_sept, "label", "", "", myObj[x].name);
+            var prog_rang = newElement(prog_sept, "span", ["pull-right","strong"],"",myObj[x].count+" out of "+myObj[x].display);
+            var prog_div = newElement(prog_sept, "div", ["progress"], "", "");
+            var prog_bar = newElement(prog_div, "div",["progress-bar", prog_bg],["role:progressbar", "aria-valuenow:", "aria-valuemin:0", "ariavaluemax:100"], value+"%");
+            prog_bar.style.width = progress+"%";
+            break;
           default:
         }
 
@@ -92,54 +131,6 @@ function Dashboard(){
   xmlhttp.open("POST", "php/functions/dashboard/dashboard.summary.php", true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send();
-
-  var divfluid = [], divclass = [], divDate =[], divCol = [], divdates = [], small = [],
-  divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
-  divrow = [], divcol = [], h4 = [], hrDshbrd = [], txtdept = [], spanCount = [], divProgress = [], divProgbar = [];
-
-  createnewElement(divfluid, ccb, "div", ["container-fluid"], [], "");
-  createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
-
-  // $.post("php/functions/dashboard/cards.php",function(data){
-  //   data = data.split(";");
-  //   //date
-  //   var icon = ["fa-exclamation","fa-upload","fa-desktop","fa-users"];
-  //   var text = ["End Task Units", "Old Ver Units", "Installed Units", "Employees"];
-  //   var id = ["dshbrdcountend","dshbrdcountold","dshbrdcountins","dshbrdcountemp"];
-  //   var text_color = ["danger","warning", "primary", "default"]
-  //
-  //
-  //   createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
-  //
-  //   for (var i = 1; i < data.length; i++)
-  //   {
-  //     createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], [], "");
-  //     createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
-  //     createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
-  //     createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
-  //     createnewElement(divIcon, divItems.newelement, "div", ["fa", icon[i-1], "display-4", "text-"+text_color[i-1], "aria-hidden:true"], [], "");
-  //     createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
-  //     createnewElement(divText, divml.newelement, "div", ["text-muted"], [], text[i-1]);
-  //     createnewElement(divcount, divml.newelement, "div", ["text-muted"], [], text[i-1]);
-  //   }
-  // });
-
-  $.post("php/functions/dashboard/progressbar.php", function(data){
-
-    createnewElement(divrow, divfluid.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
-    createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-12"], [], "");
-    createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
-    createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
-    data = data.split(";");
-    for(i = 0; i < data.length; i++){
-      var mini = data[i].split("|");
-      createnewElement(txtdept, divcol.newelement, "label", [], ["id:dshbrdLbl"], mini[0]);
-      createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [],mini[1]);
-      createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
-      createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-"+mini[3]], ["role:progressbar", "aria-valuenow:"+mini[2], "aria-valuemin:0", "ariavaluemax:100", "id:progressbar"+i], mini[2]+"%");
-      divProgbar.newelement.style.width = mini[2]+"%";
-    }
-  });
 
   // Pie Chart
   // createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], [], "");

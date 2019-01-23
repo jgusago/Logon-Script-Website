@@ -54,15 +54,15 @@ $rootq->bind_param("s",$parent);
 $rootq->execute();
 $rootr = $rootq->get_result();
 $root = $rootr->fetch_all(MYSQLI_ASSOC);
-
+$prog = array();
 foreach($root as $row){
 
-  $progq =$conn->prepare("SELECT  ? as count, \"progressbar\" as element, COUNT(distinct hostname) as display, ? as name
+  $progq =$conn->prepare("SELECT  COUNT(distinct hostname) as count, \"progressbar\" as element,  ? as display, ? as name
   FROM logonscript.tbl_log WHERE hostname LIKE concat(?,\"%\")");
-  $progq->bind_param("sss",$row["tree_name"],$row["no_comp"],$row['filter']);
+  $progq->bind_param("sss",$row["no_comp"],$row["tree_name"],$row['filter']);
   $progq->execute();
   $progr = $progq->get_result();
-  $prog = $progr->fetch_all(MYSQLI_ASSOC);
+  $prog  = array_merge($prog, $progr->fetch_all(MYSQLI_ASSOC));
 }
 $summary = array_merge($status,$version,$install,$employee,$prog);
 echo json_encode($summary);
