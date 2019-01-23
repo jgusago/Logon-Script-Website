@@ -3,7 +3,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 $obj = json_decode($_POST["x"], false);
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-
+  $sql = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/sql/computer.list.sql");
   $query = $conn->prepare("
   select
   hostname,

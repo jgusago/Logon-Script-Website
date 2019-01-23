@@ -28,5 +28,5 @@ left join tbl_employee on (
       (tbl_employee.emp_login = tbl_log.user) or
       (tbl_employee.emp_login2 = tbl_log.user))
 where tbl_log.hostname like
-  		(select concat(tree_filter,"%") from tbl_tree where tree_id = 2)
+  		(select concat(tree_filter,"%") from tbl_tree where tree_id = ?)
 group by hostname;
