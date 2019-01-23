@@ -20,11 +20,11 @@ function DSHBRDbtnsCompList(){
 }
 
 /* Buttons Computer Details*/
-function DSHBRDbtnsCompDetails(){
+function DSHBRDbtnsCompLogs(){
     complistul = document.getElementById("COMPLISTlist");
 
-    $.post("php/functions/z.revisions/dashboard.complistbuttons.php",function(data){
-        var complstbtn = document.getElementById("DSHBRDRecordsComplist");
+    $.post("php/functions/load/dashboard.complogsbuttons.php",function(data){
+        var complstbtn = document.getElementById("DSHBRDRecordsComplogs");
         complstbtn.innerHTML = data;
 
       });

@@ -39,6 +39,7 @@ format = format.match(/(.)\1*/g);
 var h = ["12","01","02","03","04","05","06","07","08","09","10","11","12","01","02","03","04","05","06","07","08","09","10","11"];
 var h_a = ["AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM"];
 //Day
+var dd = ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"];
 var ddd = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 var dddd = ["Sunday","Monday","Tuesday","Webnesday","Thursday","Friday","Saturday"];
 //Month
@@ -76,7 +77,7 @@ for(var x = 0; x < format.length; x++){
       newdate = newdate+ddd[date.getDay()];
       break;
     case "dd":
-      newdate = newdate+date.getDate();
+      newdate = newdate+dd[date.getDate()-1];
       break;
     case "d":
       newdate = newdate+date.getDate();

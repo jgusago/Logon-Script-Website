@@ -1,7 +1,7 @@
 <?php
 //$reporttype = $_POST["reporttype"];
-$reporttype = "computerlist";
-  $display = "Computer List";
+$reporttype = "computerlogs";
+  $display = "Computer Logs";
   $dataparent = "#DHSBRDRecords";
 
 session_start();
@@ -29,21 +29,21 @@ function treelist($origin, $display, $queue, $dataparent){
   }
   $onclick = "";
   if($queue != 0){
-    $onclick = "onClick=DSHBRDCompList(\"$queue\",\"$display\")";
+    $onclick = "onClick=DSHBRDCompLogs(\"$queue\",\"$display\")";
   }
 
   //Compare the number of sub-department of the current $origin;
   //if none, minimal link will be used;
 
   if($count != 0){
-    echo "<a class='nav-link nav-link-collapse collapsed' data-toggle='collapse' $onclick href='#complist-$queue' data-parent='$dataparent' aria-extended='false'>$display</a>";
+    echo "<a class='nav-link nav-link-collapse collapsed' data-toggle='collapse' $onclick href='#complogs-$queue' data-parent='$dataparent' aria-extended='false'>$display</a>";
 
     //geting sub-department
     $query = "SELECT tree_name, tree_id FROM logonscript.tbl_tree WHERE  tree_parent = \"$origin\" ORDER BY tree_name ASC";
 
-    echo "<ul class='sidenav-third-level collapse' id='complist-$queue' data-parent='$dataparent'>";
+    echo "<ul class='sidenav-third-level collapse' id='complogs-$queue' data-parent='$dataparent'>";
 
-    $dataparent = "#complist-$queue";
+    $dataparent = "#complogs-$queue";
     foreach($db->query($query) as $row){
       echo "<li class=\"nav-item\">";
       $origin = $row["tree_name"];
