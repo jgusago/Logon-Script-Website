@@ -1,0 +1,4 @@
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+//Server Required
+require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/session/session.check.php";
+//session required

@@ -41,6 +41,58 @@ function Dashboard(){
   ccb.innerHTML = "";
   ccf.innerHTML = "Updated at "+ myDate("dddd, mmmm d, yyyy","");
 
+  var container = newElement(ccb, "div", ["container-fluid"], "", "");
+    var maindiv = newElement(container, "div", ["col", "col-md-12"], "", "");
+      var date_row = newElement(maindiv, "div", ["row"], "","");
+        var date = newElement(date_row, "small",["text-muted", "text-tiny", "mt-1", "font-weight-normal"], "", "Today is " + myDate("dddd, mmmm dd, yyyy", ""));
+      var card_div = newElement(maindiv, "div", ["row"], ["id=card_div"], "");
+      var prog_div = newElement(maindiv, "div", ["row"], ["id=prog_div"], "");
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      for (x in myObj) {
+        var color = "";
+        switch (myObj[x].display) {
+          case "exclamation":
+            color = "danger";
+            break;
+          case "upload":
+            color = "warning";
+            break;
+          case "desktop":
+            color = "primary";
+            break;
+          case "users":
+            color = "default";
+            break;
+          default:
+            color = "success";
+        }
+
+        switch (myObj[x].element) {
+          case "card":
+            var card_base = newElement(card_div, "div", ["col-sm-6", "col-xl-3"], ["id=asdasd"+color], "");
+            var card_frame = newElement(card_base, "div", ["card", "mb-4"], "", "");
+            var card_body = newElement(card_frame, "div", ["card-body"],"", "");
+            var card_item = newElement(card_body, "div", ["d-flex", "align-items-center"], "", "");
+            var card_icon = newElement(card_item, "div",["fa", "fa-"+myObj[x].display, "display-4", "text-"+color, "aria-hidden:true"], [], "")
+            var card_text = newElement(card_item, "div", ["ml-3"], "", "");
+            var card_name = newElement(card_text, "div", ["text-muted"], "", myObj[x].name);
+            var card_disp = newElement(card_text, "div", "", "", myObj[x].count);
+            break;
+          default:
+        }
+
+      }
+    }//if ready state
+  }//funtion
+  xmlhttp.open("POST", "php/functions/dashboard/dashboard.summary.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send();
+
   var divfluid = [], divclass = [], divDate =[], divCol = [], divdates = [], small = [],
   divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
   divrow = [], divcol = [], h4 = [], hrDshbrd = [], txtdept = [], spanCount = [], divProgress = [], divProgbar = [];
@@ -48,34 +100,29 @@ function Dashboard(){
   createnewElement(divfluid, ccb, "div", ["container-fluid"], [], "");
   createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
 
-  $.post("php/functions/dashboard/cards.php",function(data){
-    data = data.split(";");
-    //date
-    createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
-    createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
-    createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
-    createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is "+data[0]);
-
-    var icon = ["fa-exclamation","fa-upload","fa-desktop","fa-users"];
-    var text = ["End Task Units", "Old Ver Units", "Installed Units", "Employees"];
-    var id = ["dshbrdcountend","dshbrdcountold","dshbrdcountins","dshbrdcountemp"];
-    var text_color = ["danger","warning", "primary", "default"]
-
-
-    createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
-
-    for (var i = 1; i < data.length; i++)
-    {
-      createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], [], "");
-      createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
-      createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
-      createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
-      createnewElement(divIcon, divItems.newelement, "div", ["fa", icon[i-1], "display-4", "text-"+text_color[i-1], "aria-hidden:true"], [], "");
-      createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
-      createnewElement(divText, divml.newelement, "div", ["text-muted"], [], text[i-1]);
-      createnewElement(divcount, divml.newelement, "div", [], [], data[i]);
-    }
-  });
+  // $.post("php/functions/dashboard/cards.php",function(data){
+  //   data = data.split(";");
+  //   //date
+  //   var icon = ["fa-exclamation","fa-upload","fa-desktop","fa-users"];
+  //   var text = ["End Task Units", "Old Ver Units", "Installed Units", "Employees"];
+  //   var id = ["dshbrdcountend","dshbrdcountold","dshbrdcountins","dshbrdcountemp"];
+  //   var text_color = ["danger","warning", "primary", "default"]
+  //
+  //
+  //   createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
+  //
+  //   for (var i = 1; i < data.length; i++)
+  //   {
+  //     createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], [], "");
+  //     createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
+  //     createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
+  //     createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
+  //     createnewElement(divIcon, divItems.newelement, "div", ["fa", icon[i-1], "display-4", "text-"+text_color[i-1], "aria-hidden:true"], [], "");
+  //     createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
+  //     createnewElement(divText, divml.newelement, "div", ["text-muted"], [], text[i-1]);
+  //     createnewElement(divcount, divml.newelement, "div", ["text-muted"], [], text[i-1]);
+  //   }
+  // });
 
   $.post("php/functions/dashboard/progressbar.php", function(data){
 
