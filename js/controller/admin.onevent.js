@@ -73,8 +73,6 @@ function DSHBRDCompList(log_id, dept){
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("x=" + dbParam);
 
-
-
   }
   else{
   }
@@ -208,17 +206,13 @@ function ComputerListUpdate(changed, hostname){
         // for (x in myObj) {
           var date = document.getElementById(hostname+"_date");
           var currdate = date.innerText.split(", ");
-          var d = new Date();
-          newdate = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-
+          var thisdate = myDate("mmm dd, yyyy", "");
           if(currdate.length > 1){
             var currdate = date.innerText.split(", ");
             var lastdate = currdate[0]+", "+currdate[1];
-            var thisdate = myDate("mmm dd, yyyy", newdate);
             newdate = thisdate+", "+lastdate;
           }
           else{
-            var thisdate = myDate("mmm dd, yyyy", newdate);
             newdate = thisdate;
           }
 
@@ -249,4 +243,66 @@ function ComputerListUpdate(changed, hostname){
   xmlhttp.send("x=" + dbParam);
 
 return false;
+}
+
+function DSHBRDCompLogs(log_id, dept){
+
+  var checktable = tablecheck("computer logs", log_id);
+  var a = document.getElementById("ContentCardHead").innerHTML = dept;
+  var foot = document.getElementById("ContentCardFoot");
+
+  if (checktable == false){
+
+    $('#datalist').DataTable( {
+      dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
+           "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+           "<'row'<'col-sm-12'tr>>"+
+           "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      buttons: ['copyHtml5','excelHtml5','pdfHtml5','csvHtml5'],
+      columns: [
+            { title: "Hostname" },
+            { title: "User" },
+            { title: "Domain"},
+            { title: "IP Address" },
+            { title: "Software Status" },
+            { title: "Connection Status"},
+            { title: "Scan Time" }
+          ]
+    });
+
+    obj = {log_id:log_id};
+    dbParam = JSON.stringify(obj);
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+
+      if (this.readyState == 4 && this.status == 200) {
+
+        myObj = JSON.parse(this.responseText);
+        for (x in myObj) {
+
+          thisdate = myDate("mmm dd, yyyy", myObj[x].scan_time);
+          $('#datalist').DataTable().row.add([
+            myObj[x].hostname,
+            myObj[x].user,
+            myObj[x].domain,
+            myObj[x].ip_address,
+            myObj[x].software_status,
+            myObj[x].connection_status,
+            thisdate
+          ]).draw(false);
+    }//for
+  }//if
+};//xmlhttp function
+xmlhttp.open("POST", "php/functions/reports/computer.logs.json.php", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+
+
+  }
+  else{
+    //do nothing
+  }
+
 }

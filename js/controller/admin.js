@@ -30,20 +30,20 @@ function DSHBRDbtnsCompListChld(listparent, linkparent, dataparent, parentulid){
 }
 
 //COMPLOGS Buttons
-function DSHBRDbtnsCompLogs(){
-complogsul = document.getElementById("COMPLOGSlist");
-
-$.post("php/functions/load/dashboard.buttons.php",function(data){
-  cldata = data.split("|");
-  for(var  i = 0; i < cldata.length; i++){
-    var li = [], a = [];
-    var id = idgenerator();
-    var newdata32 = cldata[i].split("`");
-    createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
-    createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+newdata32[1]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],newdata32[0]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
-  }
-});
-}
+// function DSHBRDbtnsCompLogs(){
+// complogsul = document.getElementById("COMPLOGSlist");
+//
+// $.post("php/functions/load/dashboard.buttons.php",function(data){
+//   cldata = data.split("|");
+//   for(var  i = 0; i < cldata.length; i++){
+//     var li = [], a = [];
+//     var id = idgenerator();
+//     var newdata32 = cldata[i].split("`");
+//     createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
+//     createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+newdata32[1]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],newdata32[0]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
+//   }
+// });
+// }
 
 function DSHBRDContentCompList(parent, linkid){
 
@@ -486,117 +486,23 @@ function DSHBRDLogsHistory()
 
 }
 
-function Dashboard()
-{
-  var contentview = document.getElementById("ContentCardBody");
-  contentview.innerHTML = "";
-
-  var divfluid = [], divclass = [], divDate =[], divCol = [], divdates = [], small = [],
-  divrow1 = [], divColcard = [], divcard1 = [], divcardBody = [], divItems = [], divIcon = [], divml = [], divText = [], divcount = [],
-  divrow = [], divcol = [], h4 = [], hrDshbrd = [], txtdept = [], spanCount = [], divProgress = [], divProgbar = [];
-  // divColcard2 = [], divcard2 = [], divcardBody2 = [], divItems2 = [], divIcon2 = [], divml2 = [], divText2 = [], divcount2 = [],
-  // divColcard3 = [], divcard3 = [], divcardBody3 = [], divItems3 = [], divIcon3 = [], divml3 = [], divText3 = [], divcount3 = [],
-  // divColcard4 = [], divcard4 = [], divcardBody4 = [], divItems4 = [], divIcon4 = [], divml4 = [], divText4 = [], divcount4 = [],
-  // txtdept1 = [], spanCount1 = [], divProgress1 = [], divProgbar1 =[],
-  // txtdept2 = [], spanCount2 = [], divProgress2 = [], divProgbar2 = [],
-  // txtdept3 = [], spanCount3 = [], divProgress3 = [], divProgbar3 =[],
-  // txtdept4 = [], spanCount4 = [], divProgress4 = [], divProgbar4 = [],
-  // txtdept5 = [], spanCount5 = [], divProgress5 = [], divProgbar5 =[];
-
-  // divcol2 = [], h4pie = [], hrDshbrd1 =[], div = [], canvas = [];
-
-  document.getElementById("dtitle").innerHTML = "Dashboard";
-  document.getElementById("dtitle2").innerHTML = "My Dashboard";
-
-  createnewElement(divfluid, contentview, "div", ["container-fluid"], [], "");
-  createnewElement(divclass, divfluid.newelement, "div", ["col", "col-md-12"], [], "");
-
-  $.post("php/functions/dashboard/cards.php",function(data){
-    data = data.split(";");
-    //date
-    createnewElement(divDate, divclass.newelement, "div", ["row"], [], "");
-    createnewElement(divCol, divDate.newelement, "div", ["col", "col-md-12"], [], "");
-    createnewElement(divdates, divCol.newelement,"div", ["text-muted", "text-tiny", "mt-1"], ["id:dshbrdDate"], "");
-    createnewElement(small, divdates.newelement, "small", ["font-weight-normal"], [], "Today is "+data[0]);
-
-    var icon = ["fa-exclamation","fa-upload","fa-desktop","fa-users"];
-    var text = ["End Task Units", "Old Ver Units", "Installed Units", "Employees"];
-    var id = ["dshbrdcountend","dshbrdcountold","dshbrdcountins","dshbrdcountemp"];
-    var text_color = ["danger","warning", "primary", "default"]
 
 
-    createnewElement(divrow1, divclass.newelement, "div", ["row"], [], "");
-
-    for (var i = 1; i < data.length; i++)
-    {
-      createnewElement(divColcard, divrow1.newelement, "div", ["col-sm-6", "col-xl-3"], [], "");
-      createnewElement(divcard1, divColcard.newelement, "div", ["card", "mb-4"], [], "");
-      createnewElement(divcardBody, divcard1.newelement, "div", ["card-body"], [], "");
-      createnewElement(divItems, divcardBody.newelement, "div", ["d-flex", "align-items-center"], [], "");
-      createnewElement(divIcon, divItems.newelement, "div", ["fa", icon[i-1], "display-4", "text-"+text_color[i-1], "aria-hidden:true"], [], "");
-      createnewElement(divml, divItems.newelement, "div", ["ml-3"], [], "");
-      createnewElement(divText, divml.newelement, "div", ["text-muted"], [], text[i-1]);
-      createnewElement(divcount, divml.newelement, "div", [], [], data[i]);
-    }
-  });
-
-  $.post("php/functions/dashboard/progressbar.php", function(data){
-
-    createnewElement(divrow, divfluid.newelement, "div", ["row"], ["id:dshbrdFluid"], "");
-    createnewElement(divcol, divrow.newelement, "div", ["col", "col-md-12"], [], "");
-    createnewElement(h4, divcol.newelement, "h4", [], [], "Logonscript Installation Success Rate");
-    createnewElement(hrDshbrd, divcol.newelement, "hr", [], ["id:hr"], "");
-    data = data.split(";");
-    for(i = 0; i < data.length; i++){
-      var mini = data[i].split("|");
-      createnewElement(txtdept, divcol.newelement, "label", [], ["id:dshbrdLbl"], mini[0]);
-      createnewElement(spanCount, divcol.newelement, "span", ["pull-right", "strong"], [],mini[1]);
-      createnewElement(divProgress, divcol.newelement, "div", ["progress"], [], "");
-      createnewElement(divProgbar, divProgress.newelement, "div", ["progress-bar", "bg-"+mini[3]], ["role:progressbar", "aria-valuenow:"+mini[2], "aria-valuemin:0", "ariavaluemax:100", "id:progressbar"+i], mini[2]+"%");
-      divProgbar.newelement.style.width = mini[2]+"%";
-    }
-  });
-
-  // Pie Chart
-  createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], [], "");
-  createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
-  createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
-
-  createnewElement(div, divcol2.newelement, "div", [], ["id:colPieChart"], "");
-  createnewElement(canvas, div.newelement, "canvas", ["flot-base"], ["width: 1589","height: 250", "id:pieChart"], "");
-
-  // var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
-
-  // Edit History
-  createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
-  createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
-  createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
-  createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
-  createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
-  createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
-  createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
-
-  createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
-  createnewElement(tbl, divTable.newelement, "table", ["table", "card-table"], [], "");
-  createnewElement(tblHeader, tbl.newelement, "thead", [], [], "");
-
-}
-
-function PieChart()
-{
-  var ctx = document.getElementById("pieChart").getContext('2d');
-  var pieChart = new Chart(ctx ,
-    {
-      type: 'pie',
-      data:
-      {
-        labels:["Marvin(IT)", "Marvin(MAIN)", "Pacifica(QY)", "Pacifica(LH)", "6789(L8)", "Pacifica(AE)"],
-        datasets: [{backgroundColor: ["#2ecc71", "#e74c3c", "#34495e", "#e74c3c","#34495e"],
-        data:[32,70,3,0,3,0]
-        }]
-      }
-    });
-}
+// function PieChart()
+// {
+//   var ctx = document.getElementById("pieChart").getContext('2d');
+//   var pieChart = new Chart(ctx ,
+//     {
+//       type: 'pie',
+//       data:
+//       {
+//         labels:["Marvin(IT)", "Marvin(MAIN)", "Pacifica(QY)", "Pacifica(LH)", "6789(L8)", "Pacifica(AE)"],
+//         datasets: [{backgroundColor: ["#2ecc71", "#e74c3c", "#34495e", "#e74c3c","#34495e"],
+//         data:[32,70,3,0,3,0]
+//         }]
+//       }
+//     });
+// }
 
 function DSHBRDContentBranchSettings()
 {
