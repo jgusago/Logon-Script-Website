@@ -40,9 +40,17 @@ else{
   date = new Date();
 }
 
+Number.prototype.pad = function(size) {
+  var s = String(this);
+  while (s.length < (size || 2)) {s = "0" + s;}
+  return s;
+}
+
 format = format.match(/(.)\1*/g);
 //Hour
 var h = ["12","01","02","03","04","05","06","07","08","09","10","11","12","01","02","03","04","05","06","07","08","09","10","11"];
+var min = date.getMinutes();
+min = (min).pad(2);
 var h_a = ["AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","AM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM"];
 //Day
 var dd = ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"];
@@ -89,10 +97,10 @@ for(var x = 0; x < format.length; x++){
       newdate = newdate+date.getDate();
       break;
     case "hh":
-      newdate = newdate+date.getHours()+date.getMinutes();
+      newdate = newdate+date.getHours()+":"+min;
       break;
     case "h":
-      newdate = newdate+h[date.getHours()]+":"+date.getMinutes()+" "+h_a[date.getHours()];
+      newdate = newdate+h[date.getHours()]+":"+min+" "+h_a[date.getHours()];
       break;
     default:
       newdate = newdate+format[x];
@@ -153,4 +161,42 @@ function onChangeCheck(id){
       submitbtn.setAttribute("disabled","true");
     }
   }
+}
+
+
+//OVERLAY
+function OVERLAYenable(){
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("miniwindow").style.display = "block";
+}
+
+function OVERLAYdisable()
+{
+
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("miniwindow").style.display = "none";
+
+        //get mini window ID;
+        var ch = document.getElementById("mnch");
+        var cb = document.getElementById("mncb");
+        var cf = document.getElementById("mncf");
+
+        //Clear Previous Text
+        ch.innerHTML = "";
+        cb.innerHTML = "";
+        cf.innerHTML = "";
+
+}
+
+function Loading(state){
+
+  if(state == true){
+    document.getElementById("loading_overlay").style.display = "block";
+    document.getElementById("loading_wrapper").style.display = "block";
+  }
+  else{
+    document.getElementById("loading_overlay").style.display = "none";
+    document.getElementById("loading_wrapper").style.display = "none";
+  }
+
 }

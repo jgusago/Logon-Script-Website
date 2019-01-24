@@ -62,14 +62,14 @@
                   </ul>
               </li>
               <!-- History -->
-              <li data="DSHBRDRecordsHistory" id="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="History">
-                <a class="nav-link" href="#" id="DSHBRDRecordsHistory" onclick="DSHBRDContent('','DSHBRDRecordsHistory')" data="DSHBRDRecordsHistory">
+              <li data="DSHBRDRecordsHistory" class="nav-item " data-toggle="tooltip" data-placement="right" title="History">
+                <a class="nav-link" href="#" id="DSHBRDRecordsHistory" onclick="DSHBRDTransacHistory()" data="DSHBRDRecordsHistory">
                   <span class="nav-link-text">History</span>
                 </a>
               </li>
               <!-- Computer logs history -->
-              <li class="nav-item" id="DSHBRDLogsHistory" data-toggle="tooltip" data-placement="right" title="LogsHistory">
-                <a class="nav-link" href="#" id="DSHBRDLogsHistory" onclick="DSHBRDLogsHistory()" data="DSHBRDLogsHistory">
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="LogsHistory">
+                <a class="nav-link" href="#" id="DSHBRDTransactionHistory" onclick="DSHBRDTransactionHistory()" data="DSHBRDLogsHistory">
                   <span class="nav-link-text">End Task Summary</span>
                 </a>
               </li>
@@ -230,8 +230,6 @@
         <div class="card-body" id="ContentCardBody"></div>
         <div class="card-footer small text-muted" id="ContentCardFoot"></div>
       </div>
-
-
     </div>
 
     <!-- Overlay -->
@@ -254,11 +252,19 @@
 
       </div>
     </div>
-    <div id="loaderdiv">
-        <div class="lds-css ng-scope">
-            <div style="width:100%;height:100%" class="lds-wedges"><div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div></div>
-        </div>
+    <!-- loader -->
+    <div id="loading_overlay" class="content-wrapper">
     </div>
+    <div class="loading_wrapper" id="loading_wrapper">
+      <div class="loading_hexagon">
+        <svg xmlns="" viewBox="0 0 28 32" fill="currentcolor">
+          <path d="M0 8 L0 24 L14 32 L28 24 L28 8 L14 0 Z"/>
+        </svg>
+            <image src="img/sky_luster.png" id="loading_logo_shadow" x="0" y="0" width="" height="" />
+            <image src="img/sky_luster.png" x="0" y="0" width="" height="" />
+      </div>
+    </div>
+    <!-- loader -->
     <div id="alertwindow">
     </div>
 
@@ -364,6 +370,8 @@
     <script type="text/javascript" src="js/controller/admin.background.js" async></script>
     <script type="text/javascript" src="js/controller/admin.load.js" async></script>
     <script type="text/javascript" src="js/controller/admin.onevent.js" async></script>
+    <script type="text/javascript" src="js/controller/kate.admin.js" async></script>
+    <script type="text/javascript" src="js/controller/test.js" async></script>
     <!-- API -->
     <script type="text/javascript" src="js/controller/dom-framer-1.1.1.js"></script>
     <script type="text/javascript" src="js/DataTables/datatables.min.js"></script>

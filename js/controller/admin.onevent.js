@@ -34,7 +34,7 @@ function DSHBRDCompList(log_id, dept){
 
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-
+      Loading(true);
       if (this.readyState == 4 && this.status == 200) {
 
         myObj = JSON.parse(this.responseText);
@@ -67,6 +67,7 @@ function DSHBRDCompList(log_id, dept){
                 "<button class=\"btn btn-primary\" onClick=\"complistdetails('"+hostname+"')\">Details</button>"
               ]).draw(false);
         }//for
+        Loading(false);
       }//if
     };//xmlhttp function
     xmlhttp.open("POST", "php/functions/reports/computer.list.json.php", true);
@@ -161,7 +162,7 @@ function complistdetails(hostname){
   dbParam = JSON.stringify(obj);
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function(){
-
+    Loading(true);
     if(this.readyState == 4 && this.status == 200){
       myObj = JSON.parse(this.responseText);
       for (x in myObj) {
@@ -181,6 +182,7 @@ function complistdetails(hostname){
         agent.setAttribute("default",myObj[x].agent_version);
 
       }
+      Loading(false);
     }//server request close
   };//XMLHttpRequest close
   xmlhttp.open("POST","php/functions/reports/computer.list.details.php", true);
@@ -201,6 +203,7 @@ function ComputerListUpdate(changed, hostname){
   xmlhttp = new XMLHttpRequest();
 
   xmlhttp.onreadystatechange = function(){
+    Loading(true);
     if(this.readyState == 4 && this.status == 200){
       myObj = JSON.parse(this.responseText);//get response
         // for (x in myObj) {
@@ -233,6 +236,7 @@ function ComputerListUpdate(changed, hostname){
           else{
             ALERTcall("warning","Error Aquired:"+myObj);
           }
+          Loading(false);
 
         // }//folr close
     }//ready state and status close
@@ -276,13 +280,13 @@ function DSHBRDCompLogs(log_id, dept){
 
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-
+      Loading(true);
       if (this.readyState == 4 && this.status == 200) {
 
         myObj = JSON.parse(this.responseText);
         for (x in myObj) {
 
-          thisdate = myDate("mmm dd, yyyy", myObj[x].scan_time);
+          thisdate = myDate("mmm dd, yyyy hh", myObj[x].scan_time);
           $('#datalist').DataTable().row.add([
             myObj[x].hostname,
             myObj[x].user,
@@ -293,6 +297,7 @@ function DSHBRDCompLogs(log_id, dept){
             thisdate
           ]).draw(false);
     }//for
+    Loading(false);
   }//if
 };//xmlhttp function
 xmlhttp.open("POST", "php/functions/reports/computer.logs.json.php", true);
@@ -304,5 +309,122 @@ xmlhttp.send("x=" + dbParam);
   else{
     //do nothing
   }
+
+}
+
+
+function DSHBRDTransacHistory() {
+  var checktable = tablecheck("computer logs", "Transaction History");
+  var a = document.getElementById("ContentCardHead").innerHTML = "Transaction History";
+  var foot = document.getElementById("ContentCardFoot");
+
+  if (checktable == false){
+
+  $('#datalist').DataTable( {
+    dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'>>"+
+         "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+         "<'row'<'col-sm-12'tr>>"+
+         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+    columns: [
+          { title: "Date" },
+          { title: "Name" },
+          { title: "Details"},
+          { title: "User" }
+        ],
+    "order": [[ 0, "desc" ]]
+  });
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    Loading(true);
+    if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+      for (x in myObj) {
+        if(myObj[x].user_name == null){
+          var user = myObj[x].user_id;
+        }
+        else{
+          var user = myObj[x].user_id+" - "+myObj[x].user_name;
+        }
+        $('#datalist').DataTable().row.add([
+          myObj[x].transact_date,
+          myObj[x].transact_name,
+          myObj[x].transact_details,
+          user
+        ]).draw(false);
+
+      }//for close
+      Loading(false);
+  }//if close
+}//function close
+  xmlhttp.open("POST", "php/functions/reports/transaction.history.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send();
+}
+else{
+  //do nothing
+}
+}
+
+function DSHBRDTransactionHistory(){
+  var checktable = tablecheck("disconnection logs", "Disconnection History");
+  var a = document.getElementById("ContentCardHead").innerHTML = "Transaction History";
+  var foot = document.getElementById("ContentCardFoot");
+
+  if (checktable == false){
+
+  $('#datalist').DataTable( {
+    dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
+         "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+         "<'row'<'col-sm-12'tr>>"+
+         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+    buttons: ['copyHtml5','excelHtml5','pdfHtml5','csvHtml5'],
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+    columns: [
+          { title: "Detection Time" },
+          { title: "End Time" },
+          { title: "Hostname"},
+          { title: "User ID-Name" },
+          { title: "IP Address"},
+          { title: "Services"},
+          { title: "Department"}
+        ],
+    "order": [[ 0, "desc" ]]
+  });
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    Loading(true);
+    if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+      for (x in myObj) {
+        if(myObj[x].name == null){
+          var user = myObj[x].userid;
+        }
+        else{
+          var user = myObj[x].userid+" - "+myObj[x].name;
+        }
+        $('#datalist').DataTable().row.add([
+          myObj[x].detectiontime,
+          myObj[x].endtime,
+          myObj[x].hostname,
+          user,
+          myObj[x].ip_address,
+          myObj[x].services,
+          myObj[x].branch,
+        ]).draw(false);
+      }//for close
+      Loading(false);
+  }//if close
+}//function close
+  xmlhttp.open("POST", "php/functions/reports/disconnection.logs.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send();
+}
+else{
+  //do nothing
+}
+
 
 }

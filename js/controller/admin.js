@@ -480,10 +480,6 @@ function DSHBRDLogsHistory()
             }
   });
 
-
-
-
-
 }
 
 
@@ -731,29 +727,7 @@ function LNKbrdcmps(data){
 
 }
 
-function OVERLAYenable(){
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("miniwindow").style.display = "block";
-}
 
-function OVERLAYdisable()
-{
-
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("loaderdiv").style.display = "none";
-    document.getElementById("miniwindow").style.display = "none";
-
-        //get mini window ID;
-        var ch = document.getElementById("mnch");
-        var cb = document.getElementById("mncb");
-        var cf = document.getElementById("mncf");
-
-        //Clear Previous Text
-        ch.innerHTML = "";
-        cb.innerHTML = "";
-        cf.innerHTML = "";
-
-}
 function ALERTshow(){
   document.getElementById("alertwindow").style.display = "block";
 }

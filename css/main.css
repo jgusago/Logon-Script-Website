@@ -684,7 +684,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   font-weight: bold;
   font-family: Arial;
   background: #94A880;
-  color: white; 
+  color: white;
 }
 #ContentCardBody
 {
@@ -947,120 +947,81 @@ footer.sticky-footer {
 #root li a, #rootII li a{
   cursor: pointer;
 }
-#loaderdiv{
+
+/* Loading */
+#loading_overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+}
+.loading_wrapper {
+  position: absolute;
   display: none;
-  position: fixed; /* Sit on top of the page content */
-  margin: 0px;
+  width: 150px;
+  height: 210px;
   top: 50%;
   left: 50%;
-  margin-right: -50%;
   transform: translate(-50%, -50%);
-  z-index: 4380;
+  perspective: 1000px;
+  z-index: 2041;
 }
 
-#loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-}
-
-/* Safari */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes lds-wedges {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes lds-wedges {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-.lds-wedges {
-  position: relative;
-}
-.lds-wedges > div > div {
-  -webkit-transform-origin: 100px 100px;
-  transform-origin: 100px 100px;
-  -webkit-animation: lds-wedges 3s linear infinite;
-  animation: lds-wedges 3s linear infinite;
-  opacity: 0.8;
-}
-.lds-wedges > div > div > div {
+.loading_hexagon img {
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
   position: absolute;
-  left: 30px;
-  top: 30px;
-  width: 70px;
-  height: 70px;
-  border-radius: 70px 0 0 0;
-  -webkit-transform-origin: 100px 100px;
-  transform-origin: 100px 100px;
+  perspective: 1000px;
 }
-.lds-wedges > div div:nth-child(1) > div {
-  background: #3f58b2;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+#loading_logo_shadow{
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  filter: brightness(0%) blur(10px);
 }
-.lds-wedges > div div:nth-child(1) {
-  -webkit-animation-duration: 0.75s;
-  animation-duration: 0.75s;
+
+.loading_hexagon {
+  color: rgba(192,192,192,0.7);
+  transform-style: preserve-3d;
+  animation: rotate 5s forwards infinite;
 }
-.lds-wedges > div div:nth-child(2) > div {
-  background: #3998c4;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+ @keyframes rotate {
+  0% {
+    transform: none;
+  }
+
+  16.5% {
+    transform: rotate3d(1, -1, 0, 180deg);
+  }
+
+  33% {
+    transform: rotate3d(1, -1, 0, 360deg);
+  }
+
+  49.5% {
+    transform: rotate3d(1, 1, 0, 180deg);
+  }
+
+  67% {
+    transform: rotate3d(1, 1, 0, 360deg);
+  }
+
+  82.5% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
 }
-.lds-wedges > div div:nth-child(2) {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-}
-.lds-wedges > div div:nth-child(3) > div {
-  background: #8dc85e;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-.lds-wedges > div div:nth-child(3) {
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-}
-.lds-wedges > div div:nth-child(4) > div {
-  background: #b2e356;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-.lds-wedges > div div:nth-child(4) {
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
-}
-.lds-wedges {
-  width: 200px !important;
-  height: 200px !important;
-  -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
-  transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
-}
+
+/* loading* */
 
 #miniwindow
 {
