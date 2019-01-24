@@ -369,7 +369,7 @@ else{
 
 function DSHBRDTransactionHistory(){
   var checktable = tablecheck("disconnection logs", "Disconnection History");
-  var a = document.getElementById("ContentCardHead").innerHTML = "Transaction History";
+  var a = document.getElementById("ContentCardHead").innerHTML = "Disconnection History";
   var foot = document.getElementById("ContentCardFoot");
 
   if (checktable == false){
@@ -382,10 +382,10 @@ function DSHBRDTransactionHistory(){
     buttons: ['copyHtml5','excelHtml5','pdfHtml5','csvHtml5'],
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
     columns: [
-          { title: "Detection Time" },
+          { title: "Detected Time" },
           { title: "End Time" },
           { title: "Hostname"},
-          { title: "User ID-Name" },
+          { title: "User" },
           { title: "IP Address"},
           { title: "Services"},
           { title: "Department"}
