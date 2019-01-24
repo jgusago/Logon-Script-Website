@@ -35,4 +35,4 @@
 
     };
 
-})(jQuery, jQuery.fn.dataTable);****
+})(jQuery, jQuery.fn.dataTable);
