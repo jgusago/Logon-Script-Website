@@ -306,3 +306,56 @@ xmlhttp.send("x=" + dbParam);
   }
 
 }
+
+
+function DSHBRDTransacHistory() {
+  var checktable = tablecheck("computer logs", "Transaction History");
+  var a = document.getElementById("ContentCardHead").innerHTML = "Transaction History";
+  var foot = document.getElementById("ContentCardFoot");
+
+  if (checktable == false){
+
+  $('#datalist').DataTable( {
+    dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'>>"+
+         "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+         "<'row'<'col-sm-12'tr>>"+
+         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+    columns: [
+          { title: "Date" },
+          { title: "Name" },
+          { title: "Details"},
+          { title: "User" }
+        ],
+    "order": [[ 0, "desc" ]]
+  });
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+      for (x in myObj) {
+        if(myObj[x].user_name == null){
+          var user = myObj[x].user_id;
+        }
+        else{
+          var user = myObj[x].user_id+" - "+myObj[x].user_name;
+        }
+        $('#datalist').DataTable().row.add([
+          myObj[x].transact_date,
+          myObj[x].transact_name,
+          myObj[x].transact_details,
+          user
+        ]).draw(false);
+
+      }//for close
+  }//if close
+}//function close
+  xmlhttp.open("POST", "php/functions/reports/transaction.history.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send();
+}
+else{
+  //do nothing
+}
+}
