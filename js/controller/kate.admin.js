@@ -6,9 +6,9 @@ function DSHBRDAccountsAccMgnt(){
     if (checktable == false){
 
     var row = newElement(header, "div", ["row"],"","");
-    var text = newElement(row, "div", ["col-md-6","col-sm-6"], "", "User Accounts");
-    var btndiv = newElement(row, "div", ["d-flex","d-flex-row-reverse","col-md-6","col-sm-6"], "", "");
-    var btnAdd = newElement(btndiv,  "button", ["btn","btn-default"],["data-toggl=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
+    // var text = newElement(row, "div", ["col-md-6","col-sm-6"], "", "User Accounts");
+    // var btndiv = newElement(row, "div", ["d-flex","d-flex-row-reverse","col-md-6","col-sm-6"], "", "");
+    var btnAdd = newElement(row,  "button", ["btn","btn-default"],["data-toggl=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
 
 
     $('#datalist').DataTable( {
