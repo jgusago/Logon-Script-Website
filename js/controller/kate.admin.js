@@ -70,50 +70,52 @@ function Profiles()
     var checktable = tablecheck("uuser profile", "Profile Settings");
     var a = document.getElementById("ContentCardHead");
     a.innerHTML = "Account Information";
-    // var btnAdd = newElement(a,  "button", ["btn","btn-default"],["data-toggl=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
     var foot = document.getElementById("ContentCardFoot");
+
+    var body = document.getElementById("ContentCardBody");
 
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
     tableid = idgenerator();
 
-    var card = [], cbd = [], div =[], ul =[], li =[], a =[],
+    var div1, div2, ul1, li1, a1,
+    div3, div4, div5, div6, label1, div7, hr1
+    div8, div9, label2, div10, hr2;
 
-    divv =[], divvv = []
-    divs = [], divsUid = [], divslbl = [], divsUids = [], hrUid =[],
+    // hrUid =[],
 
-    divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [],
-    divs3 = [], divsDept =[], divslbl3 = [], divsDepts = [], hrDept = [],
-    divs4 = [], divsPosition =[], divslbl4 = [], divsPositions = [], inputPosition =[],  hrPosition = [],
-    divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
-    divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
+    // divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [],
+    // divs3 = [], divsDept =[], divslbl3 = [], divsDepts = [], hrDept = [],
+    // divs4 = [], divsPosition =[], divslbl4 = [], divsPositions = [], inputPosition =[],  hrPosition = [],
+    // divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
+    // divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
 
     $.post("php/functions/session/session.confirm.php",function(data){
     data = data.split(";");
     //$status.0;".$role.1";".$department.2";".$name.3";".$id.4";".$position.5;
 
 
-    createnewElement(cbd, card.body,"div", ["row"], [], "");
-    createnewElement(div, cbd.newelement, "div", ["col-12"],[],"");
-    createnewElement(ul, div.newelement, "ul", ["nav", "nav-tabs", "mb-4"],["id:myTab", "role:tablist"],"");
-    createnewElement(li, ul.newelement, "li", ["nav-item"], [], "");
-    createnewElement(a, li.newelement, "a", ["nav-link", "active"], ["id:basicInfo-tab", "data-toggle:tab", "href:#basicInfo", "role:tab", "aria-controls:basicInfo", "aria-selected:true"], "Basic Info");
+    div1 = newElement(body, "div", ["row"], [], "");
+    div2 = newElement(div1, "div", ["col-12"],[],"");
+    ul1 = newElement(div2,  "ul", ["nav", "nav-tabs", "mb-4"],["id=myTab", "role=tablist"],"");
+    li1 = newElement(ul1, "li", ["nav-item"], [], "");
+    a1 = newElement(li1, "a", ["nav-link", "active"], ["id=basicInfo-tab", "data-toggle=tab", "href=#basicInfo", "role=tab", "aria-controls=basicInfo", "aria-selected=true"], "Basic Info");
 
-    createnewElement(divv, div.newelement, "div", ["tab-content", "ml-1"], ["id:myTabContent"], "");
-    createnewElement(divvv, divv.newelement, "div", ["tab-pane", "fade", "show", "active"], ["id:basicInfo", "role:tabpanel", "aria-labelledby:basicInfo-tab"], "");
+    div3 = newElement(div1, "div", ["tab-content", "ml-1"], ["id=myTabContent"], "");
+    div4 = newElement(div3, "div", ["tab-pane", "fade", "show", "active"], ["id=basicInfo", "role=tabpanel", "aria-labelledby=basicInfo-tab"], "");
 
-    createnewElement(divs, divvv.newelement, "div", ["row"], [], "");
-    createnewElement(divsUid, divs.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl, divsUid.newelement, "label", [], ["id:lblEid"], "Employee Id: ");
-    createnewElement(divsUids, divs.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[4])
-    createnewElement(hrUid, divvv.newelement, "hr", [], ["id:hr"], "");
+    div5 = newElement(div4, "div", ["row"], [], "");
+    div6 = newElement(div5, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label1 = newElement(div6, "label", [], ["id=lblEid"], "Employee Id: ");
+    div7 = newElement(div5, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[4])
+    hr1 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    createnewElement(divs2, divvv.newelement, "div", ["row"], [], "");
-    createnewElement(divsUname, divs2.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    createnewElement(divslbl2, divsUname.newelement, "label", [], ["id:lblEid"], "Name: ");
-    createnewElement(divsUnames, divs2.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[3])
-    createnewElement(hrUname, divvv.newelement, "hr", [], ["id:hr"], "");
+    div8 = newElement(div3, "div", ["row"], [], "");
+    div9 = newElement(div8, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label2 = newElement(div9, "label", [], ["id=lblEid"], "Name: ");
+    div10 = newElement(div9, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[3])
+    hr2 = newElement(div4, "hr", [], ["id:hr"], "");
 
     createnewElement(divs3, divvv.newelement, "div", ["row"], [], "");
     createnewElement(divsDept, divs3.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
