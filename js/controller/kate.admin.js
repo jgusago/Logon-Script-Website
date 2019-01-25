@@ -114,7 +114,7 @@ function Profiles()
     div8 = newElement(div3, "div", ["row"], [], "");
     div9 = newElement(div8, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     label2 = newElement(div9, "label", [], ["id=lblEid"], "Name: ");
-    div10 = newElement(div9, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[3])
+    div10 = newElement(div8, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[3])
     hr2 = newElement(div4, "hr", [], ["id:hr"], "");
 
     // createnewElement(divs3, divvv.newelement, "div", ["row"], [], "");
