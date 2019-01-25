@@ -1,11 +1,16 @@
 function DSHBRDAccountsAccMgnt(){
     var checktable = tablecheck("user accounts", "User Accounts");
-    var a = document.getElementById("ContentCardHead").innerHTML = "User Accounts";
-    // var btnAdd = newElement(a,  "button", ["btn","btn-default"],["data-toggl=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
+    var header = document.getElementById("ContentCardHead");
     var foot = document.getElementById("ContentCardFoot");
-  
+
     if (checktable == false){
-  
+
+    var row = newElement(header, "div", ["row"],"","");
+    var text = newElement(row, "div", ["col-md-6","col-sm-6"], "", "User Accounts");
+    var btndiv = newElement(row, "div", ["d-flex","d-flex-row-reverse","col-md-6","col-sm-6"], "", "");
+    var btnAdd = newElement(btndiv,  "button", ["btn","btn-default"],["data-toggl=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
+
+
     $('#datalist').DataTable( {
       dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
         "<'row'<'col-sm-12'tr>>"+
@@ -22,7 +27,7 @@ function DSHBRDAccountsAccMgnt(){
           ],
       "order": [[ 0, "desc" ]]
     });
-  
+
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       Loading(true);
