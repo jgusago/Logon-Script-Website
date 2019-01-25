@@ -100,11 +100,11 @@ function Profiles()
 
     div1 = newElement(body, "div", ["row"], [], "");
     div2 = newElement(div1, "div", ["col-12"],[],"");
-    ul1 = newElement(div2,  "ul", ["nav", "nav-tabs", "mb-4"],["id=myTab", "role=tablist"],"");
+    ul1 = newElement(div2,  "ul", ["nav", "nav-tabs", "mb-4"], ["id=myTab", "role=tablist"],"");
     li1 = newElement(ul1, "li", ["nav-item"], [], "");
     a1 = newElement(li1, "a", ["nav-link", "active"], ["id=basicInfo-tab", "data-toggle=tab", "href=#basicInfo", "role=tab", "aria-controls=basicInfo", "aria-selected=true"], "Basic Info");
 
-    div3 = newElement(div1, "div", ["tab-content", "ml-1"], ["id=myTabContent"], "");
+    div3 = newElement(div2, "div", ["tab-content", "ml-1"], ["id=myTabContent"], "");
     div4 = newElement(div3, "div", ["tab-pane", "fade", "show", "active"], ["id=basicInfo", "role=tabpanel", "aria-labelledby=basicInfo-tab"], "");
 
     div5 = newElement(div4, "div", ["row"], [], "");
