@@ -14,8 +14,7 @@ function DSHBRDAccountsAccMgnt(){
             { title: "User ID" },
             { title: "Name" },
             { title: "Department"},
-            { title: "Job Positionr" },
-            { title: "IP Address"},
+            { title: "Job Position" },
             { title: "Role"},
             { title: "Status"},
             { title: "Action"}
