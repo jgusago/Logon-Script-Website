@@ -34,6 +34,7 @@ function Dashboard(){
   var cch = document.getElementById("ContentCardHead");
   var ccb = document.getElementById("ContentCardBody");
   var ccf = document.getElementById("ContentCardFoot");
+  ccf.classList.remove("text-muted");
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";

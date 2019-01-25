@@ -1,7 +1,12 @@
-function DSHBRDAccountsAccMgnt(){
+function DSHBRDAccountsAccMgnt()
+{
     var checktable = tablecheck("user accounts", "User Accounts");
     var header = document.getElementById("ContentCardHead");
     var foot = document.getElementById("ContentCardFoot");
+    
+    header.innerHTML = "";
+    document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+    document.getElementById("dtitle2").innerHTML = "User Accounts";
 
     if (checktable == false){
 
@@ -77,32 +82,26 @@ function Profiles()
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
-    tableid = idgenerator();
+    // tableid = idgenerator();
 
     var div1, div2, ul1, li1, a1,
-    div3, div4, div5, div6, label1, div7, hr1
-    div8, div9, label2, div10, hr2;
-
-    // hrUid =[],
-
-    // divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [],
-    // divs3 = [], divsDept =[], divslbl3 = [], divsDepts = [], hrDept = [],
-    // divs4 = [], divsPosition =[], divslbl4 = [], divsPositions = [], inputPosition =[],  hrPosition = [],
-    // divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
-    // divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
+    div3, div4, div5, div6, label1, div7, hr1,
+    div8, div9, label2, div10, hr2,
+    div11, div12, label3, div13, hr3,
+    div14, div15, label4, div16, input1, hr4,
+    div17, div18, label5, div19, hr5,
+    div20, div21, button1, hr6;
 
     $.post("php/functions/session/session.confirm.php",function(data){
     data = data.split(";");
-    //$status.0;".$role.1";".$department.2";".$name.3";".$id.4";".$position.5;
-
 
     div1 = newElement(body, "div", ["row"], [], "");
     div2 = newElement(div1, "div", ["col-12"],[],"");
-    ul1 = newElement(div2,  "ul", ["nav", "nav-tabs", "mb-4"],["id=myTab", "role=tablist"],"");
+    ul1 = newElement(div2,  "ul", ["nav", "nav-tabs", "mb-4"], ["id=myTab", "role=tablist"],"");
     li1 = newElement(ul1, "li", ["nav-item"], [], "");
     a1 = newElement(li1, "a", ["nav-link", "active"], ["id=basicInfo-tab", "data-toggle=tab", "href=#basicInfo", "role=tab", "aria-controls=basicInfo", "aria-selected=true"], "Basic Info");
 
-    div3 = newElement(div1, "div", ["tab-content", "ml-1"], ["id=myTabContent"], "");
+    div3 = newElement(div2, "div", ["tab-content", "ml-1"], ["id=myTabContent"], "");
     div4 = newElement(div3, "div", ["tab-pane", "fade", "show", "active"], ["id=basicInfo", "role=tabpanel", "aria-labelledby=basicInfo-tab"], "");
 
     div5 = newElement(div4, "div", ["row"], [], "");
@@ -111,38 +110,39 @@ function Profiles()
     div7 = newElement(div5, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[4])
     hr1 = newElement(div4, "hr", [], ["id=hr"], ""); 
 
-    div8 = newElement(div3, "div", ["row"], [], "");
+    div8 = newElement(div4, "div", ["row"], [], "");
     div9 = newElement(div8, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     label2 = newElement(div9, "label", [], ["id=lblEid"], "Name: ");
     div10 = newElement(div8, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[3])
-    hr2 = newElement(div4, "hr", [], ["id:hr"], "");
+    hr2 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    // createnewElement(divs3, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsDept, divs3.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl3, divsDept.newelement, "label", [], ["id:lblEid"], "Department: ");
-    // createnewElement(divsDepts, divs3.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[2])
-    // createnewElement(hrDept, divvv.newelement, "hr", [], ["id:hr"], "");
+    div11 = newElement(div4, "div", ["row"], [], "");
+    div12 = newElement(div11, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label3 = newElement(div12, "label", [], ["id=lblEid"], "Department: ");
+    div13 = newElement(div11, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[2])
+    hr3 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    // createnewElement(divs4, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsPosition, divs4.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl4, divsPosition.newelement, "label", [], ["id:lblEid"], "Position: ");
-    // createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "")
-    // createnewElement(inputPosition, divsPositions.newelement, "input", ["form-control"], ["id:lblPositions", "type:text", "onkeyup:accountpositionconfirm(\""+data[5]+"\")", "value:"+data[5]], data[5]);
-    // createnewElement(hrPosition, divvv.newelement, "hr", [], ["id:hr"], "");
+    div14 = newElement(div4, "div", ["row"], [], "");
+    div15 = newElement(div14, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label4 = newElement(div15, "label", [], ["id=lblEid"], "Position: ");
+    div16 = newElement(div14, "div", ["col-md-8", "col-6"], [], "")
+    input1 = newElement(div16, "input", ["form-control"], ["id=lblPositions", "type=text", "onkeyup=accountpositionconfirm(\""+data[5]+"\")", "value="+data[5]], data[5]);
+    hr4 = newElement(div4, "hr", [], ["id:hr"], "");
 
-    // createnewElement(divs5, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsRole, divs5.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl5, divsRole.newelement, "label", [], ["id:lblEid"], "Role: ");
-    // createnewElement(divsRoles, divs5.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[1])
-    // createnewElement(hrRole, divvv.newelement, "hr", [], ["id:hr"], "");
+    div17 = newElement(div4, "div", ["row"], [], "");
+    div18 = newElement(div17, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label5 = newElement(div18, "label", [], ["id=lblEid"], "Role: ");
+    div19 = newElement(div17, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[1])
+    hr5 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    // createnewElement(divs6, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsPass, divs6.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblpass", "onclick:ChangePass()"], "Change Password");
-    // createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
+    div20 = newElement(div4, "div", ["row"], [], "");
+    div21 = newElement(div20, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    button1 = newElement(div21, "button", ["btn", "btn-default"], ["id=lblpass", "onclick=ChangePass()"], "Change Password");
+    hr6 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    // var button = [];
-    // createnewElement(button, card.foot, "button", ["btn","btn-default"],["id:accountinfoupdatebtn","disabled:true","onClick:accountinfoupdatebtn(\""+data[5]+"\")"],"Update Profile");
+    div22 = newElement(div4, "div", ["row"], [], "");
+    div23 = newElement(div22, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    button2 = newElement(div23, "button", ["btn","btn-primary"],["id=accountinfoupdatebtn","disabled=true","onClick=accountinfoupdatebtn(\""+data[5]+"\")"],"Save Changes");
 
         });
 }
