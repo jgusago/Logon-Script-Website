@@ -1,7 +1,7 @@
 function DSHBRDAccountsAccMgnt(){
     var checktable = tablecheck("user accounts", "User Accounts");
     var a = document.getElementById("ContentCardHead").innerHTML = "User Accounts";
-    var btnAdd = newElement(a,  "button", ["btn","btn-default"],["data-toggl=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
+    // var btnAdd = newElement(a,  "button", ["btn","btn-default"],["data-toggl=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
     var foot = document.getElementById("ContentCardFoot");
   
     if (checktable == false){
