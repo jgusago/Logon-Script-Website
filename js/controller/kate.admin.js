@@ -83,7 +83,9 @@ function Profiles()
     div3, div4, div5, div6, label1, div7, hr1,
     div8, div9, label2, div10, hr2,
     div11, div12, label3, div13, hr3,
-    div14, div15, label4, div16, input1, hr4;
+    div14, div15, label4, div16, input1, hr4,
+    div17, div18, label5, div19, hr5,
+    div20, div21, button1, hr6;
 
     // hrUid =[],
 
@@ -132,19 +134,20 @@ function Profiles()
     input1 = newElement(div16, "input", ["form-control"], ["id=lblPositions", "type=text", "onkeyup=accountpositionconfirm(\""+data[5]+"\")", "value="+data[5]], data[5]);
     hr4 = newElement(div4, "hr", [], ["id:hr"], "");
 
-    // createnewElement(divs5, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsRole, divs5.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl5, divsRole.newelement, "label", [], ["id:lblEid"], "Role: ");
-    // createnewElement(divsRoles, divs5.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[1])
-    // createnewElement(hrRole, divvv.newelement, "hr", [], ["id:hr"], "");
+    div17 = newElement(div4, "div", ["row"], [], "");
+    div18 = newElement(div17, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label5 = newElement(div18, "label", [], ["id=lblEid"], "Role: ");
+    div19 = newElement(div17, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[1])
+    hr5 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    // createnewElement(divs6, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsPass, divs6.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblpass", "onclick:ChangePass()"], "Change Password");
-    // createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
+    div20 = newElement(div4, "div", ["row"], [], "");
+    div21 = newElement(div20, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    button1 = newElement(div21, "button", ["btn", "btn-default"], ["id=lblpass", "onclick=ChangePass()"], "Change Password");
+    hr6 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    var button = [];
-    createnewElement(button, card.foot, "button", ["btn","btn-default"],["id:accountinfoupdatebtn","disabled:true","onClick:accountinfoupdatebtn(\""+data[5]+"\")"],"Update Profile");
+    div22 = newElement(div4, "div", ["row"], [], "");
+    div23 = newElement(div22, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    button2 = newElement(div23, "button", ["btn","btn-default"],["id=accountinfoupdatebtn","disabled=true","onClick=accountinfoupdatebtn(\""+data[5]+"\")"],"Save Changes");
 
         });
 }
