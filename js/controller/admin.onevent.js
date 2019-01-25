@@ -1,11 +1,16 @@
 //onClick
 
 //COMPLISTtables
-function DSHBRDCompList(log_id, dept){
+function DSHBRDCompList(log_id, dept)
+{
 
   var checktable = tablecheck("computer list", log_id);
   var a = document.getElementById("ContentCardHead").innerHTML = dept;
   var foot = document.getElementById("ContentCardFoot");
+
+  document.getElementById("dtitle").innerHTML = "Reports";
+  document.getElementById("dtitle2").innerHTML = "Computer List";
+
   if (checktable == false){
 
     $('#datalist').DataTable( {
@@ -256,6 +261,9 @@ function DSHBRDCompLogs(log_id, dept){
   var a = document.getElementById("ContentCardHead").innerHTML = dept;
   var foot = document.getElementById("ContentCardFoot");
 
+  document.getElementById("dtitle").innerHTML = "Reports";
+  document.getElementById("dtitle2").innerHTML = "Computer Logs";
+
   if (checktable == false){
 
     $('#datalist').DataTable( {
@@ -314,10 +322,14 @@ xmlhttp.send("x=" + dbParam);
 }
 
 
-function DSHBRDTransacHistory() {
+function DSHBRDTransacHistory() 
+{
   var checktable = tablecheck("computer logs", "Transaction History");
   var a = document.getElementById("ContentCardHead").innerHTML = "Transaction History";
   var foot = document.getElementById("ContentCardFoot");
+
+  document.getElementById("dtitle").innerHTML = "Reports";
+  document.getElementById("dtitle2").innerHTML = "History";
 
   if (checktable == false){
 

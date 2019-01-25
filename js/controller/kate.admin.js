@@ -1,7 +1,11 @@
-function DSHBRDAccountsAccMgnt(){
+function DSHBRDAccountsAccMgnt()
+{
     var checktable = tablecheck("user accounts", "User Accounts");
     var header = document.getElementById("ContentCardHead");
     var foot = document.getElementById("ContentCardFoot");
+
+    document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+    document.getElementById("dtitle2").innerHTML = "User Accounts";
 
     if (checktable == false){
 
@@ -147,7 +151,7 @@ function Profiles()
 
     div22 = newElement(div4, "div", ["row"], [], "");
     div23 = newElement(div22, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    button2 = newElement(div23, "button", ["btn","btn-default"],["id=accountinfoupdatebtn","disabled=true","onClick=accountinfoupdatebtn(\""+data[5]+"\")"],"Save Changes");
+    button2 = newElement(div23, "button", ["btn","btn-primary"],["id=accountinfoupdatebtn","disabled=true","onClick=accountinfoupdatebtn(\""+data[5]+"\")"],"Save Changes");
 
         });
 }
