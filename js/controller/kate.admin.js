@@ -81,7 +81,9 @@ function Profiles()
 
     var div1, div2, ul1, li1, a1,
     div3, div4, div5, div6, label1, div7, hr1,
-    div8, div9, label2, div10, hr2;
+    div8, div9, label2, div10, hr2,
+    div11, div12, label3, div13, hr3,
+    div14, div15, label4, div16, input1, hr4;
 
     // hrUid =[],
 
@@ -111,24 +113,24 @@ function Profiles()
     div7 = newElement(div5, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[4])
     hr1 = newElement(div4, "hr", [], ["id=hr"], ""); 
 
-    div8 = newElement(div3, "div", ["row"], [], "");
+    div8 = newElement(div4, "div", ["row"], [], "");
     div9 = newElement(div8, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     label2 = newElement(div9, "label", [], ["id=lblEid"], "Name: ");
     div10 = newElement(div8, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[3])
-    hr2 = newElement(div4, "hr", [], ["id:hr"], "");
+    hr2 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    // createnewElement(divs3, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsDept, divs3.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl3, divsDept.newelement, "label", [], ["id:lblEid"], "Department: ");
-    // createnewElement(divsDepts, divs3.newelement, "div", ["col-md-8", "col-6"], ["id:lblEids"], data[2])
-    // createnewElement(hrDept, divvv.newelement, "hr", [], ["id:hr"], "");
+    div11 = newElement(div4, "div", ["row"], [], "");
+    div12 = newElement(div11, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label3 = newElement(div12, "label", [], ["id=lblEid"], "Department: ");
+    div13 = newElement(div11, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[2])
+    hr3 = newElement(div4, "hr", [], ["id=hr"], "");
 
-    // createnewElement(divs4, divvv.newelement, "div", ["row"], [], "");
-    // createnewElement(divsPosition, divs4.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
-    // createnewElement(divslbl4, divsPosition.newelement, "label", [], ["id:lblEid"], "Position: ");
-    // createnewElement(divsPositions, divs4.newelement, "div", ["col-md-8", "col-6"], [], "")
-    // createnewElement(inputPosition, divsPositions.newelement, "input", ["form-control"], ["id:lblPositions", "type:text", "onkeyup:accountpositionconfirm(\""+data[5]+"\")", "value:"+data[5]], data[5]);
-    // createnewElement(hrPosition, divvv.newelement, "hr", [], ["id:hr"], "");
+    div14 = newElement(div4, "div", ["row"], [], "");
+    div15 = newElement(div14, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
+    label4 = newElement(div15, "label", [], ["id=lblEid"], "Position: ");
+    div16 = newElement(div14, "div", ["col-md-8", "col-6"], [], "")
+    input1 = newElement(div16, "input", ["form-control"], ["id=lblPositions", "type=text", "onkeyup=accountpositionconfirm(\""+data[5]+"\")", "value="+data[5]], data[5]);
+    hr4 = newElement(div4, "hr", [], ["id:hr"], "");
 
     // createnewElement(divs5, divvv.newelement, "div", ["row"], [], "");
     // createnewElement(divsRole, divs5.newelement, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
@@ -141,8 +143,8 @@ function Profiles()
     // createnewElement(divslbl6, divsPass.newelement, "button", ["btn", "btn-default"], ["id:lblpass", "onclick:ChangePass()"], "Change Password");
     // createnewElement(hrPass, divvv.newelement, "hr", [], ["id:hr"], "");
 
-    // var button = [];
-    // createnewElement(button, card.foot, "button", ["btn","btn-default"],["id:accountinfoupdatebtn","disabled:true","onClick:accountinfoupdatebtn(\""+data[5]+"\")"],"Update Profile");
+    var button = [];
+    createnewElement(button, card.foot, "button", ["btn","btn-default"],["id:accountinfoupdatebtn","disabled:true","onClick:accountinfoupdatebtn(\""+data[5]+"\")"],"Update Profile");
 
         });
 }
