@@ -2,7 +2,6 @@ header("Content-Type: application/json; charset=UTF-8");
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/session/session.check.php";
 
-
 <div class="loading_wrapper">
   <div class="loading_hexagon">
     <svg xmlns="" viewBox="0 0 28 32" fill="currentcolor">

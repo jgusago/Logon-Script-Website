@@ -43,13 +43,14 @@ function DSHBRDCompList(log_id, dept){
 
           if (myObj[x].date_checked != null){
             var newdate = myObj[x].date_checked.split(",");
-            var date = "", seperator = "";
+            var date = "";
 
-            for(var i = 0; i < newdate.length; i++){
-              thisdate = myDate("mmm dd, yyyy", newdate[i]);
-              date = date+seperator+thisdate;
-              seperator = ", ";
-            }//close For loof
+            if(newdate.length == 1){
+              date = myDate("mmm dd, yyyy", newdate[0]);
+            }
+            else{
+                date = myDate("mmm dd, yyyy", newdate[0])+", "+myDate("mmm dd, yyyy", newdate[1]);
+            }
           }//Close datre_Checked != null
           else{
             date = "";
@@ -102,7 +103,7 @@ function complistdetails(hostname){
 
   br = newElement(form,"div",["dropdown-divider"],[],"");
 
-  label = newElement(form, "strong", [],["for=row"], "System Reference:");
+  label = newElement(form, "strong", "",["for=row"], "System Reference:");
   row = newElement(form, "div", ["row"], ["id=row"],"");
   div = newElement(row, "div", ["col"],[],"");
   label = newElement(div, "label", [],["for=hdd"], "HDD/SSD Serial:");
