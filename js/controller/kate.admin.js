@@ -1,9 +1,10 @@
 function DSHBRDAccountsAccMgnt()
 {
     var checktable = tablecheck("user accounts", "User Accounts");
-    var header = document.getElementById("ContentCardHead").innerHTML = "";
+    var header = document.getElementById("ContentCardHead");
     var foot = document.getElementById("ContentCardFoot");
-
+    
+    header.innerHTML = "";
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "User Accounts";
 
