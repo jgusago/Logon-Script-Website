@@ -82,7 +82,7 @@ function Profiles()
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
 
-    tableid = idgenerator();
+    // tableid = idgenerator();
 
     var div1, div2, ul1, li1, a1,
     div3, div4, div5, div6, label1, div7, hr1,
@@ -92,18 +92,8 @@ function Profiles()
     div17, div18, label5, div19, hr5,
     div20, div21, button1, hr6;
 
-    // hrUid =[],
-
-    // divs2 = [], divsUname =[], divslbl2 = [], divsUnames = [], hrUname = [],
-    // divs3 = [], divsDept =[], divslbl3 = [], divsDepts = [], hrDept = [],
-    // divs4 = [], divsPosition =[], divslbl4 = [], divsPositions = [], inputPosition =[],  hrPosition = [],
-    // divs5 = [], divsRole = [], divslbl5 = [], divsRoles = [], hrRole = [],
-    // divs6 = [], divsPass = [], divslbl6 = [], hrPass = [];
-
     $.post("php/functions/session/session.confirm.php",function(data){
     data = data.split(";");
-    //$status.0;".$role.1";".$department.2";".$name.3";".$id.4";".$position.5;
-
 
     div1 = newElement(body, "div", ["row"], [], "");
     div2 = newElement(div1, "div", ["col-12"],[],"");
