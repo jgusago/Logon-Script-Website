@@ -1,6 +1,7 @@
 function DSHBRDAccountsAccMgnt(){
     var checktable = tablecheck("user accounts", "User Accounts");
     var a = document.getElementById("ContentCardHead").innerHTML = "User Accounts";
+    createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser", "id:btnAddUser"],"Add User");
     var foot = document.getElementById("ContentCardFoot");
   
     if (checktable == false){
