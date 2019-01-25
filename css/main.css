@@ -249,6 +249,10 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   text-indent:5px;
   width: auto;
 }
+#ContentCardFoot
+{
+  color:#fff6ead1;
+}
 #remarks
 {
   margin-top:5px;
