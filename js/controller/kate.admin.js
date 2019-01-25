@@ -4,6 +4,8 @@ function DSHBRDAccountsAccMgnt()
     var header = document.getElementById("ContentCardHead");
     var foot = document.getElementById("ContentCardFoot");
 
+    header.innerHTML.replace("");
+
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "User Accounts";
 
