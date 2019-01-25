@@ -1,47 +1,31 @@
 <?php
+header("Content-Type: application/json; charset=UTF-8");
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/session/session.check.php";
 
-session_start();
-	require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+if($ssrole == "ADMINISTRATOR")
+{
+  $query = $conn->prepare("
+  SELECT userid, name, department, position, role, status
+  FROM logonscript.tbl_user WHERE role<>'SUPER ADMIN'
+  ");
+  $query->execute();
+  $getresult = $query->get_result();
+  $result = $getresult->fetch_all(MYSQLI_ASSOC);
+  echo json_encode($result);
+}
+else
+{
+  $query = $conn->prepare("
+  SELECT userid, name, department, position, role, status
+  FROM logonscript.tbl_user");
+    $query->execute();
+    $getresult = $query->get_result();
+    $result = $getresult->fetch_all(MYSQLI_ASSOC);
+    echo json_encode($result);
+}
 
-	echo "User ID|Name|Department|Position|Role|Status|Option";
-
-	if ($_SESSION['role'] == "ADMINISTRATOR")
-	{
-
-		$sql = "SELECT userid, name, department, position, role, status FROM tbl_user WHERE role<>'SUPER ADMIN'";
-
-		foreach ($db->query($sql) as $row)
-		{
-
-			$userid = $row['userid'] ?: 'null';
-			$name = $row['name'] ?: 'null';
-			$department = $row['department'] ?: 'null';
-			$position = $row['position'] ?: 'null';
-			$role = $row['role'] ?: 'null';
-			$status = $row['status'] ?: 'null';
-
-			echo "#p`text-lg-center`id:$userid-1`$userid|p`text-lg-cneter`id:$userid-2`$name|p`text-lg-center`id:$userid-3`$department|";
-			echo "p`text-lg-center`id:$userid-4`$position|p`text-lg-center`id:$userid-5`$role|p`text-lg-center`id:$userid-6`$status|";
-			echo "button`btn~btn-primary`id:$userid-7~onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
-		}
-	}
-	else
-	{
-		$sql1 = "SELECT userid, name, department, position, role, status FROM tbl_user";
-
-		foreach ($db->query($sql1) as $row)
-		{
-
-			$userid = $row['userid'] ?: 'null';
-			$name = $row['name'] ?: 'null';
-			$department = $row['department'] ?: 'null';
-			$position = $row['position'] ?: 'null';
-			$role = $row['role'] ?: 'null';
-			$status = $row['status'] ?: 'null';
-
-			echo "#p`text-lg-center`id:$userid-1`$userid|p`text-lg-center`id:$userid-2`$name|p`text-lg-center`id:$userid-3`$department|p`text-lg-center`id:$userid-4`$position|p`text-lg-center`id:$userid-5`$role|p`text-lg-center`id:$userid-6`$status|button`btn~btn-primary`id:$userid-7~onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
-		}
-	}
-
-	$db = null;
+mysqli_close($conn);
+$db = null;
 ?>
+
