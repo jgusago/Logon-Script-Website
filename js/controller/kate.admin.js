@@ -80,7 +80,7 @@ function Profiles()
     tableid = idgenerator();
 
     var div1, div2, ul1, li1, a1,
-    div3, div4, div5, div6, label1, div7, hr1
+    div3, div4, div5, div6, label1, div7, hr1,
     div8, div9, label2, div10, hr2;
 
     // hrUid =[],
