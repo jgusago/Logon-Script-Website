@@ -188,10 +188,6 @@ function EmployeeList()
         myObj = JSON.parse(this.responseText);
         for (x in myObj) 
         {
-          // if(myObj[x].type == null)
-          // {
-          //   var user = myObj[x].userid;
-          // }
           $('#datalist').DataTable().row.add([
             myObj[x].emp_id,
             myObj[x].emp_name,
