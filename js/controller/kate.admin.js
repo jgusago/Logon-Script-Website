@@ -169,6 +169,7 @@ function EmployeeList()
         "<'row'<'col-sm-12'tr>>"+
         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      buttons: ['copyHtml5','excelHtml5','pdfHtml5','csvHtml5'],
       columns: [
           { title: "" },
             { title: "Employee ID" },
