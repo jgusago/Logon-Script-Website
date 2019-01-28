@@ -729,6 +729,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   border: 1px solid #5192a6d9;
   font-size: 15px;
+  margin-left: 10px;
 }
 #lblEid
 {
