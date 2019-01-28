@@ -8,11 +8,11 @@ function DSHBRDAccountsAccMgnt()
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "User Accounts";
 
-    if (checktable == false){
+    if (checktable == false)
+    {
 
     var row = newElement(header, "div", ["row"],"","");
     var btnAdd = newElement(row,  "button", ["btn","btn-default"],["data-toggle=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
-
 
     $('#datalist').DataTable( {
       dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
@@ -162,13 +162,19 @@ function DSHBRDAgentVersion()
   var foot = document.getElementById("ContentCardFoot");
 
   var body = document.getElementById("ContentCardBody");
+  body.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Settings";
   document.getElementById("dtitle2").innerHTML = "Agent Version";
 
   if (checktable == false)
   {
-    $('#datalist').DataTable( {
+    var row = newElement(foot, "div", ["row"],"","");
+    var btnAdd = newElement(row,  "button", ["btn","btn-primary"],["onclick=addagentversion()"],"Add Agent");
+    var btnDelete = newElement(row,  "button", ["btn","btn-danger"],["onclick=deleteagentversion()"],"Delete");
+
+    $('#datalist').DataTable( 
+      {
       dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
         "<'row'<'col-sm-12'tr>>"+
         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
