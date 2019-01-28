@@ -162,7 +162,7 @@ function DSHBRDAgentVersion()
   var foot = document.getElementById("ContentCardFoot");
 
   var body = document.getElementById("ContentCardBody");
-  body.innerHTML = "";
+  foot.innerHTML = "";
 
   document.getElementById("dtitle").innerHTML = "Settings";
   document.getElementById("dtitle2").innerHTML = "Agent Version";
