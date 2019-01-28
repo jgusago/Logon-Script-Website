@@ -141,18 +141,76 @@ function Profiles()
         });
 }
 
-// function EmployeeList()
-// {
-//   var checktable = tablecheck("employee list", "Employee List");
-//   var a = document.getElementById("ContentCardHead");
-//   a.innerHTML = "";
-//   var foot = document.getElementById("ContentCardFoot");
+function EmployeeList()
+{
+  var checktable = tablecheck("employee list", "Employee List");
+  var a = document.getElementById("ContentCardHead");
+  a.innerHTML = "";
+  var foot = document.getElementById("ContentCardFoot");
 
-//   var body = document.getElementById("ContentCardBody");
+  var body = document.getElementById("ContentCardBody");
 
-//   document.getElementById("dtitle").innerHTML = "Profile And Accounts";
-//   document.getElementById("dtitle2").innerHTML = "Employee List";
-// }
+  document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+  document.getElementById("dtitle2").innerHTML = "Employee List";
+
+  if (checktable == false)
+  {
+    var row = newElement(foot, "div", ["row"],"","");
+    var btnAdd = newElement(row,  "button", ["btn","btn-default"],["id=btnAddEmp", "onclick= AddEmployee()"],"Add Employee");
+    var btnDelete = newElement(row,  "button", ["btn","btn-default"],["id=btnImpEmp", "onclick= importemployee()"],"Import List");
+    var btnDelete = newElement(row,  "button", ["btn","btn-danger"],["disabled=true", "id=deleteemployees", "onclick= deleteemployees()"],"Delete");
+
+
+    $('#datalist').DataTable( 
+      {
+      dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+        "<'row'<'col-sm-12'tr>>"+
+        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      columns: [
+            { title: "Employee ID" },
+            { title: "Name" },
+            { title: "Login ID" },
+            { title: "Department" },
+            { title: "Sub Department" },
+            { title: "Action" }
+          ],
+      "order": [[ 0, "desc" ]]
+    });
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() 
+    {
+      Loading(true);
+      if (this.readyState == 4 && this.status == 200) 
+      {
+        myObj = JSON.parse(this.responseText);
+        for (x in myObj) 
+        {
+          // if(myObj[x].type == null)
+          // {
+          //   var user = myObj[x].userid;
+          // }
+          $('#datalist').DataTable().row.add([
+            myObj[x].emp_id,
+            myObj[x].emp_name,
+            myObj[x].emp_login,
+            myObj[x].dept,
+            myObj[x].sub_dept,
+            "<button class=\"btn btn-primary\"onClick=\"editemployee()\">Edit</button>"
+          ]).draw(false);
+        }//for close
+        Loading(false);
+    }//if close
+  }//function close
+    xmlhttp.open("POST", "php/functions/employee/employee.list.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+  }
+  else{
+    //do nothing
+  }
+}
 
 function DSHBRDAgentVersion()
 {
