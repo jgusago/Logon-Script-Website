@@ -1,4 +1,4 @@
-<?php
+<!-- ?php
 
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
@@ -11,7 +11,7 @@ foreach ($db->query($query) as $row){
   echo "#$type|$version";
 }
 
-?>
+?> -->
 
 
 <?php
