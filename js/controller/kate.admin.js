@@ -169,6 +169,7 @@ function EmployeeList()
         "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
       columns: [
+          { title: "" },
             { title: "Employee ID" },
             { title: "Name" },
             { title: "Login ID" },
@@ -189,6 +190,7 @@ function EmployeeList()
         for (x in myObj) 
         {
           $('#datalist').DataTable().row.add([
+            "<input class=\"form-check-label checkemployee\" type=\"checkbox\" onchange=\"empcheck()\">",
             myObj[x].emp_id,
             myObj[x].emp_name,
             myObj[x].emp_login,
