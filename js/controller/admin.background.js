@@ -202,6 +202,7 @@ function Loading(state){
 }
 
 function getNotification(){
+  var nav_notif = document.getElementById("NAVBARNotifContent");
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -211,7 +212,7 @@ function getNotification(){
       }//for
     }//if
   };//xmlhttp function
-  xmlhttp.open("POST", "php/functions/reports/computer.list.json.php", true);
+  xmlhttp.open("POST", "php/functions/notification/notification.summary.php", true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send();
 

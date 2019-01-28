@@ -3,13 +3,14 @@
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/session/session.check.php";
 
-$prepare = $conn->prepare("SELECT ns_name, ns_title, ns_msg, ns_msg_query, ns_class
+$prepare = $conn->prepare("SELECT ns_id, ns_name, ns_title, ns_msg, ns_msg_query, ns_class
                             FROM logonscript.tbl_notif_settings");
 $prepare->execute();
 $result = $prepare->get_result();
 $notif = $result->fetch_all(MYSQLI_ASSOC);
 $notification = array();
 foreach ($notif as $nsrow) {
+  $nsid = $nsrow['ns_id'];
   $msg = $nsrow['ns_msg'];
   $name = $nsrow['ns_name'];
   $title = $nsrow['ns_title'];
@@ -23,12 +24,18 @@ foreach ($notif as $nsrow) {
   foreach ($outp as $row) {
     $msg = string_replace($row,$msg);
   }
-
+  $ns = array(
+    "id" => $nsid,
+    "title" => $title,
+    "msg" => $msg,
+    "class" => $class
+  );
+  $notification = array_merge($notification, $ns);
 
 }
 
 
-echo json_encode($msg);
+echo json_encode($notification);
 mysqli_close($conn);
 $db = null;
 
@@ -46,4 +53,6 @@ function string_replace($replacements, $string){
     return $newstring;
   }
 //array_merge();
+
+
 ?>

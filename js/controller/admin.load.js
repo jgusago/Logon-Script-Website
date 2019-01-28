@@ -140,5 +140,5 @@ function NAVBARNotification()
   getNotification();
   setInterval(function(){
     getNotification();
-  }, 30000);
+  }, 600000);
 }
