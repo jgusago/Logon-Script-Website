@@ -252,6 +252,14 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   margin-left: 5px;
 }
+#branchEdit
+{
+  float: right;
+}
+#branchDelete
+{
+  float: right;
+}
 #faUser
 {
   text-indent:5px;

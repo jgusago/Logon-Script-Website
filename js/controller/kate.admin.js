@@ -306,10 +306,12 @@ function DSHBRDContentBranchSettings()
       var id = idgenerator();
       createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
       createnewElement(label, td.newelement, "h5", [], ["id:"+id, "tree_id:"+currentdata[4], "tree_filter:"+currentdata[5], "tree_name:"+currentdata[0],"computer_count:"+currentdata[6]], currentdata[0])
-      createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWedit(\""+id+"\")"]);
-      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
-      createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "onClick:BRNCHVWdelete(\""+id+"\")"]);
+      
+      createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchDelete","onClick:BRNCHVWdelete(\""+id+"\")"]);
       createnewElement(i2, link2.link, "i", ["fa","fas","fa-fw","fa-lg","fa-trash"],[],"");
+      
+      createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchEdit", "onClick:BRNCHVWedit(\""+id+"\")"]);
+      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
     }
   });
 
