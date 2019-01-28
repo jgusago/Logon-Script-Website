@@ -1325,8 +1325,6 @@ else{
   createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Add New Employee" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
-  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
-  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
   span.newelement.innerHTML = "&times;";
 
 
