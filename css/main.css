@@ -244,6 +244,14 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   width: auto;
   /* text-align: center; */
 }
+#agentAdd
+{
+  margin-left: 10px;
+}
+#agentDelete
+{
+  margin-left: 5px;
+}
 #faUser
 {
   text-indent:5px;

@@ -382,7 +382,7 @@ else{
 
 function DSHBRDTransactionHistory(){
   var checktable = tablecheck("disconnection logs", "Disconnection History");
-  var a = document.getElementById("ContentCardHead").innerHTML = "Disconnection History";
+  var a = document.getElementById("ContentCardHead").innerHTML = "";
   var foot = document.getElementById("ContentCardFoot");
 
   if (checktable == false){
