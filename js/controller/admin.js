@@ -1436,46 +1436,46 @@ function AccInfChnPass(){
 return false;
 }
 
-function EmployeeList()
-{
-    var contentview = document.getElementById("ContentCardBody");
-    contentview.innerHTML = "";
+// function EmployeeList()
+// {
+//     var contentview = document.getElementById("ContentCardBody");
+//     contentview.innerHTML = "";
 
-    document.getElementById("dtitle").innerHTML = "Profile And Accounts";
-    document.getElementById("dtitle2").innerHTML = "Employee List";
+//     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+//     document.getElementById("dtitle2").innerHTML = "Employee List";
 
-    tableid = idgenerator();
-    var card = [];
-    createCard(card, contentview, [], []);
-    createnewElement([],card.head,"div",[],["id:ContentCardHead"],"");
+//     tableid = idgenerator();
+//     var card = [];
+//     createCard(card, contentview, [], []);
+//     createnewElement([],card.head,"div",[],["id:ContentCardHead"],"");
 
-    var table = [];
-    var classes = ["table","table-bordered"];
-    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-    createTable(table, card.body, classes, attributes);
+//     var table = [];
+//     var classes = ["table","table-bordered"];
+//     var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+//     createTable(table, card.body, classes, attributes);
 
-    $.post("php/functions/employee/employee.list.php",function(data){
-      data = data.split("#");
-      datalength = data.length;
+//     $.post("php/functions/employee/employee.list.php",function(data){
+//       data = data.split("#");
+//       datalength = data.length;
 
-      thfdata = data[0].split("|");
-      createTableContent([], table.head, [], [], "th", thfdata);
-      createTableContent([], table.foot, [], [], "th", thfdata);
+//       thfdata = data[0].split("|");
+//       createTableContent([], table.head, [], [], "th", thfdata);
+//       createTableContent([], table.foot, [], [], "th", thfdata);
 
-      for (var i = 1; i < datalength;i++){
-          newdata = data[i].split("|");
-          createTableContent([], table.body, [],[], "td", newdata);
+//       for (var i = 1; i < datalength;i++){
+//           newdata = data[i].split("|");
+//           createTableContent([], table.body, [],[], "td", newdata);
 
-      }
+//       }
 
-      pagination(tableid);
-    });
-      var button = [], buttons = [];
-      // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
-      createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
-      createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnImpEmp", "onclick:importemployee()"],"Import List");
-      createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()","disabled:true","id:deleteemployees"],"Delete");
-}
+//       pagination(tableid);
+//     });
+//       var button = [], buttons = [];
+//       // createnewElement(button, card.foot, "button", ["btn","btn-primary"],["type:button", "id:btnAddDept"],"Add Department");
+//       createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnAddEmp", "onclick:AddEmployee()"],"Add Employee");
+//       createnewElement(button, card.foot, "button", ["btn","btn-default"],["type:button", "id:btnImpEmp", "onclick:importemployee()"],"Import List");
+//       createnewElement(button, card.foot, "button", ["btn","btn-danger"],["type:button","onclick:deleteemployees()","disabled:true","id:deleteemployees"],"Delete");
+// }
 
 function importemployee()
 {
