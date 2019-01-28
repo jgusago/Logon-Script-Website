@@ -2,57 +2,52 @@
   header("Content-Type: application/json; charset=UTF-8");
   require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
   require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/session/session.check.php";
+  require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/load/string.replace.php";
 
-$prepare = $conn->prepare("SELECT ns_id, ns_name, ns_title, ns_msg, ns_msg_query, ns_class
-                            FROM logonscript.tbl_notif_settings");
+$prepare = $conn->prepare("SELECT n_id, n_title, n_class, n_msg, n_query, n_role, n_dept FROM logonscript.tbl_notif");
 $prepare->execute();
 $result = $prepare->get_result();
 $notif = $result->fetch_all(MYSQLI_ASSOC);
 $notification = array();
-foreach ($notif as $nsrow) {
-  $nsid = $nsrow['ns_id'];
-  $msg = $nsrow['ns_msg'];
-  $name = $nsrow['ns_name'];
-  $title = $nsrow['ns_title'];
-  $nsquery = $nsrow['ns_msg_query'];
-  $class = $nsrow['ns_class'];
+foreach ($notif as $nrow) {
+  $id = $nrow['n_id'];
+  $title = $nrow['n_title'];
+  $class = $nrow['n_class'];
+  $msg = $nrow['n_msg'];
+  $query = $nrow['n_query'];
+  $role = $nrow['n_role'];
+  $dept = $nrow['n_dept'];
 
-  $querye = $conn->prepare($nsquery);
-  $querye->execute();
-  $result = $querye->get_result();
-  $outp = $result->fetch_all();
-  foreach ($outp as $row) {
-    $msg = string_replace($row,$msg);
+  if($role == "ADMINISTRATOR" || $role=="SUPER ADMIN"){
+    $msgquery = $conn->prepare($query);
+    $msgquery->execute();
+    $msgresult = $msgquery->get_result();
+    $msgoutput = $msgresult->fetch_all();
+
+      foreach ($msgoutput as $msgrow) {
+        $msg = string_replace($msgrow,$msg);
+      }
   }
-  $ns = array(
-    "id" => $nsid,
-    "title" => $title,
-    "msg" => $msg,
-    "class" => $class
-  );
-  $notification = array_merge($notification, $ns);
+  elseif ($role == "IT STAFF") {
 
+    // code...
+  }
+  else{
+    // do nothing...
+  }
+
+$notif = array(
+  "id" => $id,
+  "title" => $title,
+  "class" => $class,
+  "msg" => $msg
+);
+
+
+array_push($notification, $notif);
 }
-
-
 echo json_encode($notification);
+
 mysqli_close($conn);
 $db = null;
-
-function string_replace($replacements, $string){
-    $string = explode("?",$string);
-    $newstring = "";
-
-    for($x = 0; $x < sizeof($string); $x++){
-      $newstring = $newstring.$string[$x];
-      if($x < sizeof($replacements)){
-        $newstring = $newstring.$replacements[$x];
-      }
-    }
-
-    return $newstring;
-  }
-//array_merge();
-
-
 ?>

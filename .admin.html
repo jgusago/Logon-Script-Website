@@ -138,7 +138,7 @@
 
         <!-- Messages -->
 
-         <!-- <li class="nav-item dropdown">
+         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope" style="color: white;"></i>
             <span class="d-lg-none">Messages
@@ -171,7 +171,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
-        </li> -->
+        </li>
 
          <!-- Alerts -->
          <li class="nav-item dropdown" style="margin-right: 20px;">
@@ -181,16 +181,14 @@
               <span class="badge badge-pill badge-warning" id="NOTIFmbcount"></span>
             </span>
             <span class="indicator text-warning d-none d-lg-block">
-                <span class="badge badge-pill badge-danger"><strong id="NOTIFdtcount"></strong></span>
+                <span class="badge badge-pill badge-danger" id="NOTIFdtcount"></span></span>
             </span>
           </a>
-          <div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">New Alerts:</h6>
-            <div class="dropdown-divider"></div>
-            <div id="NAVBARNotifContent"></div>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#" onclick="NOTIFallshow()">View all notification</a>
+          <!-- inside dropdowm -->
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown" id="NAVBARNotifContent">
           </div>
+
+          <!-- inside dropdown -->
         </li>
 
         <!-- Divider -->
