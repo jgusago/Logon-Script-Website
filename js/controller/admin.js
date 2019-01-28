@@ -1021,56 +1021,6 @@ function CMPLISTdtlstableupdate(parent, linkid){
      }, 100);
 }
 
-function NAVBARNotification()
-{
-  getNotification();
-  setInterval(function(){
-    getNotification();
-  }, 30000);
-}
-
-function getNotification(){
-  content = document.getElementById("NAVBARNotifContent");
-  mbcount = document.getElementById("NOTIFmbcount");
-  dtcount = document.getElementById("NOTIFdtcount");
-  mbcount.innerHTML = "";
-  dtcount.innerHTML = "";
-  content.innerHTML = "";
-    $.post("php/functions/notification/notification.endtask.count.php",function(data){
-      var notif = document.createElement("div");
-      data = data.split("`");
-      if(data[0] != '0'){
-        for(var i = 0; i < data.length; i++){
-          newdata = data[i].split("|");
-          var newdiv = document.createElement("div");
-          var a = [], span =[], strong = [], span2=[], div=[];
-          createnewElement(a, newdiv, "a",["dropdown-item"],["onClick:"+newdata[0]+"()", "href:#"],"");
-          createnewElement(span, a.newelement, "span", [newdata[1]], [], "");
-          createnewElement(strong, span.newelement, "Strong", [], [], newdata[2]);
-          createnewElement(span2, a.newelement,"span", ["small","float-right","text-muted"],[],newdata[3]);
-          createnewElement(div, a.newelement,"div",["dropdown-message","small"],[],newdata[4]);
-
-
-          if(i !== 0){
-            breaker = document.createElement("div");
-            breaker.classList.add("dropdown-divider");
-            content.appendChild(breaker);
-          }
-          content.appendChild(newdiv);
-        }
-
-        mbcount.innerHTML = data.length+" new";
-        dtcount.innerHTML = data.length+" new";
-
-      }
-      else{
-        var newdiv = document.createElement("div");
-        newdiv.innerHTML = data[1];
-        content.appendChild(newdiv);
-      }
-
-    });
-}
 
 function NOTIFnotconnected(){
   var view = document.getElementById("ContentCardBody");

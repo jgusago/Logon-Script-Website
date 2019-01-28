@@ -133,27 +133,12 @@ function Dashboard(){
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send();
 
-  // Pie Chart
-  // createnewElement(divcol2, divrow.newelement, "div", ["col", "col-md-6"], [], "");
-  // createnewElement(h4pie, divcol2.newelement, "h4", [], [], "End Task Percentage Rate");
-  // createnewElement(hrDshbrd1, divcol2.newelement, "hr", [], ["id:hr"], "");
-  //
-  // createnewElement(div, divcol2.newelement, "div", [], ["id:colPieChart"], "");
-  // createnewElement(canvas, div.newelement, "canvas", ["flot-base"], ["width: 1589","height: 250", "id:pieChart"], "");
+}
 
-  // var divrow2 = [], divcol3 = [], divColcard5 = [], editH5 = [], divcolHeader = [], divcolHeader1 = [], btnShow =[], divTable = [], tbl = [], tblHeader = [];
-
-  // Edit History
-  // createnewElement(divrow2, divclass.newelement, "div", ["row"], [], "");
-  // createnewElement(divcol3, divrow2.newelement, "div", ["col", "col-md-6"], ["id:dshbrdCards"], "");
-  // createnewElement(divColcard5, divcol3.newelement,"div", ["card", "mb-4"], ["id:dshbrdEdit"], "");
-  // createnewElement(editH5, divColcard5.newelement, "h5", ["card-header", "with-elements"], [], "");
-  // createnewElement(divcolHeader, editH5.newelement, "div", ["card-header-title"], [], "Last Edit History");
-  // createnewElement(divcolHeader1, editH5.newelement, "div", ["card-header-elements", "ml-auto"], [], "");
-  // createnewElement(btnShow, divcolHeader1.newelement, "button", ["btn", "btn-default", "btn-xs", "md-btn-flat"], ["type:button", "id:btnShowMore"], "Show more");
-  //
-  // createnewElement(divTable, divColcard5.newelement, "div", ["table-responsive"], [], "");
-  // createnewElement(tbl, divTable.newelement, "table", ["table", "card-table"], [], "");
-  // createnewElement(tblHeader, tbl.newelement, "thead", [], [], "");
-
+function NAVBARNotification()
+{
+  getNotification();
+  setInterval(function(){
+    getNotification();
+  }, 30000);
 }
