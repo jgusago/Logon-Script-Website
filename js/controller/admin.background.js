@@ -203,13 +203,24 @@ function Loading(state){
 
 function getNotification(){
   var nav_notif = document.getElementById("NAVBARNotifContent");
+  var notif_mbc = document.getElementById("NOTIFmbcount");
+  var notif_dtc = document.getElementById("NOTIFdtcount");
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       myObj = JSON.parse(this.responseText);
-      for (x in myObj) {
-
-      }//for
+      if (myObj.length > 0){
+        notif_mbc.innerHTML = myObj.length+" new";
+        notif_dtc.innerHTML = myObj.length;
+        for (x in myObj) {
+          var n_a = newElement(nav_notif, "a", ["dropdown-item"], ["href=#", "onClick=NOTIFOpen(\""+myObj[x].id+"\")"],"");
+          var n_str = newElement(n_a, "strong", ["text-"+myObj[x].class], "", myObj[x].title);
+          var time = newElement(n_a, "span", ["small", "float-right","text-muted"],"", myDate("hh",""));
+          var msg = newElement(n_a, "div", ["dropdown-message","small"], "", myObj[x].msg);
+          var divider = newElement(nav_notif, "div", ["dropdown-divider"],"","");
+        }//for
+      }//if
+      var all = newElement(nav_notif, "a", ["dropdown-item","small"], ["href=#"],"View all notifications")
     }//if
   };//xmlhttp function
   xmlhttp.open("POST", "php/functions/notification/notification.summary.php", true);

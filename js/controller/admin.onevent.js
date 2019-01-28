@@ -322,7 +322,7 @@ xmlhttp.send("x=" + dbParam);
 }
 
 
-function DSHBRDTransacHistory() 
+function DSHBRDTransacHistory()
 {
   var checktable = tablecheck("computer logs", "Transaction History");
   var a = document.getElementById("ContentCardHead").innerHTML = "Transaction History";
