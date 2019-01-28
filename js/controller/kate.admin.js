@@ -141,18 +141,18 @@ function Profiles()
         });
 }
 
-function EmployeeList()
-{
-  var checktable = tablecheck("employee list", "Employee List");
-  var a = document.getElementById("ContentCardHead");
-  a.innerHTML = "";
-  var foot = document.getElementById("ContentCardFoot");
+// function EmployeeList()
+// {
+//   var checktable = tablecheck("employee list", "Employee List");
+//   var a = document.getElementById("ContentCardHead");
+//   a.innerHTML = "";
+//   var foot = document.getElementById("ContentCardFoot");
 
-  var body = document.getElementById("ContentCardBody");
+//   var body = document.getElementById("ContentCardBody");
 
-  document.getElementById("dtitle").innerHTML = "Profile And Accounts";
-  document.getElementById("dtitle2").innerHTML = "Employee List";
-}
+//   document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+//   document.getElementById("dtitle2").innerHTML = "Employee List";
+// }
 
 function DSHBRDAgentVersion()
 {
