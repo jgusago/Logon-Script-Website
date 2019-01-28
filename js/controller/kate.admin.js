@@ -147,6 +147,7 @@ function EmployeeList()
   var a = document.getElementById("ContentCardHead");
   a.innerHTML = "";
   var foot = document.getElementById("ContentCardFoot");
+  foot.innerHTML = "";
 
   var body = document.getElementById("ContentCardBody");
 
