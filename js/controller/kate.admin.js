@@ -290,7 +290,7 @@ function DSHBRDContentBranchSettings()
 
   var table = [];
   var classes = ["table","table-bordered"];
-  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+  var attributes = ["width:100%","cellspacing:0","id:"];
   createTable(table, body, classes, attributes);
   $.post("php/functions/sttngs/settings.branch.view.php",function(data){
     data = data.split("||");
