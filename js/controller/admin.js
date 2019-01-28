@@ -175,9 +175,9 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(value, leftdiv.newelement, "h5", [], ["id:editHeader"],"Edit User Information" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
-  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
-  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
-  span.newelement.innerHTML = "&times;";
+  // createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  // createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  // span.newelement.innerHTML = "&times;";
 
   //userid
   createnewElement(divbody, cb, "form", ["md-form", "mb-3"], [], "");
@@ -220,7 +220,7 @@ function ACCTedit(userid, name, department, position, role, status, tabledata, g
   createnewElement(divbody7, cb, "div", ["md-form", "mb-3"], ["id:resetpw"], "");
   createnewElement(label7, divbody7.newelement, "label", [],[],"");
   createnewElement(resetpwd, label7.newelement, "input", [], ["type:checkbox", "id:resetPass", "onclick:resetPass()"], "");
-  resetpwd.newelement.innerHTML = "Reset password";
+  resetpwd.innerHTML = "Reset password";
   //update button
   createnewElement(divfooter, cf, "div", [], [], "");
   createnewElement(button, divfooter.newelement, "input", ["btn", "btn-primary"], ["disabled:true","value:Update", "type:submit", "name:btnUpdate", "id:UserAccountupdate", "onclick:UserAccountupdate(\""+userid+"\")"], "");
@@ -1435,9 +1435,9 @@ function ChangePass()
   createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Change Password" );
 
   createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
-  createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
-  createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
-  span.newelement.innerHTML = "&times;";
+  // createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  // createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  // span.newelement.innerHTML = "&times;";
 
   createnewElement(form, cb, "form", [], ["onsubmit:return AccInfChnPass();"], "");
   createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
@@ -1458,7 +1458,7 @@ function ChangePass()
     createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
     createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-primary"], ["type:submit","value:Confirm"], "");
     createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
-    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-primary"], ["type:button","onClick:OVERLAYdisable()","value:Cancel"], "");
+    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-warning"], ["type:button","onClick:OVERLAYdisable()","value:Cancel"], "");
   //
   createnewElement(br, form.newelement, "br", [], [], "");
 }
