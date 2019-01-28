@@ -11,8 +11,6 @@ function DSHBRDAccountsAccMgnt()
     if (checktable == false){
 
     var row = newElement(header, "div", ["row"],"","");
-    // var text = newElement(row, "div", ["col-md-6","col-sm-6"], "", "User Accounts");
-    // var btndiv = newElement(row, "div", ["d-flex","d-flex-row-reverse","col-md-6","col-sm-6"], "", "");
     var btnAdd = newElement(row,  "button", ["btn","btn-default"],["data-toggle=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
 
 
@@ -52,7 +50,6 @@ function DSHBRDAccountsAccMgnt()
             myObj[x].position,
             myObj[x].role,
             myObj[x].status,
-            // "button`btn~btn-primary`id:$userid-7~onclick:ACCTedit(\"$userid\",\"$name\",\"$department\",\"$position\",\"$role\",\"$status\")`Edit`";
             "<button class=\"btn btn-primary\"onClick=\"ACCTedit()\">Details</button>"
 
           ]).draw(false);
@@ -69,7 +66,6 @@ function DSHBRDAccountsAccMgnt()
   }
 }
 
-
 function Profiles()
 {
     var checktable = tablecheck("user profile", "Profile Settings");
@@ -81,8 +77,6 @@ function Profiles()
 
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "Profile Settings";
-
-    // tableid = idgenerator();
 
     var div1, div2, ul1, li1, a1,
     div3, div4, div5, div6, label1, div7, hr1,
@@ -145,4 +139,73 @@ function Profiles()
     button2 = newElement(div23, "button", ["btn","btn-primary"],["id=accountinfoupdatebtn","disabled=true","onClick=accountinfoupdatebtn(\""+data[5]+"\")"],"Save Changes");
 
         });
+}
+
+function EmployeeList()
+{
+  var checktable = tablecheck("employee list", "Employee List");
+  var a = document.getElementById("ContentCardHead");
+  a.innerHTML = "";
+  var foot = document.getElementById("ContentCardFoot");
+
+  var body = document.getElementById("ContentCardBody");
+
+  document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+  document.getElementById("dtitle2").innerHTML = "Employee List";
+}
+
+function DSHBRDAgentVersion()
+{
+  var checktable = tablecheck("agent version", "Agent Version");
+  var a = document.getElementById("ContentCardHead");
+  a.innerHTML = "";
+  var foot = document.getElementById("ContentCardFoot");
+
+  var body = document.getElementById("ContentCardBody");
+
+  document.getElementById("dtitle").innerHTML = "Settings";
+  document.getElementById("dtitle2").innerHTML = "Agent Version";
+
+  if (checktable == false)
+  {
+    $('#datalist').DataTable( {
+      dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+        "<'row'<'col-sm-12'tr>>"+
+        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      columns: [
+            { title: "Validation" },
+            { title: "Version" }
+          ],
+      "order": [[ 0, "desc" ]]
+    });
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() 
+    {
+      Loading(true);
+      if (this.readyState == 4 && this.status == 200) 
+      {
+        myObj = JSON.parse(this.responseText);
+        for (x in myObj) 
+        {
+          // if(myObj[x].type == null)
+          // {
+          //   var user = myObj[x].userid;
+          // }
+          $('#datalist').DataTable().row.add([
+            myObj[x].version,
+            myObj[x].type
+          ]).draw(false);
+        }//for close
+        Loading(false);
+    }//if close
+  }//function close
+    xmlhttp.open("POST", "php/functions/sttngs/settings.agent.version.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+  }
+  else{
+    //do nothing
+  }
 }
