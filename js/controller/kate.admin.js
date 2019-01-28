@@ -170,8 +170,8 @@ function DSHBRDAgentVersion()
   if (checktable == false)
   {
     var row = newElement(foot, "div", ["row"],"","");
-    var btnAdd = newElement(row,  "button", ["btn","btn-primary"],["onclick=addagentversion()"],"Add Agent");
-    var btnDelete = newElement(row,  "button", ["btn","btn-danger"],["onclick=deleteagentversion()"],"Delete");
+    var btnAdd = newElement(row,  "button", ["btn","btn-primary"],["id=agentAdd", "onclick=addagentversion()"],"Add New Version");
+    var btnDelete = newElement(row,  "button", ["btn","btn-danger"],["id=agentDelete", "onclick=deleteagentversion()"],"Delete");
 
     $('#datalist').DataTable( 
       {
