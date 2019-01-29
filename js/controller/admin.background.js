@@ -213,7 +213,7 @@ function getNotification(){
         notif_mbc.innerHTML = myObj.length+" new";
         notif_dtc.innerHTML = myObj.length;
         for (x in myObj) {
-          var n_a = newElement(nav_notif, "a", ["dropdown-item"], ["href=#", "onClick=NOTIFOpen(\""+myObj[x].id+"\")"],"");
+          var n_a = newElement(nav_notif, "a", ["dropdown-item"], ["href=#", "onClick=NOTIFOpen("+myObj[x].id+")"],"");
           var n_str = newElement(n_a, "strong", ["text-"+myObj[x].class], "", myObj[x].title);
           var time = newElement(n_a, "span", ["small", "float-right","text-muted"],"", myDate("hh",""));
           var msg = newElement(n_a, "div", ["dropdown-message","small"], "", myObj[x].msg);

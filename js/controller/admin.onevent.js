@@ -438,6 +438,51 @@ function DSHBRDTransactionHistory(){
 else{
   //do nothing
 }
+}
 
+function NOTIFOpen(id){
+  var checktable = tablecheck("notification-"+id, "Notifications");
+
+  if (checktable == false){
+    var a = document.getElementById("ContentCardHead").innerHTML = "Notifications";
+    var foot = document.getElementById("ContentCardFoot");
+    foot.innerHTML = "";
+    obj = {id:id};
+    dbParam = JSON.stringify(obj);
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      Loading(true);
+      if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        if(myObj.length > 0){
+            var arrname = [];
+            for (var i = 0; i < myObj.length-1; i++) {
+              arrname.push({title: myObj[i]});
+            }
+
+            $('#datalist').DataTable( {
+              dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
+                   "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+                   "<'row'<'col-sm-12'tr>>"+
+                   "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+              buttons: ['copyHtml5','excelHtml5','pdfHtml5','csvHtml5'],
+              "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+              columns: arrname
+            });
+
+            var row = [], cell = [];
+            var limit = myObj.length - 1;
+            for(var rw = 0; rw < myObj[limit].length; rw++){
+                $('#datalist').DataTable().row.add(myObj[limit][rw]).draw(false);
+            }
+        }
+        Loading(false);
+      }//if
+    };//xmlhttp function
+    xmlhttp.open("POST", "php/functions/notification/notification.table.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("x=" + dbParam);
+  }
 
 }
