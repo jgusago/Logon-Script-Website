@@ -486,3 +486,256 @@ function NOTIFOpen(id){
   }
 
 }
+
+function DSHBRDAccountsAccMgnt()
+{
+    var checktable = tablecheck("user accounts", "User Accounts");
+    var header = document.getElementById("ContentCardHead");
+    var foot = document.getElementById("ContentCardFoot");
+
+    header.innerHTML = "";
+    document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+    document.getElementById("dtitle2").innerHTML = "User Accounts";
+
+    if (checktable == false)
+    {
+
+    var row = newElement(header, "div", ["row"],"","");
+    var btnAdd = newElement(row,  "button", ["btn","btn-default"],["data-toggle=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
+
+    $('#datalist').DataTable( {
+      dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+        "<'row'<'col-sm-12'tr>>"+
+        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      columns: [
+            { title: "User ID" },
+            { title: "Name" },
+            { title: "Department"},
+            { title: "Job Position" },
+            { title: "Role"},
+            { title: "Status"},
+            { title: "Action"}
+          ],
+      "order": [[ 0, "desc" ]]
+    });
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      Loading(true);
+      if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+        for (x in myObj) {
+          if(myObj[x].name == null){
+            var user = myObj[x].userid;
+          }
+          else{
+            var user = myObj[x].userid+" - "+myObj[x].name;
+          }
+          $('#datalist').DataTable().row.add([
+            myObj[x].userid,
+            "<span id=\""+myObj[x].userid+"_name\">"+myObj[x].name+"</span>",
+            "<span id=\""+myObj[x].userid+"_department\">"+myObj[x].department+"</span>",
+            "<span id=\""+myObj[x].userid+"_position\">"+myObj[x].position+"</span>",
+            "<span id=\""+myObj[x].userid+"_role\">"+myObj[x].role+"</span>",
+            "<span id=\""+myObj[x].userid+"_status\">"+myObj[x].status+"</span>",
+            "<div class=\"btn-group\"><button class=\"btn btn-primary\" onClick=\"ACCTedit('"+myObj[x].userid+"')\">Details</button><button class=\"btn btn-danger\" onClick=\"ACCTpass('"+myObj[x].userid+"')\">Reset Password</button></div>"
+          ]).draw(false);
+        }//for close
+        Loading(false);
+    }//if close
+  }//function close
+    xmlhttp.open("POST", "php/functions/accounts/accounts.view.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+  }
+  else{
+    //do nothing
+  }
+}
+
+//User Account Update OnClick
+function ACCTedit(userid){
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+    var name = document.getElementById(userid+"_name").innerText;
+    var department = document.getElementById(userid+"_department").innerText;
+    var position = document.getElementById(userid+"_position").innerText;
+    var role = document.getElementById(userid+"_role").innerText;
+    var status = document.getElementById(userid+"_status").innerText;
+
+  //header
+  var header = newElement(ch, "div",["row"],"","");
+  header.style.width = "400px";
+  var header_h5 = newElement(header, "h5", "", ["id:editHeader"], "Edit User Information");
+
+  //userid
+  var form = newElement(cb, "form", "", "", "");
+  var formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  var label = newElement(formgroup, "label", "", ["for=ae_userid"], "Login ID");
+  var input = newElement(formgroup, "input", ["form-control"],["type=text","id=ae_userid", "disabled=true","value="+userid,"default-value="+userid],"");
+  //name
+  formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  label = newElement(formgroup, "label", "", ["for=ae_name"], "Name");
+  input = newElement(formgroup, "input", ["form-control"],["type=text","id=ae_name","required=true", "value="+name,"default-value="+name,"onkeyup=ACCeditvalidate()"],"");
+  //department
+  formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  label = newElement(formgroup, "label", "", ["for=ae_department"], "Department");
+  var select = newElement(formgroup, "select", ["form-control"],["required=true","id=ae_department","default-value="+department,"onChange=ACCeditvalidate()"], "");
+  Departmentlist("ae_department");
+  var option = newElement(select, "option", "", ["value="+department,"hidden=true","selected=selected"],department);
+  //position
+  formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  label = newElement(formgroup, "label", "", ["for=ae_position"], "Position");
+  input = newElement(formgroup, "input", ["form-control"],["type=text","id=ae_position","required=true", "value="+position,"default-value="+position,"onkeyup=ACCeditvalidate()"],"");
+  //role
+  formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  label = newElement(formgroup, "label", "", ["for=ae_role"], "Role");
+  select = newElement(formgroup, "select", ["form-control"],["required=true","id=ae_role","default-value="+role,"onChange=ACCeditvalidate()"], "");
+  option = newElement(select, "option", "", ["value=ADMINISTRATOR"],"Administrator");
+  option = newElement(select, "option", "", ["value=STAFF"],"Staff");
+  option = newElement(select, "option", "", ["value="+role,"hidden=true","selected=selected"],role);
+  //status
+  formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  label = newElement(formgroup, "label", "", ["for=ae_status"], "Status");
+  select = newElement(formgroup, "select", ["form-control"],["required=true","id=ae_status","default-value="+status,"onChange=ACCeditvalidate()"], "");
+  option = newElement(select, "option", "", ["value=Active"],"Active");
+  option = newElement(select, "option", "", ["value=Inactive"],"Inactive");
+  option = newElement(select, "option", "", ["value="+status,"hidden=true","selected=selected"],status);
+
+  var footer = newElement(cf, "div", "", "", "");
+  var button = newElement(footer, "button", ["btn", "btn-primary"],["disabled=true","value=update","id=UserAccountupdate","onClick=UserAccountupdate(\""+userid+"\")"],"Update")
+}
+
+//Update User Information
+function UserAccountupdate(id){
+
+  var name = document.getElementById("ae_name");
+  var dept = document.getElementById("ae_department");
+  var post = document.getElementById("ae_position");
+  var role = document.getElementById("ae_role");
+  var stat = document.getElementById("ae_status");
+
+  var n_name = name.value;
+  var n_dept = dept.options[dept.selectedIndex].value;
+  var n_post = post.value;
+  var n_role = role.options[role.selectedIndex].value;
+  var n_stat = stat.options[stat.selectedIndex].value;
+
+  var d_name = document.getElementById(id+"_name");
+  var d_dept = document.getElementById(id+"_department");
+  var d_post = document.getElementById(id+"_position");
+  var d_role = document.getElementById(id+"_role");
+  var d_stat = document.getElementById(id+"_status");
+
+  obj = {id:id,
+        name: n_name,
+        dept: n_dept,
+        post: n_post,
+        role: n_role,
+        stat: n_stat};
+  dbParam = JSON.stringify(obj);
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+          if(myObj.insertion == "success"){
+            d_name.innerHTML = n_name;
+            d_dept.innerHTML = n_dept;
+            d_post.innerHTML = n_post;
+            d_role.innerHTML = n_role;
+            d_stat.innerHTML = n_stat;
+
+            ALERTcall("success","success");
+            OVERLAYdisable();
+          }
+          else{
+            ALERTcall("danger","Update Failed<br>"+myObj.insertion);
+            OVERLAYdisable();
+          }
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "php/functions/accounts/user.account.update.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+}
+
+function ACCTpass(id){
+  OVERLAYenable();
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+  var header = newElement(ch, "div","","","Change User Password");
+  header.style.width = "400px";
+
+  var form = newElement(cb, "form", "", ["onsubmit=return UserAccountpassword(\""+id+"\")"], "");
+  var formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], ["id=newpasscon","style=display: none;"], "");
+  var label = newElement(formgroup, "div",["alert", "alert-danger", "md-form", "mb-3"],[],"Need atleast one Caps and small letter, a number and atleast 8 characters");
+  var formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"],["id=conpasscon","style=display: none;"], "");
+  var label = newElement(formgroup, "div",["alert", "alert-danger", "md-form", "mb-3"],[],"Password is empty or Does not Match");
+  var formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  var newpass = newElement(formgroup, "input",["form-control"], ["type=password","id=newpass", "required=true", "placeholder=New Password"], "");
+  var formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  var conpass = newElement(formgroup, "input",["form-control"], ["type=password","id=conpass", "required=true", "placeholder=Confirm Password"],"");
+  var formgroup = newElement(form, "div", ["form-group","md-form", "mb-3"], "", "");
+  var submit = newElement(formgroup, "input", ["btn","btn-success","btn-block"], ["type=submit"], "Change Password");
+}
+
+function UserAccountpassword(id){
+  var newpass = document.getElementById("newpass");
+  var conpass = document.getElementById("conpass");
+  var newpasscon = document.getElementById("newpasscon");
+  var conpasscon = document.getElementById("conpasscon");
+  var npass = false;
+  var cpass = false;
+
+  var re =/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+  if(!re.test(newpass.value)){
+    newpasscon.style.display = "block";
+    npass = false;
+  }
+  else{
+    newpasscon.style.display = "none";
+    npass = true;
+  }
+
+  if(newpass.value !== conpass.value && newpass.value !== ""){
+    conpasscon.style.display = "block";
+    cpass = false;
+  }
+  else{
+    conpasscon.style.display = "none";
+    cpass = true;
+  }
+
+  if(npass == true && cpass == true){
+    obj = {id:id,
+          newpass: newpass.value,
+          conpass: conpass.value};
+    dbParam = JSON.stringify(obj);
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = this.responseText;
+        if(response == "success"){
+          ALERTcall("success","Password have been Changed");
+          OVERLAYdisable();
+        }
+        else{
+            ALERTcall("danger","Failed");
+            OVERLAYdisable();
+        }
+      }//if
+    };//xmlhttp function
+    xmlhttp.open("POST", "php/functions/accounts/accounts.change.password.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("x=" + dbParam);
+  }
+  return false;
+}

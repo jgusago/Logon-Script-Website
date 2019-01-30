@@ -210,21 +210,56 @@ function getNotification(){
     if (this.readyState == 4 && this.status == 200) {
       myObj = JSON.parse(this.responseText);
       if (myObj.length > 0){
+        nav_notif.innerHTML = "";
         notif_mbc.innerHTML = myObj.length+" new";
         notif_dtc.innerHTML = myObj.length;
         for (x in myObj) {
+          if(x > 0){
+            var divider = newElement(nav_notif, "div", ["dropdown-divider"],"","");
+          }
           var n_a = newElement(nav_notif, "a", ["dropdown-item"], ["href=#", "onClick=NOTIFOpen("+myObj[x].id+")"],"");
           var n_str = newElement(n_a, "strong", ["text-"+myObj[x].class], "", myObj[x].title);
           var time = newElement(n_a, "span", ["small", "float-right","text-muted"],"", myDate("hh",""));
           var msg = newElement(n_a, "div", ["dropdown-message","small"], "", myObj[x].msg);
-          var divider = newElement(nav_notif, "div", ["dropdown-divider"],"","");
         }//for
       }//if
-      var all = newElement(nav_notif, "a", ["dropdown-item","small"], ["href=#"],"View all notifications")
+      else{
+        var nonotif = newElement(nav_notif, "h1", ["dropdown-item","small"], ["href=#"],"No Notifications");
+      }
+      //var all = newElement(nav_notif, "a", ["dropdown-item","small"], ["href=#"],"View all notifications")
     }//if
   };//xmlhttp function
   xmlhttp.open("POST", "php/functions/notification/notification.summary.php", true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send();
 
+}
+
+function ACCeditvalidate(){
+  var butn = document.getElementById("UserAccountupdate");
+
+  var name = document.getElementById("ae_name");
+  var dept = document.getElementById("ae_department");
+  var post = document.getElementById("ae_position");
+  var role = document.getElementById("ae_role");
+  var stat = document.getElementById("ae_status");
+
+  var n_name = name.value;
+  var n_dept = dept.options[dept.selectedIndex].value;
+  var n_post = post.value;
+  var n_role = role.options[role.selectedIndex].value;
+  var n_stat = stat.options[stat.selectedIndex].value;
+
+  var d_name = name.getAttribute("default-value");
+  var d_dept = dept.getAttribute("default-value");
+  var d_post = post.getAttribute("default-value");
+  var d_role = role.getAttribute("default-value");
+  var d_stat = stat.getAttribute("default-value");
+
+  if( (n_name !== d_name)||(n_dept !== d_dept)||(n_post !== d_post)||(n_role !== d_role)||(n_stat !== d_stat)){
+    butn.removeAttribute("disabled");
+  }
+  else{
+    butn.setAttribute("disabled","true");
+  }
 }

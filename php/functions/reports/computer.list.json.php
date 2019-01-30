@@ -44,7 +44,9 @@ $obj = json_decode($_POST["x"], false);
   $query->execute();
 $result = $query->get_result();
 $outp = $result->fetch_all(MYSQLI_ASSOC);
+$query->close();
 
 echo json_encode($outp);
 mysqli_close($conn);
+$db = null;
 ?>

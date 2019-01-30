@@ -1,70 +1,4 @@
-function DSHBRDAccountsAccMgnt()
-{
-    var checktable = tablecheck("user accounts", "User Accounts");
-    var header = document.getElementById("ContentCardHead");
-    var foot = document.getElementById("ContentCardFoot");
-    
-    header.innerHTML = "";
-    document.getElementById("dtitle").innerHTML = "Profile And Accounts";
-    document.getElementById("dtitle2").innerHTML = "User Accounts";
 
-    if (checktable == false)
-    {
-
-    var row = newElement(header, "div", ["row"],"","");
-    var btnAdd = newElement(row,  "button", ["btn","btn-default"],["data-toggle=modal", "data-target=#AddUser", "href=#AddUser", "id=btnAddUser"],"Add User");
-
-    $('#datalist').DataTable( {
-      dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
-        "<'row'<'col-sm-12'tr>>"+
-        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
-      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      columns: [
-            { title: "User ID" },
-            { title: "Name" },
-            { title: "Department"},
-            { title: "Job Position" },
-            { title: "Role"},
-            { title: "Status"},
-            { title: "Action"}
-          ],
-      "order": [[ 0, "desc" ]]
-    });
-
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      Loading(true);
-      if (this.readyState == 4 && this.status == 200) {
-      myObj = JSON.parse(this.responseText);
-        for (x in myObj) {
-          if(myObj[x].name == null){
-            var user = myObj[x].userid;
-          }
-          else{
-            var user = myObj[x].userid+" - "+myObj[x].name;
-          }
-          $('#datalist').DataTable().row.add([
-            myObj[x].userid,
-            myObj[x].name,
-            myObj[x].department,
-            myObj[x].position,
-            myObj[x].role,
-            myObj[x].status,
-            "<button class=\"btn btn-primary\"onClick=\"ACCTedit()\">Details</button>"
-
-          ]).draw(false);
-        }//for close
-        Loading(false);
-    }//if close
-  }//function close
-    xmlhttp.open("POST", "php/functions/accounts/accounts.view.php", true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send();
-  }
-  else{
-    //do nothing
-  }
-}
 
 function Profiles()
 {
@@ -102,7 +36,7 @@ function Profiles()
     div6 = newElement(div5, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
     label1 = newElement(div6, "label", [], ["id=lblEid"], "Employee Id: ");
     div7 = newElement(div5, "div", ["col-md-8", "col-6"], ["id=lblEids"], data[4])
-    hr1 = newElement(div4, "hr", [], ["id=hr"], ""); 
+    hr1 = newElement(div4, "hr", [], ["id=hr"], "");
 
     div8 = newElement(div4, "div", ["row"], [], "");
     div9 = newElement(div8, "div", ["col-sm-3", "col-md-2", "col-5"], [], "");
@@ -162,7 +96,7 @@ function EmployeeList()
     var btnDelete = newElement(row,  "button", ["btn","btn-danger"],["disabled=true", "id=deleteemployees", "onclick= deleteemployees()"],"Delete");
 
 
-    $('#datalist').DataTable( 
+    $('#datalist').DataTable(
       {
       dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
         "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
@@ -183,13 +117,13 @@ function EmployeeList()
     });
 
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() 
+    xmlhttp.onreadystatechange = function()
     {
       Loading(true);
-      if (this.readyState == 4 && this.status == 200) 
+      if (this.readyState == 4 && this.status == 200)
       {
         myObj = JSON.parse(this.responseText);
-        for (x in myObj) 
+        for (x in myObj)
         {
           $('#datalist').DataTable().row.add([
             "<input class=\"form-check-label checkemployee\" type=\"checkbox\" onchange=\"empcheck()\">",
@@ -233,7 +167,7 @@ function DSHBRDAgentVersion()
     var btnAdd = newElement(row,  "button", ["btn","btn-primary"],["id=agentAdd", "onclick=addagentversion()"],"Add New Version");
     var btnDelete = newElement(row,  "button", ["btn","btn-danger"],["id=agentDelete", "onclick=deleteagentversion()"],"Delete");
 
-    $('#datalist').DataTable( 
+    $('#datalist').DataTable(
       {
       dom: "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
         "<'row'<'col-sm-12'tr>>"+
@@ -247,13 +181,13 @@ function DSHBRDAgentVersion()
     });
 
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() 
+    xmlhttp.onreadystatechange = function()
     {
       Loading(true);
-      if (this.readyState == 4 && this.status == 200) 
+      if (this.readyState == 4 && this.status == 200)
       {
         myObj = JSON.parse(this.responseText);
-        for (x in myObj) 
+        for (x in myObj)
         {
           // if(myObj[x].type == null)
           // {
@@ -306,10 +240,10 @@ function DSHBRDContentBranchSettings()
       var id = idgenerator();
       createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
       createnewElement(label, td.newelement, "h5", [], ["id:"+id, "tree_id:"+currentdata[4], "tree_filter:"+currentdata[5], "tree_name:"+currentdata[0],"computer_count:"+currentdata[6]], currentdata[0])
-      
+
       createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchDelete","onClick:BRNCHVWdelete(\""+id+"\")"]);
       createnewElement(i2, link2.link, "i", ["fa","fas","fa-fw","fa-lg","fa-trash"],[],"");
-      
+
       createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchEdit", "onClick:BRNCHVWedit(\""+id+"\")"]);
       createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
     }
