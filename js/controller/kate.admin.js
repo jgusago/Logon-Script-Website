@@ -223,31 +223,54 @@ function DSHBRDContentBranchSettings()
   document.getElementById("dtitle").innerHTML = "Settings";
   document.getElementById("dtitle2").innerHTML = "Branch View Settings";
 
-  var table = [];
-  var classes = ["table","table-bordered"];
-  var attributes = ["width:100%","cellspacing:0","id:"];
-  createTable(table, body, classes, attributes);
-  $.post("php/functions/sttngs/settings.branch.view.php",function(data){
-    data = data.split("||");
-    for(var arraccount = 0; arraccount < data.length; arraccount++){
-      var currentdata = data[arraccount].split(";");
+  var div1 = newelement(body, "div", ["row"], [], "");
+  var div2 = newelement(div1, "div", ["span3"], ["id=left"], "");
+  var ul1 = newelement(div2, "ul", ["nav", "menu"], ["id=menu-group-1"], "");
+  var li1 = newelement(ul1, "li", ["item-1", "deeper", "parent", "active"], [], "");
+  var a = newelement(li1, "a", [], ["href=#"], "");
+  var span1 =  newelement(a, "span", ["sign"], ["data-toggle=collapse", "data-parent=#menu-group-1", "href=#sub-item-1"], "" );
+  var i1 = newelement(span1, "i", ["icon-plus", "icon-white"], [], "")
+  var span2 = newelement(a, "span", ["lbl"], [], "Menu Group1");
 
-      if (currentdata[2] == "tr"){
-        var tr = [];
-        createnewElement(tr,table.body,"tr",[],[],"");
-      }
-      var td = [], link = [], i = [], newdata = [], label = [], link2 = [], i2=[];
-      var id = idgenerator();
-      createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
-      createnewElement(label, td.newelement, "h5", [], ["id:"+id, "tree_id:"+currentdata[4], "tree_filter:"+currentdata[5], "tree_name:"+currentdata[0],"computer_count:"+currentdata[6]], currentdata[0])
+  var ul2 = newelement(li1, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item-1"], "");
+  var li2 =  newelement(ul2, "li", ["item-2", "deeper", "parent", "active"], [], "");
+  var a2 = newelement(li2, "a", [], ["href=#"], "");
+  var span3 =  newelement(a2, "span", ["sign"], ["data-toggle=collapse", "data-parent=#menu-group-1", "href=#sub-item-2"], "");
+  var i2 = newelement(span3, "i", ["icon-plus", "icon-white"], [""], "");
+  var span4 = newelement(a2, "span", ["lbl"], [], "Menu 1");
 
-      createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchDelete","onClick:BRNCHVWdelete(\""+id+"\")"]);
-      createnewElement(i2, link2.link, "i", ["fa","fas","fa-fw","fa-lg","fa-trash"],[],"");
+  var ul3 = newelement(li2, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item2"], "");
+  var li3 = newelement(ul3, "li", ["item-3", "current"], [], "");
+  var a3 = newelement(li3, "a", [], ["href=#"], "");
+  var span4 = newelement(a3, "span", ["sign"], [], "" );
+  var span5 = newelement(a3, "span", ["lbl"], [], "Menu 1.1");
 
-      createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchEdit", "onClick:BRNCHVWedit(\""+id+"\")"]);
-      createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
-    }
-  });
+
+  // var table = [];
+  // var classes = ["table","table-bordered"];
+  // var attributes = ["width:100%","cellspacing:0","id:"];
+  // createTable(table, body, classes, attributes);
+  // $.post("php/functions/sttngs/settings.branch.view.php",function(data){
+  //   data = data.split("||");
+  //   for(var arraccount = 0; arraccount < data.length; arraccount++){
+  //     var currentdata = data[arraccount].split(";");
+
+  //     if (currentdata[2] == "tr"){
+  //       var tr = [];
+  //       createnewElement(tr,table.body,"tr",[],[],"");
+  //     }
+  //     var td = [], link = [], i = [], newdata = [], label = [], link2 = [], i2=[];
+  //     var id = idgenerator();
+  //     createnewElement(td, tr.newelement, "td",[],["rowspan:"+currentdata[1]],"");
+  //     createnewElement(label, td.newelement, "h5", [], ["id:"+id, "tree_id:"+currentdata[4], "tree_filter:"+currentdata[5], "tree_name:"+currentdata[0],"computer_count:"+currentdata[6]], currentdata[0])
+
+  //     createLink(link2, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchDelete","onClick:BRNCHVWdelete(\""+id+"\")"]);
+  //     createnewElement(i2, link2.link, "i", ["fa","fas","fa-fw","fa-lg","fa-trash"],[],"");
+
+  //     createLink(link, label.newelement  , "", ["btn","btn-default","btn-sm"], ["role:button", "href:#", "id:branchEdit", "onClick:BRNCHVWedit(\""+id+"\")"]);
+  //     createnewElement(i, link.link, "i", ["fa","fas","fa-fw","fa-lg","fa-edit"],[],"");
+  //   }
+  // });
 
 var toolbar = [];
 createnewElement(toolbar, foot,"div",["btn-toolbar","mr-3"],[],"");
