@@ -223,7 +223,7 @@ function DSHBRDContentBranchSettings()
   document.getElementById("dtitle").innerHTML = "Settings";
   document.getElementById("dtitle2").innerHTML = "Branch View Settings";
 
-  var div1 = newelEment(body, "div", ["row"], [], "");
+  var div1 = newElement(body, "div", ["row"], [], "");
   var div2 = newelement(div1, "div", ["span3"], ["id=left"], "");
   var ul1 = newelement(div2, "ul", ["nav", "menu"], ["id=menu-group-1"], "");
   var li1 = newelement(ul1, "li", ["item-1", "deeper", "parent", "active"], [], "");
