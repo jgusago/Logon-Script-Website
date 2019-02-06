@@ -2,12 +2,5 @@ header("Content-Type: application/json; charset=UTF-8");
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 require "{$_SERVER['DOCUMENT_ROOT']}/php/functions/session/session.check.php";
 
-<div class="loading_wrapper">
-  <div class="loading_hexagon">
-    <svg xmlns="" viewBox="0 0 28 32" fill="currentcolor">
-      <path d="M0 8 L0 24 L14 32 L28 24 L28 8 L14 0 Z"/>
-    </svg>
-  </div>
-</div>
-
-id="DSHBRDTransactionHistory" onclick="DSHBRDTransactionHistory()"
+mysqli_close($conn);
+$db = null;

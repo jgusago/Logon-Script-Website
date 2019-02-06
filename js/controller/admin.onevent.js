@@ -1076,17 +1076,95 @@ function deleteemployee(solo) {
     }
   }
   else if (solo == true) {
-    idlist = {id:did};
+    idlist.push({id:did});
   }
   else {
-
   }
-  console.log(idlist);
+
+
+  obj = idlist;
+  dbParam = JSON.stringify(obj);
+  console.log(obj);
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      if(myObj.success == true){
+        var table = $('#datalist').DataTable();
+        for (var x = 0; x < idlist.length; x++){
+          table.row($("#"+idlist[x]["id"]+"_chk").parents('tr')).remove().draw(false);
+        }
+        ALERTcall("success","Success");
+        console.log(true)
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger", myObj.success);
+        console.log(false);
+      }
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "/php/functions/employee/employee.delete.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
 
   return false;
 }
 
+function groupupdate(){
+  var dept = document.getElementById("groupupdate_dept");
+  var subd = document.getElementById("groupupdate_sub");
+  var idlist = [];
+  var department = dept.options[dept.selectedIndex].text;
+  if(subd.disabled == false){
+    var subdepartment = subd.options[subd.selectedIndex].text;
+  }
+  else{
+    var subdepartment = "";
+  }
 
+
+  var chk = document.getElementsByClassName("checkemployee");
+  for(var x = 0; x < chk.length; x++){
+    if(chk[x].checked == true){
+      addid = chk[x].getAttribute("default-value");
+      idlist.push(addid);
+    }
+  }
+
+  obj = {id:idlist,department:department, subdepertment:subdepartment};
+  dbParam = JSON.stringify(obj);
+  console.log(obj);
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      if(myObj.success == true){
+        var d,s;
+        for (var x = 0; x < idlist.length; x++){
+          d = document.getElementById(idlist[x]+"_dept");
+          d.innerText = department;
+          s = document.getElementById(idlist[x]+"_subdept");
+          d.innerText = subdepartment;
+        }
+        ALERTcall("success","Success");
+        console.log(true)
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger", myObj.success);
+        console.log(false);
+      }
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "php/functions/employee/employee.group.update.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+
+  return false;
+}
 
 
 
