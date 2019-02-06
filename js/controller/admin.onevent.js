@@ -1147,7 +1147,7 @@ function groupupdate(){
           d = document.getElementById(idlist[x]+"_dept");
           d.innerText = department;
           s = document.getElementById(idlist[x]+"_subdept");
-          d.innerText = subdepartment;
+          s.innerText = subdepartment;
         }
         ALERTcall("success","Success");
         console.log(true)
