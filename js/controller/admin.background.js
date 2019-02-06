@@ -235,6 +235,55 @@ function getNotification(){
 
 }
 
+function Departmentlist(id){
+  var select = document.getElementById(id);
+  select.innerHTML = "";
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+        for (x in myObj) {
+          var option = newElement(select, "option", "", ["value="+myObj[x]],myObj[x]);
+        }//for
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "php/functions/load/department.list.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send();
+
+}
+
+function Subdepartmentlist(dept_id, subdept_id){
+  var selectdept = document.getElementById(dept_id);
+  var dept = selectdept.options[selectdept.selectedIndex].value;
+
+  var selectsubdept = document.getElementById(subdept_id);
+  selectsubdept.innerHTML = "";
+
+  obj = {department:dept};
+  dbParam = JSON.stringify(obj);
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      if(myObj.length !== 0){
+          selectsubdept.removeAttribute("disabled");
+          for (x in myObj) {
+            var option = newElement(selectsubdept, "option", "", ["value="+myObj[x]],myObj[x]);
+          }//for
+      }//if myObj
+      else{
+        selectsubdept.setAttribute("disabled",true);
+      }
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "php/functions/load/sub.department.list.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+
+}
+
 function ACCeditvalidate(){
   var butn = document.getElementById("UserAccountupdate");
 
