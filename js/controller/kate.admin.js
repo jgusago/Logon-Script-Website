@@ -6,6 +6,7 @@ function Profiles()
     var a = document.getElementById("ContentCardHead");
     a.innerHTML = "Account Information";
     var foot = document.getElementById("ContentCardFoot");
+    foot.innerHTML = "";
 
     var body = document.getElementById("ContentCardBody");
 
@@ -82,6 +83,7 @@ function DSHBRDAgentVersion()
   var a = document.getElementById("ContentCardHead");
   a.innerHTML = "";
   var foot = document.getElementById("ContentCardFoot");
+  foot.innerHTML = "";
 
   var body = document.getElementById("ContentCardBody");
   foot.innerHTML = "";
