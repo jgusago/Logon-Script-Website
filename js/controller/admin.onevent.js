@@ -494,6 +494,7 @@ function DSHBRDAccountsAccMgnt()
     var foot = document.getElementById("ContentCardFoot");
 
     header.innerHTML = "";
+    foot.innerHTML = "";
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "User Accounts";
 
