@@ -1,40 +1,29 @@
 <?php
-session_start();
-
-$empid = $_POST['empid'];
-$name = $_POST['name'];
-$l1 = $_POST['l1'];
-$l2 = $_POST['l2'];
-$dept = $_POST['dept'];
-$subdept = $_POST['subdept'];
-$AddEmployee = "Add Employee";
-$userid2 = $_SESSION['userid'];
-$count = 0;
-
+header("Content-Type: application/json; charset=UTF-8");
 require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 
-$query = "SELECT * FROM logonscript.tbl_employee WHERE emp_id = '$empid' or emp_login like '$l1' or emp_login like '$l2' or emp_login like '$l1' or emp_login like '$l2'";
+$obj = json_decode($_POST["x"], false);
 
-foreach ($db->query($query) as $row) {
-  $count++;
-}
-
-if ($count == 0){
-
-$insert = "INSERT INTO logonscript.tbl_employee (emp_id, emp_name, emp_login, emp_login2, dept, sub_dept)
-VALUES ('$empid', '$name', '$l1', '$l2', '$dept', '$subdept')";
-$db->query($insert);
-
-$sqlqurey = "INSERT INTO tbl_history (transact_name, transact_details, user_id)
-VALUES ('$AddEmployee' | 'Employee ID: ".$empid." / Name: ".$name." / Login1: ".$l1." / Login2:".$l2." / Department: ".$dept." / Sub-Department: ".$subdept."', '$userid2')";
-($db->query($sqlqurey));
-
-echo "success";
-
+if($obj->add == false){
+  $string = "UPDATE logonscript.tbl_employee SET emp_id = ?, emp_name = ?, emp_login = ?, emp_login2 = ?, dept = ?, sub_dept = ? WHERE (emp_id = ?)";
+  $query = $conn->prepare($string);
+  $query->bind_param("sssssss",$obj->id, $obj->name, $obj->log1, $obj->log2, $obj->dept, $obj->subd, $obj->did);
 }
 else{
-    echo "Your Employee ID, or Login have been already used, please try again";
+  $string = "INSERT INTO logonscript.tbl_employee (emp_id, emp_name, emp_login, emp_login2, dept, sub_dept) VALUES (?, ?, ?, ?, ?, ?);";
+  $query = $conn->prepare($string);
+  $query->bind_param("ssssss",$obj->id, $obj->name, $obj->log1, $obj->log2, $obj->dept, $obj->subd);
 }
 
+if($query->execute()){
+  $outp = array('success' => 'success');
+  echo json_encode($outp);
+}
+else{
+  $outp = array('success' => 'failed');
+  echo json_encode($outp);
+}
 
- ?>
+mysqli_close($conn);
+$db = null;
+?>

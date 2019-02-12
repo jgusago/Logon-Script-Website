@@ -494,6 +494,7 @@ function DSHBRDAccountsAccMgnt()
     var foot = document.getElementById("ContentCardFoot");
 
     header.innerHTML = "";
+    foot.innerHTML = "";
     document.getElementById("dtitle").innerHTML = "Profile And Accounts";
     document.getElementById("dtitle2").innerHTML = "User Accounts";
 
@@ -739,3 +740,455 @@ function UserAccountpassword(id){
   }
   return false;
 }
+
+// Employee List
+function EmployeeList(){
+  var checktable = tablecheck("employee list", "Employee List");
+  var a = document.getElementById("ContentCardHead");
+  a.innerHTML = "";
+  var foot = document.getElementById("ContentCardFoot");
+  foot.innerHTML = "";
+
+  var body = document.getElementById("ContentCardBody");
+
+  document.getElementById("dtitle").innerHTML = "Profile And Accounts";
+  document.getElementById("dtitle2").innerHTML = "Employee List";
+
+  if (checktable == false)
+  {
+    var row = newElement(foot, "div", ["row"],"","");
+    var btnAdd = newElement(row,  "button", ["btn","btn-default"],["id=btnAddEmp", "onclick= employee()"],"Add Employee");
+    var btnDelete = newElement(row,  "button", ["btn","btn-default"],["id=btnImpEmp", "onclick= importemployee()"],"Import List");
+
+
+    $('#datalist').DataTable(
+      {
+      dom: "<'row'<'col-sm-12 col-md-12 d-flex flex-row-reverse'B>>"+
+        "<'row mt-2'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'r><'col-sm-12 col-md-4'f>>"+
+        "<'row'<'col-sm-12'tr>>"+
+        "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",//lBfrtip
+      "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      buttons: ['copyHtml5','excelHtml5','pdfHtml5','csvHtml5'],
+      columns: [
+            { title: "Employee ID" },
+            { title: "Name" },
+            { title: "Login ID" },
+            { title: "Department" },
+            { title: "Sub Department" },
+            { title: "Action",targets: 0 , orderable: false},
+            { title: "<button id=\"empcheck_all'\" onClick=\"empcheck('all')\" class=\"btn btn-secondary\">Selecy All</button>",targets: 0 , orderable: false}
+          ]
+    });
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+      Loading(true);
+      if (this.readyState == 4 && this.status == 200)
+      {
+        myObj = JSON.parse(this.responseText);
+        for (x in myObj)
+        {
+          $('#datalist').DataTable().row.add([
+            "<span id=\""+myObj[x].emp_id+"_id\">"+myObj[x].emp_id+"</span>",
+            "<span id=\""+myObj[x].emp_id+"_name\">"+myObj[x].emp_name+"</span>",
+            "<span id=\""+myObj[x].emp_id+"_login\">"+myObj[x].emp_login+"</span>",
+            "<span id=\""+myObj[x].emp_id+"_dept\">"+myObj[x].dept+"</span>",
+            "<span id=\""+myObj[x].emp_id+"_subdept\">"+myObj[x].sub_dept+"</span>",
+            "<button class=\"btn btn-primary\"onClick=\"employee('"+myObj[x].emp_id+"')\">Edit</button>",
+            "<div class=\"btn-group-toggle\" data-toggle=\"buttons\"><label class=\"btn btn-secondary\"><input class=\"form-check-label checkemployee\" type=\"checkbox\" id=\""+myObj[x].emp_id+"_chk\" onchange=\"empcheck('"+myObj[x].emp_id+"_chk')\" default-value=\""+myObj[x].emp_id+"\">Select</label></div>"
+          ]).draw(false);
+        }//for close
+        Loading(false);
+    }//if close
+  }//function close
+    xmlhttp.open("POST", "php/functions/employee/employee.list.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+  }
+  else
+  {
+    //do nothing
+  }
+}
+
+//Select ALL
+function empcheck(id){
+  if(id == "all"){
+    var classname = document.getElementsByClassName("checkemployee");
+    var checkedall = true;
+    for(var x = 0; x < classname.length; x++){
+        checkedall = checkedall * classname[x].checked;
+      }
+    if(checkedall == true){
+      for(var x = 0; x < classname.length; x++){
+        var tr = classname[x].parentElement.parentElement.parentElement.parentElement;
+        if(classname[x].checked == true){
+          classname[x].checked = false;
+          tr.style.backgroundColor = "";
+          tr.style.fontWeight = "normal";
+        }
+      }
+    }
+    else{
+      for(var x = 0; x < classname.length; x++){
+         var tr = classname[x].parentElement.parentElement.parentElement.parentElement;
+          if(classname[x].checked == false){
+              classname[x].checked = true;
+              tr.style.backgroundColor = "#CECECE";
+              tr.style.fontWeight = "bold";
+          }
+        }
+    }
+  }//end of if id=all
+  else{
+    var checkbox = document.getElementById(id).checked;
+    var tr = document.getElementById(id).parentElement.parentElement.parentElement.parentElement;
+    var checked = [];
+    var chklist = document.getElementsByClassName("checkemployee");
+    if(checkbox == true){
+      tr.style.backgroundColor = "#CECECE";
+      tr.style.fontWeight = "bold";
+    }
+    else{
+      tr.style.backgroundColor = "";
+      tr.style.fontWeight = "normal";
+    }
+    for(var i = 0; i < chklist.length; i++){
+      if(chklist[i].checked){
+        checked.push(chklist[i]);
+      }
+    }
+  }// end of else if = all
+}//End of emp check
+
+//Edit Empoyee
+function employee(id)
+{
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var header = newElement(ch, "h6", "", "","Edit Employee Info");
+
+  var chk = document.getElementsByClassName("checkemployee");
+  var count = 0;
+  for(var x = 0; x < chk.length; x++){
+    if(chk[x].checked == true){
+	   count++;
+    }
+  }
+
+  var thischk = document.getElementById(id+"_chk");
+
+
+      if(id !== undefined){
+        var id = document.getElementById(id+"_id").innerText;
+        var name = document.getElementById(id+"_name").innerText;
+        var log = document.getElementById(id+"_login").innerText;
+        var dept = document.getElementById(id+"_dept").innerText;
+        var subd = document.getElementById(id+"_subdept").innerText;
+        var placeholder = "Update";
+        var add = false;
+      }
+      else{
+        var id = "", name = "", log = "", dept = "Select a Department", subd = "", placeholder = "Add";
+        var add = true;
+      }
+
+  var mainrow, leftcol, rightcol, upper, lower, form, formrow, col, label, input, select, option, br;
+
+  mainrow = newElement(cb, "div", ["row"], ["style=height: 100%;"], "");
+    leftcol = newElement(mainrow, "div", ["col","border", "border-dark","rounded", "col"],["style=background-color: lightblue; width: 600px;"], "");
+      form = newElement(leftcol, "form", "", ["onsubmit=return addemployeesubmit("+add+")"], "");
+
+        formrow = newElement(form, "div", ["form-row"], [] , "");
+
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            label = newElement(col, "label", [], ["for=employee_id"], "Employee ID");
+            input = newElement(col, "input", ["form-control"], ["type=text","id=employee_id","required=true","value="+id,"default-value="+id], "");
+
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            label = newElement(col, "label", [], ["for=employee_name"], "Employee Name");
+            input = newElement(col, "input", ["form-control"], ["type=text","id=employee_name","required=true","value="+name], "");
+
+        formrow = newElement(form, "div", ["form-row"], [] , "");
+
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            label = newElement(col, "label", [], ["for=employee_login"], "Login");
+            input = newElement(col, "input", ["form-control"], ["type=text","id=employee_login","required=true","value="+log], "");
+
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            label = newElement(col, "label", [], ["for=employee_second_login"], "Second Login");
+            input = newElement(col, "input", ["form-control"], ["type=text","id=employee_second_login"], "");
+
+        formrow = newElement(form, "div", ["form-row"], [] , "");
+
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            label = newElement(col, "label", [], ["for=employee_dept"], "Department");
+            select = newElement(col, "select", ["form-control"], ["id=employee_dept","onChange=Subdepartmentlist(\"employee_dept\",\"employee_sub_dept\")"], "");
+            Departmentlist("employee_dept");
+            option = newElement(select, "option", "", ["value="+dept, "selected=selected", "hidden=true"], dept);
+
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            label = newElement(col, "label", [], ["for=employee_sub_dept"], "Sub Department");
+            select = newElement(col, "select", ["form-control"], ["id=employee_sub_dept","disabled=true"], "");
+            Subdepartmentlist("employee_dept","employee_sub_dept");
+            option = newElement(select, "option", "", ["value="+subd, "selected=selected", "hidden=true"], subd);
+
+        br = newElement(form, "br", "", "", "");
+        formrow = newElement(form, "div", ["form-row"], [] , "");
+
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            input = newElement(col, "button", ["form-control", "btn", "btn-primary"], ["type:submit", "value="+placeholder], placeholder);
+
+    if(add == false){
+        br = newElement(form, "br", "", "", "");
+        formrow = newElement(form, "div", ["form-row"], [] , "");
+          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+            input = newElement(col, "button", ["form-control", "btn", "btn-danger"], ["type=button","onClick=deleteemployee(true)"], "Delete");
+    }
+
+    br = newElement(leftcol, "br", "", "", "");
+
+    if(count > 1){
+
+      rightcol = newElement(mainrow, "div", ["col", "col-5", "col-sm-5"],[], "");
+
+        upper = newElement(rightcol, "div", ["col","border", "border-dark","rounded"], [], "");
+          form = newElement(upper, "form", "", ["onsubmit=return groupupdate()"], "");
+
+            formrow = newElement(form, "div", ["form-row"], [] , "");
+
+              col = newElement(formrow, "div", ["col", "form-group"], [], "");
+                label = newElement(col, "label", [], ["for=groupupdate_dept"], "Department");
+                select = newElement(col, "select", ["form-control"], ["id=groupupdate_dept","onChange=Subdepartmentlist(\"groupupdate_dept\",\"groupupdate_sub\")"], "");
+                Departmentlist("groupupdate_dept");
+
+              col = newElement(formrow, "div", ["col", "form-group"], [], "");
+                label = newElement(col, "label", [], ["for=groupupdate_sub"], "Sub Department");
+                select = newElement(col, "select", ["form-control"], ["id=groupupdate_sub","disabled=true"], "");
+
+            br = newElement(form, "br", "", "", "");
+            formrow = newElement(form, "div", ["form-row"], [] , "");
+
+              col = newElement(formrow, "div", ["col", "form-group"], [], "");
+                input = newElement(col, "button", ["form-control", "btn", "btn-primary"], ["type=submit"], "Group Update");
+
+          br = newElement(form, "br", "", "", "");
+
+        br = newElement(rightcol, "div", "w-100", "", "");
+        br = newElement(rightcol, "br", "", "", "");
+
+        lower = newElement(rightcol, "div", ["col","border", "border-dark","rounded"], [], "");
+
+          form = newElement(lower, "form", "", ["onsubmit=return deleteemployee(false)"], "");
+
+            formrow = newElement(form, "div", ["form-row"], [] , "");
+            label = newElement(formrow, "label", [], ["for=groupupdate_sub"], "Deelete all Selected?");
+            input = newElement(formrow, "button", ["form-control", "btn", "btn-danger"], ["type=submit"], "Group Delete");
+            br = newElement(form, "br", "", "", "");
+            formrow = newElement(form, "div", ["form-row"], [] , "");
+            input = newElement(formrow, "button", ["form-control", "btn", "btn-primary"], ["type=button","onClick=OVERLAYdisable()"], "Cancel");
+            br = newElement(form, "br", "", "", "");
+
+    }//if close
+
+    br = newElement(cb, "br", "", "", "");
+
+
+}
+
+function addemployeesubmit(addemployee) {
+  var id = document.getElementById("employee_id");
+  var name = document.getElementById("employee_name");
+  var log1 = document.getElementById("employee_login");
+  var log2 = document.getElementById("employee_second_login");
+  var depp = document.getElementById("employee_dept");
+  var dept = depp.options[depp.selectedIndex].text;
+  var subp = document.getElementById("employee_sub_dept");
+
+  var did = id.getAttribute("default-value");
+  if(subp.disabled == false){
+    var subd = subp.options[subp.selectedIndex].text;
+  }
+  else{
+    var subd = "";
+  }
+
+  obj = {add:addemployee, id:id.value, did:did, name:name.value, log1:log1.value, log2:log2.value, dept:dept, subd:subd};
+  dbParam = JSON.stringify(obj);
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      if(myObj.success == "success" && addemployee == true){
+        $('#datalist').DataTable().row.add([
+          "<span id=\""+id.value+"_id\">"+id.value+"</span>",
+          "<span id=\""+name.value+"_name\">"+name.value+"</span>",
+          "<span id=\""+log1.value+"_login\">"+log1.value+"</span>",
+          "<span id=\""+dept+"_dept\">"+dept+"</span>",
+          "<span id=\""+subd+"_subdept\">"+subd+"</span>",
+          "<button class=\"btn btn-primary\"onClick=\"employee('"+id.value+"')\">Edit</button>",
+          "<div class=\"btn-group-toggle\" data-toggle=\"buttons\"><label class=\"btn btn-secondary\"><input class=\"form-check-label checkemployee\" type=\"checkbox\" id=\""+id.value+"_chk\" onchange=\"empcheck('"+id.value+"_chk')\" default-value=\""+id.value+"\">Select</label></div>"
+        ]).draw(false);
+        ALERTcall("success","Added Successfully");
+        OVERLAYdisable();
+      }//for
+      else if (myObj.success == "success" && addemployee == false) {
+        var newid = document.getElementById(did+"_id").innerText = id.value;
+        var newname = document.getElementById(did+"_name").innerText = name.value;
+        var newlog = document.getElementById(did+"_login").innerText = log1.value;
+        var newdpept = document.getElementById(did+"_dept").innerText = dept;
+        var newsubd = document.getElementById(did+"_subdept").innerText = subd;
+        var newchk = document.getElementById(did+"_chk");
+        newchk.removeAttribute("onchange");
+        newchk.removeAttribute("id");
+        newchk.setAttribute("onchange","empcheck('"+did+"_chk')");
+        newchk.setAttribute("id",did+"_chk");
+        ALERTcall("success","Updated Successfully");
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger","failed");
+        OVERLAYdisable();
+      }
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "php/functions/employee/employee.add.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+}
+
+function deleteemployee(solo) {
+  var id = document.getElementById("employee_id");
+  var did = id.getAttribute("default-value");
+  var idlist = [], addid;
+  if(solo == false){
+    var chk = document.getElementsByClassName("checkemployee");
+    for(var x = 0; x < chk.length; x++){
+      if(chk[x].checked == true){
+        addid = chk[x].getAttribute("default-value");
+        idlist.push({id:addid});
+      }
+    }
+  }
+  else if (solo == true) {
+    idlist.push({id:did});
+  }
+  else {
+  }
+
+
+  obj = idlist;
+  dbParam = JSON.stringify(obj);
+  console.log(obj);
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      if(myObj.success == true){
+        var table = $('#datalist').DataTable();
+        for (var x = 0; x < idlist.length; x++){
+          table.row($("#"+idlist[x]["id"]+"_chk").parents('tr')).remove().draw(false);
+        }
+        ALERTcall("success","Success");
+        console.log(true)
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger", myObj.success);
+        console.log(false);
+      }
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "/php/functions/employee/employee.delete.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+
+  return false;
+}
+
+function groupupdate(){
+  var dept = document.getElementById("groupupdate_dept");
+  var subd = document.getElementById("groupupdate_sub");
+  var idlist = [];
+  var department = dept.options[dept.selectedIndex].text;
+  if(subd.disabled == false){
+    var subdepartment = subd.options[subd.selectedIndex].text;
+  }
+  else{
+    var subdepartment = "";
+  }
+
+
+  var chk = document.getElementsByClassName("checkemployee");
+  for(var x = 0; x < chk.length; x++){
+    if(chk[x].checked == true){
+      addid = chk[x].getAttribute("default-value");
+      idlist.push(addid);
+    }
+  }
+
+  obj = {id:idlist,department:department, subdepertment:subdepartment};
+  dbParam = JSON.stringify(obj);
+  console.log(obj);
+
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      if(myObj.success == true){
+        var d,s;
+        for (var x = 0; x < idlist.length; x++){
+          d = document.getElementById(idlist[x]+"_dept");
+          d.innerText = department;
+          s = document.getElementById(idlist[x]+"_subdept");
+          s.innerText = subdepartment;
+        }
+        ALERTcall("success","Success");
+        console.log(true)
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger", myObj.success);
+        console.log(false);
+      }
+    }//if
+  };//xmlhttp function
+  xmlhttp.open("POST", "php/functions/employee/employee.group.update.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+
+  return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Sample
