@@ -256,6 +256,11 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   float: right;
 }
+#acctDetails
+{
+  background-color: #51b6b5e3;
+  color: white;
+}
 #branchDelete
 {
   float: right;

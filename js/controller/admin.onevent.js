@@ -540,7 +540,7 @@ function DSHBRDAccountsAccMgnt()
             "<span id=\""+myObj[x].userid+"_position\">"+myObj[x].position+"</span>",
             "<span id=\""+myObj[x].userid+"_role\">"+myObj[x].role+"</span>",
             "<span id=\""+myObj[x].userid+"_status\">"+myObj[x].status+"</span>",
-            "<div class=\"btn-group\"><button class=\"btn btn-primary\" onClick=\"ACCTedit('"+myObj[x].userid+"')\">Details</button><button class=\"btn btn-danger\" onClick=\"ACCTpass('"+myObj[x].userid+"')\">Reset Password</button></div>"
+            "<div class=\"btn-group\"><button class=\"btn\" id=\"acctDetails\" onClick=\"ACCTedit('"+myObj[x].userid+"')\">Details</button><button class=\"btn\" onClick=\"ACCTpass('"+myObj[x].userid+"')\">Reset Password</button></div>"
           ]).draw(false);
         }//for close
         Loading(false);
