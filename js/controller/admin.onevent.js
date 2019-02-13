@@ -901,7 +901,7 @@ function employee(id)
   var mainrow, leftcol, rightcol, upper, lower, form, formrow, col, label, input, select, option, br;
 
   mainrow = newElement(cb, "div", ["row"], ["style=height: 100%;"], "");
-    leftcol = newElement(mainrow, "div", ["col","border", "border-dark","rounded", "col"],["style=background-color: lightblue; width: 600px;"], "");
+    leftcol = newElement(mainrow, "div", ["col","border", "border-dark","rounded", "col"],["style=background-color: #e8e8e8; width: 600px; padding: 10px;"], "");
       form = newElement(leftcol, "form", "", ["onsubmit=return addemployeesubmit("+add+")"], "");
 
         formrow = newElement(form, "div", ["form-row"], [] , "");
