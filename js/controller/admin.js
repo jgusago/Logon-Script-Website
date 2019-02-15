@@ -1168,7 +1168,7 @@ function ChangePass()
   //
   createnewElement(fg, form.newelement, "div", ["form-row"], [],"");
     createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
-    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-primary"], ["type:submit","value:Confirm"], "");
+    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-info"], ["type:submit","value:Confirm"], "");
     createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
     createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-warning"], ["type:button","onClick:OVERLAYdisable()","value:Cancel"], "");
   //
