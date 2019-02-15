@@ -900,8 +900,8 @@ function employee(id)
 
   var mainrow, leftcol, rightcol, upper, lower, form, formrow, col, label, input, select, option, br;
 
-  mainrow = newElement(cb, "div", ["row"], ["style=height: 100%;"], "");
-    leftcol = newElement(mainrow, "div", ["col","border", "border-dark","rounded", "col"],["style=background-color: #e8e8e8; width: 600px; padding: 10px;"], "");
+  mainrow = newElement(cb, "div", ["row"], [], "");
+    leftcol = newElement(mainrow, "div", ["col","rounded", "col"],["style=background-color: #e8e8e8; width: 600px; padding: 10px;"], "");
       form = newElement(leftcol, "form", "", ["onsubmit=return addemployeesubmit("+add+")"], "");
 
         formrow = newElement(form, "div", ["form-row"], [] , "");
@@ -942,7 +942,7 @@ function employee(id)
         formrow = newElement(form, "div", ["form-row"], [] , "");
 
           col = newElement(formrow, "div", ["col", "form-group"], [], "");
-            input = newElement(col, "button", ["form-control", "btn", "btn-primary"], ["type:submit", "value="+placeholder], placeholder);
+            input = newElement(col, "button", ["form-control", "btn", "btn-info"], ["type:submit", "value="+placeholder], placeholder);
 
     if(add == false){
         br = newElement(form, "br", "", "", "");
