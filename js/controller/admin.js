@@ -1529,7 +1529,7 @@ function addagentversion(){
         createnewElement(opt, select.newelement, "option", [], ["value:invalid"], "invalid");
         createnewElement(br, form.newelement, "br", [], [], "");
     createnewElement(fg, form.newelement,"div", ["form-group"], [], "");
-      createnewElement(inp, fg.newelement, "button", ["btn","btn-primary","btn-block"], [], "Submit");
+      createnewElement(inp, fg.newelement, "button", ["btn","btn-info","btn-block"], [], "Submit");
     createnewElement(br, form.newelement, "br", [], [], "");
 
 }
