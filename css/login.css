@@ -38,17 +38,19 @@
         height: 20%;;
         width: 100%;
         position: fixed;
-        font-family: Verdana, tahoma;
+        font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+        /* Verdana, tahoma; */
         text-align: center;
-        top: 80%;
+        top: 85%;
 }
 .login-background-text-content
 {
-        font-size: 5vw;
-        color: rgb(255, 255, 255);
+        font-size: 4vw;
+        /* color: rgb(255, 255, 255); */
         -webkit-text-fill-color: white; /* Will override color (regardless of order) */
         -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: rgb(160, 160, 160);
+        -webkit-text-stroke-color: rgba(212, 206, 206, 0);
+        letter-spacing: 15px;
 }
 .login-card{
         position: fixed;
