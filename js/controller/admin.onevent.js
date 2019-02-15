@@ -939,19 +939,23 @@ function employee(id)
             option = newElement(select, "option", "", ["value="+subd, "selected=selected", "hidden=true"], subd);
 
         br = newElement(form, "br", "", "", "");
-        formrow = newElement(form, "div", ["form-row"], [] , "");
+        formrow = newElement(form, "div", ["row"], ["style: margin-bottom: 10px;"] , "");
 
-          col = newElement(formrow, "div", ["col", "form-group"], [], "");
+          col = newElement(formrow, "div", ["col-md-6"], [], "");
             input = newElement(col, "button", ["form-control", "btn", "btn-info"], ["type:submit", "value="+placeholder], placeholder);
 
-    if(add == false){
-        br = newElement(form, "br", "", "", "");
-        formrow = newElement(form, "div", ["form-row"], [] , "");
-          col = newElement(formrow, "div", ["col", "form-group"], [], "");
-            input = newElement(col, "button", ["form-control", "btn", "btn-danger"], ["type=button","onClick=deleteemployee(true)"], "Delete");
-    }
+          if(add == false)
+          { 
+            col = newElement(formrow, "div", ["col-md-6"], [], "");
+              input = newElement(col, "button", ["form-control", "btn", "btn-danger"], ["type=button","onClick=deleteemployee(true)"], "Delete");
 
-    br = newElement(leftcol, "br", "", "", "");
+    // if(add == false){
+    //     br = newElement(form, "br", "", "", "");
+    //     formrow = newElement(form, "div", ["form-row"], [] , "");
+    //       col = newElement(formrow, "div", ["col", "form-group"], [], "");
+    //         input = newElement(col, "button", ["form-control", "btn", "btn-danger"], ["type=button","onClick=deleteemployee(true)"], "Delete");
+          }
+
 
     if(count > 1){
 
