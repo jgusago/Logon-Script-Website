@@ -10,7 +10,7 @@ function tablecheck(mod, trig){
     var table  = document.getElementById("datalist");
 
     if(table == null){
-      contentview.innerHTML = "<table id=\"datalist\" class=\"table table-bordered table-hover\" module=\""+mod+"\" trigger=\""+trig+"\" style=\"width: 100%;\"></table>";
+      contentview.innerHTML = "<table id=\"datalist\" class=\"table table-hover\" module=\""+mod+"\" trigger=\""+trig+"\" style=\"width: 100%;\"></table>";
       table  = document.getElementById("datalist");
       return false;
     }
@@ -22,7 +22,7 @@ function tablecheck(mod, trig){
         return true;
       }
       else{
-        contentview.innerHTML = "<table id=\"datalist\" class=\"table table-bordered table-hover\" module=\""+mod+"\" trigger=\""+trig+"\" style=\"width: 100%;\"></table>";
+        contentview.innerHTML = "<table id=\"datalist\" class=\"table table-hover\" module=\""+mod+"\" trigger=\""+trig+"\" style=\"width: 100%;\"></table>";
         return false;
       }
     }
