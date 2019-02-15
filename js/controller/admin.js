@@ -781,7 +781,6 @@ function OVERLAYdisable()
 {
 
     document.getElementById("overlay").style.display = "none";
-    document.getElementById("loaderdiv").style.display = "none";
     document.getElementById("miniwindow").style.display = "none";
 
         //get mini window ID;
