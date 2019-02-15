@@ -939,7 +939,7 @@ function employee(id)
             option = newElement(select, "option", "", ["value="+subd, "selected=selected", "hidden=true"], subd);
 
         br = newElement(form, "br", "", "", "");
-        formrow = newElement(form, "div", ["row"], ["style: margin-bottom: 10px;"] , "");
+        formrow = newElement(form, "div", ["row"], ["style= margin-bottom: 10px;"] , "");
 
           col = newElement(formrow, "div", ["col-md-6"], [], "");
             input = newElement(col, "button", ["form-control", "btn", "btn-info"], ["type:submit", "value="+placeholder], placeholder);
