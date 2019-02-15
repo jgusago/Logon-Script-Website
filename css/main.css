@@ -274,6 +274,12 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   color:#fff6ead1;
 }
+#datalist_wrapper .row .row .row .col-sm-12
+{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
 #remarks
 {
   margin-top:5px;
