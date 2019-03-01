@@ -57,7 +57,8 @@ function DSHBRDCompList(log_id, dept)
                 date = myDate("mmm dd, yyyy", newdate[0])+", "+myDate("mmm dd, yyyy", newdate[1]);
             }
           }//Close datre_Checked != null
-          else{
+          else
+          {
             date = "";
           }
 
@@ -941,7 +942,7 @@ function employee(id)
         br = newElement(form, "br", "", "", "");
         formrow = newElement(form, "div", ["row"], ["style= margin-bottom: 10px;"] , "");
 
-          col = newElement(formrow, "div", ["col-md-6"], [], "");
+          col = newElement(formrow, "div", ["col-md-12"], [], "");
             input = newElement(col, "button", ["form-control", "btn", "btn-info"], ["type:submit", "value="+placeholder], placeholder);
 
           if(add == false)

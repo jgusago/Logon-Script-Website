@@ -364,7 +364,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
-    background:#365b0d82;
+    background:#558795;
 }
 #UserAccountupdate
 {
@@ -422,7 +422,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
   justify-content: center;
   padding: 15px;
   border-top: 1px solid #e9ecef;
-  background:#365b0d82;
+  background:#558795 ;
 }
 .modal-body
 {
@@ -443,7 +443,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 thead
 {
-  background: #343a4096;
+  background: #558795 ;
   color: white;
 }
 thead tr th
