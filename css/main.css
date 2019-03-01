@@ -237,7 +237,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 
 .navbar-nav .navbar-sidenav li.active
 {
-  background: #94A880;
+  background: #558795;
 }
 .fa-fw
 {
@@ -438,11 +438,11 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 .breadcrumb
 {
   margin: 1rem;
-  background-color: #eaeaea;
+  background-color: #6f6c6c21;
 }
 thead
 {
-  background: #94A880;
+  background: #558795;
   color: white;
 }
 thead tr th
@@ -581,7 +581,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
       }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
-      background: #f6f7ed;
+      background: #fffcfcfc;
     }
   }
 
@@ -712,7 +712,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   letter-spacing: 5px;
   font-weight: bold;
   font-family: Arial;
-  background: #94A880;
+  background: #558795;
   color: white;
 }
 #ContentCardBody
@@ -785,7 +785,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
-  color: #5e5f61;
+  color: #454545;
 }
 i
 {
@@ -802,12 +802,12 @@ i
 .card-header
 {
   /* background-color: #2f5109ad; */
-  background: #94A880;;
+  background: #343a4096;
   padding: .50rem 1.25rem;
 }
 .card-footer
 {
-  background:#94A880;
+  background:#343a4096;
 }
 #exampleAccordion
 {
