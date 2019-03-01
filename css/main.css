@@ -117,7 +117,7 @@ body.fixed-nav {
     width: 250px;
     font-weight: 500;
     font-family: Cambria;
-    font-size: 30px;
+    font-size: 23px;
 }
   }
   #mainNav .navbar-collapse {
@@ -228,7 +228,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 
 .content-wrapper {
   overflow-x: hidden;
-  background: #cbcbcb;
+  background: #eaeaea ;
   /* white;  */
 }
   @media (min-width: 992px) {
@@ -342,7 +342,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 .nav-link.text-center
 {
-  background: #94A880;
+  background: #558795;
 }
 #btnImpEmp
 {
@@ -428,7 +428,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 .nav-link
 {
-  font-size:15px;
+  font-size:16px;
 }
 .progress
 {
@@ -464,7 +464,7 @@ tbody tr td
 }
 h5
 {
-  font-size: 18px;
+  font-size: 1px;
 }
 #sidenavToggler i
 {
@@ -567,7 +567,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 @media (min-width: 992px) {
   #mainNav.navbar-light .navbar-collapse .navbar-sidenav {
     /* background: #f8f9fa;  */
-    background-color: #92bd0d26;
+    background-color: #558795;
   }
     #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a {
       color: #000 !important;
@@ -855,7 +855,7 @@ footer.sticky-footer {
   bottom: 0;
   width: 100%;
   height: 56px;
-  background: #94A880;
+  background: #558795;
   color: white;
   line-height: 55px; }
   @media (min-width: 992px) {

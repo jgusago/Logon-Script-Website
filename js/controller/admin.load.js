@@ -1,4 +1,5 @@
-function load(){
+function load()
+{
     SESSIONConfirm();
     DSHBRDbtnsCompList();
     DSHBRDbtnsCompLogs();
@@ -34,14 +35,14 @@ function Dashboard(){
   var cch = document.getElementById("ContentCardHead");
   var ccb = document.getElementById("ContentCardBody");
   var ccf = document.getElementById("ContentCardFoot");
-  ccf.classList.remove("text-muted");
+  //+ccf.classList.remove("text-muted");
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
-  cch.innerHTML = "Summary";
+  //cch.innerHTML = "Summary";
   ccb.innerHTML = "";
   ccf.innerHTML = "";
-  ccf.innerHTML = "Updated at "+ myDate("dddd, mmmm d, yyyy","");
+ // ccf.innerHTML = "Updated at "+ myDate("dddd, mmmm d, yyyy","");
 
   var container = newElement(ccb, "div", ["container-fluid"], "", "");
     var maindiv = newElement(container, "div", ["col", "col-md-12"], "", "");
