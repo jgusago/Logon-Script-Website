@@ -947,8 +947,10 @@ function employee(id)
 
           if(add == false)
           { 
+            br = newElement(form, "br", "", "", "");
+        formrow = newElement(form, "div", ["form-row"], [] , "");
             col = newElement(formrow, "div", ["col-md-6"], [], "");
-              input = newElement(col, "button", ["form-control", "btn", "btn-danger"], ["type=button","onClick=deleteemployee(true)"], "Delete");
+            input = newElement(col, "button", ["form-control", "btn", "btn-danger"], ["type=button","onClick=deleteemployee(true)"], "Delete");
 
     // if(add == false){
     //     br = newElement(form, "br", "", "", "");
