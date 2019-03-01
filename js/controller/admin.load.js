@@ -41,7 +41,7 @@ function Dashboard(){
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
   //cch.innerHTML = "Summary";
   ccb.innerHTML = "";
-  //ccf.innerHTML = "";
+  ccf.innerHTML = "";
  // ccf.innerHTML = "Updated at "+ myDate("dddd, mmmm d, yyyy","");
 
   var container = newElement(ccb, "div", ["container-fluid"], "", "");

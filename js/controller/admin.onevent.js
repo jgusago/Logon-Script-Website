@@ -777,7 +777,7 @@ function EmployeeList(){
             { title: "Department" },
             { title: "Sub Department" },
             { title: "Action",targets: 0 , orderable: false},
-            { title: "<button id=\"empcheck_all'\" onClick=\"empcheck('all')\" class=\"btn btn-secondary\">Selecy All</button>",targets: 0 , orderable: false}
+            { title: "<button id=\"empcheck_all'\" onClick=\"empcheck('all')\" class=\"btn btn-secondary\">Select All</button>",targets: 0 , orderable: false}
           ]
     });
 
