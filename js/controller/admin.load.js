@@ -32,9 +32,9 @@ function DSHBRDbtnsCompLogs(){
 }
 
 function Dashboard(){
-  var cch = document.getElementById("ContentCardHead");
+ // var cch = document.getElementById("ContentCardHead");
   var ccb = document.getElementById("ContentCardBody");
-  var ccf = document.getElementById("ContentCardFoot");
+ // var ccf = document.getElementById("ContentCardFoot");
   //+ccf.classList.remove("text-muted");
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
