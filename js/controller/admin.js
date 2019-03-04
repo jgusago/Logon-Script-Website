@@ -30,20 +30,20 @@ function DSHBRDbtnsCompListChld(listparent, linkparent, dataparent, parentulid){
 }
 
 //COMPLOGS Buttons
-function DSHBRDbtnsCompLogs(){
-complogsul = document.getElementById("COMPLOGSlist");
+// function DSHBRDbtnsCompLogs(){
+// complogsul = document.getElementById("COMPLOGSlist");
 
-$.post("php/functions/load/dashboard.buttons.php",function(data){
-  cldata = data.split("|");
-  for(var  i = 0; i < cldata.length; i++){
-    var li = [], a = [];
-    var id = idgenerator();
-    var newdata32 = cldata[i].split("`");
-    createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
-    createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+newdata32[1]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],newdata32[0]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
-  }
-});
-}
+// $.post("php/functions/load/dashboard.buttons.php",function(data){
+//   cldata = data.split("|");
+//   for(var  i = 0; i < cldata.length; i++){
+//     var li = [], a = [];
+//     var id = idgenerator();
+//     var newdata32 = cldata[i].split("`");
+//     createnewElement(li, complogsul, "li", ["nav-item"], ["data-toggle:tooltip"], "");
+//     createnewElement(a, li.newelement, "a", [], ["onClick:DSHBRDContent(\""+newdata32[1]+"\",\""+id+"\")","data:DSHBRDRecordsComplogs","id:"+id],newdata32[0]); //"onClick:DSHBRDContent(\""+cldata[i]+"\",\""+id+"\")",
+//   }
+// });
+// }
 
 function DSHBRDContentCompList(parent, linkid){
 
@@ -131,7 +131,7 @@ function DSHBRDContent(parent, linkid)
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsComplogs":
-        path = "php/functions/reports/computer.logs.php";
+        path = "php/functions/reports/computer.logs.json.php";
         DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
       break;
       case "DSHBRDRecordsHistory":
