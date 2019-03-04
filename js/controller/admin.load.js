@@ -21,7 +21,8 @@ function DSHBRDbtnsCompList(){
 }
 
 /* Buttons Computer Details*/
-function DSHBRDbtnsCompLogs(){
+function DSHBRDbtnsCompLogs()
+{
     complistul = document.getElementById("COMPLISTlist");
 
     $.post("php/functions/load/dashboard.complogsbuttons.php",function(data){
@@ -32,16 +33,16 @@ function DSHBRDbtnsCompLogs(){
 }
 
 function Dashboard(){
- // var cch = document.getElementById("ContentCardHead");
+  var cch = document.getElementById("ContentCardHead");
   var ccb = document.getElementById("ContentCardBody");
- // var ccf = document.getElementById("ContentCardFoot");
+  var ccf = document.getElementById("ContentCardFoot");
   //+ccf.classList.remove("text-muted");
 
   document.getElementById("dtitle").innerHTML = "Dashboard";
   document.getElementById("dtitle2").innerHTML = "My Dashboard";
-  //cch.innerHTML = "Summary";
+  cch.innerHTML = "Summary";
   ccb.innerHTML = "";
-  //ccf.innerHTML = "";
+  ccf.innerHTML = "";
  // ccf.innerHTML = "Updated at "+ myDate("dddd, mmmm d, yyyy","");
 
   var container = newElement(ccb, "div", ["container-fluid"], "", "");
