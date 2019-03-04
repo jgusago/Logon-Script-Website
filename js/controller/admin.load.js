@@ -21,16 +21,16 @@ function DSHBRDbtnsCompList(){
 }
 
 /* Buttons Computer Details*/
-// function DSHBRDbtnsCompLogs()
-// {
-//     complistul = document.getElementById("COMPLISTlist");
+function DSHBRDbtnsCompLogs()
+{
+    complistul = document.getElementById("COMPLISTlist");
 
-//     $.post("php/functions/load/dashboard.complogsbuttons.php",function(data){
-//         var complstbtn = document.getElementById("DSHBRDRecordsComplogs");
-//         complstbtn.innerHTML = data;
+    $.post("php/functions/load/dashboard.complogsbuttons.php",function(data){
+        var complstbtn = document.getElementById("DSHBRDRecordsComplogs");
+        complstbtn.innerHTML = data;
 
-//       });
-// }
+      });
+}
 
 function Dashboard(){
   var cch = document.getElementById("ContentCardHead");
