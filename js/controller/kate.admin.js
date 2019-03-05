@@ -156,6 +156,7 @@ function DSHBRDContentBranchSettings()
   var div2 = newElement(div1, "div", ["row"], [], "");
   var div3 = newElement(div2, "div", ["col-md-12"], [], "");
   var div4 = newElement(div3, "div", ["menu"], [], "");
+
   var div5 = newElement(div4, "div", ["accordion"], [], "");
   var div6 =  newElement(div5, "div", ["accordion-group"], [], "" );
   var div7 = newElement(div6, "i", ["accordion-heading", "area"], [], "")
@@ -179,18 +180,33 @@ function DSHBRDContentBranchSettings()
   var div18 = newElement(div17, "div", ["accordion-heading", "ponto"], [], "");
   var a4 = newElement(div18, "a", ["accordion-toggle"], ["data-parent=#servico1-1", "data-toggle=collapse", "href=#servico1-1"], "DEV-JA");
 
-  // var ul2 = newElement(li1, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item-1"], "");
-  // var li2 =  newElement(ul2, "li", ["item-2", "deeper", "parent", "active"], [], "");
-  // var a2 = newElement(li2, "a", [], ["href=#"], "");
-  // var span3 =  newElement(a2, "span", ["sign"], ["data-toggle=collapse", "data-parent=#menu-group-1", "href=#sub-item-2"], "");
-  // var i2 = newElement(span3, "i", ["icon-plus", "icon-white"], [""], "");
-  // var span4 = newElement(a2, "span", ["lbl"], [], "Menu 1");
+  // NEW ACCORDION
 
-  // var ul3 = newElement(li2, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item2"], "");
-  // var li3 = newElement(ul3, "li", ["item-3", "current"], [], "");
-  // var a3 = newElement(li3, "a", [], ["href=#"], "");
-  // var span4 = newElement(a3, "span", ["sign"], [], "" );
-  // var span5 = newElement(a3, "span", ["lbl"], [], "Menu 1.1");
+  var div19 = newElement(div4, "div", ["accordion"], [], "");
+  var div20 =  newElement(div19, "div", ["accordion-group"], [], "" );
+  var div21 = newElement(div20, "i", ["accordion-heading", "area"], [], "")
+  var a5 = newElement(div21, "a", ["accordion-toggle"], ["data-toggle=collapse", "href=#branch1"], "Marvin (MAIN)");
+
+  var div22 = newElement(div20, "div", ["accordion-body", "collapse"], ["id=branch1"], "");
+  var div23 = newElement(div22, "div", ["accordion-inner"], [], "");
+  var div24 = newElement(div23, "div", ["accordion"], ["id=subdept2"], "");
+
+  var div25 = newElement(div24, "div", ["accordion-group"], [], "");
+  var div26 = newElement(div25, "div", ["accordion-heading", "equipamento"], [], "");
+  var a6 = newElement(div26, "a", ["accordion-toggle"], ["data-parent=#subdept2-1", "data-toggle=collapse", "href=#subdept2-1"], "HR");
+
+  var div27 = newElement(div25, "div", ["accordion-heading", "equipamento"], [], "");
+  var a7 = newElement(div27, "a", ["accordion-toggle"], ["data-parent=#subdept2-2", "data-toggle=collapse", "href=#subdept2-2"], "QF-CS");
+
+  // var div28 = newElement(div25, "div", ["accordion-body", "collapse"], ["id=subdept2-2"], "");
+  // var div29 = newElement(div28, "div", ["accordion-inner"], [], "");
+  // var div30 = newElement(div29, "div", ["accordion"], ["id=servico2"], "");
+  // var div31 = newElement(div30, "div", ["accordion-group"], [], "");
+  // var div32 = newElement(div31, "div", ["accordion-heading", "ponto"], [], "");
+  // var a8 = newElement(div32, "a", ["accordion-toggle"], ["data-parent=#servico2-1", "data-toggle=collapse", "href=#servico2-1"], "DEV-JA");
+  
+
+
 
 
   // var table = [];
