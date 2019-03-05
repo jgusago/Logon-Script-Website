@@ -141,7 +141,7 @@ function DSHBRDAgentVersion()
 
 function DSHBRDContentBranchSettings()
 {
-  var checktable = tablecheck("branch settings", "Branch Settings");
+  //var checktable = tablecheck("branch settings", "Branch Settings");
   var a = document.getElementById("ContentCardHead");
   a.innerHTML = "";
   var foot = document.getElementById("ContentCardFoot");
@@ -152,8 +152,8 @@ function DSHBRDContentBranchSettings()
   document.getElementById("dtitle").innerHTML = "Settings";
   document.getElementById("dtitle2").innerHTML = "Branch View Settings";
 
-  var div1 = newElement(body, "div", ["container"], [], "");
-  var div2 = newElement(div1, "div", ["row"], [], "");
+  //var div1 = newElement(body, "div", ["container"], [], "");
+  var div2 = newElement(body, "div", ["row"], [], "");
   var div3 = newElement(div2, "div", ["col-md-12"], [], "");
   var div4 = newElement(div3, "div", ["menu"], [], "");
 
