@@ -1,5 +1,4 @@
 
-
 function Profiles()
 {
     var checktable = tablecheck("user profile", "Profile Settings");
@@ -153,27 +152,27 @@ function DSHBRDContentBranchSettings()
   document.getElementById("dtitle").innerHTML = "Settings";
   document.getElementById("dtitle2").innerHTML = "Branch View Settings";
 
-  var div1 = newElement(body, "div", ["row"], [], "");
-  var div2 = newElement(div1, "div", ["span3"], ["id=left"], "");
-  var ul1 = newElement(div2, "ul", ["nav", "menu"], ["id=menu-group-1"], "");
-  var li1 = newElement(ul1, "li", ["item-1", "deeper", "parent", "active"], [], "");
-  var a = newElement(li1, "a", [], ["href=#"], "");
-  var span1 =  newElement(a, "span", ["sign"], ["data-toggle=collapse", "data-parent=#menu-group-1", "href=#sub-item-1"], "" );
-  var i1 = newElement(span1, "i", ["icon-plus", "icon-white"], [], "")
-  var span2 = newElement(a, "span", ["lbl"], [], "Menu Group1");
+  var div1 = newElement(body, "div", ["container"], [], "");
+  var div2 = newElement(div1, "div", ["row"], [], "");
+  var div3 = newElement(div2, "div", ["col-md-12"], [], "");
+  var div4 = newElement(div3, "div", ["menu"], [], "");
+  var div5 = newElement(div4, "div", ["accordion"], [], "");
+  var div6 =  newElement(div5, "div", ["accordion-group"], [], "" );
+  var div7 = newElement(div6, "i", ["accordion-heading", "area"], [], "")
+  var a = newElement(div7, "a", ["accordion-toggle"], ["data-toggle=collapse", "href=#area1"], "Area1");
 
-  var ul2 = newElement(li1, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item-1"], "");
-  var li2 =  newElement(ul2, "li", ["item-2", "deeper", "parent", "active"], [], "");
-  var a2 = newElement(li2, "a", [], ["href=#"], "");
-  var span3 =  newElement(a2, "span", ["sign"], ["data-toggle=collapse", "data-parent=#menu-group-1", "href=#sub-item-2"], "");
-  var i2 = newElement(span3, "i", ["icon-plus", "icon-white"], [""], "");
-  var span4 = newElement(a2, "span", ["lbl"], [], "Menu 1");
+  // var ul2 = newElement(li1, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item-1"], "");
+  // var li2 =  newElement(ul2, "li", ["item-2", "deeper", "parent", "active"], [], "");
+  // var a2 = newElement(li2, "a", [], ["href=#"], "");
+  // var span3 =  newElement(a2, "span", ["sign"], ["data-toggle=collapse", "data-parent=#menu-group-1", "href=#sub-item-2"], "");
+  // var i2 = newElement(span3, "i", ["icon-plus", "icon-white"], [""], "");
+  // var span4 = newElement(a2, "span", ["lbl"], [], "Menu 1");
 
-  var ul3 = newElement(li2, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item2"], "");
-  var li3 = newElement(ul3, "li", ["item-3", "current"], [], "");
-  var a3 = newElement(li3, "a", [], ["href=#"], "");
-  var span4 = newElement(a3, "span", ["sign"], [], "" );
-  var span5 = newElement(a3, "span", ["lbl"], [], "Menu 1.1");
+  // var ul3 = newElement(li2, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item2"], "");
+  // var li3 = newElement(ul3, "li", ["item-3", "current"], [], "");
+  // var a3 = newElement(li3, "a", [], ["href=#"], "");
+  // var span4 = newElement(a3, "span", ["sign"], [], "" );
+  // var span5 = newElement(a3, "span", ["lbl"], [], "Menu 1.1");
 
 
   // var table = [];
@@ -202,9 +201,9 @@ function DSHBRDContentBranchSettings()
   //   }
   // });
 
-var toolbar = [];
-createnewElement(toolbar, foot,"div",["btn-toolbar","mr-3"],[],"");
-var ig = [];
-createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
-createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:adddepartment()"], "Add Department or Branch");
+// var toolbar = [];
+// createnewElement(toolbar, foot,"div",["btn-toolbar","mr-3"],[],"");
+// var ig = [];
+// createnewElement(ig,toolbar.newelement,"div",["btn-group","mr-2"],[],"");
+// createnewElement([], ig.newelement, "button", ["btn","btn-primary"], ["type:button","onclick:adddepartment()"], "Add Department or Branch");
 }
