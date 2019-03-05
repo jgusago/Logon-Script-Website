@@ -162,7 +162,7 @@ function DSHBRDContentBranchSettings()
   var a = newElement(div7, "a", ["accordion-toggle"], ["data-toggle=collapse", "href=#branch"], "Marvin (IT)");
 
   var div8 = newElement(div6, "div", ["accordion-body", "collapse"], ["id=branch"], "");
-  var div9 = newElement(div8, "div", ["accordion-iiner"], [], "");
+  var div9 = newElement(div8, "div", ["accordion-inner"], [], "");
   var div10 = newElement(div9, "div", ["accordion"], ["id=subdept"], "");
 
   var div11 = newElement(div10, "div", ["accordion-group"], [], "");
