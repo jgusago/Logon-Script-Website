@@ -141,7 +141,7 @@ function DSHBRDAgentVersion()
 
 function DSHBRDContentBranchSettings()
 {
-  //var checktable = tablecheck("branch settings", "Branch Settings");
+  var checktable = tablecheck("branch settings", "Branch Settings");
   var a = document.getElementById("ContentCardHead");
   a.innerHTML = "";
   var foot = document.getElementById("ContentCardFoot");
