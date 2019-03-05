@@ -262,7 +262,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   border-left: 4px solid #f38787;
 }
-.menu .equipamento
+.accordion-heading .equipamento
 {
   border-left: 4px solid #65c465; 
 }
