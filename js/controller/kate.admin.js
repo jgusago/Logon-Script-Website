@@ -196,14 +196,14 @@ function DSHBRDContentBranchSettings()
   var a6 = newElement(div26, "a", ["accordion-toggle"], ["data-parent=#subdept2-1", "data-toggle=collapse", "href=#subdept2-1"], "HR");
 
   var div27 = newElement(div25, "div", ["accordion-heading", "equipamento"], [], "");
-  var a7 = newElement(div27, "a", ["accordion-toggle"], ["data-parent=#subdept2-2", "data-toggle=collapse", "href=#subdept2-2"], "QF-CS");
+  var a7 = newElement(div27, "a", ["accordion-toggle"], ["data-parent=#subdept2-2", "data-toggle=collapse", "href=#subdept2-2"], "QF");
 
-  // var div28 = newElement(div25, "div", ["accordion-body", "collapse"], ["id=subdept2-2"], "");
-  // var div29 = newElement(div28, "div", ["accordion-inner"], [], "");
-  // var div30 = newElement(div29, "div", ["accordion"], ["id=servico2"], "");
-  // var div31 = newElement(div30, "div", ["accordion-group"], [], "");
-  // var div32 = newElement(div31, "div", ["accordion-heading", "ponto"], [], "");
-  // var a8 = newElement(div32, "a", ["accordion-toggle"], ["data-parent=#servico2-1", "data-toggle=collapse", "href=#servico2-1"], "DEV-JA");
+  var div28 = newElement(div25, "div", ["accordion-body", "collapse"], ["id=subdept2-2"], "");
+  var div29 = newElement(div28, "div", ["accordion-inner"], [], "");
+  var div30 = newElement(div29, "div", ["accordion"], ["id=servico2"], "");
+  var div31 = newElement(div30, "div", ["accordion-group"], [], "");
+  var div32 = newElement(div31, "div", ["accordion-heading", "ponto"], [], "");
+  var a8 = newElement(div32, "a", ["accordion-toggle"], ["data-parent=#servico2-1", "data-toggle=collapse", "href=#servico2-1"], "CS");
   
 
 
