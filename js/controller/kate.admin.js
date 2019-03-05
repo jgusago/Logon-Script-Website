@@ -167,7 +167,7 @@ function DSHBRDContentBranchSettings()
 
   var div11 = newElement(div10, "div", ["accordion-group"], [], "");
   var div12 = newElement(div11, "div", ["accordion-heading", "equipamento"], [], "");
-  var a2 = newElement(div11, "a", ["accordion-toggle"], ["data-parent=#subdept-1", "data-toggle=collapse", "href=#ponto1-1"], "IT-HR");
+  var a2 = newElement(div12, "a", ["accordion-toggle"], ["data-parent=#subdept-1", "data-toggle=collapse", "href=#ponto1-1"], "IT-HR");
 
   // var ul2 = newElement(li1, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item-1"], "");
   // var li2 =  newElement(ul2, "li", ["item-2", "deeper", "parent", "active"], [], "");

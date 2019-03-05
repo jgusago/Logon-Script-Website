@@ -262,7 +262,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 {
   border-left: 4px solid #f38787;
 }
-.accordion-heading .equipamento
+.menu .equipamento
 {
   border-left: 4px solid #65c465; 
 }
@@ -280,10 +280,8 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 }
 .accordion-group
 {
-  margin-bottom: 2px;
+  padding:5px;
   border: 1px solid #e5e5e5;
-  -webkit-border-radius:4px;
-  -moz-border-radius:4px;
   border-radius:4px;
 }
 .accordion-heading
@@ -844,7 +842,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 i
 {
-  padding-left: 5px;
+  /* padding-left: 5px; */
 }
 .bg-danger
 {
