@@ -159,7 +159,15 @@ function DSHBRDContentBranchSettings()
   var div5 = newElement(div4, "div", ["accordion"], [], "");
   var div6 =  newElement(div5, "div", ["accordion-group"], [], "" );
   var div7 = newElement(div6, "i", ["accordion-heading", "area"], [], "")
-  var a = newElement(div7, "a", ["accordion-toggle"], ["data-toggle=collapse", "href=#area1"], "Area1");
+  var a = newElement(div7, "a", ["accordion-toggle"], ["data-toggle=collapse", "href=#branch"], "Marvin (IT)");
+
+  var div8 = newElement(div6, "div", ["accordion-body", "collapse"], ["id=branch"], "");
+  var div9 = newElement(div8, "div", ["accordion-iiner"], [], "");
+  var div10 = newElement(div9, "div", ["accordion"], ["id=subdept"], "");
+
+  var div11 = newElement(div10, "div", ["accordion-group"], [], "");
+  var div12 = newElement(div11, "div", ["accordion-heading", "equipamento"], [], "");
+  var a2 = newElement(div11, "a", ["accordion-toggle"], ["data-parent=#subdept-1", "data-toggle=collapse", "href=#ponto1-1"], "IT-HR");
 
   // var ul2 = newElement(li1, "ul", ["children", "nav-child", "unstyled", "small", "collapse"], ["id=sub-item-1"], "");
   // var li2 =  newElement(ul2, "li", ["item-2", "deeper", "parent", "active"], [], "");
