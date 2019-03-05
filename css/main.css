@@ -265,6 +265,7 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 .menu .equipamento
 {
   border-left: 4px solid #65c465; 
+  border-bottom: 2px solid #6b67672e;
 }
 .menu .ponto
 {
