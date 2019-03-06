@@ -11,24 +11,21 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Monitoring</title>
-  <!-- Bootstrap core CSS-->
+    <!-- Bootstrap core CSS-->
   <link href="design/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template-->
   <link href="design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
+    <!-- Page level plugin CSS-->
   <link href="design/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
+    <!-- Custom styles for this template-->
   <link href="css/main.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="load()">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); background:#94A880;">
-    <img class="nav-logo" src="iMonitor_Website/icons/sky_luster.png" height="50px" width="45px" />
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); background:#558795;">
+    <img class="nav-logo" src="img/sky_luster.png" height="50px" width="45px" />
     <a class="navbar-brand" href="#">Monitoring</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -98,9 +95,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
 
-        <!-- Messages -->
-
-        <!-- <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope" style="color: white;"></i>
             <span class="d-lg-none">Messages
@@ -133,7 +128,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
-        </li> -->
+        </li>
 
          <!-- Alerts -->
          <li class="nav-item dropdown" style="margin-right: 20px;">
@@ -143,16 +138,14 @@
               <span class="badge badge-pill badge-warning" id="NOTIFmbcount"></span>
             </span>
             <span class="indicator text-warning d-none d-lg-block">
-                <span class="badge badge-pill badge-danger"><strong id="NOTIFdtcount"></strong></span>
+                <span class="badge badge-pill badge-danger" id="NOTIFdtcount"></span></span>
             </span>
           </a>
-          <div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">New Alerts:</h6>
-            <div class="dropdown-divider"></div>
-            <div id="NAVBARNotifContent"></div>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#" onclick="NOTIFallshow()">View all notification</a>
+          <!-- inside dropdowm -->
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown" id="NAVBARNotifContent">
           </div>
+
+          <!-- inside dropdown -->
         </li>
 
         <!-- Divider -->
@@ -187,22 +180,48 @@
 
     <!-- Content View -->
     <div class="container-fluid" id="contentview">
+      <div class="card">
+        <div class="card-header" id="ContentCardHead"></div>
+        <div class="card-body" id="ContentCardBody"></div>
+        <div class="card-footer small text-muted" id="ContentCardFoot"></div>
+      </div>
     </div>
+
     <!-- Overlay -->
-    <div id="overlay" onclick="OVERLAYdisable();">
+    <div id="overlay" onClick="OVERLAYdisable()">
     </div>
     <div id="miniwindow">
       <div class="card">
-        <div class="card-header" id="mnch"></div>
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-11 col-md-11" id="mnch"></div>
+            <div class="d-flex d-flex-row-reverse col-md-1 col-sm-1">
+              <button class="close btn btn-default" data-dismiss="modal" aria-label="Close" type="button" onClick="OVERLAYdisable()">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="card-body" id="mncb"></div>
         <div class="card-footer small text-muted" id="mncf"></div>
 
       </div>
     </div>
-    <div id="loaderdiv">
-        <div class="lds-css ng-scope">
-            <div style="width:100%;height:100%" class="lds-wedges"><div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div></div>
-        </div>
+
+    <!-- loader -->
+    <div id="loading_overlay" class="content-wrapper">
+    </div>
+    <div class="loading_wrapper" id="loading_wrapper">
+      <div class="loading_hexagon">
+        <svg xmlns="" viewBox="0 0 28 32" fill="currentcolor">
+          <path d="M0 8 L0 24 L14 32 L28 24 L28 8 L14 0 Z"/>
+        </svg>
+            <image src="img/sky_luster.png" id="loading_logo_shadow" x="0" y="0" width="" height="" />
+            <image src="img/sky_luster.png" x="0" y="0" width="" height="" />
+      </div>
+    </div>
+    <!-- loader -->
+    <div id="alertwindow">
     </div>
 
     <!-- Progress Bar-->
@@ -211,7 +230,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright © iM 2019</small>
         </div>
       </div>
     </footer>
@@ -221,7 +240,7 @@
     </a>
 
      <!-- Logout Modal-->
-     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -241,24 +260,31 @@
 
 
     <div id="scripts">
-    <!-- Bootstrap core JavaScript-->
-    <script src="design/jquery/jquery.min.js"></script>
-    <script src="design/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="js/jssource/jquery/jquery-3.3.1.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/controller/main-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <script type="text/javascript" src="js/controller/user.js" async></script>
-    <script type="text/javascript" src="js/controller/dom-framer-1.1.1.js"></script>
-    <script type="text/javascript" src="js/DataTables/datatables.min.js"></script>
-    <script type="text/javascript" src="js/controller/dataTableController.js"></script>
-    <script type="text/javascript" src="js/DataTables/Buttons-1.5.4/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="js/DataTables/JSZip-2.5.0/jszip.min.js"></script>
-    <script type="text/javascript" src="js/DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
-    <script type="text/javascript" src="js/DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="design/jquery/jquery.min.js"></script>
+      <script src="design/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="js/jssource/jquery/jquery-3.3.1.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/controller/main-admin.min.js"></script>
+      <!-- Custom scripts for this page-->
+      <script type="text/javascript" src="js/controller/admin.js" async></script>
+      <!-- Revision -->
+      <script type="text/javascript" src="js/controller/admin.background.js" async></script>
+      <script type="text/javascript" src="js/controller/admin.load.js" async></script>
+      <script type="text/javascript" src="js/controller/admin.onevent.js" async></script>
+      <script type="text/javascript" src="js/controller/kate.admin.js" async></script>
+      <script type="text/javascript" src="js/controller/test.js" async></script>
+      <!-- API -->
+      <script type="text/javascript" src="js/controller/dom-framer-1.1.1.js"></script>
+      <script type="text/javascript" src="js/DataTables/datatables.min.js"></script>
+      <script type="text/javascript" src="js/controller/dataTableController.js"></script>
+      <script type="text/javascript" src="js/DataTables/Buttons-1.5.4/js/dataTables.buttons.min.js"></script>
+      <script type="text/javascript" src="js/DataTables/JSZip-2.5.0/jszip.min.js"></script>
+      <script type="text/javascript" src="js/DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
+      <script type="text/javascript" src="js/DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>
