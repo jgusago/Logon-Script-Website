@@ -29,19 +29,6 @@ function DSHBRDbtnsCompListChld(listparent, linkparent, dataparent, parentulid){
   });
 }
 
-
-
-
-// function load(){
-//   SESSIONConfirm();
-//   DSHBRDbtnsCompList();
-//   DSHBRDbtnsCompLogs();
-//   NAVBARNotification();
-//   Dashboard();
-
-// }
-
-
 function DSHBRDTblsCntnt(parent, path, tablehead, tablefoot, tablebody, id, linkid){
   $.post(path, {parent:parent,linkid:linkid}, function(data){
 
