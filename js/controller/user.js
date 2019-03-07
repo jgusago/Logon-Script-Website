@@ -1,83 +1,115 @@
 /* -------------------------------------------------------------------------- Loads ---------------------------------------------------------------------------------- */
-function load(){
-  SESSIONConfirm();
-  DSHBRDbtnsCompList();
-  DSHBRDbtnsCompLogs();
-  NAVBARNotification();
-  Dashboard();
+function DSHBRDbtnsCompListChld(listparent, linkparent, dataparent, parentulid){
+  $.post("php/functions/load/dashboard.buttons.child.php",{parentid:dataparent},function(data){
+    var childdata = data.split("|");
+    if(childdata.length > 0 && data != "false"){
+      var ulid = idgenerator();
+      var ul = [];
+      linkparent.classList.add("nav-link");
+      linkparent.classList.add("nav-link-collapse");
+      linkparent.classList.add("collapdatased");
+      linkparent.classList.add("collapsed");
+      linkparent.setAttribute("data-toggle","collapse");
+      linkparent.setAttribute("data-parent","#"+parentulid);
+      linkparent.setAttribute("aria-expanded",false);
+      linkparent.setAttribute("href","#"+ulid);
+      createnewElement(ul, listparent, "ul", ["sidenav-third-level","collapse"], ["data-parent:#"+parentulid, "id:"+ulid ,"data-toggle:collapse","data:"+data], "");
 
+      for(var i = 0; childdata.length > i; i++){
+
+        child = childdata[i].split("`");
+        var li = [], a = [];
+        var linkid = idgenerator();
+        createnewElement(li, ul.newelement, "li",[],[],"");
+        createnewElement(a, li.newelement,"a", [], ["onClick:DSHBRDContentCompList(\""+child[1]+"\",\""+linkid+"\")","id:"+linkid, "data:"+dataparent] , child[0]);
+        li.newelement.style.padding = "0px 0px 0px 20px";
+        DSHBRDbtnsCompListChld(li.newelement, a.newelement, child[1], linkid);
+      }
+    }
+  });
 }
 
 
+
+
+// function load(){
+//   SESSIONConfirm();
+//   DSHBRDbtnsCompList();
+//   DSHBRDbtnsCompLogs();
+//   NAVBARNotification();
+//   Dashboard();
+
+// }
+
+
+function DSHBRDTblsCntnt(parent, path, tablehead, tablefoot, tablebody, id, linkid){
+  $.post(path, {parent:parent,linkid:linkid}, function(data){
+
+      data = data.split("#");
+      datalength = data.length;
+
+      thfdata = data[0].split("|");
+      var tbheader = [], tbfooter = [];
+      createTableContent([], tablehead, [], [], "th", thfdata);
+      createTableContent([], tablefoot, [], [], "th", thfdata);
+
+      for (var i = 1; i < datalength;i++){
+          newdata = data[i].split("|");
+          createTableContent([], tablebody, [],["id:"+i], "td", newdata);
+
+          }
+  });
+
+    if(path == "php/functions/reports/computer.list.php")
+    {
+      document.getElementById("dtitle").innerHTML = "Reports";
+      document.getElementById("dtitle2").innerHTML = "Computer List";
+    }
+    pagination(id);
+  }
+
 function DSHBRDContent(parent, linkid)
 {
-  var view = document.getElementById("ContentCardBody");
-  var linkdata = document.getElementById(linkid).getAttribute("data");
-  view.innerHTML = "";
+    var view = document.getElementById("ContentCardBody");
+    var linkdata = document.getElementById(linkid).getAttribute("data");
+    view.innerHTML = "";
 
-  tableid = idgenerator();
+    tableid = idgenerator();
 
-  var card = [];
-  createCard(card, view, [], []);
+    var card = [];
+    createCard(card, view, [], []);
 
-  var table = [];
-  var classes = ["table","table-bordered"];
-  var attributes = ["width:100%","cellspacing:0","id:"+tableid];
-  createTable(table, card.body, classes, attributes);
+    var table = [];
+    var classes = ["table","table-bordered"];
+    var attributes = ["width:100%","cellspacing:0","id:"+tableid];
+    createTable(table, card.body, classes, attributes);
 
-  switch (linkdata) {
-    case "DSHBRDRecordsComplist":
-      path = "php/functions/reports/computer.list.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+    switch (linkdata)
+    {
+      case "DSHBRDRecordsComplist":
+        path = "php/functions/reports/computer.list.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDRecordsComplogs":
+        path = "php/functions/reports/computer.logs.json.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDRecordsHistory":
+        path = "php/functions/reports/transaction.history.logs.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      case "DSHBRDLogsHistory":
+        path = "php/functions/reports/computer.logs.history.php";
+        DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      break;
+      // case "DSHBRDAccountsAccMgnt":
+      //   path = "php/functions/accounts/accounts.view.php";
+      //   DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
+      //   createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser", "id:btnAddUser"],"Add User");
+      // break;
+      default:
 
-    break;
-    case "DSHBRDRecordsComplogs":
-      path = "php/functions/reports/computer.logs.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    case "DSHBRDRecordsHistory":
-    path = "";
-    DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-  break;
-    case "DSHBRDRecodesBrnchvw":
-      path = "";
-    break;
-    case "DSHBRDAccountsAccMgnt":
-      path = "php/functions/accounts/accounts.view.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-      createnewElement([], card.head, "button", ["btn","btn-default"],["data-toggle:modal", "data-target:#AddUser", "href:#AddUser"],"Add User");
-    break;
-    case "DSHBRDProfile":
-      path = "";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    case "DSHBRDBranchView":
-      path = "";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    case "DSHBRDLogsHistory":
-      path = "php/functions/reports/computer.logs.history.php";
-      DSHBRDContentTbls(parent, path, table.head, table.foot, table.body, tableid, linkid);
-    break;
-    default:
-
-  }
-  
-  setTimeout(function()
-  {
-    var copy = document.getElementsByClassName("buttons-copy");
-    copy[0].classList.remove("btn-secondary");
-    copy[0].classList.add("btn-default");
-
-    var excel = document.getElementsByClassName("buttons-excel");
-    excel[0].classList.remove("btn-secondary");
-    excel[0].classList.add("btn-success");
-
-    var pdf = document.getElementsByClassName("buttons-pdf");
-    pdf[0].classList.remove("btn-secondary");
-    pdf[0].classList.add("btn-danger");
-
-  }, 500)
+    }
 }
 
 //computerlist Update OnClick
@@ -144,53 +176,54 @@ createnewElement(updatebutton, footerdiv.newelement, "button", ["btn", "btn-prim
 }
 
 /* Table Call Path with PHP*/
-function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
-$.post(path, {parent:parent,linkid:linkid}, function(data){
+// function DSHBRDContentTbls(parent, path, tablehead, tablefoot, tablebody, id, linkid){
+// $.post(path, {parent:parent,linkid:linkid}, function(data){
 
-    data = data.split("#");
-    datalength = data.length;
+//     data = data.split("#");
+//     datalength = data.length;
 
-    thfdata = data[0].split("|");
-    var tbheader = [], tbfooter = [];
-    createTableContent([], tablehead, [], [], "th", thfdata);
-    createTableContent([], tablefoot, [], [], "th", thfdata);
+//     thfdata = data[0].split("|");
+//     var tbheader = [], tbfooter = [];
+//     createTableContent([], tablehead, [], [], "th", thfdata);
+//     createTableContent([], tablefoot, [], [], "th", thfdata);
 
-    for (var i = 1; i < datalength;i++){
-        newdata = data[i].split("|");
-        createTableContent([], tablebody, [],[], "td", newdata);
+//     for (var i = 1; i < datalength;i++){
+//         newdata = data[i].split("|");
+//         createTableContent([], tablebody, [],[], "td", newdata);
 
-        }
-});
-if (path == "php/functions/accounts/accounts.view.php")
-{
-  document.getElementById("dtitle").innerHTML = "Profile & Accounts";
-  document.getElementById("dtitle2").innerHTML = "Account Management";
-}
-else
-{
-  if(path == "php/functions/reports/computer.list.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Reports";
-    document.getElementById("dtitle2").innerHTML = "Computer List";
-  }
-  else if(path == "php/functions/reports/computer.logs.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Reports";
-    document.getElementById("dtitle2").innerHTML = "Computer Logs";
-  }
-  else if(path == "php/functions/reports/computer.logs.history.php")
-  {
-    document.getElementById("dtitle").innerHTML = "REports";
-    document.getElementById("dtitle2").innerHTML = "Computer Logs History";
-  }
-  else if(path == "php/functions/reports/computer.edit.history.php")
-  {
-    document.getElementById("dtitle").innerHTML = "Reports";
-    document.getElementById("dtitle2").innerHTML = "Edit History";
-  }
-  pagination(id);
-}
-}
+//         }
+// });
+// if (path == "php/functions/accounts/accounts.view.php")
+// {
+//   document.getElementById("dtitle").innerHTML = "Profile & Accounts";
+//   document.getElementById("dtitle2").innerHTML = "Account Management";
+// }
+// else
+// {
+//   if(path == "php/functions/reports/computer.list.php")
+//   {
+//     document.getElementById("dtitle").innerHTML = "Reports";
+//     document.getElementById("dtitle2").innerHTML = "Computer List";
+//   }
+//   else if(path == "php/functions/reports/computer.logs.php")
+//   {
+//     document.getElementById("dtitle").innerHTML = "Reports";
+//     document.getElementById("dtitle2").innerHTML = "Computer Logs";
+//   }
+//   else if(path == "php/functions/reports/computer.logs.history.php")
+//   {
+//     document.getElementById("dtitle").innerHTML = "REports";
+//     document.getElementById("dtitle2").innerHTML = "Computer Logs History";
+//   }
+//   else if(path == "php/functions/reports/computer.edit.history.php")
+//   {
+//     document.getElementById("dtitle").innerHTML = "Reports";
+//     document.getElementById("dtitle2").innerHTML = "Edit History";
+//   }
+//   pagination(id);
+// }
+// }
+
 function DSHBRDContentBranchSettings(){
 var contentview = document.getElementById("ContentCardBody");
 contentview.innerHTML = "";
@@ -282,7 +315,6 @@ function OVERLAYdisable()
 {
 
   document.getElementById("overlay").style.display = "none";
-  document.getElementById("loaderdiv").style.display = "none";
   document.getElementById("miniwindow").style.display = "none";
 
       //get mini window ID;
@@ -296,6 +328,35 @@ function OVERLAYdisable()
       cf.innerHTML = "";
 
 }
+
+function ALERTshow(){
+  document.getElementById("alertwindow").style.display = "block";
+}
+function ALERThide(){
+  document.getElementById("alertwindow").style.display = "none";
+}
+function ALERTcall(value,data){
+
+  ALERTshow();
+
+  var alertwindow = document.getElementById("alertwindow");
+  var div = [], content = [], buttondiv = [], button = [], span = [], i = [];
+  createnewElement(div, alertwindow, "div", ["alert","alert-"+value,"alert-dismissible","fade","show","alert-content"],["role:alert"],"");
+  createnewElement(content, div.newelement,"div",[],[],"");
+  content.newelement.innerHTML = data;
+  content.newelement.style.padding = "0px 50px 0px 0px";
+  createnewElement(buttondiv, div.newelement, "div", [], [], "");
+  createnewElement(button, buttondiv.newelement,"button",["close"],["type:button","data-dismiss:alert","aria-label:Close"],"");
+  createnewElement(span, button.newelement,"span",[],["aria-hidden:true"],"");
+  createnewElement(i, span.newelement, "i", ["fa","fa-times"],["aria-hidden:true"],"");
+
+    setTimeout(function(){
+      alertwindow.removeChild(div.newelement);
+      ALERThide();
+    }, 3000);
+
+}
+
 function CMPLISTdtlsremarksupdate(defaultvalue, id){
 
 var value = document.getElementById(id).value;
@@ -524,6 +585,75 @@ $.post("php/functions/session/session.confirm.php",function(data){
   var nametext = document.createTextNode(data[3]);
   name.appendChild(nametext); 
 });
+}
+
+function ChangePass()
+{
+  OVERLAYenable();
+
+  var ch = document.getElementById("mnch");
+  var cb = document.getElementById("mncb");
+  var cf = document.getElementById("mncf");
+
+  var value = [], divvalue = [], leftdiv = [], subrdiv = [], rightsidevalue = [], span = []
+  form = [], fg = [], label = [], input = [], btn = [], br = [];
+
+
+  createnewElement(divvalue, ch, "div", ["row"], [], "");
+  divvalue.newelement.style.width = "600px";
+  createnewElement(leftdiv, divvalue.newelement, "div", ["col-sm-12","col-md-8"], [], "");
+  createnewElement(value, leftdiv.newelement, "h6", [], ["id:PassLbl"],"Change Password" );
+
+  createnewElement(subrdiv, divvalue.newelement, "div", ["d-flex","flex-row-reverse", "col-md-4"], [], "");
+  // createnewElement(rightsidevalue, subrdiv.newelement, "button", ["close", "btn", "btn-default"], ["data-dismiss:modal","aria-label:Close", "type:button", "onclick:OVERLAYdisable()"], "");
+  // createnewElement(span, rightsidevalue.newelement, "span", [], ["aria-hidden:true", "id:span"], "");
+  // span.newelement.innerHTML = "&times;";
+
+  createnewElement(form, cb, "form", [], ["onsubmit:return AccInfChnPass();"], "");
+  createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+  createnewElement(label, fg.newelement, "label", [], ["for:AccInfCurrPAss"], "Current Password");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["id:AccInfCurrPAss","type:password","pattern:(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", "required:true", "title:\"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces\""], "");
+  //
+  createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+  createnewElement(label, fg.newelement, "label", [], ["for:AccInfNewPAss"], "New Password");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["id:AccInfNewPAss","type:password","pattern:(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", "required:true", "title:\"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters and no spaces\""], "");
+  //
+  createnewElement(fg, form.newelement, "div", ["form-group"], [], "");
+  createnewElement(label, fg.newelement, "label", [], ["for:AccInfCompPAss"], "Confirm Password");
+  createnewElement(input, fg.newelement, "input", ["form-control"], ["id:AccInfCompPAss","type:password","pattern:(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", "required:true"], "");
+  //
+  createnewElement(br, form.newelement, "br", [], [], "");
+  //
+  createnewElement(fg, form.newelement, "div", ["form-row"], [],"");
+    createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
+    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-info"], ["type:submit","value:Confirm"], "");
+    createnewElement(label, fg.newelement, "div", ["form-group", "col-md-6"], [], "");
+    createnewElement(input, label.newelement, "input", ["form-control","btn", "btn-warning"], ["type:button","onClick:OVERLAYdisable()","value:Cancel"], "");
+  //
+  createnewElement(br, form.newelement, "br", [], [], "");
+}
+
+function AccInfChnPass(){
+  var password = document.getElementById("AccInfNewPAss");
+  var confirm_password = document.getElementById("AccInfCompPAss");
+  var old_password = document.getElementById("AccInfCurrPAss");
+
+  if(password.value !== confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords doesn't match");
+  } else {
+
+    $.post("php/functions/profile/account.change.password.php",{oldpassword:old_password.value,newpassword:password.value,confpassword:confirm_password.value},function(data){
+      if(data == "success"){
+        ALERTcall("success","Password has been updated");
+        OVERLAYdisable();
+      }
+      else{
+        ALERTcall("danger",data);
+      }
+    });
+  }
+
+return false;
 }
 
 //
